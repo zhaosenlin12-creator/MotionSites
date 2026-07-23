@@ -2,6 +2,12 @@
 const path=require('path');
 const ROOT=path.resolve(__dirname,'..');
 
+// Cloudflare Pages enforces a 25 MiB per-file cap. We auto-demote any
+// local preview above this threshold to a concept card so the deployed
+// site never references a file that the host will silently replace
+// with an HTML error page.
+const MAX_PREVIEW_BYTES = 24 * 1024 * 1024;
+
 function readNoBom(p){
   let buf=fs.readFileSync(p);
   if(buf[0]===0xEF&&buf[1]===0xBB&&buf[2]===0xBF)buf=buf.subarray(3);
@@ -62,7 +68,22 @@ const enriched=prompts.map(function(x){
       if(fs.existsSync(b))return b;
       return a;
     }
-    o.local_kind=locAbs(x.local_rel)?detectKind(locAbs(x.local_rel)):'other';
+    const abs=locAbs(x.local_rel);
+    if(abs && fs.existsSync(abs)){
+      const stat=fs.statSync(abs);
+      if(stat.size>MAX_PREVIEW_BYTES){
+        // Cloudflare Pages 25 MiB per-file cap - demote to concept card
+        console.warn('[build] demoting over-limit preview', x.id, (stat.size/1048576).toFixed(2)+'MiB');
+        o.local_rel=null;
+        o.local_kind='other';
+        o.size_bytes=stat.size;
+      } else {
+        o.local_kind=detectKind(abs);
+        o.size_bytes=stat.size;
+      }
+    } else {
+      o.local_kind='other';
+    }
   }
   return o;
 });
