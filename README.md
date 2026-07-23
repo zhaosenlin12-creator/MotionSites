@@ -117,13 +117,37 @@ Measured locally with Edge 138 in headless mode against `python -m http.server`:
 
 | Metric | Value |
 | --- | --- |
-| First Contentful Paint | ~600 ms |
-| DOMContentLoaded | ~1.5 s |
-| Total transfer | 3.1 MB (gzipped by Cloudflare to ~700 KB) |
+| First Contentful Paint | ~700 ms |
+| DOMContentLoaded | ~1.7 s |
+| Total transfer | 3.2 MB (gzipped by Cloudflare to ~720 KB) |
 | Cards rendered | 364 |
 | Console errors | 0 |
 
 All preview media is `loading="lazy"`, the grid is built with `DocumentFragment`, and event delegation is used for clicks and image fallback — see `ms_script.js`.
+
+
+## Live audit (2026-07-24)
+
+Re-verified on the deployed `motionsites-prompts.pages.dev` site:
+
+| Check | Result |
+| --- | --- |
+| HTTP status of `/` | 200 (text/html) |
+| Static previews (webp) | 200 (image/webp) |
+| Video previews (mp4) | 200 (video/mp4) |
+| `data/*.json` Content-Type | 200 (application/json via `_headers` rule) |
+| Console errors on `/` | 0 |
+| Cards without `local_rel` (concepts) | 110 (rendered as animated concept cards) |
+| Cards with full prompt body | 328 |
+| Over-limit previews (> 24 MiB) | 1 (auto-demoted to concept card at build time) |
+
+### 25 MiB file cap and `fun-404-page.webp`
+
+Cloudflare Pages silently replaces any single file larger than 25 MiB with an HTML error page (HTTP 200 but `Content-Type: text/html`). `assets/previews/fun-404-page.webp` (43.99 MiB) is one such file - it is in fact a 1920x1080 MP4 in a `.webp` wrapper. The build script (`scripts/build.js`) now detects any `local_rel` larger than 24 MiB and demotes the record to a concept card, so the deployed site never references a file the host will break. To re-enable the original video, transcode it under 25 MiB with `ffmpeg` (e.g. `-crf 28 -preset slow -movflags +faststart`) and re-run the build.
+
+### Entries without a published prompt body
+
+110 of the 364 records come from the motionsites.ai public catalog, which only exposes the title / description / category - the full prompt body is paywalled. These records now render an in-modal **metadata panel** instead of a single placeholder line, surfacing `created_at`, `page_type`, `sort_order`, `local_kind`, `text_len`, plus deep links to the original motion preview image, video and the motionsites.ai source page.
 
 ## File layout
 
@@ -142,10 +166,10 @@ All preview media is `loading="lazy"`, the grid is built with `DocumentFragment`
 |   |-- previews/                   # 246 webp / mp4 previews
 |   `-- thumbnails/                 # 55 webp thumbnails
 |-- scripts/
-|   |-- build.js                    # data/*.json + ms_template.html + ms_script.js -> index.html
-|   |-- dump.js                     # (optional) re-crawl motionsites.ai for new metadata
-|   |-- download.js                 # (optional) re-fetch all preview media
-|   `-- helpers.js                  # (optional) shared HTTP / file helpers
+|   `-- build.js                    # data/*.json + ms_template.html + ms_script.js -> index.html
+|-- docs/                           # README screenshots
+|-- CONTRIBUTING.md
+`-- LICENSE                         # MIT
 |-- docs/                           # README screenshots
 |-- CONTRIBUTING.md
 `-- LICENSE                         # MIT
@@ -157,8 +181,9 @@ The shipped `index.html` is pre-generated, but you can regenerate it any time:
 
 ```bash
 node scripts/build.js
-# -> Records=364 complete=328 images=175 videos=74 concepts=110
-# -> Wrote index.html bytes 3165581
+# -> Records=364 complete=328 images=175 videos=73 concepts=111
+# -> Wrote index.html bytes 3186593
+# -> [build] demoting over-limit preview fun-404-page 43.99MiB
 # -> SELF-VERIFY OK records=364
 ```
 
