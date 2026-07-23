@@ -1,4 +1,4 @@
-﻿# Contributing to MotionSites Prompts
+# Contributing to MotionSites Prompts
 
 Thanks for helping grow this open catalog! New prompts are very welcome.
 

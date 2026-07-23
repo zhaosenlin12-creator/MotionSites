@@ -1,6 +1,6 @@
 ---
 id: 004-typewriter-hero
-title: Typewriter hero ¡ª looping word swap
+title: Typewriter hero ï¿½ï¿½ looping word swap
 category: Hero
 type: hero
 access: open
@@ -9,7 +9,7 @@ palette: ["#f4f1ea", "#ff5470", "#0c1828"]
 created: 2026-02-08
 ---
 
-# Typewriter hero ¡ª looping word swap
+# Typewriter hero ï¿½ï¿½ looping word swap
 
 > Editorial-style hero where a single word inside a bold sentence is constantly retyped from a rotating list. Vanilla JS, no framework.
 
@@ -26,7 +26,7 @@ Design a two-line hero for a digital magazine. Background: warm off-white #f4f1e
 ## Notes
 
 - Reserve width with `min-width: 7ch` so layout doesn't reflow while typing.
-- Respect `prefers-reduced-motion: reduce` ¡ª fall back to a static word.
+- Respect `prefers-reduced-motion: reduce` ï¿½ï¿½ fall back to a static word.
 
 ## Source
 

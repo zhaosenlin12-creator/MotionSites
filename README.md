@@ -1,160 +1,160 @@
-# MotionSites Prompts ¡ª A Curated Library of Motion-Driven UI
+# MotionSites Prompts ï¿½ï¿½ A Curated Library of Motion-Driven UI
 
-> Ò»¸ö¾«Ñ¡µÄ¡¢ÃæÏò¶¯Ð§Çý¶¯ UI µÄÌáÊ¾´Ê(Prompt)ºÏ¼¯¡£
+> Ò»ï¿½ï¿½ï¿½ï¿½Ñ¡ï¿½Ä¡ï¿½ï¿½ï¿½ï¿½ï¿½Ð§ï¿½ï¿½ï¿½ï¿½ UI ï¿½ï¿½ï¿½ï¿½Ê¾ï¿½ï¿½(Prompt)ï¿½Ï¼ï¿½ï¿½ï¿½
 >
-> An offline-first, single-file catalog of **motion-driven UI prompts** ¡ª landing pages, hero scenes, agency showcases, dashboards, and more. Browse, search, copy, and export every prompt locally. No login, no network call, no paywall.
+> An offline-first, single-file catalog of **motion-driven UI prompts** ï¿½ï¿½ landing pages, hero scenes, agency showcases, dashboards, and more. Browse, search, copy, and export every prompt locally. No login, no network call, no paywall.
 
 ![Catalog hero](docs/screenshots/catalog-hero.svg)
 
 ---
 
-## ÖÐÎÄ¼ò½é
+## ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½
 
-**MotionSites Prompts** ÊÇÒ»¸ö¿ªÔ´¡¢ÀëÏßÓÅÏÈµÄ¡¸¶¯Ð§ UI ÌáÊ¾´ÊÄ¿Â¼¡¹,»ã¼¯ÁË 300+ Ìõ¾­¹ý²ß»®µÄ¶¯Ð§Çý¶¯ÐÍ½çÃæÌáÊ¾´Ê,º­¸Ç:
+**MotionSites Prompts** ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½Ô´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÈµÄ¡ï¿½ï¿½ï¿½Ð§ UI ï¿½ï¿½Ê¾ï¿½ï¿½Ä¿Â¼ï¿½ï¿½,ï¿½ã¼¯ï¿½ï¿½ 300+ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ß»ï¿½ï¿½Ä¶ï¿½Ð§ï¿½ï¿½ï¿½ï¿½ï¿½Í½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¾ï¿½ï¿½,ï¿½ï¿½ï¿½ï¿½:
 
-- ×ÅÂ½Ò³(Landing Page)
-- Ê×ÆÁ Hero ³¡¾°
-- SaaS ²úÆ·½éÉÜÒ³
-- Êý×Ö¹¤×÷ÊÒ×÷Æ·¼¯(Agency / Portfolio)
-- Web3 / AI / Dashboard Êý¾Ý¿´°å
-- ÂÃÓÎ¡¢Ò½ÁÆ¡¢·¿µØ²úµÈÐÐÒµÄ£°å
+- ï¿½ï¿½Â½Ò³(Landing Page)
+- ï¿½ï¿½ï¿½ï¿½ Hero ï¿½ï¿½ï¿½ï¿½
+- SaaS ï¿½ï¿½Æ·ï¿½ï¿½ï¿½ï¿½Ò³
+- ï¿½ï¿½ï¿½Ö¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ·ï¿½ï¿½(Agency / Portfolio)
+- Web3 / AI / Dashboard ï¿½ï¿½ï¿½Ý¿ï¿½ï¿½ï¿½
+- ï¿½ï¿½ï¿½Î¡ï¿½Ò½ï¿½Æ¡ï¿½ï¿½ï¿½ï¿½Ø²ï¿½ï¿½ï¿½ï¿½ï¿½ÒµÄ£ï¿½ï¿½
 
-Ã¿Ò»ÌõÌáÊ¾´Ê¶¼¿ÉÒÔÒ»¼ü¸´ÖÆ¡¢µ¼³öÎª Markdown,²¿·ÖÌõÄ¿»¹ÅäÓÐ±¾µØ»¯µÄ¶¯Ð§Ô¤ÀÀ(WebP / MP4)¡£ËùÓÐÄÚÈÝ¶¼ÊÇ**µ¥ÎÄ¼þ¾²Ì¬Õ¾µã**ÐÎÊ½,ÎÞÐèµÇÂ¼¡¢ÎÞÐèÁªÍø¡¢ÎÞÐè¸¶·ÑÇ½¡£
+Ã¿Ò»ï¿½ï¿½ï¿½ï¿½Ê¾ï¿½Ê¶ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½Æ¡ï¿½ï¿½ï¿½ï¿½ï¿½Îª Markdown,ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ï¿½ï¿½ï¿½ï¿½ï¿½Ð±ï¿½ï¿½Ø»ï¿½ï¿½Ä¶ï¿½Ð§Ô¤ï¿½ï¿½(WebP / MP4)ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ý¶ï¿½ï¿½ï¿½**ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½Ì¬Õ¾ï¿½ï¿½**ï¿½ï¿½Ê½,ï¿½ï¿½ï¿½ï¿½ï¿½Â¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½è¸¶ï¿½ï¿½Ç½ï¿½ï¿½
 
-### ÄãÄÜÓÃËü×öÊ²Ã´
+### ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê²Ã´
 
-- ¸´ÖÆÌáÊ¾´ÊÎ¹¸øÈÎºÎ LLM(ChatGPT / Claude / Gemini / DeepSeek µÈ),¿ìËÙÉú³ÉÇ°¶Ë´úÂë
-- ×÷Îª¶¯Ð§Éè¼ÆÁé¸Ð¿âä¯ÀÀ
-- Í¨¹ý±¾µØÉ¸Ñ¡(·ÖÀà¡¢ÀàÐÍ¡¢ÊÇ·ñ¸¶·Ñ¡¢Ã½Ìå¸ñÊ½)¾«×¼¶¨Î»
-- ×÷ÎªÍÅ¶Ó / ¸öÈËÇ°¶Ë×÷Æ·¼¯µÄÆðÊ¼Ä£°å
+- ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¾ï¿½ï¿½Î¹ï¿½ï¿½ï¿½Îºï¿½ LLM(ChatGPT / Claude / Gemini / DeepSeek ï¿½ï¿½),ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç°ï¿½Ë´ï¿½ï¿½ï¿½
+- ï¿½ï¿½Îªï¿½ï¿½Ð§ï¿½ï¿½ï¿½ï¿½ï¿½Ð¿ï¿½ï¿½ï¿½ï¿½
+- Í¨ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É¸Ñ¡(ï¿½ï¿½ï¿½à¡¢ï¿½ï¿½ï¿½Í¡ï¿½ï¿½Ç·ñ¸¶·Ñ¡ï¿½Ã½ï¿½ï¿½ï¿½Ê½)ï¿½ï¿½×¼ï¿½ï¿½Î»
+- ï¿½ï¿½Îªï¿½Å¶ï¿½ / ï¿½ï¿½ï¿½ï¿½Ç°ï¿½ï¿½ï¿½ï¿½Æ·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¼Ä£ï¿½ï¿½
 
-### ²Ö¿âÄÚÈÝËÙÀÀ
+### ï¿½Ö¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 ```
 MotionSites-Prompts/
-©À©¤©¤ README.md                # ±¾ÎÄ¼þ(ÖÐÓ¢Ë«Óï)
-©À©¤©¤ LICENSE                  # MIT License
-©À©¤©¤ CONTRIBUTING.md          # ¹±Ï×Ö¸ÄÏ
-©À©¤©¤ prompts/                 # ·ÖÀàÕûÀíµÄÌáÊ¾´Ê¿â(±¾´ÎÐÂÔö)
-©¦   ©À©¤©¤ landing/             # ×ÅÂ½Ò³ÌáÊ¾´Ê
-©¦   ©À©¤©¤ hero/                # Hero Ê×ÆÁÌáÊ¾´Ê
-©¦   ©À©¤©¤ saas/                # SaaS ÌáÊ¾´Ê
-©¦   ©À©¤©¤ agency/              # Êý×Ö¹¤×÷ÊÒÌáÊ¾´Ê
-©¦   ©À©¤©¤ dashboard/           # Êý¾Ý¿´°åÌáÊ¾´Ê
-©¦   ©¸©¤©¤ portfolio/           # ×÷Æ·¼¯ÌáÊ¾´Ê
-©À©¤©¤ templates/               # ÆðÊ¼ HTML Ä£°å
-©À©¤©¤ examples/                # ÍêÕûÊ¾ÀýÏîÄ¿
-©À©¤©¤ docs/
-©¦   ©À©¤©¤ screenshots/         # SVG ½ØÍ¼ÓëÊ¾ÒâÍ¼
-©¦   ©¸©¤©¤ catalog.json         # ÌáÊ¾´ÊË÷ÒýÊý¾Ý
-©¸©¤©¤ index.html               # µ¥ÎÄ¼þä¯ÀÀÈë¿Ú(¿ÉÑ¡)
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ README.md                # ï¿½ï¿½ï¿½Ä¼ï¿½(ï¿½ï¿½Ó¢Ë«ï¿½ï¿½)
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ LICENSE                  # MIT License
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ CONTRIBUTING.md          # ï¿½ï¿½ï¿½ï¿½Ö¸ï¿½ï¿½
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ prompts/                 # ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¾ï¿½Ê¿ï¿½(ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½)
+ï¿½ï¿½   ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ landing/             # ï¿½ï¿½Â½Ò³ï¿½ï¿½Ê¾ï¿½ï¿½
+ï¿½ï¿½   ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ hero/                # Hero ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¾ï¿½ï¿½
+ï¿½ï¿½   ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ saas/                # SaaS ï¿½ï¿½Ê¾ï¿½ï¿½
+ï¿½ï¿½   ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ agency/              # ï¿½ï¿½ï¿½Ö¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¾ï¿½ï¿½
+ï¿½ï¿½   ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ dashboard/           # ï¿½ï¿½ï¿½Ý¿ï¿½ï¿½ï¿½ï¿½ï¿½Ê¾ï¿½ï¿½
+ï¿½ï¿½   ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ portfolio/           # ï¿½ï¿½Æ·ï¿½ï¿½ï¿½ï¿½Ê¾ï¿½ï¿½
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ templates/               # ï¿½ï¿½Ê¼ HTML Ä£ï¿½ï¿½
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ examples/                # ï¿½ï¿½ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½Ä¿
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ docs/
+ï¿½ï¿½   ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ screenshots/         # SVG ï¿½ï¿½Í¼ï¿½ï¿½Ê¾ï¿½ï¿½Í¼
+ï¿½ï¿½   ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ catalog.json         # ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ index.html               # ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½(ï¿½ï¿½Ñ¡)
 ```
 
-### ÈçºÎÊ¹ÓÃ
+### ï¿½ï¿½ï¿½Ê¹ï¿½ï¿½
 
-#### 1. Ö±½ÓÔÚ GitHub ÉÏä¯ÀÀ
+#### 1. Ö±ï¿½ï¿½ï¿½ï¿½ GitHub ï¿½ï¿½ï¿½ï¿½ï¿½
 
-´ò¿ª²Ö¿â¸ùÄ¿Â¼µÄ `README.md` »òÕß `docs/catalog.json`,´Ó·ÖÀàÄ¿Â¼(±ÈÈç `prompts/landing/`)ÖÐÑ¡Ôñ¸ÐÐËÈ¤µÄÌáÊ¾´ÊÎÄ¼þ,Ö±½Ó¸´ÖÆ `Prompt` ´úÂë¿é¼´¿ÉÊ¹ÓÃ¡£
+ï¿½ò¿ª²Ö¿ï¿½ï¿½Ä¿Â¼ï¿½ï¿½ `README.md` ï¿½ï¿½ï¿½ï¿½ `docs/catalog.json`,ï¿½Ó·ï¿½ï¿½ï¿½Ä¿Â¼(ï¿½ï¿½ï¿½ï¿½ `prompts/landing/`)ï¿½ï¿½Ñ¡ï¿½ï¿½ï¿½ï¿½ï¿½È¤ï¿½ï¿½ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½Ä¼ï¿½,Ö±ï¿½Ó¸ï¿½ï¿½ï¿½ `Prompt` ï¿½ï¿½ï¿½ï¿½é¼´ï¿½ï¿½Ê¹ï¿½Ã¡ï¿½
 
-#### 2. ±¾µØä¯ÀÀ(ÍÆ¼ö)
+#### 2. ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½(ï¿½Æ¼ï¿½)
 
 ```bash
 git clone https://github.com/zhaosenlin12-creator/MotionSites-Prompts.git
 cd MotionSites-Prompts
 
-# ·½·¨ A:Ö±½Ó´ò¿ª
+# ï¿½ï¿½ï¿½ï¿½ A:Ö±ï¿½Ó´ï¿½
 start index.html        # Windows
 open index.html         # macOS
 xdg-open index.html     # Linux
 
-# ·½·¨ B:Æô¶¯±¾µØ¾²Ì¬·þÎñÆ÷
+# ï¿½ï¿½ï¿½ï¿½ B:ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ø¾ï¿½Ì¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 python -m http.server 8000
-# ä¯ÀÀÆ÷·ÃÎÊ http://localhost:8000
+# ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ http://localhost:8000
 ```
 
-#### 3. ¼¯³Éµ½×Ô¼ºµÄ¹¤×÷Á÷
+#### 3. ï¿½ï¿½ï¿½Éµï¿½ï¿½Ô¼ï¿½ï¿½Ä¹ï¿½ï¿½ï¿½ï¿½ï¿½
 
-½« `prompts/` Ä¿Â¼ÖÐµÄÈÎÒâ `.md` ÎÄ¼þ¸´ÖÆµ½ÄãµÄ LLM ¶Ô»°ÖÐ,»òÊ¹ÓÃÒÔÏÂ½Å±¾ÅúÁ¿µ¼³ö:
+ï¿½ï¿½ `prompts/` Ä¿Â¼ï¿½Ðµï¿½ï¿½ï¿½ï¿½ï¿½ `.md` ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½Æµï¿½ï¿½ï¿½ï¿½ LLM ï¿½Ô»ï¿½ï¿½ï¿½,ï¿½ï¿½Ê¹ï¿½ï¿½ï¿½ï¿½ï¿½Â½Å±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½:
 
 ```bash
-# ÁÐ³öËùÓÐÌáÊ¾´ÊÎÄ¼þ
+# ï¿½Ð³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½Ä¼ï¿½
 find prompts -name "*.md" | sort
 ```
 
-### ½ØÍ¼ÓëÊ¾ÒâÍ¼
+### ï¿½ï¿½Í¼ï¿½ï¿½Ê¾ï¿½ï¿½Í¼
 
-| ÊÓÍ¼ | ËµÃ÷ |
+| ï¿½ï¿½Í¼ | Ëµï¿½ï¿½ |
 | --- | --- |
-| ![Catalog hero](docs/screenshots/catalog-hero.svg) | Ö÷Ò³ Hero Óë·ÖÀàÉ¸Ñ¡ |
-| ![Prompt card](docs/screenshots/prompt-card.svg) | µ¥¸öÌáÊ¾´Ê¿¨Æ¬ÏêÇé |
-| ![Categories](docs/screenshots/categories.svg) | ·ÖÀàµ¼º½Ìõ |
-| ![Filters](docs/screenshots/filters.svg) | ¶àÎ¬É¸Ñ¡Æ÷ |
+| ![Catalog hero](docs/screenshots/catalog-hero.svg) | ï¿½ï¿½Ò³ Hero ï¿½ï¿½ï¿½ï¿½ï¿½É¸Ñ¡ |
+| ![Prompt card](docs/screenshots/prompt-card.svg) | ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¾ï¿½Ê¿ï¿½Æ¬ï¿½ï¿½ï¿½ï¿½ |
+| ![Categories](docs/screenshots/categories.svg) | ï¿½ï¿½ï¿½àµ¼ï¿½ï¿½ï¿½ï¿½ |
+| ![Filters](docs/screenshots/filters.svg) | ï¿½ï¿½Î¬É¸Ñ¡ï¿½ï¿½ |
 
-> ÍêÕû¶¯Ð§Ô¤ÀÀÇë¿ËÂ¡µ½±¾µØ,ËùÓÐÔ¤ÀÀÎÄ¼þ¾ùÎª `WebP` »ò `MP4`,GitHub SVG °æ±¾Ö»Õ¹Ê¾²¼¾Ö½á¹¹¡£
+> ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð§Ô¤ï¿½ï¿½ï¿½ï¿½ï¿½Â¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½,ï¿½ï¿½ï¿½ï¿½Ô¤ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½Îª `WebP` ï¿½ï¿½ `MP4`,GitHub SVG ï¿½æ±¾Ö»Õ¹Ê¾ï¿½ï¿½ï¿½Ö½á¹¹ï¿½ï¿½
 
-### ¹±Ï×·½Ê½
+### ï¿½ï¿½ï¿½×·ï¿½Ê½
 
-»¶Ó­Ìá½» PR!Çë²Î¿¼ [CONTRIBUTING.md](CONTRIBUTING.md):
+ï¿½ï¿½Ó­ï¿½á½» PR!ï¿½ï¿½Î¿ï¿½ [CONTRIBUTING.md](CONTRIBUTING.md):
 
-1. ÔÚ `prompts/<·ÖÀà>/` ÏÂÐÂÔö `.md` ÎÄ¼þ
-2. ÃüÃû¹æ·¶:`<ÐòºÅ>-<Ó¢ÎÄ¶ÌÃû>.md`,ÀýÈç `007-glassmorphism-hero.md`
-3. ÎÄ¼þÄ£°å¼û `prompts/_TEMPLATE.md`
-4. Í¬²½ÔÚ `docs/catalog.json` µÄ¶ÔÓ¦·ÖÀàÏÂ×·¼ÓË÷Òý
-5. Ìá½» PR,±êÌâÐ´Ã÷ `[prompt] <·ÖÀà>: <±êÌâ>`
+1. ï¿½ï¿½ `prompts/<ï¿½ï¿½ï¿½ï¿½>/` ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ `.md` ï¿½Ä¼ï¿½
+2. ï¿½ï¿½ï¿½ï¿½ï¿½æ·¶:`<ï¿½ï¿½ï¿½>-<Ó¢ï¿½Ä¶ï¿½ï¿½ï¿½>.md`,ï¿½ï¿½ï¿½ï¿½ `007-glassmorphism-hero.md`
+3. ï¿½Ä¼ï¿½Ä£ï¿½ï¿½ï¿½ `prompts/_TEMPLATE.md`
+4. Í¬ï¿½ï¿½ï¿½ï¿½ `docs/catalog.json` ï¿½Ä¶ï¿½Ó¦ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+5. ï¿½á½» PR,ï¿½ï¿½ï¿½ï¿½Ð´ï¿½ï¿½ `[prompt] <ï¿½ï¿½ï¿½ï¿½>: <ï¿½ï¿½ï¿½ï¿½>`
 
-### Êý¾ÝÀ´Ô´Óë°æÈ¨
+### ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô´ï¿½ï¿½ï¿½È¨
 
-| ×Ö¶Î | À´Ô´ |
+| ï¿½Ö¶ï¿½ | ï¿½ï¿½Ô´ |
 | --- | --- |
-| ±êÌâ¡¢ÃèÊö¡¢·ÖÀà¡¢Ã½ÌåÁ´½Ó | ¹«¿ªµÄ [motionsites.ai](https://motionsites.ai) Ä¿Â¼ |
-| ÍêÕûÌáÊ¾´ÊÕýÎÄ | ÉçÇøÎ¬»¤µÄ¿ªÔ´²Ö¿â(`xianxian-sensen`¡¢`Melectrona`¡¢`akkikumar72/liro-prompts`¡¢`giglianepefrei`) |
-| Ô¤ÀÀËØ²Ä | `motionsites.ai` CDN,Ê×´Î¹¹½¨Ê±ÏÂÔØ²¢´ò°ü½ø²Ö¿â |
+| ï¿½ï¿½ï¿½â¡¢ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½à¡¢Ã½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ | ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ [motionsites.ai](https://motionsites.ai) Ä¿Â¼ |
+| ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ | ï¿½ï¿½ï¿½ï¿½Î¬ï¿½ï¿½ï¿½Ä¿ï¿½Ô´ï¿½Ö¿ï¿½(`xianxian-sensen`ï¿½ï¿½`Melectrona`ï¿½ï¿½`akkikumar72/liro-prompts`ï¿½ï¿½`giglianepefrei`) |
+| Ô¤ï¿½ï¿½ï¿½Ø²ï¿½ | `motionsites.ai` CDN,ï¿½×´Î¹ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½Ø²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¿ï¿½ |
 
-Ã¿Ò»ÌõÌáÊ¾´ÊÕýÎÄµÄ°æÈ¨¹éÔ­×÷ÕßËùÓÐ,±¾²Ö¿â½ö×ö¹éµµÓëË÷Òý¡£
+Ã¿Ò»ï¿½ï¿½ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½ï¿½ÄµÄ°ï¿½È¨ï¿½ï¿½Ô­ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½,ï¿½ï¿½ï¿½Ö¿ï¿½ï¿½ï¿½ï¿½ï¿½éµµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 ---
 
 ## English
 
-**MotionSites Prompts** is an open-source, offline-first catalog of **motion-driven UI prompts**. It ships **300+ curated prompts** spanning landing pages, hero scenes, SaaS sections, agency showcases, dashboards, and industry-specific templates (travel, healthcare, real estate, ¡­).
+**MotionSites Prompts** is an open-source, offline-first catalog of **motion-driven UI prompts**. It ships **300+ curated prompts** spanning landing pages, hero scenes, SaaS sections, agency showcases, dashboards, and industry-specific templates (travel, healthcare, real estate, ï¿½ï¿½).
 
 ### Highlights
 
-- ? **Single static file** ¡ª open `index.html` directly from disk, no build step needed
-- ?? **Multi-dimensional filters** ¡ª category, type, access (open / premium), media format
-- ?? **Keyboard-first** ¡ª `/` focuses search, `Esc` closes modal, `G` toggles compact mode
-- ?? **Two card densities** ¡ª standard 16:10 grid and compact list
-- ?? **Spotlight search** ¡ª a soft glow tracks the best-matching card as you type
-- ?? **Offline** ¡ª all preview media is bundled locally, no network calls after clone
+- ? **Single static file** ï¿½ï¿½ open `index.html` directly from disk, no build step needed
+- ?? **Multi-dimensional filters** ï¿½ï¿½ category, type, access (open / premium), media format
+- ?? **Keyboard-first** ï¿½ï¿½ `/` focuses search, `Esc` closes modal, `G` toggles compact mode
+- ?? **Two card densities** ï¿½ï¿½ standard 16:10 grid and compact list
+- ?? **Spotlight search** ï¿½ï¿½ a soft glow tracks the best-matching card as you type
+- ?? **Offline** ï¿½ï¿½ all preview media is bundled locally, no network calls after clone
 
 ### File layout
 
 ```
 .
-©À©¤©¤ README.md                       # Bilingual project README (this file)
-©À©¤©¤ LICENSE                         # MIT
-©À©¤©¤ CONTRIBUTING.md                 # How to add a new prompt
-©À©¤©¤ prompts/                        # Categorized prompt library
-©¦   ©À©¤©¤ _TEMPLATE.md                # Markdown template for new prompts
-©¦   ©À©¤©¤ landing/                    # Landing-page prompts
-©¦   ©À©¤©¤ hero/                       # Hero / first-screen prompts
-©¦   ©À©¤©¤ saas/                       # SaaS prompts
-©¦   ©À©¤©¤ agency/                     # Digital-agency prompts
-©¦   ©À©¤©¤ dashboard/                  # Dashboard / data-viz prompts
-©¦   ©¸©¤©¤ portfolio/                  # Portfolio prompts
-©À©¤©¤ templates/                      # Starter HTML/CSS templates
-©À©¤©¤ examples/                       # Full end-to-end examples
-©À©¤©¤ docs/
-©¦   ©À©¤©¤ screenshots/                # SVG previews (no binary blobs)
-©¦   ©¸©¤©¤ catalog.json                # Machine-readable index
-©¸©¤©¤ index.html                      # Optional single-file viewer
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ README.md                       # Bilingual project README (this file)
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ LICENSE                         # MIT
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ CONTRIBUTING.md                 # How to add a new prompt
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ prompts/                        # Categorized prompt library
+ï¿½ï¿½   ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ _TEMPLATE.md                # Markdown template for new prompts
+ï¿½ï¿½   ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ landing/                    # Landing-page prompts
+ï¿½ï¿½   ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ hero/                       # Hero / first-screen prompts
+ï¿½ï¿½   ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ saas/                       # SaaS prompts
+ï¿½ï¿½   ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ agency/                     # Digital-agency prompts
+ï¿½ï¿½   ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ dashboard/                  # Dashboard / data-viz prompts
+ï¿½ï¿½   ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ portfolio/                  # Portfolio prompts
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ templates/                      # Starter HTML/CSS templates
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ examples/                       # Full end-to-end examples
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ docs/
+ï¿½ï¿½   ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ screenshots/                # SVG previews (no binary blobs)
+ï¿½ï¿½   ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ catalog.json                # Machine-readable index
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ index.html                      # Optional single-file viewer
 ```
 
 ### Usage
 
-1. **Browse on GitHub** ¡ª open any file under `prompts/<category>/`.
-2. **Local browsing** ¡ª `git clone` then double-click `index.html` (or serve with `python -m http.server`).
-3. **Pipeline integration** ¡ª `docs/catalog.json` is machine-readable; use it as input for your own tools.
+1. **Browse on GitHub** ï¿½ï¿½ open any file under `prompts/<category>/`.
+2. **Local browsing** ï¿½ï¿½ `git clone` then double-click `index.html` (or serve with `python -m http.server`).
+3. **Pipeline integration** ï¿½ï¿½ `docs/catalog.json` is machine-readable; use it as input for your own tools.
 
 ### Contributing
 
@@ -163,11 +163,11 @@ See [CONTRIBUTING.md](CONTRIBUTING.md). New prompts should:
 1. Live in `prompts/<category>/`
 2. Follow the format in `prompts/_TEMPLATE.md`
 3. Be appended to `docs/catalog.json` under the same category
-4. Pass any existing tests / lints (none yet ¡ª see roadmap)
+4. Pass any existing tests / lints (none yet ï¿½ï¿½ see roadmap)
 
 ### License
 
-[MIT](LICENSE) ¡ª free to use, modify, and redistribute. Individual prompt bodies retain their original authors' copyrights; this repository only archives and indexes them.
+[MIT](LICENSE) ï¿½ï¿½ free to use, modify, and redistribute. Individual prompt bodies retain their original authors' copyrights; this repository only archives and indexes them.
 
 ---
 
@@ -177,7 +177,7 @@ See [CONTRIBUTING.md](CONTRIBUTING.md). New prompts should:
 - [x] Categorized prompts library (`prompts/<category>/*.md`)
 - [x] SVG-based screenshots in `docs/screenshots/`
 - [x] Machine-readable `docs/catalog.json`
-- [ ] Live single-file viewer (`index.html`) ¡ª port from sibling project
+- [ ] Live single-file viewer (`index.html`) ï¿½ï¿½ port from sibling project
 - [ ] Automated lint for prompt files
 - [ ] CI: schema validation for `catalog.json`
 - [ ] Bilingual translations for every prompt (zh-CN / en-US)

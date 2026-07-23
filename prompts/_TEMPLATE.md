@@ -21,16 +21,16 @@ created: <YYYY-MM-DD>
 
 | Field | Value |
 | --- | --- |
-| Category | <¡­> |
-| Type | <¡­> |
+| Category | <ï¿½ï¿½> |
+| Type | <ï¿½ï¿½> |
 | Access | <open / premium> |
-| Tags | <¡­> |
-| Palette | <¡­> |
+| Tags | <ï¿½ï¿½> |
+| Palette | <ï¿½ï¿½> |
 
 ## Prompt
 
 ```text
-<Paste the full prompt body here. Aim for ¡Ý 80 words; the prompt should be self-contained and copy-pasteable into any LLM.>
+<Paste the full prompt body here. Aim for ï¿½ï¿½ 80 words; the prompt should be self-contained and copy-pasteable into any LLM.>
 ```
 
 ## Notes
