@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="zh-CN">
 <head>
 <meta charset="utf-8">
@@ -352,6 +352,18 @@ footer.app-footer a{color:var(--accent)}
 .btn.flash.warn{background:rgba(255,138,177,.18);border-color:rgba(255,138,177,.55);color:#ff8ab1}
 @keyframes btnFlash{0%{transform:scale(1)}15%{transform:scale(1.04)}100%{transform:scale(1)}}
 
+/* === Metadata panel (entries without a published prompt body) === */
+.meta-note{font:500 12px/1.5 "Inter",sans-serif;color:var(--muted);background:rgba(255,186,114,.08);border:1px solid rgba(255,186,114,.28);border-radius:8px;padding:8px 12px;margin:0 0 12px}
+.meta-section-title{font:600 11px/1 "Inter",sans-serif;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;margin:14px 0 8px}
+.meta-grid{display:grid;grid-template-columns:minmax(110px,max-content) 1fr;gap:4px 14px;background:rgba(16,20,29,.6);border:1px solid var(--line);border-radius:10px;padding:12px 14px}
+.meta-grid .m-k{font:500 11.5px/1.4 "JetBrains Mono",monospace;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;padding-top:2px}
+.meta-grid .m-v{font:500 12.5px/1.4 "Inter",sans-serif;color:var(--text);word-break:break-all;white-space:pre-wrap}
+.meta-links{display:flex;flex-wrap:wrap;gap:8px}
+.meta-link{display:inline-flex;align-items:center;gap:6px;padding:7px 12px;font:500 12px/1 "Inter",sans-serif;color:var(--accent);background:rgba(154,172,255,.1);border:1px solid rgba(154,172,255,.3);border-radius:8px;text-decoration:none;transition:background .15s,border-color .15s}
+.meta-link:hover{background:rgba(154,172,255,.18);border-color:rgba(154,172,255,.55)}
+.meta-link::before{content:"\2197";font-size:13px;opacity:.7}
+#prompt[data-mode="meta"]{background:transparent;border:none;padding:0;margin:0;font:inherit;color:inherit;white-space:normal}
+#prompt[data-mode="meta"] .meta-grid .m-v{font-family:"JetBrains Mono",monospace;font-size:11.5px}
 </style>
 </head>
 <body>

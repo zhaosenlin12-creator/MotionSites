@@ -26,6 +26,21 @@ const I18N = {
     export: '导出 .md',
     exportDone: '已导出',
     noFullPrompt: '该条目暂无完整提示词。',
+    noFullPromptHint: '原站未发布正文——以下为可用的元数据与来源。',
+    metaSection: '可用元数据',
+    metaSource: '来源链接',
+    metaOriginal: '原站页面',
+    metaCreatedAt: '收录时间',
+    metaSortOrder: '排序权重',
+    metaLocal: '本地资源',
+    metaOpen: '在新窗口打开',
+    metaOpenSource: '打开来源',
+    metaOpenImage: '查看原图',
+    metaOpenVideo: '查看原视频',
+    metaNoRemote: '该条目未提供远端预览 URL。',
+    metaCopyDescription: '复制简介',
+    metaDescriptionCopied: '已复制简介',
+    placeholderNote: '概念图：根据分类调色板生成',
     close: '关闭 (Esc)',
     empty: '没有匹配的提示词',
     emptyHint: '尝试更换关键词或筛选条件',
@@ -76,6 +91,21 @@ const I18N = {
     export: 'Export .md',
     exportDone: 'Exported',
     noFullPrompt: 'The full prompt body is not yet in this catalog.',
+    noFullPromptHint: 'The source page has not published the body. See metadata below.',
+    metaSection: 'Available metadata',
+    metaSource: 'Source links',
+    metaOriginal: 'Original page',
+    metaCreatedAt: 'Indexed on',
+    metaSortOrder: 'Sort weight',
+    metaLocal: 'Local asset',
+    metaOpen: 'Open in new tab',
+    metaOpenSource: 'Open source',
+    metaOpenImage: 'View source image',
+    metaOpenVideo: 'View source video',
+    metaNoRemote: 'No remote preview URL was published for this entry.',
+    metaCopyDescription: 'Copy description',
+    metaDescriptionCopied: 'Description copied',
+    placeholderNote: 'Concept art - rendered from the per-category palette',
     close: 'Close (Esc)',
     empty: 'No matches yet',
     emptyHint: 'Try a different query or filter',
@@ -352,7 +382,13 @@ function openItem(id) {
   const full = !!(current.prompt_text && current.prompt_text.trim());
   $('title').innerHTML = esc(current.title) + ' <small>' + esc(current.id) + '</small>';
   $('description').textContent = current.description || '—';
-  $('prompt').textContent = full ? current.prompt_text : t('noFullPrompt');
+  if (full) {
+    $('prompt').textContent = current.prompt_text;
+    $('prompt').dataset.mode = 'prompt';
+  } else {
+    $('prompt').innerHTML = metaPanelHTML(current);
+    $('prompt').dataset.mode = 'meta';
+  }
   $('copy').disabled = !full;
   $('download').disabled = !full;
   const isVideo = current.local_kind === 'mp4' || current.local_kind === 'hls';
@@ -364,6 +400,27 @@ function openItem(id) {
   ].join('');
   $('preview').innerHTML = mediaOf(current, true);
   try { $('dlg').showModal(); } catch (e) { /* not in secure context */ }
+}
+
+function metaPanelHTML(x) {
+  const rows = [];
+  const push = function (k, v) { if (v != null && v !== '') rows.push('<div class="m-k">' + esc(k) + '</div><div class="m-v">' + esc(v) + '</div>'); };
+  if (x.created_at) push(t('metaCreatedAt'), String(x.created_at).replace('T', ' ').replace(/\..*$/, '').replace('+00:00', ' UTC'));
+  if (x.page_type) push('page_type', x.page_type);
+  if (x.sort_order != null) push(t('metaSortOrder'), x.sort_order);
+  if (x.local_kind) push(t('metaLocal'), x.local_kind);
+  if (x.text_len) push('text_len', x.text_len);
+  if (x.local_rel) push('local_rel', x.local_rel);
+  const links = [];
+  if (x.image_preview_url) links.push('<a class="meta-link" target="_blank" rel="noopener" href="' + esc(x.image_preview_url) + '">' + esc(t('metaOpenImage')) + '</a>');
+  if (x.video_preview_url) links.push('<a class="meta-link" target="_blank" rel="noopener" href="' + esc(x.video_preview_url) + '">' + esc(t('metaOpenVideo')) + '</a>');
+  if (x.id) links.push('<a class="meta-link" target="_blank" rel="noopener" href="https://motionsites.ai/p/' + esc(x.id) + '">' + esc(t('metaOriginal')) + '</a>');
+  return ''
+    + '<div class="meta-note">' + esc(t('noFullPromptHint')) + '</div>'
+    + '<div class="meta-section-title">' + esc(t('metaSection')) + '</div>'
+    + '<div class="meta-grid">' + rows.join('') + '</div>'
+    + '<div class="meta-section-title">' + esc(t('metaSource')) + '</div>'
+    + (links.length ? '<div class="meta-links">' + links.join(' ') + '</div>' : '<div class="meta-note">' + esc(t('metaNoRemote')) + '</div>');
 }
 
 function closeModal() {
