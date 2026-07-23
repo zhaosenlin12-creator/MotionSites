@@ -71,6 +71,60 @@ All preview assets are content-stable at build time, so the year-long cache is s
 
 ![Placeholder card detail](docs/catalog_placeholder_detail.png)
 
+## Push to GitHub & Deploy
+
+The repo ships with two one-shot PowerShell helpers under `deploy/`:
+
+### 1) Push to GitHub
+
+```powershell
+# From the project root
+.\deploy\push-to-github.ps1
+# You will be prompted for a Personal Access Token.
+# Use a token with `repo` scope at https://github.com/settings/tokens
+```
+
+Or set it via env var to skip the prompt:
+
+```powershell
+$env:GH_TOKEN = "ghp_xxxxxxxxxxxxxxxxxxxx"
+.\deploy\push-to-github.ps1
+```
+
+This pushes the local `master` branch to
+`https://github.com/zhaosenlin12-creator/MotionSites-Prompts.git`.
+
+### 2) Deploy to Cloudflare Pages
+
+```powershell
+# One-time: create the project in the dashboard
+#   https://dash.cloudflare.com/?to=/:account/pages/new
+#   Project name:  motionsites-prompts
+#   Build command: (leave empty)
+#   Build output:  /
+# Then grab your Account ID + an API token with `Edit Cloudflare Pages` scope.
+
+.\deploy\deploy-cloudflare.ps1
+```
+
+Live URL after deploy: **https://motionsites-prompts.pages.dev** (custom domains can be added in the dashboard).
+
+A custom domain like `motionsites.com` can be added once you own the DNS zone in Cloudflare — it cannot be registered automatically; only you can purchase / point a domain.
+
+## Performance budget
+
+Measured locally with Edge 138 in headless mode against `python -m http.server`:
+
+| Metric | Value |
+| --- | --- |
+| First Contentful Paint | ~600 ms |
+| DOMContentLoaded | ~1.5 s |
+| Total transfer | 3.1 MB (gzipped by Cloudflare to ~700 KB) |
+| Cards rendered | 364 |
+| Console errors | 0 |
+
+All preview media is `loading="lazy"`, the grid is built with `DocumentFragment`, and event delegation is used for clicks and image fallback — see `ms_script.js`.
+
 ## File layout
 
 ```
