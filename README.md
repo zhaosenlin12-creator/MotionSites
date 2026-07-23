@@ -170,6 +170,33 @@ To update the catalog with new prompts:
 2. Drop a preview into `assets/previews/<id>.webp` and reference it via `local_rel` in the metadata.
 3. Run `node scripts/build.js` and commit the regenerated `index.html`.
 
+## Extending the catalog
+
+The shipped 364 prompts come from these sources (see `data/ms_prompts_merged.json`):
+
+| Source | Records | Notes |
+| --- | --- | --- |
+| [motionsites.ai](https://motionsites.ai) | 110 (concepts only, no previews) | Title + description + category scraped from the public catalog; no previews were reachable from the public CDN |
+| [xianxian-sensen](https://github.com/xianxian-sensen) | 109 | Hero / SaaS sections with React/Tailwind recipes |
+| [Melectrona](https://github.com/Melectrona) | 84 | Landing pages with copy + CSS gradients |
+| [akkikumar72/liro-prompts](https://github.com/akkikumar72/liro-prompts) | 40 | Liro prompts (long-form Markdown) |
+| [giglianepefrei](https://github.com/giglianepefrei) | 21 | Hero / agency sections |
+
+The build script (`scripts/build.js`) merges `data/ms_prompts_merged.json` with `data/ms_prompts_with_text.json`, enriches each entry with a per-category colour palette, then emits `index.html`. To add new prompts:
+
+1. Append a record to **both** JSON files with the same `id`.
+2. Drop a preview into `assets/previews/<id>.webp` (and reference it as `local_rel`).
+3. Re-run `node scripts/build.js`.
+4. Commit and push.
+
+Potential future sources worth scraping (compatible with the same schema):
+
+- [ui.aceternity.com](https://ui.aceternity.com) and other open UI registries
+- Public prompts under the `ui-motion` and `landing-page` GitHub topics
+- The user's own collected repos (drop your `.md` files into a folder named after the GitHub user)
+
+The build script is idempotent: re-running it does not duplicate records. Duplicates are deduped by `id`.
+
 ## Data provenance
 
 | Field | Source |
