@@ -71,7 +71,7 @@ header.hero{
 .stat .lbl{color:var(--muted);text-transform:uppercase;letter-spacing:.08em;font-size:10px}
 
 .toolbar{
-  display:grid;grid-template-columns:minmax(280px,1.6fr) repeat(4,minmax(140px,1fr)) auto;
+  display:grid;grid-template-columns:minmax(280px,1.6fr) repeat(3,minmax(140px,1fr)) auto;
   gap:9px;max-width:1480px;margin:14px auto 0;align-items:center
 }
 .search{position:relative}
@@ -345,6 +345,13 @@ footer.app-footer a{color:var(--accent)}
   .brand-tag{display:none}
   .stats{width:100%;margin-left:0}
 }
+
+/* === Copy/Download flash feedback === */
+.btn.flash{animation:btnFlash 1.6s ease forwards}
+.btn.flash.success{background:rgba(92,220,177,.18);border-color:rgba(92,220,177,.55);color:#5cdcb1}
+.btn.flash.warn{background:rgba(255,138,177,.18);border-color:rgba(255,138,177,.55);color:#ff8ab1}
+@keyframes btnFlash{0%{transform:scale(1)}15%{transform:scale(1.04)}100%{transform:scale(1)}}
+
 </style>
 </head>
 <body>
@@ -369,7 +376,7 @@ footer.app-footer a{color:var(--accent)}
     <div class="search"><input id="q" type="search" placeholder="搜索标题、描述、提示词…" id="q-ph" autocomplete="off" spellcheck="false"><kbd>/</kbd></div>
     <select id="cat" aria-label="Category"><option value="">All categories</option></select>
     <select id="type" aria-label="Type"><option value="">All types</option></select>
-    <select id="access" aria-label="Access"><option value="">Any access</option><option value="free">Open Access</option><option value="paid">Premium</option></select>
+    
     <select id="media" aria-label="Media"><option value="">All formats</option><option value="img">Static &amp; motion</option><option value="video">Video</option><option value="art">Concept art</option></select>
     <div class="density">
       <button id="toggle-density" data-i18n-title="compactView" data-i18n-aria="compactView">
