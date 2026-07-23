@@ -23,6 +23,7 @@ const I18N = {
     image: '图片',
     visual: '视觉',
     copy: '复制提示词',
+    copiedShort: '✓ 已复制',
     copyDone: '已复制到剪贴板',
     copyFail: '复制失败，请手动选中',
     export: '导出 .md',
@@ -78,6 +79,7 @@ const I18N = {
     image: 'Image',
     visual: 'Visual',
     copy: 'Copy prompt',
+    copiedShort: '✓ Copied',
     copyDone: 'Copied to clipboard',
     copyFail: 'Copy failed - select manually',
     export: 'Export .md',
@@ -262,10 +264,8 @@ function options(id, key) {
 
 function cardHTML(x) {
   const full = !!(x.prompt_text && x.prompt_text.trim());
-  const isFree = x.is_free;
   return '<article class="card" data-id="' + esc(x.id) + '">'
     + '<div class="badge-row">'
-    + (isFree ? '<span class="badge free">' + t('openBadge') + '</span>' : '<span class="badge paid">' + t('premiumBadge') + '</span>')
     + (full ? '<span class="badge full">' + t('fullBadge') + '</span>' : '<span class="badge muted">' + t('metadataBadge') + '</span>')
     + '</div>'
     + '<div class="media">' + mediaOf(x, false) + '</div>'
@@ -281,12 +281,10 @@ function cardHTML(x) {
 
 function render() {
   const q = $('q').value.trim().toLowerCase();
-  const cat = $('cat').value, type = $('type').value, access = $('access').value, media = $('media').value;
+  const cat = $('cat').value, type = $('type').value, media = $('media').value;
   let list = DATA;
   if (cat) list = list.filter((x) => x.category === cat);
   if (type) list = list.filter((x) => x.type === type);
-  if (access === 'free') list = list.filter((x) => x.is_free);
-  if (access === 'paid') list = list.filter((x) => !x.is_free);
   if (media === 'img') list = list.filter((x) => x.local_kind && x.local_kind !== 'mp4' && x.local_kind !== 'hls');
   if (media === 'video') list = list.filter((x) => x.local_kind === 'mp4' || x.local_kind === 'hls');
   if (media === 'art') list = list.filter((x) => !x.local_rel);
@@ -373,7 +371,6 @@ function openItem(id) {
   $('tags').innerHTML = [
     '<span class="tag accent">' + esc(current.category || '—') + '</span>',
     '<span class="tag">' + esc(current.type || '—') + '</span>',
-    current.is_free ? '<span class="tag" style="color:var(--green);border-color:rgba(92,220,177,.45)">' + t('openAccess') + '</span>' : '<span class="tag" style="color:var(--orange);border-color:rgba(255,186,114,.45)">' + t('premium') + '</span>',
     full ? '<span class="tag" style="color:var(--green);border-color:rgba(92,220,177,.45)">' + t('fullPrompt') + '</span>' : '<span class="tag" style="color:var(--orange);border-color:rgba(255,186,114,.45)">' + t('metadataOnly') + '</span>',
     current.local_rel ? '<span class="tag">' + (isVideo ? t('video') : t('visual')) + '</span>' : '<span class="tag">' + t('conceptBadge') + '</span>'
   ].join('');
@@ -390,15 +387,38 @@ function closeModal() {
 
 $('copy').addEventListener('click', async () => {
   if (!current || !current.prompt_text) return;
+  const btn = $('copy');
+  const original = btn.innerHTML;
   const ok = await copyText(current.prompt_text);
-  if (ok) toast(t('copyDone'), 'success');
-  else {
+  if (ok) {
+    toast(t('copyDone'), 'success');
+    flashButton(btn, t('copiedShort') || '✓ ' + t('copyDone'), 'success');
+  } else {
     toast(t('copyFail'), 'warn');
+    flashButton(btn, t('copyFail'), 'warn');
     // as last resort, focus the prompt block so user can Ctrl+C
     const p = $('prompt');
     try { p.focus(); window.getSelection().selectAllChildren(p); } catch (e) {}
   }
 });
+
+function flashButton(btn, text, kind) {
+  if (!btn) return;
+  btn.classList.add('flash', kind || '');
+  // Replace only the visible text (preserve SVG)
+  const span = btn.querySelector('[data-i18n]');
+  if (span) {
+    const prev = span.textContent;
+    span.textContent = text;
+    setTimeout(() => {
+      btn.classList.remove('flash', kind || '');
+      span.textContent = prev;
+    }, 1600);
+  } else {
+    btn.innerHTML = text;
+    setTimeout(() => { btn.classList.remove('flash', kind || ''); btn.innerHTML = prev || btn.innerHTML; }, 1600);
+  }
+}
 $('download').addEventListener('click', () => {
   if (!current || !current.prompt_text) return;
   const txt = '# ' + current.title + '\n\n' + (current.description || '') + '\n\n## ' + t('fullPrompt') + '\n\n' + current.prompt_text + '\n';
@@ -433,7 +453,7 @@ $('grid').addEventListener('click', (e) => {
 $('grid').addEventListener('error', onImgError, true); // capture for img errors
 
 // Filter events
-['q', 'cat', 'type', 'access', 'media'].forEach((id) => {
+['q', 'cat', 'type', 'media'].forEach((id) => {
   $(id).addEventListener(id === 'q' ? 'input' : 'change', render);
 });
 
@@ -522,12 +542,7 @@ function applyLang() {
   // Re-translate the static option labels that don't come from DATA
   const cat0 = $('cat'); if (cat0 && cat0.options[0]) cat0.options[0].textContent = t('allCategories');
   const type0 = $('type'); if (type0 && type0.options[0]) type0.options[0].textContent = t('allTypes');
-  const access0 = $('access');
-  if (access0) {
-    if (access0.options[0]) access0.options[0].textContent = t('anyAccess');
-    if (access0.options[1]) access0.options[1].textContent = t('openAccess');
-    if (access0.options[2]) access0.options[2].textContent = t('premium');
-  }
+
   const media0 = $('media');
   if (media0) {
     if (media0.options[0]) media0.options[0].textContent = t('allFormats');
