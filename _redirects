@@ -1,0 +1,2 @@
+﻿# SPA-style fallback is not used (this is a static catalog).
+# All routes resolve to index.html via the meta refresh / client-side filtering.
