@@ -1,0 +1,125 @@
+﻿{
+  "version": "1.0.0",
+  "generated": "2026-07-23",
+  "total": 10,
+  "categories": {
+    "Landing Page": ["001-aurora-landing", "002-glassmorphism-saas"],
+    "Hero": ["003-magnetic-cta-hero", "004-typewriter-hero", "010-parallax-3d-layers"],
+    "SaaS": ["005-pricing-cards", "006-feature-marquee"],
+    "Agency": ["007-portfolio-grid"],
+    "Dashboard": ["008-live-metrics-dashboard"],
+    "Portfolio": ["009-scroll-storytelling"]
+  },
+  "prompts": [
+    {
+      "id": "001-aurora-landing",
+      "title": "Aurora \u2014 animated gradient landing",
+      "category": "Landing Page",
+      "type": "full-page",
+      "access": "open",
+      "tags": ["aurora", "gradient", "framer-motion", "hero", "cta"],
+      "palette": ["#7b9cff", "#b48cff", "#5cdcb1", "#ffba72"],
+      "path": "prompts/landing/001-aurora-landing.md",
+      "preview": "docs/screenshots/001-aurora-landing.svg"
+    },
+    {
+      "id": "002-glassmorphism-saas",
+      "title": "Glassmorphism SaaS \u2014 frosted layers on scroll",
+      "category": "Landing Page",
+      "type": "full-page",
+      "access": "open",
+      "tags": ["glassmorphism", "scroll", "frosted", "backdrop-filter"],
+      "palette": ["#a8c5ff", "#d3a4ff", "#82e8c4"],
+      "path": "prompts/landing/002-glassmorphism-saas.md",
+      "preview": "docs/screenshots/002-glassmorphism-saas.svg"
+    },
+    {
+      "id": "003-magnetic-cta-hero",
+      "title": "Magnetic CTA hero \u2014 pointer-driven",
+      "category": "Hero",
+      "type": "hero",
+      "access": "open",
+      "tags": ["magnetic", "pointer", "gsap", "cta", "micro-interaction"],
+      "palette": ["#ff7a59", "#ffd166", "#06d6a0"],
+      "path": "prompts/hero/003-magnetic-cta-hero.md",
+      "preview": "docs/screenshots/003-magnetic-cta-hero.svg"
+    },
+    {
+      "id": "004-typewriter-hero",
+      "title": "Typewriter hero \u2014 looping word swap",
+      "category": "Hero",
+      "type": "hero",
+      "access": "open",
+      "tags": ["typewriter", "text-animation", "vanilla-js"],
+      "palette": ["#f4f1ea", "#ff5470", "#0c1828"],
+      "path": "prompts/hero/004-typewriter-hero.md",
+      "preview": "docs/screenshots/004-typewriter-hero.svg"
+    },
+    {
+      "id": "005-pricing-cards",
+      "title": "Pricing cards \u2014 hover-tilt comparison",
+      "category": "SaaS",
+      "type": "section",
+      "access": "open",
+      "tags": ["pricing", "tilt", "vanilla-tilt", "comparison"],
+      "palette": ["#1f8a70", "#f6c453", "#e94f37"],
+      "path": "prompts/saas/005-pricing-cards.md",
+      "preview": "docs/screenshots/005-pricing-cards.svg"
+    },
+    {
+      "id": "006-feature-marquee",
+      "title": "Feature marquee \u2014 infinite scroll row",
+      "category": "SaaS",
+      "type": "section",
+      "access": "open",
+      "tags": ["marquee", "scroll", "infinite", "css-animation"],
+      "palette": ["#262640", "#f5f5f5"],
+      "path": "prompts/saas/006-feature-marquee.md",
+      "preview": "docs/screenshots/006-feature-marquee.svg"
+    },
+    {
+      "id": "007-portfolio-grid",
+      "title": "Portfolio grid \u2014 masonry reveal",
+      "category": "Agency",
+      "type": "full-page",
+      "access": "open",
+      "tags": ["masonry", "portfolio", "scroll-reveal", "agency"],
+      "palette": ["#0d0d0d", "#e7e7e7", "#ff5f1f"],
+      "path": "prompts/agency/007-portfolio-grid.md",
+      "preview": "docs/screenshots/007-portfolio-grid.svg"
+    },
+    {
+      "id": "008-live-metrics-dashboard",
+      "title": "Live metrics dashboard \u2014 ticker reveal",
+      "category": "Dashboard",
+      "type": "full-page",
+      "access": "open",
+      "tags": ["dashboard", "metrics", "ticker", "charts"],
+      "palette": ["#0b1020", "#3ddc97", "#ff5d73"],
+      "path": "prompts/dashboard/008-live-metrics-dashboard.md",
+      "preview": "docs/screenshots/008-live-metrics-dashboard.svg"
+    },
+    {
+      "id": "009-scroll-storytelling",
+      "title": "Scroll storytelling \u2014 sticky chapter",
+      "category": "Portfolio",
+      "type": "full-page",
+      "access": "open",
+      "tags": ["storytelling", "scroll", "sticky", "scrollytelling"],
+      "palette": ["#fff7e6", "#222831", "#ff8c42"],
+      "path": "prompts/portfolio/009-scroll-storytelling.md",
+      "preview": "docs/screenshots/009-scroll-storytelling.svg"
+    },
+    {
+      "id": "010-parallax-3d-layers",
+      "title": "Parallax 3D layers \u2014 depth hero",
+      "category": "Hero",
+      "type": "hero",
+      "access": "open",
+      "tags": ["parallax", "3d", "depth", "scroll", "vanilla-js"],
+      "palette": ["#f5efe6", "#1f1d2c", "#ffbf69"],
+      "path": "prompts/hero/010-parallax-3d-layers.md",
+      "preview": "docs/screenshots/010-parallax-3d-layers.svg"
+    }
+  ]
+}

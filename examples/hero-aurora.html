@@ -1,0 +1,43 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>MotionSites &mdash; Hero with conic gradient</title>
+  <style>
+    :root{
+      --bg:#07080c;
+      --text:#f1f3f7;
+      --muted:#8d99af;
+      --accent:#9aacff;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;background:var(--bg);color:var(--text);
+      font:15px/1.6 "Inter",sans-serif;-webkit-font-smoothing:antialiased}
+    body::before{
+      content:"";position:fixed;inset:0;
+      background:conic-gradient(from 210deg at 50% 50%,
+        #7b9cff,#b48cff,#5cdcb1,#ffba72,#ff8ab1,#7b9cff);
+      filter:blur(120px);opacity:.18;z-index:-1;
+      animation:spin 24s linear infinite;
+    }
+    @keyframes spin{to{filter:blur(120px) hue-rotate(360deg);opacity:.18}}
+    .wrap{min-height:100vh;display:grid;place-items:center;padding:24px;text-align:center}
+    h1{font:800 72px/1.02 "Inter",sans-serif;letter-spacing:-.04em;margin:0 0 12px;
+       background:linear-gradient(120deg,#fff,#cdd5ff);-webkit-background-clip:text;background-clip:text;color:transparent}
+    p{color:var(--muted);font-size:18px;max-width:48ch;margin:0 auto 28px}
+    .pill{display:inline-block;padding:12px 22px;border-radius:99px;border:1px solid var(--accent);
+      color:var(--text);text-decoration:none;font-weight:600;transition:background .2s ease}
+    .pill:hover{background:rgba(154,172,255,.12)}
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <div>
+      <h1>Ship motion, faster.</h1>
+      <p>An aurora-style hero with a slowly rotating conic gradient. Pure CSS, no JS, no build step.</p>
+      <a class="pill" href="#">Start &rarr;</a>
+    </div>
+  </main>
+</body>
+</html>

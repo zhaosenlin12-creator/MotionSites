@@ -1,0 +1,54 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500" font-family="Inter,system-ui,sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#07080c"/>
+      <stop offset="1" stop-color="#0c0f17"/>
+    </linearGradient>
+    <linearGradient id="aurora" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#7b9cff"/>
+      <stop offset=".33" stop-color="#b48cff"/>
+      <stop offset=".66" stop-color="#5cdcb1"/>
+      <stop offset="1" stop-color="#ffba72"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg)"/>
+
+  <!-- card -->
+  <g transform="translate(40,40)">
+    <rect width="720" height="420" rx="16" fill="#10141d" stroke="#232a37"/>
+    <!-- preview area -->
+    <rect x="20" y="20" width="680" height="220" rx="10" fill="#0c0f17"/>
+    <rect x="20" y="20" width="680" height="220" rx="10" fill="url(#aurora)" opacity=".42"/>
+    <circle cx="100" cy="100" r="60" fill="#fff" opacity=".18"/>
+    <circle cx="320" cy="80" r="40" fill="#fff" opacity=".25"/>
+    <circle cx="600" cy="120" r="80" fill="#fff" opacity=".15"/>
+    <!-- tags -->
+    <g transform="translate(36,40)" font-size="11" fill="#07080c" font-weight="600">
+      <rect width="74" height="22" rx="11" fill="#fff"/>
+      <text x="12" y="15">open</text>
+      <rect x="84" width="74" height="22" rx="11" fill="rgba(255,255,255,.18)"/>
+      <text x="96" y="15" fill="#fff">Landing</text>
+      <rect x="168" width="74" height="22" rx="11" fill="rgba(255,255,255,.18)"/>
+      <text x="184" y="15" fill="#fff">hero</text>
+    </g>
+    <!-- title -->
+    <text x="36" y="280" fill="#f1f3f7" font-size="22" font-weight="700">Aurora &mdash; animated gradient landing</text>
+    <text x="36" y="306" fill="#8d99af" font-size="13">A landing page that pairs a slowly-shifting conic-gradient backdrop with a frosted-glass hero card.</text>
+    <!-- meta row -->
+    <g transform="translate(36,332)" font-size="11" fill="#8d99af">
+      <circle cx="6" cy="6" r="5" fill="#5cdcb1"/>
+      <text x="20" y="10">4 colors</text>
+      <text x="100" y="10">~600ms FCP</text>
+      <text x="200" y="10">MIT license</text>
+    </g>
+    <!-- buttons -->
+    <g transform="translate(36,360)">
+      <rect width="120" height="36" rx="10" fill="#fff"/>
+      <text x="36" y="22" fill="#07080c" font-size="12" font-weight="600">Copy prompt</text>
+      <rect x="132" width="120" height="36" rx="10" fill="none" stroke="#232a37"/>
+      <text x="170" y="22" fill="#f1f3f7" font-size="12" font-weight="600">Open preview</text>
+      <rect x="500" width="180" height="36" rx="10" fill="rgba(154,172,255,.12)" stroke="#9aacff"/>
+      <text x="528" y="22" fill="#9aacff" font-size="12" font-weight="600">View full prompt &rarr;</text>
+    </g>
+  </g>
+</svg>

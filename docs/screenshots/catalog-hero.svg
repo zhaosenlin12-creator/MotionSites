@@ -1,0 +1,181 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 800" width="1280" height="800" font-family="Inter,system-ui,sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#07080c"/>
+      <stop offset="1" stop-color="#0c0f17"/>
+    </linearGradient>
+    <linearGradient id="aurora" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#7b9cff"/>
+      <stop offset=".33" stop-color="#b48cff"/>
+      <stop offset=".66" stop-color="#5cdcb1"/>
+      <stop offset="1" stop-color="#ffba72"/>
+    </linearGradient>
+    <linearGradient id="text" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="1" stop-color="#cdd5ff"/>
+    </linearGradient>
+    <pattern id="dots" width="3" height="3" patternUnits="userSpaceOnUse">
+      <circle cx="1.5" cy="1.5" r=".5" fill="rgba(255,255,255,.04)"/>
+    </pattern>
+  </defs>
+  <rect width="1280" height="800" fill="url(#bg)"/>
+  <rect width="1280" height="800" fill="url(#dots)"/>
+  <circle cx="220" cy="120" r="320" fill="url(#aurora)" opacity=".18"/>
+  <circle cx="1100" cy="700" r="260" fill="url(#aurora)" opacity=".14"/>
+
+  <!-- top bar -->
+  <rect x="40" y="32" width="1200" height="64" rx="14" fill="rgba(16,20,29,.78)" stroke="#232a37"/>
+  <rect x="60" y="52" width="32" height="32" rx="9" fill="url(#aurora)"/>
+  <text x="104" y="69" fill="#f1f3f7" font-size="18" font-weight="700">MotionSites Prompts</text>
+  <text x="104" y="86" fill="#8d99af" font-size="11" font-style="italic">a curated library of motion-driven UI</text>
+
+  <!-- stats -->
+  <g transform="translate(880,52)">
+    <rect width="80" height="32" rx="16" fill="rgba(255,255,255,.04)" stroke="#232a37"/>
+    <text x="14" y="20" fill="#f1f3f7" font-size="13" font-weight="600">364</text>
+    <text x="38" y="20" fill="#8d99af" font-size="9" letter-spacing="1">PROMPTS</text>
+  </g>
+  <g transform="translate(970,52)">
+    <rect width="80" height="32" rx="16" fill="rgba(255,255,255,.04)" stroke="#232a37"/>
+    <text x="14" y="20" fill="#f1f3f7" font-size="13" font-weight="600">328</text>
+    <text x="38" y="20" fill="#8d99af" font-size="9" letter-spacing="1">FULL</text>
+  </g>
+  <g transform="translate(1060,52)">
+    <rect width="80" height="32" rx="16" fill="rgba(255,255,255,.04)" stroke="#232a37"/>
+    <text x="14" y="20" fill="#f1f3f7" font-size="13" font-weight="600">175</text>
+    <text x="38" y="20" fill="#8d99af" font-size="9" letter-spacing="1">PREVIEWS</text>
+  </g>
+  <g transform="translate(1150,52)">
+    <rect width="80" height="32" rx="16" fill="rgba(255,255,255,.04)" stroke="#232a37"/>
+    <text x="14" y="20" fill="#f1f3f7" font-size="13" font-weight="600">110</text>
+    <text x="38" y="20" fill="#8d99af" font-size="9" letter-spacing="1">CONCEPTS</text>
+  </g>
+
+  <!-- search -->
+  <rect x="40" y="116" width="800" height="44" rx="11" fill="rgba(16,20,29,.78)" stroke="#232a37"/>
+  <text x="64" y="143" fill="#5f6a82" font-size="14">/</text>
+  <text x="86" y="143" fill="#5f6a82" font-size="14">Search 364 prompts by title, category, or tag&hellip;</text>
+
+  <!-- category chips -->
+  <g transform="translate(860,116)" font-size="12">
+    <rect width="86" height="44" rx="22" fill="rgba(154,172,255,.18)" stroke="#9aacff"/>
+    <text x="22" y="28" fill="#9aacff" font-weight="600">All</text>
+    <rect x="96" width="100" height="44" rx="22" fill="rgba(255,255,255,.04)" stroke="#232a37"/>
+    <text x="118" y="28" fill="#f1f3f7">Landing</text>
+    <rect x="206" width="80" height="44" rx="22" fill="rgba(255,255,255,.04)" stroke="#232a37"/>
+    <text x="220" y="28" fill="#f1f3f7">Hero</text>
+    <rect x="296" width="80" height="44" rx="22" fill="rgba(255,255,255,.04)" stroke="#232a37"/>
+    <text x="316" y="28" fill="#f1f3f7">SaaS</text>
+  </g>
+
+  <!-- grid -->
+  <g transform="translate(40,200)">
+    <!-- card 1 -->
+    <g>
+      <rect width="293" height="220" rx="14" fill="#10141d" stroke="#232a37"/>
+      <rect width="293" height="160" rx="14" fill="url(#aurora)" opacity=".5"/>
+      <circle cx="40" cy="40" r="8" fill="#fff" opacity=".9"/>
+      <circle cx="62" cy="40" r="8" fill="#fff" opacity=".6"/>
+      <circle cx="84" cy="40" r="8" fill="#fff" opacity=".3"/>
+      <text x="20" y="190" fill="#f1f3f7" font-size="14" font-weight="600">Aurora &mdash; animated gradient</text>
+      <text x="20" y="208" fill="#8d99af" font-size="11">Landing Page &middot; open</text>
+    </g>
+    <!-- card 2 -->
+    <g transform="translate(313,0)">
+      <rect width="293" height="220" rx="14" fill="#10141d" stroke="#232a37"/>
+      <rect width="293" height="160" rx="14" fill="#1a1f2e"/>
+      <rect x="20" y="30" width="253" height="120" rx="10" fill="rgba(255,255,255,.06)" stroke="rgba(255,255,255,.12)"/>
+      <rect x="40" y="50" width="180" height="14" rx="4" fill="rgba(255,255,255,.18)"/>
+      <rect x="40" y="74" width="120" height="10" rx="3" fill="rgba(255,255,255,.08)"/>
+      <rect x="40" y="94" width="220" height="6" rx="3" fill="rgba(255,255,255,.05)"/>
+      <rect x="40" y="106" width="200" height="6" rx="3" fill="rgba(255,255,255,.05)"/>
+      <text x="20" y="190" fill="#f1f3f7" font-size="14" font-weight="600">Glassmorphism SaaS</text>
+      <text x="20" y="208" fill="#8d99af" font-size="11">Landing Page &middot; open</text>
+    </g>
+    <!-- card 3 -->
+    <g transform="translate(626,0)">
+      <rect width="293" height="220" rx="14" fill="#10141d" stroke="#232a37"/>
+      <rect width="293" height="160" rx="14" fill="#0d0d0d"/>
+      <circle cx="146" cy="80" r="34" fill="none" stroke="#ff5f1f" stroke-width="3"/>
+      <circle cx="146" cy="80" r="6" fill="#ff5f1f"/>
+      <text x="20" y="190" fill="#f1f3f7" font-size="14" font-weight="600">Magnetic CTA hero</text>
+      <text x="20" y="208" fill="#8d99af" font-size="11">Hero &middot; open</text>
+    </g>
+    <!-- card 4 -->
+    <g transform="translate(939,0)">
+      <rect width="293" height="220" rx="14" fill="#10141d" stroke="#232a37"/>
+      <rect width="293" height="160" rx="14" fill="#f4f1ea"/>
+      <text x="20" y="60" fill="#0c1828" font-family="Fraunces,serif" font-size="18" font-style="italic">Stories about</text>
+      <text x="20" y="92" fill="#0c1828" font-family="Fraunces,serif" font-size="22" font-style="italic" font-weight="700">de|sign<tspan fill="#ff5470">|</tspan></text>
+      <rect x="20" y="120" width="100" height="22" rx="11" fill="none" stroke="#0c1828"/>
+      <text x="40" y="135" fill="#0c1828" font-size="10" font-weight="600">Read latest &rarr;</text>
+      <text x="20" y="190" fill="#f1f3f7" font-size="14" font-weight="600">Typewriter hero</text>
+      <text x="20" y="208" fill="#8d99af" font-size="11">Hero &middot; open</text>
+    </g>
+  </g>
+
+  <g transform="translate(40,440)">
+    <g>
+      <rect width="293" height="220" rx="14" fill="#10141d" stroke="#232a37"/>
+      <rect width="293" height="160" rx="14" fill="#1a1f2e"/>
+      <rect x="20" y="22" width="80" height="14" rx="3" fill="rgba(31,138,112,.4)"/>
+      <text x="20" y="60" fill="#f1f3f7" font-size="22" font-weight="700">$9</text>
+      <text x="56" y="60" fill="#8d99af" font-size="12">/ mo</text>
+      <rect x="20" y="80" width="253" height="1" fill="#232a37"/>
+      <g transform="translate(20,96)" font-size="10" fill="#8d99af">
+        <text y="0">&#10003; 1 project</text>
+        <text y="16">&#10003; Community support</text>
+        <text y="32">&#10003; Basic analytics</text>
+      </g>
+      <text x="20" y="190" fill="#f1f3f7" font-size="14" font-weight="600">Pricing cards</text>
+      <text x="20" y="208" fill="#8d99af" font-size="11">SaaS &middot; open</text>
+    </g>
+    <g transform="translate(313,0)">
+      <rect width="293" height="220" rx="14" fill="#10141d" stroke="#232a37"/>
+      <rect width="293" height="160" rx="14" fill="#262640"/>
+      <g transform="translate(0,80)" font-size="11" fill="#f5f5f5">
+        <rect x="20" y="0" width="60" height="22" rx="11" fill="rgba(255,255,255,.12)"/>
+        <text x="32" y="14">Linear</text>
+        <rect x="90" y="0" width="80" height="22" rx="11" fill="rgba(255,255,255,.12)"/>
+        <text x="104" y="14">Stripe</text>
+        <rect x="180" y="0" width="60" height="22" rx="11" fill="rgba(255,255,255,.12)"/>
+        <text x="194" y="14">Vercel</text>
+        <rect x="0" y="32" width="80" height="22" rx="11" fill="rgba(255,255,255,.12)"/>
+        <text x="14" y="46">Notion</text>
+      </g>
+      <text x="20" y="190" fill="#f1f3f7" font-size="14" font-weight="600">Feature marquee</text>
+      <text x="20" y="208" fill="#8d99af" font-size="11">SaaS &middot; open</text>
+    </g>
+    <g transform="translate(626,0)">
+      <rect width="293" height="220" rx="14" fill="#10141d" stroke="#232a37"/>
+      <rect width="293" height="160" rx="14" fill="#0d0d0d"/>
+      <g transform="translate(20,20)" fill="#e7e7e7">
+        <rect width="80" height="60" rx="6"/>
+        <rect x="84" y="20" width="80" height="100" rx="6"/>
+        <rect x="168" y="0" width="80" height="120" rx="6"/>
+      </g>
+      <rect x="20" y="148" width="60" height="12" rx="6" fill="#ff5f1f"/>
+      <text x="20" y="190" fill="#f1f3f7" font-size="14" font-weight="600">Portfolio grid</text>
+      <text x="20" y="208" fill="#8d99af" font-size="11">Agency &middot; open</text>
+    </g>
+    <g transform="translate(939,0)">
+      <rect width="293" height="220" rx="14" fill="#10141d" stroke="#232a37"/>
+      <rect width="293" height="160" rx="14" fill="#0b1020"/>
+      <g transform="translate(20,30)" font-size="9" fill="#8d99af">
+        <text>Active hosts</text>
+        <text y="24" fill="#3ddc97" font-size="18" font-weight="700">1,284</text>
+        <text x="120">P95 latency</text>
+        <text x="120" y="24" fill="#f1f3f7" font-size="18" font-weight="700">142ms</text>
+        <text y="64">Error rate</text>
+        <text y="88" fill="#ff5d73" font-size="18" font-weight="700">0.42%</text>
+        <text x="120" y="64">Cost / hr</text>
+        <text x="120" y="88" fill="#f1f3f7" font-size="18" font-weight="700">$3.18</text>
+      </g>
+      <polyline transform="translate(20,128)" points="0,12 30,10 60,18 90,8 120,16 150,6 180,14 210,4 240,10" stroke="#3ddc97" stroke-width="2" fill="none"/>
+      <text x="20" y="190" fill="#f1f3f7" font-size="14" font-weight="600">Live metrics dashboard</text>
+      <text x="20" y="208" fill="#8d99af" font-size="11">Dashboard &middot; open</text>
+    </g>
+  </g>
+
+  <text x="640" y="740" fill="#5f6a82" font-size="11" text-anchor="middle">MotionSites Prompts &middot; offline-first &middot; 364 curated motion-driven UI prompts</text>
+</svg>

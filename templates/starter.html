@@ -1,0 +1,67 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>MotionSites Starter</title>
+  <meta name="description" content="A starter template for motion-driven UIs.">
+  <style>
+    :root{
+      --bg:#07080c;
+      --text:#f1f3f7;
+      --muted:#8d99af;
+      --accent:#9aacff;
+      --line:#232a37;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;background:var(--bg);color:var(--text);
+      font:15px/1.6 "Inter",-apple-system,BlinkMacSystemFont,sans-serif;
+      -webkit-font-smoothing:antialiased}
+    .wrap{max-width:980px;margin:0 auto;padding:64px 24px}
+    h1{font:800 56px/1.05 "Inter",sans-serif;letter-spacing:-.03em;margin:0 0 16px}
+    p.lede{font-size:18px;color:var(--muted);max-width:60ch;margin:0 0 32px}
+    .pill{display:inline-block;padding:10px 18px;border-radius:99px;
+      background:linear-gradient(120deg,#9aacff,#6c83ff);color:#07080c;
+      font-weight:600;text-decoration:none;transition:transform .15s ease}
+    .pill:hover{transform:translateY(-1px)}
+    .grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));margin-top:48px}
+    .card{padding:20px;border:1px solid var(--line);border-radius:16px;
+      background:rgba(255,255,255,.02);transition:transform .25s ease,border-color .25s ease}
+    .card:hover{transform:translateY(-3px);border-color:var(--accent)}
+    .card h3{margin:0 0 6px;font-size:16px}
+    .card p{margin:0;color:var(--muted);font-size:14px}
+
+    /* reveal-on-load */
+    .reveal{opacity:0;transform:translateY(16px);
+      animation:reveal .8s cubic-bezier(.2,.7,.2,1) forwards}
+    .reveal:nth-child(2){animation-delay:.12s}
+    .reveal:nth-child(3){animation-delay:.24s}
+    @keyframes reveal{to{opacity:1;transform:translateY(0)}}
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <h1 class="reveal">Build motion-driven UIs.</h1>
+    <p class="reveal">
+      A lightweight starter template you can copy into any project. Dark theme, soft accent,
+      three-card grid, and a 16px reveal animation — replace the content and ship.
+    </p>
+    <a class="pill reveal" href="#">Start building &rarr;</a>
+
+    <section class="grid">
+      <article class="card reveal">
+        <h3>Card one</h3>
+        <p>Short description of the first feature goes here.</p>
+      </article>
+      <article class="card reveal">
+        <h3>Card two</h3>
+        <p>Short description of the second feature goes here.</p>
+      </article>
+      <article class="card reveal">
+        <h3>Card three</h3>
+        <p>Short description of the third feature goes here.</p>
+      </article>
+    </section>
+  </main>
+</body>
+</html>

@@ -1,0 +1,111 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>MotionSites &mdash; Pricing cards</title>
+  <style>
+    :root{
+      --bg:#07080c;
+      --card:#10141d;
+      --text:#f1f3f7;
+      --muted:#8d99af;
+      --accent:#1f8a70;
+      --accent2:#f6c453;
+      --accent3:#e94f37;
+      --line:#232a37;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;background:var(--bg);color:var(--text);
+      font:15px/1.6 "Inter",sans-serif;-webkit-font-smoothing:antialiased}
+    .wrap{max-width:1080px;margin:0 auto;padding:64px 24px}
+    h1{font:800 48px/1.05 "Inter",sans-serif;letter-spacing:-.03em;margin:0 0 8px;text-align:center}
+    p.lede{text-align:center;color:var(--muted);margin:0 auto 40px;max-width:50ch}
+    .grid{display:grid;gap:20px;grid-template-columns:repeat(3,1fr)}
+    @media (max-width:800px){.grid{grid-template-columns:1fr}}
+    .card{position:relative;background:var(--card);border:1px solid var(--line);
+      border-radius:24px;padding:32px;transition:transform .25s ease}
+    .card:hover{transform:translateY(-4px)}
+    .card.popular{background:linear-gradient(180deg,#10141d,#1a1f2e);
+      border:none;outline:1.5px solid transparent;
+      background-clip:padding-box;
+      animation:borderShift 6s ease infinite;
+    }
+    .card.popular::before{
+      content:"";position:absolute;inset:-1.5px;border-radius:24px;padding:1.5px;
+      background:linear-gradient(120deg,var(--accent),var(--accent2),var(--accent3),var(--accent));
+      background-size:300% 300%;animation:borderShift 6s ease infinite;
+      -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+      mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+      -webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none;
+    }
+    @keyframes borderShift{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+    .badge{position:absolute;top:-12px;left:50%;transform:translateX(-50%);
+      background:linear-gradient(120deg,var(--accent),var(--accent2));
+      color:#07080c;padding:4px 12px;border-radius:99px;font-size:12px;font-weight:700}
+    .plan{font:600 20px/1 "Inter",sans-serif;margin:0 0 8px}
+    .price{font:800 44px/1 "Inter",sans-serif;margin:0 0 4px;letter-spacing:-.03em}
+    .price small{font-size:14px;font-weight:500;color:var(--muted);margin-left:6px}
+    .billing{color:var(--muted);font-size:13px;margin:0 0 24px}
+    hr{border:0;border-top:1px solid var(--line);margin:24px 0}
+    ul{list-style:none;padding:0;margin:0 0 28px}
+    li{padding:6px 0;color:var(--muted);font-size:14px;position:relative;padding-left:22px}
+    li::before{content:"";position:absolute;left:0;top:11px;width:14px;height:8px;
+      border-left:2px solid var(--accent);border-bottom:2px solid var(--accent);
+      transform:rotate(-45deg)}
+    .cta{display:block;text-align:center;padding:12px;border-radius:12px;
+      background:rgba(255,255,255,.04);border:1px solid var(--line);
+      color:var(--text);text-decoration:none;font-weight:600;transition:background .2s}
+    .cta.primary{background:#fff;color:#07080c;border:none}
+    .cta:hover{background:rgba(255,255,255,.08)}
+    .cta.primary:hover{background:#e9ecf2}
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <h1>Simple pricing.</h1>
+    <p class="lede">Pick a plan that fits your team. Upgrade or downgrade at any time.</p>
+    <section class="grid">
+      <article class="card">
+        <h2 class="plan">Starter</h2>
+        <p class="price">$9<small>/ mo</small></p>
+        <p class="billing">Billed annually</p>
+        <ul>
+          <li>1 project</li>
+          <li>Community support</li>
+          <li>Basic analytics</li>
+          <li>1 GB storage</li>
+        </ul>
+        <a class="cta" href="#">Choose Starter</a>
+      </article>
+
+      <article class="card popular">
+        <span class="badge">Most popular</span>
+        <h2 class="plan">Team</h2>
+        <p class="price">$29<small>/ mo</small></p>
+        <p class="billing">Billed annually</p>
+        <ul>
+          <li>Unlimited projects</li>
+          <li>Priority support</li>
+          <li>Advanced analytics</li>
+          <li>10 GB storage</li>
+        </ul>
+        <a class="cta primary" href="#">Choose Team</a>
+      </article>
+
+      <article class="card">
+        <h2 class="plan">Enterprise</h2>
+        <p class="price">$99<small>/ mo</small></p>
+        <p class="billing">Billed annually</p>
+        <ul>
+          <li>SSO &amp; SAML</li>
+          <li>Dedicated support</li>
+          <li>Custom analytics</li>
+          <li>Unlimited storage</li>
+        </ul>
+        <a class="cta" href="#">Choose Enterprise</a>
+      </article>
+    </section>
+  </main>
+</body>
+</html>
