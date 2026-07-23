@@ -7,3 +7,10 @@ tmp_*
 test_*
 node_modules
 *.tmp
+.rollback/
+deploy*.log
+deploy*.err
+server.err
+server.out
+wrangler*.log
+clone.log
