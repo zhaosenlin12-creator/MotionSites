@@ -68,7 +68,7 @@ MotionSites-Prompts/
 
 #### 2. 本地浏览
 
-`ash
+`bash
 git clone https://github.com/zhaosenlin12-creator/MotionSites-Prompts.git
 cd MotionSites-Prompts
 # 直接打开
