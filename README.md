@@ -126,6 +126,17 @@ This pushes the local `master` branch to
 .\deploy\deploy-cloudflare.ps1
 ```
 
+
+### Alternative: deploy via Wrangler (Direct Upload)
+
+If `wrangler` is already authenticated (e.g. via `wrangler login`), prefer `deploy-wrangler.ps1`. It stages a clean upload tree, skips files over 25 MiB, and pushes via `wrangler pages deploy`:
+
+```powershell
+.\deploy\deploy-wrangler.ps1
+# or with explicit commit metadata:
+.\deploy\deploy-wrangler.ps1 -CommitHash <sha> -CommitMessage "<msg>"
+```
+
 Live URL after deploy: **https://motionsites-prompts.pages.dev** (custom domains can be added in the dashboard).
 
 A custom domain like `motionsites.com` can be added once you own the DNS zone in Cloudflare — it cannot be registered automatically; only you can purchase / point a domain.
@@ -258,6 +269,7 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for the file format, build flow, and the 
 ## License
 
 [MIT](LICENSE) - free to use, modify, and redistribute. Each individual prompt body retains its original author's copyright; this repository only archives and indexes them.
+
 
 
 
