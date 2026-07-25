@@ -1,6 +1,6 @@
 # MotionSites Prompts — A Curated Library of Motion-Driven UI
 
-> 中文一个精选的、面向动效驱动 UI 的提示词(Prompt)合集。
+> 中文一个精选的、面向动效驱动 UI 的提示词(Prompt)合集。( https://motionsites-prompts.pages.dev/)
 >
 > An offline-first, single-file catalog of **motion-driven UI prompts** — landing pages, hero scenes, agency showcases, dashboards, and more.
 
