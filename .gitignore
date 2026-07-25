@@ -8,6 +8,7 @@ test_*
 node_modules
 *.tmp
 .rollback/
+.wrangler/
 deploy*.log
 deploy*.err
 server.err

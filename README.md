@@ -1,4 +1,13 @@
-# MotionSites Prompts — A Curated Library of Motion-Driven UI
+﻿# MotionSites Prompts — A Curated Library of Motion-Driven UI
+
+
+## 🚀 在线浏览（Live Site）
+
+👉 **https://motionsites-prompts.pages.dev/**
+
+已经部署到 Cloudflare Pages，公网可直接访问 364 条提示词、328 条完整正文、175 张预览、73 个循环视频。无需登录、无需付费、无网络调用，打开即用。
+
+> 备用入口：在浏览器里把上面的链接粘进去即可。如需本地运行，请看下面的 *Run it locally* 章节；要重新部署，请看 *Push to GitHub & Deploy* 章节。
 
 > An offline-first, single-file catalog of **364 motion-driven UI prompts** — landing pages, hero scenes, agency showcases, dashboards, and more. Browse, search, copy, and export every prompt locally. No login, no network call, no paywall.
 
@@ -41,6 +50,16 @@ python -m http.server 8000
 ```
 
 ## Deploy to Cloudflare Pages
+
+### 当前线上版本
+
+**项目名：** `motionsites-prompts`  
+**线上地址：** https://motionsites-prompts.pages.dev/  
+**部署方式：** Cloudflare Pages（Direct Upload）  
+**仓库地址：** https://github.com/zhaosenlin12-creator/MotionSites-Prompts.git
+
+> 上面的 *Live Site* 区块和这里指向的是同一个部署。任何 PR 合并到 `master` 后，只需运行 `.\deploy\deploy-cloudflare.ps1` 即可刷新线上版本（详见 *Push to GitHub & Deploy*）。
+
 
 This project is a pure-static site — it deploys in under a minute.
 
@@ -239,3 +258,8 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for the file format, build flow, and the 
 ## License
 
 [MIT](LICENSE) - free to use, modify, and redistribute. Each individual prompt body retains its original author's copyright; this repository only archives and indexes them.
+
+
+
+
+
