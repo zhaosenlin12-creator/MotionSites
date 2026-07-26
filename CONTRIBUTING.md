@@ -84,3 +84,9 @@ node scripts/build.js
 ### Catalog sources
 
 `data/catalog_sources.json` lists every external feed the catalog ingests from, with license and purpose. New sources must declare an explicit license and a research-only cache path under `sources/`.
+
+The importer currently recognizes three ingest paths:
+
+- `superdesigndev/superdesign-prompts` (CC0-1.0) — community prompt + preview picks.
+- `akkikumar72/liro-prompts` (MIT) — fills paywall MotionSites records with the repository's `working-prompt.md` reconstructions when no original body is available. Filled records carry `text_reconstructed: true` for transparency.
+- `giglianepefrei/motionsites.ai-prompt-library` (NOASSERTION) — free prompts from the public `prompts/` directory; preview videos are downloaded via `ensureGiglPreviewAssets`. The importer de-duplicates by normalized title so slug differences do not create duplicates.

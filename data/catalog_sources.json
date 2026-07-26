@@ -20,5 +20,13 @@
     "license": "CC0-1.0",
     "preview_notice": "Preview screenshots are provided by the source repository for reference",
     "usage": "Community UI prompt collection with complete prompt bodies and real previews"
+  },
+  {
+    "id": "akkikumar72-liro-prompts",
+    "repository": "akkikumar72/liro-prompts",
+    "url": "https://github.com/akkikumar72/liro-prompts",
+    "license": "MIT",
+    "preview_notice": "working-prompt.md files are reconstructed from public metadata; not the original paid prompts",
+    "usage": "Fills paywall MotionSites records with publicly reconstructed working prompts when the original body is unavailable"
   }
 ]

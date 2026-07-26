@@ -6,6 +6,7 @@ const {
   extractMarkdownPrompt,
   isCompletePrompt,
   normalizePrompt,
+  normalizeTitle,
   readJson,
   slugify,
   writeJson,
@@ -169,7 +170,7 @@ function buildCommunityMeta(record) {
   };
 }
 
-function mergeImportedData({ merged, prompts, recovered, community }) {
+function mergeImportedData({ merged, prompts, recovered, community, paywallBodies = [], gigl = [] }) {
   const originalOrder = merged.map((record) => record.id);
   const mergedMap = new Map(merged.map((record) => [record.id, {
     ...record,
@@ -196,6 +197,11 @@ function mergeImportedData({ merged, prompts, recovered, community }) {
     removedIncomplete: prompts.length - promptMap.size,
     skippedRecovered: 0,
     skippedCommunity: 0,
+    liroFills: 0,
+    liroSkipped: 0,
+    giglAdded: 0,
+    giglSkipped: 0,
+    giglReplaced: 0,
   };
 
   const appendedRecovered = [];
@@ -248,7 +254,99 @@ function mergeImportedData({ merged, prompts, recovered, community }) {
     stats.addedCommunity += 1;
   }
 
-  const orderedIds = [...originalOrder, ...appendedRecovered, ...appendedCommunity];
+  // Paywall fill via akkikumar72/liro-prompts (reconstructed working prompts)
+  const appendedPaywall = [];
+  for (const record of paywallBodies || []) {
+    const id = record.id;
+    if (!id) { stats.liroSkipped += 1; continue; }
+    const existingMeta = mergedMap.get(id);
+    const existingPrompt = promptMap.get(id);
+    const body = record.body || '';
+    if (!isCompletePrompt(body, { source_kind: 'motionsites' })) {
+      stats.liroSkipped += 1;
+      continue;
+    }
+    const fillMeta = existingMeta
+      ? { ...existingMeta, source_id: record.source_id, source_repo: record.source_repo, source_license: record.source_license, source_url: record.source_url, source_path: record.source_path, text_reconstructed: true }
+      : buildRecoveredMeta({
+          id,
+          title: record.title || id,
+          category: 'Hero',
+          type: 'hero',
+          page_type: 'hero',
+          is_free: false,
+          description: null,
+          image_preview_url: null,
+          video_preview_url: null,
+          sort_order: 9999,
+          created_at: null,
+          local_rel: null,
+          source_id: record.source_id,
+          source_repo: record.source_repo,
+          source_license: record.source_license,
+          source_url: record.source_url,
+          source_path: record.source_path,
+        });
+    const newMeta = finalizeMeta({ ...fillMeta, text_reconstructed: true }, body);
+    mergedMap.set(id, newMeta);
+    promptMap.set(id, buildTextRecord(newMeta, body));
+    if (!existingMeta) appendedPaywall.push(id);
+    stats.liroFills += 1;
+  }
+
+  // giglianepefrei free prompts (prompts/ folder)
+  // Build a lookup of merged records keyed by normalized title so we can fill in
+  // existing entries whose slugified id differs from the gigl-derived id.
+  const titleToExistingId = new Map();
+  for (const [existingId, meta] of mergedMap.entries()) {
+    const norm = normalizeTitle(meta && meta.title ? meta.title : existingId);
+    if (!norm) continue;
+    if (!titleToExistingId.has(norm)) titleToExistingId.set(norm, existingId);
+  }
+  const appendedGigl = [];
+  for (const record of gigl || []) {
+    const id = record.id;
+    if (!id) { stats.giglSkipped += 1; continue; }
+    const body = record.body || '';
+    if (!isCompletePrompt(body, { source_kind: 'motionsites' })) {
+      stats.giglSkipped += 1;
+      continue;
+    }
+    const normTitle = normalizeTitle(record.title || id);
+    const titleMatchId = normTitle ? titleToExistingId.get(normTitle) : null;
+    const resolvedId = titleMatchId && !mergedMap.has(id) ? titleMatchId : id;
+    const existingMeta = mergedMap.get(resolvedId);
+    const baseMeta = buildRecoveredMeta({
+      id: resolvedId,
+      title: (existingMeta && existingMeta.title) || record.title || resolvedId,
+      category: (existingMeta && existingMeta.category) || record.category || 'Hero',
+      type: (existingMeta && existingMeta.type) || record.type || 'hero',
+      page_type: (existingMeta && existingMeta.page_type) || (/landing/i.test(record.type || '') ? 'landing' : 'hero'),
+      is_free: true,
+      description: null,
+      image_preview_url: record.preview_url || (existingMeta ? existingMeta.image_preview_url : null),
+      video_preview_url: record.preview_url || (existingMeta ? existingMeta.video_preview_url : null),
+      sort_order: existingMeta ? existingMeta.sort_order : 9999,
+      created_at: existingMeta ? existingMeta.created_at : null,
+      local_rel: record.local_rel || (existingMeta ? existingMeta.local_rel : null),
+      source_id: record.source_id,
+      source_repo: record.source_repo,
+      source_license: record.source_license,
+      source_url: record.source_url,
+      source_path: record.source_path,
+    });
+    const newMeta = finalizeMeta({ ...(existingMeta || {}), ...baseMeta, text_reconstructed: true }, body);
+    mergedMap.set(resolvedId, newMeta);
+    promptMap.set(resolvedId, buildTextRecord(newMeta, body));
+    if (existingMeta) {
+      stats.giglReplaced += 1;
+    } else {
+      appendedGigl.push(resolvedId);
+      stats.giglAdded += 1;
+    }
+  }
+
+  const orderedIds = [...originalOrder, ...appendedRecovered, ...appendedCommunity, ...appendedPaywall, ...appendedGigl];
   const finalMerged = orderedIds.map((id) => mergedMap.get(id)).filter(Boolean);
   const finalPrompts = orderedIds.map((id) => promptMap.get(id)).filter(Boolean);
 
@@ -491,12 +589,152 @@ async function ensureCommunityPreviewAssets(root, communityRecords) {
   return result;
 }
 
+// ---------------------------------------------------------------------------
+// akkikumar72/liro-prompts paywall fill: read reconstructed working prompts
+// ---------------------------------------------------------------------------
+const LIRO_SOURCE_ID = 'akkikumar72-liro-prompts';
+const LIRO_SOURCE_REPO = 'akkikumar72/liro-prompts';
+const LIRO_SOURCE_LICENSE = 'MIT';
+const LIRO_SOURCE_DIR = path.join('sources', 'akkikumar72-free', 'liro-prompts');
+
+function readPaywallBodiesFromLiro({ root, paywallIds }) {
+  const fills = [];
+  if (!paywallIds) return { fills };
+  const wanted = paywallIds instanceof Set ? paywallIds : new Set(Array.isArray(paywallIds) ? paywallIds : [paywallIds]);
+  if (!wanted.size) return { fills };
+  const liroRoot = path.join(root, LIRO_SOURCE_DIR);
+  if (!fs.existsSync(liroRoot)) return { fills };
+  for (const entry of fs.readdirSync(liroRoot)) {
+    const metaPath = path.join(liroRoot, entry, 'metadata.json');
+    if (!fs.existsSync(metaPath)) continue;
+    let meta;
+    try { meta = JSON.parse(fs.readFileSync(metaPath, 'utf8')); } catch (_) { continue; }
+    const id = meta && meta.record && meta.record.id;
+    if (!id || !wanted.has(id)) continue;
+    const promptPath = path.join(liroRoot, entry, 'working-prompt.md');
+    if (!fs.existsSync(promptPath)) continue;
+    const body = fs.readFileSync(promptPath, 'utf8');
+    if (body.length < 200) continue;
+    fills.push({
+      id,
+      title: (meta && meta.record && meta.record.title) || id,
+      body,
+      source_id: LIRO_SOURCE_ID,
+      source_repo: LIRO_SOURCE_REPO,
+      source_license: LIRO_SOURCE_LICENSE,
+      source_path: path.join('akkikumar72-free', 'liro-prompts', entry, 'working-prompt.md'),
+      source_url: 'https://github.com/' + LIRO_SOURCE_REPO + '/blob/main/akkikumar72-free/liro-prompts/' + entry + '/working-prompt.md',
+    });
+  }
+  return { fills };
+}
+
+// ---------------------------------------------------------------------------
+// giglianepefrei/motionsites.ai-prompt-library free prompts: parse .md files
+// from sources/giglianepefrei_fetch/prompts/*.md
+// ---------------------------------------------------------------------------
+const GIGL_SOURCE_ID = 'giglianepefrei-motionsites-library';
+const GIGL_SOURCE_REPO = 'giglianepefrei/motionsites.ai-prompt-library';
+const GIGL_SOURCE_LICENSE = 'NOASSERTION';
+const GIGL_SOURCE_DIR = path.join('sources', 'giglianepefrei_fetch', 'prompts');
+const GIGL_PRO_SOURCE_DIR = path.join('sources', 'giglianepefrei_fetch', 'Pro prompts');
+
+function giglPreviewUrl(md) {
+  const m = String(md || '').match(/(https?:\/\/[\s\)\"<>]+?\.(mp4|webm|mov|jpg|jpeg|png|gif))/i);
+  return m ? m[1] : null;
+}
+
+function buildGiglRecordFromMarkdown(md, fileName, relativeDir) {
+  const parsed = extractMarkdownPrompt(md, fileName);
+  const id = parsed.id || slugify(parsed.title || fileName.replace(/\.md$/i, ''));
+  return {
+    id,
+    title: parsed.title || id,
+    category: parsed.category || 'Hero Section',
+    type: parsed.type || 'hero',
+    body: parsed.promptText,
+    license: parsed.license || 'Free',
+    preview_url: giglPreviewUrl(md),
+    source_id: GIGL_SOURCE_ID,
+    source_repo: GIGL_SOURCE_REPO,
+    source_license: GIGL_SOURCE_LICENSE,
+    source_path: relativeDir + '/' + fileName,
+    source_url: 'https://github.com/' + GIGL_SOURCE_REPO + '/blob/main/' + encodeURI(relativeDir).replace(/%2F/g, '/') + '/' + encodeURIComponent(fileName).replace(/%20/g, '%20'),
+  };
+}
+
+function readGiglianepefrei({ root }) {
+  const records = [];
+  for (const subDir of [GIGL_PRO_SOURCE_DIR, GIGL_SOURCE_DIR]) {
+    const dirAbs = path.join(root, subDir);
+    if (!fs.existsSync(dirAbs)) continue;
+    const relativeDir = path.relative(path.join(root, 'sources'), dirAbs).replace(/\\\\/g, '/');
+    for (const name of fs.readdirSync(dirAbs)) {
+      if (!name.toLowerCase().endsWith('.md')) continue;
+      const absolutePath = path.join(dirAbs, name);
+      let md;
+      try { md = fs.readFileSync(absolutePath, 'utf8'); } catch (_) { continue; }
+      const rec = buildGiglRecordFromMarkdown(md, name, relativeDir);
+      if (!rec.id) continue;
+      if (!isCompletePrompt(rec.body || '', { source_kind: 'motionsites' })) continue;
+      records.push(rec);
+    }
+  }
+  return { records };
+}
+
+async function ensureGiglPreviewAssets(root, giglRecords) {
+  const tasks = [];
+  for (const record of giglRecords) {
+    if (record.local_rel) continue;
+    const url = record.preview_url || record.image_preview_url;
+    if (!url) continue;
+    const extMatch = url.match(/\.(mp4|webm|mov|jpg|jpeg|png|gif)/i);
+    const ext = extMatch ? extMatch[1].toLowerCase() : 'png';
+    const localRel = 'assets/previews/' + record.id + '.' + ext;
+    const absolutePath = path.join(root, localRel);
+    record.local_rel = localRel.replace(/\\\\/g, '/');
+    if (fileExists(absolutePath)) {
+      record.local_kind = detectAssetKind(absolutePath);
+      continue;
+    }
+    tasks.push({ url, absolutePath, options: { attempts: 3, baseDelayMs: 300, maxDelayMs: 3000, timeoutMs: 20000 } });
+  }
+  const result = await runTaskQueue(tasks, 4);
+  for (const record of giglRecords) {
+    if (record.local_rel) {
+      const absolutePath = path.join(root, record.local_rel);
+      record.local_kind = detectAssetKind(absolutePath);
+    }
+  }
+  for (const failure of result.failures) {
+    console.warn('[warn] gigl preview download failed: ' + failure.message);
+  }
+  return result;
+}
+
 async function runImport({ write }) {
   const merged = readJson(path.join(ROOT, 'data', 'ms_prompts_merged.json'));
   const prompts = readJson(path.join(ROOT, 'data', 'ms_prompts_with_text.json'));
   const recovered = readRecoveredSources(ROOT);
   const community = readCommunitySource(ROOT);
-  const result = mergeImportedData({ merged, prompts, recovered, community });
+
+  // Paywall ids: merged records without body in prompts and without community superdesign mapping
+  const promptIds = new Set(prompts.map((r) => r.id));
+  const paywallIds = new Set();
+  for (const record of merged) {
+    if (record.is_free) continue;
+    if (promptIds.has(record.id)) continue;
+    if (record.source_kind === 'community') continue;
+    paywallIds.add(record.id);
+  }
+  const paywallResult = readPaywallBodiesFromLiro({ root: ROOT, paywallIds });
+  const giglResult = readGiglianepefrei({ root: ROOT });
+  const result = mergeImportedData({
+    merged, prompts, recovered, community,
+    paywallBodies: paywallResult.fills,
+    gigl: giglResult.records,
+  });
 
   if (!write) {
     console.log(JSON.stringify({
@@ -511,6 +749,11 @@ async function runImport({ write }) {
   const legacyQueue = await ensureLegacyPreviewAssets(ROOT, result.mergedMap);
   const legacyBytes = legacyQueue.bytes;
   const legacyFailures = legacyQueue.failures;
+  // Download gigl preview assets for items with a known preview_url but no local_rel
+  const giglRows = result.finalMerged.filter((record) => record.source_id === GIGL_SOURCE_ID && (record.preview_url || record.image_preview_url) && !record.local_rel);
+  const giglQueue = await ensureGiglPreviewAssets(ROOT, giglRows);
+  const giglPreviewBytes = giglQueue.bytes;
+  const giglPreviewFailures = giglQueue.failures;
   const communityRows = result.finalMerged.filter((record) => record.source_kind === 'community');
   const communityQueue = await ensureCommunityPreviewAssets(ROOT, communityRows);
   const communityBytes = communityQueue.bytes;
@@ -563,6 +806,8 @@ async function runImport({ write }) {
     stats: result.stats,
     merged: syncedMerged.length,
     prompts: syncedPrompts.length,
+    giglPreviewBytes,
+    giglPreviewFailures: giglPreviewFailures.length,
     legacyPreviewBytes: legacyBytes,
     communityPreviewBytes: communityBytes,
     legacyFailures: legacyFailures.length,
@@ -588,7 +833,10 @@ module.exports = {
   buildCommunityId,
   downloadWithRetry,
   downloadAllBounded,
+  ensureGiglPreviewAssets,
   mergeImportedData,
+  readGiglianepefrei,
+  readPaywallBodiesFromLiro,
   runImport,
 };
 

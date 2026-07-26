@@ -8,7 +8,7 @@ Regenerates the single-file `index.html` catalog from the bundled data files.
 
 ```bash
 node scripts/build.js
-# -> Records=505 complete=466 images=306 videos=87 concepts=112 motionsites=365 community=140
+# -> Records=565 complete=529 images=306 videos=87 concepts=172 motionsites=425 community=140
 # -> Wrote index.html bytes <size>
 # -> [build] demoting over-limit preview <filename>
 # -> SELF-VERIFY OK records=364
@@ -48,13 +48,22 @@ node scripts/import-community.js --write  # persists data + downloads previews
 
 The script merges recovered MotionSites records, replaces short stubs with full prompt bodies, prefixes community IDs (`community-superdesign-<slug>`), and surfaces downloads that fail after retries so a single flaky network response cannot abort the entire import.
 
+## `import-community.js` extended coverage
+
+Beyond the community-superdesign picks, the importer now reads two additional sources:
+
+- **akkikumar72/liro-prompts** (`MIT`) — fills paywall records with the repository's `working-prompt.md` reconstructions when a MotionSites item has no original body. Records filled this way carry `text_reconstructed: true`.
+- **giglianepefrei/motionsites.ai-prompt-library** (`NOASSERTION`) — pulls free prompts from `sources/giglianepefrei_fetch/prompts/*.md`, downloads their preview videos via `ensureGiglPreviewAssets`, and de-duplicates against existing titles via `normalizeTitle` so slug-only differences do not create duplicates.
+
+See `data/catalog_sources.json` for the full attribution list.
+
 ## `audit-catalog.js`
 
 Verifies uniqueness, body quality, source references, and the 24 MiB asset cap:
 
 ```bash
 node scripts/audit-catalog.js
-# -> AUDIT OK records=505 complete=466 community=140 missingBodies=39 assets=393
+# -> AUDIT OK records=565 complete=529 community=140 missingBodies=36 assets=393
 ```
 
 Exit code is non-zero on any rule violation. The script is the gate for the deployment pipeline.

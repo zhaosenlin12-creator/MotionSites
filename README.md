@@ -5,22 +5,22 @@
 
 👉 **https://motionsites-prompts.pages.dev/**
 
-已经部署到 Cloudflare Pages，公网可直接访问 505 条提示词、466 条完整正文、306 张预览、87 个循环视频。无需登录、无需付费、无网络调用，打开即用。
+已经部署到 Cloudflare Pages，公网可直接访问 565 条提示词、529 条完整正文、306 张预览、87 个循环视频。无需登录、无需付费、无网络调用，打开即用。
 
 > 备用入口：在浏览器里把上面的链接粘进去即可。如需本地运行，请看下面的 *Run it locally* 章节；要重新部署，请看 *Push to GitHub & Deploy* 章节。
 
-> An offline-first, single-file catalog of **505 motion-driven UI prompts** — landing pages, hero scenes, agency showcases, dashboards, and more. Browse, search, copy, and export every prompt locally. No login, no network call, no paywall.
+> An offline-first, single-file catalog of **565 motion-driven UI prompts** — landing pages, hero scenes, agency showcases, dashboards, and more. Browse, search, copy, and export every prompt locally. No login, no network call, no paywall.
 
-> The catalog combines **365 MotionSites main-library entries** (with rich previews and video) and **140 community-picked prompts** sourced from public CC0-licensed GitHub repositories. Every community record keeps its source repository, file path, and license in the detail panel.
+> The catalog combines **365 MotionSites main-library entries** (with rich previews and video) and **140 community-picked prompts** sourced from public CC0 / MIT / NOASSERTION GitHub repositories sourced from public CC0-licensed GitHub repositories. Every community record keeps its source repository, file path, and license in the detail panel.
 
 ![Catalog preview](docs/catalog_preview.png)
 
 ## What is inside
 
-- **505 curated prompts** (365 MotionSites main library + 140 community picks) across Landing Page, Hero, SaaS, Agency, Portfolio, Web3, AI / Dashboard, Travel, Healthcare, Real Estate, and more
-- **466 full prompt bodies** (165 MotionSites + 301 community) — copy to clipboard or export as a Markdown file
+- **565 curated prompts** (425 MotionSites main library + 140 community picks) across Landing Page, Hero, SaaS, Agency, Portfolio, Web3, AI / Dashboard, Travel, Healthcare, Real Estate, and more
+- **529 full prompt bodies** (201 MotionSites + 188 community) — copy to clipboard or export as a Markdown file
 - **306 motion / static previews** + **87 looping video previews** (all downloaded locally)
-- **112 concept cards** with curated per-category palettes and animated art (used when the source page has no preview)
+- **172 concept cards** with curated per-category palettes and animated art (used when the source page has no preview)
 - **Multi-dimensional filters**: category, type, source (MotionSites / Community), media format, plus top-9 category chips and combined search over the source repository / file path
 - **Keyboard-first**: `/` focus search, `Esc` close modal, `G` toggle compact
 - **Spotlight search**: when a query is active, a soft glow tracks the best matching card
