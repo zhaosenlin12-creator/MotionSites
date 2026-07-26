@@ -6962,8 +6962,8 @@
     "video_preview_url": null,
     "sort_order": 10001,
     "created_at": null,
-    "local_rel": null,
-    "local_kind": null,
+    "local_rel": "assets/community/superdesign/tubes-interactive-background/preview.png",
+    "local_kind": "png",
     "source_kind": "community",
     "source_id": "superdesign-prompts",
     "source_url": "https://github.com/superdesigndev/superdesign-prompts/blob/main/prompts/tubes-interactive-background/README.md",
@@ -6984,7 +6984,8 @@
     "community_slug": "tubes-interactive-background",
     "preview": "prompts/tubes-interactive-background/preview.png",
     "has_text": true,
-    "text_len": 6675
+    "text_len": 6675,
+    "size_bytes": 1057566
   },
   {
     "id": "community-superdesign-high-contrast-landing-page",
@@ -6998,8 +6999,8 @@
     "video_preview_url": null,
     "sort_order": 10002,
     "created_at": null,
-    "local_rel": null,
-    "local_kind": null,
+    "local_rel": "assets/community/superdesign/high-contrast-landing-page/preview.png",
+    "local_kind": "png",
     "source_kind": "community",
     "source_id": "superdesign-prompts",
     "source_url": "https://github.com/superdesigndev/superdesign-prompts/blob/main/prompts/high-contrast-landing-page/README.md",
@@ -7020,7 +7021,8 @@
     "community_slug": "high-contrast-landing-page",
     "preview": "prompts/high-contrast-landing-page/preview.png",
     "has_text": true,
-    "text_len": 4755
+    "text_len": 4755,
+    "size_bytes": 67827
   },
   {
     "id": "community-superdesign-lumina-saas-landing-page",
@@ -7034,8 +7036,8 @@
     "video_preview_url": null,
     "sort_order": 10003,
     "created_at": null,
-    "local_rel": null,
-    "local_kind": null,
+    "local_rel": "assets/community/superdesign/lumina-saas-landing-page/preview.png",
+    "local_kind": "png",
     "source_kind": "community",
     "source_id": "superdesign-prompts",
     "source_url": "https://github.com/superdesigndev/superdesign-prompts/blob/main/prompts/lumina-saas-landing-page/README.md",
@@ -7060,7 +7062,8 @@
     "community_slug": "lumina-saas-landing-page",
     "preview": "prompts/lumina-saas-landing-page/preview.png",
     "has_text": true,
-    "text_len": 5775
+    "text_len": 5775,
+    "size_bytes": 627047
   },
   {
     "id": "community-superdesign-red-noir-style",
@@ -7074,8 +7077,8 @@
     "video_preview_url": null,
     "sort_order": 10004,
     "created_at": null,
-    "local_rel": null,
-    "local_kind": null,
+    "local_rel": "assets/community/superdesign/red-noir-style/preview.png",
+    "local_kind": "png",
     "source_kind": "community",
     "source_id": "superdesign-prompts",
     "source_url": "https://github.com/superdesigndev/superdesign-prompts/blob/main/prompts/red-noir-style/README.md",
@@ -7097,7 +7100,8 @@
     "community_slug": "red-noir-style",
     "preview": "prompts/red-noir-style/preview.png",
     "has_text": true,
-    "text_len": 22051
+    "text_len": 22051,
+    "size_bytes": 716753
   },
   {
     "id": "community-superdesign-deep-red-style-5b01cb",
@@ -7111,8 +7115,8 @@
     "video_preview_url": null,
     "sort_order": 10005,
     "created_at": null,
-    "local_rel": null,
-    "local_kind": null,
+    "local_rel": "assets/community/superdesign/deep-red-style-5b01cb/preview.png",
+    "local_kind": "png",
     "source_kind": "community",
     "source_id": "superdesign-prompts",
     "source_url": "https://github.com/superdesigndev/superdesign-prompts/blob/main/prompts/deep-red-style-5b01cb/README.md",
@@ -7133,7 +7137,8 @@
     "community_slug": "deep-red-style-5b01cb",
     "preview": "prompts/deep-red-style-5b01cb/preview.png",
     "has_text": true,
-    "text_len": 12905
+    "text_len": 12905,
+    "size_bytes": 1432298
   },
   {
     "id": "community-superdesign-glassmorphism-style",
@@ -7147,8 +7152,8 @@
     "video_preview_url": null,
     "sort_order": 10006,
     "created_at": null,
-    "local_rel": null,
-    "local_kind": null,
+    "local_rel": "assets/community/superdesign/glassmorphism-style/preview.png",
+    "local_kind": "png",
     "source_kind": "community",
     "source_id": "superdesign-prompts",
     "source_url": "https://github.com/superdesigndev/superdesign-prompts/blob/main/prompts/glassmorphism-style/README.md",
@@ -7170,7 +7175,8 @@
     "community_slug": "glassmorphism-style",
     "preview": "prompts/glassmorphism-style/preview.png",
     "has_text": true,
-    "text_len": 5599
+    "text_len": 5599,
+    "size_bytes": 2907684
   },
   {
     "id": "community-superdesign-mosaic-grid-architecture-style",
@@ -7184,8 +7190,8 @@
     "video_preview_url": null,
     "sort_order": 10007,
     "created_at": null,
-    "local_rel": null,
-    "local_kind": null,
+    "local_rel": "assets/community/superdesign/mosaic-grid-architecture-style/preview.png",
+    "local_kind": "png",
     "source_kind": "community",
     "source_id": "superdesign-prompts",
     "source_url": "https://github.com/superdesigndev/superdesign-prompts/blob/main/prompts/mosaic-grid-architecture-style/README.md",
@@ -7214,7 +7220,8 @@
     "community_slug": "mosaic-grid-architecture-style",
     "preview": "prompts/mosaic-grid-architecture-style/preview.png",
     "has_text": true,
-    "text_len": 4627
+    "text_len": 4627,
+    "size_bytes": 1382707
   },
   {
     "id": "community-superdesign-softly-digital-wellness-app",
@@ -7228,8 +7235,8 @@
     "video_preview_url": null,
     "sort_order": 10008,
     "created_at": null,
-    "local_rel": null,
-    "local_kind": null,
+    "local_rel": "assets/community/superdesign/softly-digital-wellness-app/preview.png",
+    "local_kind": "png",
     "source_kind": "community",
     "source_id": "superdesign-prompts",
     "source_url": "https://github.com/superdesigndev/superdesign-prompts/blob/main/prompts/softly-digital-wellness-app/README.md",
@@ -7258,7 +7265,8 @@
     "community_slug": "softly-digital-wellness-app",
     "preview": "prompts/softly-digital-wellness-app/preview.png",
     "has_text": true,
-    "text_len": 4453
+    "text_len": 4453,
+    "size_bytes": 2356214
   },
   {
     "id": "community-superdesign-neural-noir-interface-style",
@@ -7272,8 +7280,8 @@
     "video_preview_url": null,
     "sort_order": 10009,
     "created_at": null,
-    "local_rel": null,
-    "local_kind": null,
+    "local_rel": "assets/community/superdesign/neural-noir-interface-style/preview.png",
+    "local_kind": "png",
     "source_kind": "community",
     "source_id": "superdesign-prompts",
     "source_url": "https://github.com/superdesigndev/superdesign-prompts/blob/main/prompts/neural-noir-interface-style/README.md",
@@ -7295,7 +7303,8 @@
     "community_slug": "neural-noir-interface-style",
     "preview": "prompts/neural-noir-interface-style/preview.png",
     "has_text": true,
-    "text_len": 4805
+    "text_len": 4805,
+    "size_bytes": 898073
   },
   {
     "id": "community-superdesign-cinematic-style",
@@ -7309,8 +7318,8 @@
     "video_preview_url": null,
     "sort_order": 10010,
     "created_at": null,
-    "local_rel": null,
-    "local_kind": null,
+    "local_rel": "assets/community/superdesign/cinematic-style/preview.png",
+    "local_kind": "png",
     "source_kind": "community",
     "source_id": "superdesign-prompts",
     "source_url": "https://github.com/superdesigndev/superdesign-prompts/blob/main/prompts/cinematic-style/README.md",
@@ -7332,7 +7341,8 @@
     "community_slug": "cinematic-style",
     "preview": "prompts/cinematic-style/preview.png",
     "has_text": true,
-    "text_len": 4671
+    "text_len": 4671,
+    "size_bytes": 605604
   },
   {
     "id": "community-superdesign-kinetic-orange-style",
@@ -7346,8 +7356,8 @@
     "video_preview_url": null,
     "sort_order": 10011,
     "created_at": null,
-    "local_rel": null,
-    "local_kind": null,
+    "local_rel": "assets/community/superdesign/kinetic-orange-style/preview.png",
+    "local_kind": "png",
     "source_kind": "community",
     "source_id": "superdesign-prompts",
     "source_url": "https://github.com/superdesigndev/superdesign-prompts/blob/main/prompts/kinetic-orange-style/README.md",
@@ -7369,7 +7379,8 @@
     "community_slug": "kinetic-orange-style",
     "preview": "prompts/kinetic-orange-style/preview.png",
     "has_text": true,
-    "text_len": 4491
+    "text_len": 4491,
+    "size_bytes": 191314
   },
   {
     "id": "community-superdesign-luxury-focused-design-system",
@@ -7383,8 +7394,8 @@
     "video_preview_url": null,
     "sort_order": 10012,
     "created_at": null,
-    "local_rel": null,
-    "local_kind": null,
+    "local_rel": "assets/community/superdesign/luxury-focused-design-system/preview.png",
+    "local_kind": "png",
     "source_kind": "community",
     "source_id": "superdesign-prompts",
     "source_url": "https://github.com/superdesigndev/superdesign-prompts/blob/main/prompts/luxury-focused-design-system/README.md",
@@ -7407,7 +7418,8 @@
     "community_slug": "luxury-focused-design-system",
     "preview": "prompts/luxury-focused-design-system/preview.png",
     "has_text": true,
-    "text_len": 4694
+    "text_len": 4694,
+    "size_bytes": 622971
   },
   {
     "id": "community-superdesign-brutalist-e-commerce-page",
@@ -7421,8 +7433,8 @@
     "video_preview_url": null,
     "sort_order": 10013,
     "created_at": null,
-    "local_rel": null,
-    "local_kind": null,
+    "local_rel": "assets/community/superdesign/brutalist-e-commerce-page/preview.png",
+    "local_kind": "png",
     "source_kind": "community",
     "source_id": "superdesign-prompts",
     "source_url": "https://github.com/superdesigndev/superdesign-prompts/blob/main/prompts/brutalist-e-commerce-page/README.md",
@@ -7445,7 +7457,8 @@
     "community_slug": "brutalist-e-commerce-page",
     "preview": "prompts/brutalist-e-commerce-page/preview.png",
     "has_text": true,
-    "text_len": 4195
+    "text_len": 4195,
+    "size_bytes": 2384890
   },
   {
     "id": "community-superdesign-nature-inspired-style",
@@ -7459,8 +7472,8 @@
     "video_preview_url": null,
     "sort_order": 10014,
     "created_at": null,
-    "local_rel": null,
-    "local_kind": null,
+    "local_rel": "assets/community/superdesign/nature-inspired-style/preview.png",
+    "local_kind": "png",
     "source_kind": "community",
     "source_id": "superdesign-prompts",
     "source_url": "https://github.com/superdesigndev/superdesign-prompts/blob/main/prompts/nature-inspired-style/README.md",
@@ -7482,7 +7495,8 @@
     "community_slug": "nature-inspired-style",
     "preview": "prompts/nature-inspired-style/preview.png",
     "has_text": true,
-    "text_len": 4644
+    "text_len": 4644,
+    "size_bytes": 569389
   },
   {
     "id": "community-superdesign-bold-editorial-studio-style",
@@ -7496,8 +7510,8 @@
     "video_preview_url": null,
     "sort_order": 10015,
     "created_at": null,
-    "local_rel": null,
-    "local_kind": null,
+    "local_rel": "assets/community/superdesign/bold-editorial-studio-style/preview.png",
+    "local_kind": "png",
     "source_kind": "community",
     "source_id": "superdesign-prompts",
     "source_url": "https://github.com/superdesigndev/superdesign-prompts/blob/main/prompts/bold-editorial-studio-style/README.md",
@@ -7519,7 +7533,8 @@
     "community_slug": "bold-editorial-studio-style",
     "preview": "prompts/bold-editorial-studio-style/preview.png",
     "has_text": true,
-    "text_len": 5051
+    "text_len": 5051,
+    "size_bytes": 262970
   },
   {
     "id": "community-superdesign-neumorphism",
@@ -7533,8 +7548,8 @@
     "video_preview_url": null,
     "sort_order": 10016,
     "created_at": null,
-    "local_rel": null,
-    "local_kind": null,
+    "local_rel": "assets/community/superdesign/neumorphism/preview.png",
+    "local_kind": "png",
     "source_kind": "community",
     "source_id": "superdesign-prompts",
     "source_url": "https://github.com/superdesigndev/superdesign-prompts/blob/main/prompts/neumorphism/README.md",
@@ -7554,7 +7569,8 @@
     "community_slug": "neumorphism",
     "preview": "prompts/neumorphism/preview.png",
     "has_text": true,
-    "text_len": 10068
+    "text_len": 10068,
+    "size_bytes": 159006
   },
   {
     "id": "community-superdesign-the-stacking-cards-effect",
@@ -7568,8 +7584,8 @@
     "video_preview_url": "prompts/the-stacking-cards-effect/preview.mp4",
     "sort_order": 10017,
     "created_at": null,
-    "local_rel": null,
-    "local_kind": null,
+    "local_rel": "assets/community/superdesign/the-stacking-cards-effect/preview.png",
+    "local_kind": "png",
     "source_kind": "community",
     "source_id": "superdesign-prompts",
     "source_url": "https://github.com/superdesigndev/superdesign-prompts/blob/main/prompts/the-stacking-cards-effect/README.md",
@@ -7591,7 +7607,8 @@
     "community_slug": "the-stacking-cards-effect",
     "preview": "prompts/the-stacking-cards-effect/preview.png",
     "has_text": false,
-    "text_len": 197
+    "text_len": 197,
+    "size_bytes": 515997
   },
   {
     "id": "community-superdesign-synapse",
@@ -7605,8 +7622,8 @@
     "video_preview_url": "prompts/synapse/preview.mp4",
     "sort_order": 10018,
     "created_at": null,
-    "local_rel": null,
-    "local_kind": null,
+    "local_rel": "assets/community/superdesign/synapse/preview.png",
+    "local_kind": "png",
     "source_kind": "community",
     "source_id": "superdesign-prompts",
     "source_url": "https://github.com/superdesigndev/superdesign-prompts/blob/main/prompts/synapse/README.md",
@@ -7628,7 +7645,8 @@
     "community_slug": "synapse",
     "preview": "prompts/synapse/preview.png",
     "has_text": true,
-    "text_len": 5702
+    "text_len": 5702,
+    "size_bytes": 168834
   },
   {
     "id": "community-superdesign-bold-editorial-style",
@@ -7642,8 +7660,8 @@
     "video_preview_url": null,
     "sort_order": 10019,
     "created_at": null,
-    "local_rel": null,
-    "local_kind": null,
+    "local_rel": "assets/community/superdesign/bold-editorial-style/preview.png",
+    "local_kind": "png",
     "source_kind": "community",
     "source_id": "superdesign-prompts",
     "source_url": "https://github.com/superdesigndev/superdesign-prompts/blob/main/prompts/bold-editorial-style/README.md",
@@ -7672,7 +7690,8 @@
     "community_slug": "bold-editorial-style",
     "preview": "prompts/bold-editorial-style/preview.png",
     "has_text": true,
-    "text_len": 5189
+    "text_len": 5189,
+    "size_bytes": 228040
   },
   {
     "id": "community-superdesign-babybites-sophisticated-palette",
@@ -7686,8 +7705,8 @@
     "video_preview_url": null,
     "sort_order": 10020,
     "created_at": null,
-    "local_rel": null,
-    "local_kind": null,
+    "local_rel": "assets/community/superdesign/babybites-sophisticated-palette/preview.png",
+    "local_kind": "png",
     "source_kind": "community",
     "source_id": "superdesign-prompts",
     "source_url": "https://github.com/superdesigndev/superdesign-prompts/blob/main/prompts/babybites-sophisticated-palette/README.md",
@@ -7708,7 +7727,8 @@
     "community_slug": "babybites-sophisticated-palette",
     "preview": "prompts/babybites-sophisticated-palette/preview.png",
     "has_text": true,
-    "text_len": 4600
+    "text_len": 4600,
+    "size_bytes": 396620
   },
   {
     "id": "community-superdesign-hyper-saturated-fluid",
@@ -7722,8 +7742,8 @@
     "video_preview_url": null,
     "sort_order": 10021,
     "created_at": null,
-    "local_rel": null,
-    "local_kind": null,
+    "local_rel": "assets/community/superdesign/hyper-saturated-fluid/preview.png",
+    "local_kind": "png",
     "source_kind": "community",
     "source_id": "superdesign-prompts",
     "source_url": "https://github.com/superdesigndev/superdesign-prompts/blob/main/prompts/hyper-saturated-fluid/README.md",
@@ -7743,7 +7763,8 @@
     "community_slug": "hyper-saturated-fluid",
     "preview": "prompts/hyper-saturated-fluid/preview.png",
     "has_text": true,
-    "text_len": 4984
+    "text_len": 4984,
+    "size_bytes": 272896
   },
   {
     "id": "community-superdesign-saas-landing-page-for-developer-tool",
@@ -7757,8 +7778,8 @@
     "video_preview_url": null,
     "sort_order": 10022,
     "created_at": null,
-    "local_rel": null,
-    "local_kind": null,
+    "local_rel": "assets/community/superdesign/saas-landing-page-for-developer-tool/preview.png",
+    "local_kind": "png",
     "source_kind": "community",
     "source_id": "superdesign-prompts",
     "source_url": "https://github.com/superdesigndev/superdesign-prompts/blob/main/prompts/saas-landing-page-for-developer-tool/README.md",
@@ -7782,7 +7803,8 @@
     "community_slug": "saas-landing-page-for-developer-tool",
     "preview": "prompts/saas-landing-page-for-developer-tool/preview.png",
     "has_text": true,
-    "text_len": 5489
+    "text_len": 5489,
+    "size_bytes": 169669
   },
   {
     "id": "community-superdesign-midnight-editorial-style-5f0a22",
@@ -7796,8 +7818,8 @@
     "video_preview_url": null,
     "sort_order": 10023,
     "created_at": null,
-    "local_rel": null,
-    "local_kind": null,
+    "local_rel": "assets/community/superdesign/midnight-editorial-style-5f0a22/preview.png",
+    "local_kind": "png",
     "source_kind": "community",
     "source_id": "superdesign-prompts",
     "source_url": "https://github.com/superdesigndev/superdesign-prompts/blob/main/prompts/midnight-editorial-style-5f0a22/README.md",
@@ -7819,7 +7841,8 @@
     "community_slug": "midnight-editorial-style-5f0a22",
     "preview": "prompts/midnight-editorial-style-5f0a22/preview.png",
     "has_text": true,
-    "text_len": 15135
+    "text_len": 15135,
+    "size_bytes": 638408
   },
   {
     "id": "community-superdesign-hyper-speed-loading-state",
@@ -7833,8 +7856,8 @@
     "video_preview_url": null,
     "sort_order": 10024,
     "created_at": null,
-    "local_rel": null,
-    "local_kind": null,
+    "local_rel": "assets/community/superdesign/hyper-speed-loading-state/preview.png",
+    "local_kind": "png",
     "source_kind": "community",
     "source_id": "superdesign-prompts",
     "source_url": "https://github.com/superdesigndev/superdesign-prompts/blob/main/prompts/hyper-speed-loading-state/README.md",
@@ -7855,7 +7878,8 @@
     "community_slug": "hyper-speed-loading-state",
     "preview": "prompts/hyper-speed-loading-state/preview.png",
     "has_text": true,
-    "text_len": 7671
+    "text_len": 7671,
+    "size_bytes": 140939
   },
   {
     "id": "community-superdesign-chrome-extension-landing-page",
@@ -7869,8 +7893,8 @@
     "video_preview_url": null,
     "sort_order": 10025,
     "created_at": null,
-    "local_rel": null,
-    "local_kind": null,
+    "local_rel": "assets/community/superdesign/chrome-extension-landing-page/preview.png",
+    "local_kind": "png",
     "source_kind": "community",
     "source_id": "superdesign-prompts",
     "source_url": "https://github.com/superdesigndev/superdesign-prompts/blob/main/prompts/chrome-extension-landing-page/README.md",
@@ -7903,7 +7927,8 @@
     "community_slug": "chrome-extension-landing-page",
     "preview": "prompts/chrome-extension-landing-page/preview.png",
     "has_text": true,
-    "text_len": 4578
+    "text_len": 4578,
+    "size_bytes": 356096
   },
   {
     "id": "community-superdesign-cinematic-noir-style",
@@ -7917,8 +7942,8 @@
     "video_preview_url": null,
     "sort_order": 10026,
     "created_at": null,
-    "local_rel": null,
-    "local_kind": null,
+    "local_rel": "assets/community/superdesign/cinematic-noir-style/preview.png",
+    "local_kind": "png",
     "source_kind": "community",
     "source_id": "superdesign-prompts",
     "source_url": "https://github.com/superdesigndev/superdesign-prompts/blob/main/prompts/cinematic-noir-style/README.md",
@@ -7940,7 +7965,8 @@
     "community_slug": "cinematic-noir-style",
     "preview": "prompts/cinematic-noir-style/preview.png",
     "has_text": true,
-    "text_len": 5045
+    "text_len": 5045,
+    "size_bytes": 3042979
   },
   {
     "id": "community-superdesign-minimalist-beta-capture",
@@ -7954,8 +7980,8 @@
     "video_preview_url": null,
     "sort_order": 10027,
     "created_at": null,
-    "local_rel": null,
-    "local_kind": null,
+    "local_rel": "assets/community/superdesign/minimalist-beta-capture/preview.png",
+    "local_kind": "png",
     "source_kind": "community",
     "source_id": "superdesign-prompts",
     "source_url": "https://github.com/superdesigndev/superdesign-prompts/blob/main/prompts/minimalist-beta-capture/README.md",
@@ -7979,7 +8005,8 @@
     "community_slug": "minimalist-beta-capture",
     "preview": "prompts/minimalist-beta-capture/preview.png",
     "has_text": true,
-    "text_len": 5396
+    "text_len": 5396,
+    "size_bytes": 429726
   },
   {
     "id": "community-superdesign-card-swap",
@@ -7993,8 +8020,8 @@
     "video_preview_url": "prompts/card-swap/preview.mp4",
     "sort_order": 10028,
     "created_at": null,
-    "local_rel": null,
-    "local_kind": null,
+    "local_rel": "assets/community/superdesign/card-swap/preview.png",
+    "local_kind": "png",
     "source_kind": "community",
     "source_id": "superdesign-prompts",
     "source_url": "https://github.com/superdesigndev/superdesign-prompts/blob/main/prompts/card-swap/README.md",
@@ -8016,7 +8043,8 @@
     "community_slug": "card-swap",
     "preview": "prompts/card-swap/preview.png",
     "has_text": true,
-    "text_len": 9997
+    "text_len": 9997,
+    "size_bytes": 160627
   },
   {
     "id": "community-superdesign-brutalist-style-ecommerce-page",
@@ -8030,8 +8058,8 @@
     "video_preview_url": null,
     "sort_order": 10029,
     "created_at": null,
-    "local_rel": null,
-    "local_kind": null,
+    "local_rel": "assets/community/superdesign/brutalist-style-ecommerce-page/preview.png",
+    "local_kind": "png",
     "source_kind": "community",
     "source_id": "superdesign-prompts",
     "source_url": "https://github.com/superdesigndev/superdesign-prompts/blob/main/prompts/brutalist-style-ecommerce-page/README.md",
@@ -8054,7 +8082,8 @@
     "community_slug": "brutalist-style-ecommerce-page",
     "preview": "prompts/brutalist-style-ecommerce-page/preview.png",
     "has_text": true,
-    "text_len": 5272
+    "text_len": 5272,
+    "size_bytes": 2255348
   },
   {
     "id": "community-superdesign-superdesign-editorial-waitlist",
@@ -8068,8 +8097,8 @@
     "video_preview_url": null,
     "sort_order": 10030,
     "created_at": null,
-    "local_rel": null,
-    "local_kind": null,
+    "local_rel": "assets/community/superdesign/superdesign-editorial-waitlist/preview.png",
+    "local_kind": "png",
     "source_kind": "community",
     "source_id": "superdesign-prompts",
     "source_url": "https://github.com/superdesigndev/superdesign-prompts/blob/main/prompts/superdesign-editorial-waitlist/README.md",
@@ -8091,7 +8120,8 @@
     "community_slug": "superdesign-editorial-waitlist",
     "preview": "prompts/superdesign-editorial-waitlist/preview.png",
     "has_text": true,
-    "text_len": 4807
+    "text_len": 4807,
+    "size_bytes": 212202
   },
   {
     "id": "community-superdesign-hover-reveal-effect",
@@ -8105,8 +8135,8 @@
     "video_preview_url": "prompts/hover-reveal-effect/preview.mp4",
     "sort_order": 10031,
     "created_at": null,
-    "local_rel": null,
-    "local_kind": null,
+    "local_rel": "assets/community/superdesign/hover-reveal-effect/preview.png",
+    "local_kind": "png",
     "source_kind": "community",
     "source_id": "superdesign-prompts",
     "source_url": "https://github.com/superdesigndev/superdesign-prompts/blob/main/prompts/hover-reveal-effect/README.md",
@@ -8128,7 +8158,8 @@
     "community_slug": "hover-reveal-effect",
     "preview": "prompts/hover-reveal-effect/preview.png",
     "has_text": true,
-    "text_len": 1811
+    "text_len": 1811,
+    "size_bytes": 204974
   },
   {
     "id": "community-superdesign-force-field-background",
@@ -8142,8 +8173,8 @@
     "video_preview_url": null,
     "sort_order": 10032,
     "created_at": null,
-    "local_rel": null,
-    "local_kind": null,
+    "local_rel": "assets/community/superdesign/force-field-background/preview.png",
+    "local_kind": "png",
     "source_kind": "community",
     "source_id": "superdesign-prompts",
     "source_url": "https://github.com/superdesigndev/superdesign-prompts/blob/main/prompts/force-field-background/README.md",
@@ -8164,7 +8195,8 @@
     "community_slug": "force-field-background",
     "preview": "prompts/force-field-background/preview.png",
     "has_text": true,
-    "text_len": 16234
+    "text_len": 16234,
+    "size_bytes": 891338
   },
   {
     "id": "community-superdesign-scroll-journey-line",
@@ -8178,8 +8210,8 @@
     "video_preview_url": "prompts/scroll-journey-line/preview.mp4",
     "sort_order": 10033,
     "created_at": null,
-    "local_rel": null,
-    "local_kind": null,
+    "local_rel": "assets/community/superdesign/scroll-journey-line/preview.mp4",
+    "local_kind": "mp4",
     "source_kind": "community",
     "source_id": "superdesign-prompts",
     "source_url": "https://github.com/superdesigndev/superdesign-prompts/blob/main/prompts/scroll-journey-line/README.md",
@@ -8200,7 +8232,8 @@
     "community_slug": "scroll-journey-line",
     "preview": "prompts/scroll-journey-line/preview.mp4",
     "has_text": false,
-    "text_len": 121
+    "text_len": 121,
+    "size_bytes": 566068
   },
   {
     "id": "community-superdesign-neon-velocity-countdown",
@@ -8214,8 +8247,8 @@
     "video_preview_url": null,
     "sort_order": 10034,
     "created_at": null,
-    "local_rel": null,
-    "local_kind": null,
+    "local_rel": "assets/community/superdesign/neon-velocity-countdown/preview.png",
+    "local_kind": "png",
     "source_kind": "community",
     "source_id": "superdesign-prompts",
     "source_url": "https://github.com/superdesigndev/superdesign-prompts/blob/main/prompts/neon-velocity-countdown/README.md",
@@ -8239,7 +8272,8 @@
     "community_slug": "neon-velocity-countdown",
     "preview": "prompts/neon-velocity-countdown/preview.png",
     "has_text": true,
-    "text_len": 4993
+    "text_len": 4993,
+    "size_bytes": 251554
   },
   {
     "id": "community-superdesign-gooey-gradient-background",
@@ -8253,8 +8287,8 @@
     "video_preview_url": "prompts/gooey-gradient-background/preview.mp4",
     "sort_order": 10035,
     "created_at": null,
-    "local_rel": null,
-    "local_kind": null,
+    "local_rel": "assets/community/superdesign/gooey-gradient-background/preview.png",
+    "local_kind": "png",
     "source_kind": "community",
     "source_id": "superdesign-prompts",
     "source_url": "https://github.com/superdesigndev/superdesign-prompts/blob/main/prompts/gooey-gradient-background/README.md",
@@ -8275,7 +8309,8 @@
     "community_slug": "gooey-gradient-background",
     "preview": "prompts/gooey-gradient-background/preview.png",
     "has_text": true,
-    "text_len": 9282
+    "text_len": 9282,
+    "size_bytes": 208417
   },
   {
     "id": "community-superdesign-horizontal-gallery",
@@ -8289,8 +8324,8 @@
     "video_preview_url": "prompts/horizontal-gallery/preview.mp4",
     "sort_order": 10036,
     "created_at": null,
-    "local_rel": null,
-    "local_kind": null,
+    "local_rel": "assets/community/superdesign/horizontal-gallery/preview.mp4",
+    "local_kind": "mp4",
     "source_kind": "community",
     "source_id": "superdesign-prompts",
     "source_url": "https://github.com/superdesigndev/superdesign-prompts/blob/main/prompts/horizontal-gallery/README.md",
@@ -8311,7 +8346,8 @@
     "community_slug": "horizontal-gallery",
     "preview": "prompts/horizontal-gallery/preview.mp4",
     "has_text": true,
-    "text_len": 403
+    "text_len": 403,
+    "size_bytes": 807654
   },
   {
     "id": "community-superdesign-disruptor-beta-launch",
@@ -8325,8 +8361,8 @@
     "video_preview_url": null,
     "sort_order": 10037,
     "created_at": null,
-    "local_rel": null,
-    "local_kind": null,
+    "local_rel": "assets/community/superdesign/disruptor-beta-launch/preview.jpg",
+    "local_kind": "jpeg",
     "source_kind": "community",
     "source_id": "superdesign-prompts",
     "source_url": "https://github.com/superdesigndev/superdesign-prompts/blob/main/prompts/disruptor-beta-launch/README.md",
@@ -8350,7 +8386,8 @@
     "community_slug": "disruptor-beta-launch",
     "preview": "prompts/disruptor-beta-launch/preview.jpg",
     "has_text": true,
-    "text_len": 5379
+    "text_len": 5379,
+    "size_bytes": 65811
   },
   {
     "id": "community-superdesign-bold-editorial-design-style",
@@ -8364,8 +8401,8 @@
     "video_preview_url": null,
     "sort_order": 10038,
     "created_at": null,
-    "local_rel": null,
-    "local_kind": null,
+    "local_rel": "assets/community/superdesign/bold-editorial-design-style/preview.png",
+    "local_kind": "png",
     "source_kind": "community",
     "source_id": "superdesign-prompts",
     "source_url": "https://github.com/superdesigndev/superdesign-prompts/blob/main/prompts/bold-editorial-design-style/README.md",
@@ -8389,7 +8426,8 @@
     "community_slug": "bold-editorial-design-style",
     "preview": "prompts/bold-editorial-design-style/preview.png",
     "has_text": true,
-    "text_len": 5152
+    "text_len": 5152,
+    "size_bytes": 348275
   },
   {
     "id": "community-superdesign-light-beam-button",
@@ -8403,8 +8441,8 @@
     "video_preview_url": null,
     "sort_order": 10039,
     "created_at": null,
-    "local_rel": null,
-    "local_kind": null,
+    "local_rel": "assets/community/superdesign/light-beam-button/preview.png",
+    "local_kind": "png",
     "source_kind": "community",
     "source_id": "superdesign-prompts",
     "source_url": "https://github.com/superdesigndev/superdesign-prompts/blob/main/prompts/light-beam-button/README.md",
@@ -8425,7 +8463,8 @@
     "community_slug": "light-beam-button",
     "preview": "prompts/light-beam-button/preview.png",
     "has_text": true,
-    "text_len": 5890
+    "text_len": 5890,
+    "size_bytes": 19250
   },
   {
     "id": "community-superdesign-ghost-cursor",
@@ -8439,8 +8478,8 @@
     "video_preview_url": "prompts/ghost-cursor/preview.mp4",
     "sort_order": 10040,
     "created_at": null,
-    "local_rel": null,
-    "local_kind": null,
+    "local_rel": "assets/community/superdesign/ghost-cursor/preview.mp4",
+    "local_kind": "mp4",
     "source_kind": "community",
     "source_id": "superdesign-prompts",
     "source_url": "https://github.com/superdesigndev/superdesign-prompts/blob/main/prompts/ghost-cursor/README.md",
@@ -8461,7 +8500,8 @@
     "community_slug": "ghost-cursor",
     "preview": "prompts/ghost-cursor/preview.mp4",
     "has_text": true,
-    "text_len": 18102
+    "text_len": 18102,
+    "size_bytes": 194015
   },
   {
     "id": "community-superdesign-aura-audio-showroom",
@@ -8475,8 +8515,8 @@
     "video_preview_url": null,
     "sort_order": 10041,
     "created_at": null,
-    "local_rel": null,
-    "local_kind": null,
+    "local_rel": "assets/community/superdesign/aura-audio-showroom/preview.png",
+    "local_kind": "png",
     "source_kind": "community",
     "source_id": "superdesign-prompts",
     "source_url": "https://github.com/superdesigndev/superdesign-prompts/blob/main/prompts/aura-audio-showroom/README.md",
@@ -8498,7 +8538,8 @@
     "community_slug": "aura-audio-showroom",
     "preview": "prompts/aura-audio-showroom/preview.png",
     "has_text": true,
-    "text_len": 4795
+    "text_len": 4795,
+    "size_bytes": 498388
   },
   {
     "id": "community-superdesign-interactive-folder",
@@ -8512,8 +8553,8 @@
     "video_preview_url": "prompts/interactive-folder/preview.mp4",
     "sort_order": 10042,
     "created_at": null,
-    "local_rel": null,
-    "local_kind": null,
+    "local_rel": "assets/community/superdesign/interactive-folder/preview.mp4",
+    "local_kind": "mp4",
     "source_kind": "community",
     "source_id": "superdesign-prompts",
     "source_url": "https://github.com/superdesigndev/superdesign-prompts/blob/main/prompts/interactive-folder/README.md",
@@ -8534,7 +8575,8 @@
     "community_slug": "interactive-folder",
     "preview": "prompts/interactive-folder/preview.mp4",
     "has_text": true,
-    "text_len": 9009
+    "text_len": 9009,
+    "size_bytes": 90490
   },
   {
     "id": "community-superdesign-architectural-type-system-style",
@@ -8548,8 +8590,8 @@
     "video_preview_url": null,
     "sort_order": 10043,
     "created_at": null,
-    "local_rel": null,
-    "local_kind": null,
+    "local_rel": "assets/community/superdesign/architectural-type-system-style/preview.png",
+    "local_kind": "png",
     "source_kind": "community",
     "source_id": "superdesign-prompts",
     "source_url": "https://github.com/superdesigndev/superdesign-prompts/blob/main/prompts/architectural-type-system-style/README.md",
@@ -8573,7 +8615,8 @@
     "community_slug": "architectural-type-system-style",
     "preview": "prompts/architectural-type-system-style/preview.png",
     "has_text": true,
-    "text_len": 4868
+    "text_len": 4868,
+    "size_bytes": 151055
   },
   {
     "id": "community-superdesign-parallax-stars-background",
@@ -8587,8 +8630,8 @@
     "video_preview_url": "prompts/parallax-stars-background/preview.mp4",
     "sort_order": 10044,
     "created_at": null,
-    "local_rel": null,
-    "local_kind": null,
+    "local_rel": "assets/community/superdesign/parallax-stars-background/preview.mp4",
+    "local_kind": "mp4",
     "source_kind": "community",
     "source_id": "superdesign-prompts",
     "source_url": "https://github.com/superdesigndev/superdesign-prompts/blob/main/prompts/parallax-stars-background/README.md",
@@ -8609,7 +8652,8 @@
     "community_slug": "parallax-stars-background",
     "preview": "prompts/parallax-stars-background/preview.mp4",
     "has_text": true,
-    "text_len": 5777
+    "text_len": 5777,
+    "size_bytes": 88451
   },
   {
     "id": "community-superdesign-typing-animation",
@@ -8623,8 +8667,8 @@
     "video_preview_url": "prompts/typing-animation/preview.mp4",
     "sort_order": 10045,
     "created_at": null,
-    "local_rel": null,
-    "local_kind": null,
+    "local_rel": "assets/community/superdesign/typing-animation/preview.mp4",
+    "local_kind": "mp4",
     "source_kind": "community",
     "source_id": "superdesign-prompts",
     "source_url": "https://github.com/superdesigndev/superdesign-prompts/blob/main/prompts/typing-animation/README.md",
@@ -8645,7 +8689,8 @@
     "community_slug": "typing-animation",
     "preview": "prompts/typing-animation/preview.mp4",
     "has_text": false,
-    "text_len": 113
+    "text_len": 113,
+    "size_bytes": 285174
   },
   {
     "id": "community-superdesign-shiny-text",
@@ -8659,8 +8704,8 @@
     "video_preview_url": null,
     "sort_order": 10046,
     "created_at": null,
-    "local_rel": null,
-    "local_kind": null,
+    "local_rel": "assets/community/superdesign/shiny-text/preview.png",
+    "local_kind": "png",
     "source_kind": "community",
     "source_id": "superdesign-prompts",
     "source_url": "https://github.com/superdesigndev/superdesign-prompts/blob/main/prompts/shiny-text/README.md",
@@ -8681,7 +8726,8 @@
     "community_slug": "shiny-text",
     "preview": "prompts/shiny-text/preview.png",
     "has_text": true,
-    "text_len": 6975
+    "text_len": 6975,
+    "size_bytes": 115875
   },
   {
     "id": "community-superdesign-pill-nav",
@@ -8695,8 +8741,8 @@
     "video_preview_url": "prompts/pill-nav/preview.mp4",
     "sort_order": 10047,
     "created_at": null,
-    "local_rel": null,
-    "local_kind": null,
+    "local_rel": "assets/community/superdesign/pill-nav/preview.mp4",
+    "local_kind": "mp4",
     "source_kind": "community",
     "source_id": "superdesign-prompts",
     "source_url": "https://github.com/superdesigndev/superdesign-prompts/blob/main/prompts/pill-nav/README.md",
@@ -8717,7 +8763,8 @@
     "community_slug": "pill-nav",
     "preview": "prompts/pill-nav/preview.mp4",
     "has_text": true,
-    "text_len": 16027
+    "text_len": 16027,
+    "size_bytes": 168583
   },
   {
     "id": "community-superdesign-exploded-view-assembly",
@@ -8731,8 +8778,8 @@
     "video_preview_url": "prompts/exploded-view-assembly/preview.mp4",
     "sort_order": 10048,
     "created_at": null,
-    "local_rel": null,
-    "local_kind": null,
+    "local_rel": "assets/community/superdesign/exploded-view-assembly/preview.png",
+    "local_kind": "png",
     "source_kind": "community",
     "source_id": "superdesign-prompts",
     "source_url": "https://github.com/superdesigndev/superdesign-prompts/blob/main/prompts/exploded-view-assembly/README.md",
@@ -8754,7 +8801,8 @@
     "community_slug": "exploded-view-assembly",
     "preview": "prompts/exploded-view-assembly/preview.png",
     "has_text": true,
-    "text_len": 364
+    "text_len": 364,
+    "size_bytes": 219721
   },
   {
     "id": "community-superdesign-rolodex-text",
@@ -8768,8 +8816,8 @@
     "video_preview_url": "prompts/rolodex-text/preview.mp4",
     "sort_order": 10049,
     "created_at": null,
-    "local_rel": null,
-    "local_kind": null,
+    "local_rel": "assets/community/superdesign/rolodex-text/preview.mp4",
+    "local_kind": "mp4",
     "source_kind": "community",
     "source_id": "superdesign-prompts",
     "source_url": "https://github.com/superdesigndev/superdesign-prompts/blob/main/prompts/rolodex-text/README.md",
@@ -8790,7 +8838,8 @@
     "community_slug": "rolodex-text",
     "preview": "prompts/rolodex-text/preview.mp4",
     "has_text": true,
-    "text_len": 578
+    "text_len": 578,
+    "size_bytes": 480444
   },
   {
     "id": "community-superdesign-lightning-background",
@@ -8804,8 +8853,8 @@
     "video_preview_url": "prompts/lightning-background/preview.mp4",
     "sort_order": 10050,
     "created_at": null,
-    "local_rel": null,
-    "local_kind": null,
+    "local_rel": "assets/community/superdesign/lightning-background/preview.mp4",
+    "local_kind": "mp4",
     "source_kind": "community",
     "source_id": "superdesign-prompts",
     "source_url": "https://github.com/superdesigndev/superdesign-prompts/blob/main/prompts/lightning-background/README.md",
@@ -8826,7 +8875,8 @@
     "community_slug": "lightning-background",
     "preview": "prompts/lightning-background/preview.mp4",
     "has_text": true,
-    "text_len": 8975
+    "text_len": 8975,
+    "size_bytes": 602779
   },
   {
     "id": "community-superdesign-hyperspeed-background",
@@ -8840,8 +8890,8 @@
     "video_preview_url": "prompts/hyperspeed-background/preview.mp4",
     "sort_order": 10051,
     "created_at": null,
-    "local_rel": null,
-    "local_kind": null,
+    "local_rel": "assets/community/superdesign/hyperspeed-background/preview.mp4",
+    "local_kind": "mp4",
     "source_kind": "community",
     "source_id": "superdesign-prompts",
     "source_url": "https://github.com/superdesigndev/superdesign-prompts/blob/main/prompts/hyperspeed-background/README.md",
@@ -8862,7 +8912,8 @@
     "community_slug": "hyperspeed-background",
     "preview": "prompts/hyperspeed-background/preview.mp4",
     "has_text": true,
-    "text_len": 16485
+    "text_len": 16485,
+    "size_bytes": 608049
   },
   {
     "id": "community-superdesign-light-rays-background",
@@ -8876,8 +8927,8 @@
     "video_preview_url": "prompts/light-rays-background/preview.mp4",
     "sort_order": 10052,
     "created_at": null,
-    "local_rel": null,
-    "local_kind": null,
+    "local_rel": "assets/community/superdesign/light-rays-background/preview.mp4",
+    "local_kind": "mp4",
     "source_kind": "community",
     "source_id": "superdesign-prompts",
     "source_url": "https://github.com/superdesigndev/superdesign-prompts/blob/main/prompts/light-rays-background/README.md",
@@ -8898,7 +8949,8 @@
     "community_slug": "light-rays-background",
     "preview": "prompts/light-rays-background/preview.mp4",
     "has_text": true,
-    "text_len": 15178
+    "text_len": 15178,
+    "size_bytes": 128642
   },
   {
     "id": "community-superdesign-glow-cursor-button",
@@ -8912,8 +8964,8 @@
     "video_preview_url": "prompts/glow-cursor-button/preview.mp4",
     "sort_order": 10053,
     "created_at": null,
-    "local_rel": null,
-    "local_kind": null,
+    "local_rel": "assets/community/superdesign/glow-cursor-button/preview.mp4",
+    "local_kind": "mp4",
     "source_kind": "community",
     "source_id": "superdesign-prompts",
     "source_url": "https://github.com/superdesigndev/superdesign-prompts/blob/main/prompts/glow-cursor-button/README.md",
@@ -8934,7 +8986,8 @@
     "community_slug": "glow-cursor-button",
     "preview": "prompts/glow-cursor-button/preview.mp4",
     "has_text": false,
-    "text_len": 189
+    "text_len": 189,
+    "size_bytes": 1264221
   },
   {
     "id": "community-superdesign-interactive-card-stack",
@@ -8948,8 +9001,8 @@
     "video_preview_url": "prompts/interactive-card-stack/preview.mp4",
     "sort_order": 10054,
     "created_at": null,
-    "local_rel": null,
-    "local_kind": null,
+    "local_rel": "assets/community/superdesign/interactive-card-stack/preview.mp4",
+    "local_kind": "mp4",
     "source_kind": "community",
     "source_id": "superdesign-prompts",
     "source_url": "https://github.com/superdesigndev/superdesign-prompts/blob/main/prompts/interactive-card-stack/README.md",
@@ -8969,7 +9022,8 @@
     "community_slug": "interactive-card-stack",
     "preview": "prompts/interactive-card-stack/preview.mp4",
     "has_text": true,
-    "text_len": 10221
+    "text_len": 10221,
+    "size_bytes": 189222
   },
   {
     "id": "community-superdesign-counter",
@@ -8983,8 +9037,8 @@
     "video_preview_url": "prompts/counter/preview.mp4",
     "sort_order": 10055,
     "created_at": null,
-    "local_rel": null,
-    "local_kind": null,
+    "local_rel": "assets/community/superdesign/counter/preview.mp4",
+    "local_kind": "mp4",
     "source_kind": "community",
     "source_id": "superdesign-prompts",
     "source_url": "https://github.com/superdesigndev/superdesign-prompts/blob/main/prompts/counter/README.md",
@@ -9004,7 +9058,8 @@
     "community_slug": "counter",
     "preview": "prompts/counter/preview.mp4",
     "has_text": true,
-    "text_len": 9503
+    "text_len": 9503,
+    "size_bytes": 187273
   },
   {
     "id": "community-superdesign-coverflow-carousels-that-turn-heads-dark-coverflow-aurora",
@@ -9018,8 +9073,8 @@
     "video_preview_url": null,
     "sort_order": 10056,
     "created_at": null,
-    "local_rel": null,
-    "local_kind": null,
+    "local_rel": "assets/community/superdesign/coverflow-carousels-that-turn-heads-dark-coverflow-aurora/preview.png",
+    "local_kind": "png",
     "source_kind": "community",
     "source_id": "superdesign-prompts",
     "source_url": "https://github.com/superdesigndev/superdesign-prompts/blob/main/prompts/coverflow-carousels-that-turn-heads-dark-coverflow-aurora/README.md",
@@ -9083,7 +9138,8 @@
     "community_slug": "coverflow-carousels-that-turn-heads-dark-coverflow-aurora",
     "preview": "prompts/coverflow-carousels-that-turn-heads-dark-coverflow-aurora/preview.png",
     "has_text": true,
-    "text_len": 29520
+    "text_len": 29520,
+    "size_bytes": 605551
   },
   {
     "id": "community-superdesign-aurora-glass-sign-in-to-the-canvas",
@@ -9097,8 +9153,8 @@
     "video_preview_url": null,
     "sort_order": 10057,
     "created_at": null,
-    "local_rel": null,
-    "local_kind": null,
+    "local_rel": "assets/community/superdesign/aurora-glass-sign-in-to-the-canvas/preview.png",
+    "local_kind": "png",
     "source_kind": "community",
     "source_id": "superdesign-prompts",
     "source_url": "https://github.com/superdesigndev/superdesign-prompts/blob/main/prompts/aurora-glass-sign-in-to-the-canvas/README.md",
@@ -9127,7 +9183,8 @@
     "community_slug": "aurora-glass-sign-in-to-the-canvas",
     "preview": "prompts/aurora-glass-sign-in-to-the-canvas/preview.png",
     "has_text": true,
-    "text_len": 8398
+    "text_len": 8398,
+    "size_bytes": 2091425
   },
   {
     "id": "community-superdesign-graphic-comparison-report",
@@ -9141,8 +9198,8 @@
     "video_preview_url": null,
     "sort_order": 10058,
     "created_at": null,
-    "local_rel": null,
-    "local_kind": null,
+    "local_rel": "assets/community/superdesign/graphic-comparison-report/preview.png",
+    "local_kind": "png",
     "source_kind": "community",
     "source_id": "superdesign-prompts",
     "source_url": "https://github.com/superdesigndev/superdesign-prompts/blob/main/prompts/graphic-comparison-report/README.md",
@@ -9170,7 +9227,8 @@
     "community_slug": "graphic-comparison-report",
     "preview": "prompts/graphic-comparison-report/preview.png",
     "has_text": true,
-    "text_len": 5085
+    "text_len": 5085,
+    "size_bytes": 321608
   },
   {
     "id": "community-superdesign-gridwright-design-the-web-type-the-prompt-swiss-grid-signal-red",
@@ -9184,8 +9242,8 @@
     "video_preview_url": null,
     "sort_order": 10059,
     "created_at": null,
-    "local_rel": null,
-    "local_kind": null,
+    "local_rel": "assets/community/superdesign/gridwright-design-the-web-type-the-prompt-swiss-grid-signal-red/preview.png",
+    "local_kind": "png",
     "source_kind": "community",
     "source_id": "superdesign-prompts",
     "source_url": "https://github.com/superdesigndev/superdesign-prompts/blob/main/prompts/gridwright-design-the-web-type-the-prompt-swiss-grid-signal-red/README.md",
@@ -9215,7 +9273,8 @@
     "community_slug": "gridwright-design-the-web-type-the-prompt-swiss-grid-signal-red",
     "preview": "prompts/gridwright-design-the-web-type-the-prompt-swiss-grid-signal-red/preview.png",
     "has_text": true,
-    "text_len": 13025
+    "text_len": 13025,
+    "size_bytes": 223792
   },
   {
     "id": "community-superdesign-landing-page-local-small-business",
@@ -9229,8 +9288,8 @@
     "video_preview_url": null,
     "sort_order": 10060,
     "created_at": null,
-    "local_rel": null,
-    "local_kind": null,
+    "local_rel": "assets/community/superdesign/landing-page-local-small-business/preview.png",
+    "local_kind": "png",
     "source_kind": "community",
     "source_id": "superdesign-prompts",
     "source_url": "https://github.com/superdesigndev/superdesign-prompts/blob/main/prompts/landing-page-local-small-business/README.md",
@@ -9250,7 +9309,8 @@
     "community_slug": "landing-page-local-small-business",
     "preview": "prompts/landing-page-local-small-business/preview.png",
     "has_text": true,
-    "text_len": 5147
+    "text_len": 5147,
+    "size_bytes": 476564
   },
   {
     "id": "community-superdesign-palette-social-first-friendly-sign-up",
@@ -9264,8 +9324,8 @@
     "video_preview_url": null,
     "sort_order": 10061,
     "created_at": null,
-    "local_rel": null,
-    "local_kind": null,
+    "local_rel": "assets/community/superdesign/palette-social-first-friendly-sign-up/preview.png",
+    "local_kind": "png",
     "source_kind": "community",
     "source_id": "superdesign-prompts",
     "source_url": "https://github.com/superdesigndev/superdesign-prompts/blob/main/prompts/palette-social-first-friendly-sign-up/README.md",
@@ -9302,7 +9362,8 @@
     "community_slug": "palette-social-first-friendly-sign-up",
     "preview": "prompts/palette-social-first-friendly-sign-up/preview.png",
     "has_text": true,
-    "text_len": 15803
+    "text_len": 15803,
+    "size_bytes": 1013388
   },
   {
     "id": "community-superdesign-super-shampoo-high-conversion-lp",
@@ -9316,8 +9377,8 @@
     "video_preview_url": null,
     "sort_order": 10062,
     "created_at": null,
-    "local_rel": null,
-    "local_kind": null,
+    "local_rel": "assets/community/superdesign/super-shampoo-high-conversion-lp/preview.png",
+    "local_kind": "png",
     "source_kind": "community",
     "source_id": "superdesign-prompts",
     "source_url": "https://github.com/superdesigndev/superdesign-prompts/blob/main/prompts/super-shampoo-high-conversion-lp/README.md",
@@ -9339,7 +9400,8 @@
     "community_slug": "super-shampoo-high-conversion-lp",
     "preview": "prompts/super-shampoo-high-conversion-lp/preview.png",
     "has_text": true,
-    "text_len": 5040
+    "text_len": 5040,
+    "size_bytes": 3358900
   },
   {
     "id": "community-superdesign-slate-roi-calculator-pricing",
@@ -9353,8 +9415,8 @@
     "video_preview_url": null,
     "sort_order": 10063,
     "created_at": null,
-    "local_rel": null,
-    "local_kind": null,
+    "local_rel": "assets/community/superdesign/slate-roi-calculator-pricing/preview.png",
+    "local_kind": "png",
     "source_kind": "community",
     "source_id": "superdesign-prompts",
     "source_url": "https://github.com/superdesigndev/superdesign-prompts/blob/main/prompts/slate-roi-calculator-pricing/README.md",
@@ -9388,7 +9450,8 @@
     "community_slug": "slate-roi-calculator-pricing",
     "preview": "prompts/slate-roi-calculator-pricing/preview.png",
     "has_text": true,
-    "text_len": 11977
+    "text_len": 11977,
+    "size_bytes": 354837
   },
   {
     "id": "community-superdesign-the-quote-set-in-burgundy",
@@ -9402,8 +9465,8 @@
     "video_preview_url": null,
     "sort_order": 10064,
     "created_at": null,
-    "local_rel": null,
-    "local_kind": null,
+    "local_rel": "assets/community/superdesign/the-quote-set-in-burgundy/preview.png",
+    "local_kind": "png",
     "source_kind": "community",
     "source_id": "superdesign-prompts",
     "source_url": "https://github.com/superdesigndev/superdesign-prompts/blob/main/prompts/the-quote-set-in-burgundy/README.md",
@@ -9439,7 +9502,8 @@
     "community_slug": "the-quote-set-in-burgundy",
     "preview": "prompts/the-quote-set-in-burgundy/preview.png",
     "has_text": true,
-    "text_len": 10341
+    "text_len": 10341,
+    "size_bytes": 1071331
   },
   {
     "id": "community-superdesign-prism-frosted-glass-pastel-agency-studio",
@@ -9453,8 +9517,8 @@
     "video_preview_url": null,
     "sort_order": 10065,
     "created_at": null,
-    "local_rel": null,
-    "local_kind": null,
+    "local_rel": "assets/community/superdesign/prism-frosted-glass-pastel-agency-studio/preview.png",
+    "local_kind": "png",
     "source_kind": "community",
     "source_id": "superdesign-prompts",
     "source_url": "https://github.com/superdesigndev/superdesign-prompts/blob/main/prompts/prism-frosted-glass-pastel-agency-studio/README.md",
@@ -9493,7 +9557,8 @@
     "community_slug": "prism-frosted-glass-pastel-agency-studio",
     "preview": "prompts/prism-frosted-glass-pastel-agency-studio/preview.png",
     "has_text": true,
-    "text_len": 22685
+    "text_len": 22685,
+    "size_bytes": 1324444
   },
   {
     "id": "community-superdesign-teal-on-ink-newsletter-mega-footer",
@@ -9507,8 +9572,8 @@
     "video_preview_url": null,
     "sort_order": 10066,
     "created_at": null,
-    "local_rel": null,
-    "local_kind": null,
+    "local_rel": "assets/community/superdesign/teal-on-ink-newsletter-mega-footer/preview.png",
+    "local_kind": "png",
     "source_kind": "community",
     "source_id": "superdesign-prompts",
     "source_url": "https://github.com/superdesigndev/superdesign-prompts/blob/main/prompts/teal-on-ink-newsletter-mega-footer/README.md",
@@ -9534,7 +9599,8 @@
     "community_slug": "teal-on-ink-newsletter-mega-footer",
     "preview": "prompts/teal-on-ink-newsletter-mega-footer/preview.png",
     "has_text": true,
-    "text_len": 4374
+    "text_len": 4374,
+    "size_bytes": 987609
   },
   {
     "id": "community-superdesign-gesture-first-navigation-system",
@@ -9548,8 +9614,8 @@
     "video_preview_url": null,
     "sort_order": 10067,
     "created_at": null,
-    "local_rel": null,
-    "local_kind": null,
+    "local_rel": "assets/community/superdesign/gesture-first-navigation-system/preview.png",
+    "local_kind": "png",
     "source_kind": "community",
     "source_id": "superdesign-prompts",
     "source_url": "https://github.com/superdesigndev/superdesign-prompts/blob/main/prompts/gesture-first-navigation-system/README.md",
@@ -9571,7 +9637,8 @@
     "community_slug": "gesture-first-navigation-system",
     "preview": "prompts/gesture-first-navigation-system/preview.png",
     "has_text": true,
-    "text_len": 17967
+    "text_len": 17967,
+    "size_bytes": 701372
   },
   {
     "id": "community-superdesign-editorial-cream-ink-two-path-saas-pricing-3dee65",
@@ -9585,8 +9652,8 @@
     "video_preview_url": null,
     "sort_order": 10068,
     "created_at": null,
-    "local_rel": null,
-    "local_kind": null,
+    "local_rel": "assets/community/superdesign/editorial-cream-ink-two-path-saas-pricing-3dee65/preview.png",
+    "local_kind": "png",
     "source_kind": "community",
     "source_id": "superdesign-prompts",
     "source_url": "https://github.com/superdesigndev/superdesign-prompts/blob/main/prompts/editorial-cream-ink-two-path-saas-pricing-3dee65/README.md",
@@ -9619,7 +9686,8 @@
     "community_slug": "editorial-cream-ink-two-path-saas-pricing-3dee65",
     "preview": "prompts/editorial-cream-ink-two-path-saas-pricing-3dee65/preview.png",
     "has_text": true,
-    "text_len": 10958
+    "text_len": 10958,
+    "size_bytes": 194966
   },
   {
     "id": "community-superdesign-electric-lime-single-plan-saas-pricing",
@@ -9633,8 +9701,8 @@
     "video_preview_url": null,
     "sort_order": 10069,
     "created_at": null,
-    "local_rel": null,
-    "local_kind": null,
+    "local_rel": "assets/community/superdesign/electric-lime-single-plan-saas-pricing/preview.png",
+    "local_kind": "png",
     "source_kind": "community",
     "source_id": "superdesign-prompts",
     "source_url": "https://github.com/superdesigndev/superdesign-prompts/blob/main/prompts/electric-lime-single-plan-saas-pricing/README.md",
@@ -9664,7 +9732,8 @@
     "community_slug": "electric-lime-single-plan-saas-pricing",
     "preview": "prompts/electric-lime-single-plan-saas-pricing/preview.png",
     "has_text": true,
-    "text_len": 9451
+    "text_len": 9451,
+    "size_bytes": 193116
   },
   {
     "id": "community-superdesign-electric-blue-studio-pricing-188a8f",
@@ -9678,8 +9747,8 @@
     "video_preview_url": null,
     "sort_order": 10070,
     "created_at": null,
-    "local_rel": null,
-    "local_kind": null,
+    "local_rel": "assets/community/superdesign/electric-blue-studio-pricing-188a8f/preview.png",
+    "local_kind": "png",
     "source_kind": "community",
     "source_id": "superdesign-prompts",
     "source_url": "https://github.com/superdesigndev/superdesign-prompts/blob/main/prompts/electric-blue-studio-pricing-188a8f/README.md",
@@ -9709,7 +9778,8 @@
     "community_slug": "electric-blue-studio-pricing-188a8f",
     "preview": "prompts/electric-blue-studio-pricing-188a8f/preview.png",
     "has_text": true,
-    "text_len": 13634
+    "text_len": 13634,
+    "size_bytes": 242251
   },
   {
     "id": "community-superdesign-account-setup-flow-goals-interests-card-based",
@@ -9723,8 +9793,8 @@
     "video_preview_url": null,
     "sort_order": 10071,
     "created_at": null,
-    "local_rel": null,
-    "local_kind": null,
+    "local_rel": "assets/community/superdesign/account-setup-flow-goals-interests-card-based/preview.png",
+    "local_kind": "png",
     "source_kind": "community",
     "source_id": "superdesign-prompts",
     "source_url": "https://github.com/superdesigndev/superdesign-prompts/blob/main/prompts/account-setup-flow-goals-interests-card-based/README.md",
@@ -9747,7 +9817,8 @@
     "community_slug": "account-setup-flow-goals-interests-card-based",
     "preview": "prompts/account-setup-flow-goals-interests-card-based/preview.png",
     "has_text": true,
-    "text_len": 4480
+    "text_len": 4480,
+    "size_bytes": 133227
   },
   {
     "id": "community-superdesign-sectioned-index-page",
@@ -9761,8 +9832,8 @@
     "video_preview_url": null,
     "sort_order": 10072,
     "created_at": null,
-    "local_rel": null,
-    "local_kind": null,
+    "local_rel": "assets/community/superdesign/sectioned-index-page/preview.png",
+    "local_kind": "png",
     "source_kind": "community",
     "source_id": "superdesign-prompts",
     "source_url": "https://github.com/superdesigndev/superdesign-prompts/blob/main/prompts/sectioned-index-page/README.md",
@@ -9785,7 +9856,8 @@
     "community_slug": "sectioned-index-page",
     "preview": "prompts/sectioned-index-page/preview.png",
     "has_text": true,
-    "text_len": 4291
+    "text_len": 4291,
+    "size_bytes": 774813
   },
   {
     "id": "community-superdesign-electric-dark-usage-based-pricing-calculator-20e556",
@@ -9799,8 +9871,8 @@
     "video_preview_url": null,
     "sort_order": 10073,
     "created_at": null,
-    "local_rel": null,
-    "local_kind": null,
+    "local_rel": "assets/community/superdesign/electric-dark-usage-based-pricing-calculator-20e556/preview.png",
+    "local_kind": "png",
     "source_kind": "community",
     "source_id": "superdesign-prompts",
     "source_url": "https://github.com/superdesigndev/superdesign-prompts/blob/main/prompts/electric-dark-usage-based-pricing-calculator-20e556/README.md",
@@ -9832,7 +9904,8 @@
     "community_slug": "electric-dark-usage-based-pricing-calculator-20e556",
     "preview": "prompts/electric-dark-usage-based-pricing-calculator-20e556/preview.png",
     "has_text": true,
-    "text_len": 13369
+    "text_len": 13369,
+    "size_bytes": 557308
   },
   {
     "id": "community-superdesign-emerald-4-tier-saas-pricing-table",
@@ -9846,8 +9919,8 @@
     "video_preview_url": null,
     "sort_order": 10074,
     "created_at": null,
-    "local_rel": null,
-    "local_kind": null,
+    "local_rel": "assets/community/superdesign/emerald-4-tier-saas-pricing-table/preview.png",
+    "local_kind": "png",
     "source_kind": "community",
     "source_id": "superdesign-prompts",
     "source_url": "https://github.com/superdesigndev/superdesign-prompts/blob/main/prompts/emerald-4-tier-saas-pricing-table/README.md",
@@ -9878,7 +9951,8 @@
     "community_slug": "emerald-4-tier-saas-pricing-table",
     "preview": "prompts/emerald-4-tier-saas-pricing-table/preview.png",
     "has_text": true,
-    "text_len": 11019
+    "text_len": 11019,
+    "size_bytes": 251585
   },
   {
     "id": "community-superdesign-the-atelier-brief-an-editorial-intake-form-set-like-a-letter",
@@ -9892,8 +9966,8 @@
     "video_preview_url": null,
     "sort_order": 10075,
     "created_at": null,
-    "local_rel": null,
-    "local_kind": null,
+    "local_rel": "assets/community/superdesign/the-atelier-brief-an-editorial-intake-form-set-like-a-letter/preview.png",
+    "local_kind": "png",
     "source_kind": "community",
     "source_id": "superdesign-prompts",
     "source_url": "https://github.com/superdesigndev/superdesign-prompts/blob/main/prompts/the-atelier-brief-an-editorial-intake-form-set-like-a-letter/README.md",
@@ -9925,7 +9999,8 @@
     "community_slug": "the-atelier-brief-an-editorial-intake-form-set-like-a-letter",
     "preview": "prompts/the-atelier-brief-an-editorial-intake-form-set-like-a-letter/preview.png",
     "has_text": true,
-    "text_len": 16946
+    "text_len": 16946,
+    "size_bytes": 218446
   },
   {
     "id": "community-superdesign-send-us-the-brief-brutalist-contact-form",
@@ -9939,8 +10014,8 @@
     "video_preview_url": null,
     "sort_order": 10076,
     "created_at": null,
-    "local_rel": null,
-    "local_kind": null,
+    "local_rel": "assets/community/superdesign/send-us-the-brief-brutalist-contact-form/preview.png",
+    "local_kind": "png",
     "source_kind": "community",
     "source_id": "superdesign-prompts",
     "source_url": "https://github.com/superdesigndev/superdesign-prompts/blob/main/prompts/send-us-the-brief-brutalist-contact-form/README.md",
@@ -9969,7 +10044,8 @@
     "community_slug": "send-us-the-brief-brutalist-contact-form",
     "preview": "prompts/send-us-the-brief-brutalist-contact-form/preview.png",
     "has_text": true,
-    "text_len": 22047
+    "text_len": 22047,
+    "size_bytes": 141033
   },
   {
     "id": "community-superdesign-editorial-music-player-now-playing",
@@ -9983,8 +10059,8 @@
     "video_preview_url": null,
     "sort_order": 10077,
     "created_at": null,
-    "local_rel": null,
-    "local_kind": null,
+    "local_rel": "assets/community/superdesign/editorial-music-player-now-playing/preview.png",
+    "local_kind": "png",
     "source_kind": "community",
     "source_id": "superdesign-prompts",
     "source_url": "https://github.com/superdesigndev/superdesign-prompts/blob/main/prompts/editorial-music-player-now-playing/README.md",
@@ -10008,7 +10084,8 @@
     "community_slug": "editorial-music-player-now-playing",
     "preview": "prompts/editorial-music-player-now-playing/preview.png",
     "has_text": true,
-    "text_len": 3365
+    "text_len": 3365,
+    "size_bytes": 355195
   },
   {
     "id": "community-superdesign-cream-and-sky-playful-saas-pricing",
@@ -10022,8 +10099,8 @@
     "video_preview_url": null,
     "sort_order": 10078,
     "created_at": null,
-    "local_rel": null,
-    "local_kind": null,
+    "local_rel": "assets/community/superdesign/cream-and-sky-playful-saas-pricing/preview.png",
+    "local_kind": "png",
     "source_kind": "community",
     "source_id": "superdesign-prompts",
     "source_url": "https://github.com/superdesigndev/superdesign-prompts/blob/main/prompts/cream-and-sky-playful-saas-pricing/README.md",
@@ -10054,7 +10131,8 @@
     "community_slug": "cream-and-sky-playful-saas-pricing",
     "preview": "prompts/cream-and-sky-playful-saas-pricing/preview.png",
     "has_text": true,
-    "text_len": 12605
+    "text_len": 12605,
+    "size_bytes": 280206
   },
   {
     "id": "community-superdesign-editorial-crimson-dev-tool-pricing",
@@ -10068,8 +10146,8 @@
     "video_preview_url": null,
     "sort_order": 10079,
     "created_at": null,
-    "local_rel": null,
-    "local_kind": null,
+    "local_rel": "assets/community/superdesign/editorial-crimson-dev-tool-pricing/preview.png",
+    "local_kind": "png",
     "source_kind": "community",
     "source_id": "superdesign-prompts",
     "source_url": "https://github.com/superdesigndev/superdesign-prompts/blob/main/prompts/editorial-crimson-dev-tool-pricing/README.md",
@@ -10102,7 +10180,8 @@
     "community_slug": "editorial-crimson-dev-tool-pricing",
     "preview": "prompts/editorial-crimson-dev-tool-pricing/preview.png",
     "has_text": true,
-    "text_len": 13297
+    "text_len": 13297,
+    "size_bytes": 329224
   },
   {
     "id": "community-superdesign-card-grid-browse",
@@ -10116,8 +10195,8 @@
     "video_preview_url": null,
     "sort_order": 10080,
     "created_at": null,
-    "local_rel": null,
-    "local_kind": null,
+    "local_rel": "assets/community/superdesign/card-grid-browse/preview.png",
+    "local_kind": "png",
     "source_kind": "community",
     "source_id": "superdesign-prompts",
     "source_url": "https://github.com/superdesigndev/superdesign-prompts/blob/main/prompts/card-grid-browse/README.md",
@@ -10140,7 +10219,8 @@
     "community_slug": "card-grid-browse",
     "preview": "prompts/card-grid-browse/preview.png",
     "has_text": true,
-    "text_len": 3945
+    "text_len": 3945,
+    "size_bytes": 704514
   },
   {
     "id": "community-superdesign-acid-yellow-neo-brutalist-mega-footer",
@@ -10154,8 +10234,8 @@
     "video_preview_url": null,
     "sort_order": 10081,
     "created_at": null,
-    "local_rel": null,
-    "local_kind": null,
+    "local_rel": "assets/community/superdesign/acid-yellow-neo-brutalist-mega-footer/preview.png",
+    "local_kind": "png",
     "source_kind": "community",
     "source_id": "superdesign-prompts",
     "source_url": "https://github.com/superdesigndev/superdesign-prompts/blob/main/prompts/acid-yellow-neo-brutalist-mega-footer/README.md",
@@ -10181,7 +10261,8 @@
     "community_slug": "acid-yellow-neo-brutalist-mega-footer",
     "preview": "prompts/acid-yellow-neo-brutalist-mega-footer/preview.png",
     "has_text": true,
-    "text_len": 3332
+    "text_len": 3332,
+    "size_bytes": 234135
   },
   {
     "id": "community-superdesign-validar-forms-that-catch-mistakes-before-they-cost-you",
@@ -10195,8 +10276,8 @@
     "video_preview_url": null,
     "sort_order": 10082,
     "created_at": null,
-    "local_rel": null,
-    "local_kind": null,
+    "local_rel": "assets/community/superdesign/validar-forms-that-catch-mistakes-before-they-cost-you/preview.png",
+    "local_kind": "png",
     "source_kind": "community",
     "source_id": "superdesign-prompts",
     "source_url": "https://github.com/superdesigndev/superdesign-prompts/blob/main/prompts/validar-forms-that-catch-mistakes-before-they-cost-you/README.md",
@@ -10224,7 +10305,8 @@
     "community_slug": "validar-forms-that-catch-mistakes-before-they-cost-you",
     "preview": "prompts/validar-forms-that-catch-mistakes-before-they-cost-you/preview.png",
     "has_text": true,
-    "text_len": 10816
+    "text_len": 10816,
+    "size_bytes": 584553
   },
   {
     "id": "community-superdesign-champagne-noir-paywall-65a2fd",
@@ -10238,8 +10320,8 @@
     "video_preview_url": null,
     "sort_order": 10083,
     "created_at": null,
-    "local_rel": null,
-    "local_kind": null,
+    "local_rel": "assets/community/superdesign/champagne-noir-paywall-65a2fd/preview.png",
+    "local_kind": "png",
     "source_kind": "community",
     "source_id": "superdesign-prompts",
     "source_url": "https://github.com/superdesigndev/superdesign-prompts/blob/main/prompts/champagne-noir-paywall-65a2fd/README.md",
@@ -10264,7 +10346,8 @@
     "community_slug": "champagne-noir-paywall-65a2fd",
     "preview": "prompts/champagne-noir-paywall-65a2fd/preview.png",
     "has_text": true,
-    "text_len": 2981
+    "text_len": 2981,
+    "size_bytes": 280565
   },
   {
     "id": "community-superdesign-foundry-your-saas-site-designed-before-you-write-a-line",
@@ -10278,8 +10361,8 @@
     "video_preview_url": null,
     "sort_order": 10084,
     "created_at": null,
-    "local_rel": null,
-    "local_kind": null,
+    "local_rel": "assets/community/superdesign/foundry-your-saas-site-designed-before-you-write-a-line/preview.png",
+    "local_kind": "png",
     "source_kind": "community",
     "source_id": "superdesign-prompts",
     "source_url": "https://github.com/superdesigndev/superdesign-prompts/blob/main/prompts/foundry-your-saas-site-designed-before-you-write-a-line/README.md",
@@ -10309,7 +10392,8 @@
     "community_slug": "foundry-your-saas-site-designed-before-you-write-a-line",
     "preview": "prompts/foundry-your-saas-site-designed-before-you-write-a-line/preview.png",
     "has_text": true,
-    "text_len": 9251
+    "text_len": 9251,
+    "size_bytes": 280949
   },
   {
     "id": "community-superdesign-loam-warm-earthy-organic-agency-website",
@@ -10323,8 +10407,8 @@
     "video_preview_url": null,
     "sort_order": 10085,
     "created_at": null,
-    "local_rel": null,
-    "local_kind": null,
+    "local_rel": "assets/community/superdesign/loam-warm-earthy-organic-agency-website/preview.png",
+    "local_kind": "png",
     "source_kind": "community",
     "source_id": "superdesign-prompts",
     "source_url": "https://github.com/superdesigndev/superdesign-prompts/blob/main/prompts/loam-warm-earthy-organic-agency-website/README.md",
@@ -10353,7 +10437,8 @@
     "community_slug": "loam-warm-earthy-organic-agency-website",
     "preview": "prompts/loam-warm-earthy-organic-agency-website/preview.png",
     "has_text": true,
-    "text_len": 9905
+    "text_len": 9905,
+    "size_bytes": 1750651
   },
   {
     "id": "community-superdesign-landing-page-real-estate",
@@ -10367,8 +10452,8 @@
     "video_preview_url": null,
     "sort_order": 10086,
     "created_at": null,
-    "local_rel": null,
-    "local_kind": null,
+    "local_rel": "assets/community/superdesign/landing-page-real-estate/preview.png",
+    "local_kind": "png",
     "source_kind": "community",
     "source_id": "superdesign-prompts",
     "source_url": "https://github.com/superdesigndev/superdesign-prompts/blob/main/prompts/landing-page-real-estate/README.md",
@@ -10388,7 +10473,8 @@
     "community_slug": "landing-page-real-estate",
     "preview": "prompts/landing-page-real-estate/preview.png",
     "has_text": true,
-    "text_len": 9516
+    "text_len": 9516,
+    "size_bytes": 542534
   },
   {
     "id": "community-superdesign-ink-and-acid-mono-sitemap-footer",
@@ -10402,8 +10488,8 @@
     "video_preview_url": null,
     "sort_order": 10087,
     "created_at": null,
-    "local_rel": null,
-    "local_kind": null,
+    "local_rel": "assets/community/superdesign/ink-and-acid-mono-sitemap-footer/preview.png",
+    "local_kind": "png",
     "source_kind": "community",
     "source_id": "superdesign-prompts",
     "source_url": "https://github.com/superdesigndev/superdesign-prompts/blob/main/prompts/ink-and-acid-mono-sitemap-footer/README.md",
@@ -10429,7 +10515,8 @@
     "community_slug": "ink-and-acid-mono-sitemap-footer",
     "preview": "prompts/ink-and-acid-mono-sitemap-footer/preview.png",
     "has_text": true,
-    "text_len": 4178
+    "text_len": 4178,
+    "size_bytes": 843955
   },
   {
     "id": "community-superdesign-editorial-violet-saas-pricing-matrix",
@@ -10443,8 +10530,8 @@
     "video_preview_url": null,
     "sort_order": 10088,
     "created_at": null,
-    "local_rel": null,
-    "local_kind": null,
+    "local_rel": "assets/community/superdesign/editorial-violet-saas-pricing-matrix/preview.png",
+    "local_kind": "png",
     "source_kind": "community",
     "source_id": "superdesign-prompts",
     "source_url": "https://github.com/superdesigndev/superdesign-prompts/blob/main/prompts/editorial-violet-saas-pricing-matrix/README.md",
@@ -10475,7 +10562,8 @@
     "community_slug": "editorial-violet-saas-pricing-matrix",
     "preview": "prompts/editorial-violet-saas-pricing-matrix/preview.png",
     "has_text": true,
-    "text_len": 12479
+    "text_len": 12479,
+    "size_bytes": 325589
   },
   {
     "id": "community-superdesign-editorial-saas-onboarding",
@@ -10489,8 +10577,8 @@
     "video_preview_url": null,
     "sort_order": 10089,
     "created_at": null,
-    "local_rel": null,
-    "local_kind": null,
+    "local_rel": "assets/community/superdesign/editorial-saas-onboarding/preview.png",
+    "local_kind": "png",
     "source_kind": "community",
     "source_id": "superdesign-prompts",
     "source_url": "https://github.com/superdesigndev/superdesign-prompts/blob/main/prompts/editorial-saas-onboarding/README.md",
@@ -10519,7 +10607,8 @@
     "community_slug": "editorial-saas-onboarding",
     "preview": "prompts/editorial-saas-onboarding/preview.png",
     "has_text": true,
-    "text_len": 5125
+    "text_len": 5125,
+    "size_bytes": 339931
   },
   {
     "id": "community-superdesign-design-at-the-speed-of-thought-editorial-split-sign-up",
@@ -10533,8 +10622,8 @@
     "video_preview_url": null,
     "sort_order": 10090,
     "created_at": null,
-    "local_rel": null,
-    "local_kind": null,
+    "local_rel": "assets/community/superdesign/design-at-the-speed-of-thought-editorial-split-sign-up/preview.png",
+    "local_kind": "png",
     "source_kind": "community",
     "source_id": "superdesign-prompts",
     "source_url": "https://github.com/superdesigndev/superdesign-prompts/blob/main/prompts/design-at-the-speed-of-thought-editorial-split-sign-up/README.md",
@@ -10585,7 +10674,8 @@
     "community_slug": "design-at-the-speed-of-thought-editorial-split-sign-up",
     "preview": "prompts/design-at-the-speed-of-thought-editorial-split-sign-up/preview.png",
     "has_text": true,
-    "text_len": 18619
+    "text_len": 18619,
+    "size_bytes": 914014
   },
   {
     "id": "community-superdesign-swiss-grid-agency-layout",
@@ -10599,8 +10689,8 @@
     "video_preview_url": null,
     "sort_order": 10091,
     "created_at": null,
-    "local_rel": null,
-    "local_kind": null,
+    "local_rel": "assets/community/superdesign/swiss-grid-agency-layout/preview.png",
+    "local_kind": "png",
     "source_kind": "community",
     "source_id": "superdesign-prompts",
     "source_url": "https://github.com/superdesigndev/superdesign-prompts/blob/main/prompts/swiss-grid-agency-layout/README.md",
@@ -10637,7 +10727,8 @@
     "community_slug": "swiss-grid-agency-layout",
     "preview": "prompts/swiss-grid-agency-layout/preview.png",
     "has_text": true,
-    "text_len": 23404
+    "text_len": 23404,
+    "size_bytes": 161488
   },
   {
     "id": "community-superdesign-create-your-account-promptly-split-image-emerald-sign-up",
@@ -10651,8 +10742,8 @@
     "video_preview_url": null,
     "sort_order": 10092,
     "created_at": null,
-    "local_rel": null,
-    "local_kind": null,
+    "local_rel": "assets/community/superdesign/create-your-account-promptly-split-image-emerald-sign-up/preview.png",
+    "local_kind": "png",
     "source_kind": "community",
     "source_id": "superdesign-prompts",
     "source_url": "https://github.com/superdesigndev/superdesign-prompts/blob/main/prompts/create-your-account-promptly-split-image-emerald-sign-up/README.md",
@@ -10685,7 +10776,8 @@
     "community_slug": "create-your-account-promptly-split-image-emerald-sign-up",
     "preview": "prompts/create-your-account-promptly-split-image-emerald-sign-up/preview.png",
     "has_text": true,
-    "text_len": 9990
+    "text_len": 9990,
+    "size_bytes": 1314903
   },
   {
     "id": "community-superdesign-laboratory-skincare",
@@ -10699,8 +10791,8 @@
     "video_preview_url": null,
     "sort_order": 10093,
     "created_at": null,
-    "local_rel": null,
-    "local_kind": null,
+    "local_rel": "assets/community/superdesign/laboratory-skincare/preview.png",
+    "local_kind": "png",
     "source_kind": "community",
     "source_id": "superdesign-prompts",
     "source_url": "https://github.com/superdesigndev/superdesign-prompts/blob/main/prompts/laboratory-skincare/README.md",
@@ -10723,7 +10815,8 @@
     "community_slug": "laboratory-skincare",
     "preview": "prompts/laboratory-skincare/preview.png",
     "has_text": true,
-    "text_len": 4966
+    "text_len": 4966,
+    "size_bytes": 134828
   },
   {
     "id": "community-superdesign-ai-system-configuration-console",
@@ -10737,8 +10830,8 @@
     "video_preview_url": null,
     "sort_order": 10094,
     "created_at": null,
-    "local_rel": null,
-    "local_kind": null,
+    "local_rel": "assets/community/superdesign/ai-system-configuration-console/preview.png",
+    "local_kind": "png",
     "source_kind": "community",
     "source_id": "superdesign-prompts",
     "source_url": "https://github.com/superdesigndev/superdesign-prompts/blob/main/prompts/ai-system-configuration-console/README.md",
@@ -10771,7 +10864,8 @@
     "community_slug": "ai-system-configuration-console",
     "preview": "prompts/ai-system-configuration-console/preview.png",
     "has_text": true,
-    "text_len": 5040
+    "text_len": 5040,
+    "size_bytes": 309763
   },
   {
     "id": "community-superdesign-midnight-navy-fintech-pricing-656a6d",
@@ -10785,8 +10879,8 @@
     "video_preview_url": null,
     "sort_order": 10095,
     "created_at": null,
-    "local_rel": null,
-    "local_kind": null,
+    "local_rel": "assets/community/superdesign/midnight-navy-fintech-pricing-656a6d/preview.png",
+    "local_kind": "png",
     "source_kind": "community",
     "source_id": "superdesign-prompts",
     "source_url": "https://github.com/superdesigndev/superdesign-prompts/blob/main/prompts/midnight-navy-fintech-pricing-656a6d/README.md",
@@ -10818,7 +10912,8 @@
     "community_slug": "midnight-navy-fintech-pricing-656a6d",
     "preview": "prompts/midnight-navy-fintech-pricing-656a6d/preview.png",
     "has_text": true,
-    "text_len": 11312
+    "text_len": 11312,
+    "size_bytes": 476144
   },
   {
     "id": "community-superdesign-minimalist-wireframe-login",
@@ -10832,8 +10927,8 @@
     "video_preview_url": null,
     "sort_order": 10096,
     "created_at": null,
-    "local_rel": null,
-    "local_kind": null,
+    "local_rel": "assets/community/superdesign/minimalist-wireframe-login/preview.png",
+    "local_kind": "png",
     "source_kind": "community",
     "source_id": "superdesign-prompts",
     "source_url": "https://github.com/superdesigndev/superdesign-prompts/blob/main/prompts/minimalist-wireframe-login/README.md",
@@ -10856,7 +10951,8 @@
     "community_slug": "minimalist-wireframe-login",
     "preview": "prompts/minimalist-wireframe-login/preview.png",
     "has_text": true,
-    "text_len": 3783
+    "text_len": 3783,
+    "size_bytes": 120748
   },
   {
     "id": "community-superdesign-editorial-feature-announcement",
@@ -10870,8 +10966,8 @@
     "video_preview_url": null,
     "sort_order": 10097,
     "created_at": null,
-    "local_rel": null,
-    "local_kind": null,
+    "local_rel": "assets/community/superdesign/editorial-feature-announcement/preview.png",
+    "local_kind": "png",
     "source_kind": "community",
     "source_id": "superdesign-prompts",
     "source_url": "https://github.com/superdesigndev/superdesign-prompts/blob/main/prompts/editorial-feature-announcement/README.md",
@@ -10897,7 +10993,8 @@
     "community_slug": "editorial-feature-announcement",
     "preview": "prompts/editorial-feature-announcement/preview.png",
     "has_text": true,
-    "text_len": 4777
+    "text_len": 4777,
+    "size_bytes": 221322
   },
   {
     "id": "community-superdesign-modal-design-success-celebration-pastel-legibility-fixed-9fbd65",
@@ -10963,8 +11060,8 @@
     "video_preview_url": null,
     "sort_order": 10099,
     "created_at": null,
-    "local_rel": null,
-    "local_kind": null,
+    "local_rel": "assets/community/superdesign/volt-electric-lime-fitness-dashboard-a7544c/preview.png",
+    "local_kind": "png",
     "source_kind": "community",
     "source_id": "superdesign-prompts",
     "source_url": "https://github.com/superdesigndev/superdesign-prompts/blob/main/prompts/volt-electric-lime-fitness-dashboard-a7544c/README.md",
@@ -10989,7 +11086,8 @@
     "community_slug": "volt-electric-lime-fitness-dashboard-a7544c",
     "preview": "prompts/volt-electric-lime-fitness-dashboard-a7544c/preview.png",
     "has_text": true,
-    "text_len": 3260
+    "text_len": 3260,
+    "size_bytes": 315657
   },
   {
     "id": "community-superdesign-system-initialization-trust-and-transparency",
@@ -11003,8 +11101,8 @@
     "video_preview_url": null,
     "sort_order": 10100,
     "created_at": null,
-    "local_rel": null,
-    "local_kind": null,
+    "local_rel": "assets/community/superdesign/system-initialization-trust-and-transparency/preview.png",
+    "local_kind": "png",
     "source_kind": "community",
     "source_id": "superdesign-prompts",
     "source_url": "https://github.com/superdesigndev/superdesign-prompts/blob/main/prompts/system-initialization-trust-and-transparency/README.md",
@@ -11034,7 +11132,8 @@
     "community_slug": "system-initialization-trust-and-transparency",
     "preview": "prompts/system-initialization-trust-and-transparency/preview.png",
     "has_text": true,
-    "text_len": 4967
+    "text_len": 4967,
+    "size_bytes": 341581
   },
   {
     "id": "community-superdesign-cream-paper-and-coral-mega-footer",
@@ -11048,8 +11147,8 @@
     "video_preview_url": null,
     "sort_order": 10101,
     "created_at": null,
-    "local_rel": null,
-    "local_kind": null,
+    "local_rel": "assets/community/superdesign/cream-paper-and-coral-mega-footer/preview.png",
+    "local_kind": "png",
     "source_kind": "community",
     "source_id": "superdesign-prompts",
     "source_url": "https://github.com/superdesigndev/superdesign-prompts/blob/main/prompts/cream-paper-and-coral-mega-footer/README.md",
@@ -11075,7 +11174,8 @@
     "community_slug": "cream-paper-and-coral-mega-footer",
     "preview": "prompts/cream-paper-and-coral-mega-footer/preview.png",
     "has_text": true,
-    "text_len": 3744
+    "text_len": 3744,
+    "size_bytes": 973699
   },
   {
     "id": "community-superdesign-welcome-back-lumen-centered-card-true-cobalt",
@@ -11089,8 +11189,8 @@
     "video_preview_url": null,
     "sort_order": 10102,
     "created_at": null,
-    "local_rel": null,
-    "local_kind": null,
+    "local_rel": "assets/community/superdesign/welcome-back-lumen-centered-card-true-cobalt/preview.png",
+    "local_kind": "png",
     "source_kind": "community",
     "source_id": "superdesign-prompts",
     "source_url": "https://github.com/superdesigndev/superdesign-prompts/blob/main/prompts/welcome-back-lumen-centered-card-true-cobalt/README.md",
@@ -11123,7 +11223,8 @@
     "community_slug": "welcome-back-lumen-centered-card-true-cobalt",
     "preview": "prompts/welcome-back-lumen-centered-card-true-cobalt/preview.png",
     "has_text": true,
-    "text_len": 10615
+    "text_len": 10615,
+    "size_bytes": 738084
   },
   {
     "id": "community-superdesign-atlas-studio-charting-your-account-step-one-of-three",
@@ -11137,8 +11238,8 @@
     "video_preview_url": null,
     "sort_order": 10103,
     "created_at": null,
-    "local_rel": null,
-    "local_kind": null,
+    "local_rel": "assets/community/superdesign/atlas-studio-charting-your-account-step-one-of-three/preview.png",
+    "local_kind": "png",
     "source_kind": "community",
     "source_id": "superdesign-prompts",
     "source_url": "https://github.com/superdesigndev/superdesign-prompts/blob/main/prompts/atlas-studio-charting-your-account-step-one-of-three/README.md",
@@ -11167,7 +11268,8 @@
     "community_slug": "atlas-studio-charting-your-account-step-one-of-three",
     "preview": "prompts/atlas-studio-charting-your-account-step-one-of-three/preview.png",
     "has_text": true,
-    "text_len": 12514
+    "text_len": 12514,
+    "size_bytes": 686391
   },
   {
     "id": "community-superdesign-fintech-wallet-mobile-home-screen",
@@ -11181,8 +11283,8 @@
     "video_preview_url": null,
     "sort_order": 10104,
     "created_at": null,
-    "local_rel": null,
-    "local_kind": null,
+    "local_rel": "assets/community/superdesign/fintech-wallet-mobile-home-screen/preview.png",
+    "local_kind": "png",
     "source_kind": "community",
     "source_id": "superdesign-prompts",
     "source_url": "https://github.com/superdesigndev/superdesign-prompts/blob/main/prompts/fintech-wallet-mobile-home-screen/README.md",
@@ -11207,7 +11309,8 @@
     "community_slug": "fintech-wallet-mobile-home-screen",
     "preview": "prompts/fintech-wallet-mobile-home-screen/preview.png",
     "has_text": true,
-    "text_len": 3055
+    "text_len": 3055,
+    "size_bytes": 554979
   },
   {
     "id": "community-superdesign-forms-that-feel-effortless-to-fill-fieldcraft",
@@ -11221,8 +11324,8 @@
     "video_preview_url": null,
     "sort_order": 10105,
     "created_at": null,
-    "local_rel": null,
-    "local_kind": null,
+    "local_rel": "assets/community/superdesign/forms-that-feel-effortless-to-fill-fieldcraft/preview.png",
+    "local_kind": "png",
     "source_kind": "community",
     "source_id": "superdesign-prompts",
     "source_url": "https://github.com/superdesigndev/superdesign-prompts/blob/main/prompts/forms-that-feel-effortless-to-fill-fieldcraft/README.md",
@@ -11251,7 +11354,8 @@
     "community_slug": "forms-that-feel-effortless-to-fill-fieldcraft",
     "preview": "prompts/forms-that-feel-effortless-to-fill-fieldcraft/preview.png",
     "has_text": true,
-    "text_len": 8721
+    "text_len": 8721,
+    "size_bytes": 544752
   },
   {
     "id": "community-superdesign-loop-say-hello-we-dont-bite-friendly-illustrated-sky",
@@ -11265,8 +11369,8 @@
     "video_preview_url": null,
     "sort_order": 10106,
     "created_at": null,
-    "local_rel": null,
-    "local_kind": null,
+    "local_rel": "assets/community/superdesign/loop-say-hello-we-dont-bite-friendly-illustrated-sky/preview.png",
+    "local_kind": "png",
     "source_kind": "community",
     "source_id": "superdesign-prompts",
     "source_url": "https://github.com/superdesigndev/superdesign-prompts/blob/main/prompts/loop-say-hello-we-dont-bite-friendly-illustrated-sky/README.md",
@@ -11295,7 +11399,8 @@
     "community_slug": "loop-say-hello-we-dont-bite-friendly-illustrated-sky",
     "preview": "prompts/loop-say-hello-we-dont-bite-friendly-illustrated-sky/preview.png",
     "has_text": true,
-    "text_len": 31320
+    "text_len": 31320,
+    "size_bytes": 705551
   },
   {
     "id": "community-superdesign-formcraft-workspace-settings-cobalt-two-column",
@@ -11309,8 +11414,8 @@
     "video_preview_url": null,
     "sort_order": 10107,
     "created_at": null,
-    "local_rel": null,
-    "local_kind": null,
+    "local_rel": "assets/community/superdesign/formcraft-workspace-settings-cobalt-two-column/preview.png",
+    "local_kind": "png",
     "source_kind": "community",
     "source_id": "superdesign-prompts",
     "source_url": "https://github.com/superdesigndev/superdesign-prompts/blob/main/prompts/formcraft-workspace-settings-cobalt-two-column/README.md",
@@ -11339,7 +11444,8 @@
     "community_slug": "formcraft-workspace-settings-cobalt-two-column",
     "preview": "prompts/formcraft-workspace-settings-cobalt-two-column/preview.png",
     "has_text": true,
-    "text_len": 11510
+    "text_len": 11510,
+    "size_bytes": 226018
   },
   {
     "id": "community-superdesign-atelier-early-access-waitlist-minimal-graphite",
@@ -11353,8 +11459,8 @@
     "video_preview_url": null,
     "sort_order": 10108,
     "created_at": null,
-    "local_rel": null,
-    "local_kind": null,
+    "local_rel": "assets/community/superdesign/atelier-early-access-waitlist-minimal-graphite/preview.png",
+    "local_kind": "png",
     "source_kind": "community",
     "source_id": "superdesign-prompts",
     "source_url": "https://github.com/superdesigndev/superdesign-prompts/blob/main/prompts/atelier-early-access-waitlist-minimal-graphite/README.md",
@@ -11383,7 +11489,8 @@
     "community_slug": "atelier-early-access-waitlist-minimal-graphite",
     "preview": "prompts/atelier-early-access-waitlist-minimal-graphite/preview.png",
     "has_text": true,
-    "text_len": 14460
+    "text_len": 14460,
+    "size_bytes": 390711
   },
   {
     "id": "community-superdesign-editorial-image-lightbox",
@@ -11397,8 +11504,8 @@
     "video_preview_url": null,
     "sort_order": 10109,
     "created_at": null,
-    "local_rel": null,
-    "local_kind": null,
+    "local_rel": "assets/community/superdesign/editorial-image-lightbox/preview.png",
+    "local_kind": "png",
     "source_kind": "community",
     "source_id": "superdesign-prompts",
     "source_url": "https://github.com/superdesigndev/superdesign-prompts/blob/main/prompts/editorial-image-lightbox/README.md",
@@ -11444,7 +11551,8 @@
     "community_slug": "editorial-image-lightbox",
     "preview": "prompts/editorial-image-lightbox/preview.png",
     "has_text": true,
-    "text_len": 23211
+    "text_len": 23211,
+    "size_bytes": 279120
   },
   {
     "id": "community-superdesign-tablekit-the-data-table-your-team-actually-wants-to-live-in",
@@ -11458,8 +11566,8 @@
     "video_preview_url": null,
     "sort_order": 10110,
     "created_at": null,
-    "local_rel": null,
-    "local_kind": null,
+    "local_rel": "assets/community/superdesign/tablekit-the-data-table-your-team-actually-wants-to-live-in/preview.png",
+    "local_kind": "png",
     "source_kind": "community",
     "source_id": "superdesign-prompts",
     "source_url": "https://github.com/superdesigndev/superdesign-prompts/blob/main/prompts/tablekit-the-data-table-your-team-actually-wants-to-live-in/README.md",
@@ -11490,7 +11598,8 @@
     "community_slug": "tablekit-the-data-table-your-team-actually-wants-to-live-in",
     "preview": "prompts/tablekit-the-data-table-your-team-actually-wants-to-live-in/preview.png",
     "has_text": true,
-    "text_len": 8804
+    "text_len": 8804,
+    "size_bytes": 333982
   },
   {
     "id": "community-superdesign-sunset-glow-wordmark-mega-footer",
@@ -11504,8 +11613,8 @@
     "video_preview_url": null,
     "sort_order": 10111,
     "created_at": null,
-    "local_rel": null,
-    "local_kind": null,
+    "local_rel": "assets/community/superdesign/sunset-glow-wordmark-mega-footer/preview.png",
+    "local_kind": "png",
     "source_kind": "community",
     "source_id": "superdesign-prompts",
     "source_url": "https://github.com/superdesigndev/superdesign-prompts/blob/main/prompts/sunset-glow-wordmark-mega-footer/README.md",
@@ -11531,7 +11640,8 @@
     "community_slug": "sunset-glow-wordmark-mega-footer",
     "preview": "prompts/sunset-glow-wordmark-mega-footer/preview.png",
     "has_text": true,
-    "text_len": 3108
+    "text_len": 3108,
+    "size_bytes": 3335128
   },
   {
     "id": "community-superdesign-atelier-design-spoken-into-being-editorial-serif-burgundy",
@@ -11545,8 +11655,8 @@
     "video_preview_url": null,
     "sort_order": 10112,
     "created_at": null,
-    "local_rel": null,
-    "local_kind": null,
+    "local_rel": "assets/community/superdesign/atelier-design-spoken-into-being-editorial-serif-burgundy/preview.png",
+    "local_kind": "png",
     "source_kind": "community",
     "source_id": "superdesign-prompts",
     "source_url": "https://github.com/superdesigndev/superdesign-prompts/blob/main/prompts/atelier-design-spoken-into-being-editorial-serif-burgundy/README.md",
@@ -11577,7 +11687,8 @@
     "community_slug": "atelier-design-spoken-into-being-editorial-serif-burgundy",
     "preview": "prompts/atelier-design-spoken-into-being-editorial-serif-burgundy/preview.png",
     "has_text": true,
-    "text_len": 8229
+    "text_len": 8229,
+    "size_bytes": 179420
   },
   {
     "id": "community-superdesign-superdesign-setup-inline-preview",
@@ -11591,8 +11702,8 @@
     "video_preview_url": null,
     "sort_order": 10114,
     "created_at": null,
-    "local_rel": null,
-    "local_kind": null,
+    "local_rel": "assets/community/superdesign/superdesign-setup-inline-preview/preview.png",
+    "local_kind": "png",
     "source_kind": "community",
     "source_id": "superdesign-prompts",
     "source_url": "https://github.com/superdesigndev/superdesign-prompts/blob/main/prompts/superdesign-setup-inline-preview/README.md",
@@ -11623,7 +11734,8 @@
     "community_slug": "superdesign-setup-inline-preview",
     "preview": "prompts/superdesign-setup-inline-preview/preview.png",
     "has_text": true,
-    "text_len": 4513
+    "text_len": 4513,
+    "size_bytes": 219593
   },
   {
     "id": "community-superdesign-verify-its-you-aperture-otp-2fa-graphite-platinum",
@@ -11637,8 +11749,8 @@
     "video_preview_url": null,
     "sort_order": 10115,
     "created_at": null,
-    "local_rel": null,
-    "local_kind": null,
+    "local_rel": "assets/community/superdesign/verify-its-you-aperture-otp-2fa-graphite-platinum/preview.png",
+    "local_kind": "png",
     "source_kind": "community",
     "source_id": "superdesign-prompts",
     "source_url": "https://github.com/superdesigndev/superdesign-prompts/blob/main/prompts/verify-its-you-aperture-otp-2fa-graphite-platinum/README.md",
@@ -11669,7 +11781,8 @@
     "community_slug": "verify-its-you-aperture-otp-2fa-graphite-platinum",
     "preview": "prompts/verify-its-you-aperture-otp-2fa-graphite-platinum/preview.png",
     "has_text": true,
-    "text_len": 11948
+    "text_len": 11948,
+    "size_bytes": 437549
   },
   {
     "id": "community-superdesign-technical-system-onboarding",
@@ -11683,8 +11796,8 @@
     "video_preview_url": null,
     "sort_order": 10116,
     "created_at": null,
-    "local_rel": null,
-    "local_kind": null,
+    "local_rel": "assets/community/superdesign/technical-system-onboarding/preview.png",
+    "local_kind": "png",
     "source_kind": "community",
     "source_id": "superdesign-prompts",
     "source_url": "https://github.com/superdesigndev/superdesign-prompts/blob/main/prompts/technical-system-onboarding/README.md",
@@ -11715,7 +11828,8 @@
     "community_slug": "technical-system-onboarding",
     "preview": "prompts/technical-system-onboarding/preview.png",
     "has_text": true,
-    "text_len": 5079
+    "text_len": 5079,
+    "size_bytes": 428431
   },
   {
     "id": "community-superdesign-plume-sign-in-to-your-design-canvas",
@@ -11729,8 +11843,8 @@
     "video_preview_url": null,
     "sort_order": 10117,
     "created_at": null,
-    "local_rel": null,
-    "local_kind": null,
+    "local_rel": "assets/community/superdesign/plume-sign-in-to-your-design-canvas/preview.png",
+    "local_kind": "png",
     "source_kind": "community",
     "source_id": "superdesign-prompts",
     "source_url": "https://github.com/superdesigndev/superdesign-prompts/blob/main/prompts/plume-sign-in-to-your-design-canvas/README.md",
@@ -11762,7 +11876,8 @@
     "community_slug": "plume-sign-in-to-your-design-canvas",
     "preview": "prompts/plume-sign-in-to-your-design-canvas/preview.png",
     "has_text": true,
-    "text_len": 10166
+    "text_len": 10166,
+    "size_bytes": 702708
   },
   {
     "id": "community-superdesign-gen-z-social-app",
@@ -11776,8 +11891,8 @@
     "video_preview_url": null,
     "sort_order": 10118,
     "created_at": null,
-    "local_rel": null,
-    "local_kind": null,
+    "local_rel": "assets/community/superdesign/gen-z-social-app/preview.png",
+    "local_kind": "png",
     "source_kind": "community",
     "source_id": "superdesign-prompts",
     "source_url": "https://github.com/superdesigndev/superdesign-prompts/blob/main/prompts/gen-z-social-app/README.md",
@@ -11809,7 +11924,8 @@
     "community_slug": "gen-z-social-app",
     "preview": "prompts/gen-z-social-app/preview.png",
     "has_text": true,
-    "text_len": 5798
+    "text_len": 5798,
+    "size_bytes": 632578
   },
   {
     "id": "community-superdesign-questions-set-in-serif-an-editorial-faq",
@@ -11823,8 +11939,8 @@
     "video_preview_url": null,
     "sort_order": 10119,
     "created_at": null,
-    "local_rel": null,
-    "local_kind": null,
+    "local_rel": "assets/community/superdesign/questions-set-in-serif-an-editorial-faq/preview.png",
+    "local_kind": "png",
     "source_kind": "community",
     "source_id": "superdesign-prompts",
     "source_url": "https://github.com/superdesigndev/superdesign-prompts/blob/main/prompts/questions-set-in-serif-an-editorial-faq/README.md",
@@ -11852,7 +11968,8 @@
     "community_slug": "questions-set-in-serif-an-editorial-faq",
     "preview": "prompts/questions-set-in-serif-an-editorial-faq/preview.png",
     "has_text": true,
-    "text_len": 8274
+    "text_len": 8274,
+    "size_bytes": 317498
   },
   {
     "id": "community-superdesign-high-energy-onboarding",
@@ -11866,8 +11983,8 @@
     "video_preview_url": null,
     "sort_order": 10120,
     "created_at": null,
-    "local_rel": null,
-    "local_kind": null,
+    "local_rel": "assets/community/superdesign/high-energy-onboarding/preview.png",
+    "local_kind": "png",
     "source_kind": "community",
     "source_id": "superdesign-prompts",
     "source_url": "https://github.com/superdesigndev/superdesign-prompts/blob/main/prompts/high-energy-onboarding/README.md",
@@ -11902,7 +12019,8 @@
     "community_slug": "high-energy-onboarding",
     "preview": "prompts/high-energy-onboarding/preview.png",
     "has_text": true,
-    "text_len": 4301
+    "text_len": 4301,
+    "size_bytes": 802404
   },
   {
     "id": "community-superdesign-sign-in-to-verdant-classic-split-emerald",
@@ -11916,8 +12034,8 @@
     "video_preview_url": null,
     "sort_order": 10121,
     "created_at": null,
-    "local_rel": null,
-    "local_kind": null,
+    "local_rel": "assets/community/superdesign/sign-in-to-verdant-classic-split-emerald/preview.png",
+    "local_kind": "png",
     "source_kind": "community",
     "source_id": "superdesign-prompts",
     "source_url": "https://github.com/superdesigndev/superdesign-prompts/blob/main/prompts/sign-in-to-verdant-classic-split-emerald/README.md",
@@ -11948,7 +12066,8 @@
     "community_slug": "sign-in-to-verdant-classic-split-emerald",
     "preview": "prompts/sign-in-to-verdant-classic-split-emerald/preview.png",
     "has_text": true,
-    "text_len": 9629
+    "text_len": 9629,
+    "size_bytes": 340041
   },
   {
     "id": "community-superdesign-momentum-ship-your-startup-launch-before-the-idea-cools",
@@ -11962,8 +12081,8 @@
     "video_preview_url": null,
     "sort_order": 10122,
     "created_at": null,
-    "local_rel": null,
-    "local_kind": null,
+    "local_rel": "assets/community/superdesign/momentum-ship-your-startup-launch-before-the-idea-cools/preview.png",
+    "local_kind": "png",
     "source_kind": "community",
     "source_id": "superdesign-prompts",
     "source_url": "https://github.com/superdesigndev/superdesign-prompts/blob/main/prompts/momentum-ship-your-startup-launch-before-the-idea-cools/README.md",
@@ -11994,7 +12113,8 @@
     "community_slug": "momentum-ship-your-startup-launch-before-the-idea-cools",
     "preview": "prompts/momentum-ship-your-startup-launch-before-the-idea-cools/preview.png",
     "has_text": true,
-    "text_len": 14578
+    "text_len": 14578,
+    "size_bytes": 1002817
   },
   {
     "id": "community-superdesign-verdance-agency-website-design-studio-dark-emerald",
@@ -12008,8 +12128,8 @@
     "video_preview_url": null,
     "sort_order": 10123,
     "created_at": null,
-    "local_rel": null,
-    "local_kind": null,
+    "local_rel": "assets/community/superdesign/verdance-agency-website-design-studio-dark-emerald/preview.png",
+    "local_kind": "png",
     "source_kind": "community",
     "source_id": "superdesign-prompts",
     "source_url": "https://github.com/superdesigndev/superdesign-prompts/blob/main/prompts/verdance-agency-website-design-studio-dark-emerald/README.md",
@@ -12048,7 +12168,8 @@
     "community_slug": "verdance-agency-website-design-studio-dark-emerald",
     "preview": "prompts/verdance-agency-website-design-studio-dark-emerald/preview.png",
     "has_text": true,
-    "text_len": 25510
+    "text_len": 25510,
+    "size_bytes": 1340629
   },
   {
     "id": "community-superdesign-system-interface-feature-announcement",
@@ -12062,8 +12183,8 @@
     "video_preview_url": null,
     "sort_order": 10124,
     "created_at": null,
-    "local_rel": null,
-    "local_kind": null,
+    "local_rel": "assets/community/superdesign/system-interface-feature-announcement/preview.png",
+    "local_kind": "png",
     "source_kind": "community",
     "source_id": "superdesign-prompts",
     "source_url": "https://github.com/superdesigndev/superdesign-prompts/blob/main/prompts/system-interface-feature-announcement/README.md",
@@ -12089,7 +12210,8 @@
     "community_slug": "system-interface-feature-announcement",
     "preview": "prompts/system-interface-feature-announcement/preview.png",
     "has_text": true,
-    "text_len": 4604
+    "text_len": 4604,
+    "size_bytes": 344804
   },
   {
     "id": "community-superdesign-forge-launch-waitlist-dark-warm-ember",
@@ -12103,8 +12225,8 @@
     "video_preview_url": null,
     "sort_order": 10125,
     "created_at": null,
-    "local_rel": null,
-    "local_kind": null,
+    "local_rel": "assets/community/superdesign/forge-launch-waitlist-dark-warm-ember/preview.png",
+    "local_kind": "png",
     "source_kind": "community",
     "source_id": "superdesign-prompts",
     "source_url": "https://github.com/superdesigndev/superdesign-prompts/blob/main/prompts/forge-launch-waitlist-dark-warm-ember/README.md",
@@ -12135,7 +12257,8 @@
     "community_slug": "forge-launch-waitlist-dark-warm-ember",
     "preview": "prompts/forge-launch-waitlist-dark-warm-ember/preview.png",
     "has_text": true,
-    "text_len": 10940
+    "text_len": 10940,
+    "size_bytes": 565225
   },
   {
     "id": "community-superdesign-multi-step-form-flow",
@@ -12149,8 +12272,8 @@
     "video_preview_url": null,
     "sort_order": 10126,
     "created_at": null,
-    "local_rel": null,
-    "local_kind": null,
+    "local_rel": "assets/community/superdesign/multi-step-form-flow/preview.png",
+    "local_kind": "png",
     "source_kind": "community",
     "source_id": "superdesign-prompts",
     "source_url": "https://github.com/superdesigndev/superdesign-prompts/blob/main/prompts/multi-step-form-flow/README.md",
@@ -12174,7 +12297,8 @@
     "community_slug": "multi-step-form-flow",
     "preview": "prompts/multi-step-form-flow/preview.png",
     "has_text": true,
-    "text_len": 13044
+    "text_len": 13044,
+    "size_bytes": 138338
   },
   {
     "id": "community-superdesign-workspace-settings-formcraft-two-column-cobalt",
@@ -12188,8 +12312,8 @@
     "video_preview_url": null,
     "sort_order": 10127,
     "created_at": null,
-    "local_rel": null,
-    "local_kind": null,
+    "local_rel": "assets/community/superdesign/workspace-settings-formcraft-two-column-cobalt/preview.png",
+    "local_kind": "png",
     "source_kind": "community",
     "source_id": "superdesign-prompts",
     "source_url": "https://github.com/superdesigndev/superdesign-prompts/blob/main/prompts/workspace-settings-formcraft-two-column-cobalt/README.md",
@@ -12216,7 +12340,8 @@
     "community_slug": "workspace-settings-formcraft-two-column-cobalt",
     "preview": "prompts/workspace-settings-formcraft-two-column-cobalt/preview.png",
     "has_text": true,
-    "text_len": 11069
+    "text_len": 11069,
+    "size_bytes": 251658
   },
   {
     "id": "community-superdesign-ledgerline-deep-teal-mint-fintech-startup-dashboard-hero",
@@ -12230,8 +12355,8 @@
     "video_preview_url": null,
     "sort_order": 10128,
     "created_at": null,
-    "local_rel": null,
-    "local_kind": null,
+    "local_rel": "assets/community/superdesign/ledgerline-deep-teal-mint-fintech-startup-dashboard-hero/preview.png",
+    "local_kind": "png",
     "source_kind": "community",
     "source_id": "superdesign-prompts",
     "source_url": "https://github.com/superdesigndev/superdesign-prompts/blob/main/prompts/ledgerline-deep-teal-mint-fintech-startup-dashboard-hero/README.md",
@@ -12271,7 +12396,8 @@
     "community_slug": "ledgerline-deep-teal-mint-fintech-startup-dashboard-hero",
     "preview": "prompts/ledgerline-deep-teal-mint-fintech-startup-dashboard-hero/preview.png",
     "has_text": true,
-    "text_len": 15056
+    "text_len": 15056,
+    "size_bytes": 728701
   },
   {
     "id": "community-superdesign-skeuomorphism-music-player-tactile-leather-and-brass-now-playing-ui",
@@ -12285,8 +12411,8 @@
     "video_preview_url": null,
     "sort_order": 10129,
     "created_at": null,
-    "local_rel": null,
-    "local_kind": null,
+    "local_rel": "assets/community/superdesign/skeuomorphism-music-player-tactile-leather-and-brass-now-playing-ui/preview.png",
+    "local_kind": "png",
     "source_kind": "community",
     "source_id": "superdesign-prompts",
     "source_url": "https://github.com/superdesigndev/superdesign-prompts/blob/main/prompts/skeuomorphism-music-player-tactile-leather-and-brass-now-playing-ui/README.md",
@@ -12339,7 +12465,8 @@
     "community_slug": "skeuomorphism-music-player-tactile-leather-and-brass-now-playing-ui",
     "preview": "prompts/skeuomorphism-music-player-tactile-leather-and-brass-now-playing-ui/preview.png",
     "has_text": true,
-    "text_len": 9953
+    "text_len": 9953,
+    "size_bytes": 742799
   },
   {
     "id": "community-superdesign-coral-gradient-product-launch-email",
@@ -12353,8 +12480,8 @@
     "video_preview_url": null,
     "sort_order": 10130,
     "created_at": null,
-    "local_rel": null,
-    "local_kind": null,
+    "local_rel": "assets/community/superdesign/coral-gradient-product-launch-email/preview.png",
+    "local_kind": "png",
     "source_kind": "community",
     "source_id": "superdesign-prompts",
     "source_url": "https://github.com/superdesigndev/superdesign-prompts/blob/main/prompts/coral-gradient-product-launch-email/README.md",
@@ -12391,7 +12518,8 @@
     "community_slug": "coral-gradient-product-launch-email",
     "preview": "prompts/coral-gradient-product-launch-email/preview.png",
     "has_text": true,
-    "text_len": 4911
+    "text_len": 4911,
+    "size_bytes": 324059
   },
   {
     "id": "community-superdesign-editorial-serif-receipt-email",
@@ -12405,8 +12533,8 @@
     "video_preview_url": null,
     "sort_order": 10131,
     "created_at": null,
-    "local_rel": null,
-    "local_kind": null,
+    "local_rel": "assets/community/superdesign/editorial-serif-receipt-email/preview.png",
+    "local_kind": "png",
     "source_kind": "community",
     "source_id": "superdesign-prompts",
     "source_url": "https://github.com/superdesigndev/superdesign-prompts/blob/main/prompts/editorial-serif-receipt-email/README.md",
@@ -12444,7 +12572,8 @@
     "community_slug": "editorial-serif-receipt-email",
     "preview": "prompts/editorial-serif-receipt-email/preview.png",
     "has_text": true,
-    "text_len": 5268
+    "text_len": 5268,
+    "size_bytes": 248159
   },
   {
     "id": "community-superdesign-cinematic-editorial-newsletter-email",
@@ -12458,8 +12587,8 @@
     "video_preview_url": null,
     "sort_order": 10132,
     "created_at": null,
-    "local_rel": null,
-    "local_kind": null,
+    "local_rel": "assets/community/superdesign/cinematic-editorial-newsletter-email/preview.png",
+    "local_kind": "png",
     "source_kind": "community",
     "source_id": "superdesign-prompts",
     "source_url": "https://github.com/superdesigndev/superdesign-prompts/blob/main/prompts/cinematic-editorial-newsletter-email/README.md",
@@ -12499,7 +12628,8 @@
     "community_slug": "cinematic-editorial-newsletter-email",
     "preview": "prompts/cinematic-editorial-newsletter-email/preview.png",
     "has_text": true,
-    "text_len": 5586
+    "text_len": 5586,
+    "size_bytes": 2496404
   },
   {
     "id": "community-superdesign-cinematic-grayscale-newsletter-email",
@@ -12513,8 +12643,8 @@
     "video_preview_url": null,
     "sort_order": 10133,
     "created_at": null,
-    "local_rel": null,
-    "local_kind": null,
+    "local_rel": "assets/community/superdesign/cinematic-grayscale-newsletter-email/preview.png",
+    "local_kind": "png",
     "source_kind": "community",
     "source_id": "superdesign-prompts",
     "source_url": "https://github.com/superdesigndev/superdesign-prompts/blob/main/prompts/cinematic-grayscale-newsletter-email/README.md",
@@ -12551,7 +12681,8 @@
     "community_slug": "cinematic-grayscale-newsletter-email",
     "preview": "prompts/cinematic-grayscale-newsletter-email/preview.png",
     "has_text": true,
-    "text_len": 4345
+    "text_len": 4345,
+    "size_bytes": 862669
   },
   {
     "id": "community-superdesign-red-on-cream-editorial-announcement-email",
@@ -12565,8 +12696,8 @@
     "video_preview_url": null,
     "sort_order": 10134,
     "created_at": null,
-    "local_rel": null,
-    "local_kind": null,
+    "local_rel": "assets/community/superdesign/red-on-cream-editorial-announcement-email/preview.png",
+    "local_kind": "png",
     "source_kind": "community",
     "source_id": "superdesign-prompts",
     "source_url": "https://github.com/superdesigndev/superdesign-prompts/blob/main/prompts/red-on-cream-editorial-announcement-email/README.md",
@@ -12603,7 +12734,8 @@
     "community_slug": "red-on-cream-editorial-announcement-email",
     "preview": "prompts/red-on-cream-editorial-announcement-email/preview.png",
     "has_text": true,
-    "text_len": 4046
+    "text_len": 4046,
+    "size_bytes": 420859
   },
   {
     "id": "community-superdesign-movie-poster-film-premiere-invite-email",
@@ -12617,8 +12749,8 @@
     "video_preview_url": null,
     "sort_order": 10135,
     "created_at": null,
-    "local_rel": null,
-    "local_kind": null,
+    "local_rel": "assets/community/superdesign/movie-poster-film-premiere-invite-email/preview.png",
+    "local_kind": "png",
     "source_kind": "community",
     "source_id": "superdesign-prompts",
     "source_url": "https://github.com/superdesigndev/superdesign-prompts/blob/main/prompts/movie-poster-film-premiere-invite-email/README.md",
@@ -12656,7 +12788,8 @@
     "community_slug": "movie-poster-film-premiere-invite-email",
     "preview": "prompts/movie-poster-film-premiere-invite-email/preview.png",
     "has_text": true,
-    "text_len": 4152
+    "text_len": 4152,
+    "size_bytes": 256929
   },
   {
     "id": "community-superdesign-folded-paper-club-invite-email",
@@ -12670,8 +12803,8 @@
     "video_preview_url": null,
     "sort_order": 10136,
     "created_at": null,
-    "local_rel": null,
-    "local_kind": null,
+    "local_rel": "assets/community/superdesign/folded-paper-club-invite-email/preview.png",
+    "local_kind": "png",
     "source_kind": "community",
     "source_id": "superdesign-prompts",
     "source_url": "https://github.com/superdesigndev/superdesign-prompts/blob/main/prompts/folded-paper-club-invite-email/README.md",
@@ -12710,7 +12843,8 @@
     "community_slug": "folded-paper-club-invite-email",
     "preview": "prompts/folded-paper-club-invite-email/preview.png",
     "has_text": true,
-    "text_len": 4227
+    "text_len": 4227,
+    "size_bytes": 1259734
   },
   {
     "id": "community-superdesign-warm-terracotta-ai-chat-interface",
@@ -12724,8 +12858,8 @@
     "video_preview_url": null,
     "sort_order": 10137,
     "created_at": null,
-    "local_rel": null,
-    "local_kind": null,
+    "local_rel": "assets/community/superdesign/warm-terracotta-ai-chat-interface/preview.png",
+    "local_kind": "png",
     "source_kind": "community",
     "source_id": "superdesign-prompts",
     "source_url": "https://github.com/superdesigndev/superdesign-prompts/blob/main/prompts/warm-terracotta-ai-chat-interface/README.md",
@@ -12774,7 +12908,8 @@
     "community_slug": "warm-terracotta-ai-chat-interface",
     "preview": "prompts/warm-terracotta-ai-chat-interface/preview.png",
     "has_text": true,
-    "text_len": 8784
+    "text_len": 8784,
+    "size_bytes": 329871
   },
   {
     "id": "community-superdesign-glassmorphism-dashboard-frosted-sunrise-analytics-ui",
@@ -12788,8 +12923,8 @@
     "video_preview_url": null,
     "sort_order": 10138,
     "created_at": null,
-    "local_rel": null,
-    "local_kind": null,
+    "local_rel": "assets/community/superdesign/glassmorphism-dashboard-frosted-sunrise-analytics-ui/preview.png",
+    "local_kind": "png",
     "source_kind": "community",
     "source_id": "superdesign-prompts",
     "source_url": "https://github.com/superdesigndev/superdesign-prompts/blob/main/prompts/glassmorphism-dashboard-frosted-sunrise-analytics-ui/README.md",
@@ -12843,7 +12978,8 @@
     "community_slug": "glassmorphism-dashboard-frosted-sunrise-analytics-ui",
     "preview": "prompts/glassmorphism-dashboard-frosted-sunrise-analytics-ui/preview.png",
     "has_text": true,
-    "text_len": 12220
+    "text_len": 12220,
+    "size_bytes": 848000
   },
   {
     "id": "community-superdesign-claymorphism-mobile-app-pastel-habit-tracker-home",
@@ -12857,8 +12993,8 @@
     "video_preview_url": null,
     "sort_order": 10139,
     "created_at": null,
-    "local_rel": null,
-    "local_kind": null,
+    "local_rel": "assets/community/superdesign/claymorphism-mobile-app-pastel-habit-tracker-home/preview.png",
+    "local_kind": "png",
     "source_kind": "community",
     "source_id": "superdesign-prompts",
     "source_url": "https://github.com/superdesigndev/superdesign-prompts/blob/main/prompts/claymorphism-mobile-app-pastel-habit-tracker-home/README.md",
@@ -12903,7 +13039,8 @@
     "community_slug": "claymorphism-mobile-app-pastel-habit-tracker-home",
     "preview": "prompts/claymorphism-mobile-app-pastel-habit-tracker-home/preview.png",
     "has_text": true,
-    "text_len": 7615
+    "text_len": 7615,
+    "size_bytes": 315395
   },
   {
     "id": "community-superdesign-calendar-ui-warm-editorial-week-planner",
@@ -12917,8 +13054,8 @@
     "video_preview_url": null,
     "sort_order": 10140,
     "created_at": null,
-    "local_rel": null,
-    "local_kind": null,
+    "local_rel": "assets/community/superdesign/calendar-ui-warm-editorial-week-planner/preview.png",
+    "local_kind": "png",
     "source_kind": "community",
     "source_id": "superdesign-prompts",
     "source_url": "https://github.com/superdesigndev/superdesign-prompts/blob/main/prompts/calendar-ui-warm-editorial-week-planner/README.md",
@@ -12942,7 +13079,8 @@
     "community_slug": "calendar-ui-warm-editorial-week-planner",
     "preview": "prompts/calendar-ui-warm-editorial-week-planner/preview.png",
     "has_text": true,
-    "text_len": 10205
+    "text_len": 10205,
+    "size_bytes": 221034
   },
   {
     "id": "motionz-premium-landing-page",

@@ -158,9 +158,19 @@ function titleCase(part) {
   return part.charAt(0).toUpperCase() + part.slice(1).toLowerCase();
 }
 
+function isPlainString(value) {
+  return typeof value === 'string';
+}
+
 function normalizeCategory(input) {
   if (input == null) return '';
-  const trimmed = String(input).trim();
+  if (typeof input === 'number') {
+    if (!Number.isFinite(input)) return '';
+    return String(input);
+  }
+  if (typeof input === 'boolean') return input ? 'Yes' : 'No';
+  if (!isPlainString(input)) return '';
+  const trimmed = input.trim();
   if (!trimmed) return '';
   const key = trimmed.toLowerCase();
   if (Object.prototype.hasOwnProperty.call(NORMALIZE_MAP, key)) {

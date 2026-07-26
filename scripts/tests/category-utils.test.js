@@ -107,3 +107,27 @@ test('normalizeRecordCategories preserves unrelated fields', () => {
   assert.equal(out[0].source_kind, 'motionsites');
   assert.equal(out[0].category, 'E-commerce');
 });
+
+test('normalizeCategory handles non-string inputs without crashing', () => {
+  assert.equal(normalizeCategory(0), '0');
+  assert.equal(normalizeCategory(1), '1');
+  assert.equal(normalizeCategory(-1), '-1');
+  assert.equal(normalizeCategory(true), 'Yes');
+  assert.equal(normalizeCategory(false), 'No');
+  assert.equal(normalizeCategory(NaN), '');
+  assert.equal(normalizeCategory(Infinity), '');
+  assert.equal(normalizeCategory(-Infinity), '');
+  assert.equal(normalizeCategory([]), '');
+  assert.equal(normalizeCategory({}), '');
+  assert.equal(normalizeCategory(Object.create(null)), '');
+  assert.equal(normalizeCategory(new Date(0)), '');
+  assert.equal(normalizeCategory(/regex/), '');
+});
+
+test('normalizeCategory preserves meaningful punctuation in unmapped values', () => {
+  assert.equal(normalizeCategory('Foo: Bar'), 'Foo: Bar');
+  assert.equal(normalizeCategory('TypeScript / JavaScript'), 'Typescript / Javascript');
+  assert.equal(normalizeCategory('Vue.js'), 'Vue.js');
+  assert.equal(normalizeCategory('react-hooks'), 'React-hooks'); // mixed case preserved by Title Case
+});
+

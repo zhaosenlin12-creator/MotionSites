@@ -139,6 +139,37 @@ function detectAssetKind(absolutePath) {
   return 'other';
 }
 
+function walkAssets(dir) {
+  const files = [];
+  if (!fs.existsSync(dir)) return files;
+  for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+    const abs = path.join(dir, entry.name);
+    if (entry.isDirectory()) files.push(...walkAssets(abs));
+    else files.push(abs);
+  }
+  return files;
+}
+
+function findOrphanAssets(root) {
+  const mergedPath = path.join(root, 'data/ms_prompts_merged.json');
+  if (!fs.existsSync(mergedPath)) return [];
+  const merged = JSON.parse(fs.readFileSync(mergedPath, 'utf8').replace(/^﻿/, ''));
+  const referenced = new Set();
+  for (const record of merged) {
+    if (record.local_rel) referenced.add(String(record.local_rel).replace(/\\/g, '/'));
+  }
+  const orphanDirs = ['assets/previews', 'assets/community'];
+  const orphans = [];
+  for (const rel of orphanDirs) {
+    const abs = path.join(root, rel);
+    for (const file of walkAssets(abs)) {
+      const relPath = path.relative(root, file).replace(/\\/g, '/');
+      if (!referenced.has(relPath)) orphans.push(relPath);
+    }
+  }
+  return orphans;
+}
+
 function auditCatalog({ root, merged, prompts, sources }) {
   const errors = [];
   const seenIds = new Set();
@@ -175,6 +206,12 @@ function auditCatalog({ root, merged, prompts, sources }) {
     }
   }
 
+  if (root) {
+    for (const orphan of findOrphanAssets(root)) {
+      errors.push({ code: 'orphan-asset', path: orphan });
+    }
+  }
+
   return { errors };
 }
 
@@ -182,6 +219,7 @@ module.exports = {
   auditCatalog,
   detectAssetKind,
   extractMarkdownPrompt,
+  findOrphanAssets,
   isCompletePrompt,
   normalizePrompt,
   normalizeTitle,
