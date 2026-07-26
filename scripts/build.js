@@ -45,17 +45,30 @@ if(fs.existsSync(root2)){
 const sortedMeta = sortCatalog(merged);
 const prompts=sortedMeta.map(function(x){return Object.assign({},x,{prompt_text:t1map.get(x.id)||''})});
 
-function detectKind(abs){
-  try{
-    const b=fs.readFileSync(abs).subarray(0,16);
-    const s=b.toString('latin1');
-    if(s.startsWith('RIFF')&&s.includes('WEBP'))return 'webp';
-    if(s.startsWith('#EXTM3U'))return 'hls';
-    if(b.subarray(4,8).toString()==='ftyp')return 'mp4';
-    if(b[0]===0x47)return 'gif';
-    if(b[0]===0x89)return 'png';
-    if(b[0]===0xff)return 'jpeg';
-  }catch(e){}
+function detectKind(abs) {
+  try {
+    // Read enough to cover all magic-byte signatures (16 bytes is sufficient).
+    const b = fs.readFileSync(abs).subarray(0, 16);
+    const sig = b.toString('latin1');
+    // Magic-byte detection is authoritative - file extension can be misleading
+    // (motionsites.ai ships mp4 content inside .webp wrappers).
+    if (sig.startsWith('RIFF') && sig.includes('WEBP')) return 'webp';
+    if (sig.startsWith('#EXTM3U')) return 'hls';
+    if (b[0] === 0x1A && b[1] === 0x45 && b[2] === 0xDF && b[3] === 0xA3) return 'webm';
+    if (b.subarray(4, 8).toString() === 'ftyp') return 'mp4';
+    if (b[0] === 0x47) return 'gif';
+    if (b[0] === 0x89) return 'png';
+    if (b[0] === 0xff) return 'jpeg';
+    // Fall back to extension for files with no/unrecognized signature.
+    const ext = path.extname(abs).toLowerCase();
+    if (ext === '.webm') return 'webm';
+    if (ext === '.m3u8') return 'hls';
+    if (ext === '.mp4' || ext === '.mov' || ext === '.m4v') return 'mp4';
+    if (ext === '.webp') return 'webp';
+    if (ext === '.gif') return 'gif';
+    if (ext === '.png') return 'png';
+    if (ext === '.jpg' || ext === '.jpeg') return 'jpeg';
+  } catch (e) {}
   return 'other';
 }
 
@@ -97,12 +110,12 @@ function safe(x){
 }
 
 const complete=enriched.filter(function(x){return x.prompt_text&&x.prompt_text.trim()}).length;
-const webp=enriched.filter(function(x){return x.local_kind==='webp'||x.local_kind==='gif'||x.local_kind==='png'||x.local_kind==='jpeg'}).length;
-const mp4=enriched.filter(function(x){return x.local_kind==='mp4'||x.local_kind==='hls'}).length;
+const images=enriched.filter(function(x){return x.local_kind==='webp'||x.local_kind==='gif'||x.local_kind==='png'||x.local_kind==='jpeg'}).length;
+const videos=enriched.filter(function(x){return x.local_kind==='mp4'||x.local_kind==='webm'||x.local_kind==='hls'}).length;
 const noMedia=enriched.filter(function(x){return !x.local_rel}).length;
 const community=enriched.filter(function(x){return x.source_kind==='community'}).length;
 const motionsites=enriched.filter(function(x){return (x.source_kind||'motionsites')==='motionsites'}).length;
-console.log('Records='+enriched.length+' complete='+complete+' images='+webp+' videos='+mp4+' concepts='+noMedia+' motionsites='+motionsites+' community='+community);
+console.log('Records='+enriched.length+' complete='+complete+' images='+images+' videos='+videos+' concepts='+noMedia+' motionsites='+motionsites+' community='+community);
 
 let html=readNoBom(path.join(ROOT,'ms_template.html'));
 const scriptBody=readNoBom(path.join(ROOT,'ms_script.js'));
@@ -111,8 +124,8 @@ const data=safe(enriched);
 function rpl(s){return function(){return s}}
 html=html.replace('$'+'{'+'enriched.length}',rpl(String(enriched.length)))
   .replace('$'+'{'+'complete}',rpl(String(complete)))
-  .replace('$'+'{'+'webp}',rpl(String(webp)))
-  .replace('$'+'{'+'mp4}',rpl(String(mp4)))
+  .replace('$'+'{'+'images}',rpl(String(images)))
+  .replace('$'+'{'+'videos}',rpl(String(videos)))
   .replace('$'+'{'+'noMedia}',rpl(String(noMedia)))
   .replace('__SCRIPT_BODY__',function(){return 'const DATA='+data+'\n'+scriptBody});
 

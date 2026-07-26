@@ -129,9 +129,24 @@ function detectAssetKind(absolutePath) {
   if (!absolutePath || !fs.existsSync(absolutePath)) {
     return 'other';
   }
+  // Magic-byte detection is authoritative - extensions can be misleading
+  // (motionsites.ai ships mp4 content inside .webp wrappers).
+  try {
+    const buf = fs.readFileSync(absolutePath).subarray(0, 16);
+    const sig = buf.toString('latin1');
+    if (sig.startsWith('RIFF') && sig.includes('WEBP')) return 'webp';
+    if (sig.startsWith('#EXTM3U')) return 'hls';
+    if (buf[0] === 0x1A && buf[1] === 0x45 && buf[2] === 0xDF && buf[3] === 0xA3) return 'webm';
+    if (buf.subarray(4, 8).toString() === 'ftyp') return 'mp4';
+    if (buf[0] === 0x47) return 'gif';
+    if (buf[0] === 0x89) return 'png';
+    if (buf[0] === 0xff) return 'jpeg';
+  } catch (e) {}
+  // Fall back to extension for files with no/unrecognized signature.
   const extension = path.extname(absolutePath).toLowerCase();
-  if (extension === '.mp4') return 'mp4';
+  if (extension === '.webm') return 'webm';
   if (extension === '.m3u8') return 'hls';
+  if (extension === '.mp4' || extension === '.mov' || extension === '.m4v') return 'mp4';
   if (extension === '.webp') return 'webp';
   if (extension === '.gif') return 'gif';
   if (extension === '.png') return 'png';

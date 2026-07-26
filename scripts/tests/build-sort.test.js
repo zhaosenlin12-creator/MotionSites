@@ -58,3 +58,63 @@ test("sortCatalog groups records with a preview above records without one", () =
     ["preview-high", "concept-low", "concept-mid"]
   );
 });
+
+const { detectAssetKind } = require('../lib/catalog-utils');
+const fs2 = require('node:fs');
+const os = require('node:os');
+const path = require('node:path');
+
+function withTempFile(bytes, ext, fn) {
+  const tmp = fs2.mkdtempSync(path.join(os.tmpdir(), 'detect-kind-'));
+  const fp = path.join(tmp, 'asset' + (ext || ''));
+  fs2.writeFileSync(fp, bytes);
+  try { return fn(fp); } finally { fs2.rmSync(tmp, { recursive: true, force: true }); }
+}
+
+test('detectAssetKind recognises mp4 magic bytes regardless of extension', () => {
+  // 4 bytes size + 'ftyp' + brand = mp4 signature
+  const mp4 = Buffer.from([0,0,0,32,0x66,0x74,0x79,0x70,0x69,0x73,0x6f,0x6d,0,2,0,0]);
+  withTempFile(mp4, '.webp', function(fp) {
+    assert.equal(detectAssetKind(fp), 'mp4');
+  });
+});
+
+test('detectAssetKind recognises webm magic bytes (EBML header)', () => {
+  // 1A 45 DF A3 = EBML
+  const webm = Buffer.from([0x1A,0x45,0xDF,0xA3,0x42,0x82,0x88,0,0,0,0,0,0,0,0,0]);
+  withTempFile(webm, '.bin', function(fp) {
+    assert.equal(detectAssetKind(fp), 'webm');
+  });
+});
+
+test('detectAssetKind falls back to extension when magic bytes are unknown', () => {
+  const empty = Buffer.alloc(0);
+  withTempFile(empty, '.png', function(fp) {
+    assert.equal(detectAssetKind(fp), 'png');
+  });
+  withTempFile(empty, '.mp4', function(fp) {
+    assert.equal(detectAssetKind(fp), 'mp4');
+  });
+  withTempFile(empty, '.webm', function(fp) {
+    assert.equal(detectAssetKind(fp), 'webm');
+  });
+});
+
+test('detectAssetKind returns "other" for missing files', () => {
+  assert.equal(detectAssetKind(null), 'other');
+  assert.equal(detectAssetKind(''), 'other');
+  assert.equal(detectAssetKind('does-not-exist.webp'), 'other');
+});
+
+test('sortCatalog buckets webm alongside mp4 as videos', () => {
+  const list = [
+    { id: 'img', local_rel: 'assets/img.webp', local_kind: 'webp' },
+    { id: 'webm', local_rel: 'assets/webm.webm', local_kind: 'webm' },
+    { id: 'mp4', local_rel: 'assets/mp4.mp4', local_kind: 'mp4' },
+    { id: 'concept', local_rel: null },
+  ];
+  const sorted = sortCatalog(list);
+  // webm and mp4 should both come before webp and concept
+  assert.deepEqual(sorted.map(function(x){ return x.id; }), ['mp4', 'webm', 'img', 'concept']); // id tie-break
+});
+
