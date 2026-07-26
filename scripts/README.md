@@ -8,10 +8,10 @@ Regenerates the single-file `index.html` catalog from the bundled data files.
 
 ```bash
 node scripts/build.js
-# -> Records=565 complete=529 images=306 videos=87 concepts=172 motionsites=425 community=140
+# -> Records=504 complete=468 images=173 videos=106 concepts=224 motionsites=365 community=139
 # -> Wrote index.html bytes <size>
 # -> [build] demoting over-limit preview <filename>
-# -> SELF-VERIFY OK records=364
+# -> SELF-VERIFY OK records=504
 ```
 
 The script is **idempotent** — re-running it does not duplicate records.
@@ -57,13 +57,30 @@ Beyond the community-superdesign picks, the importer now reads two additional so
 
 See `data/catalog_sources.json` for the full attribution list.
 
+## `download-gigl-previews.js`
+
+Downloads preview videos for the `giglianepefrei` free prompts. The CloudFront source
+times out frequently, so the script:
+
+- Runs in small batches (`GIGL_BATCH=6`, `GIGL_CONCURRENCY=2`) with a 20s per-attempt timeout.
+- Persists results in `data/gigl-preview-log.json` so a timeout can resume cleanly.
+- Skips files already on disk (>1 KiB) and reports hard 4xx/5xx failures.
+
+Run order:
+
+```bash
+node scripts/import-community.js --write   # ingest prompt bodies + merge metadata
+node scripts/download-gigl-previews.js     # fetch the preview videos (resumable)
+node scripts/dedupe-catalog.js            # collapse title duplicates
+node scripts/build.js                     # regenerate index.html
+```
 ## `audit-catalog.js`
 
 Verifies uniqueness, body quality, source references, and the 24 MiB asset cap:
 
 ```bash
 node scripts/audit-catalog.js
-# -> AUDIT OK records=565 complete=529 community=140 missingBodies=36 assets=393
+# -> AUDIT OK records=503 complete=467 community=139 missingBodies=36 assets=431
 ```
 
 Exit code is non-zero on any rule violation. The script is the gate for the deployment pipeline.

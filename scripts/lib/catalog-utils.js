@@ -101,10 +101,21 @@ function isCompletePrompt(value, record) {
 }
 
 function sortCatalog(list) {
+  // Visual priority bucket:
+  //   0 = video preview (mp4 / webm / hls) - shown first
+  //   1 = image preview (webp / png / gif / jpeg)
+  //   2 = no local preview (concept card / metadata only) - shown last
+  function visualBucket(record) {
+    if (!record || !record.local_rel) return 2;
+    const kind = record.local_kind;
+    if (kind === 'mp4' || kind === 'webm' || kind === 'hls') return 0;
+    if (kind === 'webp' || kind === 'png' || kind === 'gif' || kind === 'jpeg') return 1;
+    return 2;
+  }
   return list.slice().sort((a, b) => {
-    const ap = a && a.local_rel ? 1 : 0;
-    const bp = b && b.local_rel ? 1 : 0;
-    if (ap !== bp) return bp - ap;
+    const av = visualBucket(a);
+    const bv = visualBucket(b);
+    if (av !== bv) return av - bv;
     const ao = a && typeof a.sort_order === 'number' ? a.sort_order : Number.POSITIVE_INFINITY;
     const bo = b && typeof b.sort_order === 'number' ? b.sort_order : Number.POSITIVE_INFINITY;
     if (ao !== bo) return ao - bo;

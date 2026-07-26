@@ -640,7 +640,7 @@ const GIGL_SOURCE_DIR = path.join('sources', 'giglianepefrei_fetch', 'prompts');
 const GIGL_PRO_SOURCE_DIR = path.join('sources', 'giglianepefrei_fetch', 'Pro prompts');
 
 function giglPreviewUrl(md) {
-  const m = String(md || '').match(/(https?:\/\/[\s\)\"<>]+?\.(mp4|webm|mov|jpg|jpeg|png|gif))/i);
+  const m = String(md || '').match(/(https?:\/\/[^\s\)\]<>]+?\.(mp4|webm|mov|jpg|jpeg|png|gif))/i);
   return m ? m[1] : null;
 }
 
