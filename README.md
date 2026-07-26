@@ -5,7 +5,7 @@
 
 👉 **https://motionsites-prompts.pages.dev/**
 
-已经部署到 Cloudflare Pages，公网可直接访问 504 条提示词、476 条完整正文、173 张预览、106 个循环视频。无需登录、无需付费、无网络调用，打开即用。
+已经部署到 Cloudflare Pages，公网可直接访问 504 条提示词、476 条完整正文、297 张预览、121 个循环视频。无需登录、无需付费、无网络调用，打开即用。
 
 > 备用入口：在浏览器里把上面的链接粘进去即可。如需本地运行，请看下面的 *Run it locally* 章节；要重新部署，请看 *Push to GitHub & Deploy* 章节。
 
@@ -19,8 +19,8 @@
 
 - **504 curated prompts** (365 MotionSites main library + 139 community picks) across Landing Page, Hero, SaaS, Agency, Portfolio, Web3, AI / Dashboard, Travel, Healthcare, Real Estate, and more
 - **476 full prompt bodies** (329 MotionSites + 8 motionsites.ai edge-fn recoveries + 139 community) — copy to clipboard or export as a Markdown file
-- **173 motion / static previews** + **106 looping video previews** (all downloaded locally)
-- **224 concept cards** with curated per-category palettes and animated art (used when the source page has no preview)
+- **297 motion / static previews** (webp / png / gif / jpeg) + **121 looping video previews** (mp4 / webm, all downloaded locally)
+- **86 concept cards** with curated per-category palettes and animated art (used when the source page has no preview)
 - **Multi-dimensional filters**: category, type, source (MotionSites / Community), media format, plus top-9 category chips and combined search over the source repository / file path
 - **Keyboard-first**: `/` focus search, `Esc` close modal, `G` toggle compact
 - **Spotlight search**: when a query is active, a soft glow tracks the best matching card
@@ -213,7 +213,7 @@ The shipped `index.html` is pre-generated, but you can regenerate it any time:
 
 ```bash
 node scripts/build.js
-# -> Records=364 complete=328 images=175 videos=73 concepts=111
+# -> Records=504 complete=476 images=297 videos=121 concepts=86 motionsites=365 community=139
 # -> Wrote index.html bytes 3186593
 # -> [build] demoting over-limit preview fun-404-page 43.99MiB
 # -> SELF-VERIFY OK records=364
