@@ -67,6 +67,13 @@ const I18N = {
     copied: '已复制',
     filterBy: '筛选',
     allCatsChip: '全部',
+    allSources: '全部来源',
+    sourceMotionsites: 'MotionSites 主库',
+    sourceCommunity: '社区精选',
+    sourceBadge: '社区',
+    sourceRepoLabel: '来源仓库',
+    sourcePathLabel: '原始文件',
+    sourceLicenseLabel: '许可证',
     modalLoading: '加载中…'
   },
   'en': {
@@ -132,6 +139,13 @@ const I18N = {
     copied: 'Copied',
     filterBy: 'Filter',
     allCatsChip: 'All',
+    allSources: 'All sources',
+    sourceMotionsites: 'MotionSites library',
+    sourceCommunity: 'Community picks',
+    sourceBadge: 'Community',
+    sourceRepoLabel: 'Source repository',
+    sourcePathLabel: 'Original file',
+    sourceLicenseLabel: 'License',
     modalLoading: 'Loading…'
   }
 };
@@ -285,6 +299,7 @@ function cardHTML(x) {
   return '<article class="card" data-id="' + esc(x.id) + '">'
     + '<div class="badge-row">'
     + (full ? '<span class="badge full">' + t('fullBadge') + '</span>' : '<span class="badge muted">' + t('metadataBadge') + '</span>')
+    + (x.source_kind === 'community' ? '<span class="badge community">' + t('sourceBadge') + '</span>' : '')
     + '</div>'
     + '<div class="media">' + mediaOf(x, false) + '</div>'
     + '<div class="body">'
@@ -300,16 +315,18 @@ function cardHTML(x) {
 function render() {
   const q = $('q').value.trim().toLowerCase();
   const cat = $('cat').value, type = $('type').value, media = $('media').value;
+  const source = $('source') ? $('source').value : '';
   let list = DATA;
   if (cat) list = list.filter((x) => x.category === cat);
   if (type) list = list.filter((x) => x.type === type);
   if (media === 'img') list = list.filter((x) => x.local_kind && x.local_kind !== 'mp4' && x.local_kind !== 'hls');
   if (media === 'video') list = list.filter((x) => x.local_kind === 'mp4' || x.local_kind === 'hls');
   if (media === 'art') list = list.filter((x) => !x.local_rel);
+  if (source) list = list.filter((x) => (x.source_kind || 'motionsites') === source);
   if (q) {
     const tokens = q.split(/\s+/).filter(Boolean);
     list = list.filter((x) => {
-      const hay = (x.title + ' ' + (x.description || '') + ' ' + x.id + ' ' + (x.category || '') + ' ' + (x.type || '') + ' ' + (x.prompt_text || '')).toLowerCase();
+      const hay = (x.title + ' ' + (x.description || '') + ' ' + x.id + ' ' + (x.category || '') + ' ' + (x.type || '') + ' ' + (x.prompt_text || '') + ' ' + (x.source_repo || '') + ' ' + (x.source_path || '')).toLowerCase();
       return tokens.every((tk) => hay.includes(tk));
     });
   }
@@ -414,7 +431,8 @@ function metaPanelHTML(x) {
   const links = [];
   if (x.image_preview_url) links.push('<a class="meta-link" target="_blank" rel="noopener" href="' + esc(x.image_preview_url) + '">' + esc(t('metaOpenImage')) + '</a>');
   if (x.video_preview_url) links.push('<a class="meta-link" target="_blank" rel="noopener" href="' + esc(x.video_preview_url) + '">' + esc(t('metaOpenVideo')) + '</a>');
-  if (x.id) links.push('<a class="meta-link" target="_blank" rel="noopener" href="https://motionsites.ai/p/' + esc(x.id) + '">' + esc(t('metaOriginal')) + '</a>');
+  if (x.id && x.source_kind !== 'community') links.push('<a class="meta-link" target="_blank" rel="noopener" href="https://motionsites.ai/p/' + esc(x.id) + '">' + esc(t('metaOriginal')) + '</a>');
+  if (x.source_kind === 'community' && x.source_url) links.push('<a class="meta-link" target="_blank" rel="noopener" href="' + esc(x.source_url) + '">' + esc(t('metaOpenSource')) + '</a>');
   return ''
     + '<div class="meta-note">' + esc(t('noFullPromptHint')) + '</div>'
     + '<div class="meta-section-title">' + esc(t('metaSection')) + '</div>'
@@ -498,7 +516,7 @@ $('grid').addEventListener('click', (e) => {
 $('grid').addEventListener('error', onImgError, true); // capture for img errors
 
 // Filter events
-['q', 'cat', 'type', 'media'].forEach((id) => {
+['q', 'cat', 'type', 'source', 'media'].forEach((id) => {
   $(id).addEventListener(id === 'q' ? 'input' : 'change', render);
 });
 
@@ -584,6 +602,7 @@ function applyLang() {
   // --- Rebuild selects (re-add i18n option labels) ---
   options('cat', 'category');
   options('type', 'type');
+  rebuildSourceOptions();
   // Re-translate the static option labels that don't come from DATA
   const cat0 = $('cat'); if (cat0 && cat0.options[0]) cat0.options[0].textContent = t('allCategories');
   const type0 = $('type'); if (type0 && type0.options[0]) type0.options[0].textContent = t('allTypes');
@@ -594,6 +613,12 @@ function applyLang() {
     if (media0.options[1]) media0.options[1].textContent = t('staticMotion');
     if (media0.options[2]) media0.options[2].textContent = t('video');
     if (media0.options[3]) media0.options[3].textContent = t('concept');
+  }
+  const source0 = $('source');
+  if (source0) {
+    if (source0.options[0]) source0.options[0].textContent = t('allSources');
+    if (source0.options[1]) source0.options[1].textContent = t('sourceMotionsites');
+    if (source0.options[2]) source0.options[2].textContent = t('sourceCommunity');
   }
 
   chipInit();
@@ -609,6 +634,20 @@ $('lang-toggle').addEventListener('click', () => {
   applyLang();
 });
 
+
+
+function rebuildSourceOptions() {
+  const sel = $('source');
+  if (!sel) return;
+  const cur = sel.value;
+  const present = new Set(DATA.map((x) => x.source_kind || 'motionsites'));
+  const opts = ['<option value="">' + t('allSources') + '</option>'];
+  if (present.has('motionsites')) opts.push('<option value="motionsites">' + t('sourceMotionsites') + '</option>');
+  if (present.has('community')) opts.push('<option value="community">' + t('sourceCommunity') + '</option>');
+  sel.innerHTML = opts.join('');
+  if (cur && (cur === '' || present.has(cur))) sel.value = cur;
+}
 // -------- boot --------
 ['cat', 'type'].forEach((id) => options(id, id === 'cat' ? 'category' : 'type'));
+rebuildSourceOptions();
 applyLang(); // also calls render() and chipInit() at the end

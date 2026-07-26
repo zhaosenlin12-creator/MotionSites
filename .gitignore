@@ -37,3 +37,11 @@ wrangler*.log
 clone*.log
 server.err
 server.out
+
+# Local source research caches
+/sources/
+
+
+# Local static server scratch
+server.js
+

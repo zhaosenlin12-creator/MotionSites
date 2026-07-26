@@ -1,6 +1,6 @@
 ﻿# `scripts/`
 
-This directory ships **one script** — everything else runs through `build.js`.
+This directory ships the catalog build, import, and audit pipeline.
 
 ## `build.js`
 
@@ -8,7 +8,7 @@ Regenerates the single-file `index.html` catalog from the bundled data files.
 
 ```bash
 node scripts/build.js
-# -> Records=364 complete=328 images=175 videos=73 concepts=111
+# -> Records=505 complete=466 images=306 videos=87 concepts=112 motionsites=365 community=140
 # -> Wrote index.html bytes <size>
 # -> [build] demoting over-limit preview <filename>
 # -> SELF-VERIFY OK records=364
@@ -36,3 +36,29 @@ pre-generated and shipped as part of the repo.
 4. Commit and push.
 
 See [`CONTRIBUTING.md`](../CONTRIBUTING.md) for the full workflow.
+
+## `import-community.js`
+
+Imports the community-picks library (default: `superdesigndev/superdesign-prompts`, CC0-1.0) and reconciles it with the local catalog.
+
+```bash
+node scripts/import-community.js          # dry-run, never writes
+node scripts/import-community.js --write  # persists data + downloads previews
+```
+
+The script merges recovered MotionSites records, replaces short stubs with full prompt bodies, prefixes community IDs (`community-superdesign-<slug>`), and surfaces downloads that fail after retries so a single flaky network response cannot abort the entire import.
+
+## `audit-catalog.js`
+
+Verifies uniqueness, body quality, source references, and the 24 MiB asset cap:
+
+```bash
+node scripts/audit-catalog.js
+# -> AUDIT OK records=505 complete=466 community=140 missingBodies=39 assets=393
+```
+
+Exit code is non-zero on any rule violation. The script is the gate for the deployment pipeline.
+
+## `lib/catalog-utils.js`
+
+Shared utilities (Markdown parsing, prompt hashing, asset-kind detection, source-aware completeness rules). All exportable; covered by `node --test scripts/tests/*.test.js`.

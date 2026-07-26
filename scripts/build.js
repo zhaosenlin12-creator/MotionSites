@@ -1,4 +1,5 @@
 ﻿const fs=require('fs');
+const { sortCatalog } = require('./lib/catalog-utils');
 const path=require('path');
 const ROOT=path.resolve(__dirname,'..');
 
@@ -41,7 +42,8 @@ if(fs.existsSync(root2)){
   }
 }
 
-const prompts=merged.map(function(x){return Object.assign({},x,{prompt_text:t1map.get(x.id)||''})});
+const sortedMeta = sortCatalog(merged);
+const prompts=sortedMeta.map(function(x){return Object.assign({},x,{prompt_text:t1map.get(x.id)||''})});
 
 function detectKind(abs){
   try{
@@ -98,7 +100,9 @@ const complete=enriched.filter(function(x){return x.prompt_text&&x.prompt_text.t
 const webp=enriched.filter(function(x){return x.local_kind==='webp'||x.local_kind==='gif'||x.local_kind==='png'||x.local_kind==='jpeg'}).length;
 const mp4=enriched.filter(function(x){return x.local_kind==='mp4'||x.local_kind==='hls'}).length;
 const noMedia=enriched.filter(function(x){return !x.local_rel}).length;
-console.log('Records='+enriched.length+' complete='+complete+' images='+webp+' videos='+mp4+' concepts='+noMedia);
+const community=enriched.filter(function(x){return x.source_kind==='community'}).length;
+const motionsites=enriched.filter(function(x){return (x.source_kind||'motionsites')==='motionsites'}).length;
+console.log('Records='+enriched.length+' complete='+complete+' images='+webp+' videos='+mp4+' concepts='+noMedia+' motionsites='+motionsites+' community='+community);
 
 let html=readNoBom(path.join(ROOT,'ms_template.html'));
 const scriptBody=readNoBom(path.join(ROOT,'ms_script.js'));

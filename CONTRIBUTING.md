@@ -66,3 +66,21 @@ The repo ships with `wrangler.toml`, `_headers`, and `_redirects`. Push to GitHu
 ## 6. License
 
 By contributing, you agree your contributions are licensed under the [MIT License](LICENSE). Prompt bodies you submit must be your own or fall under a compatible license - please credit the original author in the JSON if you are archiving a community-sourced prompt.
+
+
+## 7. Reproducible maintenance pipeline
+
+The repository ships with a tested pipeline that keeps `data/`, `assets/`, and `index.html` in sync:
+
+```bash
+node --test scripts/tests/*.test.js
+node scripts/import-community.js       # dry-run; never writes
+node scripts/audit-catalog.js
+node scripts/build.js
+```
+
+`node scripts/import-community.js --write` is the only command that touches `data/ms_prompts_*.json` and downloads new previews. The local `sources/` cache used for research is **git-ignored** and never enters the public repository. Every community record carries `source_repo`, `source_path`, and `source_license` so its origin is verifiable in the rendered detail panel.
+
+### Catalog sources
+
+`data/catalog_sources.json` lists every external feed the catalog ingests from, with license and purpose. New sources must declare an explicit license and a research-only cache path under `sources/`.
