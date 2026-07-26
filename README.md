@@ -5,7 +5,7 @@
 
 👉 **https://motionsites-prompts.pages.dev/**
 
-已经部署到 Cloudflare Pages，公网可直接访问 504 条提示词、468 条完整正文、173 张预览、106 个循环视频。无需登录、无需付费、无网络调用，打开即用。
+已经部署到 Cloudflare Pages，公网可直接访问 504 条提示词、476 条完整正文、173 张预览、106 个循环视频。无需登录、无需付费、无网络调用，打开即用。
 
 > 备用入口：在浏览器里把上面的链接粘进去即可。如需本地运行，请看下面的 *Run it locally* 章节；要重新部署，请看 *Push to GitHub & Deploy* 章节。
 
@@ -18,7 +18,7 @@
 ## What is inside
 
 - **504 curated prompts** (365 MotionSites main library + 139 community picks) across Landing Page, Hero, SaaS, Agency, Portfolio, Web3, AI / Dashboard, Travel, Healthcare, Real Estate, and more
-- **468 full prompt bodies** (329 MotionSites + 139 community) — copy to clipboard or export as a Markdown file
+- **476 full prompt bodies** (329 MotionSites + 8 motionsites.ai edge-fn recoveries + 139 community) — copy to clipboard or export as a Markdown file
 - **173 motion / static previews** + **106 looping video previews** (all downloaded locally)
 - **224 concept cards** with curated per-category palettes and animated art (used when the source page has no preview)
 - **Multi-dimensional filters**: category, type, source (MotionSites / Community), media format, plus top-9 category chips and combined search over the source repository / file path
@@ -226,6 +226,17 @@ To update the catalog with new prompts:
 1. Edit `data/ms_prompts_merged.json` (add a new record) and `data/ms_prompts_with_text.json` (add the matching `prompt_text`).
 2. Drop a preview into `assets/previews/<id>.webp` and reference it via `local_rel` in the metadata.
 3. Run `node scripts/build.js` and commit the regenerated `index.html`.
+
+
+## Free-prompt recovery from `motionsites.ai`
+
+The motionsites.ai public catalog paywalls 28 of its 504 records. For the **8 free** records that still had an empty body locally (8 IDs matched but with `len=0`), the build fetches them directly from the motionsites.ai Supabase Edge Function `POST /functions/v1/get-prompt` (project `xgdzyqfalbibzelpdpvr`, anon JWT in the public JS bundle). Each recovered prompt is marked with `source_id="motionsites-ai-edge-fn"`, `source_repo="motionsites/motionsites.ai"`, `source_license="NOASSERTION"`, `text_reconstructed=true`, and a deep link to `https://motionsites.ai/prompts/<id>`. The remaining 28 items stay as concept cards with provenance (preview + source URL) but no body.
+
+## Category normalization
+
+The catalog keeps `category` values stable across sources by collapsing equivalent forms ("Landing Page" / "Landing Pages" / "landing page", "E-commerce" / "Ecommerce" / "Ecommerce App", "Hero" / "Hero Section", "AI" / "AI App" / "AI SaaS Website" / "Artificial Intelligence", "SaaS" / "AI / SaaS" / "SaaS Website", "Mobile App" / "Mobile Apps", "Component" / "Components", etc.) into a single canonical label. The map lives in `scripts/lib/category-utils.js` (145 entries, frozen) and is applied by `node scripts/normalize-categories.js`. Anything not in the map falls back to trim + Title Case. 6 unit tests in `scripts/tests/category-utils.test.js` lock the rules.
+
+Result: **105 -> 58 distinct categories**, so the category filter dropdown and chips stay scannable as the catalog grows.
 
 ## Extending the catalog
 

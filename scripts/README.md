@@ -8,7 +8,7 @@ Regenerates the single-file `index.html` catalog from the bundled data files.
 
 ```bash
 node scripts/build.js
-# -> Records=504 complete=468 images=173 videos=106 concepts=224 motionsites=365 community=139
+# -> Records=504 complete=476 images=173 videos=106 concepts=224 motionsites=365 community=139
 # -> Wrote index.html bytes <size>
 # -> [build] demoting over-limit preview <filename>
 # -> SELF-VERIFY OK records=504
@@ -84,6 +84,22 @@ node scripts/audit-catalog.js
 ```
 
 Exit code is non-zero on any rule violation. The script is the gate for the deployment pipeline.
+
+## `normalize-categories.js`
+
+Collapses the 105 hand-curated / scraped `category` strings into ~58 canonical labels so the dropdown stays scannable. Source-of-truth: `lib/category-utils.js` (frozen map, 145 entries).
+
+```bash
+node scripts/normalize-categories.js
+# -> normalized 980 records
+# -> distinct categories: 105 -> 58
+```
+
+Idempotent — running it on already-normalized data is a no-op.
+
+## `lib/category-utils.js`
+
+Frozen `NORMALIZE_MAP` (145 entries) plus `normalizeCategory`, `normalizeRecordCategories`, and `applyCategoryNormalization`. Covered by 6 unit tests in `tests/category-utils.test.js`.
 
 ## `lib/catalog-utils.js`
 

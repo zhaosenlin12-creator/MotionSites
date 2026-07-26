@@ -20,7 +20,7 @@
   {
     "id": "bold-studio",
     "title": "Bold Studio",
-    "category": "Hero",
+    "category": "Hero Section",
     "type": "hero",
     "page_type": "hero",
     "is_free": true,
@@ -38,7 +38,7 @@
   {
     "id": "interactive-discovery",
     "title": "Interactive Discovery",
-    "category": "Hero",
+    "category": "Hero Section",
     "type": "hero",
     "page_type": "hero",
     "is_free": true,
@@ -252,7 +252,7 @@
   {
     "id": "reveal-hero",
     "title": "Reveal Hero",
-    "category": "Hero",
+    "category": "Hero Section",
     "type": "hero",
     "page_type": "hero",
     "is_free": false,
@@ -468,7 +468,7 @@
   {
     "id": "10",
     "title": "AI Automation Hero",
-    "category": "AI / SaaS",
+    "category": "SaaS",
     "type": "hero",
     "page_type": "hero",
     "is_free": false,
@@ -628,7 +628,7 @@
   {
     "id": "portal",
     "title": "Portal",
-    "category": "Hero",
+    "category": "Hero Section",
     "type": "hero",
     "page_type": "hero",
     "is_free": true,
@@ -646,7 +646,7 @@
   {
     "id": "max-reed-portfolio",
     "title": "Max Reed Portfolio",
-    "category": "Features",
+    "category": "Features Section",
     "type": "features",
     "page_type": "hero",
     "is_free": true,
@@ -712,7 +712,7 @@
   {
     "id": "18",
     "title": "Loader Animation",
-    "category": "Component",
+    "category": "Components",
     "type": "hero",
     "page_type": "hero",
     "is_free": false,
@@ -1042,7 +1042,7 @@
   {
     "id": "solar-energy-hero",
     "title": "Solar Energy Hero",
-    "category": "Hero",
+    "category": "Hero Section",
     "type": "hero",
     "page_type": "hero",
     "is_free": false,
@@ -1612,7 +1612,7 @@
   {
     "id": "design-rocket-email-hero",
     "title": "Email Marketing",
-    "category": "Email Marketing",
+    "category": "Email & Newsletter",
     "type": "hero",
     "page_type": "hero",
     "is_free": true,
@@ -1864,7 +1864,7 @@
   {
     "id": "pro-ai-deck",
     "title": "Pro AI Deck",
-    "category": "Presentation",
+    "category": "Presentations",
     "type": "hero",
     "page_type": "hero",
     "is_free": false,
@@ -2124,7 +2124,7 @@
   {
     "id": "luxury-hero",
     "title": "Luxury Hero",
-    "category": "Hero",
+    "category": "Hero Section",
     "type": "hero",
     "page_type": "hero",
     "is_free": false,
@@ -2142,7 +2142,7 @@
   {
     "id": "subscription-agency",
     "title": "Subscription Agency",
-    "category": "Hero",
+    "category": "Hero Section",
     "type": "hero",
     "page_type": "hero",
     "is_free": true,
@@ -2160,7 +2160,7 @@
   {
     "id": "supplement-shop",
     "title": "Supplement Shop",
-    "category": "Health",
+    "category": "Healthcare",
     "type": "mobile",
     "page_type": "hero",
     "is_free": false,
@@ -2178,7 +2178,7 @@
   {
     "id": "wellbeing-os",
     "title": "Wellbeing OS",
-    "category": "Hero",
+    "category": "Hero Section",
     "type": "hero",
     "page_type": "hero",
     "is_free": true,
@@ -2196,7 +2196,7 @@
   {
     "id": "pet-products",
     "title": "Pet Products",
-    "category": "Ecommerce App",
+    "category": "E-commerce",
     "type": "mobile",
     "page_type": "hero",
     "is_free": false,
@@ -2214,7 +2214,7 @@
   {
     "id": "adhd-planner",
     "title": "ADHD Planner",
-    "category": "App",
+    "category": "Mobile App",
     "type": "hero",
     "page_type": "hero",
     "is_free": true,
@@ -2250,7 +2250,7 @@
   {
     "id": "media-card-carousel",
     "title": "Media Card Carousel",
-    "category": "Slider",
+    "category": "Components",
     "type": "carousel",
     "page_type": "hero",
     "is_free": false,
@@ -2286,7 +2286,7 @@
   {
     "id": "prosthetics-hero",
     "title": "Prosthetics Hero",
-    "category": "Hero",
+    "category": "Hero Section",
     "type": "hero",
     "page_type": "hero",
     "is_free": true,
@@ -2304,7 +2304,7 @@
   {
     "id": "retro-futurist",
     "title": "Retro-Futurist",
-    "category": "Hero",
+    "category": "Hero Section",
     "type": "hero",
     "page_type": "hero",
     "is_free": true,
@@ -2322,7 +2322,7 @@
   {
     "id": "lending-ai-agents",
     "title": "Lending AI Agents",
-    "category": "SaaS Website",
+    "category": "SaaS",
     "type": "hero",
     "page_type": "hero",
     "is_free": false,
@@ -2394,7 +2394,7 @@
   {
     "id": "contact-cybernetic",
     "title": "Contact Cybernetic",
-    "category": "Hero",
+    "category": "Hero Section",
     "type": "hero",
     "page_type": "hero",
     "is_free": true,
@@ -2466,7 +2466,7 @@
   {
     "id": "impact-ventures",
     "title": "Impact Ventures",
-    "category": "Hero",
+    "category": "Hero Section",
     "type": "hero",
     "page_type": "hero",
     "is_free": true,
@@ -2484,7 +2484,7 @@
   {
     "id": "halo-use-case",
     "title": "Halo Use Case",
-    "category": "Use Case",
+    "category": "Use Cases",
     "type": "features",
     "page_type": "hero",
     "is_free": true,
@@ -2520,7 +2520,7 @@
   {
     "id": "integration-saas",
     "title": "Integration SaaS",
-    "category": "Hero",
+    "category": "Hero Section",
     "type": "hero",
     "page_type": "hero",
     "is_free": false,
@@ -2538,7 +2538,7 @@
   {
     "id": "luxury-escapes",
     "title": "Luxury Escapes",
-    "category": "Travel App",
+    "category": "Travel",
     "type": "mobile",
     "page_type": "hero",
     "is_free": false,
@@ -2556,7 +2556,7 @@
   {
     "id": "lodge-booking-app",
     "title": "Lodge Booking App",
-    "category": "Booking",
+    "category": "Travel",
     "type": "mobile",
     "page_type": "hero",
     "is_free": false,
@@ -2574,7 +2574,7 @@
   {
     "id": "innovation-studio",
     "title": "Innovation Studio",
-    "category": "Hero",
+    "category": "Hero Section",
     "type": "hero",
     "page_type": "hero",
     "is_free": false,
@@ -2592,7 +2592,7 @@
   {
     "id": "gear-shop",
     "title": "Gear Shop",
-    "category": "Ecommerce App",
+    "category": "E-commerce",
     "type": "mobile",
     "page_type": "hero",
     "is_free": false,
@@ -2628,7 +2628,7 @@
   {
     "id": "waitlist-hero",
     "title": "Waitlist Hero",
-    "category": "Hero",
+    "category": "Hero Section",
     "type": "hero",
     "page_type": "hero",
     "is_free": false,
@@ -2700,7 +2700,7 @@
   {
     "id": "social-hangouts",
     "title": "Social Hangouts",
-    "category": "Community App",
+    "category": "Community",
     "type": "mobile",
     "page_type": "hero",
     "is_free": false,
@@ -2718,7 +2718,7 @@
   {
     "id": "nike-hover",
     "title": "Nike Hover",
-    "category": "Features",
+    "category": "Features Section",
     "type": "features",
     "page_type": "hero",
     "is_free": true,
@@ -2736,7 +2736,7 @@
   {
     "id": "mouse-trail-cta",
     "title": "Mouse Trail CTA",
-    "category": "CTA",
+    "category": "CTA Section",
     "type": "cta",
     "page_type": "hero",
     "is_free": false,
@@ -2754,7 +2754,7 @@
   {
     "id": "orbis-hello",
     "title": "Orbis Hello",
-    "category": "About",
+    "category": "About Section",
     "type": "about",
     "page_type": "hero",
     "is_free": true,
@@ -2790,7 +2790,7 @@
   {
     "id": "organic-odyssey",
     "title": "Organic Odyssey",
-    "category": "Hero",
+    "category": "Hero Section",
     "type": "hero",
     "page_type": "hero",
     "is_free": true,
@@ -2826,7 +2826,7 @@
   {
     "id": "novadesk-signup",
     "title": "NovaDesk Signup",
-    "category": "Signup",
+    "category": "Waitlist & Coming Soon",
     "type": "hero",
     "page_type": "hero",
     "is_free": false,
@@ -2844,7 +2844,7 @@
   {
     "id": "nexacore-results",
     "title": "NexaCore Results",
-    "category": "Features",
+    "category": "Features Section",
     "type": "features",
     "page_type": "hero",
     "is_free": true,
@@ -2880,7 +2880,7 @@
   {
     "id": "nimbus-ops",
     "title": "Nimbus Ops",
-    "category": "CTA",
+    "category": "CTA Section",
     "type": "cta",
     "page_type": "hero",
     "is_free": false,
@@ -2898,7 +2898,7 @@
   {
     "id": "network-hero",
     "title": "Network Hero",
-    "category": "Hero",
+    "category": "Hero Section",
     "type": "hero",
     "page_type": "hero",
     "is_free": true,
@@ -3024,7 +3024,7 @@
   {
     "id": "performance-eyewear",
     "title": "Performance Eyewear",
-    "category": "Ecommerce",
+    "category": "E-commerce",
     "type": "hero",
     "page_type": "hero",
     "is_free": false,
@@ -3060,7 +3060,7 @@
   {
     "id": "oyla",
     "title": "OYLA",
-    "category": "Ecommerce",
+    "category": "E-commerce",
     "type": "hero",
     "page_type": "hero",
     "is_free": false,
@@ -3096,7 +3096,7 @@
   {
     "id": "ai-assistant-app",
     "title": "AI Assistant App",
-    "category": "AI App",
+    "category": "AI Apps",
     "type": "mobile",
     "page_type": "hero",
     "is_free": false,
@@ -3150,7 +3150,7 @@
   {
     "id": "f1-racing-hub",
     "title": "F1 Racing Hub",
-    "category": "Statistics App",
+    "category": "Mobile App",
     "type": "mobile",
     "page_type": "hero",
     "is_free": true,
@@ -3168,7 +3168,7 @@
   {
     "id": "ai-workflow",
     "title": "AI Workflow Hero",
-    "category": "Hero",
+    "category": "Hero Section",
     "type": "hero",
     "page_type": "hero",
     "is_free": true,
@@ -3186,7 +3186,7 @@
   {
     "id": "portfolio-about",
     "title": "Portfolio About",
-    "category": "About",
+    "category": "About Section",
     "type": "about",
     "page_type": "hero",
     "is_free": true,
@@ -3204,7 +3204,7 @@
   {
     "id": "tech-forward",
     "title": "Tech-Forward",
-    "category": "Hero",
+    "category": "Hero Section",
     "type": "hero",
     "page_type": "hero",
     "is_free": true,
@@ -3222,7 +3222,7 @@
   {
     "id": "technical-specifications",
     "title": "Technical Specifications",
-    "category": "Tabs",
+    "category": "Components",
     "type": "features",
     "page_type": "hero",
     "is_free": false,
@@ -3240,7 +3240,7 @@
   {
     "id": "speakup-venture-hero",
     "title": "SpeakUp Venture Hero",
-    "category": "Hero",
+    "category": "Hero Section",
     "type": "hero",
     "page_type": "hero",
     "is_free": false,
@@ -3276,7 +3276,7 @@
   {
     "id": "rocket-cta",
     "title": "Rocket CTA",
-    "category": "CTA",
+    "category": "CTA Section",
     "type": "cta",
     "page_type": "hero",
     "is_free": true,
@@ -3312,7 +3312,7 @@
   {
     "id": "stark-minimal-footer",
     "title": "Stark Minimal Footer",
-    "category": "Footer",
+    "category": "Footer Section",
     "type": "footer",
     "page_type": "hero",
     "is_free": true,
@@ -3438,7 +3438,7 @@
   {
     "id": "live-language-classes",
     "title": "Live Language Classes",
-    "category": "Learning SaaS",
+    "category": "SaaS",
     "type": "mobile",
     "page_type": "hero",
     "is_free": false,
@@ -3474,7 +3474,7 @@
   {
     "id": "mind-body-healing",
     "title": "Mind-Body Healing",
-    "category": "Medicine",
+    "category": "Healthcare",
     "type": "hero",
     "page_type": "hero",
     "is_free": true,
@@ -3492,7 +3492,7 @@
   {
     "id": "dental-care-app",
     "title": "Dental Care App",
-    "category": "Health App",
+    "category": "Healthcare",
     "type": "mobile",
     "page_type": "hero",
     "is_free": false,
@@ -3582,7 +3582,7 @@
   {
     "id": "gateway-portal",
     "title": "Gateway Portal",
-    "category": "Landing page",
+    "category": "Landing Page",
     "type": "hero",
     "page_type": "hero",
     "is_free": false,
@@ -3600,7 +3600,7 @@
   {
     "id": "futuristic-eyewear",
     "title": "Futuristic Eyewear",
-    "category": "Ecommerce",
+    "category": "E-commerce",
     "type": "hero",
     "page_type": "hero",
     "is_free": false,
@@ -3618,7 +3618,7 @@
   {
     "id": "deep-neural-interface",
     "title": "Deep Neural Interface",
-    "category": "Artificial Intelligence",
+    "category": "AI Apps",
     "type": "hero",
     "page_type": "hero",
     "is_free": false,
@@ -3636,7 +3636,7 @@
   {
     "id": "ai-driving-assistant",
     "title": "AI Driving Assistant",
-    "category": "AI SaaS Website",
+    "category": "SaaS",
     "type": "hero",
     "page_type": "hero",
     "is_free": false,
@@ -3672,7 +3672,7 @@
   {
     "id": "vaultshield",
     "title": "VaultShield",
-    "category": "Hero",
+    "category": "Hero Section",
     "type": "hero",
     "page_type": "hero",
     "is_free": true,
@@ -3690,7 +3690,7 @@
   {
     "id": "jewelry-store",
     "title": "Jewelry Store",
-    "category": "Ecommerce",
+    "category": "E-commerce",
     "type": "hero",
     "page_type": "hero",
     "is_free": false,
@@ -3708,7 +3708,7 @@
   {
     "id": "visual-hero",
     "title": "Visual Hero",
-    "category": "Hero",
+    "category": "Hero Section",
     "type": "hero",
     "page_type": "hero",
     "is_free": true,
@@ -3780,7 +3780,7 @@
   {
     "id": "product-studio",
     "title": "Product Studio",
-    "category": "Agency Website",
+    "category": "Agency",
     "type": "hero",
     "page_type": "hero",
     "is_free": false,
@@ -3798,7 +3798,7 @@
   {
     "id": "no-code-waitlist",
     "title": "No-Code Waitlist",
-    "category": "Waitlist",
+    "category": "Waitlist & Coming Soon",
     "type": "hero",
     "page_type": "hero",
     "is_free": true,
@@ -3834,7 +3834,7 @@
   {
     "id": "scroll-marquee",
     "title": "Scroll Marquee",
-    "category": "Marquee",
+    "category": "Components",
     "type": "carousel",
     "page_type": "hero",
     "is_free": false,
@@ -3852,7 +3852,7 @@
   {
     "id": "rocket-pricing",
     "title": "Rocket Pricing",
-    "category": "Pricing",
+    "category": "Pricing Page",
     "type": "pricing",
     "page_type": "hero",
     "is_free": true,
@@ -3870,7 +3870,7 @@
   {
     "id": "velorix-iic",
     "title": "Velorix IIC",
-    "category": "Hero",
+    "category": "Hero Section",
     "type": "hero",
     "page_type": "hero",
     "is_free": false,
@@ -3960,7 +3960,7 @@
   {
     "id": "obsidian-hero",
     "title": "Obsidian Hero",
-    "category": "Hero",
+    "category": "Hero Section",
     "type": "hero",
     "page_type": "hero",
     "is_free": false,
@@ -3978,7 +3978,7 @@
   {
     "id": "mythic-naturecore",
     "title": "Mythic Naturecore",
-    "category": "landing page",
+    "category": "Landing Page",
     "type": "hero",
     "page_type": "hero",
     "is_free": false,
@@ -3996,7 +3996,7 @@
   {
     "id": "orbis-cta",
     "title": "Orbis CTA",
-    "category": "CTA",
+    "category": "CTA Section",
     "type": "cta",
     "page_type": "hero",
     "is_free": false,
@@ -4050,7 +4050,7 @@
   {
     "id": "interior-features",
     "title": "Interior Features",
-    "category": "Features",
+    "category": "Features Section",
     "type": "features",
     "page_type": "hero",
     "is_free": false,
@@ -4068,7 +4068,7 @@
   {
     "id": "liquid-glass-features",
     "title": "Liquid Glass Features",
-    "category": "Features",
+    "category": "Features Section",
     "type": "features",
     "page_type": "hero",
     "is_free": false,
@@ -4086,7 +4086,7 @@
   {
     "id": "kova-testimonial",
     "title": "Kova Testimonial",
-    "category": "Testimonial",
+    "category": "Testimonials",
     "type": "testimonials",
     "page_type": "hero",
     "is_free": false,
@@ -4104,7 +4104,7 @@
   {
     "id": "nexacore-control",
     "title": "NexaCore Control",
-    "category": "Features",
+    "category": "Features Section",
     "type": "features",
     "page_type": "hero",
     "is_free": true,
@@ -4122,7 +4122,7 @@
   {
     "id": "nimbus-pricing",
     "title": "NimBus Pricing",
-    "category": "Pricing",
+    "category": "Pricing Page",
     "type": "pricing",
     "page_type": "hero",
     "is_free": false,
@@ -4158,7 +4158,7 @@
   {
     "id": "shop",
     "title": "Daisy Shop",
-    "category": "Ecommerce",
+    "category": "E-commerce",
     "type": "hero",
     "page_type": "landing",
     "is_free": false,
@@ -4176,7 +4176,7 @@
   {
     "id": "wellness-balance",
     "title": "Wellness Balance",
-    "category": "Hero",
+    "category": "Hero Section",
     "type": "hero",
     "page_type": "hero",
     "is_free": true,
@@ -4212,7 +4212,7 @@
   {
     "id": "404-planet",
     "title": "404 Planet",
-    "category": "404",
+    "category": "404 Pages",
     "type": "404",
     "page_type": "hero",
     "is_free": true,
@@ -4230,7 +4230,7 @@
   {
     "id": "bio-age-dashboard",
     "title": "Bio-Age Dashboard",
-    "category": "Hero",
+    "category": "Hero Section",
     "type": "hero",
     "page_type": "hero",
     "is_free": false,
@@ -4248,7 +4248,7 @@
   {
     "id": "axion-about",
     "title": "Axion About",
-    "category": "About",
+    "category": "About Section",
     "type": "about",
     "page_type": "hero",
     "is_free": true,
@@ -4266,7 +4266,7 @@
   {
     "id": "interactive-portfolio",
     "title": "Interactive Portfolio",
-    "category": "Hero",
+    "category": "Hero Section",
     "type": "hero",
     "page_type": "hero",
     "is_free": false,
@@ -4302,7 +4302,7 @@
   {
     "id": "liquid-glass-cta",
     "title": "Liquid Glass CTA",
-    "category": "CTA",
+    "category": "CTA Section",
     "type": "cta",
     "page_type": "hero",
     "is_free": true,
@@ -4320,7 +4320,7 @@
   {
     "id": "learnly",
     "title": "Learnly",
-    "category": "Hero",
+    "category": "Hero Section",
     "type": "hero",
     "page_type": "hero",
     "is_free": false,
@@ -4338,7 +4338,7 @@
   {
     "id": "book-hero",
     "title": "Book Hero",
-    "category": "Hero",
+    "category": "Hero Section",
     "type": "hero",
     "page_type": "hero",
     "is_free": false,
@@ -4356,7 +4356,7 @@
   {
     "id": "global-cta-footer",
     "title": "Global CTA Footer",
-    "category": "CTA",
+    "category": "CTA Section",
     "type": "cta",
     "page_type": "hero",
     "is_free": false,
@@ -4374,7 +4374,7 @@
   {
     "id": "launchex-about",
     "title": "LaunchEx About",
-    "category": "About",
+    "category": "About Section",
     "type": "about",
     "page_type": "hero",
     "is_free": true,
@@ -4410,7 +4410,7 @@
   {
     "id": "rocket-faq",
     "title": "Rocket FAQ",
-    "category": "FAQ",
+    "category": "FAQ & Help",
     "type": "faq",
     "page_type": "hero",
     "is_free": false,
@@ -4428,7 +4428,7 @@
   {
     "id": "ai-image-generator-ui",
     "title": "AI Image Generator UI",
-    "category": "AI",
+    "category": "AI Apps",
     "type": "hero",
     "page_type": "hero",
     "is_free": true,
@@ -4446,7 +4446,7 @@
   {
     "id": "cursor-follow",
     "title": "Cursor Follow",
-    "category": "Hero",
+    "category": "Hero Section",
     "type": "hero",
     "page_type": "hero",
     "is_free": false,
@@ -4464,7 +4464,7 @@
   {
     "id": "futuristic-cinematic",
     "title": "Futuristic Cinematic",
-    "category": "Hero",
+    "category": "Hero Section",
     "type": "hero",
     "page_type": "hero",
     "is_free": false,
@@ -4482,7 +4482,7 @@
   {
     "id": "intelligentx",
     "title": "IntelligentX",
-    "category": "Hero",
+    "category": "Hero Section",
     "type": "hero",
     "page_type": "hero",
     "is_free": true,
@@ -4500,7 +4500,7 @@
   {
     "id": "modern-hr-dashboard",
     "title": "Modern HR Dashboard",
-    "category": "HR Management",
+    "category": "HR",
     "type": "mobile",
     "page_type": "hero",
     "is_free": false,
@@ -4518,7 +4518,7 @@
   {
     "id": "outdoor-apparel",
     "title": "Outdoor Apparel",
-    "category": "Fashion",
+    "category": "E-commerce",
     "type": "hero",
     "page_type": "hero",
     "is_free": false,
@@ -4536,7 +4536,7 @@
   {
     "id": "nexacore-process",
     "title": "NexaCore Process",
-    "category": "Process",
+    "category": "Process & Stats",
     "type": "features",
     "page_type": "hero",
     "is_free": false,
@@ -4554,7 +4554,7 @@
   {
     "id": "fun-404-page",
     "title": "Fun 404 Page",
-    "category": "Education Website",
+    "category": "Education",
     "type": "hero",
     "page_type": "hero",
     "is_free": true,
@@ -4572,7 +4572,7 @@
   {
     "id": "nimbus-demo",
     "title": "Nimbus Demo",
-    "category": "Dashboard Demo",
+    "category": "Dashboards",
     "type": "dashboard",
     "page_type": "hero",
     "is_free": false,
@@ -4590,7 +4590,7 @@
   {
     "id": "stillmind",
     "title": "Stillmind",
-    "category": "Hero",
+    "category": "Hero Section",
     "type": "hero",
     "page_type": "hero",
     "is_free": true,
@@ -4644,7 +4644,7 @@
   {
     "id": "blog-showcase",
     "title": "Blog Showcase",
-    "category": "Blog",
+    "category": "Blog & Editorial",
     "type": "Blog",
     "page_type": "hero",
     "is_free": true,
@@ -4662,7 +4662,7 @@
   {
     "id": "equilibrium",
     "title": "Equilibrium",
-    "category": "Hero",
+    "category": "Hero Section",
     "type": "hero",
     "page_type": "hero",
     "is_free": true,
@@ -4698,7 +4698,7 @@
   {
     "id": "flowmate-carousal",
     "title": "FlowMate Carousal",
-    "category": "Carousal",
+    "category": "Components",
     "type": "carousel",
     "page_type": "hero",
     "is_free": false,
@@ -4734,7 +4734,7 @@
   {
     "id": "mythic-vpn",
     "title": "Mythic VPN",
-    "category": "VPN",
+    "category": "Cybersecurity",
     "type": "hero",
     "page_type": "hero",
     "is_free": false,
@@ -4806,7 +4806,7 @@
   {
     "id": "lead-funnel",
     "title": "Lead Funnel",
-    "category": "Hero",
+    "category": "Hero Section",
     "type": "hero",
     "page_type": "hero",
     "is_free": false,
@@ -4842,7 +4842,7 @@
   {
     "id": "financialfocus",
     "title": "FinancialFocus",
-    "category": "Hero",
+    "category": "Hero Section",
     "type": "hero",
     "page_type": "hero",
     "is_free": false,
@@ -4878,7 +4878,7 @@
   {
     "id": "saas-pricing-flow",
     "title": "SaaS Pricing Flow",
-    "category": "Pricing",
+    "category": "Pricing Page",
     "type": "hero",
     "page_type": "hero",
     "is_free": false,
@@ -4896,7 +4896,7 @@
   {
     "id": "vertex-sci",
     "title": "Vertex Sci",
-    "category": "Hero",
+    "category": "Hero Section",
     "type": "hero",
     "page_type": "hero",
     "is_free": false,
@@ -4914,7 +4914,7 @@
   {
     "id": "vision-reveal",
     "title": "Vision Reveal",
-    "category": "Hero",
+    "category": "Hero Section",
     "type": "hero",
     "page_type": "hero",
     "is_free": true,
@@ -4932,7 +4932,7 @@
   {
     "id": "404",
     "title": "Nexto 404",
-    "category": "404",
+    "category": "404 Pages",
     "type": "hero",
     "page_type": "hero",
     "is_free": true,
@@ -4968,7 +4968,7 @@
   {
     "id": "cosmic",
     "title": "Cosmic",
-    "category": "Hero",
+    "category": "Hero Section",
     "type": "hero",
     "page_type": "hero",
     "is_free": false,
@@ -4986,7 +4986,7 @@
   {
     "id": "inner-quest",
     "title": "Inner Quest",
-    "category": "Mindfulness",
+    "category": "Wellness",
     "type": "hero",
     "page_type": "hero",
     "is_free": false,
@@ -5040,7 +5040,7 @@
   {
     "id": "immersive-ocean",
     "title": "Immersive Ocean",
-    "category": "Hero",
+    "category": "Hero Section",
     "type": "hero",
     "page_type": "hero",
     "is_free": true,
@@ -5058,7 +5058,7 @@
   {
     "id": "launchex-submissions",
     "title": "LaunchEx Submissions",
-    "category": "Features",
+    "category": "Features Section",
     "type": "features",
     "page_type": "hero",
     "is_free": false,
@@ -5076,7 +5076,7 @@
   {
     "id": "glassmorphic-feature-tabs",
     "title": "Glassmorphic Feature Tabs",
-    "category": "Tabs",
+    "category": "Components",
     "type": "features",
     "page_type": "hero",
     "is_free": false,
@@ -5094,7 +5094,7 @@
   {
     "id": "nex-max-upgrade",
     "title": "Nex Max Upgrade",
-    "category": "Pricing",
+    "category": "Pricing Page",
     "type": "pricing",
     "page_type": "hero",
     "is_free": false,
@@ -5112,7 +5112,7 @@
   {
     "id": "tech-noir-about",
     "title": "Tech-Noir About",
-    "category": "About",
+    "category": "About Section",
     "type": "about",
     "page_type": "hero",
     "is_free": true,
@@ -5148,7 +5148,7 @@
   {
     "id": "3d-studio-pricing",
     "title": "3D Studio Pricing",
-    "category": "Pricing",
+    "category": "Pricing Page",
     "type": "hero",
     "page_type": "hero",
     "is_free": false,
@@ -5166,7 +5166,7 @@
   {
     "id": "apex-program-accordion",
     "title": "Apex Program Accordion",
-    "category": "Accordion",
+    "category": "Components",
     "type": "faq",
     "page_type": "hero",
     "is_free": false,
@@ -5184,7 +5184,7 @@
   {
     "id": "cinematic-brand",
     "title": "Cinematic Brand",
-    "category": "Hero",
+    "category": "Hero Section",
     "type": "hero",
     "page_type": "hero",
     "is_free": false,
@@ -5202,7 +5202,7 @@
   {
     "id": "audio-showcase",
     "title": "Audio Showcase",
-    "category": "Hero",
+    "category": "Hero Section",
     "type": "hero",
     "page_type": "hero",
     "is_free": true,
@@ -5238,7 +5238,7 @@
   {
     "id": "eco-intelligence",
     "title": "Eco Intelligence",
-    "category": "Hero",
+    "category": "Hero Section",
     "type": "hero",
     "page_type": "hero",
     "is_free": false,
@@ -5256,7 +5256,7 @@
   {
     "id": "aurora-onboard",
     "title": "Aurora Onboard",
-    "category": "Sign Up",
+    "category": "Waitlist & Coming Soon",
     "type": "mobile",
     "page_type": "hero",
     "is_free": true,
@@ -5292,7 +5292,7 @@
   {
     "id": "naturecore-saas",
     "title": "Naturecore SaaS",
-    "category": "Hero",
+    "category": "Hero Section",
     "type": "hero",
     "page_type": "hero",
     "is_free": false,
@@ -5328,7 +5328,7 @@
   {
     "id": "solace-sign-in",
     "title": "Solace sign-in",
-    "category": "Sign In Form",
+    "category": "Waitlist & Coming Soon",
     "type": "form",
     "page_type": "hero",
     "is_free": false,
@@ -5346,7 +5346,7 @@
   {
     "id": "model-infrastructure",
     "title": "Model Infrastructure",
-    "category": "Developer Platform",
+    "category": "Developer",
     "type": "hero",
     "page_type": "hero",
     "is_free": false,
@@ -5364,7 +5364,7 @@
   {
     "id": "build-with-us",
     "title": "Build With Us",
-    "category": "Contact us",
+    "category": "Forms & Contact",
     "type": "hero",
     "page_type": "hero",
     "is_free": true,
@@ -5382,7 +5382,7 @@
   {
     "id": "conversion",
     "title": "Conversion",
-    "category": "Hero",
+    "category": "Hero Section",
     "type": "hero",
     "page_type": "hero",
     "is_free": false,
@@ -5400,7 +5400,7 @@
   {
     "id": "cybersecurity-hero-v2",
     "title": "Cybersecurity Hero v2",
-    "category": "Hero",
+    "category": "Hero Section",
     "type": "hero",
     "page_type": "hero",
     "is_free": false,
@@ -5418,7 +5418,7 @@
   {
     "id": "cybersecurity-hero",
     "title": "Cybersecurity Hero",
-    "category": "Hero",
+    "category": "Hero Section",
     "type": "hero",
     "page_type": "hero",
     "is_free": true,
@@ -5436,7 +5436,7 @@
   {
     "id": "feedback-slider",
     "title": "Feedback Slider",
-    "category": "Slider",
+    "category": "Components",
     "type": "carousel",
     "page_type": "hero",
     "is_free": false,
@@ -5454,7 +5454,7 @@
   {
     "id": "luminara",
     "title": "Luminara",
-    "category": "Hero",
+    "category": "Hero Section",
     "type": "hero",
     "page_type": "hero",
     "is_free": false,
@@ -5472,7 +5472,7 @@
   {
     "id": "wellness-device",
     "title": "Wellness Devicex",
-    "category": "Health",
+    "category": "Healthcare",
     "type": "hero",
     "page_type": "hero",
     "is_free": true,
@@ -5490,7 +5490,7 @@
   {
     "id": "growth-marketing-saas",
     "title": "Growth Marketing SaaS",
-    "category": "Hero",
+    "category": "Hero Section",
     "type": "hero",
     "page_type": "hero",
     "is_free": false,
@@ -5544,7 +5544,7 @@
   {
     "id": "bento-grid-stats",
     "title": "Bento Grid Stats",
-    "category": "Bento",
+    "category": "Components",
     "type": "features",
     "page_type": "hero",
     "is_free": false,
@@ -5580,7 +5580,7 @@
   {
     "id": "wellness-hero",
     "title": "Wellness Hero",
-    "category": "Hero",
+    "category": "Hero Section",
     "type": "hero",
     "page_type": "hero",
     "is_free": true,
@@ -5598,7 +5598,7 @@
   {
     "id": "animated-cards",
     "title": "Animated Cards",
-    "category": "Component",
+    "category": "Components",
     "type": "carousel",
     "page_type": "hero",
     "is_free": true,
@@ -5616,7 +5616,7 @@
   {
     "id": "arceage-stats",
     "title": "Arceage Stats",
-    "category": "Stats",
+    "category": "Process & Stats",
     "type": "stats",
     "page_type": "hero",
     "is_free": true,
@@ -5670,7 +5670,7 @@
   {
     "id": "cognitra-feature",
     "title": "Cognitra Feature",
-    "category": "Feature",
+    "category": "Features Section",
     "type": "features",
     "page_type": "hero",
     "is_free": true,
@@ -5688,7 +5688,7 @@
   {
     "id": "coffee-rewards",
     "title": "Coffee Rewards",
-    "category": "Loyalty App",
+    "category": "Loyalty",
     "type": "mobile",
     "page_type": "hero",
     "is_free": true,
@@ -5706,7 +5706,7 @@
   {
     "id": "cargo-group",
     "title": "Cargo Group",
-    "category": "Hero",
+    "category": "Hero Section",
     "type": "hero",
     "page_type": "hero",
     "is_free": false,
@@ -5724,7 +5724,7 @@
   {
     "id": "faq-cta",
     "title": "FAQ CTA",
-    "category": "CTA",
+    "category": "CTA Section",
     "type": "cta",
     "page_type": "hero",
     "is_free": true,
@@ -5742,7 +5742,7 @@
   {
     "id": "futuristic-tech",
     "title": "Futuristic Tech",
-    "category": "Hero",
+    "category": "Hero Section",
     "type": "hero",
     "page_type": "hero",
     "is_free": false,
@@ -5760,7 +5760,7 @@
   {
     "id": "unwind-hero",
     "title": "Unwind Hero",
-    "category": "Hero",
+    "category": "Hero Section",
     "type": "hero",
     "page_type": "hero",
     "is_free": false,
@@ -5778,7 +5778,7 @@
   {
     "id": "email-landing-page",
     "title": "Email Landing Page",
-    "category": "Landing page",
+    "category": "Landing Page",
     "type": "landing",
     "page_type": "landing",
     "is_free": true,
@@ -5796,7 +5796,7 @@
   {
     "id": "cyberpunk-reveal",
     "title": "Cyberpunk Reveal",
-    "category": "Hero",
+    "category": "Hero Section",
     "type": "hero",
     "page_type": "hero",
     "is_free": false,
@@ -5814,7 +5814,7 @@
   {
     "id": "dashboard",
     "title": "Dashboard UI",
-    "category": "Dashboard",
+    "category": "Dashboards",
     "type": "dashboard",
     "page_type": "landing",
     "is_free": false,
@@ -5832,7 +5832,7 @@
   {
     "id": "editorial-collection-cta",
     "title": "Editorial Collection CTA",
-    "category": "CTA",
+    "category": "CTA Section",
     "type": "cta",
     "page_type": "hero",
     "is_free": false,
@@ -5868,7 +5868,7 @@
   {
     "id": "creative-portfolio",
     "title": "Creative Portfolio",
-    "category": "Hero",
+    "category": "Hero Section",
     "type": "hero",
     "page_type": "hero",
     "is_free": true,
@@ -5904,7 +5904,7 @@
   {
     "id": "features",
     "title": "Capabilities Overview",
-    "category": "Features",
+    "category": "Features Section",
     "type": "features",
     "page_type": "hero",
     "is_free": false,
@@ -5922,7 +5922,7 @@
   {
     "id": "cozypaws",
     "title": "CozyPaws",
-    "category": "Hero",
+    "category": "Hero Section",
     "type": "hero",
     "page_type": "hero",
     "is_free": true,
@@ -5958,7 +5958,7 @@
   {
     "id": "daisy-sweet",
     "title": "Daisy Sweet",
-    "category": "Product",
+    "category": "Products",
     "type": "features",
     "page_type": "hero",
     "is_free": false,
@@ -5976,7 +5976,7 @@
   {
     "id": "daisy-wild",
     "title": "Daisy Wild",
-    "category": "Product",
+    "category": "Products",
     "type": "features",
     "page_type": "hero",
     "is_free": true,
@@ -6012,7 +6012,7 @@
   {
     "id": "bite-sized-courses",
     "title": "Bite-Sized Courses",
-    "category": "Learning",
+    "category": "Education",
     "type": "mobile",
     "page_type": "hero",
     "is_free": false,
@@ -6066,7 +6066,7 @@
   {
     "id": "church-community",
     "title": "Church Community",
-    "category": "Church",
+    "category": "Community",
     "type": "mobile",
     "page_type": "hero",
     "is_free": true,
@@ -6084,7 +6084,7 @@
   {
     "id": "fine-jewelry-shop",
     "title": "Fine Jewelry Shop",
-    "category": "Ecommerce",
+    "category": "E-commerce",
     "type": "mobile",
     "page_type": "hero",
     "is_free": false,
@@ -6156,7 +6156,7 @@
   {
     "id": "ai-calorie-tracker",
     "title": "AI Calorie Tracker",
-    "category": "Health",
+    "category": "Healthcare",
     "type": "mobile",
     "page_type": "hero",
     "is_free": false,
@@ -6174,7 +6174,7 @@
   {
     "id": "arceage-contact-us",
     "title": "Arceage Contact Us",
-    "category": "Form",
+    "category": "Forms & Contact",
     "type": "form",
     "page_type": "hero",
     "is_free": false,
@@ -6228,7 +6228,7 @@
   {
     "id": "botanical-shadow-about",
     "title": "Botanical Shadow About",
-    "category": "About",
+    "category": "About Section",
     "type": "about",
     "page_type": "hero",
     "is_free": false,
@@ -6246,7 +6246,7 @@
   {
     "id": "bio-digital",
     "title": "Bio-Digital",
-    "category": "Hero",
+    "category": "Hero Section",
     "type": "hero",
     "page_type": "hero",
     "is_free": false,
@@ -6282,7 +6282,7 @@
   {
     "id": "deck-investor",
     "title": "Investor Deck",
-    "category": "Investor Presentations",
+    "category": "Presentations",
     "type": "hero",
     "page_type": "hero",
     "is_free": false,
@@ -6912,7 +6912,7 @@
   {
     "id": "package-fits-pricing",
     "title": "What Package Fits You",
-    "category": "Pricing",
+    "category": "Pricing Page",
     "type": "hero",
     "page_type": "hero",
     "is_free": false,
@@ -6989,7 +6989,7 @@
   {
     "id": "community-superdesign-high-contrast-landing-page",
     "title": "High Contrast Landing Page",
-    "category": "Landing Pages",
+    "category": "Landing Page",
     "type": "landing-page",
     "page_type": "landing",
     "is_free": true,
@@ -7025,7 +7025,7 @@
   {
     "id": "community-superdesign-lumina-saas-landing-page",
     "title": "Lumina SaaS Landing Page",
-    "category": "Landing Pages",
+    "category": "Landing Page",
     "type": "landing-page",
     "page_type": "landing",
     "is_free": true,
@@ -7596,7 +7596,7 @@
   {
     "id": "community-superdesign-synapse",
     "title": "Synapse",
-    "category": "Landing Pages",
+    "category": "Landing Page",
     "type": "landing-page",
     "page_type": "landing",
     "is_free": true,
@@ -7677,7 +7677,7 @@
   {
     "id": "community-superdesign-babybites-sophisticated-palette",
     "title": "BabyBites - Sophisticated Palette",
-    "category": "Mobile Apps",
+    "category": "Mobile App",
     "type": "mobile-apps",
     "page_type": "community",
     "is_free": true,
@@ -7748,7 +7748,7 @@
   {
     "id": "community-superdesign-saas-landing-page-for-developer-tool",
     "title": "SaaS Landing Page for Developer Tool",
-    "category": "Landing Pages",
+    "category": "Landing Page",
     "type": "landing-page",
     "page_type": "landing",
     "is_free": true,
@@ -7860,7 +7860,7 @@
   {
     "id": "community-superdesign-chrome-extension-landing-page",
     "title": "Chrome Extension Landing Page",
-    "category": "Landing Pages",
+    "category": "Landing Page",
     "type": "landing-page",
     "page_type": "landing",
     "is_free": true,
@@ -8355,7 +8355,7 @@
   {
     "id": "community-superdesign-bold-editorial-design-style",
     "title": "Bold Editorial Design Style",
-    "category": "Portfolios",
+    "category": "Portfolio",
     "type": "landing-page",
     "page_type": "landing",
     "is_free": true,
@@ -9009,7 +9009,7 @@
   {
     "id": "community-superdesign-coverflow-carousels-that-turn-heads-dark-coverflow-aurora",
     "title": "Coverflow — Carousels that turn heads (dark coverflow aurora)",
-    "category": "Mobile Apps",
+    "category": "Mobile App",
     "type": "landing-page",
     "page_type": "landing",
     "is_free": true,
@@ -9132,7 +9132,7 @@
   {
     "id": "community-superdesign-graphic-comparison-report",
     "title": "Graphic Comparison Report",
-    "category": "Landing Pages",
+    "category": "Landing Page",
     "type": "landing-page",
     "page_type": "landing",
     "is_free": true,
@@ -9175,7 +9175,7 @@
   {
     "id": "community-superdesign-gridwright-design-the-web-type-the-prompt-swiss-grid-signal-red",
     "title": "Gridwright — Design the web, type the prompt (Swiss Grid / Signal Red)",
-    "category": "Pricing Pages",
+    "category": "Pricing Page",
     "type": "landing-page",
     "page_type": "landing",
     "is_free": true,
@@ -9220,7 +9220,7 @@
   {
     "id": "community-superdesign-landing-page-local-small-business",
     "title": "Landing Page / Local Small Business",
-    "category": "Landing Pages",
+    "category": "Landing Page",
     "type": "landing-page",
     "page_type": "landing",
     "is_free": true,
@@ -9344,7 +9344,7 @@
   {
     "id": "community-superdesign-slate-roi-calculator-pricing",
     "title": "Slate ROI-Calculator Pricing",
-    "category": "Pricing Pages",
+    "category": "Pricing Page",
     "type": "pricing",
     "page_type": "community",
     "is_free": true,
@@ -9444,7 +9444,7 @@
   {
     "id": "community-superdesign-prism-frosted-glass-pastel-agency-studio",
     "title": "Prism — Frosted-Glass Pastel Agency Studio",
-    "category": "Portfolios",
+    "category": "Portfolio",
     "type": "landing-page",
     "page_type": "landing",
     "is_free": true,
@@ -9539,7 +9539,7 @@
   {
     "id": "community-superdesign-gesture-first-navigation-system",
     "title": "Gesture First Navigation System",
-    "category": "Mobile Apps",
+    "category": "Mobile App",
     "type": "mobile-apps",
     "page_type": "community",
     "is_free": true,
@@ -9576,7 +9576,7 @@
   {
     "id": "community-superdesign-editorial-cream-ink-two-path-saas-pricing-3dee65",
     "title": "Editorial Cream + Ink Two-Path SaaS Pricing",
-    "category": "Pricing Pages",
+    "category": "Pricing Page",
     "type": "pricing",
     "page_type": "community",
     "is_free": true,
@@ -9624,7 +9624,7 @@
   {
     "id": "community-superdesign-electric-lime-single-plan-saas-pricing",
     "title": "Electric-Lime Single-Plan SaaS Pricing",
-    "category": "Pricing Pages",
+    "category": "Pricing Page",
     "type": "pricing",
     "page_type": "community",
     "is_free": true,
@@ -9669,7 +9669,7 @@
   {
     "id": "community-superdesign-electric-blue-studio-pricing-188a8f",
     "title": "Electric-Blue Studio Pricing",
-    "category": "Pricing Pages",
+    "category": "Pricing Page",
     "type": "pricing",
     "page_type": "community",
     "is_free": true,
@@ -9714,7 +9714,7 @@
   {
     "id": "community-superdesign-account-setup-flow-goals-interests-card-based",
     "title": "Account Setup Flow — Goals / Interests (Card-Based)",
-    "category": "Mobile Apps",
+    "category": "Mobile App",
     "type": "mobile-apps",
     "page_type": "community",
     "is_free": true,
@@ -9752,7 +9752,7 @@
   {
     "id": "community-superdesign-sectioned-index-page",
     "title": "Sectioned Index Page",
-    "category": "Mobile Apps",
+    "category": "Mobile App",
     "type": "mobile-apps",
     "page_type": "community",
     "is_free": true,
@@ -9790,7 +9790,7 @@
   {
     "id": "community-superdesign-electric-dark-usage-based-pricing-calculator-20e556",
     "title": "Electric Dark Usage-Based Pricing Calculator",
-    "category": "Pricing Pages",
+    "category": "Pricing Page",
     "type": "pricing",
     "page_type": "community",
     "is_free": true,
@@ -9837,7 +9837,7 @@
   {
     "id": "community-superdesign-emerald-4-tier-saas-pricing-table",
     "title": "Emerald 4-Tier SaaS Pricing Table",
-    "category": "Pricing Pages",
+    "category": "Pricing Page",
     "type": "pricing",
     "page_type": "community",
     "is_free": true,
@@ -9974,7 +9974,7 @@
   {
     "id": "community-superdesign-editorial-music-player-now-playing",
     "title": "Editorial Music Player (Now Playing)",
-    "category": "Mobile Apps",
+    "category": "Mobile App",
     "type": "mobile-apps",
     "page_type": "community",
     "is_free": true,
@@ -10013,7 +10013,7 @@
   {
     "id": "community-superdesign-cream-and-sky-playful-saas-pricing",
     "title": "Cream & Sky Playful SaaS Pricing",
-    "category": "Pricing Pages",
+    "category": "Pricing Page",
     "type": "pricing",
     "page_type": "community",
     "is_free": true,
@@ -10059,7 +10059,7 @@
   {
     "id": "community-superdesign-editorial-crimson-dev-tool-pricing",
     "title": "Editorial Crimson Dev-Tool Pricing",
-    "category": "Pricing Pages",
+    "category": "Pricing Page",
     "type": "pricing",
     "page_type": "community",
     "is_free": true,
@@ -10107,7 +10107,7 @@
   {
     "id": "community-superdesign-card-grid-browse",
     "title": "Card Grid Browse",
-    "category": "Mobile Apps",
+    "category": "Mobile App",
     "type": "mobile-apps",
     "page_type": "community",
     "is_free": true,
@@ -10229,7 +10229,7 @@
   {
     "id": "community-superdesign-champagne-noir-paywall-65a2fd",
     "title": "Champagne Noir Paywall",
-    "category": "Pricing Pages",
+    "category": "Pricing Page",
     "type": "pricing",
     "page_type": "community",
     "is_free": true,
@@ -10269,7 +10269,7 @@
   {
     "id": "community-superdesign-foundry-your-saas-site-designed-before-you-write-a-line",
     "title": "Foundry: Your SaaS Site, Designed Before You Write a Line",
-    "category": "Landing Pages",
+    "category": "Landing Page",
     "type": "landing-page",
     "page_type": "landing",
     "is_free": true,
@@ -10314,7 +10314,7 @@
   {
     "id": "community-superdesign-loam-warm-earthy-organic-agency-website",
     "title": "Loam — Warm Earthy Organic Agency Website",
-    "category": "Portfolios",
+    "category": "Portfolio",
     "type": "landing-page",
     "page_type": "landing",
     "is_free": true,
@@ -10358,7 +10358,7 @@
   {
     "id": "community-superdesign-landing-page-real-estate",
     "title": "Landing Page / Real-Estate",
-    "category": "Landing Pages",
+    "category": "Landing Page",
     "type": "landing-page",
     "page_type": "landing",
     "is_free": true,
@@ -10434,7 +10434,7 @@
   {
     "id": "community-superdesign-editorial-violet-saas-pricing-matrix",
     "title": "Editorial Violet SaaS Pricing Matrix",
-    "category": "Pricing Pages",
+    "category": "Pricing Page",
     "type": "pricing",
     "page_type": "community",
     "is_free": true,
@@ -10590,7 +10590,7 @@
   {
     "id": "community-superdesign-swiss-grid-agency-layout",
     "title": "Swiss Grid Agency Layout",
-    "category": "Portfolios",
+    "category": "Portfolio",
     "type": "portfolio",
     "page_type": "community",
     "is_free": true,
@@ -10776,7 +10776,7 @@
   {
     "id": "community-superdesign-midnight-navy-fintech-pricing-656a6d",
     "title": "Midnight Navy Fintech Pricing",
-    "category": "Pricing Pages",
+    "category": "Pricing Page",
     "type": "pricing",
     "page_type": "community",
     "is_free": true,
@@ -11172,7 +11172,7 @@
   {
     "id": "community-superdesign-fintech-wallet-mobile-home-screen",
     "title": "Fintech Wallet — Mobile Home Screen",
-    "category": "Mobile Apps",
+    "category": "Mobile App",
     "type": "mobile-apps",
     "page_type": "community",
     "is_free": true,
@@ -11999,7 +11999,7 @@
   {
     "id": "community-superdesign-verdance-agency-website-design-studio-dark-emerald",
     "title": "Verdance — Agency Website Design Studio (Dark Emerald)",
-    "category": "Portfolios",
+    "category": "Portfolio",
     "type": "landing-page",
     "page_type": "landing",
     "is_free": true,
@@ -12276,7 +12276,7 @@
   {
     "id": "community-superdesign-skeuomorphism-music-player-tactile-leather-and-brass-now-playing-ui",
     "title": "Skeuomorphism Music Player: Tactile Leather and Brass Now Playing UI",
-    "category": "Mobile Apps",
+    "category": "Mobile App",
     "type": "mobile-apps",
     "page_type": "community",
     "is_free": true,
@@ -12715,7 +12715,7 @@
   {
     "id": "community-superdesign-warm-terracotta-ai-chat-interface",
     "title": "Warm Terracotta AI Chat Interface",
-    "category": "AI Chat",
+    "category": "AI Apps",
     "type": "ai-chat",
     "page_type": "community",
     "is_free": true,
@@ -12848,7 +12848,7 @@
   {
     "id": "community-superdesign-claymorphism-mobile-app-pastel-habit-tracker-home",
     "title": "Claymorphism Mobile App: Pastel Habit Tracker Home",
-    "category": "Mobile Apps",
+    "category": "Mobile App",
     "type": "mobile-apps",
     "page_type": "community",
     "is_free": true,
@@ -12908,7 +12908,7 @@
   {
     "id": "community-superdesign-calendar-ui-warm-editorial-week-planner",
     "title": "Calendar UI: Warm Editorial Week Planner",
-    "category": "Calendar",
+    "category": "Calendars",
     "type": "calendar",
     "page_type": "community",
     "is_free": true,

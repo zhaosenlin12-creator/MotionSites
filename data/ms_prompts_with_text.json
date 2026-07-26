@@ -20,7 +20,7 @@
   {
     "id": "bold-studio",
     "title": "Bold Studio",
-    "category": "Hero",
+    "category": "Hero Section",
     "type": "hero",
     "is_free": true,
     "page_type": "hero",
@@ -38,7 +38,7 @@
   {
     "id": "interactive-discovery",
     "title": "Interactive Discovery",
-    "category": "Hero",
+    "category": "Hero Section",
     "type": "hero",
     "is_free": true,
     "page_type": "hero",
@@ -182,7 +182,7 @@
   {
     "id": "reveal-hero",
     "title": "Reveal Hero",
-    "category": "Hero",
+    "category": "Hero Section",
     "type": "hero",
     "is_free": false,
     "page_type": "hero",
@@ -308,7 +308,7 @@
   {
     "id": "10",
     "title": "AI Automation Hero",
-    "category": "AI / SaaS",
+    "category": "SaaS",
     "type": "hero",
     "is_free": false,
     "page_type": "hero",
@@ -380,7 +380,7 @@
   {
     "id": "max-reed-portfolio",
     "title": "Max Reed Portfolio",
-    "category": "Features",
+    "category": "Features Section",
     "type": "features",
     "is_free": true,
     "page_type": "hero",
@@ -416,7 +416,7 @@
   {
     "id": "18",
     "title": "Loader Animation",
-    "category": "Component",
+    "category": "Components",
     "type": "hero",
     "is_free": false,
     "page_type": "hero",
@@ -632,7 +632,7 @@
   {
     "id": "solar-energy-hero",
     "title": "Solar Energy Hero",
-    "category": "Hero",
+    "category": "Hero Section",
     "type": "hero",
     "is_free": false,
     "page_type": "hero",
@@ -920,7 +920,7 @@
   {
     "id": "design-rocket-email-hero",
     "title": "Email Marketing",
-    "category": "Email Marketing",
+    "category": "Email & Newsletter",
     "type": "hero",
     "is_free": true,
     "page_type": "hero",
@@ -1154,7 +1154,7 @@
   {
     "id": "pro-ai-deck",
     "title": "Pro AI Deck",
-    "category": "Presentation",
+    "category": "Presentations",
     "type": "hero",
     "is_free": false,
     "page_type": "hero",
@@ -1316,7 +1316,7 @@
   {
     "id": "luxury-hero",
     "title": "Luxury Hero",
-    "category": "Hero",
+    "category": "Hero Section",
     "type": "hero",
     "is_free": false,
     "page_type": "hero",
@@ -1334,7 +1334,7 @@
   {
     "id": "subscription-agency",
     "title": "Subscription Agency",
-    "category": "Hero",
+    "category": "Hero Section",
     "type": "hero",
     "is_free": true,
     "page_type": "hero",
@@ -1352,7 +1352,7 @@
   {
     "id": "supplement-shop",
     "title": "Supplement Shop",
-    "category": "Health",
+    "category": "Healthcare",
     "type": "mobile",
     "is_free": false,
     "page_type": "hero",
@@ -1370,7 +1370,7 @@
   {
     "id": "wellbeing-os",
     "title": "Wellbeing OS",
-    "category": "Hero",
+    "category": "Hero Section",
     "type": "hero",
     "is_free": true,
     "page_type": "hero",
@@ -1388,7 +1388,7 @@
   {
     "id": "pet-products",
     "title": "Pet Products",
-    "category": "Ecommerce App",
+    "category": "E-commerce",
     "type": "mobile",
     "is_free": false,
     "page_type": "hero",
@@ -1424,7 +1424,7 @@
   {
     "id": "media-card-carousel",
     "title": "Media Card Carousel",
-    "category": "Slider",
+    "category": "Components",
     "type": "carousel",
     "is_free": false,
     "page_type": "hero",
@@ -1442,7 +1442,7 @@
   {
     "id": "prosthetics-hero",
     "title": "Prosthetics Hero",
-    "category": "Hero",
+    "category": "Hero Section",
     "type": "hero",
     "is_free": true,
     "page_type": "hero",
@@ -1460,7 +1460,7 @@
   {
     "id": "retro-futurist",
     "title": "Retro-Futurist",
-    "category": "Hero",
+    "category": "Hero Section",
     "type": "hero",
     "is_free": true,
     "page_type": "hero",
@@ -1514,7 +1514,7 @@
   {
     "id": "contact-cybernetic",
     "title": "Contact Cybernetic",
-    "category": "Hero",
+    "category": "Hero Section",
     "type": "hero",
     "is_free": true,
     "page_type": "hero",
@@ -1586,7 +1586,7 @@
   {
     "id": "impact-ventures",
     "title": "Impact Ventures",
-    "category": "Hero",
+    "category": "Hero Section",
     "type": "hero",
     "is_free": true,
     "page_type": "hero",
@@ -1604,7 +1604,7 @@
   {
     "id": "halo-use-case",
     "title": "Halo Use Case",
-    "category": "Use Case",
+    "category": "Use Cases",
     "type": "features",
     "is_free": true,
     "page_type": "hero",
@@ -1640,7 +1640,7 @@
   {
     "id": "integration-saas",
     "title": "Integration SaaS",
-    "category": "Hero",
+    "category": "Hero Section",
     "type": "hero",
     "is_free": false,
     "page_type": "hero",
@@ -1658,7 +1658,7 @@
   {
     "id": "luxury-escapes",
     "title": "Luxury Escapes",
-    "category": "Travel App",
+    "category": "Travel",
     "type": "mobile",
     "is_free": false,
     "page_type": "hero",
@@ -1676,7 +1676,7 @@
   {
     "id": "lodge-booking-app",
     "title": "Lodge Booking App",
-    "category": "Booking",
+    "category": "Travel",
     "type": "mobile",
     "is_free": false,
     "page_type": "hero",
@@ -1694,7 +1694,7 @@
   {
     "id": "innovation-studio",
     "title": "Innovation Studio",
-    "category": "Hero",
+    "category": "Hero Section",
     "type": "hero",
     "is_free": false,
     "page_type": "hero",
@@ -1712,7 +1712,7 @@
   {
     "id": "gear-shop",
     "title": "Gear Shop",
-    "category": "Ecommerce App",
+    "category": "E-commerce",
     "type": "mobile",
     "is_free": false,
     "page_type": "hero",
@@ -1748,7 +1748,7 @@
   {
     "id": "waitlist-hero",
     "title": "Waitlist Hero",
-    "category": "Hero",
+    "category": "Hero Section",
     "type": "hero",
     "is_free": false,
     "page_type": "hero",
@@ -1820,7 +1820,7 @@
   {
     "id": "nike-hover",
     "title": "Nike Hover",
-    "category": "Features",
+    "category": "Features Section",
     "type": "features",
     "is_free": true,
     "page_type": "hero",
@@ -1838,7 +1838,7 @@
   {
     "id": "mouse-trail-cta",
     "title": "Mouse Trail CTA",
-    "category": "CTA",
+    "category": "CTA Section",
     "type": "cta",
     "is_free": false,
     "page_type": "hero",
@@ -1856,7 +1856,7 @@
   {
     "id": "orbis-hello",
     "title": "Orbis Hello",
-    "category": "About",
+    "category": "About Section",
     "type": "about",
     "is_free": true,
     "page_type": "hero",
@@ -1892,7 +1892,7 @@
   {
     "id": "organic-odyssey",
     "title": "Organic Odyssey",
-    "category": "Hero",
+    "category": "Hero Section",
     "type": "hero",
     "is_free": true,
     "page_type": "hero",
@@ -1928,7 +1928,7 @@
   {
     "id": "novadesk-signup",
     "title": "NovaDesk Signup",
-    "category": "Signup",
+    "category": "Waitlist & Coming Soon",
     "type": "hero",
     "is_free": false,
     "page_type": "hero",
@@ -1946,7 +1946,7 @@
   {
     "id": "nexacore-results",
     "title": "NexaCore Results",
-    "category": "Features",
+    "category": "Features Section",
     "type": "features",
     "is_free": true,
     "page_type": "hero",
@@ -1982,7 +1982,7 @@
   {
     "id": "nimbus-ops",
     "title": "Nimbus Ops",
-    "category": "CTA",
+    "category": "CTA Section",
     "type": "cta",
     "is_free": false,
     "page_type": "hero",
@@ -2000,7 +2000,7 @@
   {
     "id": "network-hero",
     "title": "Network Hero",
-    "category": "Hero",
+    "category": "Hero Section",
     "type": "hero",
     "is_free": true,
     "page_type": "hero",
@@ -2054,7 +2054,7 @@
   {
     "id": "portal",
     "title": "Portal",
-    "category": "Hero",
+    "category": "Hero Section",
     "type": "hero",
     "is_free": true,
     "page_type": "hero",
@@ -2126,7 +2126,7 @@
   {
     "id": "oyla",
     "title": "OYLA",
-    "category": "Ecommerce",
+    "category": "E-commerce",
     "type": "hero",
     "is_free": false,
     "page_type": "hero",
@@ -2144,7 +2144,7 @@
   {
     "id": "ai-workflow",
     "title": "AI Workflow Hero",
-    "category": "Hero",
+    "category": "Hero Section",
     "type": "hero",
     "is_free": true,
     "page_type": "hero",
@@ -2162,7 +2162,7 @@
   {
     "id": "portfolio-about",
     "title": "Portfolio About",
-    "category": "About",
+    "category": "About Section",
     "type": "about",
     "is_free": true,
     "page_type": "hero",
@@ -2180,7 +2180,7 @@
   {
     "id": "tech-forward",
     "title": "Tech-Forward",
-    "category": "Hero",
+    "category": "Hero Section",
     "type": "hero",
     "is_free": true,
     "page_type": "hero",
@@ -2198,7 +2198,7 @@
   {
     "id": "technical-specifications",
     "title": "Technical Specifications",
-    "category": "Tabs",
+    "category": "Components",
     "type": "features",
     "is_free": false,
     "page_type": "hero",
@@ -2216,7 +2216,7 @@
   {
     "id": "speakup-venture-hero",
     "title": "SpeakUp Venture Hero",
-    "category": "Hero",
+    "category": "Hero Section",
     "type": "hero",
     "is_free": false,
     "page_type": "hero",
@@ -2252,7 +2252,7 @@
   {
     "id": "rocket-cta",
     "title": "Rocket CTA",
-    "category": "CTA",
+    "category": "CTA Section",
     "type": "cta",
     "is_free": true,
     "page_type": "hero",
@@ -2288,7 +2288,7 @@
   {
     "id": "stark-minimal-footer",
     "title": "Stark Minimal Footer",
-    "category": "Footer",
+    "category": "Footer Section",
     "type": "footer",
     "is_free": true,
     "page_type": "hero",
@@ -2432,7 +2432,7 @@
   {
     "id": "gateway-portal",
     "title": "Gateway Portal",
-    "category": "Landing page",
+    "category": "Landing Page",
     "type": "hero",
     "is_free": false,
     "page_type": "hero",
@@ -2450,7 +2450,7 @@
   {
     "id": "ai-driving-assistant",
     "title": "AI Driving Assistant",
-    "category": "AI SaaS Website",
+    "category": "SaaS",
     "type": "hero",
     "is_free": false,
     "page_type": "hero",
@@ -2486,7 +2486,7 @@
   {
     "id": "vaultshield",
     "title": "VaultShield",
-    "category": "Hero",
+    "category": "Hero Section",
     "type": "hero",
     "is_free": true,
     "page_type": "hero",
@@ -2504,7 +2504,7 @@
   {
     "id": "jewelry-store",
     "title": "Jewelry Store",
-    "category": "Ecommerce",
+    "category": "E-commerce",
     "type": "hero",
     "is_free": false,
     "page_type": "hero",
@@ -2522,7 +2522,7 @@
   {
     "id": "visual-hero",
     "title": "Visual Hero",
-    "category": "Hero",
+    "category": "Hero Section",
     "type": "hero",
     "is_free": true,
     "page_type": "hero",
@@ -2576,7 +2576,7 @@
   {
     "id": "product-studio",
     "title": "Product Studio",
-    "category": "Agency Website",
+    "category": "Agency",
     "type": "hero",
     "is_free": false,
     "page_type": "hero",
@@ -2594,7 +2594,7 @@
   {
     "id": "no-code-waitlist",
     "title": "No-Code Waitlist",
-    "category": "Waitlist",
+    "category": "Waitlist & Coming Soon",
     "type": "hero",
     "is_free": true,
     "page_type": "hero",
@@ -2630,7 +2630,7 @@
   {
     "id": "scroll-marquee",
     "title": "Scroll Marquee",
-    "category": "Marquee",
+    "category": "Components",
     "type": "carousel",
     "is_free": false,
     "page_type": "hero",
@@ -2648,7 +2648,7 @@
   {
     "id": "rocket-pricing",
     "title": "Rocket Pricing",
-    "category": "Pricing",
+    "category": "Pricing Page",
     "type": "pricing",
     "is_free": true,
     "page_type": "hero",
@@ -2666,7 +2666,7 @@
   {
     "id": "velorix-iic",
     "title": "Velorix IIC",
-    "category": "Hero",
+    "category": "Hero Section",
     "type": "hero",
     "is_free": false,
     "page_type": "hero",
@@ -2756,7 +2756,7 @@
   {
     "id": "obsidian-hero",
     "title": "Obsidian Hero",
-    "category": "Hero",
+    "category": "Hero Section",
     "type": "hero",
     "is_free": false,
     "page_type": "hero",
@@ -2774,7 +2774,7 @@
   {
     "id": "mythic-naturecore",
     "title": "Mythic Naturecore",
-    "category": "landing page",
+    "category": "Landing Page",
     "type": "hero",
     "is_free": false,
     "page_type": "hero",
@@ -2792,7 +2792,7 @@
   {
     "id": "orbis-cta",
     "title": "Orbis CTA",
-    "category": "CTA",
+    "category": "CTA Section",
     "type": "cta",
     "is_free": false,
     "page_type": "hero",
@@ -2846,7 +2846,7 @@
   {
     "id": "interior-features",
     "title": "Interior Features",
-    "category": "Features",
+    "category": "Features Section",
     "type": "features",
     "is_free": false,
     "page_type": "hero",
@@ -2864,7 +2864,7 @@
   {
     "id": "liquid-glass-features",
     "title": "Liquid Glass Features",
-    "category": "Features",
+    "category": "Features Section",
     "type": "features",
     "is_free": false,
     "page_type": "hero",
@@ -2882,7 +2882,7 @@
   {
     "id": "kova-testimonial",
     "title": "Kova Testimonial",
-    "category": "Testimonial",
+    "category": "Testimonials",
     "type": "testimonials",
     "is_free": false,
     "page_type": "hero",
@@ -2900,7 +2900,7 @@
   {
     "id": "nexacore-control",
     "title": "NexaCore Control",
-    "category": "Features",
+    "category": "Features Section",
     "type": "features",
     "is_free": true,
     "page_type": "hero",
@@ -2918,7 +2918,7 @@
   {
     "id": "nimbus-pricing",
     "title": "NimBus Pricing",
-    "category": "Pricing",
+    "category": "Pricing Page",
     "type": "pricing",
     "is_free": false,
     "page_type": "hero",
@@ -2954,7 +2954,7 @@
   {
     "id": "shop",
     "title": "Daisy Shop",
-    "category": "Ecommerce",
+    "category": "E-commerce",
     "type": "hero",
     "is_free": false,
     "page_type": "landing",
@@ -2972,7 +2972,7 @@
   {
     "id": "wellness-balance",
     "title": "Wellness Balance",
-    "category": "Hero",
+    "category": "Hero Section",
     "type": "hero",
     "is_free": true,
     "page_type": "hero",
@@ -3008,7 +3008,7 @@
   {
     "id": "404-planet",
     "title": "404 Planet",
-    "category": "404",
+    "category": "404 Pages",
     "type": "404",
     "is_free": true,
     "page_type": "hero",
@@ -3026,7 +3026,7 @@
   {
     "id": "bio-age-dashboard",
     "title": "Bio-Age Dashboard",
-    "category": "Hero",
+    "category": "Hero Section",
     "type": "hero",
     "is_free": false,
     "page_type": "hero",
@@ -3044,7 +3044,7 @@
   {
     "id": "axion-about",
     "title": "Axion About",
-    "category": "About",
+    "category": "About Section",
     "type": "about",
     "is_free": true,
     "page_type": "hero",
@@ -3062,7 +3062,7 @@
   {
     "id": "interactive-portfolio",
     "title": "Interactive Portfolio",
-    "category": "Hero",
+    "category": "Hero Section",
     "type": "hero",
     "is_free": false,
     "page_type": "hero",
@@ -3098,7 +3098,7 @@
   {
     "id": "liquid-glass-cta",
     "title": "Liquid Glass CTA",
-    "category": "CTA",
+    "category": "CTA Section",
     "type": "cta",
     "is_free": true,
     "page_type": "hero",
@@ -3116,7 +3116,7 @@
   {
     "id": "learnly",
     "title": "Learnly",
-    "category": "Hero",
+    "category": "Hero Section",
     "type": "hero",
     "is_free": false,
     "page_type": "hero",
@@ -3134,7 +3134,7 @@
   {
     "id": "book-hero",
     "title": "Book Hero",
-    "category": "Hero",
+    "category": "Hero Section",
     "type": "hero",
     "is_free": false,
     "page_type": "hero",
@@ -3152,7 +3152,7 @@
   {
     "id": "global-cta-footer",
     "title": "Global CTA Footer",
-    "category": "CTA",
+    "category": "CTA Section",
     "type": "cta",
     "is_free": false,
     "page_type": "hero",
@@ -3170,7 +3170,7 @@
   {
     "id": "launchex-about",
     "title": "LaunchEx About",
-    "category": "About",
+    "category": "About Section",
     "type": "about",
     "is_free": true,
     "page_type": "hero",
@@ -3206,7 +3206,7 @@
   {
     "id": "rocket-faq",
     "title": "Rocket FAQ",
-    "category": "FAQ",
+    "category": "FAQ & Help",
     "type": "faq",
     "is_free": false,
     "page_type": "hero",
@@ -3224,7 +3224,7 @@
   {
     "id": "ai-image-generator-ui",
     "title": "AI Image Generator UI",
-    "category": "AI",
+    "category": "AI Apps",
     "type": "hero",
     "is_free": true,
     "page_type": "hero",
@@ -3242,7 +3242,7 @@
   {
     "id": "cursor-follow",
     "title": "Cursor Follow",
-    "category": "Hero",
+    "category": "Hero Section",
     "type": "hero",
     "is_free": false,
     "page_type": "hero",
@@ -3260,7 +3260,7 @@
   {
     "id": "futuristic-cinematic",
     "title": "Futuristic Cinematic",
-    "category": "Hero",
+    "category": "Hero Section",
     "type": "hero",
     "is_free": false,
     "page_type": "hero",
@@ -3278,7 +3278,7 @@
   {
     "id": "intelligentx",
     "title": "IntelligentX",
-    "category": "Hero",
+    "category": "Hero Section",
     "type": "hero",
     "is_free": true,
     "page_type": "hero",
@@ -3296,7 +3296,7 @@
   {
     "id": "modern-hr-dashboard",
     "title": "Modern HR Dashboard",
-    "category": "HR Management",
+    "category": "HR",
     "type": "mobile",
     "is_free": false,
     "page_type": "hero",
@@ -3314,7 +3314,7 @@
   {
     "id": "outdoor-apparel",
     "title": "Outdoor Apparel",
-    "category": "Fashion",
+    "category": "E-commerce",
     "type": "hero",
     "is_free": false,
     "page_type": "hero",
@@ -3332,7 +3332,7 @@
   {
     "id": "nexacore-process",
     "title": "NexaCore Process",
-    "category": "Process",
+    "category": "Process & Stats",
     "type": "features",
     "is_free": false,
     "page_type": "hero",
@@ -3350,7 +3350,7 @@
   {
     "id": "nimbus-demo",
     "title": "Nimbus Demo",
-    "category": "Dashboard Demo",
+    "category": "Dashboards",
     "type": "dashboard",
     "is_free": false,
     "page_type": "hero",
@@ -3368,7 +3368,7 @@
   {
     "id": "stillmind",
     "title": "Stillmind",
-    "category": "Hero",
+    "category": "Hero Section",
     "type": "hero",
     "is_free": true,
     "page_type": "hero",
@@ -3422,7 +3422,7 @@
   {
     "id": "blog-showcase",
     "title": "Blog Showcase",
-    "category": "Blog",
+    "category": "Blog & Editorial",
     "type": "Blog",
     "is_free": true,
     "page_type": "hero",
@@ -3440,7 +3440,7 @@
   {
     "id": "equilibrium",
     "title": "Equilibrium",
-    "category": "Hero",
+    "category": "Hero Section",
     "type": "hero",
     "is_free": true,
     "page_type": "hero",
@@ -3476,7 +3476,7 @@
   {
     "id": "flowmate-carousal",
     "title": "FlowMate Carousal",
-    "category": "Carousal",
+    "category": "Components",
     "type": "carousel",
     "is_free": false,
     "page_type": "hero",
@@ -3548,7 +3548,7 @@
   {
     "id": "lead-funnel",
     "title": "Lead Funnel",
-    "category": "Hero",
+    "category": "Hero Section",
     "type": "hero",
     "is_free": false,
     "page_type": "hero",
@@ -3584,7 +3584,7 @@
   {
     "id": "financialfocus",
     "title": "FinancialFocus",
-    "category": "Hero",
+    "category": "Hero Section",
     "type": "hero",
     "is_free": false,
     "page_type": "hero",
@@ -3620,7 +3620,7 @@
   {
     "id": "saas-pricing-flow",
     "title": "SaaS Pricing Flow",
-    "category": "Pricing",
+    "category": "Pricing Page",
     "type": "hero",
     "is_free": false,
     "page_type": "hero",
@@ -3638,7 +3638,7 @@
   {
     "id": "vertex-sci",
     "title": "Vertex Sci",
-    "category": "Hero",
+    "category": "Hero Section",
     "type": "hero",
     "is_free": false,
     "page_type": "hero",
@@ -3656,7 +3656,7 @@
   {
     "id": "vision-reveal",
     "title": "Vision Reveal",
-    "category": "Hero",
+    "category": "Hero Section",
     "type": "hero",
     "is_free": true,
     "page_type": "hero",
@@ -3674,7 +3674,7 @@
   {
     "id": "404",
     "title": "Nexto 404",
-    "category": "404",
+    "category": "404 Pages",
     "type": "hero",
     "is_free": true,
     "page_type": "hero",
@@ -3710,7 +3710,7 @@
   {
     "id": "cosmic",
     "title": "Cosmic",
-    "category": "Hero",
+    "category": "Hero Section",
     "type": "hero",
     "is_free": false,
     "page_type": "hero",
@@ -3746,7 +3746,7 @@
   {
     "id": "immersive-ocean",
     "title": "Immersive Ocean",
-    "category": "Hero",
+    "category": "Hero Section",
     "type": "hero",
     "is_free": true,
     "page_type": "hero",
@@ -3764,7 +3764,7 @@
   {
     "id": "launchex-submissions",
     "title": "LaunchEx Submissions",
-    "category": "Features",
+    "category": "Features Section",
     "type": "features",
     "is_free": false,
     "page_type": "hero",
@@ -3782,7 +3782,7 @@
   {
     "id": "glassmorphic-feature-tabs",
     "title": "Glassmorphic Feature Tabs",
-    "category": "Tabs",
+    "category": "Components",
     "type": "features",
     "is_free": false,
     "page_type": "hero",
@@ -3800,7 +3800,7 @@
   {
     "id": "nex-max-upgrade",
     "title": "Nex Max Upgrade",
-    "category": "Pricing",
+    "category": "Pricing Page",
     "type": "pricing",
     "is_free": false,
     "page_type": "hero",
@@ -3818,7 +3818,7 @@
   {
     "id": "tech-noir-about",
     "title": "Tech-Noir About",
-    "category": "About",
+    "category": "About Section",
     "type": "about",
     "is_free": true,
     "page_type": "hero",
@@ -3854,7 +3854,7 @@
   {
     "id": "3d-studio-pricing",
     "title": "3D Studio Pricing",
-    "category": "Pricing",
+    "category": "Pricing Page",
     "type": "hero",
     "is_free": false,
     "page_type": "hero",
@@ -3872,7 +3872,7 @@
   {
     "id": "apex-program-accordion",
     "title": "Apex Program Accordion",
-    "category": "Accordion",
+    "category": "Components",
     "type": "faq",
     "is_free": false,
     "page_type": "hero",
@@ -3890,7 +3890,7 @@
   {
     "id": "cinematic-brand",
     "title": "Cinematic Brand",
-    "category": "Hero",
+    "category": "Hero Section",
     "type": "hero",
     "is_free": false,
     "page_type": "hero",
@@ -3908,7 +3908,7 @@
   {
     "id": "audio-showcase",
     "title": "Audio Showcase",
-    "category": "Hero",
+    "category": "Hero Section",
     "type": "hero",
     "is_free": true,
     "page_type": "hero",
@@ -3944,7 +3944,7 @@
   {
     "id": "eco-intelligence",
     "title": "Eco Intelligence",
-    "category": "Hero",
+    "category": "Hero Section",
     "type": "hero",
     "is_free": false,
     "page_type": "hero",
@@ -3962,7 +3962,7 @@
   {
     "id": "aurora-onboard",
     "title": "Aurora Onboard",
-    "category": "Sign Up",
+    "category": "Waitlist & Coming Soon",
     "type": "mobile",
     "is_free": true,
     "page_type": "hero",
@@ -3998,7 +3998,7 @@
   {
     "id": "naturecore-saas",
     "title": "Naturecore SaaS",
-    "category": "Hero",
+    "category": "Hero Section",
     "type": "hero",
     "is_free": false,
     "page_type": "hero",
@@ -4034,7 +4034,7 @@
   {
     "id": "solace-sign-in",
     "title": "Solace sign-in",
-    "category": "Sign In Form",
+    "category": "Waitlist & Coming Soon",
     "type": "form",
     "is_free": false,
     "page_type": "hero",
@@ -4052,7 +4052,7 @@
   {
     "id": "build-with-us",
     "title": "Build With Us",
-    "category": "Contact us",
+    "category": "Forms & Contact",
     "type": "hero",
     "is_free": true,
     "page_type": "hero",
@@ -4070,7 +4070,7 @@
   {
     "id": "conversion",
     "title": "Conversion",
-    "category": "Hero",
+    "category": "Hero Section",
     "type": "hero",
     "is_free": false,
     "page_type": "hero",
@@ -4088,7 +4088,7 @@
   {
     "id": "cybersecurity-hero-v2",
     "title": "Cybersecurity Hero v2",
-    "category": "Hero",
+    "category": "Hero Section",
     "type": "hero",
     "is_free": false,
     "page_type": "hero",
@@ -4106,7 +4106,7 @@
   {
     "id": "cybersecurity-hero",
     "title": "Cybersecurity Hero",
-    "category": "Hero",
+    "category": "Hero Section",
     "type": "hero",
     "is_free": true,
     "page_type": "hero",
@@ -4124,7 +4124,7 @@
   {
     "id": "feedback-slider",
     "title": "Feedback Slider",
-    "category": "Slider",
+    "category": "Components",
     "type": "carousel",
     "is_free": false,
     "page_type": "hero",
@@ -4142,7 +4142,7 @@
   {
     "id": "luminara",
     "title": "Luminara",
-    "category": "Hero",
+    "category": "Hero Section",
     "type": "hero",
     "is_free": false,
     "page_type": "hero",
@@ -4160,7 +4160,7 @@
   {
     "id": "growth-marketing-saas",
     "title": "Growth Marketing SaaS",
-    "category": "Hero",
+    "category": "Hero Section",
     "type": "hero",
     "is_free": false,
     "page_type": "hero",
@@ -4214,7 +4214,7 @@
   {
     "id": "bento-grid-stats",
     "title": "Bento Grid Stats",
-    "category": "Bento",
+    "category": "Components",
     "type": "features",
     "is_free": false,
     "page_type": "hero",
@@ -4250,7 +4250,7 @@
   {
     "id": "wellness-hero",
     "title": "Wellness Hero",
-    "category": "Hero",
+    "category": "Hero Section",
     "type": "hero",
     "is_free": true,
     "page_type": "hero",
@@ -4268,7 +4268,7 @@
   {
     "id": "animated-cards",
     "title": "Animated Cards",
-    "category": "Component",
+    "category": "Components",
     "type": "carousel",
     "is_free": true,
     "page_type": "hero",
@@ -4286,7 +4286,7 @@
   {
     "id": "arceage-stats",
     "title": "Arceage Stats",
-    "category": "Stats",
+    "category": "Process & Stats",
     "type": "stats",
     "is_free": true,
     "page_type": "hero",
@@ -4340,7 +4340,7 @@
   {
     "id": "cognitra-feature",
     "title": "Cognitra Feature",
-    "category": "Feature",
+    "category": "Features Section",
     "type": "features",
     "is_free": true,
     "page_type": "hero",
@@ -4358,7 +4358,7 @@
   {
     "id": "coffee-rewards",
     "title": "Coffee Rewards",
-    "category": "Loyalty App",
+    "category": "Loyalty",
     "type": "mobile",
     "is_free": true,
     "page_type": "hero",
@@ -4376,7 +4376,7 @@
   {
     "id": "cargo-group",
     "title": "Cargo Group",
-    "category": "Hero",
+    "category": "Hero Section",
     "type": "hero",
     "is_free": false,
     "page_type": "hero",
@@ -4394,7 +4394,7 @@
   {
     "id": "faq-cta",
     "title": "FAQ CTA",
-    "category": "CTA",
+    "category": "CTA Section",
     "type": "cta",
     "is_free": true,
     "page_type": "hero",
@@ -4412,7 +4412,7 @@
   {
     "id": "futuristic-tech",
     "title": "Futuristic Tech",
-    "category": "Hero",
+    "category": "Hero Section",
     "type": "hero",
     "is_free": false,
     "page_type": "hero",
@@ -4430,7 +4430,7 @@
   {
     "id": "unwind-hero",
     "title": "Unwind Hero",
-    "category": "Hero",
+    "category": "Hero Section",
     "type": "hero",
     "is_free": false,
     "page_type": "hero",
@@ -4448,7 +4448,7 @@
   {
     "id": "email-landing-page",
     "title": "Email Landing Page",
-    "category": "Landing page",
+    "category": "Landing Page",
     "type": "landing",
     "is_free": true,
     "page_type": "landing",
@@ -4466,7 +4466,7 @@
   {
     "id": "cyberpunk-reveal",
     "title": "Cyberpunk Reveal",
-    "category": "Hero",
+    "category": "Hero Section",
     "type": "hero",
     "is_free": false,
     "page_type": "hero",
@@ -4484,7 +4484,7 @@
   {
     "id": "dashboard",
     "title": "Dashboard UI",
-    "category": "Dashboard",
+    "category": "Dashboards",
     "type": "dashboard",
     "is_free": false,
     "page_type": "landing",
@@ -4502,7 +4502,7 @@
   {
     "id": "editorial-collection-cta",
     "title": "Editorial Collection CTA",
-    "category": "CTA",
+    "category": "CTA Section",
     "type": "cta",
     "is_free": false,
     "page_type": "hero",
@@ -4538,7 +4538,7 @@
   {
     "id": "creative-portfolio",
     "title": "Creative Portfolio",
-    "category": "Hero",
+    "category": "Hero Section",
     "type": "hero",
     "is_free": true,
     "page_type": "hero",
@@ -4574,7 +4574,7 @@
   {
     "id": "features",
     "title": "Capabilities Overview",
-    "category": "Features",
+    "category": "Features Section",
     "type": "features",
     "is_free": false,
     "page_type": "hero",
@@ -4592,7 +4592,7 @@
   {
     "id": "cozypaws",
     "title": "CozyPaws",
-    "category": "Hero",
+    "category": "Hero Section",
     "type": "hero",
     "is_free": true,
     "page_type": "hero",
@@ -4628,7 +4628,7 @@
   {
     "id": "daisy-sweet",
     "title": "Daisy Sweet",
-    "category": "Product",
+    "category": "Products",
     "type": "features",
     "is_free": false,
     "page_type": "hero",
@@ -4646,7 +4646,7 @@
   {
     "id": "daisy-wild",
     "title": "Daisy Wild",
-    "category": "Product",
+    "category": "Products",
     "type": "features",
     "is_free": true,
     "page_type": "hero",
@@ -4736,7 +4736,7 @@
   {
     "id": "arceage-contact-us",
     "title": "Arceage Contact Us",
-    "category": "Form",
+    "category": "Forms & Contact",
     "type": "form",
     "is_free": false,
     "page_type": "hero",
@@ -4790,7 +4790,7 @@
   {
     "id": "botanical-shadow-about",
     "title": "Botanical Shadow About",
-    "category": "About",
+    "category": "About Section",
     "type": "about",
     "is_free": false,
     "page_type": "hero",
@@ -4808,7 +4808,7 @@
   {
     "id": "bio-digital",
     "title": "Bio-Digital",
-    "category": "Hero",
+    "category": "Hero Section",
     "type": "hero",
     "is_free": false,
     "page_type": "hero",
@@ -4844,7 +4844,7 @@
   {
     "id": "deck-investor",
     "title": "Investor Deck",
-    "category": "Investor Presentations",
+    "category": "Presentations",
     "type": "hero",
     "is_free": false,
     "page_type": "hero",
@@ -5078,7 +5078,7 @@
   {
     "id": "package-fits-pricing",
     "title": "What Package Fits You",
-    "category": "Pricing",
+    "category": "Pricing Page",
     "type": "hero",
     "is_free": false,
     "page_type": "hero",
@@ -5132,7 +5132,7 @@
   {
     "id": "community-superdesign-high-contrast-landing-page",
     "title": "High Contrast Landing Page",
-    "category": "Landing Pages",
+    "category": "Landing Page",
     "type": "landing-page",
     "is_free": true,
     "page_type": "landing",
@@ -5150,7 +5150,7 @@
   {
     "id": "community-superdesign-lumina-saas-landing-page",
     "title": "Lumina SaaS Landing Page",
-    "category": "Landing Pages",
+    "category": "Landing Page",
     "type": "landing-page",
     "is_free": true,
     "page_type": "landing",
@@ -5420,7 +5420,7 @@
   {
     "id": "community-superdesign-synapse",
     "title": "Synapse",
-    "category": "Landing Pages",
+    "category": "Landing Page",
     "type": "landing-page",
     "is_free": true,
     "page_type": "landing",
@@ -5456,7 +5456,7 @@
   {
     "id": "community-superdesign-babybites-sophisticated-palette",
     "title": "BabyBites - Sophisticated Palette",
-    "category": "Mobile Apps",
+    "category": "Mobile App",
     "type": "mobile-apps",
     "is_free": true,
     "page_type": "community",
@@ -5492,7 +5492,7 @@
   {
     "id": "community-superdesign-saas-landing-page-for-developer-tool",
     "title": "SaaS Landing Page for Developer Tool",
-    "category": "Landing Pages",
+    "category": "Landing Page",
     "type": "landing-page",
     "is_free": true,
     "page_type": "landing",
@@ -5546,7 +5546,7 @@
   {
     "id": "community-superdesign-chrome-extension-landing-page",
     "title": "Chrome Extension Landing Page",
-    "category": "Landing Pages",
+    "category": "Landing Page",
     "type": "landing-page",
     "is_free": true,
     "page_type": "landing",
@@ -5780,7 +5780,7 @@
   {
     "id": "community-superdesign-bold-editorial-design-style",
     "title": "Bold Editorial Design Style",
-    "category": "Portfolios",
+    "category": "Portfolio",
     "type": "landing-page",
     "is_free": true,
     "page_type": "landing",
@@ -6104,7 +6104,7 @@
   {
     "id": "community-superdesign-coverflow-carousels-that-turn-heads-dark-coverflow-aurora",
     "title": "Coverflow — Carousels that turn heads (dark coverflow aurora)",
-    "category": "Mobile Apps",
+    "category": "Mobile App",
     "type": "landing-page",
     "is_free": true,
     "page_type": "landing",
@@ -6140,7 +6140,7 @@
   {
     "id": "community-superdesign-graphic-comparison-report",
     "title": "Graphic Comparison Report",
-    "category": "Landing Pages",
+    "category": "Landing Page",
     "type": "landing-page",
     "is_free": true,
     "page_type": "landing",
@@ -6158,7 +6158,7 @@
   {
     "id": "community-superdesign-gridwright-design-the-web-type-the-prompt-swiss-grid-signal-red",
     "title": "Gridwright — Design the web, type the prompt (Swiss Grid / Signal Red)",
-    "category": "Pricing Pages",
+    "category": "Pricing Page",
     "type": "landing-page",
     "is_free": true,
     "page_type": "landing",
@@ -6176,7 +6176,7 @@
   {
     "id": "community-superdesign-landing-page-local-small-business",
     "title": "Landing Page / Local Small Business",
-    "category": "Landing Pages",
+    "category": "Landing Page",
     "type": "landing-page",
     "is_free": true,
     "page_type": "landing",
@@ -6230,7 +6230,7 @@
   {
     "id": "community-superdesign-slate-roi-calculator-pricing",
     "title": "Slate ROI-Calculator Pricing",
-    "category": "Pricing Pages",
+    "category": "Pricing Page",
     "type": "pricing",
     "is_free": true,
     "page_type": "community",
@@ -6266,7 +6266,7 @@
   {
     "id": "community-superdesign-prism-frosted-glass-pastel-agency-studio",
     "title": "Prism — Frosted-Glass Pastel Agency Studio",
-    "category": "Portfolios",
+    "category": "Portfolio",
     "type": "landing-page",
     "is_free": true,
     "page_type": "landing",
@@ -6302,7 +6302,7 @@
   {
     "id": "community-superdesign-gesture-first-navigation-system",
     "title": "Gesture First Navigation System",
-    "category": "Mobile Apps",
+    "category": "Mobile App",
     "type": "mobile-apps",
     "is_free": true,
     "page_type": "community",
@@ -6320,7 +6320,7 @@
   {
     "id": "community-superdesign-editorial-cream-ink-two-path-saas-pricing-3dee65",
     "title": "Editorial Cream + Ink Two-Path SaaS Pricing",
-    "category": "Pricing Pages",
+    "category": "Pricing Page",
     "type": "pricing",
     "is_free": true,
     "page_type": "community",
@@ -6338,7 +6338,7 @@
   {
     "id": "community-superdesign-electric-lime-single-plan-saas-pricing",
     "title": "Electric-Lime Single-Plan SaaS Pricing",
-    "category": "Pricing Pages",
+    "category": "Pricing Page",
     "type": "pricing",
     "is_free": true,
     "page_type": "community",
@@ -6356,7 +6356,7 @@
   {
     "id": "community-superdesign-electric-blue-studio-pricing-188a8f",
     "title": "Electric-Blue Studio Pricing",
-    "category": "Pricing Pages",
+    "category": "Pricing Page",
     "type": "pricing",
     "is_free": true,
     "page_type": "community",
@@ -6374,7 +6374,7 @@
   {
     "id": "community-superdesign-account-setup-flow-goals-interests-card-based",
     "title": "Account Setup Flow — Goals / Interests (Card-Based)",
-    "category": "Mobile Apps",
+    "category": "Mobile App",
     "type": "mobile-apps",
     "is_free": true,
     "page_type": "community",
@@ -6392,7 +6392,7 @@
   {
     "id": "community-superdesign-sectioned-index-page",
     "title": "Sectioned Index Page",
-    "category": "Mobile Apps",
+    "category": "Mobile App",
     "type": "mobile-apps",
     "is_free": true,
     "page_type": "community",
@@ -6410,7 +6410,7 @@
   {
     "id": "community-superdesign-electric-dark-usage-based-pricing-calculator-20e556",
     "title": "Electric Dark Usage-Based Pricing Calculator",
-    "category": "Pricing Pages",
+    "category": "Pricing Page",
     "type": "pricing",
     "is_free": true,
     "page_type": "community",
@@ -6428,7 +6428,7 @@
   {
     "id": "community-superdesign-emerald-4-tier-saas-pricing-table",
     "title": "Emerald 4-Tier SaaS Pricing Table",
-    "category": "Pricing Pages",
+    "category": "Pricing Page",
     "type": "pricing",
     "is_free": true,
     "page_type": "community",
@@ -6482,7 +6482,7 @@
   {
     "id": "community-superdesign-editorial-music-player-now-playing",
     "title": "Editorial Music Player (Now Playing)",
-    "category": "Mobile Apps",
+    "category": "Mobile App",
     "type": "mobile-apps",
     "is_free": true,
     "page_type": "community",
@@ -6500,7 +6500,7 @@
   {
     "id": "community-superdesign-cream-and-sky-playful-saas-pricing",
     "title": "Cream & Sky Playful SaaS Pricing",
-    "category": "Pricing Pages",
+    "category": "Pricing Page",
     "type": "pricing",
     "is_free": true,
     "page_type": "community",
@@ -6518,7 +6518,7 @@
   {
     "id": "community-superdesign-editorial-crimson-dev-tool-pricing",
     "title": "Editorial Crimson Dev-Tool Pricing",
-    "category": "Pricing Pages",
+    "category": "Pricing Page",
     "type": "pricing",
     "is_free": true,
     "page_type": "community",
@@ -6536,7 +6536,7 @@
   {
     "id": "community-superdesign-card-grid-browse",
     "title": "Card Grid Browse",
-    "category": "Mobile Apps",
+    "category": "Mobile App",
     "type": "mobile-apps",
     "is_free": true,
     "page_type": "community",
@@ -6590,7 +6590,7 @@
   {
     "id": "community-superdesign-champagne-noir-paywall-65a2fd",
     "title": "Champagne Noir Paywall",
-    "category": "Pricing Pages",
+    "category": "Pricing Page",
     "type": "pricing",
     "is_free": true,
     "page_type": "community",
@@ -6608,7 +6608,7 @@
   {
     "id": "community-superdesign-foundry-your-saas-site-designed-before-you-write-a-line",
     "title": "Foundry: Your SaaS Site, Designed Before You Write a Line",
-    "category": "Landing Pages",
+    "category": "Landing Page",
     "type": "landing-page",
     "is_free": true,
     "page_type": "landing",
@@ -6626,7 +6626,7 @@
   {
     "id": "community-superdesign-loam-warm-earthy-organic-agency-website",
     "title": "Loam — Warm Earthy Organic Agency Website",
-    "category": "Portfolios",
+    "category": "Portfolio",
     "type": "landing-page",
     "is_free": true,
     "page_type": "landing",
@@ -6644,7 +6644,7 @@
   {
     "id": "community-superdesign-landing-page-real-estate",
     "title": "Landing Page / Real-Estate",
-    "category": "Landing Pages",
+    "category": "Landing Page",
     "type": "landing-page",
     "is_free": true,
     "page_type": "landing",
@@ -6680,7 +6680,7 @@
   {
     "id": "community-superdesign-editorial-violet-saas-pricing-matrix",
     "title": "Editorial Violet SaaS Pricing Matrix",
-    "category": "Pricing Pages",
+    "category": "Pricing Page",
     "type": "pricing",
     "is_free": true,
     "page_type": "community",
@@ -6734,7 +6734,7 @@
   {
     "id": "community-superdesign-swiss-grid-agency-layout",
     "title": "Swiss Grid Agency Layout",
-    "category": "Portfolios",
+    "category": "Portfolio",
     "type": "portfolio",
     "is_free": true,
     "page_type": "community",
@@ -6806,7 +6806,7 @@
   {
     "id": "community-superdesign-midnight-navy-fintech-pricing-656a6d",
     "title": "Midnight Navy Fintech Pricing",
-    "category": "Pricing Pages",
+    "category": "Pricing Page",
     "type": "pricing",
     "is_free": true,
     "page_type": "community",
@@ -6968,7 +6968,7 @@
   {
     "id": "community-superdesign-fintech-wallet-mobile-home-screen",
     "title": "Fintech Wallet — Mobile Home Screen",
-    "category": "Mobile Apps",
+    "category": "Mobile App",
     "type": "mobile-apps",
     "is_free": true,
     "page_type": "community",
@@ -7292,7 +7292,7 @@
   {
     "id": "community-superdesign-verdance-agency-website-design-studio-dark-emerald",
     "title": "Verdance — Agency Website Design Studio (Dark Emerald)",
-    "category": "Portfolios",
+    "category": "Portfolio",
     "type": "landing-page",
     "is_free": true,
     "page_type": "landing",
@@ -7400,7 +7400,7 @@
   {
     "id": "community-superdesign-skeuomorphism-music-player-tactile-leather-and-brass-now-playing-ui",
     "title": "Skeuomorphism Music Player: Tactile Leather and Brass Now Playing UI",
-    "category": "Mobile Apps",
+    "category": "Mobile App",
     "type": "mobile-apps",
     "is_free": true,
     "page_type": "community",
@@ -7544,7 +7544,7 @@
   {
     "id": "community-superdesign-warm-terracotta-ai-chat-interface",
     "title": "Warm Terracotta AI Chat Interface",
-    "category": "AI Chat",
+    "category": "AI Apps",
     "type": "ai-chat",
     "is_free": true,
     "page_type": "community",
@@ -7580,7 +7580,7 @@
   {
     "id": "community-superdesign-claymorphism-mobile-app-pastel-habit-tracker-home",
     "title": "Claymorphism Mobile App: Pastel Habit Tracker Home",
-    "category": "Mobile Apps",
+    "category": "Mobile App",
     "type": "mobile-apps",
     "is_free": true,
     "page_type": "community",
@@ -7598,7 +7598,7 @@
   {
     "id": "community-superdesign-calendar-ui-warm-editorial-week-planner",
     "title": "Calendar UI: Warm Editorial Week Planner",
-    "category": "Calendar",
+    "category": "Calendars",
     "type": "calendar",
     "is_free": true,
     "page_type": "community",
@@ -8429,5 +8429,157 @@
     "has_text": true,
     "text_len": 2345,
     "prompt_text": "## Design Aesthetic\n- **Color Palette**: Sleek dark modes (Black, Deep Violet, Charcoal) contrasted with vibrant accents (Electric Blue, Radiant Yellow, Soft Lavender).\n- **Typography**: Modern, bold sans-serif for headings (e.g., General Sans, Zentry Custom) and clean, readable fonts for body text (e.g., Circular Web, Robert).\n- **Visual Elements**: \n  - Video backgrounds with smooth transitions.\n  - Glassmorphism effects (blurred backgrounds, subtle borders).\n  - Bento-style grids for feature showcases.\n  - Floating 3D-like elements and interactive scroll-driven animations.\n- **Micro-animations**: Hover effects with radial gradients, tilting cards, and smooth GSAP-powered transitions.\n\n## Key Sections\n1. **Hero**: A cinematic entrance with a video-switching interaction. Clicking a preview mini-video should transition to the next full-screen video with a scale and clip-path animation.\n2. **About**: A scroll-triggered clip-path animation that expands an image/video to full screen as the user scrolls, introducing the \"Design Layer\".\n3. **Features (Bento Grid)**: A collection of interactive cards with tilting effects and radial gradient hover states. Each card showcases a unique product or feature in the ecosystem.\n4. **Story**: A floating image section with a magnetic mouse-follow effect, creating a sense of depth and mystery.\n5. **The Symbiotic World**: An accordion-style section showcasing governance, opportunity, and value sharing within the ecosystem, accompanied by a rotating 3D token visualization.\n6. **Metrics & Backers**: High-impact statistics displayed in a modern grid, followed by a list of world-class partners and backers.\n7. **Contact & Footer**: A final call to action with a \"sword-man\" clip-path design and a comprehensive footer with social links.\n\n## Technical Requirements\n- Use **React** for component-based structure.\n- Use **GSAP** (GreenSock) for all complex animations and scroll-triggered effects.\n- Use **Tailwind CSS** for responsive styling and layout.\n- Ensure all videos are muted, looped, and optimized for web performance.\n- Implement a floating navbar that transitions from transparent to solid on scroll.\n\n## Tone & Voice\nThe copy should be epic, visionary, and forward-looking. Use terms like \"The Future of Design\", \"Design Economy\", \"Universal Design Layer\", and \"Symbiotic World\"."
+  },
+  {
+    "id": "adhd-planner",
+    "title": "ADHD Planner",
+    "category": "Mobile App",
+    "type": "hero",
+    "page_type": "hero",
+    "is_free": true,
+    "description": null,
+    "prompt_text": "Build a single-page landing site for \"Drift\" -- a calm, ADHD-friendly planner app. Use React + Vite + TypeScript + Tailwind CSS + lucide-react for icons. No other UI libraries.\n\n### Fonts\n\nImport via Google Fonts in `index.css`:\n- **Inter** (weights 400, 500, 600) -- used as base body font\n- **Instrument Serif** (italic only) -- used for the italic word \"the stress\" in the hero heading\n\n```css\n@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@1&family=Inter:wght@400;500;600&display=swap');\n```\n\nBody: `font-family: 'Inter', sans-serif;` with antialiased rendering. `overflow-x: clip` on body.\n\n### Color Palette\n\n- Hero overlay: `bg-black/20`\n- About section background: `#F6E4CF`\n- Dark text / icons in About: `#321C04`\n- Light cream (button backgrounds in About): `#FFF9F2`\n- Muted accent (divider, secondary button bg): `#D9C4AA`\n- Secondary button hover: `#CEBA9E`\n- Dark button hover: `#1F1003`\n\n### Tailwind Config\n\nAdd a custom keyframe `fade-in-down` (0%: opacity 0, translateY -8px; 100%: opacity 1, translateY 0) with 0.2s ease-out animation.\n\n---\n\n### SECTION 1: HERO (full viewport height)\n\n- Full-screen section (`h-screen`, `overflow-hidden`, `mb-[-25px]` negative bottom margin so the next section overlaps it slightly)\n- **Background video** (autoPlay, muted, loop, playsInline, object-cover, absolute inset-0):\n  ```\n  https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260711_090308_1dd0cea7-f9ba-4db4-8147-c7d746061c9e.mp4\n  ```\n- **Semi-transparent overlay**: `absolute inset-0 bg-black/20`\n\n#### Navbar (centered floating pill)\n- Positioned `absolute top-6 left-1/2 -translate-x-1/2 z-50`\n- White rounded-full pill with shadow-lg containing:\n  - Brand text \"Drift.\" (text-lg, font-bold, tracking-tight, text-black)\n  - Animated hamburger icon (two lines that animate to an X on click using rotate-45/-rotate-45 with cubic-bezier(0.77,0,0.175,1) easing, 300ms)\n- Dropdown (below the pill): white rounded-2xl container with links \"Features\", \"Drift AI\", \"FAQ\". Animated with opacity/scale/translate transitions. Hidden by default, pointer-events-none when closed.\n\n#### Hero Content (bottom-aligned)\n- Flex column, `justify-end`, padding bottom 12 (md:16)\n- **Heading** (centered):\n  - Line 1: \"Own your time\" -- text-5xl / sm:text-7xl / md:text-8xl / lg:text-[96px], font-normal, text-white, leading-[1.1], tracking-tight\n  - Line 2: \"without *the stress*\" -- same sizing. The words \"the stress\" are rendered in Instrument Serif italic via inline style `fontFamily: \"'Instrument Serif', serif\", fontStyle: 'italic'` inside an `<em>` tag with className `not-italic`\n- **Subtitle**: \"Drift is a calm, ADHD-friendly planner that turns scattered ideas into a clear path\" -- text-white/80, text-sm md:text-base, font-medium, max-w-[420px], centered\n- **CTA Bar** (centered below heading with gap):\n  - Container: `bg-black/25 backdrop-blur-md rounded-xl`, flex row, items-center, pl-6 pr-1 py-1\n  - Desktop text: \"No noise. No complicated systems. Just your day, gently sorted.\" (text-white, text-sm, font-medium, hidden on mobile)\n  - Mobile text (sm:hidden): \"No noise. Just your day, gently sorted.\"\n  - Button: \"Start for free\" -- bg-white, text-black, text-sm, font-medium, px-5, py-2.5, rounded-xl, hover:bg-white/90\n\n---\n\n### SECTION 2: ABOUT SECTION\n\n- Background: `bg-[#F6E4CF]`\n- **Rounded top corners**: `rounded-t-[25px]` with `relative z-10` (overlaps hero by 25px)\n- Padding: py-20 md:py-32, px-6\n\n#### Top Area (centered, max-w-3xl)\n- Paragraph: \"We craft tools that move with your rhythm, not over it. Designed for ease, presence, and flow.\" -- text-[#321C04], text-base md:text-lg, text-center, leading-relaxed, max-w-lg\n- Two buttons (flex-wrap, centered, gap-4):\n  1. **\"Say hello\"** -- dark pill button (`bg-[#321C04]`, `text-[#FFF9F2]`, rounded-full). Has a white circle on the left containing a Mail icon (lucide-react, size 16). Text is uppercase, tracking-wide, font-medium.\n  2. **\"Stay informed\"** -- muted pill button (`bg-[#D9C4AA]`, `text-[#321C04]`, rounded-full). Has a white circle on the left containing a Plus icon. Same text styling.\n\n#### Decorative Divider\n- Full-width flex row with: small circle (w-2 h-2 rounded-full bg-[#D9C4AA]) + 2px gap + horizontal line (flex-1 h-[2px] bg-[#D9C4AA]) + 2px gap + small circle\n\n#### Bottom Area (max-w-6xl, flex-col md:flex-row)\n- Left: Custom SVG logo (40x40, viewBox 0 0 256 256, abstract geometric shape with rounded quadrants, fill #321C04) + label \"Calm / Amplified\" (text-xs, uppercase, tracking-widest, font-semibold, line break between words)\n- Right: Large paragraph: \"We make AI tools and assistants. But, most importantly, we help you remember what gentle productivity looks like when software moves with you, not over you. We create systems that carry the cognitive weight, so you can attend to what truly counts.\" -- text-2xl / sm:text-3xl / md:text-4xl / lg:text-[42px], leading-[1.3], font-normal, text-[#321C04]\n\n---\n\n### SECTION 3: FEATURES SECTION (scroll-driven cards)\n\n- **Fixed background image** (behind content, -z-10):\n  ```\n  https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260709_082449_46df5cc4-ad98-4541-9236-a2659c1478a4.png&w=1920&q=85\n  ```\n- Padding: px-5 md:px-10 lg:px-16, py-20 md:py-40 lg:py-48\n\n#### Layout: CSS Grid on lg+ (400px / xl:460px left column, 1fr right column, gap-24 / xl:gap-48)\n\n#### Left Column (sticky on desktop)\n- `lg:sticky lg:top-0 lg:h-screen lg:flex lg:flex-col lg:justify-between lg:py-32`\n- Heading: \"Software that flows with your mind, not over it\" -- text-white, text-2xl / sm:text-3xl / lg:text-[46px], leading-[1.2], font-normal\n- Feature nav buttons (hidden below lg): list of feature titles as buttons. Active state: `bg-black/20 text-white`. Inactive: `bg-black/20 text-white/40`. Clicking scrolls to card (smooth, block: center).\n- Bottom CTA (hidden below lg): \"No noise. No complicated systems. Just your day, gently sorted.\" + \"Start for free\" button (same style as hero)\n\n#### Right Column (scrolling cards)\n- 3 feature cards with IntersectionObserver:\n  - **Active detection** (threshold 0.6): highlights corresponding nav button\n  - **Reveal animation** (threshold 0.15): cards slide in from right (translate-x-16 to translate-x-0, opacity 0 to 1, duration-700, ease-out). Once revealed, stays visible.\n\nEach card (`bg-black/20 backdrop-blur-sm rounded-3xl p-6 md:p-10`):\n- Same SVG logo (40x40, fill rgba(255,255,255,0.8))\n- Title (text-white, text-xl md:text-2xl, font-medium)\n- Video (aspect-video, rounded-2xl, overflow-hidden, bg-black/30, autoPlay/muted/loop/playsInline)\n- Description (text-white/60, font-medium, text-sm md:text-base, leading-relaxed)\n\n**Feature data:**\n\n1. Title: \"Built for ease, not urgency\"\n   Description: \"Drift strips away the noise that makes organizing feel draining. Every surface is made to be soft, quiet, and intuitive so you can move forward, not get stuck decoding.\"\n   Video: `https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260702_102608_5fa1187d-9ac6-44fb-82ab-54376200abc0.mp4`\n\n2. Title: \"The gentlest way to start\"\n   Description: \"Beginning your day should feel natural, not daunting. Drift eases you into motion with subtle cues and a quiet view of what deserves your energy right now.\"\n   Video: `https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260625_174131_395bc785-bb21-4e65-abf6-27c56f0764b6.mp4`\n\n3. Title: \"Deep, undivided focus\"\n   Description: \"No interruptions, no clutter. Drift holds you in the present task with a stripped-back layout that softens all else until you are truly ready to shift.\"\n   Video: `https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260525_052706_d2e390fd-1846-4fe7-a4d8-8d2f1c875358.mp4`\n\n---\n\n### SVG Logo (used in About + Feature cards)\n\n```svg\n<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"40\" height=\"40\" viewBox=\"0 0 256 256\" fill=\"none\">\n  <path d=\"M 256 256 L 178 256 C 150.386 256 128 233.614 128 206 L 128 256 L 0 256 L 0 192 C 0 156.654 28.654 128 64 128 C 99.346 128 128 156.654 128 192 L 128 128 L 256 128 Z M 78 0 C 105.614 0 128 22.386 128 50 L 128 0 L 256 0 L 256 64 C 256 99.346 227.346 128 192 128 C 156.654 128 128 99.346 128 64 L 128 128 L 0 128 L 0 0 Z\" fill=\"#321C04\" />\n</svg>\n```\n\n---\n\n### File Structure\n\n```\nsrc/\n  App.tsx          -- Hero section + renders AboutSection + FeaturesSection\n  main.tsx         -- ReactDOM render\n  index.css        -- Font imports + Tailwind directives + body styles\n  components/\n    Navbar.tsx     -- Floating pill navbar with animated hamburger\n    AboutSection.tsx -- Cream-colored about section\n    FeaturesSection.tsx -- Dark features with sticky left + scrolling cards\n```",
+    "source_kind": "motionsites",
+    "source_id": "motionsites-ai-edge-fn",
+    "source_repo": "motionsites/motionsites.ai",
+    "source_license": "NOASSERTION",
+    "source_path": "edge-fn:get-prompt:adhd-planner",
+    "source_url": "https://motionsites.ai/prompts/adhd-planner",
+    "has_text": true,
+    "text_len": 8810,
+    "text_reconstructed": true
+  },
+  {
+    "id": "ai-workflow-agents",
+    "title": "AI Workflow Agents",
+    "category": "SaaS",
+    "type": "hero",
+    "page_type": "hero",
+    "is_free": true,
+    "description": null,
+    "prompt_text": "Build a single-page hero landing page for a product called \"Axon\" — a platform that deploys digital workers for mundane workflows. The page is a full-viewport hero section with a looping background video and overlaid content.\n\n**Fonts:**\n- Load Google Fonts: `Instrument Serif` (regular + italic) and `Inter` (weights 400, 500, 600).\n- Body font: `Inter`, color `#1B133C`.\n- Heading font: `Instrument Serif`.\n\n**Page structure (single full-screen section, 100vh):**\n\n1. **Navigation bar** — centered at the top with `pt-4 md:pt-6` padding. A horizontal nav pill with `bg-white/70 backdrop-blur-md rounded-xl px-4 md:px-6 py-3 shadow-sm`. Contains:\n   - A custom SVG logo (two geometric arrow/chevron shapes in `#1B133C`, 24x24px). The SVG paths are: `M 256 256 L 128 256 L 0 128 L 128 128 Z` and `M 256 128 L 128 128 L 0 0 L 128 0 Z` inside a 256x256 viewBox.\n   - Navigation links (hidden on mobile, shown `sm:` and up): \"Features\", \"Plans\", \"Security\", \"About\" — styled as `text-sm font-medium text-[#1B133C]/80` with hover transition to full opacity.\n\n2. **Hero content** — centered below nav with `mt-8 md:mt-16`, stacked vertically:\n   - **Badge**: `mb-6`, inline-flex pill with `rounded-xl border border-[#1B133C]/10 bg-white/70 backdrop-blur-sm px-4 py-2 text-sm font-medium`. Contains an orange square icon (`bg-orange-500 rounded w-5 h-5`) with a bold white \"Y\" letter, followed by text \"Funded by Y Combinator\".\n   - **Heading**: `font-['Instrument_Serif'] text-4xl sm:text-5xl md:text-7xl lg:text-8xl leading-[0.95] tracking-tight text-[#1B133C] max-w-4xl`. Two lines:\n     - \"Deploy digital workers\"\n     - \"for mundane workflows\"\n   - **Subtitle**: `mt-5 sm:mt-6 max-w-3xl text-xs sm:text-sm md:text-base leading-relaxed text-[#1B133C]/70`. Text: \"Eliminate your tedious browser work and 10x your team's capacity. Put intelligent agents on every routine process so you grow faster and deliver more for clients — effortlessly.\"\n   - **CTA button**: `mt-7 sm:mt-8`, styled as `rounded-xl bg-[#FEFEFE] px-6 sm:px-8 py-3 sm:py-3.5 text-sm font-semibold text-[#1B133C] shadow-[0px_4px_12px_rgba(0,0,0,0.15)]` with hover shadow `shadow-[0px_6px_16px_rgba(0,0,0,0.2)]` and `transition-all duration-300`. Text: \"Get Early Access\".\n\n3. **Background video** — absolutely positioned (`absolute inset-0 z-0`) behind all content. The video element uses:\n   - URL: `https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260714_113715_c7e0daa0-8bdd-4486-a2da-040901f8f0ea.mp4`\n   - Attributes: `autoPlay muted loop playsInline`\n   - Styling: `w-full h-[130%] object-cover object-top` — full width, 130% height so it overflows vertically, with the focal point anchored to the top.\n\n**CSS reset in index.css:**\n```\nbody { font-family: 'Inter', sans-serif; color: #1B133C; }\n```\n\n**Key details:**\n- The hero section uses `relative h-screen w-full overflow-hidden flex flex-col`.\n- All content elements are `relative z-10` to sit above the video (`z-0`).\n- No other sections or pages — just this single hero.\n- Color palette: deep navy `#1B133C` for text, white/translucent for glass elements, orange-500 for the Y Combinator badge accent.\n- Page title: \"Axon — Digital Workers for Mundane Workflows\"",
+    "source_kind": "motionsites",
+    "source_id": "motionsites-ai-edge-fn",
+    "source_repo": "motionsites/motionsites.ai",
+    "source_license": "NOASSERTION",
+    "source_path": "edge-fn:get-prompt:ai-workflow-agents",
+    "source_url": "https://motionsites.ai/prompts/ai-workflow-agents",
+    "has_text": true,
+    "text_len": 3215,
+    "text_reconstructed": true
+  },
+  {
+    "id": "f1-racing-hub",
+    "title": "F1 Racing Hub",
+    "category": "Mobile App",
+    "type": "mobile",
+    "page_type": "hero",
+    "is_free": true,
+    "description": null,
+    "prompt_text": "# Recreate This Page Exactly — Lewis Hamilton / Silverstone F1 Hero\n\n## Tech stack\n- React + TypeScript + Vite\n- Tailwind CSS (config extends `fontFamily.sans` = `['\"Albert Sans\"', 'sans-serif']`, plus custom `f1.dark = rgb(41,41,41)` and `f1.yellow = rgb(237,180,11)`)\n- lucide-react for icons (X, Menu used)\n- Google Font: **Albert Sans** weights 300;400;500;600;700;800, loaded in index.html via `https://fonts.googleapis.com/css2?family=Albert+Sans:wght@300;400;500;600;700;800&display=swap`\n- Body background: `#0a0e1c`, antialiased\n## Overall layout\nA full-screen hero section (`relative w-full overflow-hidden font-sans`) with a page background image and dark overlay, then two responsive layouts:\n\n**Page background image (used for both page and inside phone screens):**\n```\nhttps://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260709_152331_bd312d1a-1f20-46b9-9b68-12bcdcf6d53e.png&w=1280&q=85\n```\n- Page: `<img>` absolute inset-0 w-full h-full object-cover z-0, then `<div className=\"absolute inset-0 bg-black/70 z-[1]\" />`\n\n**Desktop (md+):** `hidden md:flex relative z-[2] w-full h-screen items-center justify-center py-6` → a flex row `items-end justify-center gap-[2vw]` containing three phone mockups, each wrapped in `animate-fade-slide-up` with delays 300/500/700. Middle phone has `-mb-6`.\n\n**Mobile (below md):** `md:hidden relative z-[2] flex flex-col items-center gap-[50px] py-[20px] px-[20px]` → same three phones, delays 300/500/700.\n\n## PhoneMockup component\nA reusable iPhone-style frame:\n- Outer: `flex flex-col items-center`\n- Frame: `relative rounded-[clamp(30px,4vw,54px)] bg-black p-[clamp(6px,1vw,12px)] shadow-2xl shadow-black/60`, with inner ring `absolute inset-0 rounded-[clamp(30px,4vw,54px)] ring-1 ring-white/15`\n- Screen: `relative w-full h-full rounded-[clamp(24px,3.2vw,44px)] overflow-hidden bg-[#0a0e1c]`\n- Dynamic Island: `absolute top-[3%] left-1/2 -translate-x-1/2 w-[30%] h-[4%] bg-black rounded-full z-50`\n- Content scaling: inner div sized `390px × contentH` (contentH measured from ResizeObserver), scaled by `scale = screenW / 390`, transform-origin top-left\n- Side buttons (neutral-700): left side three buttons at top 19%/26%/35.5% (heights 4.5%/7.3%/7.3%), right side one at 30.8% height 11.4%\n\n**Phone frame sizing (CSS):**\n- `.phone-frame { aspect-ratio: 390/844; width: clamp(200px, 75vw, 340px); }`\n- `@media (min-width:768px) { width: min(25vw, 42vh); }`\n- `@media (min-width:1280px) { width: min(28vw, 48vh, 430px); }`\n\n## Phone navigation (shared, in every screen)\nTop nav `absolute top-0 left-0 right-0 z-30 flex items-center justify-between px-5 h-14 mt-[20px]`:\n- Left: F1 logo `<img src=\"https://framerusercontent.com/images/NZPITJ6zDBvxVT7rc1NH2sOU.png\" className=\"h-7 w-auto object-contain\" />`\n- Right: two 14×14 (h-14 w-14) square buttons, no rounding:\n  - White button with profile icon `https://framerusercontent.com/images/JIl4japgQlMAQRvh1gDHszRvkUY.png?width=92&height=92` (w-5 h-5)\n  - Glass button: `background: rgba(255,255,255,0.15); backdropFilter: blur(12px)` containing two white bars (21px and 10px wide, 2px tall, rounded-full, 5px gap)\n\n**Menu overlay (z-50, full screen):** `linear-gradient(160deg, #1a0000 0%, #8B0000 40%, #E10600 100%)`, fade transition 400ms. Links: Biography, Statistics, Career — text-3xl font-bold tracking-tight, stagger slide-in (translateX -20px→0, delay 0.1 + i*0.08s, cubic-bezier(0.16,1,0.3,1)). Hover color `#EDB40B`. Bottom: white \"Sign in\" button.\n\n## Screen 1 — Lewis Hamilton hero\n`relative w-full h-full flex flex-col px-5 pb-0 pt-[76px] overflow-hidden`\n- Background: ScreenBackground (BG image + `bg-black/60`)\n- PhoneNav\n- Location block (z-10, mt-4 mb-2, animate-fade-slide-up delay-300): \"United Kingdom\" text-white/60 text-[16px] + UK flag `https://framerusercontent.com/images/pqUTggaeyOivtzDImRzkBRdww.png` (w-6 h-6). Title: text-white font-normal leading-[0.95] tracking-[-0.05em] text-[48px] → \"Silverstone\" / \"England\"\n- **Driver photo container** (z-[5], absolute fill, flex items-end justify-center): \n  - `<img src=\"https://framerusercontent.com/images/m5IyHuJeOQ5P0GOvWx1xv0IR9Y.png\" className=\"w-[calc(140%-5px)] max-w-none h-auto object-contain animate-scale-in delay-500 origin-bottom\" />`\n  - **Blur overlay** (the key glass effect): `absolute bottom-0 left-0 right-0 h-[50%] pointer-events-none` with inline style:\n    ```\n    backdropFilter: 'blur(6px)',\n    WebkitBackdropFilter: 'blur(6px)',\n    mask: 'linear-gradient(to bottom, transparent 0%, black 50%)',\n    WebkitMask: 'linear-gradient(to bottom, transparent 0%, black 50%)'\n    ```\n- Bottom content (z-10, absolute bottom-0 px-5 pb-5):\n  - Driver avatar selector strip `https://framerusercontent.com/images/dAAdqktZVxBDjPKk97YCjZjsE.png` (h-12 w-auto, animate-fade-slide-up delay-700, mb-3)\n  - Name: text-white font-semibold leading-[0.82] tracking-[-0.05em] text-[64px] animate-speed-reveal delay-800 → \"Lewis\" / \"Hamilton\"\n\n## Screen 2 — Silverstone circuit + stats\n`relative w-full h-full flex flex-col px-5 pb-8 pt-[76px] overflow-hidden`\n- Background + PhoneNav\n- Location block (z-10, mb-4, animate-fade-slide-up delay-400): same UK/flag/Silverstone England as Screen 1\n- Circuit image (z-10, flex-1 flex items-center justify-center -mx-5 px-2 min-h-0, animate-scale-in delay-600): `https://framerusercontent.com/images/raKAG2bJP9xeqi118VMniPLvbAA.png` w-full h-full object-contain\n- Stats block (z-10, mt-auto pt-4, animate-fade-slide-up delay-800): \"Season Points\" label + medal icon `https://framerusercontent.com/images/pIXUcwyAF0xzCIaKjtNLahHpasQ.png` (w-6 h-6). Three count-up numbers, each font-semibold tracking-[-0.06em] fontSize 110px lineHeight 0.72:\n  - 227 (delay 800) — gradient text `linear-gradient(to bottom, white 0%, rgba(255,255,255,0.4) 50%, transparent 85%)` via bg-clip-text text-transparent\n  - 374 (delay 1000) — same gradient\n  - 4987 (delay 1200) — solid color `#EDB40B`\n- Count-up animation: useCountUp hook, cubic ease-out (1-(1-t)³), duration 2200ms, starts after delay, requestAnimationFrame\n\n## Screen 3 — Scuderia Ferrari team\n`relative w-full h-full overflow-hidden`\n- Background + PhoneNav\n- Team title (absolute top-[100px] left-5 z-10, animate-fade-slide-up delay-300): \"Team Name\" text-white/60 text-[15px] + Ferrari icon `https://framerusercontent.com/images/sUDhzMuxKIOvqjSH5U1fn0QSXqI.png` (w-5 h-5). Title text-white font-normal leading-[0.83] text-[52px] letterSpacing -0.08em → \"Scuderia\" / \"Ferrari\"\n- Chassis (absolute top-[245px] left-5 z-10, animate-fade-slide-up delay-500): chassis icon `https://framerusercontent.com/images/zIA1tYDOAdZo3k6IXX9gBC5FGbY.png` (w-5 h-5) + \"Chassis\" label. Number text-[#EDB40B] font-semibold leading-[0.79] text-[120px] letterSpacing -0.08em → \"SF-26\"\n- Car image (absolute top-[390px] left-3 right-3 z-10 w-[calc(100%-24px)] h-auto object-contain animate-fade-slide-left delay-700): `https://framerusercontent.com/images/MzKCSYB4uVt9psQq4jRwQNRDjc.png`\n- Bottom driver cards (absolute bottom-0 flex, animate-fade-slide-up delay-900): two side-by-side cards, each w-1/2 h-200px rounded-t-2xl p-3, glass style:\n  ```\n  background: rgba(20,20,30,0.8),\n  border: 1px solid rgba(255,255,255,0.1),\n  borderBottom: none,\n  backdropFilter: blur(16px)\n  ```\n  - Leclerc card: \"Charles Leclerc\" text-white/60 text-[13px] + profile icon (w-4 h-4 opacity-60), stats image `https://framerusercontent.com/images/MJfqhcmEoIBnfimJNhKqoZpq0.png` (h-5), big number \"16\" text-white font-semibold leading-[0.79] text-[110px] letterSpacing -0.08em\n  - Hamilton card: \"Lewis Hamilton\" + profile icon, stats image `https://framerusercontent.com/images/3EwXxC1QutaGnlNDZMlAN66ZmTU.png` (h-5), big number \"44\"\n\n## Animations (CSS keyframes, all `both` fill-mode)\n- **fadeSlideUp**: opacity 0→1, translateY 30px→0, 0.9s cubic-bezier(0.16,1,0.3,1)\n- **fadeSlideDown**: translateY -20px→0, 0.7s\n- **fadeSlideLeft**: translateX 40px→0, 0.9s\n- **fadeSlideRight**: translateX -40px→0, 0.9s\n- **scaleIn**: opacity 0→1, scale 0.92→1, 1s\n- **fadeIn**: opacity 0→1, 0.8s ease-out\n- **speedReveal** (the name reveal): 0% opacity 0 translateX(-100%) skewX(-8deg) blur(8px) → 60% opacity 1 translateX(4%) skewX(-2deg) blur(0) → 100% translateX(0) skewX(0) blur(0), 0.8s\n- **raceLineLeft**: scaleX 0→1.1→1 from left\n- Delay utilities: delay-100 through delay-1600 (0.1s steps)\n\n## Exact asset URLs (use verbatim)\n- Page/phone background: `https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260709_152331_bd312d1a-1f20-46b9-9b68-12bcdcf6d53e.png&w=1280&q=85`\n- F1 logo: `https://framerusercontent.com/images/NZPITJ6zDBvxVT7rc1NH2sOU.png`\n- Profile/search icon: `https://framerusercontent.com/images/JIl4japgQlMAQRvh1gDHszRvkUY.png?width=92&height=92`\n- UK flag: `https://framerusercontent.com/images/pqUTggaeyOivtzDImRzkBRdww.png`\n- Lewis Hamilton photo: `https://framerusercontent.com/images/m5IyHuJeOQ5P0GOvWx1xv0IR9Y.png`\n- Driver avatar selector: `https://framerusercontent.com/images/dAAdqktZVxBDjPKk97YCjZjsE.png`\n- Silverstone circuit: `https://framerusercontent.com/images/raKAG2bJP9xeqi118VMniPLvbAA.png`\n- Season points medal: `https://framerusercontent.com/images/pIXUcwyAF0xzCIaKjtNLahHpasQ.png`\n- Ferrari team icon: `https://framerusercontent.com/images/sUDhzMuxKIOvqjSH5U1fn0QSXqI.png`\n- Chassis icon: `https://framerusercontent.com/images/zIA1tYDOAdZo3k6IXX9gBC5FGbY.png`\n- Ferrari SF-26 car: `https://framerusercontent.com/images/MzKCSYB4uVt9psQq4jRwQNRDjc.png`\n- Leclerc stats: `https://framerusercontent.com/images/MJfqhcmEoIBnfimJNhKqoZpq0.png`\n- Hamilton stats: `https://framerusercontent.com/images/3EwXxC1QutaGnlNDZMlAN66ZmTU.png`\n\n## Color tokens\n- Background dark: `#0a0e1c`\n- F1 red (menu gradient): `#E10600`, dark red `#8B0000`, near-black `#1a0000`\n- Gold/yellow accent: `#EDB40B`\n- Glass card: `rgba(20,20,30,0.8)` + `backdropFilter: blur(16px)` + `border: 1px solid rgba(255,255,255,0.1)`\n- Nav glass button: `rgba(255,255,255,0.15)` + `blur(12px)`\n- Photo bottom blur: `blur(6px)` with vertical mask gradient transparent→black at 50%\n\n## Typography rules\n- Font: Albert Sans throughout\n- Headlines: font-normal or font-semibold, very tight tracking (-0.05em to -0.08em), tight leading (0.72–0.95)\n- Large display numbers: 110–120px, lineHeight 0.72–0.79\n- Labels: text-white/60, 13–16px, font-normal",
+    "source_kind": "motionsites",
+    "source_id": "motionsites-ai-edge-fn",
+    "source_repo": "motionsites/motionsites.ai",
+    "source_license": "NOASSERTION",
+    "source_path": "edge-fn:get-prompt:f1-racing-hub",
+    "source_url": "https://motionsites.ai/prompts/f1-racing-hub",
+    "has_text": true,
+    "text_len": 10448,
+    "text_reconstructed": true
+  },
+  {
+    "id": "mind-body-healing",
+    "title": "Mind-Body Healing",
+    "category": "Healthcare",
+    "type": "hero",
+    "page_type": "hero",
+    "is_free": true,
+    "description": null,
+    "prompt_text": "Build a single-page hero landing page for a holistic wellness brand called \"Vibrant Wellness.\" Use React, TypeScript, Tailwind CSS, and Lucide React icons. Load Google Fonts \"Inter\" (weights 300, 400, 500, 600, 700) via link tags in the HTML head. The entire page is a full-screen (100vh) section with a looping background video and liquid glass UI elements overlaid on top.\n\n**BACKGROUND VIDEO**\n\nFull-viewport autoplaying, looping, muted, playsInline video with `object-cover`, positioned absolute inset-0. Use this exact URL:\n`https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260715_082433_69699cf8-444b-4484-93cc-053e57896dfd.mp4`\n\n**LIQUID GLASS EFFECT**\n\nCreate a `.liquid-glass` CSS class applied to the nav pill, avatar circles, badge, and CTA button:\n- `background: rgba(255,255,255,0.01)` with `background-blend-mode: luminosity`\n- `backdrop-filter: blur(4px)` (with -webkit prefix)\n- No border\n- `box-shadow: inset 0 1px 1px rgba(255,255,255,0.1)`\n- `position: relative; overflow: hidden`\n- `::before` pseudo-element creating a gradient border: absolute inset-0, border-radius inherit, padding 1.4px, background is a vertical linear-gradient from rgba(255,255,255,0.45) at 0%, to 0.15 at 20%, transparent at 40-60%, back to 0.15 at 80% and 0.45 at 100%. Use the mask-composite exclude trick (`-webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0); -webkit-mask-composite: xor; mask-composite: exclude`) so the gradient only shows as a border. Set `pointer-events: none`.\n\n**NAVIGATION (z-20, top)**\n\nFlex row, justify-between, padding px-5 pt-6 / sm:px-8 sm:pt-8 / md:px-16 lg:px-20.\n- Left: custom SVG logo (32x32, md:36x36), white fill, viewBox 0 0 256 256, path: `M 128 128 C 198.692 128 256 185.308 256 256 L 151.883 256 C 149.812 220.307 120.213 192 84 192 C 47.787 192 18.188 220.307 16.117 256 L 0 256 C 0 185.308 57.308 128 128 128 Z M 104.117 0 C 106.188 35.694 135.787 64 172 64 C 208.213 64 237.812 35.694 239.883 0 L 256 0 C 256 70.692 198.692 128 128 128 C 57.308 128 0 70.692 0 0 Z`\n- Center (desktop only, hidden on mobile): liquid-glass rounded-full pill (px-8 py-3) with three links — \"Home\" (text-white), \"Our Approach\" and \"Healing Methods\" (text-white/70, hover:opacity-100). All text-sm font-medium.\n- Right (desktop only): liquid-glass circle (h-10 w-10 rounded-full) containing Lucide `CircleUserRound` (h-5 w-5, text-white/80, strokeWidth 1.5).\n- Right (mobile only, md:hidden): liquid-glass circle button (h-10 w-10 rounded-full, z-50). Animated icon swap between Lucide `Menu` and `X` using absolute positioning with rotate-90 scale-0 opacity-0 transitions (duration-300) toggled by a `menuOpen` state.\n\n**MOBILE MENU OVERLAY (z-10, fixed inset-0, md:hidden)**\n\nToggle visibility with 500ms ease-out opacity transition. Background: black/80 with backdrop-blur-xl. Centered flex column (gap-8) with the same three nav links at text-2xl font-medium. Below links: liquid-glass avatar circle + \"Account\" text (text-sm font-light text-white/60). Links close the menu on click. Content slides from -translate-y-8 to 0.\n\n**MAIN CONTENT (z-10)**\n\nFlex column, justify-between, fills remaining viewport height. On mobile, fades to opacity-0 and pointer-events-none when menu is open.\n\nTop block (mt-14 sm:mt-20 md:mt-28, max-w-2xl):\n1. Badge — liquid-glass pill (rounded-full, inline-flex, gap-2.5 sm:gap-3, px-3 py-1.5 sm:px-4 sm:py-2, mb-5 sm:mb-6). Contains 4 overlapping avatars (flex -space-x-2, each h-5 w-5 sm:h-6 sm:w-6, rounded-full, border-2 border-white/20, object-cover) using these Pexels URLs:\n   - `https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=100`\n   - `https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=100`\n   - `https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=100`\n   - `https://images.pexels.com/photos/697509/pexels-photo-697509.jpeg?auto=compress&cs=tinysrgb&w=100`\n   Followed by text \"our path to natural wellness\" (text-xs sm:text-sm, font-light, text-white/80).\n2. Heading — `<h1>` \"Heal Your Body\" + `<br/>` + \"Naturally\". Style: text-4xl sm:text-5xl md:text-6xl lg:text-7xl, font-normal, leading-[1.05], text-white, inline letterSpacing -0.05em.\n3. Subtitle — `<p>` \"Holistic wellness. Transformative results.\" mt-4 sm:mt-5, text-sm sm:text-base md:text-lg, font-light, text-white/70.\n4. CTA button — liquid-glass, rounded-full, px-6 py-3 sm:px-7 sm:py-3.5, mt-6 sm:mt-8, text-sm font-medium text-white, transition duration-300, hover:bg-white/10. Text: \"Begin Your Journey\".\n\n**BOTTOM STATS (flex, items-end, gap-6 sm:gap-10 md:gap-16)**\n\nTwo stat columns:\n1. First: a small triangular dot-pattern icon built from 9 absolutely-positioned 2.5px white/60 squares inside a 20x20 box; value \"48 Hours\" (text-xl sm:text-2xl md:text-3xl, font-normal, text-white); label \"Initial Consultation\" (text-xs sm:text-sm, font-light, text-white/60).\n2. Second: a 3x3 grid icon (grid-cols-3, gap-[2px]) of 4px rounded cells alternating bg-white/60 and bg-white/0 in a checkerboard; value \"Initial Consultation\" (same sizing); label \"Healing Sessions\" (text-xs sm:text-sm, font-light, text-white/60).",
+    "source_kind": "motionsites",
+    "source_id": "motionsites-ai-edge-fn",
+    "source_repo": "motionsites/motionsites.ai",
+    "source_license": "NOASSERTION",
+    "source_path": "edge-fn:get-prompt:mind-body-healing",
+    "source_url": "https://motionsites.ai/prompts/mind-body-healing",
+    "has_text": true,
+    "text_len": 5232,
+    "text_reconstructed": true
+  },
+  {
+    "id": "innovation-lab",
+    "title": "Innovation Lab",
+    "category": "Technology",
+    "type": "hero",
+    "page_type": "hero",
+    "is_free": true,
+    "description": null,
+    "prompt_text": "Create a full-screen immersive landing page for a fictional creative-tech studio called \"VortxLab Creations\" (brand: \"V O R T X\"). The page features a looping background video, a glassmorphism-cut button aesthetic with octagonal clip-path shapes, and staggered fade-up entrance animations on every element.\n\n### Tech Stack\n- React + TypeScript + Vite\n- Tailwind CSS (configured with `fontFamily.inter: ['Inter', 'sans-serif']`)\n- `lucide-react` for icons (only `ArrowRight` used)\n- Google Fonts: **Inter** weights 300–900, loaded via `<link>` in index.html with preconnect to fonts.googleapis.com and fonts.gstatic.com\n\n### Global CSS (index.css)\n- `@tailwind base/components/utilities`\n- `body { font-family: 'Inter', sans-serif; background-color: #000000; }`\n- Three octagonal clip-path button classes:\n\n**`.btn-cut`** (large buttons, 12px cut):\n```\nclip-path: polygon(\n  12px 0%, calc(100% - 12px) 0%, 100% 12px, 100% calc(100% - 12px),\n  calc(100% - 12px) 100%, 12px 100%, 0% calc(100% - 12px), 0% 12px\n);\n```\n\n**`.btn-cut-border`** (outline variant): `position: relative; background: white;` same clip-path as above. A `::before` pseudo-element with `inset: 1px; background: black;` and the same clip-path but offset by 1px (11px values), `z-index: 0`. Direct children get `position: relative; z-index: 1;` so text shows on black.\n\n**`.btn-cut-sm`** (small social buttons, 8px cut): same polygon but with 8px values.\n\n### Animations (in index.css)\n```css\n@keyframes fadeUp {\n  from { opacity: 0; transform: translateY(24px); }\n  to   { opacity: 1; transform: translateY(0); }\n}\n@keyframes fadeIn {\n  from { opacity: 0; }\n  to   { opacity: 1; }\n}\n.anim-stagger {\n  opacity: 0;\n  animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;\n}\n.anim-fade {\n  opacity: 0;\n  animation: fadeIn 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;\n}\n```\n\n### Background Video\nUse this exact CloudFront URL as the `<video src>`:\n```\nhttps://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260717_120352_eb988725-1351-43b3-8095-16e4a1005e3d.mp4\n```\nAttributes: `autoPlay loop muted playsInline`, class `absolute inset-0 w-full h-full object-cover anim-fade` with `animationDelay: '0.2s'`.\n\n### Layout Structure (App.tsx)\n\nRoot: `div.h-screen.w-full.bg-black.p-3.md:p-4.font-inter`\n → Inner: `div.w-full.h-full.rounded-2xl.flex.flex-col.overflow-hidden.relative.bg-black` (this is the liquid-glass container — rounded corners, overflow hidden, video absolute behind content)\n   → `<video>` (absolute background, as above)\n\n**Navbar** (`nav.relative.z-10.flex.items-center.justify-between.px-6.md:px-10.pt-6.md:pt-8`):\n- **Logo block** (`.anim-stagger`, delay 0.1s): custom SVG logo (256×256 viewBox, white fill, four quarter-circle shapes forming a vortex/plus pattern), sized `w-14 h-14 md:w-16 md:h-16`. Below it: `<span>` \"V O R T X\" — `text-white text-[10px] md:text-xs tracking-[0.4em] mt-1 font-light`.\n- **Nav buttons** (`.anim-stagger`, delay 0.2s, `flex items-center gap-3`):\n  - \"Neural Synergy\" — `hidden md:block px-5 py-2.5 text-white text-sm hover:bg-white/10 btn-cut-border` (text wrapped in `<span>`)\n  - \"Cyber Synthesis\" — `hidden md:block px-5 py-2.5 bg-white text-black text-sm hover:bg-white/90 btn-cut`\n\n**Main content** (`div.relative.z-10.flex-1.flex.flex-col.justify-between.px-6.md:px-10.pb-8.md:pb-10`):\n\n*Top section* (`div.flex-1.flex.items-center.relative`):\n- **Left column** (`.anim-stagger`, delay 0.4s) — `hidden lg:flex flex-col gap-6 absolute left-0 top-[18%]`:\n  - Paragraph: `text-white/80 text-base leading-relaxed max-w-[220px]` — text \"Come with us<br>exploring the<br>horizon\"\n  - Decorative group (`flex flex-col gap-2 mt-4`):\n    - Two `4×4` circles: `rounded-full border border-white/40` in a `flex items-center gap-1` row\n    - Row (`flex items-center gap-2 mt-2`): `<span>` \"Perpetual<br>Immersion\" (`text-white/70 text-xs`) + `<span>` \"01\" (`text-white/50 text-xs`)\n- **Center heading** (`.anim-stagger`, delay 0.5s) — `div.w-full.text-center`:\n  - `<h1>` `text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-normal leading-[1.1] tracking-[-0.04em]` with inline `textShadow: '0 2px 12px rgba(0,0,0,0.25)'`. Three lines:\n    ```\n    Forging Tomorrow\n    Virtual Horizon\n    VortxLab Creations\n    ```\n\n*Bottom row* (`div.grid.grid-cols-1.md:grid-cols-3.gap-6.items-center.mt-8`) — **3 columns; on mobile all center-aligned, on md+ outer columns right-aligned**:\n- **Col 1** (`.anim-stagger`, delay 0.7s) — `flex items-center justify-center md:justify-end`:\n  - `<p>` `text-white text-sm leading-relaxed max-w-[260px] text-center md:text-left md:ml-auto` — \"We push past conventions, reshaping the virtual terrain with next-level technologies.\"\n- **Col 2** (`.anim-stagger`, delay 0.85s) — `flex flex-col items-center gap-8 md:gap-24` (smaller gap on mobile, large gap on desktop):\n  - `<span>` `text-white text-2xl md:text-3xl font-medium` — \"Net Dynamics\"\n  - `<button>` `w-full max-w-[280px] py-3.5 bg-white flex items-center justify-center gap-2 text-black hover:bg-white/90 transition-colors group btn-cut`:\n    - `<span>` `text-sm font-medium` — \"Discover Now\"\n    - `<ArrowRight className=\"w-4 h-4 group-hover:translate-x-1 transition-transform\" />`\n- **Col 3** (`.anim-stagger`, delay 1s) — `flex items-center justify-center md:justify-end gap-3`:\n  - Three social buttons, each `w-10 h-10 bg-white flex items-center justify-center text-black hover:bg-white/90 transition-colors btn-cut-sm`, containing custom inline SVGs (`w-4 h-4 fill=\"currentColor\"`, viewBox `0 0 24 24`): **X (Twitter)**, **LinkedIn**, **Facebook** — standard brand path data.\n\n### Staggered Animation Delays (summary)\n| Element | Class | Delay |\n|---|---|---|\n| Background video | `anim-fade` | 0.2s |\n| Logo + brand | `anim-stagger` | 0.1s |\n| Nav buttons | `anim-stagger` | 0.2s |\n| Left column | `anim-stagger` | 0.4s |\n| Center heading | `anim-stagger` | 0.5s |\n| Bottom col 1 | `anim-stagger` | 0.7s |\n| Bottom col 2 | `anim-stagger` | 0.85s |\n| Bottom col 3 | `anim-stagger` | 1s |\n\n### Responsive Rules\n- Page padding: `p-3` mobile / `md:p-4` desktop\n- Nav and content horizontal padding: `px-6` / `md:px-10`\n- Left column: hidden below `lg`\n- Nav buttons: hidden below `md`\n- Heading scales: `text-3xl → sm:4xl → md:5xl → lg:6xl → xl:7xl`\n- Bottom row: single column on mobile, 3 columns from `md` up\n- On mobile: bottom-row columns 1 & 3 are **center-aligned** (`justify-center`); on `md+` they're `justify-end`\n- Column 2 gap: `gap-8` mobile / `md:gap-24` desktop\n- Social button text and description text: `text-center` on mobile, `md:text-left` (with `md:ml-auto`)\n\n### index.html\n- `<title>VortxLab Creations</title>`\n- Google Fonts Inter link: `https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap`\n\n### Tailwind config\n```js\ntheme: { extend: { fontFamily: { inter: ['Inter', 'sans-serif'] } } }\n```\n\n---",
+    "source_kind": "motionsites",
+    "source_id": "motionsites-ai-edge-fn",
+    "source_repo": "motionsites/motionsites.ai",
+    "source_license": "NOASSERTION",
+    "source_path": "edge-fn:get-prompt:innovation-lab",
+    "source_url": "https://motionsites.ai/prompts/innovation-lab",
+    "has_text": true,
+    "text_len": 6911,
+    "text_reconstructed": true
+  },
+  {
+    "id": "fun-404-page",
+    "title": "Fun 404 Page",
+    "category": "Education",
+    "type": "hero",
+    "page_type": "hero",
+    "is_free": true,
+    "description": null,
+    "prompt_text": "Build a full-screen animated 404 error page for a children's brand called \"TinyTrails\" using React, Tailwind CSS, and Lucide React icons. The page must be a single `App.tsx` component. Use the Inter font (weights 400–900) loaded from Google Fonts. The page is a single viewport-height screen with no scrolling.\n\n---\n\n**LAYOUT & BACKGROUND:**\n\n- The full page is `w-full h-screen overflow-hidden flex flex-col` with a CSS linear gradient background from `#FF8233` (top) to `#FDAC55` (bottom).\n\n---\n\n**BACKGROUND \"404\" TEXT EFFECT:**\n\n- Behind everything, centered in the viewport, render the text \"404\" in white (`#FFFFFF`), `font-black`, `leading-none`, `tracking-tighter`, `whitespace-nowrap`.\n- Font size: `clamp(200px, 48vw, 800px)`.\n- The text is scaled horizontally by `1.15` and vertically dynamically: on mount (and resize), measure the text element's `offsetHeight`, divide `window.innerHeight` by that height, and multiply by `1.4` to get the Y scale. Apply via `transform: scale(1.15, ${scaleY * 1.4})`.\n- Over the \"404\" text (same centered container), render a white (`#FFFFFF`) oval: a `div` with `rounded-full`, height `h-[22vh] sm:h-[26vh] md:h-[50vh]`, width `clamp(120px, 20vw, 400px)`, scaled vertically by the same dynamic `scaleY` value with `transformOrigin: center`.\n- The entire background layer (text + oval) is wrapped in a container with `opacity: 0.8` and a CSS mask that fades to transparent at the bottom: `mask-image: linear-gradient(to bottom, black 40%, transparent 95%)` (with `-webkit-mask-image` for Safari).\n- This layer is `absolute inset-0 pointer-events-none`.\n\n---\n\n**NAVIGATION BAR:**\n\n- `relative z-20`, flex row, items centered, `justify-between`, padding `px-4 sm:px-6 md:px-12 py-4 sm:py-5`.\n- **Logo (left):** A 2x2 grid of white circles (`grid-cols-2 gap-0.5`), each circle `w-2.5 h-2.5 sm:w-3 sm:h-3 bg-white rounded-full`. Next to it, the text \"TinyTrails\" in `text-white font-bold text-lg sm:text-xl ml-1`.\n- **Desktop nav links (center/right):** Hidden on mobile (`hidden md:flex`), a row of pill buttons with `gap-1`. Items: \"About Us\", \"Programs\", \"Reviews\", \"FAQ\", \"Contacts\". Each is an `<a>` with `px-4 py-1.5 text-sm font-medium rounded-full bg-white` and text color `#F16524`, with `hover:opacity-90 transition-colors`.\n- **Menu button (right):** A pill button with `px-4 py-2 sm:px-5 sm:py-2.5 rounded-full text-white` and background color `#F16524`. Contains a Lucide `Menu` icon (`w-4 h-4`) and the text \"Menu\" (`text-sm font-medium hidden sm:inline`). Has `hover:opacity-90 transition-colors`.\n\n---\n\n**MOBILE MENU OVERLAY:**\n\n- Fixed fullscreen (`fixed inset-0 z-50`), with visibility toggled. Transition: `duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]`.\n- **Backdrop:** `absolute inset-0 bg-black/40 backdrop-blur-sm`, fades in/out with `opacity` transition over 500ms. Clicking it closes the menu.\n- **Panel:** Slides in from right. `absolute top-0 right-0 h-full w-full sm:w-[380px]`, translates between `translate-x-full` (closed) and `translate-x-0` (open). Background: `linear-gradient(135deg, #FF6B1A 0%, #FF9642 100%)`.\n  - **Panel header:** Same logo as nav (2x2 white dots + \"TinyTrails\" bold white text). Close button: `w-10 h-10 rounded-full bg-white/20 text-white hover:bg-white/30` with Lucide `X` icon (`w-5 h-5`).\n  - **Menu items:** Staggered animation. Each item is `px-6 py-4 text-lg font-semibold text-white rounded-2xl bg-white/10 hover:bg-white/20 transition-all duration-300`. When open: `opacity-100 translate-y-0`; when closed: `opacity-0 translate-y-4`. Transition delay per item: `150 + i * 60`ms when opening, `0ms` when closing.\n  - **Bottom CTA:** Absolutely positioned at bottom (`absolute bottom-0 left-0 right-0 p-6`). A pill link: `w-full py-4 rounded-full bg-white font-semibold text-base` with text color `#F16524`, `hover:scale-[1.02]`. Contains Lucide `ArrowLeft` icon + \"Back to Home\". Fades in with 450ms delay when opening.\n- Body scroll is locked (`overflow: hidden`) when menu is open.\n\n---\n\n**CENTER VIDEO:**\n\n- An absolutely positioned container (`absolute inset-0 flex items-center justify-center pointer-events-none`) with `margin-top: calc(-6vh - 40px)` to shift it upward.\n- Inside, a responsive container: `w-[120vw] h-[85vh] sm:w-[70vw] sm:h-[70vh] md:w-[62vw] md:h-[78vh]`.\n- Contains a `<video>` element with `autoPlay loop muted playsInline`, class `w-full h-full object-contain pointer-events-none mix-blend-darken`.\n- **Video source URL:** `https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260713_234424_b1332b69-2e69-4302-8dbc-40f86846afbd.mp4`\n\n---\n\n**BOTTOM CONTENT:**\n\n- `relative z-30 mt-auto pb-8 sm:pb-16 flex flex-col items-center text-center px-4`.\n- Heading: \"Oops, something went wrong!\" in `text-white text-lg sm:text-xl md:text-2xl font-medium mb-3 sm:mb-4`.\n- Button/link: An `<a href=\"/\">` pill with `inline-flex items-center gap-2 px-6 py-3 sm:px-8 sm:py-4 rounded-full text-white font-semibold text-sm sm:text-base` and background `#F16524`. Has `hover:scale-105 hover:shadow-lg transition-all`. Contains Lucide `ArrowLeft` icon (`w-4 h-4 sm:w-5 sm:h-5`) + \"Back to Home\".\n\n---\n\n**GLOBAL CSS (`index.css`):**\n\n```css\n@tailwind base;\n@tailwind components;\n@tailwind utilities;\n\n* {\n  margin: 0;\n  padding: 0;\n  box-sizing: border-box;\n}\n\nbody {\n  font-family: 'Inter', sans-serif;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n}\n```\n\n---\n\n**HTML HEAD:**\n\n- Load Inter font from Google Fonts: `https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap` with preconnect to `fonts.googleapis.com` and `fonts.gstatic.com`.\n- Title: \"404 - Page Not Found\".\n\n---\n\n**KEY COLOR PALETTE:**\n- Page gradient: `#FF8233` to `#FDAC55`\n- Accent/buttons: `#F16524`\n- Text & shapes: `#FFFFFF`\n- Menu gradient: `#FF6B1A` to `#FF9642`\n- Menu overlay backdrop: `black/40` with `backdrop-blur-sm`\n- Menu item backgrounds: `white/10`, `white/20` on hover\n\n---\n\n**DEPENDENCIES:** React, Tailwind CSS, Lucide React (`ArrowLeft`, `Menu`, `X` icons). Vite build system. No other libraries.",
+    "source_kind": "motionsites",
+    "source_id": "motionsites-ai-edge-fn",
+    "source_repo": "motionsites/motionsites.ai",
+    "source_license": "NOASSERTION",
+    "source_path": "edge-fn:get-prompt:fun-404-page",
+    "source_url": "https://motionsites.ai/prompts/fun-404-page",
+    "has_text": true,
+    "text_len": 6085,
+    "text_reconstructed": true
+  },
+  {
+    "id": "wellness-device",
+    "title": "Wellness Devicex",
+    "category": "Healthcare",
+    "type": "hero",
+    "page_type": "hero",
+    "is_free": true,
+    "description": null,
+    "prompt_text": "Build a single-page hero section for a product called \"Measured\" — a health/wellness wearable device landing page. The page is fullscreen (100vh), dark/moody aesthetic with layered imagery, a cursor-following spotlight reveal effect, and a frosted-glass navigation. Use React + Vite + Tailwind CSS + TypeScript.\n\n---\n\n## Fonts\n\n1. **Google Fonts — Inter** (weights 300-700): Used as the global default font on all elements (`* { font-family: 'Inter', sans-serif; }`)\n2. **Google Fonts — Instrument Serif** (regular + italic): Used for the hero heading \"Measured\". Load via `<link>` in index.html: `https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap`\n3. **Helvetica Neue Roman** (self-hosted woff2/woff in `/public/fonts/`): Applied via a `.font-helvetica-neue` class on the hero section wrapper. Declare with `@font-face`.\n\n---\n\n## Asset URLs (exact)\n\n- **Background Image (BG_IMAGE_1):** `https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260713_140344_79e1296a-86d7-43fd-9b5f-63ffe560f291.png&w=1280&q=85`\n- **Front Video (FRONT_VIDEO):** `https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260713_162101_0d7498c5-29bb-47bf-a99f-2773c0a880a9.mp4`\n- **Overlay Image (OVERLAY_IMAGE):** `https://soft-zoom-63098134.figma.site/_assets/v11/3f10f1876e118f72a396e05a6c2d099569478272.png`\n\n---\n\n## Page Structure & Layers (z-index order)\n\n### Navigation (z-50, fixed)\n- **Logo (top-left):** Custom SVG geometric logo (white, 28x28), resembling angular interlocking shapes. The exact SVG path: `M 256 64 L 256 128 L 192.5 128 L 160 95 L 128 64 L 96 95 L 63.5 128 L 64 128 L 128 192 L 128 256 L 64.5 256 L 32 223 L 0 192 L 0 64 L 64 0 L 192 0 Z M 256 192 L 256 256 L 192.5 256 L 160 223 L 128 192 L 128 128 L 192 128 Z` (viewBox 0 0 256 256, fill white)\n- **Desktop center pill nav (hidden on mobile):** Fixed horizontally centered, contains buttons: \"Device\", \"Real Stories\", \"Science\", \"Plans\", \"Reach Us\". Uses `.liquid-glass` styling (frosted glass). Buttons are `text-white/70`, `text-sm`, `font-medium`, rounded-full, hover to white.\n- **Desktop CTA (top-right, hidden on mobile):** `.liquid-glass` pill button with a small green dot (w-2 h-2 rounded-full bg-green-400) and text \"Reserve Yours\", white text-sm font-medium.\n- **Mobile hamburger (top-right, hidden md+):** `.liquid-glass` rounded-full pill, contains two white lines (w-5 h-[1.5px] and w-3.5 h-[1.5px]).\n\n### Mobile Fullscreen Menu (z-55)\n- Background: `#0a0a0a` solid\n- Close button: top-right, `.liquid-glass` rounded-full with X made of two rotated white lines (+45deg, -45deg)\n- Nav items stacked vertically, centered, `text-3xl sm:text-4xl`, white/90, font-medium\n- \"Reserve Yours\" CTA at bottom with green dot, `.liquid-glass` pill\n- Staggered entry animations: each item slides up from 24px with opacity 0->1, delays incremented by 60ms starting at 100ms. Uses `cubic-bezier(0.77, 0, 0.18, 1)` easing. Close button rotates in from -90deg with scale 0.8.\n\n### Hero Section (100vh, overflow hidden)\n\n**Layer 1 — Grid Background (z-0, opacity 0.1):**\n- SVG with a repeating pattern of 48px cells. Pattern draws an L-shaped path (`M 48 0 L 0 0 0 48`), stroke `#64748b`, strokeWidth 0.6, no fill.\n- The grid subtly parallax-shifts based on cursor position (offset calculated as cursor position relative to section center * 16, eased at 0.06 factor).\n\n**Layer 2 — Background Image (z-10):**\n- `BG_IMAGE_1` displayed as `background-image`, `bg-center bg-cover bg-no-repeat`, absolutely positioned inset-0.\n\n**Layer 3 — Hero Text (z-20):**\n- The word \"Measured\" in huge uppercase text\n- Font: `'Instrument Serif', serif`\n- Sizes: `text-[4.5rem]` default, `xs:text-[5.5rem]`, `sm:text-[10rem]`, `md:text-[13rem]`, `lg:text-[16rem]`\n- `leading-[0.9]`, white, centered, positioned `top-20 sm:top-28 md:top-32`\n\n**Layer 4 — Overlay Image (z-25):**\n- `OVERLAY_IMAGE` as an `<img>` tag, absolutely positioned inset-0, `w-full h-full object-cover`, pointer-events-none. This is a semi-transparent PNG that sits on top of the background to add depth/atmosphere.\n\n**Layer 5 — Spotlight Reveal (z-30):**\n- A cursor-following radial reveal mask that shows a video underneath only where the cursor hovers.\n- **Radius:** 260px\n- **Mask gradient stops:** center full white (0-40%), then feathers out: 60% at 0.75 alpha, 75% at 0.4, 88% at 0.12, 100% at 0 (fully transparent).\n- **Implementation:** A hidden `<canvas>` draws the radial gradient at the smoothed cursor position. The canvas is exported as a dataURL and applied as a CSS mask (`-webkit-mask-image` / `mask-image`) on a div that contains the video.\n- **Cursor smoothing:** Uses `requestAnimationFrame` loop with lerp factor 0.1 (`smooth += (target - smooth) * 0.1`).\n- **Video placement:** The video (`FRONT_VIDEO`) is clipped to the bottom 60% of the viewport using `clipPath: 'inset(40% 0 0 0)'`. It autoplays, loops, is muted, and uses playsInline.\n\n---\n\n## Liquid Glass CSS Effect (`.liquid-glass`)\n\n```css\n.liquid-glass {\n  background: rgba(255, 255, 255, 0.01);\n  background-blend-mode: luminosity;\n  backdrop-filter: blur(4px);\n  -webkit-backdrop-filter: blur(4px);\n  border: none;\n  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.1);\n  position: relative;\n  overflow: hidden;\n}\n.liquid-glass::before {\n  content: '';\n  position: absolute;\n  inset: 0;\n  border-radius: inherit;\n  padding: 1.4px;\n  background: linear-gradient(180deg,\n    rgba(255,255,255,0.45) 0%, rgba(255,255,255,0.15) 20%,\n    rgba(255,255,255,0) 40%, rgba(255,255,255,0) 60%,\n    rgba(255,255,255,0.15) 80%, rgba(255,255,255,0.45) 100%);\n  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);\n  -webkit-mask-composite: xor;\n  mask-composite: exclude;\n  pointer-events: none;\n}\n```\n\nThis creates a near-invisible frosted glass background with a subtle gradient border using the mask-composite trick (border-only gradient).\n\n---\n\n## Key Behaviors\n\n1. **Body overflow locks** when mobile menu is open\n2. **No scrolling** — single viewport hero only\n3. **Background is white** on the root container (`bg-white`), but the hero section fills the entire viewport with dark imagery\n4. **The reveal effect only shows video in the bottom 60%** of the screen (the top 40% is masked out via clipPath), so hovering over the top portion shows nothing extra — just the base layers\n\n---\n\n## Summary of the Visual Effect\n\nThe user sees a dark, atmospheric product shot (wearable device on a wrist) with \"Measured\" in giant serif text overlaid. A semi-transparent overlay adds haze/depth. As the user moves their cursor, a soft spotlight circle reveals an underlying looping video (showing the product in motion) — but only in the lower portion of the screen. The grid background subtly shifts with parallax. Navigation uses an elegant frosted-glass pill aesthetic.",
+    "source_kind": "motionsites",
+    "source_id": "motionsites-ai-edge-fn",
+    "source_repo": "motionsites/motionsites.ai",
+    "source_license": "NOASSERTION",
+    "source_path": "edge-fn:get-prompt:wellness-device",
+    "source_url": "https://motionsites.ai/prompts/wellness-device",
+    "has_text": true,
+    "text_len": 6903,
+    "text_reconstructed": true
+  },
+  {
+    "id": "church-community",
+    "title": "Church Community",
+    "category": "Community",
+    "type": "mobile",
+    "page_type": "hero",
+    "is_free": true,
+    "description": null,
+    "prompt_text": "Create a mobile app showcase page displaying 3 iPhone mockups for \"Christ Family Church\" -- a church website mobile design. Use React Native with Expo Router, react-native-reanimated, and Manrope font (weights: Light, Regular, Medium).\n\n**General layout:**\n- Background color: `#5A4C41`\n- 3 iPhone frames shown side by side on desktop (horizontal scroll), stacked vertically on mobile (<900px) with scale-to-fit\n- Desktop: 40px padding, 48px gap between phones\n- Mobile: 20px padding, 32px gap, phones scale down to fit screen width\n- Each phone frame: 375x812 artboard inside a black rounded frame (borderRadius 50, borderWidth 2, borderColor `#2a2a2a`), with dynamic island notch (126x36, black, borderRadius 18) and home indicator bar (134x5, white 30% opacity)\n- Soft shadow on frames: `shadowColor: #000, offset: {0, 12}, opacity: 0.3, radius: 24`\n\n**Assets (all from framerusercontent.com):**\n- Portrait photo: `https://framerusercontent.com/images/7nIpqB1Y0QYgLe70j5NmdtK5Rk.png`\n- Logo (cross icon): `https://framerusercontent.com/images/Fr3jIzrNgNkSo8ZgFFTkpS308.png`\n- Quote mark icon: `https://framerusercontent.com/images/DmIPflrtvNHr7mnr6k3K5Ayn8w.png`\n- Star/compass decorative icon: `https://framerusercontent.com/images/yi0dRg7NDCZUtTbPxCa115nMU5M.png`\n- Hero image (hands raised worship): `https://framerusercontent.com/images/G9ZdWZubRnpc37d5d7uUzqaBqiw.png`\n- Avatars row: `https://framerusercontent.com/images/l3LBaTwnoXLWZd6axR7m3Q9iWeU.png`\n- Arrow icon: `https://framerusercontent.com/images/zBmfi9e2hdwkTHpcMqbS61FIc3c.png`\n- Screen 3 hero (preacher): `https://framerusercontent.com/images/Q7jLZsObox26xQCiWPAVYWzTsYs.png`\n- Play button icon: `https://framerusercontent.com/images/3M0CPgfOsuyRxuRs37KkTOTrUM.png`\n\n**Color palette:**\n- Dark background: `rgb(29, 25, 26)`\n- Cream/gold accent: `rgb(241, 229, 198)` / `#F1E5C6`\n- White: `#FFFFFF`\n- Light text on dark: `rgba(255, 255, 255, 0.77)`, `rgba(255, 255, 255, 0.6)`, `rgba(255, 255, 255, 0.5)`, `rgba(255, 255, 255, 0.3)`\n- Off-white: `#F5F0E8`\n\n**Typography (all Manrope):**\n- Brand name in header: 17px Regular, white, lineHeight 20\n- Rotated sidebar text: 14px, Medium (name) and Regular (role), letterSpacing 1.2, half-transparent white\n- Quote text: 20px Regular, lineHeight 27, `rgba(255,255,255,0.77)`\n- Event card title: 36px Medium, letterSpacing -0.5, color `#1a1a1a`\n- Event card date: 17px Regular, `#888888`\n- Hero headline (Screen 2): 52px Light, lineHeight 52, letterSpacing -2.5, cream color `#F1E5C6`\n- Hero subtext: 21px Regular, lineHeight 27, white 60% opacity\n- CTA button text: 21px Medium, dark color\n- Section title \"Upcoming\" (Screen 3): 38px Regular, letterSpacing -0.8, white\n- Event list titles: 21px Regular, lineHeight 26\n- Event times: 17px Regular, `#999999`\n- Date card day: 34px Medium\n- Date card month: 18px Regular\n- Menu links: 36px Light, letterSpacing -0.8, white\n\n**Animations:**\n- Each iPhone frame fades in with `FadeIn.duration(600)` using react-native-reanimated\n- All text uses a typewriter effect (characters appear one by one) with configurable delay and speed\n- Menu overlay fades in with `FadeIn.duration(200)`\n\n**Screen 1 - Testimonial:**\n- Dark background (`rgb(29, 25, 26)`)\n- Header: logo (46x46) + \"Christ Family Church\" text on left, hamburger menu (3 lines, 2 long + 1 short) on right, paddingTop 48, paddingHorizontal 19\n- Rotated text on left side: \"Anna Miller\" / \"Community Member\" rotated -90deg, positioned at left: -44, top: 115, translateX: -60\n- Portrait photo: positioned at top: 120, left: 125, size 240x300\n- Quote icon (28x24) at left: 19, top: 395\n- Quote text at left: 19, top: 440, width: 336: \"We want to be a family where people can connect and benefit from friendships in Christ.\"\n- White card at bottom (height 245): contains \"Sunday Worship Service\" (36px), \"Dec 7th, 10-11:30am\", \"Learn more\" with arrow, star icon (48x48) bottom-right\n\n**Screen 2 - Hero/Landing:**\n- Full hero image covering top 472px with dark overlay (15% black)\n- Same header as Screen 1\n- Avatars image (149x53) at left: 19, top: 442\n- Headline at top: 520: \"Take a step toward the light\"\n- Subtext: \"Discover faith, hope, and a home for your soul\"\n- Cream CTA button at bottom (height 52, bottom: 32): \"Join us\" with arrow icon\n\n**Screen 3 - Sermons/Events:**\n- Hero image at top: covers 345px height (width: 415, offset left: -20), with 30% black overlay\n- Play button (65x65 circle, cream background) centered at top: 175\n- White body section starting at top: 343\n- Dark band inside body (height 220, `rgb(29, 25, 26)`) behind \"Upcoming\" title\n- Events list with date cards (68x90):\n  - 14 Dec: \"Luke 1 | A Story From Zechariah\" - 6:30 - 8:00 pm (white date card)\n  - 21 Dec: \"Romans 15 | Living For Christ Alone\" - 8:30 - 10:00 am (cream date card)\n  - 28 Dec: \"Romans 9 | The Sovereignty Of God\" - 5:30 - 7:00 pm (cream date card)\n  - 4 Jan: \"John 3 | Born Again\" (partial/faded at 50% opacity, cream date card)\n- Gap between event rows: 22px\n\n**Menu overlay (shared across all screens):**\n- Full-screen dark overlay (`rgb(29, 25, 26)`), z-index 100\n- Header with logo + brand name and X close button (two rotated lines)\n- Navigation links: Home, About, Events, Sermons, Contact (36px Light)\n- Gap between links: 22px\n- Cream CTA \"Join us\" button at bottom (bottom: 36)\n- Hamburger button on each screen opens the menu; close button dismisses it",
+    "source_kind": "motionsites",
+    "source_id": "motionsites-ai-edge-fn",
+    "source_repo": "motionsites/motionsites.ai",
+    "source_license": "NOASSERTION",
+    "source_path": "edge-fn:get-prompt:church-community",
+    "source_url": "https://motionsites.ai/prompts/church-community",
+    "has_text": true,
+    "text_len": 5380,
+    "text_reconstructed": true
   }
 ]
