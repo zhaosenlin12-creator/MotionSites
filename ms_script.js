@@ -174,6 +174,7 @@ let __MS_BOOT_DONE = false;
 let __MS_TEXT_CACHE = Object.create(null);
 let __MS_TEXT_PROMISES = Object.create(null);
 let __MS_TEXT_INDEX = null;
+let __MS_TEXT_INDEX_PROMISE = null;
 let __MS_MEDIA_OBSERVER = null;
 
 function debounce(fn, ms) {
