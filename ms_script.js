@@ -195,11 +195,14 @@ async function loadPromptText(id) {
   if (!id) return '';
   if (__MS_TEXT_CACHE[id] != null) return __MS_TEXT_CACHE[id];
   if (__MS_TEXT_PROMISES[id]) return __MS_TEXT_PROMISES[id];
-  let idx = __MS_TEXT_INDEX;
-  if (!idx) {
-    try { idx = await fetchJSON('data/catalog-text-index.json'); } catch (e) { idx = {}; }
-    __MS_TEXT_INDEX = idx;
+  // Dedupe: when N parallel calls fire before the first one resolves,
+  // they all share the same in-flight promise instead of N duplicate fetches.
+  if (!__MS_TEXT_INDEX_PROMISE) {
+    __MS_TEXT_INDEX_PROMISE = fetchJSON('data/catalog-text-index.json')
+      .then(function (v) { __MS_TEXT_INDEX = v; return v; })
+      .catch(function (e) { return {}; });
   }
+  const idx = await __MS_TEXT_INDEX_PROMISE;
   const rel = idx[id];
   if (!rel) { __MS_TEXT_CACHE[id] = ''; return ''; }
   const p = (async function () {
