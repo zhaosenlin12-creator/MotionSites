@@ -1,4 +1,4 @@
-﻿# MotionSites Prompts — A Curated Library of Motion-Driven UI
+# MotionSites Prompts — A Curated Library of Motion-Driven UI
 
 
 ## 🚀 在线浏览（Live Site）
@@ -9,7 +9,7 @@
 
 > 备用入口：在浏览器里把上面的链接粘进去即可。如需本地运行，请看下面的 *Run it locally* 章节；要重新部署，请看 *Push to GitHub & Deploy* 章节。
 
-> An offline-first, single-file catalog of **504 motion-driven UI prompts** — landing pages, hero scenes, agency showcases, dashboards, and more. Browse, search, copy, and export every prompt locally. No login, no network call, no paywall.
+> A progressively-loaded, offline-first catalog of **504 motion-driven UI prompts** — landing pages, hero scenes, agency showcases, dashboards, and more. Browse, search, copy, and export every prompt locally. No login, no third-party tracking, no paywall. Cold loads land paint-ready in ~34 ms (DOMContentLoaded) and finish in ~239 ms (loadEvent); only one small JSON per page + one prompt body per modal are fetched.
 
 > The catalog combines **365 MotionSites main-library entries** (with rich previews and video) and **139 community-picked prompts** sourced from public CC0 / MIT / NOASSERTION GitHub repositories sourced from public CC0-licensed GitHub repositories. Every community record keeps its source repository, file path, and license in the detail panel.
 
@@ -31,25 +31,21 @@
 
 ## Run it locally
 
-The entire catalog is a single static file. You can open it directly from disk:
+The catalog ships as `index.html` + `ms_script.js` + a `data/` directory of progressive JSON files. You can serve it with any static server (no Node required to use the catalog):
 
 ```bash
 git clone https://github.com/<your-account>/motionsites-prompts.git
 cd motionsites-prompts
-# Windows
-start index.html
-# macOS
-open index.html
-# Linux
-xdg-open index.html
-```
-
-...or serve it with any static server (no Node required to use the catalog):
-
-```bash
+# Serve (any static server works):
 python -m http.server 8000
-# then visit http://localhost:8000
+# or
+npx serve .
+# or use the bundled dev server (forces re-read on each request):
+node server-stable.js
+# then visit http://localhost:8000  (or  http://127.0.0.1:8000  for the bundled one)
 ```
+
+Note: opening `index.html` directly via `file://` works for the static HTML, but `fetch()` is blocked by browsers on `file://` URLs, so the catalog data will not load. Use a local server.
 
 ## Deploy to Cloudflare Pages
 
@@ -145,17 +141,30 @@ A custom domain like `motionsites.com` can be added once you own the DNS zone in
 
 ## Performance budget
 
-Measured locally with Edge 138 in headless mode against `python -m http.server`:
+Measured locally with Chromium (Playwright headless) against `node server-stable.js`:
 
 | Metric | Value |
 | --- | --- |
-| First Contentful Paint | ~700 ms |
-| DOMContentLoaded | ~1.7 s |
-| Total transfer | 3.2 MB (gzipped by Cloudflare to ~720 KB) |
-| Cards rendered | 364 |
+| DOMContentLoaded | ~34 ms |
+| loadEvent | ~239 ms |
+| Total transfer (cold) | ~33 KB HTML + ~38 KB JS + ~1.5 KB lite JSON + ~85 KB meta JSON (gzip) |
+| Total transfer (warm) | Cached; only per-id prompt body is fetched when a card opens |
+| Cards rendered (viewport) | ~120, progressively painted in 60-card batches |
+| Skeletons remaining after boot | 0 |
 | Console errors | 0 |
+| Records | 504 (476 with full text, 297 images, 121 videos, 86 concepts) |
 
-All preview media is `loading="lazy"`, the grid is built with `DocumentFragment`, and event delegation is used for clicks and image fallback — see `ms_script.js`.
+Progressive architecture:
+
+- `index.html` ships with 24 inline skeleton cards so the user sees grid structure immediately.
+- Google Fonts is loaded async via `media="print" onload="this.media='all'"` so it never blocks paint.
+- `data/catalog-lite.json` (~0.7 KB gzipped) is fetched first so chips paint with real counts while the full meta is downloading.
+- `data/catalog-meta.json` (~85 KB gzipped) is fetched next, then `__MS_CLEAR_SKELETONS()` removes placeholders.
+- Cards are painted 60 per `requestAnimationFrame` batch by `renderProgressive()`.
+- Each card's `<img>` / `<video>` is gated by `data-armed=1` and swapped in by an `IntersectionObserver` (300 px `rootMargin`) when the card scrolls into view.
+- Opening a modal triggers `loadPromptText(id)`, which fetches one `data/catalog-text/<id>.txt` chunk (not the whole 4 MB blob).
+
+See `scripts/build.js` for the split and `ms_script.js` for the client.
 
 
 ## Live audit (2026-07-24)
@@ -185,26 +194,33 @@ Cloudflare Pages silently replaces any single file larger than 25 MiB with an HT
 
 ```
 .
-|-- index.html              # 3.2 MB self-contained catalog (open this)
-|-- ms_template.html        # HTML skeleton (head + body + placeholders)
-|-- ms_script.js            # Client-side render / filter / modal logic
+|-- index.html              # ~33 KB shell with 24 inline skeleton cards
+|-- ms_template.html        # HTML skeleton (head + body + placeholders + skeletons)
+|-- ms_script.js            # Client-side progressive render / filter / modal logic
 |-- wrangler.toml           # Cloudflare Pages config
 |-- _headers                # Cache + security headers (Cloudflare)
 |-- _redirects              # Static-site routing (none used)
 |-- data/
-|   |-- ms_prompts_merged.json     # 235 KB - metadata (titles, categories, image URLs)
-|   `-- ms_prompts_with_text.json  # 3.1 MB - full prompt bodies
+|   |-- ms_prompts_merged.json          # 546 KB raw - source meta (titles, categories, image URLs)
+|   |-- ms_prompts_with_text.json       # 4.5 MB raw - source full prompt bodies
+|   |-- catalog-lite.json               # 1.5 KB raw / 0.7 KB gzip - counts + top-9 categories
+|   |-- catalog-lite.json.gz            # gzipped twin
+|   |-- catalog-meta.json               # 441 KB raw / 85 KB gzip - everything except prompt_text
+|   |-- catalog-meta.json.gz            # gzipped twin
+|   |-- catalog-text-index.json         # 35 KB raw - id -> catalog-text/<id>.txt map
+|   |-- catalog-text.json               # 4 MB raw / 1.3 MB gzip - id -> prompt_text map (warm-cache)
+|   |-- catalog-text.json.gz            # gzipped twin
+|   `-- catalog-text/                   # 476 .txt chunks fetched per-id when a card opens
 |-- assets/
-|   |-- previews/                   # 246 webp / mp4 previews
-|   `-- thumbnails/                 # 55 webp thumbnails
+|   |-- previews/                       # webp / mp4 / webm previews
+|   `-- thumbnails/                     # smaller webp thumbnails
 |-- scripts/
-|   `-- build.js                    # data/*.json + ms_template.html + ms_script.js -> index.html
-|-- docs/                           # README screenshots
+|   |-- build.js                        # source JSON -> split progressive JSON + index.html
+|   `-- lib/
+|       `-- catalog-utils.js            # sortCatalog() shared with build.js
+|-- docs/                              # README screenshots + perf-after.png
 |-- CONTRIBUTING.md
-`-- LICENSE                         # MIT
-|-- docs/                           # README screenshots
-|-- CONTRIBUTING.md
-`-- LICENSE                         # MIT
+`-- LICENSE                            # MIT
 ```
 
 ## Rebuild `index.html` from source
@@ -214,18 +230,20 @@ The shipped `index.html` is pre-generated, but you can regenerate it any time:
 ```bash
 node scripts/build.js
 # -> Records=504 complete=476 images=297 videos=121 concepts=86 motionsites=365 community=139
-# -> Wrote index.html bytes 3186593
-# -> [build] demoting over-limit preview fun-404-page 43.99MiB
-# -> SELF-VERIFY OK records=364
+# -> Wrote catalog-lite.json  1.5 KB  (gzip 0.7 KB)
+# -> Wrote catalog-meta.json  441.1 KB  (gzip 84.9 KB)
+# -> Wrote catalog-text.json  4061.0 KB  (gzip 1317.7 KB)
+# -> Wrote catalog-text/  476 files
+# -> Wrote C:\ms_open\index.html bytes 33610
 ```
 
-The build merges `data/ms_prompts_merged.json` with `data/ms_prompts_with_text.json`, enriches each entry with a per-category colour palette, writes the assembled JSON into a `<script>` block inside `ms_template.html`, and emits the final `index.html`.
+The build merges `data/ms_prompts_merged.json` with `data/ms_prompts_with_text.json`, enriches each entry with a per-category colour palette, splits the catalog into three progressive JSON files (`catalog-lite.json`, `catalog-meta.json`, `catalog-text-index.json` + `catalog-text/<id>.txt` chunks + a backup `catalog-text.json`), and emits a 33 KB `index.html` that references `ms_script.js` instead of inlining the data. The client (`ms_script.js`) then fetches LITE first to paint chips, META to render cards, and TEXT chunks on demand when a modal opens.
 
 To update the catalog with new prompts:
 
 1. Edit `data/ms_prompts_merged.json` (add a new record) and `data/ms_prompts_with_text.json` (add the matching `prompt_text`).
-2. Drop a preview into `assets/previews/<id>.webp` and reference it via `local_rel` in the metadata.
-3. Run `node scripts/build.js` and commit the regenerated `index.html`.
+2. Drop a preview into `assets/previews/<id>.webp` (or `.mp4` / `.webm`) and reference it via `local_rel` in the metadata.
+3. Run `node scripts/build.js` and commit the regenerated `data/catalog-*.json`, `data/catalog-text/` and `index.html`.
 
 
 ## Free-prompt recovery from `motionsites.ai`
