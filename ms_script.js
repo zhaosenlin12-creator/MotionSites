@@ -167,6 +167,59 @@ const fnv = (id) => { let h = 2166136261 >>> 0; for (let i = 0; i < id.length; i
 
 let current = null, compact = false;
 
+// -------- progressive-loading state --------
+let DATA = [];
+let LITE = null;
+let __MS_BOOT_DONE = false;
+let __MS_TEXT_CACHE = Object.create(null);
+let __MS_TEXT_PROMISES = Object.create(null);
+let __MS_TEXT_INDEX = null;
+let __MS_MEDIA_OBSERVER = null;
+
+function debounce(fn, ms) {
+  let timer = null;
+  return function () {
+    const args = arguments;
+    if (timer) clearTimeout(timer);
+    timer = setTimeout(function () { timer = null; fn.apply(null, args); }, ms);
+  };
+}
+
+async function fetchJSON(url) {
+  const res = await fetch(url, { cache: 'force-cache' });
+  if (!res.ok) throw new Error('fetchJSON ' + url + ' ' + res.status);
+  return res.json();
+}
+
+async function loadPromptText(id) {
+  if (!id) return '';
+  if (__MS_TEXT_CACHE[id] != null) return __MS_TEXT_CACHE[id];
+  if (__MS_TEXT_PROMISES[id]) return __MS_TEXT_PROMISES[id];
+  let idx = __MS_TEXT_INDEX;
+  if (!idx) {
+    try { idx = await fetchJSON('data/catalog-text-index.json'); } catch (e) { idx = {}; }
+    __MS_TEXT_INDEX = idx;
+  }
+  const rel = idx[id];
+  if (!rel) { __MS_TEXT_CACHE[id] = ''; return ''; }
+  const p = (async function () {
+    try {
+      const res = await fetch('data/' + rel, { cache: 'force-cache' });
+      if (!res.ok) throw new Error('text ' + id + ' ' + res.status);
+      const txt = await res.text();
+      __MS_TEXT_CACHE[id] = txt;
+      return txt;
+    } catch (e) {
+      __MS_TEXT_CACHE[id] = '';
+      return '';
+    } finally {
+      delete __MS_TEXT_PROMISES[id];
+    }
+  })();
+  __MS_TEXT_PROMISES[id] = p;
+  return p;
+}
+
 // -------- palette / placeholder art --------
 const PALETTES = [
   { name: 'Indigo Aurora', a: '#7b9cff', b: '#b48cff', c: '#3d6cff' },
@@ -278,12 +331,64 @@ function onImgError(e) {
 }
 
 function mediaOf(x, forPreview) {
+  // forPreview=true is the detail modal; load immediately
   if (x.local_kind === 'mp4') return '<video src="' + esc(x.local_rel) + '" ' + (forPreview ? 'controls ' : '') + 'autoplay loop muted playsinline preload="metadata"></video>';
   if (x.local_kind === 'hls') return placeholderHTML(x, { big: forPreview });
   if (x.local_kind === 'webp' || x.local_kind === 'gif' || x.local_kind === 'png' || x.local_kind === 'jpeg') {
     return '<img src="' + esc(x.local_rel) + '" alt="' + esc(x.title) + '" loading="lazy" decoding="async">';
   }
   return placeholderHTML(x, { big: forPreview });
+}
+
+// Lazy card media: a placeholder div with data-armed=1; the IntersectionObserver
+// swaps in the real <img>/<video> when the card scrolls into view.
+function lazyMediaOf(x) {
+  const k = x.local_kind;
+  const src = x.local_rel || '';
+  const title = esc(x.title || x.id || '');
+  const ph = placeholderHTML(x, { big: false });
+  if (!k || k === 'other' || k === 'hls' || !src) {
+    return '<div class="media" data-armed="1" data-kind="placeholder">' + ph + '</div>';
+  }
+  if (k === 'mp4' || k === 'webm') {
+    return '<div class="media" data-armed="1" data-kind="video" data-src="' + esc(src) + '" data-title="' + title + '">' + ph + '</div>';
+  }
+  if (k === 'webp' || k === 'gif' || k === 'png' || k === 'jpeg') {
+    return '<div class="media" data-armed="1" data-kind="image" data-src="' + esc(src) + '" data-title="' + title + '">' + ph + '</div>';
+  }
+  return '<div class="media" data-armed="1" data-kind="placeholder">' + ph + '</div>';
+}
+
+function setupMediaObserver() {
+  if (typeof IntersectionObserver === 'undefined') return null;
+  if (__MS_MEDIA_OBSERVER) return __MS_MEDIA_OBSERVER;
+  __MS_MEDIA_OBSERVER = new IntersectionObserver(function (entries) {
+    entries.forEach(function (en) {
+      if (!en.isIntersecting) return;
+      const el = en.target;
+      if (!el || el.dataset.armed !== '1') return;
+      delete el.dataset.armed;
+      __MS_MEDIA_OBSERVER.unobserve(el);
+      const kind = el.dataset.kind;
+      const src  = el.dataset.src  || '';
+      const tit  = el.dataset.title || '';
+      let real = '';
+      if (kind === 'image') real = '<img src="' + esc(src) + '" alt="' + esc(tit) + '" loading="lazy" decoding="async">';
+      else if (kind === 'video') real = '<video src="' + esc(src) + '" autoplay loop muted playsinline preload="metadata"></video>';
+      else return;
+      const tmp = document.createElement('div');
+      tmp.innerHTML = real;
+      while (tmp.firstChild) el.appendChild(tmp.firstChild);
+    });
+  }, { rootMargin: '300px 0px', threshold: 0.01 });
+  return __MS_MEDIA_OBSERVER;
+}
+
+function observeMediaIn(root) {
+  const obs = setupMediaObserver();
+  if (!obs || !root) return;
+  const nodes = (root.nodeType === 1 ? root : document).querySelectorAll('.media[data-armed="1"]');
+  for (let i = 0; i < nodes.length; i++) obs.observe(nodes[i]);
 }
 
 function options(id, key) {
@@ -301,7 +406,7 @@ function cardHTML(x) {
     + (full ? '<span class="badge full">' + t('fullBadge') + '</span>' : '<span class="badge muted">' + t('metadataBadge') + '</span>')
     + (x.source_kind === 'community' ? '<span class="badge community">' + t('sourceBadge') + '</span>' : '')
     + '</div>'
-    + '<div class="media">' + mediaOf(x, false) + '</div>'
+    + '<div class="card-media-wrap">' + lazyMediaOf(x) + '</div>'
     + '<div class="body">'
     + '<h2>' + esc(x.title) + '</h2>'
     + '<div class="desc">' + esc(x.description || '—') + '</div>'
@@ -331,19 +436,66 @@ function render() {
     });
   }
   $('count').innerHTML = '<b style="color:var(--text)">' + list.length.toLocaleString() + '</b> ' + t('resultsSuffix') + ' · ' + t('totalSuffix') + ' ' + DATA.length.toLocaleString() + ' ' + t('prompts');
-  const grid = $('grid');
-  if (list.length === 0) {
-    grid.innerHTML = '<div class="empty"><b>' + t('empty') + '</b><br>' + t('emptyHint') + '</div>';
-  } else {
-    // build with DocumentFragment for fewer reflows
-    const frag = document.createDocumentFragment();
-    const tmp = document.createElement('div');
-    tmp.innerHTML = list.map(cardHTML).join('');
-    while (tmp.firstChild) frag.appendChild(tmp.firstChild);
-    grid.innerHTML = '';
-    grid.appendChild(frag);
-  }
+  renderProgressive(list);
   if (q) animateSearch(q); else $('spotlight').classList.remove('show');
+}
+
+// -------- progressive render --------
+function renderBatch(list, start, end) {
+  const grid = $('grid');
+  if (start === 0) {
+    grid.innerHTML = '';
+    if (list.length === 0) {
+      grid.innerHTML = '<div class="empty"><b>' + t('empty') + '</b><br>' + t('emptyHint') + '</div>';
+      grid.dataset.state = 'empty';
+      return 0;
+    }
+    grid.dataset.state = 'ready';
+  }
+  const endClamped = Math.min(end, list.length);
+  const slice = list.slice(start, endClamped);
+  if (slice.length === 0) return 0;
+  const tmp = document.createElement('div');
+  tmp.innerHTML = slice.map(cardHTML).join('');
+  const frag = document.createDocumentFragment();
+  while (tmp.firstChild) frag.appendChild(tmp.firstChild);
+  grid.appendChild(frag);
+  observeMediaIn(grid);
+  return slice.length;
+}
+
+function renderProgressive(list) {
+  if (typeof requestAnimationFrame === 'undefined') {
+    renderBatch(list, 0, list.length);
+    return;
+  }
+  const BATCH = 60;
+  let i = 0;
+  function step() {
+    const n = renderBatch(list, i, i + BATCH);
+    i += n;
+    if (i < list.length) requestAnimationFrame(step);
+  }
+  requestAnimationFrame(step);
+}
+
+function chipInitFromLite(lite) {
+  if (!lite || !$('chips')) return;
+  const top = (lite.topCategories || []).slice(0, 9);
+  const total = lite.total || 0;
+  const html = ['<span class="chip active" data-cat="">' + t('allCatsChip') + ' <b>' + total + '</b></span>']
+    .concat(top.map(function (c) { return '<span class="chip" data-cat="' + esc(c.category) + '">' + esc(c.category) + ' <b>' + c.count + '</b></span>'; }))
+    .join('');
+  $('chips').innerHTML = html;
+  $('chips').querySelectorAll('.chip').forEach(function (c) {
+    c.addEventListener('click', function () {
+      const cat = c.dataset.cat;
+      const sel = $('cat');
+      if (sel) sel.value = cat;
+      $('chips').querySelectorAll('.chip').forEach(function (x) { x.classList.toggle('active', x.dataset.cat === cat); });
+      render();
+    });
+  });
 }
 
 function animateSearch(q) {
@@ -393,14 +545,36 @@ async function copyText(text) {
   }
 }
 
-function openItem(id) {
+async function openItem(id) {
   current = DATA.find((x) => x.id === id);
   if (!current) return;
-  const full = !!(current.prompt_text && current.prompt_text.trim());
+  const isVideo = current.local_kind === 'mp4' || current.local_kind === 'hls';
   $('title').innerHTML = esc(current.title) + ' <small>' + esc(current.id) + '</small>';
   $('description').textContent = current.description || '—';
+  $('tags').innerHTML = [
+    '<span class="tag accent">' + esc(current.category || '—') + '</span>',
+    '<span class="tag">' + esc(current.type || '—') + '</span>',
+    '<span class="tag" id="prompt-state-tag" style="color:var(--orange);border-color:rgba(255,186,114,.45)">' + t('modalLoading') + '</span>',
+    current.local_rel ? '<span class="tag">' + (isVideo ? t('video') : t('visual')) + '</span>' : '<span class="tag">' + t('conceptBadge') + '</span>'
+  ].join('');
+  $('preview').innerHTML = mediaOf(current, true);
+  $('prompt').textContent = t('modalLoading');
+  $('prompt').dataset.mode = 'loading';
+  $('copy').disabled = true;
+  $('download').disabled = true;
+  try { $('dlg').showModal(); } catch (e) { /* not in secure context */ }
+
+  // Lazy-load the prompt body only when the modal opens
+  let body = current.prompt_text;
+  if (!body || !body.trim()) {
+    body = await loadPromptText(current.id);
+    current.prompt_text = body;
+  }
+  // If the user already closed the modal, stop here
+  if (!$('dlg').open) return;
+  const full = !!(body && body.trim());
   if (full) {
-    $('prompt').textContent = current.prompt_text;
+    $('prompt').textContent = body;
     $('prompt').dataset.mode = 'prompt';
   } else {
     $('prompt').innerHTML = metaPanelHTML(current);
@@ -408,15 +582,13 @@ function openItem(id) {
   }
   $('copy').disabled = !full;
   $('download').disabled = !full;
-  const isVideo = current.local_kind === 'mp4' || current.local_kind === 'hls';
-  $('tags').innerHTML = [
-    '<span class="tag accent">' + esc(current.category || '—') + '</span>',
-    '<span class="tag">' + esc(current.type || '—') + '</span>',
-    full ? '<span class="tag" style="color:var(--green);border-color:rgba(92,220,177,.45)">' + t('fullPrompt') + '</span>' : '<span class="tag" style="color:var(--orange);border-color:rgba(255,186,114,.45)">' + t('metadataOnly') + '</span>',
-    current.local_rel ? '<span class="tag">' + (isVideo ? t('video') : t('visual')) + '</span>' : '<span class="tag">' + t('conceptBadge') + '</span>'
-  ].join('');
-  $('preview').innerHTML = mediaOf(current, true);
-  try { $('dlg').showModal(); } catch (e) { /* not in secure context */ }
+  // Replace the loading tag with the final state
+  const tag = $('prompt-state-tag');
+  if (tag) {
+    tag.outerHTML = full
+      ? '<span class="tag" style="color:var(--green);border-color:rgba(92,220,177,.45)">' + t('fullPrompt') + '</span>'
+      : '<span class="tag" style="color:var(--orange);border-color:rgba(255,186,114,.45)">' + t('metadataOnly') + '</span>';
+  }
 }
 
 function metaPanelHTML(x) {
@@ -517,7 +689,8 @@ $('grid').addEventListener('error', onImgError, true); // capture for img errors
 
 // Filter events
 ['q', 'cat', 'type', 'source', 'media'].forEach((id) => {
-  $(id).addEventListener(id === 'q' ? 'input' : 'change', render);
+  if (id === 'q') { $(id).addEventListener('input', debounce(render, 120)); }
+  else { $(id).addEventListener('change', render); }
 });
 
 // Keyboard
@@ -648,6 +821,38 @@ function rebuildSourceOptions() {
   if (cur && (cur === '' || present.has(cur))) sel.value = cur;
 }
 // -------- boot --------
-['cat', 'type'].forEach((id) => options(id, id === 'cat' ? 'category' : 'type'));
-rebuildSourceOptions();
-applyLang(); // also calls render() and chipInit() at the end
+async function bootstrap() {
+  if (__MS_BOOT_DONE) return;
+  __MS_BOOT_DONE = true;
+
+  setupMediaObserver();
+
+  // 1) LITE comes first so chips paint with real numbers right away.
+  try {
+    LITE = await fetchJSON('data/catalog-lite.json');
+    chipInitFromLite(LITE);
+  } catch (e) { /* fall through to full bootstrap */ }
+
+  // 2) Full meta + body index.
+  try {
+    DATA = await fetchJSON('data/catalog-meta.json');
+    try { __MS_TEXT_INDEX = await fetchJSON('data/catalog-text-index.json'); } catch (e) {}
+  } catch (e) {
+    toast(t('failedToLoad'), 'warn');
+    return;
+  }
+
+  // 3) Clear skeletons now that data is here.
+  if (typeof window.__MS_CLEAR_SKELETONS === 'function') window.__MS_CLEAR_SKELETONS();
+
+  // 4) Wire selects + apply language (which renders + chips).
+  ['cat', 'type'].forEach(function (id) { options(id, id === 'cat' ? 'category' : 'type'); });
+  rebuildSourceOptions();
+  applyLang();
+
+  // 5) Warm-cache first 12 prompt bodies so opening them feels instant.
+  const warm = DATA.slice(0, 12);
+  warm.forEach(function (x) { loadPromptText(x.id); });
+}
+
+bootstrap();
