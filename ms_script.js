@@ -350,13 +350,16 @@ function lazyMediaOf(x) {
   if (!k || k === 'other' || k === 'hls' || !src) {
     return '<div class="media" data-armed="1" data-kind="placeholder">' + ph + '</div>';
   }
-  if (k === 'mp4' || k === 'webm') {
-    return '<div class="media" data-armed="1" data-kind="video" data-src="' + esc(src) + '" data-title="' + title + '">' + ph + '</div>';
-  }
-  if (k === 'webp' || k === 'gif' || k === 'png' || k === 'jpeg') {
-    return '<div class="media" data-armed="1" data-kind="image" data-src="' + esc(src) + '" data-title="' + title + '">' + ph + '</div>';
-  }
-  return '<div class="media" data-armed="1" data-kind="placeholder">' + ph + '</div>';
+  // Defensive: trust the URL extension over local_kind when they disagree,
+  // so a single stale "local_kind=mp4" pointing at a renamed file does not blackhole the card.
+  const ext = (src.split('?')[0].split('#')[0].split('.').pop() || '').toLowerCase();
+  const looksImage = ext === 'webp' || ext === 'gif' || ext === 'png' || ext === 'jpg' || ext === 'jpeg';
+  const looksVideo = ext === 'mp4' || ext === 'webm' || ext === 'mov';
+  let kind = 'placeholder';
+  if (looksVideo && (k === 'mp4' || k === 'webm' || k === 'other')) kind = 'video';
+  else if (looksImage || k === 'webp' || k === 'gif' || k === 'png' || k === 'jpeg') kind = 'image';
+  else if (k === 'mp4' || k === 'webm') kind = 'video';
+  return '<div class="media" data-armed="1" data-kind="' + kind + '" data-src="' + esc(src) + '" data-title="' + title + '">' + ph + '</div>';
 }
 
 function setupMediaObserver() {
@@ -376,6 +379,9 @@ function setupMediaObserver() {
       if (kind === 'image') real = '<img src="' + esc(src) + '" alt="' + esc(tit) + '" loading="lazy" decoding="async">';
       else if (kind === 'video') real = '<video src="' + esc(src) + '" autoplay loop muted playsinline preload="metadata"></video>';
       else return;
+      // Remove the placeholder child so it does not cover the new media (it is position:absolute).
+      const ph = el.querySelector('.ph-art');
+      if (ph) ph.remove();
       const tmp = document.createElement('div');
       tmp.innerHTML = real;
       while (tmp.firstChild) el.appendChild(tmp.firstChild);
