@@ -1,4 +1,4 @@
-﻿# Node / dependencies
+# Node / dependencies
 node_modules/
 npm-debug.log*
 yarn-debug.log*
@@ -30,7 +30,7 @@ preview.png
 # Rollback / recovery archives (deploy helpers)
 .rollback/
 
-# This repo's deploy scripts log here by default
+# This repo
 deploy*.log
 deploy*.err
 wrangler*.log
@@ -41,10 +41,10 @@ server.out
 # Local source research caches
 /sources/
 
-
 # Local static server scratch
 server.js
 
 # Scratch helpers under scripts/
 scripts/_*.js
 scripts/_*.txt
+scripts/_*.py

@@ -176,6 +176,12 @@ let __MS_TEXT_PROMISES = Object.create(null);
 let __MS_TEXT_INDEX = null;
 let __MS_TEXT_INDEX_PROMISE = null;
 let __MS_MEDIA_OBSERVER = null;
+const __MS_VIDEO_MAX_CONCURRENT = 3;
+const __MS_VIDEO_MAX_RETRIES = 2;
+const __MS_VIDEO_RETRY_DELAY_MS = 700;
+const __MS_VIDEO_STALL_TIMEOUT_MS = 30000;
+const __MS_VIDEO_QUEUE = [];
+let __MS_VIDEO_ACTIVE = 0;
 
 function debounce(fn, ms) {
   let timer = null;
@@ -366,6 +372,97 @@ function lazyMediaOf(x) {
   return '<div class="media" data-armed="1" data-kind="' + kind + '" data-src="' + esc(src) + '" data-title="' + title + '">' + ph + '</div>';
 }
 
+function finishVideoMedia(item, state) {
+  if (item.settled) return;
+  item.settled = true;
+  if (item.timer) clearTimeout(item.timer);
+  const el = item.el;
+  if (state === 'ready') {
+    el.dataset.mediaState = 'ready';
+    const ph = el.querySelector('.ph-art');
+    if (ph) ph.remove();
+  } else {
+    el.dataset.mediaState = 'error';
+    const ph = el.querySelector('.ph-art');
+    if (ph) ph.remove();
+    const error = document.createElement('div');
+    error.className = 'media-error';
+    error.textContent = t('failedToLoad');
+    el.appendChild(error);
+  }
+  __MS_VIDEO_ACTIVE = Math.max(0, __MS_VIDEO_ACTIVE - 1);
+  pumpVideoMedia();
+}
+
+function retryVideoMedia(item, video) {
+  if (item.settled) return;
+  item.settled = true;
+  if (item.timer) clearTimeout(item.timer);
+  if (video) video.remove();
+  __MS_VIDEO_ACTIVE = Math.max(0, __MS_VIDEO_ACTIVE - 1);
+  if (item.attempt < __MS_VIDEO_MAX_RETRIES && item.el.isConnected) {
+    item.el.dataset.mediaState = 'retrying';
+    setTimeout(function () {
+      if (item.el.isConnected) {
+        __MS_VIDEO_QUEUE.push({ el: item.el, src: item.src, tit: item.tit, attempt: item.attempt + 1, settled: false });
+      }
+      pumpVideoMedia();
+    }, __MS_VIDEO_RETRY_DELAY_MS * (item.attempt + 1));
+  } else {
+    item.el.dataset.mediaState = 'error';
+    const ph = item.el.querySelector('.ph-art');
+    if (ph) ph.remove();
+    const error = document.createElement('div');
+    error.className = 'media-error';
+    error.textContent = t('failedToLoad');
+    item.el.appendChild(error);
+  }
+  pumpVideoMedia();
+}
+
+function startVideoMedia(item) {
+  const el = item.el;
+  if (!el || !el.isConnected) {
+    __MS_VIDEO_ACTIVE = Math.max(0, __MS_VIDEO_ACTIVE - 1);
+    pumpVideoMedia();
+    return;
+  }
+  el.dataset.mediaState = 'loading';
+  const video = document.createElement('video');
+  video.className = 'media-video';
+  video.autoplay = true;
+  video.loop = true;
+  video.muted = true;
+  video.playsInline = true;
+  video.preload = 'auto';
+  video.setAttribute('aria-label', item.tit);
+  video.addEventListener('loadeddata', function () { finishVideoMedia(item, 'ready'); }, { once: true });
+  video.addEventListener('canplay', function () { finishVideoMedia(item, 'ready'); }, { once: true });
+  video.addEventListener('error', function () { retryVideoMedia(item, video); }, { once: true });
+  item.timer = setTimeout(function () { retryVideoMedia(item, video); }, __MS_VIDEO_STALL_TIMEOUT_MS);
+  video.src = item.src;
+  el.appendChild(video);
+  video.load();
+  const playPromise = video.play();
+  if (playPromise && typeof playPromise.catch === 'function') playPromise.catch(function () {});
+}
+
+function queueVideoMedia(el, src, tit) {
+  if (!el || !el.isConnected || el.dataset.mediaState) return;
+  el.dataset.mediaState = 'queued';
+  __MS_VIDEO_QUEUE.push({ el: el, src: src, tit: tit, attempt: 0, settled: false });
+  pumpVideoMedia();
+}
+
+function pumpVideoMedia() {
+  while (__MS_VIDEO_ACTIVE < __MS_VIDEO_MAX_CONCURRENT && __MS_VIDEO_QUEUE.length) {
+    const item = __MS_VIDEO_QUEUE.shift();
+    if (!item.el || !item.el.isConnected || item.el.dataset.mediaState === 'ready') continue;
+    __MS_VIDEO_ACTIVE += 1;
+    startVideoMedia(item);
+  }
+}
+
 function setupMediaObserver() {
   if (typeof IntersectionObserver === 'undefined') return null;
   if (__MS_MEDIA_OBSERVER) return __MS_MEDIA_OBSERVER;
@@ -379,16 +476,24 @@ function setupMediaObserver() {
       const kind = el.dataset.kind;
       const src  = el.dataset.src  || '';
       const tit  = el.dataset.title || '';
-      let real = '';
-      if (kind === 'image') real = '<img src="' + esc(src) + '" alt="' + esc(tit) + '" loading="lazy" decoding="async">';
-      else if (kind === 'video') real = '<video src="' + esc(src) + '" autoplay loop muted playsinline preload="metadata"></video>';
-      else return;
-      // Remove the placeholder child so it does not cover the new media (it is position:absolute).
-      const ph = el.querySelector('.ph-art');
-      if (ph) ph.remove();
-      const tmp = document.createElement('div');
-      tmp.innerHTML = real;
-      while (tmp.firstChild) el.appendChild(tmp.firstChild);
+      if (kind === 'image') {
+        // Lazy <img>: cheap and concurrency-friendly, no queue needed.
+        const ph = el.querySelector('.ph-art');
+        if (ph) ph.remove();
+        const tmp = document.createElement('div');
+        tmp.innerHTML = '<img src="' + esc(src) + '" alt="' + esc(tit) + '" loading="lazy" decoding="async">';
+        while (tmp.firstChild) el.appendChild(tmp.firstChild);
+      } else if (kind === 'video') {
+        // __MS_PATCH_APPLIED__: video-queue-2026-08-08
+        // Hand the video off to the global queue (concurrency-capped, retries on
+        // stall/error). The placeholder stays in place until the video actually
+        // starts playing, so cards never show a blank when the CDN stalls or
+        // returns the wrong status. Errors render a clear <div class="media-error">
+        // instead of forging a static image.
+        queueVideoMedia(el, src, tit);
+      } else {
+        return;
+      }
     });
   }, { rootMargin: '300px 0px', threshold: 0.01 });
   return __MS_MEDIA_OBSERVER;
