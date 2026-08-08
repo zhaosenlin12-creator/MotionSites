@@ -1,4 +1,4 @@
-﻿// =======================================================
+// =======================================================
 // MotionSites Prompts - Client script (i18n + perf hardened)
 // =======================================================
 
@@ -176,7 +176,7 @@ let __MS_TEXT_PROMISES = Object.create(null);
 let __MS_TEXT_INDEX = null;
 let __MS_TEXT_INDEX_PROMISE = null;
 let __MS_MEDIA_OBSERVER = null;
-const __MS_VIDEO_MAX_CONCURRENT = 3;
+const __MS_VIDEO_MAX_CONCURRENT = 8;
 const __MS_VIDEO_MAX_RETRIES = 2;
 const __MS_VIDEO_RETRY_DELAY_MS = 700;
 const __MS_VIDEO_STALL_TIMEOUT_MS = 30000;
