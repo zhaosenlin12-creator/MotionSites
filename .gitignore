@@ -48,3 +48,16 @@ server.js
 scripts/_*.js
 scripts/_*.txt
 scripts/_*.py
+
+# Local deploy / audit scratch under docs/
+/docs/cf-deploy-*.log*
+/docs/wrangler-login-*.log*
+/docs/wrangler-*.err
+/docs/stage-*.log
+/docs/live-*.png
+/docs/live-*.txt
+/docs/live-*.html
+/docs/perf-test*.js
+/docs/pages-run-1*
+# CF Pages Direct Upload script (GH Pages is primary now)
+/scripts/_direct_upload.ps1
