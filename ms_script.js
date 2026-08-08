@@ -381,6 +381,8 @@ function finishVideoMedia(item, state) {
     el.dataset.mediaState = 'ready';
     const ph = el.querySelector('.ph-art');
     if (ph) ph.remove();
+    const v = el.querySelector('video');
+    if (v) v.style.opacity = '1';
   } else {
     el.dataset.mediaState = 'error';
     const ph = el.querySelector('.ph-art');
@@ -435,6 +437,13 @@ function startVideoMedia(item) {
   video.muted = true;
   video.playsInline = true;
   video.preload = 'auto';
+  // __MS_PATCH_APPLIED__: video-opacity-2026-08-08
+  // Hide the video element until it has actually painted a frame.
+  // Before this, a stalled CDN response would leave a 100% black <video>
+  // covering the placeholder. With opacity:0 the placeholder gradient stays
+  // visible until finishVideoMedia('ready') flips it back to 1.
+  video.style.opacity = '0';
+  video.style.transition = 'opacity .35s ease';
   video.setAttribute('aria-label', item.tit);
   video.addEventListener('loadeddata', function () { finishVideoMedia(item, 'ready'); }, { once: true });
   video.addEventListener('canplay', function () { finishVideoMedia(item, 'ready'); }, { once: true });
