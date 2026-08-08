@@ -1,0 +1,50 @@
+# Node / dependencies
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+desktop.ini
+*.swp
+*.swo
+*~
+.idea/
+.vscode/
+
+# Local scratch / build artefacts
+*.tmp
+*.log
+*.err
+*.out
+tmp_*
+test_*
+preview.png
+
+# Cloudflare / Wrangler local state
+.wrangler/
+
+# Rollback / recovery archives (deploy helpers)
+.rollback/
+
+# This repo
+deploy*.log
+deploy*.err
+wrangler*.log
+clone*.log
+server.err
+server.out
+
+# Local source research caches
+/sources/
+
+# Local static server scratch
+server.js
+
+# Scratch helpers under scripts/
+scripts/_*.js
+scripts/_*.txt
+scripts/_*.py
