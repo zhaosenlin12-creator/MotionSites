@@ -3,10 +3,10 @@
 
 ## 🚀 在线浏览（Live Site）
 
-👉 **主域（GitHub Pages）：** https://zhaosenlin12-creator.github.io/MotionSites/
-👉 **备用（Cloudflare Pages）：** https://motionsites-prompts.pages.dev/
+👉 **主域（Cloudflare Pages，国内直连友好）：** https://motionsites-prompts.pages.dev/
+👉 **备用（GitHub Pages，仅供海外/无 GFW 拦截网络）：** https://zhaosenlin12-creator.github.io/MotionSites/
 
-主域部署在 GitHub Pages（jsDelivr / Fastly CDN），每次 push 到 main 自动上线；Cloudflare Pages 同时保留作为兜底。公网可直接访问 504 条提示词、476 条完整正文、297 张预览、121 个循环视频。无需登录、无需付费、无网络调用，打开即用。
+主域部署在 Cloudflare Pages（Cloudflare CDN，国内可达），每次 push 后手动通过 wrangler pages deploy 推送；GitHub Pages 已配置自动部署但 Fastly 边缘在国内网络环境偶发 RST，作为海外用户备选。公网可直接访问 504 条提示词、476 条完整正文、297 张预览、121 个循环视频。无需登录、无需付费、无网络调用，打开即用。
 
 
 > A progressively-loaded, offline-first catalog of **504 motion-driven UI prompts** — landing pages, hero scenes, agency showcases, dashboards, and more. Browse, search, copy, and export every prompt locally. No login, no third-party tracking, no paywall. Cold loads land paint-ready in ~34 ms (DOMContentLoaded) and finish in ~239 ms (loadEvent); only one small JSON per page + one prompt body per modal are fetched.
