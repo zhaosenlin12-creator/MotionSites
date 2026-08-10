@@ -672,6 +672,9 @@ async function copyText(text) {
 async function openItem(id) {
   current = DATA.find((x) => x.id === id);
   if (!current) return;
+  // Lazy-load modal-only fields (image/video URLs, source links, tags) from a separate file
+  if(!window.__MS_DETAILS_CACHE__){try{window.__MS_DETAILS_CACHE__=await fetchJSON("data/catalog-details.json");}catch(e){window.__MS_DETAILS_CACHE__={};}}
+  const _d=window.__MS_DETAILS_CACHE__[current.id];if(_d){for(const _k in _d){if(current[_k]===undefined)current[_k]=_d[_k];}}
   const isVideo = current.local_kind === 'mp4' || current.local_kind === 'hls';
   $('title').innerHTML = esc(current.title) + ' <small>' + esc(current.id) + '</small>';
   $('description').textContent = current.description || '—';
