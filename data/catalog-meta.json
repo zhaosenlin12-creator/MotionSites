@@ -53,9 +53,10 @@
       "category": "Hero Section",
       "type": "hero",
       "source_kind": "motionsites",
-      "local_rel": "assets/previews/asme-hero.mp4",
+      "local_rel": "assets/previews/asme-hero.webp",
       "sort_order": 140,
-      "is_free": true
+      "is_free": true,
+      "local_kind": "webp"
     },
     {
       "id": "mindloop-landing",
@@ -1175,9 +1176,10 @@
       "category": "Hero Section",
       "type": "hero",
       "source_kind": "motionsites",
-      "local_rel": "assets/previews/railroad.ai.mp4",
+      "local_rel": "assets/previews/railroad.ai.webp",
       "sort_order": 9999,
-      "is_free": true
+      "is_free": true,
+      "local_kind": "webp"
     },
     {
       "id": "sky-elite-private-jets",

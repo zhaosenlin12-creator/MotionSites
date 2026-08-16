@@ -1,47 +1,59 @@
 {
   "total": 504,
-  "complete": 0,
-  "images": 290,
-  "videos": 23,
+  "complete": 451,
+  "images": 292,
+  "videos": 21,
   "concepts": 191,
   "motionsites": 365,
   "community": 139,
   "topCategories": [
     {
-      "category": "Hero Section",
-      "count": 90
+      "name": "Hero Section",
+      "n": 72
     },
     {
-      "category": "Landing Page",
-      "count": 73
+      "name": "Landing Page",
+      "n": 47
     },
     {
-      "category": "SaaS",
-      "count": 35
+      "name": "SaaS",
+      "n": 26
     },
     {
-      "category": "Components",
-      "count": 22
+      "name": "Components",
+      "n": 17
     },
     {
-      "category": "Pricing Page",
-      "count": 18
+      "name": "Agency",
+      "n": 10
     },
     {
-      "category": "E-commerce",
-      "count": 15
+      "name": "E-commerce",
+      "n": 10
     },
     {
-      "category": "Forms & Contact",
-      "count": 14
+      "name": "Features Section",
+      "n": 9
     },
     {
-      "category": "Waitlist & Coming Soon",
-      "count": 14
+      "name": "Healthcare",
+      "n": 8
     },
     {
-      "category": "Design Systems & Styles",
-      "count": 14
+      "name": "CTA Section",
+      "n": 8
+    },
+    {
+      "name": "Travel",
+      "n": 7
+    },
+    {
+      "name": "Animations & Backgrounds",
+      "n": 6
+    },
+    {
+      "name": "About Section",
+      "n": 6
     }
   ],
   "categories": {
