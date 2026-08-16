@@ -357,7 +357,9 @@ function lazyMediaOf(x) {
   const src = x.local_rel || '';
   const title = esc(x.title || x.id || '');
   const ph = placeholderHTML(x, { big: false });
-  if (!k || k === 'other' || k === 'hls' || !src) {
+  // catalog-meta no longer carries a separate `local_kind`; trust the URL extension first.
+  // Only fall back to placeholder when there is no source, or the kind is genuinely unknown (hls/other).
+  if (!src || k === 'hls' || k === 'other') {
     return '<div class="media" data-armed="1" data-kind="placeholder">' + ph + '</div>';
   }
   // Defensive: trust the URL extension over local_kind when they disagree,
