@@ -366,9 +366,11 @@ function lazyMediaOf(x) {
   const looksImage = ext === 'webp' || ext === 'gif' || ext === 'png' || ext === 'jpg' || ext === 'jpeg';
   const looksVideo = ext === 'mp4' || ext === 'webm' || ext === 'mov';
   let kind = 'placeholder';
-  if (looksVideo && (k === 'mp4' || k === 'webm' || k === 'other')) kind = 'video';
-  else if (looksImage || k === 'webp' || k === 'gif' || k === 'png' || k === 'jpeg') kind = 'image';
+  // catalog-meta no longer carries a separate `local_kind` (it was redundant), so trust the URL extension.
+  if (looksVideo) kind = 'video';
+  else if (looksImage) kind = 'image';
   else if (k === 'mp4' || k === 'webm') kind = 'video';
+  else if (k === 'webp' || k === 'gif' || k === 'png' || k === 'jpeg') kind = 'image';
   return '<div class="media" data-armed="1" data-kind="' + kind + '" data-src="' + esc(src) + '" data-title="' + title + '">' + ph + '</div>';
 }
 
