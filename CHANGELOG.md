@@ -29,3 +29,26 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Notes
 - The remote repo only had a stub `README.md` before this commit; all the content above is new.
 - No binary assets are bundled — previews are SVG so the repo stays under 100 KB and diff-friendly.
+
+
+## [1.1.0] - 2026-08-16
+
+### Fixed
+- `TypeError: DATA.map is not a function` when catalog-meta was wrapped as `{cards:[…]}` (commit `f7adb55`).
+- All cards rendering as fallback gradients: `lazyMediaOf()` now trusts the URL extension over the (omitted) `local_kind`, so the 173 webp and 117 mp4-with-still-frame cards now actually render (`d181c61`, `2536f6e`).
+- Dotted ids (e.g. `railroad.ai`) failed to switch to webp because the matcher regex `[w-]+` truncated at the first dot (`c26674b`).
+
+### Changed
+- Catalog-meta slim: 455 KB -> 187 KB raw (still wrapped as `{cards:[…]}`).
+- Card previews upgraded from 480p single-frame to 1280px webp (q=85). 290 files rebuilt from `r2.dev` / `higgs.ai` originals; 116 cards switched from mp4 reference to webp still (`3787dae`).
+- `catalog-lite.json` counts refreshed: 504 total, 451 with text, 292 images, 21 videos, 191 concepts, 365 MotionSites, 139 community.
+
+### Added
+- `.gitignore` rule for `.work/` (scratch artifacts from the webp rebuild).
+
+### Removed
+- Top-level temp files: `server.err`, `server.out`, `test_ffmpeg*.log`.
+
+### Known limitations
+- 21 of the 504 cards still point to a 480p mp4 (community-superdesign items that have only relative `prompts/...` paths in `catalog-details.json`, so we can't reach their source for a re-extract). They show as motion in the grid and modal.
+- GitHub Pages is the overseas-only backup. Edge nodes belonging to Fastly IPs `185.199.108-111.153` RST on the operator's network; CF Pages is the canonical URL.
