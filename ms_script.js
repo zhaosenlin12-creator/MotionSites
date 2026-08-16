@@ -970,6 +970,9 @@ async function bootstrap() {
     return;
   }
   DATA = metaResult.value;
+  // catalog-meta may be a flat array, or wrapped as {cards:[...]} (same shape as LITE).
+  if (DATA && !Array.isArray(DATA) && Array.isArray(DATA.cards)) DATA = DATA.cards;
+  if (!Array.isArray(DATA)) DATA = [];
   // NOTE: catalog-text-index.json is fetched lazily by loadPromptText()
   // the first time a modal opens. Fetching it on boot was adding ~1.4 s
   // to the cold-cache FCP on Cloudflare Pages.
