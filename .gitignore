@@ -61,3 +61,7 @@ scripts/_*.py
 /docs/pages-run-1*
 # CF Pages Direct Upload script (GH Pages is primary now)
 /scripts/_direct_upload.ps1
+
+# Local work artifacts (preview rebuild scratch)
+.work/
+
