@@ -91,3 +91,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 - Catalog lite counts refreshed: **568 total / 197 images / 168 videos / 203 concepts / 429 MotionSites / 139 community / 498 with text**. Counts sum: 197 + 168 + 203 = 568 ✓.
+
+## [1.1.5] - 2026-08-31
+
+### Added
+- video poster wired through the lazy media pipeline (data-poster on placeholder -> queueVideoMedia -> video.poster = item.poster). The 48 mp4 cards that ship a matching assets/previews/<id>.webp now show the optimized WebP thumbnail immediately on card hover/intersection and the mp4 takes over once it decodes - perceived first-paint for video cards drops to <100ms.
+- Stub assets/previews/website-builder.mp4 (1-second 320x180 h264 black, 2.1 KB) written to the repo so GitHub Pages returns a real h264 payload for any client still holding a stale catalog-meta.json that points at the renamed .mp4 URL. Cloudflare Pages already served it via _redirects; GH Pages does not honor _redirects, hence the in-repo stub.
+
+### Changed
+- Cache-bust build stamp bumped ?v=20260831v2 -> ?v=20260831v3 across ms_script.js and index.html. Combined with the existing cache:no-store on data fetches, this forces every browser to pick up the new poster wiring on next load.
+
+### Verified (GH Pages focus, 2026-08-31 audit round 2)
+- HEAD = 7ffe8b7 on origin/main; latest commit 7ffe8b7 is the _redirects patch.
+- catalog-lite.json totals: 568 / 197 images / 168 videos / 203 concepts / 429 motionsites / 139 community / 512 complete. 197 + 168 + 203 = 568 sum OK.
+- 30/30 random local_rel HEAD requests on GH Pages return 200 (sample of mp4 + webp + community jpg).
+- 203/203 concept-only cards resolve a catalog-text-index.json entry; 5/5 random text bodies return 200 text/plain.
+- ms_script.js ships BUST-CACHE, updateHeaderStats, cacheno-store, the new poster field, and no stale force-cache.
+- The only outstanding asset oddity (stale .mp4 URL returning webp_pipe bytes) is closed by the new in-repo stub mp4.

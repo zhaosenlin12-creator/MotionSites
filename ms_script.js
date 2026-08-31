@@ -195,7 +195,7 @@ function debounce(fn, ms) {
 async function fetchJSON(url) {
   // BUST-CACHE: append a build stamp so each deploy invalidates browser caches.
   const sep = url.includes('?') ? '&' : '?';
-  const fullUrl = url + sep + 'v=20260831v2';
+  const fullUrl = url + sep + 'v=20260831v3';
   const res = await fetch(fullUrl, { cache: 'no-store' });
   if (!res.ok) throw new Error('fetchJSON ' + url + ' ' + res.status);
   return res.json();
@@ -217,7 +217,7 @@ async function loadPromptText(id) {
   if (!rel) { __MS_TEXT_CACHE[id] = ''; return ''; }
   const p = (async function () {
     try {
-      const res = await fetch('data/' + rel + '?v=20260831v2', { cache: 'no-store' });
+      const res = await fetch('data/' + rel + '?v=20260831v3', { cache: 'no-store' });
       if (!res.ok) throw new Error('text ' + id + ' ' + res.status);
       const txt = await res.text();
       __MS_TEXT_CACHE[id] = txt;
@@ -360,6 +360,7 @@ function lazyMediaOf(x) {
   const src = x.local_rel || '';
   const title = esc(x.title || x.id || '');
   const ph = placeholderHTML(x, { big: false });
+  const poster = (x.poster_rel && typeof x.poster_rel === 'string') ? x.poster_rel : '';
   // catalog-meta no longer carries a separate `local_kind`; trust the URL extension first.
   // Only fall back to placeholder when there is no source, or the kind is genuinely unknown (hls/other).
   if (!src || k === 'hls' || k === 'other') {
@@ -376,7 +377,7 @@ function lazyMediaOf(x) {
   else if (looksImage) kind = 'image';
   else if (k === 'mp4' || k === 'webm') kind = 'video';
   else if (k === 'webp' || k === 'gif' || k === 'png' || k === 'jpeg') kind = 'image';
-  return '<div class="media" data-armed="1" data-kind="' + kind + '" data-src="' + esc(src) + '" data-title="' + title + '">' + ph + '</div>';
+  return '<div class="media" data-armed="1" data-kind="' + kind + '" data-src="' + esc(src) + '" data-title="' + title + '"' + (poster ? ' data-poster="' + esc(poster) + '"' : '') + '>' + ph + '</div>';
 }
 
 function finishVideoMedia(item, state) {
@@ -413,7 +414,7 @@ function retryVideoMedia(item, video) {
     item.el.dataset.mediaState = 'retrying';
     setTimeout(function () {
       if (item.el.isConnected) {
-        __MS_VIDEO_QUEUE.push({ el: item.el, src: item.src, tit: item.tit, attempt: item.attempt + 1, settled: false });
+        __MS_VIDEO_QUEUE.push({ el: item.el, src: item.src, tit: item.tit, poster: item.poster || '', attempt: item.attempt + 1, settled: false });
       }
       pumpVideoMedia();
     }, __MS_VIDEO_RETRY_DELAY_MS * (item.attempt + 1));
@@ -452,6 +453,7 @@ function startVideoMedia(item) {
   video.style.opacity = '0';
   video.style.transition = 'opacity .35s ease';
   video.setAttribute('aria-label', item.tit);
+  if (item.poster) video.poster = item.poster;
   video.addEventListener('loadeddata', function () { finishVideoMedia(item, 'ready'); }, { once: true });
   video.addEventListener('canplay', function () { finishVideoMedia(item, 'ready'); }, { once: true });
   video.addEventListener('error', function () { retryVideoMedia(item, video); }, { once: true });
@@ -463,10 +465,10 @@ function startVideoMedia(item) {
   if (playPromise && typeof playPromise.catch === 'function') playPromise.catch(function () {});
 }
 
-function queueVideoMedia(el, src, tit) {
+function queueVideoMedia(el, src, tit, poster) {
   if (!el || !el.isConnected || el.dataset.mediaState) return;
   el.dataset.mediaState = 'queued';
-  __MS_VIDEO_QUEUE.push({ el: el, src: src, tit: tit, attempt: 0, settled: false });
+  __MS_VIDEO_QUEUE.push({ el: el, src: src, tit: tit, poster: poster || '', attempt: 0, settled: false });
   pumpVideoMedia();
 }
 
@@ -492,6 +494,7 @@ function setupMediaObserver() {
       const kind = el.dataset.kind;
       const src  = el.dataset.src  || '';
       const tit  = el.dataset.title || '';
+      const poster = el.dataset.poster || '';
       if (kind === 'image') {
         // Lazy <img>: cheap and concurrency-friendly, no queue needed.
         const ph = el.querySelector('.ph-art');
@@ -506,7 +509,7 @@ function setupMediaObserver() {
         // starts playing, so cards never show a blank when the CDN stalls or
         // returns the wrong status. Errors render a clear <div class="media-error">
         // instead of forging a static image.
-        queueVideoMedia(el, src, tit);
+        queueVideoMedia(el, src, tit, poster);
       } else {
         return;
       }
