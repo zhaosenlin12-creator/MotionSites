@@ -18,10 +18,10 @@
       "category": "Landing Page",
       "type": "hero",
       "source_kind": "motionsites",
-      "local_rel": "assets/previews/art-landing.webp",
+      "local_rel": "assets/previews/art-landing.mp4",
       "sort_order": 35,
       "is_free": false,
-      "local_kind": "webp"
+      "local_kind": "mp4"
     },
     {
       "id": "urban-jungle-hero",
@@ -30,10 +30,10 @@
       "category": "Landing Page",
       "type": "hero",
       "source_kind": "motionsites",
-      "local_rel": "assets/previews/urban-jungle-hero.webp",
+      "local_rel": "assets/previews/urban-jungle-hero.mp4",
       "sort_order": 90,
       "is_free": false,
-      "local_kind": "webp"
+      "local_kind": "mp4"
     },
     {
       "id": "liquid-glass-agency",
@@ -53,10 +53,10 @@
       "category": "Hero Section",
       "type": "hero",
       "source_kind": "motionsites",
-      "local_rel": "assets/previews/asme-hero.webp",
+      "local_rel": "assets/previews/asme-hero.mp4",
       "sort_order": 140,
       "is_free": true,
-      "local_kind": "webp"
+      "local_kind": "mp4"
     },
     {
       "id": "mindloop-landing",
@@ -109,10 +109,10 @@
       "category": "Mobile App",
       "type": "hero",
       "source_kind": "motionsites",
-      "local_rel": "assets/previews/adhd-planner.webp",
+      "local_rel": "assets/previews/adhd-planner.mp4",
       "sort_order": 999,
       "is_free": true,
-      "local_kind": "webp"
+      "local_kind": "mp4"
     },
     {
       "id": "aesthetic-dental-clinic",
@@ -121,10 +121,10 @@
       "category": "Healthcare",
       "type": "hero",
       "source_kind": "motionsites",
-      "local_rel": "assets/previews/aesthetic-dental-clinic.webp",
+      "local_rel": "assets/previews/aesthetic-dental-clinic.mp4",
       "sort_order": 999,
       "is_free": false,
-      "local_kind": "webp"
+      "local_kind": "mp4"
     },
     {
       "id": "ai-assistant-app",
@@ -133,10 +133,10 @@
       "category": "AI Apps",
       "type": "mobile",
       "source_kind": "motionsites",
-      "local_rel": "assets/previews/ai-assistant-app.webp",
+      "local_rel": "assets/previews/ai-assistant-app.mp4",
       "sort_order": 999,
       "is_free": false,
-      "local_kind": "webp"
+      "local_kind": "mp4"
     },
     {
       "id": "ai-calorie-tracker",
@@ -145,10 +145,10 @@
       "category": "Healthcare",
       "type": "mobile",
       "source_kind": "motionsites",
-      "local_rel": "assets/previews/ai-calorie-tracker.webp",
+      "local_rel": "assets/previews/ai-calorie-tracker.mp4",
       "sort_order": 999,
       "is_free": false,
-      "local_kind": "webp"
+      "local_kind": "mp4"
     },
     {
       "id": "ai-driving-assistant",
@@ -157,10 +157,10 @@
       "category": "SaaS",
       "type": "hero",
       "source_kind": "motionsites",
-      "local_rel": "assets/previews/ai-driving-assistant.webp",
+      "local_rel": "assets/previews/ai-driving-assistant.mp4",
       "sort_order": 999,
       "is_free": false,
-      "local_kind": "webp"
+      "local_kind": "mp4"
     },
     {
       "id": "ai-interface",
@@ -169,10 +169,10 @@
       "category": "Landing Page",
       "type": "hero",
       "source_kind": "motionsites",
-      "local_rel": "assets/previews/ai-interface.webp",
+      "local_rel": "assets/previews/ai-interface.mp4",
       "sort_order": 999,
       "is_free": false,
-      "local_kind": "webp"
+      "local_kind": "mp4"
     },
     {
       "id": "ai-meeting-notes",
@@ -181,10 +181,10 @@
       "category": "SaaS",
       "type": "hero",
       "source_kind": "motionsites",
-      "local_rel": "assets/previews/ai-meeting-notes.webp",
+      "local_rel": "assets/previews/ai-meeting-notes.mp4",
       "sort_order": 999,
       "is_free": false,
-      "local_kind": "webp"
+      "local_kind": "mp4"
     },
     {
       "id": "ai-workflow-agents",
@@ -193,10 +193,10 @@
       "category": "SaaS",
       "type": "hero",
       "source_kind": "motionsites",
-      "local_rel": "assets/previews/ai-workflow-agents.webp",
+      "local_rel": "assets/previews/ai-workflow-agents.mp4",
       "sort_order": 999,
       "is_free": true,
-      "local_kind": "webp"
+      "local_kind": "mp4"
     },
     {
       "id": "album-release",
@@ -205,10 +205,10 @@
       "category": "Music",
       "type": "mobile",
       "source_kind": "motionsites",
-      "local_rel": "assets/previews/album-release.webp",
+      "local_rel": "assets/previews/album-release.mp4",
       "sort_order": 999,
       "is_free": false,
-      "local_kind": "webp"
+      "local_kind": "mp4"
     },
     {
       "id": "automotive-ai",
@@ -217,10 +217,10 @@
       "category": "Driving",
       "type": "hero",
       "source_kind": "motionsites",
-      "local_rel": "assets/previews/automotive-ai.webp",
+      "local_rel": "assets/previews/automotive-ai.mp4",
       "sort_order": 999,
       "is_free": false,
-      "local_kind": "webp"
+      "local_kind": "mp4"
     },
     {
       "id": "bite-sized-courses",
@@ -229,10 +229,10 @@
       "category": "Education",
       "type": "mobile",
       "source_kind": "motionsites",
-      "local_rel": "assets/previews/bite-sized-courses.webp",
+      "local_rel": "assets/previews/bite-sized-courses.mp4",
       "sort_order": 999,
       "is_free": false,
-      "local_kind": "webp"
+      "local_kind": "mp4"
     },
     {
       "id": "cargo-group",
@@ -241,10 +241,10 @@
       "category": "Hero Section",
       "type": "hero",
       "source_kind": "motionsites",
-      "local_rel": "assets/previews/cargo-group.webp",
+      "local_rel": "assets/previews/cargo-group.mp4",
       "sort_order": 999,
       "is_free": false,
-      "local_kind": "webp"
+      "local_kind": "mp4"
     },
     {
       "id": "cargox-mobile",
@@ -253,10 +253,10 @@
       "category": "Transportation",
       "type": "mobile",
       "source_kind": "motionsites",
-      "local_rel": "assets/previews/cargox-mobile.webp",
+      "local_rel": "assets/previews/cargox-mobile.mp4",
       "sort_order": 999,
       "is_free": false,
-      "local_kind": "webp"
+      "local_kind": "mp4"
     },
     {
       "id": "celestial-renewal",
@@ -265,10 +265,10 @@
       "category": "Wellness",
       "type": "hero",
       "source_kind": "motionsites",
-      "local_rel": "assets/previews/celestial-renewal.webp",
+      "local_rel": "assets/previews/celestial-renewal.mp4",
       "sort_order": 999,
       "is_free": true,
-      "local_kind": "webp"
+      "local_kind": "mp4"
     },
     {
       "id": "church-community",
@@ -277,10 +277,10 @@
       "category": "Community",
       "type": "mobile",
       "source_kind": "motionsites",
-      "local_rel": "assets/previews/church-community.webp",
+      "local_rel": "assets/previews/church-community.mp4",
       "sort_order": 999,
       "is_free": true,
-      "local_kind": "webp"
+      "local_kind": "mp4"
     },
     {
       "id": "cleantech",
@@ -289,10 +289,10 @@
       "category": "Sustainability",
       "type": "hero",
       "source_kind": "motionsites",
-      "local_rel": "assets/previews/cleantech.webp",
+      "local_rel": "assets/previews/cleantech.mp4",
       "sort_order": 999,
       "is_free": false,
-      "local_kind": "webp"
+      "local_kind": "mp4"
     },
     {
       "id": "coffee-rewards",
@@ -301,10 +301,10 @@
       "category": "Loyalty",
       "type": "mobile",
       "source_kind": "motionsites",
-      "local_rel": "assets/previews/coffee-rewards.webp",
+      "local_rel": "assets/previews/coffee-rewards.mp4",
       "sort_order": 999,
       "is_free": true,
-      "local_kind": "webp"
+      "local_kind": "mp4"
     },
     {
       "id": "cosmos-interface",
@@ -313,10 +313,10 @@
       "category": "Landing Page",
       "type": "hero",
       "source_kind": "motionsites",
-      "local_rel": "assets/previews/cosmos-interface.webp",
+      "local_rel": "assets/previews/cosmos-interface.mp4",
       "sort_order": 999,
       "is_free": false,
-      "local_kind": "webp"
+      "local_kind": "mp4"
     },
     {
       "id": "cozypaws",
@@ -325,10 +325,10 @@
       "category": "Hero Section",
       "type": "hero",
       "source_kind": "motionsites",
-      "local_rel": "assets/previews/cozypaws.webp",
+      "local_rel": "assets/previews/cozypaws.mp4",
       "sort_order": 999,
       "is_free": true,
-      "local_kind": "webp"
+      "local_kind": "mp4"
     },
     {
       "id": "creative-designer-portfolio",
@@ -337,10 +337,10 @@
       "category": "Portfolio",
       "type": "hero",
       "source_kind": "motionsites",
-      "local_rel": "assets/previews/creative-designer-portfolio.webp",
+      "local_rel": "assets/previews/creative-designer-portfolio.mp4",
       "sort_order": 999,
       "is_free": false,
-      "local_kind": "webp"
+      "local_kind": "mp4"
     },
     {
       "id": "cross-border",
@@ -349,10 +349,10 @@
       "category": "Transportation",
       "type": "mobile",
       "source_kind": "motionsites",
-      "local_rel": "assets/previews/cross-border.webp",
+      "local_rel": "assets/previews/cross-border.mp4",
       "sort_order": 999,
       "is_free": true,
-      "local_kind": "webp"
+      "local_kind": "mp4"
     },
     {
       "id": "cybersecurity",
@@ -361,10 +361,10 @@
       "category": "SaaS",
       "type": "hero",
       "source_kind": "motionsites",
-      "local_rel": "assets/previews/cybersecurity.webp",
+      "local_rel": "assets/previews/cybersecurity.mp4",
       "sort_order": 999,
       "is_free": false,
-      "local_kind": "webp"
+      "local_kind": "mp4"
     },
     {
       "id": "data-storytelling",
@@ -373,10 +373,10 @@
       "category": "SaaS",
       "type": "hero",
       "source_kind": "motionsites",
-      "local_rel": "assets/previews/data-storytelling.webp",
+      "local_rel": "assets/previews/data-storytelling.mp4",
       "sort_order": 999,
       "is_free": false,
-      "local_kind": "webp"
+      "local_kind": "mp4"
     },
     {
       "id": "deep-neural-interface",
@@ -385,10 +385,10 @@
       "category": "AI Apps",
       "type": "hero",
       "source_kind": "motionsites",
-      "local_rel": "assets/previews/deep-neural-interface.webp",
+      "local_rel": "assets/previews/deep-neural-interface.mp4",
       "sort_order": 999,
       "is_free": false,
-      "local_kind": "webp"
+      "local_kind": "mp4"
     },
     {
       "id": "dental-implant-clinic",
@@ -397,10 +397,10 @@
       "category": "Healthcare",
       "type": "mobile",
       "source_kind": "motionsites",
-      "local_rel": "assets/previews/dental-implant-clinic.webp",
+      "local_rel": "assets/previews/dental-implant-clinic.mp4",
       "sort_order": 999,
       "is_free": false,
-      "local_kind": "webp"
+      "local_kind": "mp4"
     },
     {
       "id": "f1-driver-profile",
@@ -409,10 +409,10 @@
       "category": "Sports",
       "type": "hero",
       "source_kind": "motionsites",
-      "local_rel": "assets/previews/f1-driver-profile.webp",
+      "local_rel": "assets/previews/f1-driver-profile.mp4",
       "sort_order": 999,
       "is_free": false,
-      "local_kind": "webp"
+      "local_kind": "mp4"
     },
     {
       "id": "f1-racing-hub",
@@ -421,10 +421,10 @@
       "category": "Mobile App",
       "type": "mobile",
       "source_kind": "motionsites",
-      "local_rel": "assets/previews/f1-racing-hub.webp",
+      "local_rel": "assets/previews/f1-racing-hub.mp4",
       "sort_order": 999,
       "is_free": true,
-      "local_kind": "webp"
+      "local_kind": "mp4"
     },
     {
       "id": "financial-suite",
@@ -433,10 +433,10 @@
       "category": "Landing Page",
       "type": "hero",
       "source_kind": "motionsites",
-      "local_rel": "assets/previews/financial-suite.webp",
+      "local_rel": "assets/previews/financial-suite.mp4",
       "sort_order": 999,
       "is_free": false,
-      "local_kind": "webp"
+      "local_kind": "mp4"
     },
     {
       "id": "footballer-portfolio",
@@ -445,10 +445,10 @@
       "category": "Sports",
       "type": "mobile",
       "source_kind": "motionsites",
-      "local_rel": "assets/previews/footballer-portfolio.webp",
+      "local_rel": "assets/previews/footballer-portfolio.mp4",
       "sort_order": 999,
       "is_free": false,
-      "local_kind": "webp"
+      "local_kind": "mp4"
     },
     {
       "id": "futuristic-eyewear",
@@ -457,10 +457,10 @@
       "category": "E-commerce",
       "type": "hero",
       "source_kind": "motionsites",
-      "local_rel": "assets/previews/futuristic-eyewear.webp",
+      "local_rel": "assets/previews/futuristic-eyewear.mp4",
       "sort_order": 999,
       "is_free": false,
-      "local_kind": "webp"
+      "local_kind": "mp4"
     },
     {
       "id": "immersive-studio",
@@ -469,10 +469,10 @@
       "category": "Agency",
       "type": "hero",
       "source_kind": "motionsites",
-      "local_rel": "assets/previews/immersive-studio.webp",
+      "local_rel": "assets/previews/immersive-studio.mp4",
       "sort_order": 999,
       "is_free": false,
-      "local_kind": "webp"
+      "local_kind": "mp4"
     },
     {
       "id": "imperial-vpn",
@@ -481,10 +481,10 @@
       "category": "Cybersecurity",
       "type": "hero",
       "source_kind": "motionsites",
-      "local_rel": "assets/previews/imperial-vpn.webp",
+      "local_rel": "assets/previews/imperial-vpn.mp4",
       "sort_order": 999,
       "is_free": false,
-      "local_kind": "webp"
+      "local_kind": "mp4"
     },
     {
       "id": "inner-quest",
@@ -493,10 +493,10 @@
       "category": "Wellness",
       "type": "hero",
       "source_kind": "motionsites",
-      "local_rel": "assets/previews/inner-quest.webp",
+      "local_rel": "assets/previews/inner-quest.mp4",
       "sort_order": 999,
       "is_free": false,
-      "local_kind": "webp"
+      "local_kind": "mp4"
     },
     {
       "id": "innovation-lab",
@@ -505,10 +505,10 @@
       "category": "Technology",
       "type": "hero",
       "source_kind": "motionsites",
-      "local_rel": "assets/previews/innovation-lab.webp",
+      "local_rel": "assets/previews/innovation-lab.mp4",
       "sort_order": 999,
       "is_free": true,
-      "local_kind": "webp"
+      "local_kind": "mp4"
     },
     {
       "id": "innovation-studio",
@@ -517,10 +517,10 @@
       "category": "Hero Section",
       "type": "hero",
       "source_kind": "motionsites",
-      "local_rel": "assets/previews/innovation-studio.webp",
+      "local_rel": "assets/previews/innovation-studio.mp4",
       "sort_order": 999,
       "is_free": false,
-      "local_kind": "webp"
+      "local_kind": "mp4"
     },
     {
       "id": "innovation-summit",
@@ -529,10 +529,10 @@
       "category": "Mobile App",
       "type": "Mobile",
       "source_kind": "motionsites",
-      "local_rel": "assets/previews/innovation-summit.webp",
+      "local_rel": "assets/previews/innovation-summit.mp4",
       "sort_order": 999,
       "is_free": false,
-      "local_kind": "webp"
+      "local_kind": "mp4"
     },
     {
       "id": "integration-saas",
@@ -541,10 +541,10 @@
       "category": "Hero Section",
       "type": "hero",
       "source_kind": "motionsites",
-      "local_rel": "assets/previews/integration-saas.webp",
+      "local_rel": "assets/previews/integration-saas.mp4",
       "sort_order": 999,
       "is_free": false,
-      "local_kind": "webp"
+      "local_kind": "mp4"
     },
     {
       "id": "lead-funnel",
@@ -553,10 +553,10 @@
       "category": "Hero Section",
       "type": "hero",
       "source_kind": "motionsites",
-      "local_rel": "assets/previews/lead-funnel.webp",
+      "local_rel": "assets/previews/lead-funnel.mp4",
       "sort_order": 999,
       "is_free": false,
-      "local_kind": "webp"
+      "local_kind": "mp4"
     },
     {
       "id": "lending-ai-agents",
@@ -565,10 +565,10 @@
       "category": "SaaS",
       "type": "hero",
       "source_kind": "motionsites",
-      "local_rel": "assets/previews/lending-ai-agents.webp",
+      "local_rel": "assets/previews/lending-ai-agents.mp4",
       "sort_order": 999,
       "is_free": false,
-      "local_kind": "webp"
+      "local_kind": "mp4"
     },
     {
       "id": "live-language-classes",
@@ -577,10 +577,10 @@
       "category": "SaaS",
       "type": "mobile",
       "source_kind": "motionsites",
-      "local_rel": "assets/previews/live-language-classes.webp",
+      "local_rel": "assets/previews/live-language-classes.mp4",
       "sort_order": 999,
       "is_free": false,
-      "local_kind": "webp"
+      "local_kind": "mp4"
     },
     {
       "id": "luxury-escapes",
@@ -589,10 +589,10 @@
       "category": "Travel",
       "type": "mobile",
       "source_kind": "motionsites",
-      "local_rel": "assets/previews/luxury-escapes.webp",
+      "local_rel": "assets/previews/luxury-escapes.mp4",
       "sort_order": 999,
       "is_free": false,
-      "local_kind": "webp"
+      "local_kind": "mp4"
     },
     {
       "id": "mind-body-healing",
@@ -601,10 +601,10 @@
       "category": "Healthcare",
       "type": "hero",
       "source_kind": "motionsites",
-      "local_rel": "assets/previews/mind-body-healing.webp",
+      "local_rel": "assets/previews/mind-body-healing.mp4",
       "sort_order": 999,
       "is_free": true,
-      "local_kind": "webp"
+      "local_kind": "mp4"
     },
     {
       "id": "model-infrastructure",
@@ -613,10 +613,10 @@
       "category": "Developer",
       "type": "hero",
       "source_kind": "motionsites",
-      "local_rel": "assets/previews/model-infrastructure.webp",
+      "local_rel": "assets/previews/model-infrastructure.mp4",
       "sort_order": 999,
       "is_free": false,
-      "local_kind": "webp"
+      "local_kind": "mp4"
     },
     {
       "id": "modern-dental-clinic",
@@ -625,10 +625,10 @@
       "category": "Healthcare",
       "type": "hero",
       "source_kind": "motionsites",
-      "local_rel": "assets/previews/modern-dental-clinic.webp",
+      "local_rel": "assets/previews/modern-dental-clinic.mp4",
       "sort_order": 999,
       "is_free": false,
-      "local_kind": "webp"
+      "local_kind": "mp4"
     },
     {
       "id": "mood-tracker",
@@ -637,10 +637,10 @@
       "category": "Wellness",
       "type": "mobile",
       "source_kind": "motionsites",
-      "local_rel": "assets/previews/mood-tracker.webp",
+      "local_rel": "assets/previews/mood-tracker.mp4",
       "sort_order": 999,
       "is_free": false,
-      "local_kind": "webp"
+      "local_kind": "mp4"
     },
     {
       "id": "movie-premiere",
@@ -649,10 +649,10 @@
       "category": "Entertainment",
       "type": "mobile",
       "source_kind": "motionsites",
-      "local_rel": "assets/previews/movie-premiere.webp",
+      "local_rel": "assets/previews/movie-premiere.mp4",
       "sort_order": 999,
       "is_free": false,
-      "local_kind": "webp"
+      "local_kind": "mp4"
     },
     {
       "id": "mythic-vpn",
@@ -661,10 +661,10 @@
       "category": "Cybersecurity",
       "type": "hero",
       "source_kind": "motionsites",
-      "local_rel": "assets/previews/mythic-vpn.webp",
+      "local_rel": "assets/previews/mythic-vpn.mp4",
       "sort_order": 999,
       "is_free": false,
-      "local_kind": "webp"
+      "local_kind": "mp4"
     },
     {
       "id": "outdoor-apparel",
@@ -673,10 +673,10 @@
       "category": "E-commerce",
       "type": "hero",
       "source_kind": "motionsites",
-      "local_rel": "assets/previews/outdoor-apparel.webp",
+      "local_rel": "assets/previews/outdoor-apparel.mp4",
       "sort_order": 999,
       "is_free": false,
-      "local_kind": "webp"
+      "local_kind": "mp4"
     },
     {
       "id": "oyla",
@@ -685,10 +685,10 @@
       "category": "E-commerce",
       "type": "hero",
       "source_kind": "motionsites",
-      "local_rel": "assets/previews/oyla.webp",
+      "local_rel": "assets/previews/oyla.mp4",
       "sort_order": 999,
       "is_free": false,
-      "local_kind": "webp"
+      "local_kind": "mp4"
     },
     {
       "id": "performance-eyewear",
@@ -697,10 +697,10 @@
       "category": "E-commerce",
       "type": "hero",
       "source_kind": "motionsites",
-      "local_rel": "assets/previews/performance-eyewear.webp",
+      "local_rel": "assets/previews/performance-eyewear.mp4",
       "sort_order": 999,
       "is_free": false,
-      "local_kind": "webp"
+      "local_kind": "mp4"
     },
     {
       "id": "pet-products",
@@ -709,10 +709,10 @@
       "category": "E-commerce",
       "type": "mobile",
       "source_kind": "motionsites",
-      "local_rel": "assets/previews/pet-products.webp",
+      "local_rel": "assets/previews/pet-products.mp4",
       "sort_order": 999,
       "is_free": false,
-      "local_kind": "webp"
+      "local_kind": "mp4"
     },
     {
       "id": "place-saver",
@@ -721,10 +721,10 @@
       "category": "Travel",
       "type": "mobile",
       "source_kind": "motionsites",
-      "local_rel": "assets/previews/place-saver.webp",
+      "local_rel": "assets/previews/place-saver.mp4",
       "sort_order": 999,
       "is_free": true,
-      "local_kind": "webp"
+      "local_kind": "mp4"
     },
     {
       "id": "places-organizer",
@@ -733,10 +733,10 @@
       "category": "Travel",
       "type": "mobile",
       "source_kind": "motionsites",
-      "local_rel": "assets/previews/places-organizer.webp",
+      "local_rel": "assets/previews/places-organizer.mp4",
       "sort_order": 999,
       "is_free": false,
-      "local_kind": "webp"
+      "local_kind": "mp4"
     },
     {
       "id": "product-studio",
@@ -745,10 +745,10 @@
       "category": "Agency",
       "type": "hero",
       "source_kind": "motionsites",
-      "local_rel": "assets/previews/product-studio.webp",
+      "local_rel": "assets/previews/product-studio.mp4",
       "sort_order": 999,
       "is_free": false,
-      "local_kind": "webp"
+      "local_kind": "mp4"
     },
     {
       "id": "prompt-hero",
@@ -757,10 +757,10 @@
       "category": "Landing Page",
       "type": "hero",
       "source_kind": "motionsites",
-      "local_rel": "assets/previews/prompt-hero.webp",
+      "local_rel": "assets/previews/prompt-hero.mp4",
       "sort_order": 999,
       "is_free": true,
-      "local_kind": "webp"
+      "local_kind": "mp4"
     },
     {
       "id": "remit-race",
@@ -769,10 +769,10 @@
       "category": "Fintech",
       "type": "mobile",
       "source_kind": "motionsites",
-      "local_rel": "assets/previews/remit-race.webp",
+      "local_rel": "assets/previews/remit-race.mp4",
       "sort_order": 999,
       "is_free": false,
-      "local_kind": "webp"
+      "local_kind": "mp4"
     },
     {
       "id": "shipping-infrastructure",
@@ -781,10 +781,10 @@
       "category": "Developer",
       "type": "hero",
       "source_kind": "motionsites",
-      "local_rel": "assets/previews/shipping-infrastructure.webp",
+      "local_rel": "assets/previews/shipping-infrastructure.mp4",
       "sort_order": 999,
       "is_free": false,
-      "local_kind": "webp"
+      "local_kind": "mp4"
     },
     {
       "id": "skills-lea",
@@ -793,10 +793,10 @@
       "category": "Education",
       "type": "mobile",
       "source_kind": "motionsites",
-      "local_rel": "assets/previews/skills-lea.webp",
+      "local_rel": "assets/previews/skills-lea.mp4",
       "sort_order": 999,
       "is_free": false,
-      "local_kind": "webp"
+      "local_kind": "mp4"
     },
     {
       "id": "sky-estate",
@@ -805,10 +805,10 @@
       "category": "Real Estate",
       "type": "hero",
       "source_kind": "motionsites",
-      "local_rel": "assets/previews/sky-estate.webp",
+      "local_rel": "assets/previews/sky-estate.mp4",
       "sort_order": 999,
       "is_free": false,
-      "local_kind": "webp"
+      "local_kind": "mp4"
     },
     {
       "id": "stillmind",
@@ -817,10 +817,10 @@
       "category": "Hero Section",
       "type": "hero",
       "source_kind": "motionsites",
-      "local_rel": "assets/previews/stillmind.webp",
+      "local_rel": "assets/previews/stillmind.mp4",
       "sort_order": 999,
       "is_free": true,
-      "local_kind": "webp"
+      "local_kind": "mp4"
     },
     {
       "id": "subscription-agency",
@@ -829,10 +829,10 @@
       "category": "Hero Section",
       "type": "hero",
       "source_kind": "motionsites",
-      "local_rel": "assets/previews/subscription-agency.webp",
+      "local_rel": "assets/previews/subscription-agency.mp4",
       "sort_order": 999,
       "is_free": true,
-      "local_kind": "webp"
+      "local_kind": "mp4"
     },
     {
       "id": "supplement-shop",
@@ -841,10 +841,10 @@
       "category": "Healthcare",
       "type": "mobile",
       "source_kind": "motionsites",
-      "local_rel": "assets/previews/supplement-shop.webp",
+      "local_rel": "assets/previews/supplement-shop.mp4",
       "sort_order": 999,
       "is_free": false,
-      "local_kind": "webp"
+      "local_kind": "mp4"
     },
     {
       "id": "tech-forward",
@@ -853,10 +853,10 @@
       "category": "Hero Section",
       "type": "hero",
       "source_kind": "motionsites",
-      "local_rel": "assets/previews/tech-forward.webp",
+      "local_rel": "assets/previews/tech-forward.mp4",
       "sort_order": 999,
       "is_free": true,
-      "local_kind": "webp"
+      "local_kind": "mp4"
     },
     {
       "id": "travel-explorer",
@@ -865,10 +865,10 @@
       "category": "Travel",
       "type": "mobile",
       "source_kind": "motionsites",
-      "local_rel": "assets/previews/travel-explorer.webp",
+      "local_rel": "assets/previews/travel-explorer.mp4",
       "sort_order": 999,
       "is_free": false,
-      "local_kind": "webp"
+      "local_kind": "mp4"
     },
     {
       "id": "travel-journal",
@@ -877,10 +877,10 @@
       "category": "Travel",
       "type": "mobile",
       "source_kind": "motionsites",
-      "local_rel": "assets/previews/travel-journal.webp",
+      "local_rel": "assets/previews/travel-journal.mp4",
       "sort_order": 999,
       "is_free": true,
-      "local_kind": "webp"
+      "local_kind": "mp4"
     },
     {
       "id": "vision-reveal",
@@ -889,10 +889,10 @@
       "category": "Hero Section",
       "type": "hero",
       "source_kind": "motionsites",
-      "local_rel": "assets/previews/vision-reveal.webp",
+      "local_rel": "assets/previews/vision-reveal.mp4",
       "sort_order": 999,
       "is_free": true,
-      "local_kind": "webp"
+      "local_kind": "mp4"
     },
     {
       "id": "wellbeing-os",
@@ -901,10 +901,10 @@
       "category": "Hero Section",
       "type": "hero",
       "source_kind": "motionsites",
-      "local_rel": "assets/previews/wellbeing-os.webp",
+      "local_rel": "assets/previews/wellbeing-os.mp4",
       "sort_order": 999,
       "is_free": true,
-      "local_kind": "webp"
+      "local_kind": "mp4"
     },
     {
       "id": "wellness-companion",
@@ -913,10 +913,10 @@
       "category": "Wellness",
       "type": "mobile",
       "source_kind": "motionsites",
-      "local_rel": "assets/previews/wellness-companion.webp",
+      "local_rel": "assets/previews/wellness-companion.mp4",
       "sort_order": 999,
       "is_free": true,
-      "local_kind": "webp"
+      "local_kind": "mp4"
     },
     {
       "id": "wellness-device",
@@ -925,10 +925,10 @@
       "category": "Healthcare",
       "type": "hero",
       "source_kind": "motionsites",
-      "local_rel": "assets/previews/wellness-device.webp",
+      "local_rel": "assets/previews/wellness-device.mp4",
       "sort_order": 999,
       "is_free": true,
-      "local_kind": "webp"
+      "local_kind": "mp4"
     },
     {
       "id": "acreage-farming-hero",
@@ -948,10 +948,10 @@
       "category": "Landing Page",
       "type": "landing-page",
       "source_kind": "motionsites",
-      "local_rel": "assets/previews/akor-security.webp",
+      "local_rel": "assets/previews/akor-security.mp4",
       "sort_order": 9999,
       "is_free": true,
-      "local_kind": "webp"
+      "local_kind": "mp4"
     },
     {
       "id": "apex-saa-s",
@@ -960,10 +960,10 @@
       "category": "SaaS",
       "type": "hero",
       "source_kind": "motionsites",
-      "local_rel": "assets/previews/apex-saa-s.webp",
+      "local_rel": "assets/previews/apex-saa-s.mp4",
       "sort_order": 9999,
       "is_free": true,
-      "local_kind": "webp"
+      "local_kind": "mp4"
     },
     {
       "id": "bloom-ai",
@@ -972,10 +972,10 @@
       "category": "Hero Section",
       "type": "hero",
       "source_kind": "motionsites",
-      "local_rel": "assets/previews/bloom-ai.webp",
+      "local_rel": "assets/previews/bloom-ai.mp4",
       "sort_order": 9999,
       "is_free": true,
-      "local_kind": "webp"
+      "local_kind": "mp4"
     },
     {
       "id": "club-x-investors",
@@ -984,10 +984,10 @@
       "category": "Landing Page",
       "type": "landing-page",
       "source_kind": "motionsites",
-      "local_rel": "assets/previews/club-x-investors.webp",
+      "local_rel": "assets/previews/club-x-investors.mp4",
       "sort_order": 9999,
       "is_free": true,
-      "local_kind": "webp"
+      "local_kind": "mp4"
     },
     {
       "id": "design-pro-academy",
@@ -996,10 +996,10 @@
       "category": "Hero Section",
       "type": "hero",
       "source_kind": "motionsites",
-      "local_rel": "assets/previews/design-pro-academy.webp",
+      "local_rel": "assets/previews/design-pro-academy.mp4",
       "sort_order": 9999,
       "is_free": true,
-      "local_kind": "webp"
+      "local_kind": "mp4"
     },
     {
       "id": "evr-ventures",
@@ -1008,10 +1008,10 @@
       "category": "Hero Section",
       "type": "hero",
       "source_kind": "motionsites",
-      "local_rel": "assets/previews/evr-ventures.webp",
+      "local_rel": "assets/previews/evr-ventures.mp4",
       "sort_order": 9999,
       "is_free": true,
-      "local_kind": "webp"
+      "local_kind": "mp4"
     },
     {
       "id": "finlytic-ai-agent",
@@ -1020,10 +1020,10 @@
       "category": "SaaS",
       "type": "hero",
       "source_kind": "motionsites",
-      "local_rel": "assets/previews/finlytic-ai-agent.webp",
+      "local_rel": "assets/previews/finlytic-ai-agent.mp4",
       "sort_order": 9999,
       "is_free": true,
-      "local_kind": "webp"
+      "local_kind": "mp4"
     },
     {
       "id": "grow-ai-talent-platform",
@@ -1032,10 +1032,10 @@
       "category": "SaaS",
       "type": "hero",
       "source_kind": "motionsites",
-      "local_rel": "assets/previews/grow-ai-talent-platform.webp",
+      "local_rel": "assets/previews/grow-ai-talent-platform.mp4",
       "sort_order": 9999,
       "is_free": true,
-      "local_kind": "webp"
+      "local_kind": "mp4"
     },
     {
       "id": "hr-saa-s-hero",
@@ -1044,10 +1044,10 @@
       "category": "SaaS",
       "type": "hero",
       "source_kind": "motionsites",
-      "local_rel": "assets/previews/hr-saa-s-hero.webp",
+      "local_rel": "assets/previews/hr-saa-s-hero.mp4",
       "sort_order": 9999,
       "is_free": true,
-      "local_kind": "webp"
+      "local_kind": "mp4"
     },
     {
       "id": "mindloop",
@@ -1056,10 +1056,10 @@
       "category": "SaaS",
       "type": "hero",
       "source_kind": "motionsites",
-      "local_rel": "assets/previews/mindloop.webp",
+      "local_rel": "assets/previews/mindloop.mp4",
       "sort_order": 9999,
       "is_free": true,
-      "local_kind": "webp"
+      "local_kind": "mp4"
     },
     {
       "id": "neo-vision",
@@ -1068,10 +1068,10 @@
       "category": "Landing Page",
       "type": "landing-page",
       "source_kind": "motionsites",
-      "local_rel": "assets/previews/neo-vision.webp",
+      "local_rel": "assets/previews/neo-vision.mp4",
       "sort_order": 9999,
       "is_free": true,
-      "local_kind": "webp"
+      "local_kind": "mp4"
     },
     {
       "id": "neuralyn",
@@ -1080,10 +1080,10 @@
       "category": "SaaS",
       "type": "hero",
       "source_kind": "motionsites",
-      "local_rel": "assets/previews/neuralyn.webp",
+      "local_rel": "assets/previews/neuralyn.mp4",
       "sort_order": 9999,
       "is_free": true,
-      "local_kind": "webp"
+      "local_kind": "mp4"
     },
     {
       "id": "nexora-automation",
@@ -1092,10 +1092,10 @@
       "category": "SaaS",
       "type": "hero",
       "source_kind": "motionsites",
-      "local_rel": "assets/previews/nexora-automation.webp",
+      "local_rel": "assets/previews/nexora-automation.mp4",
       "sort_order": 9999,
       "is_free": true,
-      "local_kind": "webp"
+      "local_kind": "mp4"
     },
     {
       "id": "nexus-it-solutions",
@@ -1104,10 +1104,10 @@
       "category": "Hero Section",
       "type": "hero",
       "source_kind": "motionsites",
-      "local_rel": "assets/previews/nexus-it-solutions.webp",
+      "local_rel": "assets/previews/nexus-it-solutions.mp4",
       "sort_order": 9999,
       "is_free": true,
-      "local_kind": "webp"
+      "local_kind": "mp4"
     },
     {
       "id": "nickel-payments",
@@ -1116,10 +1116,10 @@
       "category": "SaaS",
       "type": "hero",
       "source_kind": "motionsites",
-      "local_rel": "assets/previews/nickel-payments.webp",
+      "local_rel": "assets/previews/nickel-payments.mp4",
       "sort_order": 9999,
       "is_free": true,
-      "local_kind": "webp"
+      "local_kind": "mp4"
     },
     {
       "id": "orbis-nft",
@@ -1128,10 +1128,10 @@
       "category": "Landing Page",
       "type": "landing-page",
       "source_kind": "motionsites",
-      "local_rel": "assets/previews/orbis-nft.webp",
+      "local_rel": "assets/previews/orbis-nft.mp4",
       "sort_order": 9999,
       "is_free": true,
-      "local_kind": "webp"
+      "local_kind": "mp4"
     },
     {
       "id": "orbit-web3",
@@ -1140,10 +1140,10 @@
       "category": "Web3",
       "type": "hero",
       "source_kind": "motionsites",
-      "local_rel": "assets/previews/orbit-web3.webp",
+      "local_rel": "assets/previews/orbit-web3.mp4",
       "sort_order": 9999,
       "is_free": true,
-      "local_kind": "webp"
+      "local_kind": "mp4"
     },
     {
       "id": "planet-orbit",
@@ -1152,10 +1152,10 @@
       "category": "SaaS",
       "type": "hero",
       "source_kind": "motionsites",
-      "local_rel": "assets/previews/planet-orbit.webp",
+      "local_rel": "assets/previews/planet-orbit.mp4",
       "sort_order": 9999,
       "is_free": true,
-      "local_kind": "webp"
+      "local_kind": "mp4"
     },
     {
       "id": "power-ai",
@@ -1164,10 +1164,10 @@
       "category": "Hero Section",
       "type": "hero",
       "source_kind": "motionsites",
-      "local_rel": "assets/previews/power-ai.webp",
+      "local_rel": "assets/previews/power-ai.mp4",
       "sort_order": 9999,
       "is_free": true,
-      "local_kind": "webp"
+      "local_kind": "mp4"
     },
     {
       "id": "railroad.ai",
@@ -1176,10 +1176,10 @@
       "category": "Hero Section",
       "type": "hero",
       "source_kind": "motionsites",
-      "local_rel": "assets/previews/railroad.ai.webp",
+      "local_rel": "assets/previews/railroad.ai.mp4",
       "sort_order": 9999,
       "is_free": true,
-      "local_kind": "webp"
+      "local_kind": "mp4"
     },
     {
       "id": "sky-elite-private-jets",
@@ -1188,10 +1188,10 @@
       "category": "Landing Page",
       "type": "hero",
       "source_kind": "motionsites",
-      "local_rel": "assets/previews/sky-elite-private-jets.webp",
+      "local_rel": "assets/previews/sky-elite-private-jets.mp4",
       "sort_order": 9999,
       "is_free": true,
-      "local_kind": "webp"
+      "local_kind": "mp4"
     },
     {
       "id": "stellar-ai",
@@ -1200,10 +1200,10 @@
       "category": "Hero Section",
       "type": "hero",
       "source_kind": "motionsites",
-      "local_rel": "assets/previews/stellar-ai.webp",
+      "local_rel": "assets/previews/stellar-ai.mp4",
       "sort_order": 9999,
       "is_free": true,
-      "local_kind": "webp"
+      "local_kind": "mp4"
     },
     {
       "id": "taskly",
@@ -1224,10 +1224,10 @@
       "category": "SaaS",
       "type": "hero",
       "source_kind": "motionsites",
-      "local_rel": "assets/previews/taskora-saa-s-hero.webp",
+      "local_rel": "assets/previews/taskora-saa-s-hero.mp4",
       "sort_order": 9999,
       "is_free": true,
-      "local_kind": "webp"
+      "local_kind": "mp4"
     },
     {
       "id": "terra-geo-map",
@@ -1236,10 +1236,10 @@
       "category": "SaaS",
       "type": "hero",
       "source_kind": "motionsites",
-      "local_rel": "assets/previews/terra-geo-map.webp",
+      "local_rel": "assets/previews/terra-geo-map.mp4",
       "sort_order": 9999,
       "is_free": true,
-      "local_kind": "webp"
+      "local_kind": "mp4"
     },
     {
       "id": "transform-data",
@@ -1248,10 +1248,10 @@
       "category": "Hero Section",
       "type": "hero",
       "source_kind": "motionsites",
-      "local_rel": "assets/previews/transform-data.webp",
+      "local_rel": "assets/previews/transform-data.mp4",
       "sort_order": 9999,
       "is_free": true,
-      "local_kind": "webp"
+      "local_kind": "mp4"
     },
     {
       "id": "velorah",
@@ -1260,10 +1260,10 @@
       "category": "Agency",
       "type": "hero",
       "source_kind": "motionsites",
-      "local_rel": "assets/previews/velorah.webp",
+      "local_rel": "assets/previews/velorah.mp4",
       "sort_order": 9999,
       "is_free": true,
-      "local_kind": "webp"
+      "local_kind": "mp4"
     },
     {
       "id": "x-portfolio-hero",
@@ -1272,10 +1272,10 @@
       "category": "Hero Section",
       "type": "hero",
       "source_kind": "motionsites",
-      "local_rel": "assets/previews/x-portfolio-hero.webp",
+      "local_rel": "assets/previews/x-portfolio-hero.mp4",
       "sort_order": 9999,
       "is_free": true,
-      "local_kind": "webp"
+      "local_kind": "mp4"
     },
     {
       "id": "community-superdesign-scroll-journey-line",
