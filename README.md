@@ -6,7 +6,7 @@
 👉 **主域（Cloudflare Pages，国内直连友好）：** https://motionsites-prompts.pages.dev/
 👉 **备用（GitHub Pages，仅供海外/无 GFW 拦截网络）：** https://zhaosenlin12-creator.github.io/MotionSites/
 
-主域部署在 Cloudflare Pages（Cloudflare CDN，国内可达），每次 push 后手动通过 wrangler pages deploy 推送；GitHub Pages 已配置自动部署但 Fastly 边缘在国内网络环境偶发 RST，作为海外用户备选。公网可直接访问 504 条提示词、451 条完整正文、292 张高清预览（1280px webp）、21 个循环视频、191 张概念卡。无需登录、无需付费、无网络调用，打开即用。
+主域部署在 Cloudflare Pages（Cloudflare CDN，国内可达），每次 push 后手动通过 wrangler pages deploy 推送；GitHub Pages 已配置自动部署但 Fastly 边缘在国内网络环境偶发 RST，作为海外用户备选。公网可直接访问 504 条提示词、451 条完整正文、193 张静态/动态预览（含 120 个循环视频 mp4/webm + 73 张 1280px webp）+ 191 张概念卡。无需登录、无需付费、无网络调用，打开即用。
 
 
 > A progressively-loaded, offline-first catalog of **504 motion-driven UI prompts** — landing pages, hero scenes, agency showcases, dashboards, and more. Browse, search, copy, and export every prompt locally. No login, no third-party tracking, no paywall. Cold loads land paint-ready in ~34 ms (DOMContentLoaded) and finish in ~239 ms (loadEvent); only one small JSON per page + one prompt body per modal are fetched.
@@ -19,7 +19,7 @@
 
 - **504 curated prompts** (365 MotionSites main library + 139 community picks) across Landing Page, Hero, SaaS, Agency, Portfolio, Web3, AI / Dashboard, Travel, Healthcare, Real Estate, and more
 - **451 full prompt bodies** (302 MotionSites + 10 motionsites.ai edge-fn recoveries + 139 community) — copy to clipboard or export as a Markdown file
-- **292 high-resolution previews** (webp, 1280px / q=85, downloaded from Motionsites / R2 / higgs.ai CDNs) + **21 looping video previews** (mp4 / webm) + **191 concept cards** with curated per-category palettes and animated art
+- **193 image / video previews, 1280px / q=85, downloaded from Motionsites / R2 / higgs.ai CDNs) + **21 looping video previews** (mp4 / webm) + **191 concept cards** with curated per-category palettes and animated art
 - **191 concept cards** with curated per-category palettes and animated art (used when the source page has no preview)
 - **Multi-dimensional filters**: category, type, source (MotionSites / Community), media format, plus top-9 category chips and combined search over the source repository / file path
 - **Keyboard-first**: `/` focus search, `Esc` close modal, `G` toggle compact
@@ -152,7 +152,7 @@ Measured locally with Chromium (Playwright headless) against `node server-stable
 | Cards rendered (viewport) | ~120, progressively painted in 60-card batches |
 | Skeletons remaining after boot | 0 |
 | Console errors | 0 |
-| Records | 504 (451 with full text, 292 images, 21 videos, 191 concepts) |
+| Records | 504 (451 with full text, 193 images, 120 videos, 191 concepts) |
 
 Progressive architecture:
 
@@ -233,7 +233,7 @@ The shipped `index.html` is pre-generated, but you can regenerate it any time:
 
 ```bash
 node scripts/build.js
-# -> Records=504 complete=451 images=292 videos=21 concepts=191 motionsites=365 community=139
+# -> Records=504 complete=451 images=193 videos=120 concepts=191 motionsites=365 community=139
 # -> Wrote catalog-lite.json  1.5 KB  (gzip 0.7 KB)
 # -> Wrote catalog-meta.json  187 KB  (gzip 37 KB)
 # -> Wrote catalog-text.json  4061.0 KB  (gzip 1317.7 KB)

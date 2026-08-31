@@ -52,3 +52,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Known limitations
 - 21 of the 504 cards still point to a 480p mp4 (community-superdesign items that have only relative `prompts/...` paths in `catalog-details.json`, so we can't reach their source for a re-extract). They show as motion in the grid and modal.
 - GitHub Pages is the overseas-only backup. Edge nodes belonging to Fastly IPs `185.199.108-111.153` RST on the operator's network; CF Pages is the canonical URL.
+
+## [1.1.1] - 2026-08-31
+
+### Fixed
+- Restored motion for 99 cards whose mp4 had been replaced with a static first-frame webp during the 2026-08-16 quality upgrade; catalog now prefers mp4/webm where present so the grid loops motion again. 14 zero-byte `assets/previews/*.webp` files refilled from the R2 `animated (*).webp` source set.
+- Catalog lite counts refreshed: 193 image + 120 video + 191 concept (was 292 / 21 / 191).
