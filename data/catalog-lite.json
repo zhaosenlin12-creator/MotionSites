@@ -1,6 +1,6 @@
 {
   "total": 568,
-  "complete": 309,
+  "complete": 512,
   "images": 197,
   "videos": 168,
   "concepts": 203,
@@ -139,5 +139,6 @@
     "3D": 1
   },
   "version": 2,
-  "motions": 168
+  "motions": 168,
+  "complete_with_text": 512
 }
