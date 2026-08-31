@@ -123,5 +123,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Verified
 - 5 image-download attempts: 3 success, 2 failure (datacore-saa-s-hero CloudflareStream thumbnail 404, 
 ova-space-systems d8j0ntlcm91z4.cloudfront.net 403). These two remain concept-only because the source CDN refuses unauthenticated GETs.
-- 5 community mp4 downloads: 5 / 5 success via aw.githubusercontent.com/superdesigndev/superdesign-prompts/main/....
+- 5 community mp4 downloads: 5 / 5 success via 
+aw.githubusercontent.com/superdesigndev/superdesign-prompts/main/....
 - 8/8 downloaded files decode cleanly with ffmpeg (3 webp_pipe valid; 5 mp4 isom h264 valid; 1 png_pipe for the 404 card).
+
+## [1.1.7] - 2026-08-31
+
+### Changed
+- Self-hosted all 3 Google Fonts (Inter 400/500/600/700/800, Fraunces 400/500i/600/700, JetBrains Mono 400/500) as ssets/fonts/*.woff2 (11 files, 427 KB total). The page no longer hits onts.googleapis.com or onts.gstatic.com - removing the last external CDN dependency that survived the 1.1.5 cleanup.
+- index.html head: dropped the Google Fonts preconnect, the async-load stylesheet, and the noscript fallback. Replaced with link rel=preload for the most-used weights (Inter 400 + Fraunces 400) and a single synchronous link rel=stylesheet pointing at ssets/fonts/fonts.css. Net effect: zero outbound HTTPS during page load (only same-origin requests).
+- _headers: no change needed - the existing /assets/* Cache-Control: public, max-age=31536000, immutable rule already covers the new ssets/fonts/ files on Cloudflare Pages. GitHub Pages uses its own default cache for fonts (max-age=600) which is acceptable since the URL is content-addressed.
+- Cache-bust stamp bumped ?v=20260831v4 -> ?v=20260831v5 so existing clients pick up the new link tags on next load.
+
+### Verified
+- ssets/fonts/ contains exactly 11 .woff2 files, 426.65 KB total. Each is a valid ormat('woff2') payload pulled from Google Fonts at build time.
+- ssets/fonts/fonts.css is 55 lines of font-face declarations with no unicode-range subsetting (latin-only, 427 KB covers the whole UI surface for zh-CN + English).
+- ms_script.js + index.html source audits show no remaining https:// references except the one in-flight link https://motionsites.ai/p/<id> which only fires on modal-open click (user-initiated navigation, not a load-time fetch).
