@@ -1,2 +1,6 @@
-﻿# SPA-style fallback is not used (this is a static catalog).
+# SPA-style fallback is not used (this is a static catalog).
 # All routes resolve to index.html via the meta refresh / client-side filtering.
+# Force-redirect the orphan website-builder.mp4 (which was actually an animated
+# webp retagged as a video by motionsites.ai) to its real webp counterpart.
+/assets/previews/website-builder.mp4 /assets/previews/website-builder.webp 301
+
