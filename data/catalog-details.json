@@ -257,8 +257,8 @@
     "description": null,
     "page_type": "hero",
     "local_kind": "mp4",
-    "has_text": false,
-    "text_len": 0,
+    "has_text": true,
+    "text_len": 8810,
     "created_at": "2026-07-13T00:06:10.86861+00:00"
   },
   "aesthetic-dental-clinic": {
@@ -334,8 +334,8 @@
     "description": null,
     "page_type": "hero",
     "local_kind": "mp4",
-    "has_text": false,
-    "text_len": 0,
+    "has_text": true,
+    "text_len": 3233,
     "created_at": "2026-07-17T01:43:00+00:00"
   },
   "album-release": {
@@ -411,8 +411,8 @@
     "description": null,
     "page_type": "hero",
     "local_kind": "mp4",
-    "has_text": false,
-    "text_len": 0,
+    "has_text": true,
+    "text_len": 5380,
     "created_at": "2026-07-13T00:53:16.189653+00:00"
   },
   "cleantech": {
@@ -543,8 +543,8 @@
     "description": null,
     "page_type": "hero",
     "local_kind": "mp4",
-    "has_text": false,
-    "text_len": 0,
+    "has_text": true,
+    "text_len": 10515,
     "created_at": "2026-07-20T02:49:06.47866+00:00"
   },
   "financial-suite": {
@@ -620,8 +620,8 @@
     "description": null,
     "page_type": "hero",
     "local_kind": "mp4",
-    "has_text": false,
-    "text_len": 0,
+    "has_text": true,
+    "text_len": 6957,
     "created_at": "2026-07-15T10:33:00+00:00"
   },
   "innovation-studio": {
@@ -708,8 +708,8 @@
     "description": null,
     "page_type": "hero",
     "local_kind": "mp4",
-    "has_text": false,
-    "text_len": 0,
+    "has_text": true,
+    "text_len": 5242,
     "created_at": "2026-07-16T10:50:52.226917+00:00"
   },
   "model-infrastructure": {
@@ -1005,8 +1005,8 @@
     "description": null,
     "page_type": "hero",
     "local_kind": "mp4",
-    "has_text": false,
-    "text_len": 0,
+    "has_text": true,
+    "text_len": 6925,
     "created_at": "2026-07-14T01:02:04.952848+00:00"
   },
   "acreage-farming-hero": {
@@ -1508,7 +1508,7 @@
     ],
     "page_type": "community",
     "local_kind": "mp4",
-    "has_text": false,
+    "has_text": true,
     "text_len": 121,
     "created_at": null
   },
@@ -1648,7 +1648,7 @@
     ],
     "page_type": "community",
     "local_kind": "mp4",
-    "has_text": false,
+    "has_text": true,
     "text_len": 113,
     "created_at": null
   },
@@ -1816,7 +1816,7 @@
     ],
     "page_type": "community",
     "local_kind": "mp4",
-    "has_text": false,
+    "has_text": true,
     "text_len": 189,
     "created_at": null
   },
@@ -2695,8 +2695,8 @@
     "description": null,
     "page_type": "hero",
     "local_kind": "webp",
-    "has_text": false,
-    "text_len": 0,
+    "has_text": true,
+    "text_len": 6087,
     "created_at": "2026-07-14T02:01:33.957887+00:00"
   },
   "future-state": {
@@ -9517,7 +9517,7 @@
     "text_reconstructed": false,
     "description": null,
     "page_type": "hero",
-    "local_kind": "mp4",
+    "local_kind": "webp",
     "has_text": null,
     "text_len": 0,
     "created_at": "2026/7/30 17:37:13"
@@ -10209,5 +10209,21 @@
     "has_text": true,
     "text_len": 32623,
     "created_at": "2026/8/30 11:41:29"
+  },
+  "community-superdesign-the-stacking-cards-effect": {
+    "image_preview_url": null,
+    "video_preview_url": null,
+    "source_url": "https://github.com/giglianepefrei/motionsites.ai-prompt-library/blob/main/community-superdesign-fetch/prompts/stacking_cards.md",
+    "source_path": null,
+    "source_repo": "giglianepefrei/motionsites.ai-prompt-library",
+    "source_id": "giglianepefrei-motionsites-community",
+    "source_license": "NOASSERTION",
+    "text_reconstructed": false,
+    "description": null,
+    "page_type": "landing-page",
+    "local_kind": null,
+    "has_text": true,
+    "text_len": 197,
+    "created_at": null
   }
 }

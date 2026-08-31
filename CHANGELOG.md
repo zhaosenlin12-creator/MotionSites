@@ -75,7 +75,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [1.1.3] - 2026-08-31
 
 ### Removed
-- 12 cards pruned from `catalog-meta.json` / `catalog-details.json` because they were dead-ends for end users: no `assets/previews/<id>.*` file was on disk **and** no `data/catalog-text/<id>.txt` body was available, so the gallery only showed a fallback concept card and a paywall placeholder - useless in offline use.
-  - New (2026-08-31 batch, 11): `xportfolio-hero`, `evr-ventures-hero`, `railroad-ai-hero`, `grow-ai-hero`, `planet-orbit-hero`, `neovision-landing`, `finlytic-hero`, `orbit-web3-hero`, `apex-saas-hero`, `mindloop-hero`, `stellar-ai-v2-hero`.
-  - Legacy (1, asset already missing): `community-superdesign-the-stacking-cards-effect`.
-- Total cards: **579 -> 567**. Image/video/concept counts unchanged (the 12 cards fell in the implicit "neither" bucket that never surfaced as usable content).
+- 11 cards pruned from `catalog-meta.json` / `catalog-details.json` because they were dead-ends for end users: no `assets/previews/<id>.*` file was on disk **and** no `data/catalog-text/<id>.txt` body was available, so the gallery only showed a fallback concept card and a paywall placeholder - useless in offline use.
+  - The list: `xportfolio-hero`, `evr-ventures-hero`, `railroad-ai-hero`, `grow-ai-hero`, `planet-orbit-hero`, `neovision-landing`, `finlytic-hero`, `orbit-web3-hero`, `apex-saas-hero`, `mindloop-hero`, `stellar-ai-v2-hero`.
+- Image/video/concept counts unchanged (the 11 cards fell in the implicit "neither" bucket that never surfaced as usable content).
+- Reformatted catalog-meta / catalog-details / catalog-lite with 2-space JSON.stringify indent (was single-line minified previously).
+
+## [1.1.4] - 2026-08-31
+
+### Fixed
+- **Misclassified mp4**: `website-builder.mp4` was actually an animated WebP retagged as video by motionsites.ai. Renamed to `website-builder.webp`, switched its `local_kind` to `webp`, removed the orphaned `poster_rel`, updated `catalog-details.local_kind`.
+- **Stale `has_text` flag** on 11 legacy entries: the cleanup logic keyed off `details.has_text` but 11 community cards actually had text in `catalog-text/*.txt` while the flag was still `false`. Set `has_text=true` and `text_len=<size>` for: `adhd-planner`, `ai-workflow-agents`, `church-community`, `f1-racing-hub`, `innovation-lab`, `mind-body-healing`, `wellness-device`, `community-superdesign-scroll-journey-line`, `community-superdesign-typing-animation`, `community-superdesign-glow-cursor-button`, `fun-404-page`.
+
+### Restored
+- `community-superdesign-the-stacking-cards-effect` had been wrongly removed in 1.1.3 because its `has_text` flag was stale (see above). It does have a real prompt body (`catalog-text/community-superdesign-the-stacking-cards-effect.txt` = 197 chars), so it's back as a concept card. Category: Animations & Backgrounds.
+
+### Changed
+- Catalog lite counts refreshed: **568 total / 197 images / 168 videos / 203 concepts / 429 MotionSites / 139 community / 498 with text**. Counts sum: 197 + 168 + 203 = 568 ✓.
