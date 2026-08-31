@@ -195,7 +195,7 @@ function debounce(fn, ms) {
 async function fetchJSON(url) {
   // BUST-CACHE: append a build stamp so each deploy invalidates browser caches.
   const sep = url.includes('?') ? '&' : '?';
-  const fullUrl = url + sep + 'v=20260831v5';
+  const fullUrl = url + sep + 'v=20260831v6';
   const res = await fetch(fullUrl, { cache: 'no-store' });
   if (!res.ok) throw new Error('fetchJSON ' + url + ' ' + res.status);
   return res.json();
@@ -217,7 +217,7 @@ async function loadPromptText(id) {
   if (!rel) { __MS_TEXT_CACHE[id] = ''; return ''; }
   const p = (async function () {
     try {
-      const res = await fetch('data/' + rel + '?v=20260831v5', { cache: 'no-store' });
+      const res = await fetch('data/' + rel + '?v=20260831v6', { cache: 'no-store' });
       if (!res.ok) throw new Error('text ' + id + ' ' + res.status);
       const txt = await res.text();
       __MS_TEXT_CACHE[id] = txt;

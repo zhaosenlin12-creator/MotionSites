@@ -3,75 +3,75 @@
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url('assets/fonts/inter-400-n.woff2') format('woff2');
+  src: url('inter-400-n.woff2') format('woff2');
 }
 @font-face {
   font-family: 'Inter';
   font-style: normal;
   font-weight: 500;
   font-display: swap;
-  src: url('assets/fonts/inter-500-n.woff2') format('woff2');
+  src: url('inter-500-n.woff2') format('woff2');
 }
 @font-face {
   font-family: 'Inter';
   font-style: normal;
   font-weight: 600;
   font-display: swap;
-  src: url('assets/fonts/inter-600-n.woff2') format('woff2');
+  src: url('inter-600-n.woff2') format('woff2');
 }
 @font-face {
   font-family: 'Inter';
   font-style: normal;
   font-weight: 700;
   font-display: swap;
-  src: url('assets/fonts/inter-700-n.woff2') format('woff2');
+  src: url('inter-700-n.woff2') format('woff2');
 }
 @font-face {
   font-family: 'Inter';
   font-style: normal;
   font-weight: 800;
   font-display: swap;
-  src: url('assets/fonts/inter-800-n.woff2') format('woff2');
+  src: url('inter-800-n.woff2') format('woff2');
 }
 @font-face {
   font-family: 'Fraunces';
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url('assets/fonts/fraunces-400-n.woff2') format('woff2');
+  src: url('fraunces-400-n.woff2') format('woff2');
 }
 @font-face {
   font-family: 'Fraunces';
   font-style: italic;
   font-weight: 500;
   font-display: swap;
-  src: url('assets/fonts/fraunces-500-i.woff2') format('woff2');
+  src: url('fraunces-500-i.woff2') format('woff2');
 }
 @font-face {
   font-family: 'Fraunces';
   font-style: normal;
   font-weight: 600;
   font-display: swap;
-  src: url('assets/fonts/fraunces-600-n.woff2') format('woff2');
+  src: url('fraunces-600-n.woff2') format('woff2');
 }
 @font-face {
   font-family: 'Fraunces';
   font-style: normal;
   font-weight: 700;
   font-display: swap;
-  src: url('assets/fonts/fraunces-700-n.woff2') format('woff2');
+  src: url('fraunces-700-n.woff2') format('woff2');
 }
 @font-face {
   font-family: 'JetBrains Mono';
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url('assets/fonts/jetbrains mono-400-n.woff2') format('woff2');
+  src: url('jetbrains-mono-400-n.woff2') format('woff2');
 }
 @font-face {
   font-family: 'JetBrains Mono';
   font-style: normal;
   font-weight: 500;
   font-display: swap;
-  src: url('assets/fonts/jetbrains mono-500-n.woff2') format('woff2');
+  src: url('jetbrains-mono-500-n.woff2') format('woff2');
 }

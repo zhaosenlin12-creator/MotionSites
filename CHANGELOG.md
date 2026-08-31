@@ -139,3 +139,18 @@ aw.githubusercontent.com/superdesigndev/superdesign-prompts/main/....
 - ssets/fonts/ contains exactly 11 .woff2 files, 426.65 KB total. Each is a valid ormat('woff2') payload pulled from Google Fonts at build time.
 - ssets/fonts/fonts.css is 55 lines of font-face declarations with no unicode-range subsetting (latin-only, 427 KB covers the whole UI surface for zh-CN + English).
 - ms_script.js + index.html source audits show no remaining https:// references except the one in-flight link https://motionsites.ai/p/<id> which only fires on modal-open click (user-initiated navigation, not a load-time fetch).
+
+## [1.1.8] - 2026-08-31
+
+### Fixed
+- **fonts.css path bug**: every @font-face src: url(...) was relative to the CSS file location, so ssets/fonts/x.woff2 resolved to ssets/fonts/assets/fonts/x.woff2 - a path that doesn't exist. All 11 woff2 files 404'd in the browser even though they were correctly uploaded. Now using same-folder relative paths (x.woff2) since onts.css already lives in ssets/fonts/.
+- **153 animated webps showed as black** in card previews: the original scrape had pulled webp_anim (animated webp) at 640x468 for most of the catalog. Browsers render <img> of an animated webp as the first frame, and most of those first frames were transparent or near-black. Converted all 153 animated webps to static first-frame webp using ffmpeg (lossy q=82). Net disk: 568 webps went from mixed animated/static to 100% static, with significant size reduction on the animated ones (e.g. dreamcore-landing 2.75 MB -> 47 KB).
+- **JetBrains Mono space-in-filename**: renamed jetbrains mono-400-n.woff2 -> jetbrains-mono-400-n.woff2 (and the 500 weight) to remove the literal space that required URL encoding.
+
+### Changed
+- Cache-bust stamp bumped ?v=20260831v5 -> ?v=20260831v6. Also added explicit ?v=2 on the onts.css link and the two preloaded woff2 links in index.html to force a refetch of those resources for any user still holding the buggy versions (GH Pages default cache is max-age=600).
+
+### Verified (after re-deploy)
+- 198/198 webp cards in the catalog are now webp_pipe (static) per ffmpeg probe - zero webp_anim remain.
+- All 11 woff2 files reachable via same-folder relative URLs in onts.css.
+- ms_script.js syntax OK.
