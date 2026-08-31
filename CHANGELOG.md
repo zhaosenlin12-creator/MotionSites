@@ -108,3 +108,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - 203/203 concept-only cards resolve a catalog-text-index.json entry; 5/5 random text bodies return 200 text/plain.
 - ms_script.js ships BUST-CACHE, updateHeaderStats, cacheno-store, the new poster field, and no stale force-cache.
 - The only outstanding asset oddity (stale .mp4 URL returning webp_pipe bytes) is closed by the new in-repo stub mp4.
+
+## [1.1.6] - 2026-08-31
+
+### Added
+- 8 new local preview files downloaded and wired in: 3 webp/png images for previously concept-only cards (prisma-landing, etheris-voyage-hero, 404) and 5 community mp4s from superdesigndev/superdesign-prompts (synapse, card-swap, hover-reveal-effect, gooey-gradient-background, xploded-view-assembly). Catalog-meta now points these cards at real local files.
+- 404 preview is actually a PNG (renamed .webp -> .png); the front-end detects image kind by URL extension, so this works out of the box.
+
+### Changed
+- Catalog lite counts: 568 total / **200 images / 173 videos / 195 concepts** (was 197 / 168 / 203). 200 + 173 + 195 = 568 sum OK.
+- Cache-bust stamp bumped ?v=20260831v3 -> ?v=20260831v4 across ms_script.js and index.html.
+- catalog-details.json updated: the 8 affected cards now carry a local_kind field matching their new asset.
+
+### Verified
+- 5 image-download attempts: 3 success, 2 failure (datacore-saa-s-hero CloudflareStream thumbnail 404, 
+ova-space-systems d8j0ntlcm91z4.cloudfront.net 403). These two remain concept-only because the source CDN refuses unauthenticated GETs.
+- 5 community mp4 downloads: 5 / 5 success via aw.githubusercontent.com/superdesigndev/superdesign-prompts/main/....
+- 8/8 downloaded files decode cleanly with ffmpeg (3 webp_pipe valid; 5 mp4 isom h264 valid; 1 png_pipe for the 404 card).

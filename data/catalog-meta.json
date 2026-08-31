@@ -43,7 +43,7 @@
       "category": "Landing Page",
       "type": "hero",
       "source_kind": "motionsites",
-      "local_rel": null,
+      "local_rel": "assets/previews/prisma-landing.webp",
       "sort_order": 25,
       "is_free": true
     },
@@ -77,7 +77,7 @@
       "category": "Hero Section",
       "type": "hero",
       "source_kind": "motionsites",
-      "local_rel": null,
+      "local_rel": "assets/previews/aetheris-voyage-hero.webp",
       "sort_order": 60,
       "is_free": true
     },
@@ -3540,7 +3540,7 @@
       "category": "404 Pages",
       "type": "hero",
       "source_kind": "motionsites",
-      "local_rel": null,
+      "local_rel": "assets/previews/404.png",
       "sort_order": 999,
       "is_free": true
     },
@@ -4499,7 +4499,7 @@
       "category": "Landing Page",
       "type": "landing-page",
       "source_kind": "community",
-      "local_rel": null,
+      "local_rel": "assets/community/superdesign/synapse/preview.mp4",
       "sort_order": 10018,
       "is_free": true
     },
@@ -4609,7 +4609,7 @@
       "category": "Components",
       "type": "animation",
       "source_kind": "community",
-      "local_rel": null,
+      "local_rel": "assets/community/superdesign/card-swap/preview.mp4",
       "sort_order": 10028,
       "is_free": true
     },
@@ -4642,7 +4642,7 @@
       "category": "Animations & Backgrounds",
       "type": "landing-page",
       "source_kind": "community",
-      "local_rel": null,
+      "local_rel": "assets/community/superdesign/hover-reveal-effect/preview.mp4",
       "sort_order": 10031,
       "is_free": true
     },
@@ -4686,7 +4686,7 @@
       "category": "Animations & Backgrounds",
       "type": "background",
       "source_kind": "community",
-      "local_rel": null,
+      "local_rel": "assets/community/superdesign/gooey-gradient-background/preview.mp4",
       "sort_order": 10035,
       "is_free": true
     },
@@ -4829,7 +4829,7 @@
       "category": "Animations & Backgrounds",
       "type": "landing-page",
       "source_kind": "community",
-      "local_rel": null,
+      "local_rel": "assets/community/superdesign/exploded-view-assembly/preview.mp4",
       "sort_order": 10048,
       "is_free": true
     },

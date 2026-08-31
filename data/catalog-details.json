@@ -13,7 +13,7 @@
     "local_kind": null,
     "has_text": true,
     "text_len": 2078,
-    "created_at": "2026-03-18T07:51:10.633401+00:00"
+    "created_at": "2026-03-18T15:51:10.633401+08:00"
   },
   "5": {
     "image_preview_url": null,
@@ -29,7 +29,7 @@
     "local_kind": null,
     "has_text": true,
     "text_len": 3339,
-    "created_at": "2026-03-18T07:43:11.545931+00:00"
+    "created_at": "2026-03-18T15:43:11.545931+08:00"
   },
   "6": {
     "image_preview_url": null,
@@ -45,7 +45,7 @@
     "local_kind": null,
     "has_text": true,
     "text_len": 2871,
-    "created_at": "2026-03-18T07:43:44.984966+00:00"
+    "created_at": "2026-03-18T15:43:44.984966+08:00"
   },
   "7": {
     "image_preview_url": null,
@@ -61,7 +61,7 @@
     "local_kind": null,
     "has_text": true,
     "text_len": 1608,
-    "created_at": "2026-03-18T07:44:21.324977+00:00"
+    "created_at": "2026-03-18T15:44:21.324977+08:00"
   },
   "10": {
     "image_preview_url": null,
@@ -77,7 +77,7 @@
     "local_kind": null,
     "has_text": true,
     "text_len": 2693,
-    "created_at": "2026-03-18T07:47:07.030744+00:00"
+    "created_at": "2026-03-18T15:47:07.030744+08:00"
   },
   "15": {
     "image_preview_url": null,
@@ -93,7 +93,7 @@
     "local_kind": null,
     "has_text": true,
     "text_len": 5526,
-    "created_at": "2026-03-18T08:16:43.178861+00:00"
+    "created_at": "2026-03-18T16:16:43.178861+08:00"
   },
   "18": {
     "image_preview_url": null,
@@ -109,17 +109,17 @@
     "local_kind": null,
     "has_text": true,
     "text_len": 3313,
-    "created_at": "2026-03-18T08:14:26.493079+00:00"
+    "created_at": "2026-03-18T16:14:26.493079+08:00"
   },
   "404": {
     "image_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/hero%20sections/CleanShot_2026-05-15_at_15.46.24_2x_i163nd.png",
     "video_preview_url": null,
     "description": "深色太空背景，中央展示外星飞船插画，搭配大号404文字和简洁导航链接，营造科幻风格的错误页面。",
     "page_type": "hero",
-    "local_kind": null,
     "has_text": true,
     "text_len": 5689,
-    "created_at": "2026-04-02T08:53:00+00:00"
+    "created_at": "2026-04-02T16:53:00+08:00",
+    "local_kind": "png"
   },
   "3d-jack-portfolio-hero": {
     "image_preview_url": "https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260715_020402_14047c8b-e116-4ac5-bc7d-1ab18d18a358.png&w=1280&q=85",
@@ -130,7 +130,7 @@
     "local_kind": "mp4",
     "has_text": true,
     "text_len": 13877,
-    "created_at": "2026-05-19T05:35:00+00:00"
+    "created_at": "2026-05-19T13:35:00+08:00"
   },
   "art-landing": {
     "image_preview_url": null,
@@ -141,7 +141,7 @@
     "local_kind": "mp4",
     "has_text": true,
     "text_len": 5948,
-    "created_at": "2026-05-18T10:19:00+00:00"
+    "created_at": "2026-05-18T18:19:00+08:00"
   },
   "urban-jungle-hero": {
     "image_preview_url": "https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260715_021124_b20d7db2-0adb-43dc-b502-1b7226d75b69.png&w=1280&q=85",
@@ -152,7 +152,7 @@
     "local_kind": "mp4",
     "has_text": true,
     "text_len": 12395,
-    "created_at": "2026-05-19T09:44:00+00:00"
+    "created_at": "2026-05-19T17:44:00+08:00"
   },
   "liquid-glass-agency": {
     "image_preview_url": null,
@@ -169,7 +169,7 @@
     "local_kind": "mp4",
     "has_text": true,
     "text_len": 8532,
-    "created_at": "2026-03-18T07:36:54.022804+00:00"
+    "created_at": "2026-03-18T15:36:54.022804+08:00"
   },
   "asme-hero": {
     "image_preview_url": "https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260715_020600_5ede1c43-1f5f-4d94-9292-4f1725bec0fc.png&w=1280&q=85",
@@ -186,7 +186,7 @@
     "local_kind": "mp4",
     "has_text": true,
     "text_len": 4360,
-    "created_at": "2026-05-18T14:00:00+00:00"
+    "created_at": "2026-05-18T22:00:00+08:00"
   },
   "mindloop-landing": {
     "image_preview_url": null,
@@ -203,7 +203,7 @@
     "local_kind": "mp4",
     "has_text": true,
     "text_len": 7186,
-    "created_at": "2026-03-25T14:12:19.089159+00:00"
+    "created_at": "2026-03-25T22:12:19.089159+08:00"
   },
   "ai-designer-agency": {
     "image_preview_url": null,
@@ -220,7 +220,7 @@
     "local_kind": "mp4",
     "has_text": true,
     "text_len": 7394,
-    "created_at": "2026-03-27T04:03:07.349635+00:00"
+    "created_at": "2026-03-27T12:03:07.349635+08:00"
   },
   "orbit-engineers": {
     "image_preview_url": null,
@@ -237,7 +237,7 @@
     "local_kind": "mp4",
     "has_text": true,
     "text_len": 5513,
-    "created_at": "2026-03-18T07:31:26.279608+00:00"
+    "created_at": "2026-03-18T15:31:26.279608+08:00"
   },
   "3d-studio-pricing": {
     "image_preview_url": null,
@@ -248,7 +248,7 @@
     "local_kind": "mp4",
     "has_text": true,
     "text_len": 3971,
-    "created_at": "2026-07-03T11:36:41.855065+00:00"
+    "created_at": "2026-07-03T19:36:41.855065+08:00"
   },
   "adhd-planner": {
     "image_preview_url": "https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260715_015343_03370d9a-1518-49af-94a7-19897462cb64.png&w=1280&q=85",
@@ -259,7 +259,7 @@
     "local_kind": "mp4",
     "has_text": true,
     "text_len": 8810,
-    "created_at": "2026-07-13T00:06:10.86861+00:00"
+    "created_at": "2026-07-13T08:06:10.86861+08:00"
   },
   "aesthetic-dental-clinic": {
     "image_preview_url": "https://cdn.dribbble.com/userupload/45032179/file/b0ecac9905a05820536e6661d8b02e8b.png?resize=752x&vertical=center",
@@ -270,7 +270,7 @@
     "local_kind": "mp4",
     "has_text": false,
     "text_len": 0,
-    "created_at": "2026-07-14T02:46:11.256357+00:00"
+    "created_at": "2026-07-14T10:46:11.256357+08:00"
   },
   "ai-assistant-app": {
     "image_preview_url": null,
@@ -281,7 +281,7 @@
     "local_kind": "mp4",
     "has_text": false,
     "text_len": 0,
-    "created_at": "2026-07-17T07:40:50.311736+00:00"
+    "created_at": "2026-07-17T15:40:50.311736+08:00"
   },
   "ai-calorie-tracker": {
     "image_preview_url": null,
@@ -292,7 +292,7 @@
     "local_kind": "mp4",
     "has_text": false,
     "text_len": 0,
-    "created_at": "2026-07-13T00:39:57.057968+00:00"
+    "created_at": "2026-07-13T08:39:57.057968+08:00"
   },
   "ai-driving-assistant": {
     "image_preview_url": "https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260715_015408_a9291a49-383c-42c5-a5d5-1f2f564b70c3.png&w=1280&q=85",
@@ -303,7 +303,7 @@
     "local_kind": "mp4",
     "has_text": true,
     "text_len": 25475,
-    "created_at": "2026-07-11T02:43:48.085312+00:00"
+    "created_at": "2026-07-11T10:43:48.085312+08:00"
   },
   "ai-interface": {
     "image_preview_url": null,
@@ -314,7 +314,7 @@
     "local_kind": "mp4",
     "has_text": true,
     "text_len": 24277,
-    "created_at": "2026-06-17T10:42:00+00:00"
+    "created_at": "2026-06-17T18:42:00+08:00"
   },
   "ai-meeting-notes": {
     "image_preview_url": "https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260715_015523_a45a38c5-e9e7-451f-8929-e335297dc9a4.png&w=1280&q=85",
@@ -325,7 +325,7 @@
     "local_kind": "mp4",
     "has_text": true,
     "text_len": 44758,
-    "created_at": "2026-07-10T07:58:56.437824+00:00"
+    "created_at": "2026-07-10T15:58:56.437824+08:00"
   },
   "ai-workflow-agents": {
     "image_preview_url": "https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260715_014544_2e2e15ee-0037-456c-b0d1-1c174ef0bc27.png&w=1280&q=85",
@@ -336,7 +336,7 @@
     "local_kind": "mp4",
     "has_text": true,
     "text_len": 3233,
-    "created_at": "2026-07-17T01:43:00+00:00"
+    "created_at": "2026-07-17T09:43:00+08:00"
   },
   "album-release": {
     "image_preview_url": "https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260715_022610_3f49793e-f80f-42b4-988e-1bb1392d4978.png&w=1280&q=85",
@@ -347,7 +347,7 @@
     "local_kind": "mp4",
     "has_text": false,
     "text_len": 0,
-    "created_at": "2026-07-15T02:34:45.778927+00:00"
+    "created_at": "2026-07-15T10:34:45.778927+08:00"
   },
   "automotive-ai": {
     "image_preview_url": "https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260715_082703_3a070c4e-919b-4e37-be04-cf3e9dc9abf6.png&w=1280&q=85",
@@ -358,7 +358,7 @@
     "local_kind": "mp4",
     "has_text": false,
     "text_len": 0,
-    "created_at": "2026-07-16T09:53:49.486632+00:00"
+    "created_at": "2026-07-16T17:53:49.486632+08:00"
   },
   "bite-sized-courses": {
     "image_preview_url": null,
@@ -369,7 +369,7 @@
     "local_kind": "mp4",
     "has_text": false,
     "text_len": 0,
-    "created_at": "2026-07-17T07:54:01.070023+00:00"
+    "created_at": "2026-07-17T15:54:01.070023+08:00"
   },
   "cargo-group": {
     "image_preview_url": "https://cdn.dribbble.com/userupload/48202002/file/e19487627a2fbcfdad6761e85d6489e1.png?resize=1024x768&vertical=center",
@@ -380,7 +380,7 @@
     "local_kind": "mp4",
     "has_text": true,
     "text_len": 9392,
-    "created_at": "2026-06-19T07:56:00+00:00"
+    "created_at": "2026-06-19T15:56:00+08:00"
   },
   "cargox-mobile": {
     "image_preview_url": null,
@@ -391,7 +391,7 @@
     "local_kind": "mp4",
     "has_text": true,
     "text_len": 10210,
-    "created_at": "2026-07-08T02:14:21.560202+00:00"
+    "created_at": "2026-07-08T10:14:21.560202+08:00"
   },
   "celestial-renewal": {
     "image_preview_url": "https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260715_015443_a695a5b2-dfbf-461e-acc6-a3f5e5d87e86.png&w=1280&q=85",
@@ -402,7 +402,7 @@
     "local_kind": "mp4",
     "has_text": true,
     "text_len": 7343,
-    "created_at": "2026-07-10T08:35:16.450952+00:00"
+    "created_at": "2026-07-10T16:35:16.450952+08:00"
   },
   "church-community": {
     "image_preview_url": null,
@@ -413,7 +413,7 @@
     "local_kind": "mp4",
     "has_text": true,
     "text_len": 5380,
-    "created_at": "2026-07-13T00:53:16.189653+00:00"
+    "created_at": "2026-07-13T08:53:16.189653+08:00"
   },
   "cleantech": {
     "image_preview_url": null,
@@ -424,7 +424,7 @@
     "local_kind": "mp4",
     "has_text": true,
     "text_len": 10066,
-    "created_at": "2026-07-03T02:12:00+00:00"
+    "created_at": "2026-07-03T10:12:00+08:00"
   },
   "coffee-rewards": {
     "image_preview_url": null,
@@ -435,7 +435,7 @@
     "local_kind": "mp4",
     "has_text": true,
     "text_len": 5054,
-    "created_at": "2026-07-09T00:43:00+00:00"
+    "created_at": "2026-07-09T08:43:00+08:00"
   },
   "cosmos-interface": {
     "image_preview_url": null,
@@ -446,7 +446,7 @@
     "local_kind": "mp4",
     "has_text": true,
     "text_len": 26199,
-    "created_at": "2026-06-26T07:57:00+00:00"
+    "created_at": "2026-06-26T15:57:00+08:00"
   },
   "cozypaws": {
     "image_preview_url": null,
@@ -457,7 +457,7 @@
     "local_kind": "mp4",
     "has_text": true,
     "text_len": 6443,
-    "created_at": "2026-06-26T23:43:00+00:00"
+    "created_at": "2026-06-27T07:43:00+08:00"
   },
   "creative-designer-portfolio": {
     "image_preview_url": "https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260720_020643_2fddeccd-7745-4cd2-ab71-bae273ea0bfb.png&w=1280&q=85",
@@ -468,7 +468,7 @@
     "local_kind": "mp4",
     "has_text": false,
     "text_len": 0,
-    "created_at": "2026-07-20T02:13:13.68941+00:00"
+    "created_at": "2026-07-20T10:13:13.68941+08:00"
   },
   "cross-border": {
     "image_preview_url": null,
@@ -479,7 +479,7 @@
     "local_kind": "mp4",
     "has_text": true,
     "text_len": 6698,
-    "created_at": "2026-07-06T07:28:54.190673+00:00"
+    "created_at": "2026-07-06T15:28:54.190673+08:00"
   },
   "cybersecurity": {
     "image_preview_url": "https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260716_052223_73030cce-6e14-4bc5-b480-fa8eb9ef4140.png&w=1920&q=85",
@@ -490,7 +490,7 @@
     "local_kind": "mp4",
     "has_text": false,
     "text_len": 0,
-    "created_at": "2026-07-16T05:27:38.225584+00:00"
+    "created_at": "2026-07-16T13:27:38.225584+08:00"
   },
   "data-storytelling": {
     "image_preview_url": "https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260721_235356_7e9d6d1f-c41a-4e8a-8a23-b67cee3d7895.png&w=1280&q=85",
@@ -501,7 +501,7 @@
     "local_kind": "mp4",
     "has_text": false,
     "text_len": 0,
-    "created_at": "2026-07-22T00:08:55.834255+00:00"
+    "created_at": "2026-07-22T08:08:55.834255+08:00"
   },
   "deep-neural-interface": {
     "image_preview_url": "https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260722_053337_f12605f8-7ce2-45c2-b28d-6c1652ab2f16.png&w=1280&q=85",
@@ -512,7 +512,7 @@
     "local_kind": "mp4",
     "has_text": false,
     "text_len": 0,
-    "created_at": "2026-07-22T05:44:39.665094+00:00"
+    "created_at": "2026-07-22T13:44:39.665094+08:00"
   },
   "dental-implant-clinic": {
     "image_preview_url": null,
@@ -523,7 +523,7 @@
     "local_kind": "mp4",
     "has_text": false,
     "text_len": 0,
-    "created_at": "2026-07-13T00:48:17.233009+00:00"
+    "created_at": "2026-07-13T08:48:17.233009+08:00"
   },
   "f1-driver-profile": {
     "image_preview_url": "https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260720_020439_786e8d11-3e08-4871-8292-d6b3bb8ef5cd.png&w=1280&q=85",
@@ -534,7 +534,7 @@
     "local_kind": "mp4",
     "has_text": false,
     "text_len": 0,
-    "created_at": "2026-07-20T02:01:53.95238+00:00"
+    "created_at": "2026-07-20T10:01:53.95238+08:00"
   },
   "f1-racing-hub": {
     "image_preview_url": "https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260720_023932_018ea051-5b45-4c65-bacf-331ff6923794.png&w=1280&q=85",
@@ -545,7 +545,7 @@
     "local_kind": "mp4",
     "has_text": true,
     "text_len": 10515,
-    "created_at": "2026-07-20T02:49:06.47866+00:00"
+    "created_at": "2026-07-20T10:49:06.47866+08:00"
   },
   "financial-suite": {
     "image_preview_url": null,
@@ -556,7 +556,7 @@
     "local_kind": "mp4",
     "has_text": true,
     "text_len": 15250,
-    "created_at": "2026-07-01T01:15:27.541681+00:00"
+    "created_at": "2026-07-01T09:15:27.541681+08:00"
   },
   "footballer-portfolio": {
     "image_preview_url": null,
@@ -567,7 +567,7 @@
     "local_kind": "mp4",
     "has_text": false,
     "text_len": 0,
-    "created_at": "2026-07-13T00:10:19.739098+00:00"
+    "created_at": "2026-07-13T08:10:19.739098+08:00"
   },
   "futuristic-eyewear": {
     "image_preview_url": "https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260722_051636_bca53bb6-68d4-4efa-9e6f-706628e36c0a.png&w=1280&q=85",
@@ -578,7 +578,7 @@
     "local_kind": "mp4",
     "has_text": false,
     "text_len": 0,
-    "created_at": "2026-07-22T05:19:59.491341+00:00"
+    "created_at": "2026-07-22T13:19:59.491341+08:00"
   },
   "immersive-studio": {
     "image_preview_url": "https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260718_102108_3bb0cc66-d111-4702-9385-a3e29cb128e0.png&w=1280&q=85",
@@ -589,7 +589,7 @@
     "local_kind": "mp4",
     "has_text": false,
     "text_len": 0,
-    "created_at": "2026-07-18T10:23:52.356293+00:00"
+    "created_at": "2026-07-18T18:23:52.356293+08:00"
   },
   "imperial-vpn": {
     "image_preview_url": "https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260718_000307_70b7faa9-def2-4646-aa21-cdcbbc88a227.png&w=1280&q=85",
@@ -600,7 +600,7 @@
     "local_kind": "mp4",
     "has_text": false,
     "text_len": 0,
-    "created_at": "2026-07-18T00:05:08.291377+00:00"
+    "created_at": "2026-07-18T08:05:08.291377+08:00"
   },
   "inner-quest": {
     "image_preview_url": "https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260717_045148_fefd7d45-b1aa-4a36-bdda-00f877be2781.png&w=1920&q=85",
@@ -611,7 +611,7 @@
     "local_kind": "mp4",
     "has_text": false,
     "text_len": 0,
-    "created_at": "2026-07-17T04:52:57.839791+00:00"
+    "created_at": "2026-07-17T12:52:57.839791+08:00"
   },
   "innovation-lab": {
     "image_preview_url": "https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260718_102913_d13e11c1-91c9-4617-952b-72c446f8838e.png&w=1280&q=85",
@@ -622,7 +622,7 @@
     "local_kind": "mp4",
     "has_text": true,
     "text_len": 6957,
-    "created_at": "2026-07-15T10:33:00+00:00"
+    "created_at": "2026-07-15T18:33:00+08:00"
   },
   "innovation-studio": {
     "image_preview_url": null,
@@ -633,7 +633,7 @@
     "local_kind": "mp4",
     "has_text": true,
     "text_len": 6906,
-    "created_at": "2026-06-24T11:45:00+00:00"
+    "created_at": "2026-06-24T19:45:00+08:00"
   },
   "innovation-summit": {
     "image_preview_url": null,
@@ -644,7 +644,7 @@
     "local_kind": "mp4",
     "has_text": true,
     "text_len": 6730,
-    "created_at": "2026-07-06T00:34:29.526583+00:00"
+    "created_at": "2026-07-06T08:34:29.526583+08:00"
   },
   "integration-saas": {
     "image_preview_url": null,
@@ -655,7 +655,7 @@
     "local_kind": "mp4",
     "has_text": true,
     "text_len": 4754,
-    "created_at": "2026-06-27T04:39:00+00:00"
+    "created_at": "2026-06-27T12:39:00+08:00"
   },
   "lead-funnel": {
     "image_preview_url": null,
@@ -666,7 +666,7 @@
     "local_kind": "mp4",
     "has_text": true,
     "text_len": 50354,
-    "created_at": "2026-06-30T23:56:24.330242+00:00"
+    "created_at": "2026-07-01T07:56:24.330242+08:00"
   },
   "lending-ai-agents": {
     "image_preview_url": "https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260715_114738_f78cebe7-567f-4b8a-86aa-dd6f46a90c1c.png&w=1280&q=85",
@@ -677,7 +677,7 @@
     "local_kind": "mp4",
     "has_text": false,
     "text_len": 0,
-    "created_at": "2026-07-05T12:11:00+00:00"
+    "created_at": "2026-07-05T20:11:00+08:00"
   },
   "live-language-classes": {
     "image_preview_url": "https://cdn.dribbble.com/userupload/46195388/file/fba95b12fd7b10568626e5437a455e22.png?resize=752x&vertical=center",
@@ -688,7 +688,7 @@
     "local_kind": "mp4",
     "has_text": false,
     "text_len": 0,
-    "created_at": "2026-07-20T03:02:09.646238+00:00"
+    "created_at": "2026-07-20T11:02:09.646238+08:00"
   },
   "luxury-escapes": {
     "image_preview_url": null,
@@ -699,7 +699,7 @@
     "local_kind": "mp4",
     "has_text": true,
     "text_len": 9543,
-    "created_at": "2026-07-07T01:01:33.581213+00:00"
+    "created_at": "2026-07-07T09:01:33.581213+08:00"
   },
   "mind-body-healing": {
     "image_preview_url": "https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260716_103110_f5ec790a-0696-4637-a556-a0f3917d92f6.png&w=1920&q=85",
@@ -710,7 +710,7 @@
     "local_kind": "mp4",
     "has_text": true,
     "text_len": 5242,
-    "created_at": "2026-07-16T10:50:52.226917+00:00"
+    "created_at": "2026-07-16T18:50:52.226917+08:00"
   },
   "model-infrastructure": {
     "image_preview_url": "https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260715_015253_e3388795-fce6-4c14-a346-8fe5211805da.png&w=1280&q=85",
@@ -721,7 +721,7 @@
     "local_kind": "mp4",
     "has_text": false,
     "text_len": 0,
-    "created_at": "2026-07-14T01:03:46.608042+00:00"
+    "created_at": "2026-07-14T09:03:46.608042+08:00"
   },
   "modern-dental-clinic": {
     "image_preview_url": "https://cdn.dribbble.com/userupload/48162328/file/c27e0ef942f179d9a4dfbb806f8f0d30.png?resize=1024x768&vertical=center",
@@ -732,7 +732,7 @@
     "local_kind": "mp4",
     "has_text": false,
     "text_len": 0,
-    "created_at": "2026-07-13T00:14:29.707335+00:00"
+    "created_at": "2026-07-13T08:14:29.707335+08:00"
   },
   "mood-tracker": {
     "image_preview_url": null,
@@ -743,7 +743,7 @@
     "local_kind": "mp4",
     "has_text": true,
     "text_len": 10884,
-    "created_at": "2026-07-06T04:15:58.207878+00:00"
+    "created_at": "2026-07-06T12:15:58.207878+08:00"
   },
   "movie-premiere": {
     "image_preview_url": null,
@@ -754,7 +754,7 @@
     "local_kind": "mp4",
     "has_text": true,
     "text_len": 6881,
-    "created_at": "2026-07-06T07:16:16.335716+00:00"
+    "created_at": "2026-07-06T15:16:16.335716+08:00"
   },
   "mythic-vpn": {
     "image_preview_url": "https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260716_020503_4f938b86-bdc5-4480-bcef-7e7f9ebdc7f0.png&w=1280&q=85",
@@ -765,7 +765,7 @@
     "local_kind": "mp4",
     "has_text": false,
     "text_len": 0,
-    "created_at": "2026-07-16T02:06:51.254654+00:00"
+    "created_at": "2026-07-16T10:06:51.254654+08:00"
   },
   "outdoor-apparel": {
     "image_preview_url": "https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260715_015613_b0f11f97-f70e-42fe-bc19-c07389d13ade.png&w=1280&q=85",
@@ -776,7 +776,7 @@
     "local_kind": "mp4",
     "has_text": true,
     "text_len": 14780,
-    "created_at": "2026-07-08T04:48:38.468464+00:00"
+    "created_at": "2026-07-08T12:48:38.468464+08:00"
   },
   "oyla": {
     "image_preview_url": "https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260715_021211_d1c2db4e-d64f-40c9-bc27-e20ca30b98d1.png&w=1280&q=85",
@@ -787,7 +787,7 @@
     "local_kind": "mp4",
     "has_text": true,
     "text_len": 15995,
-    "created_at": "2026-07-08T02:01:00+00:00"
+    "created_at": "2026-07-08T10:01:00+08:00"
   },
   "performance-eyewear": {
     "image_preview_url": "https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260715_015359_bbd43007-72c9-4707-bd09-a33492eec356.png&w=1280&q=85",
@@ -798,7 +798,7 @@
     "local_kind": "mp4",
     "has_text": false,
     "text_len": 0,
-    "created_at": "2026-07-12T22:38:28.490672+00:00"
+    "created_at": "2026-07-13T06:38:28.490672+08:00"
   },
   "pet-products": {
     "image_preview_url": null,
@@ -809,7 +809,7 @@
     "local_kind": "mp4",
     "has_text": true,
     "text_len": 22957,
-    "created_at": "2026-07-08T01:18:18.823381+00:00"
+    "created_at": "2026-07-08T09:18:18.823381+08:00"
   },
   "place-saver": {
     "image_preview_url": null,
@@ -820,7 +820,7 @@
     "local_kind": "mp4",
     "has_text": true,
     "text_len": 8226,
-    "created_at": "2026-07-11T02:45:05.464349+00:00"
+    "created_at": "2026-07-11T10:45:05.464349+08:00"
   },
   "places-organizer": {
     "image_preview_url": null,
@@ -831,7 +831,7 @@
     "local_kind": "mp4",
     "has_text": false,
     "text_len": 0,
-    "created_at": "2026-07-13T10:50:50.515459+00:00"
+    "created_at": "2026-07-13T18:50:50.515459+08:00"
   },
   "product-studio": {
     "image_preview_url": "https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260715_015536_ff3d2b0a-1c31-4afd-92bf-29b25c8e033c.png&w=1280&q=85",
@@ -842,7 +842,7 @@
     "local_kind": "mp4",
     "has_text": true,
     "text_len": 8165,
-    "created_at": "2026-07-09T00:57:35.158028+00:00"
+    "created_at": "2026-07-09T08:57:35.158028+08:00"
   },
   "prompt-hero": {
     "image_preview_url": "https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260715_020312_6a21f245-35e1-47c1-a730-090d3ebd518e.png&w=1280&q=85",
@@ -853,7 +853,7 @@
     "local_kind": "mp4",
     "has_text": true,
     "text_len": 13186,
-    "created_at": "2026-06-29T11:32:11.249584+00:00"
+    "created_at": "2026-06-29T19:32:11.249584+08:00"
   },
   "remit-race": {
     "image_preview_url": null,
@@ -864,7 +864,7 @@
     "local_kind": "mp4",
     "has_text": true,
     "text_len": 23753,
-    "created_at": "2026-07-06T07:37:38.27583+00:00"
+    "created_at": "2026-07-06T15:37:38.27583+08:00"
   },
   "shipping-infrastructure": {
     "image_preview_url": "https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260718_104354_14106d4d-aaa1-4e07-8542-83b427a3d721.png&w=1280&q=85",
@@ -875,7 +875,7 @@
     "local_kind": "mp4",
     "has_text": false,
     "text_len": 0,
-    "created_at": "2026-07-18T10:48:09.429796+00:00"
+    "created_at": "2026-07-18T18:48:09.429796+08:00"
   },
   "skills-lea": {
     "image_preview_url": null,
@@ -886,7 +886,7 @@
     "local_kind": "mp4",
     "has_text": true,
     "text_len": 7782,
-    "created_at": "2026-07-07T00:16:11.110815+00:00"
+    "created_at": "2026-07-07T08:16:11.110815+08:00"
   },
   "sky-estate": {
     "image_preview_url": "https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260715_015601_5e651473-dece-49b0-8402-c098804446a1.png&w=1280&q=85",
@@ -897,7 +897,7 @@
     "local_kind": "mp4",
     "has_text": true,
     "text_len": 7711,
-    "created_at": "2026-07-09T00:12:57.431426+00:00"
+    "created_at": "2026-07-09T08:12:57.431426+08:00"
   },
   "stillmind": {
     "image_preview_url": null,
@@ -908,7 +908,7 @@
     "local_kind": "mp4",
     "has_text": true,
     "text_len": 6025,
-    "created_at": "2026-07-02T23:31:11.024944+00:00"
+    "created_at": "2026-07-03T07:31:11.024944+08:00"
   },
   "subscription-agency": {
     "image_preview_url": null,
@@ -919,7 +919,7 @@
     "local_kind": "mp4",
     "has_text": true,
     "text_len": 6172,
-    "created_at": "2026-06-24T11:30:00+00:00"
+    "created_at": "2026-06-24T19:30:00+08:00"
   },
   "supplement-shop": {
     "image_preview_url": null,
@@ -930,7 +930,7 @@
     "local_kind": "mp4",
     "has_text": true,
     "text_len": 3964,
-    "created_at": "2026-07-08T01:09:28.768991+00:00"
+    "created_at": "2026-07-08T09:09:28.768991+08:00"
   },
   "tech-forward": {
     "image_preview_url": null,
@@ -941,7 +941,7 @@
     "local_kind": "mp4",
     "has_text": true,
     "text_len": 3400,
-    "created_at": "2026-06-30T09:27:13.37214+00:00"
+    "created_at": "2026-06-30T17:27:13.37214+08:00"
   },
   "travel-explorer": {
     "image_preview_url": null,
@@ -952,7 +952,7 @@
     "local_kind": "mp4",
     "has_text": true,
     "text_len": 7116,
-    "created_at": "2026-07-06T07:14:52.406877+00:00"
+    "created_at": "2026-07-06T15:14:52.406877+08:00"
   },
   "travel-journal": {
     "image_preview_url": null,
@@ -963,7 +963,7 @@
     "local_kind": "mp4",
     "has_text": true,
     "text_len": 5151,
-    "created_at": "2026-07-06T07:19:05.156262+00:00"
+    "created_at": "2026-07-06T15:19:05.156262+08:00"
   },
   "vision-reveal": {
     "image_preview_url": null,
@@ -974,7 +974,7 @@
     "local_kind": "mp4",
     "has_text": true,
     "text_len": 16723,
-    "created_at": "2026-06-30T00:21:41.826222+00:00"
+    "created_at": "2026-06-30T08:21:41.826222+08:00"
   },
   "wellbeing-os": {
     "image_preview_url": null,
@@ -985,7 +985,7 @@
     "local_kind": "mp4",
     "has_text": true,
     "text_len": 5051,
-    "created_at": "2026-06-24T11:52:00+00:00"
+    "created_at": "2026-06-24T19:52:00+08:00"
   },
   "wellness-companion": {
     "image_preview_url": null,
@@ -996,7 +996,7 @@
     "local_kind": "mp4",
     "has_text": true,
     "text_len": 4095,
-    "created_at": "2026-07-06T02:07:55.450655+00:00"
+    "created_at": "2026-07-06T10:07:55.450655+08:00"
   },
   "wellness-device": {
     "image_preview_url": "https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260715_015320_22766799-c95d-4a0a-8762-cec99a1a1571.png&w=1280&q=85",
@@ -1007,7 +1007,7 @@
     "local_kind": "mp4",
     "has_text": true,
     "text_len": 6925,
-    "created_at": "2026-07-14T01:02:04.952848+00:00"
+    "created_at": "2026-07-14T09:02:04.952848+08:00"
   },
   "acreage-farming-hero": {
     "image_preview_url": null,
@@ -1883,7 +1883,7 @@
     "local_kind": "webp",
     "has_text": true,
     "text_len": 13543,
-    "created_at": "2026-05-26T09:36:00+00:00"
+    "created_at": "2026-05-26T17:36:00+08:00"
   },
   "bold-studio": {
     "image_preview_url": null,
@@ -1894,7 +1894,7 @@
     "local_kind": "webp",
     "has_text": true,
     "text_len": 6067,
-    "created_at": "2026-06-01T07:59:00+00:00"
+    "created_at": "2026-06-01T15:59:00+08:00"
   },
   "interactive-discovery": {
     "image_preview_url": "https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260721_114031_72704ebf-b8c6-4568-99e5-240183a9dcce.png&w=1280&q=85",
@@ -1905,7 +1905,7 @@
     "local_kind": "webp",
     "has_text": true,
     "text_len": 6894,
-    "created_at": "2026-06-11T08:16:52.381685+00:00"
+    "created_at": "2026-06-11T16:16:52.381685+08:00"
   },
   "codercrest-hero": {
     "image_preview_url": null,
@@ -1916,7 +1916,7 @@
     "local_kind": "gif",
     "has_text": true,
     "text_len": 3818,
-    "created_at": "2026-04-25T08:42:06.91891+00:00"
+    "created_at": "2026-04-25T16:42:06.91891+08:00"
   },
   "reveal-hero": {
     "image_preview_url": null,
@@ -1927,7 +1927,7 @@
     "local_kind": "webp",
     "has_text": true,
     "text_len": 6904,
-    "created_at": "2026-05-08T10:03:00+00:00"
+    "created_at": "2026-05-08T18:03:00+08:00"
   },
   "modern-agency": {
     "image_preview_url": null,
@@ -1938,7 +1938,7 @@
     "local_kind": "webp",
     "has_text": true,
     "text_len": 10347,
-    "created_at": "2026-05-11T12:00:00+00:00"
+    "created_at": "2026-05-11T20:00:00+08:00"
   },
   "luxury-editorial-ecommerce-design": {
     "image_preview_url": null,
@@ -1949,7 +1949,7 @@
     "local_kind": "webp",
     "has_text": true,
     "text_len": 10473,
-    "created_at": "2026-05-13T12:00:00+00:00"
+    "created_at": "2026-05-13T20:00:00+08:00"
   },
   "max-reed-portfolio": {
     "image_preview_url": null,
@@ -1960,7 +1960,7 @@
     "local_kind": "webp",
     "has_text": true,
     "text_len": 5397,
-    "created_at": "2026-05-09T07:51:25.098771+00:00"
+    "created_at": "2026-05-09T15:51:25.098771+08:00"
   },
   "ember-dsgn-hero": {
     "image_preview_url": null,
@@ -1971,7 +1971,7 @@
     "local_kind": "webp",
     "has_text": true,
     "text_len": 6305,
-    "created_at": "2026-05-06T09:30:32.094993+00:00"
+    "created_at": "2026-05-06T17:30:32.094993+08:00"
   },
   "solar-energy-hero": {
     "image_preview_url": "https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260715_020508_3c371d6d-ab71-4f84-b842-7ec3a9a47c7e.png&w=1280&q=85",
@@ -1982,7 +1982,7 @@
     "local_kind": "webp",
     "has_text": true,
     "text_len": 13718,
-    "created_at": "2026-05-18T12:00:00+00:00"
+    "created_at": "2026-05-18T20:00:00+08:00"
   },
   "halo-usd-landing": {
     "image_preview_url": null,
@@ -1993,7 +1993,7 @@
     "local_kind": "gif",
     "has_text": true,
     "text_len": 8531,
-    "created_at": "2026-04-25T05:27:29.90532+00:00"
+    "created_at": "2026-04-25T13:27:29.90532+08:00"
   },
   "convix-software-hero": {
     "image_preview_url": null,
@@ -2004,7 +2004,7 @@
     "local_kind": "gif",
     "has_text": true,
     "text_len": 5587,
-    "created_at": "2026-04-25T07:13:59.196336+00:00"
+    "created_at": "2026-04-25T15:13:59.196336+08:00"
   },
   "dot-hero": {
     "image_preview_url": null,
@@ -2015,7 +2015,7 @@
     "local_kind": "gif",
     "has_text": true,
     "text_len": 3871,
-    "created_at": "2026-04-27T05:57:55.692219+00:00"
+    "created_at": "2026-04-27T13:57:55.692219+08:00"
   },
   "3d-collectible-hero": {
     "image_preview_url": null,
@@ -2026,7 +2026,7 @@
     "local_kind": "webp",
     "has_text": true,
     "text_len": 5347,
-    "created_at": "2026-06-26T07:42:00+00:00"
+    "created_at": "2026-06-26T15:42:00+08:00"
   },
   "3d-story": {
     "image_preview_url": "https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260715_020536_09255c9a-fd74-4236-832b-da6ba574b681.png&w=1280&q=85",
@@ -2037,7 +2037,7 @@
     "local_kind": "webp",
     "has_text": true,
     "text_len": 19051,
-    "created_at": "2026-07-01T06:18:00+00:00"
+    "created_at": "2026-07-01T14:18:00+08:00"
   },
   "404-planet": {
     "image_preview_url": null,
@@ -2048,7 +2048,7 @@
     "local_kind": "webp",
     "has_text": true,
     "text_len": 7598,
-    "created_at": "2026-06-15T08:28:39.885903+00:00"
+    "created_at": "2026-06-15T16:28:39.885903+08:00"
   },
   "aerocore": {
     "image_preview_url": null,
@@ -2059,7 +2059,7 @@
     "local_kind": "webp",
     "has_text": true,
     "text_len": 72631,
-    "created_at": "2026-05-21T14:33:00+00:00"
+    "created_at": "2026-05-21T22:33:00+08:00"
   },
   "agency-services": {
     "image_preview_url": null,
@@ -2070,7 +2070,7 @@
     "local_kind": "webp",
     "has_text": true,
     "text_len": 3336,
-    "created_at": "2026-06-06T08:04:30.803624+00:00"
+    "created_at": "2026-06-06T16:04:30.803624+08:00"
   },
   "ai-automation": {
     "image_preview_url": null,
@@ -2081,7 +2081,7 @@
     "local_kind": "webp",
     "has_text": true,
     "text_len": 9362,
-    "created_at": "2026-05-16T07:23:58.228086+00:00"
+    "created_at": "2026-05-16T15:23:58.228086+08:00"
   },
   "ai-workflow": {
     "image_preview_url": "https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260721_114043_a70b6aa4-73d7-4b38-9595-baa6a5bad2d3.png&w=1280&q=85",
@@ -2092,7 +2092,7 @@
     "local_kind": "webp",
     "has_text": true,
     "text_len": 16580,
-    "created_at": "2026-05-16T07:42:35.411495+00:00"
+    "created_at": "2026-05-16T15:42:35.411495+08:00"
   },
   "animated-cards": {
     "image_preview_url": null,
@@ -2103,7 +2103,7 @@
     "local_kind": "webp",
     "has_text": true,
     "text_len": 36212,
-    "created_at": "2026-06-13T09:09:00+00:00"
+    "created_at": "2026-06-13T17:09:00+08:00"
   },
   "apex-program-accordion": {
     "image_preview_url": null,
@@ -2114,7 +2114,7 @@
     "local_kind": "webp",
     "has_text": true,
     "text_len": 12722,
-    "created_at": "2026-06-04T07:31:26.024602+00:00"
+    "created_at": "2026-06-04T15:31:26.024602+08:00"
   },
   "apex-pulse": {
     "image_preview_url": null,
@@ -2125,7 +2125,7 @@
     "local_kind": "webp",
     "has_text": true,
     "text_len": 7266,
-    "created_at": "2026-06-23T07:04:22.246778+00:00"
+    "created_at": "2026-06-23T15:04:22.246778+08:00"
   },
   "arceage-contact-us": {
     "image_preview_url": null,
@@ -2136,7 +2136,7 @@
     "local_kind": "webp",
     "has_text": true,
     "text_len": 7335,
-    "created_at": "2026-06-06T12:18:21.657211+00:00"
+    "created_at": "2026-06-06T20:18:21.657211+08:00"
   },
   "arceage-services": {
     "image_preview_url": null,
@@ -2147,7 +2147,7 @@
     "local_kind": "webp",
     "has_text": true,
     "text_len": 7344,
-    "created_at": "2026-06-06T12:01:48.857738+00:00"
+    "created_at": "2026-06-06T20:01:48.857738+08:00"
   },
   "arceage-stats": {
     "image_preview_url": null,
@@ -2158,7 +2158,7 @@
     "local_kind": "webp",
     "has_text": true,
     "text_len": 7826,
-    "created_at": "2026-06-06T11:50:03.989072+00:00"
+    "created_at": "2026-06-06T19:50:03.989072+08:00"
   },
   "arceage-testimonial": {
     "image_preview_url": null,
@@ -2169,7 +2169,7 @@
     "local_kind": "webp",
     "has_text": true,
     "text_len": 8165,
-    "created_at": "2026-06-06T12:03:21.963922+00:00"
+    "created_at": "2026-06-06T20:03:21.963922+08:00"
   },
   "audio-showcase": {
     "image_preview_url": null,
@@ -2180,7 +2180,7 @@
     "local_kind": "webp",
     "has_text": true,
     "text_len": 6927,
-    "created_at": "2026-06-10T04:10:00+00:00"
+    "created_at": "2026-06-10T12:10:00+08:00"
   },
   "auramail": {
     "image_preview_url": null,
@@ -2191,7 +2191,7 @@
     "local_kind": "webp",
     "has_text": true,
     "text_len": 11057,
-    "created_at": "2026-05-07T08:17:43.159245+00:00"
+    "created_at": "2026-05-07T16:17:43.159245+08:00"
   },
   "aurora-onboard": {
     "image_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/hero%20sections/CleanShot_2026-05-07_at_15.40.21_2x_kfgapx.png",
@@ -2202,7 +2202,7 @@
     "local_kind": "png",
     "has_text": true,
     "text_len": 4770,
-    "created_at": "2026-05-07T08:49:11.61493+00:00"
+    "created_at": "2026-05-07T16:49:11.61493+08:00"
   },
   "axion-about": {
     "image_preview_url": null,
@@ -2213,7 +2213,7 @@
     "local_kind": "webp",
     "has_text": true,
     "text_len": 4393,
-    "created_at": "2026-06-04T13:03:00+00:00"
+    "created_at": "2026-06-04T21:03:00+08:00"
   },
   "beauty-categories": {
     "image_preview_url": null,
@@ -2224,7 +2224,7 @@
     "local_kind": "webp",
     "has_text": true,
     "text_len": 4038,
-    "created_at": "2026-06-05T13:18:54.017137+00:00"
+    "created_at": "2026-06-05T21:18:54.017137+08:00"
   },
   "beauty-products": {
     "image_preview_url": null,
@@ -2235,7 +2235,7 @@
     "local_kind": "webp",
     "has_text": true,
     "text_len": 6033,
-    "created_at": "2026-06-05T13:09:33.610586+00:00"
+    "created_at": "2026-06-05T21:09:33.610586+08:00"
   },
   "bento-grid-stats": {
     "image_preview_url": null,
@@ -2246,7 +2246,7 @@
     "local_kind": "webp",
     "has_text": true,
     "text_len": 6839,
-    "created_at": "2026-06-04T06:35:12.444949+00:00"
+    "created_at": "2026-06-04T14:35:12.444949+08:00"
   },
   "bio-active": {
     "image_preview_url": null,
@@ -2257,7 +2257,7 @@
     "local_kind": "webp",
     "has_text": true,
     "text_len": 7092,
-    "created_at": "2026-06-20T05:54:26.497321+00:00"
+    "created_at": "2026-06-20T13:54:26.497321+08:00"
   },
   "bio-age-dashboard": {
     "image_preview_url": null,
@@ -2268,7 +2268,7 @@
     "local_kind": "webp",
     "has_text": true,
     "text_len": 6869,
-    "created_at": "2026-06-29T00:15:54.69709+00:00"
+    "created_at": "2026-06-29T08:15:54.69709+08:00"
   },
   "bio-digital": {
     "image_preview_url": null,
@@ -2279,7 +2279,7 @@
     "local_kind": "webp",
     "has_text": true,
     "text_len": 8062,
-    "created_at": "2026-05-20T17:16:00+00:00"
+    "created_at": "2026-05-21T01:16:00+08:00"
   },
   "bl": {
     "image_preview_url": null,
@@ -2290,7 +2290,7 @@
     "local_kind": "webp",
     "has_text": true,
     "text_len": 41384,
-    "created_at": "2026-06-15T07:47:22.03617+00:00"
+    "created_at": "2026-06-15T15:47:22.03617+08:00"
   },
   "blog-showcase": {
     "image_preview_url": null,
@@ -2301,7 +2301,7 @@
     "local_kind": "webp",
     "has_text": true,
     "text_len": 4151,
-    "created_at": "2026-04-21T08:20:00+00:00"
+    "created_at": "2026-04-21T16:20:00+08:00"
   },
   "book-hero": {
     "image_preview_url": "https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260715_021149_e0b7801d-185f-404a-ad1c-b182e4efe892.png&w=1280&q=85",
@@ -2312,7 +2312,7 @@
     "local_kind": "webp",
     "has_text": true,
     "text_len": 18827,
-    "created_at": "2026-05-14T15:03:00+00:00"
+    "created_at": "2026-05-14T23:03:00+08:00"
   },
   "bookedup": {
     "image_preview_url": null,
@@ -2323,7 +2323,7 @@
     "local_kind": "webp",
     "has_text": true,
     "text_len": 5529,
-    "created_at": "2026-05-07T07:30:52.451258+00:00"
+    "created_at": "2026-05-07T15:30:52.451258+08:00"
   },
   "botanical-shadow-about": {
     "image_preview_url": null,
@@ -2334,7 +2334,7 @@
     "local_kind": "webp",
     "has_text": true,
     "text_len": 3499,
-    "created_at": "2026-06-04T05:36:32.764355+00:00"
+    "created_at": "2026-06-04T13:36:32.764355+08:00"
   },
   "build-with-us": {
     "image_preview_url": null,
@@ -2345,7 +2345,7 @@
     "local_kind": "webp",
     "has_text": true,
     "text_len": 6253,
-    "created_at": "2026-05-23T07:10:00+00:00"
+    "created_at": "2026-05-23T15:10:00+08:00"
   },
   "cinematic-brand": {
     "image_preview_url": null,
@@ -2356,7 +2356,7 @@
     "local_kind": "webp",
     "has_text": true,
     "text_len": 6044,
-    "created_at": "2026-05-27T08:41:00+00:00"
+    "created_at": "2026-05-27T16:41:00+08:00"
   },
   "cinematic-landing-page": {
     "image_preview_url": null,
@@ -2367,7 +2367,7 @@
     "local_kind": "webp",
     "has_text": true,
     "text_len": 12285,
-    "created_at": "2026-05-16T11:22:57.680429+00:00"
+    "created_at": "2026-05-16T19:22:57.680429+08:00"
   },
   "cognitra-feature": {
     "image_preview_url": null,
@@ -2378,7 +2378,7 @@
     "local_kind": "webp",
     "has_text": true,
     "text_len": 3241,
-    "created_at": "2026-06-05T14:33:41.049884+00:00"
+    "created_at": "2026-06-05T22:33:41.049884+08:00"
   },
   "cognitra-offer": {
     "image_preview_url": null,
@@ -2389,7 +2389,7 @@
     "local_kind": "webp",
     "has_text": true,
     "text_len": 4290,
-    "created_at": "2026-06-05T14:39:54.701485+00:00"
+    "created_at": "2026-06-05T22:39:54.701485+08:00"
   },
   "contact-cybernetic": {
     "image_preview_url": null,
@@ -2400,7 +2400,7 @@
     "local_kind": "webp",
     "has_text": true,
     "text_len": 6423,
-    "created_at": "2026-05-22T12:16:00+00:00"
+    "created_at": "2026-05-22T20:16:00+08:00"
   },
   "conversion": {
     "image_preview_url": null,
@@ -2411,7 +2411,7 @@
     "local_kind": "webp",
     "has_text": true,
     "text_len": 5900,
-    "created_at": "2026-06-12T10:55:00+00:00"
+    "created_at": "2026-06-12T18:55:00+08:00"
   },
   "cosmic": {
     "image_preview_url": null,
@@ -2422,7 +2422,7 @@
     "local_kind": "webp",
     "has_text": true,
     "text_len": 9217,
-    "created_at": "2026-06-16T03:49:29.182631+00:00"
+    "created_at": "2026-06-16T11:49:29.182631+08:00"
   },
   "creative-agency": {
     "image_preview_url": null,
@@ -2433,7 +2433,7 @@
     "local_kind": "webp",
     "has_text": true,
     "text_len": 6403,
-    "created_at": "2026-05-05T17:24:00+00:00"
+    "created_at": "2026-05-06T01:24:00+08:00"
   },
   "creative-portfolio": {
     "image_preview_url": null,
@@ -2444,7 +2444,7 @@
     "local_kind": "webp",
     "has_text": true,
     "text_len": 5639,
-    "created_at": "2026-06-24T03:52:00+00:00"
+    "created_at": "2026-06-24T11:52:00+08:00"
   },
   "creative-studio": {
     "image_preview_url": null,
@@ -2455,7 +2455,7 @@
     "local_kind": "webp",
     "has_text": true,
     "text_len": 5481,
-    "created_at": "2026-05-11T05:59:00+00:00"
+    "created_at": "2026-05-11T13:59:00+08:00"
   },
   "cursor-follow": {
     "image_preview_url": null,
@@ -2466,7 +2466,7 @@
     "local_kind": "webp",
     "has_text": true,
     "text_len": 6373,
-    "created_at": "2026-05-25T10:13:33.027936+00:00"
+    "created_at": "2026-05-25T18:13:33.027936+08:00"
   },
   "cyberpunk-reveal": {
     "image_preview_url": null,
@@ -2477,7 +2477,7 @@
     "local_kind": "webp",
     "has_text": true,
     "text_len": 7086,
-    "created_at": "2026-06-17T13:30:00+00:00"
+    "created_at": "2026-06-17T21:30:00+08:00"
   },
   "cybersecurity-hero": {
     "image_preview_url": null,
@@ -2488,7 +2488,7 @@
     "local_kind": "webp",
     "has_text": true,
     "text_len": 11920,
-    "created_at": "2026-05-01T08:35:00+00:00"
+    "created_at": "2026-05-01T16:35:00+08:00"
   },
   "cybersecurity-hero-v2": {
     "image_preview_url": null,
@@ -2499,7 +2499,7 @@
     "local_kind": "webp",
     "has_text": true,
     "text_len": 7140,
-    "created_at": "2026-05-16T07:16:44.715777+00:00"
+    "created_at": "2026-05-16T15:16:44.715777+08:00"
   },
   "daisy-sweet": {
     "image_preview_url": null,
@@ -2510,7 +2510,7 @@
     "local_kind": "webp",
     "has_text": true,
     "text_len": 9664,
-    "created_at": "2026-06-06T07:01:44.616993+00:00"
+    "created_at": "2026-06-06T15:01:44.616993+08:00"
   },
   "daisy-wild": {
     "image_preview_url": null,
@@ -2521,7 +2521,7 @@
     "local_kind": "webp",
     "has_text": true,
     "text_len": 10292,
-    "created_at": "2026-06-06T07:08:04.78977+00:00"
+    "created_at": "2026-06-06T15:08:04.78977+08:00"
   },
   "dashboard": {
     "image_preview_url": null,
@@ -2532,7 +2532,7 @@
     "local_kind": "webp",
     "has_text": true,
     "text_len": 9125,
-    "created_at": "2026-04-25T10:57:00+00:00"
+    "created_at": "2026-04-25T18:57:00+08:00"
   },
   "dental-care-app": {
     "image_preview_url": null,
@@ -2543,7 +2543,7 @@
     "local_kind": "png",
     "has_text": false,
     "text_len": 0,
-    "created_at": "2026-07-17T07:47:20.714089+00:00"
+    "created_at": "2026-07-17T15:47:20.714089+08:00"
   },
   "digital-experiences": {
     "image_preview_url": null,
@@ -2554,7 +2554,7 @@
     "local_kind": "webp",
     "has_text": true,
     "text_len": 8994,
-    "created_at": "2026-06-10T06:21:00+00:00"
+    "created_at": "2026-06-10T14:21:00+08:00"
   },
   "eco-intelligence": {
     "image_preview_url": null,
@@ -2565,7 +2565,7 @@
     "local_kind": "webp",
     "has_text": true,
     "text_len": 7877,
-    "created_at": "2026-06-08T10:01:00+00:00"
+    "created_at": "2026-06-08T18:01:00+08:00"
   },
   "editorial-collection-cta": {
     "image_preview_url": null,
@@ -2576,7 +2576,7 @@
     "local_kind": "webp",
     "has_text": true,
     "text_len": 6679,
-    "created_at": "2026-06-04T05:44:30.389221+00:00"
+    "created_at": "2026-06-04T13:44:30.389221+08:00"
   },
   "email-landing-page": {
     "image_preview_url": null,
@@ -2587,7 +2587,7 @@
     "local_kind": "webp",
     "has_text": true,
     "text_len": 19431,
-    "created_at": "2026-05-08T10:18:45.966174+00:00"
+    "created_at": "2026-05-08T18:18:45.966174+08:00"
   },
   "equilibrium": {
     "image_preview_url": null,
@@ -2598,7 +2598,7 @@
     "local_kind": "webp",
     "has_text": true,
     "text_len": 4787,
-    "created_at": "2026-04-26T16:46:00+00:00"
+    "created_at": "2026-04-27T00:46:00+08:00"
   },
   "evergreen-finance": {
     "image_preview_url": null,
@@ -2609,7 +2609,7 @@
     "local_kind": "webp",
     "has_text": true,
     "text_len": 10870,
-    "created_at": "2026-05-14T06:37:00+00:00"
+    "created_at": "2026-05-14T14:37:00+08:00"
   },
   "faq-cta": {
     "image_preview_url": null,
@@ -2620,7 +2620,7 @@
     "local_kind": "webp",
     "has_text": true,
     "text_len": 9456,
-    "created_at": "2026-05-08T08:51:53.316755+00:00"
+    "created_at": "2026-05-08T16:51:53.316755+08:00"
   },
   "features": {
     "image_preview_url": null,
@@ -2631,7 +2631,7 @@
     "local_kind": "webp",
     "has_text": true,
     "text_len": 9546,
-    "created_at": "2026-05-25T16:28:00+00:00"
+    "created_at": "2026-05-26T00:28:00+08:00"
   },
   "feedback-slider": {
     "image_preview_url": null,
@@ -2642,7 +2642,7 @@
     "local_kind": "webp",
     "has_text": true,
     "text_len": 7247,
-    "created_at": "2026-06-04T05:26:46.586653+00:00"
+    "created_at": "2026-06-04T13:26:46.586653+08:00"
   },
   "financialfocus": {
     "image_preview_url": null,
@@ -2653,7 +2653,7 @@
     "local_kind": "webp",
     "has_text": true,
     "text_len": 54280,
-    "created_at": "2026-05-12T13:48:00+00:00"
+    "created_at": "2026-05-12T21:48:00+08:00"
   },
   "fine-jewelry-shop": {
     "image_preview_url": null,
@@ -2664,7 +2664,7 @@
     "local_kind": "png",
     "has_text": false,
     "text_len": 0,
-    "created_at": "2026-07-12T23:51:48.907325+00:00"
+    "created_at": "2026-07-13T07:51:48.907325+08:00"
   },
   "finflow": {
     "image_preview_url": null,
@@ -2675,7 +2675,7 @@
     "local_kind": "webp",
     "has_text": true,
     "text_len": 5269,
-    "created_at": "2026-05-21T07:05:00+00:00"
+    "created_at": "2026-05-21T15:05:00+08:00"
   },
   "flowmate-carousal": {
     "image_preview_url": null,
@@ -2686,7 +2686,7 @@
     "local_kind": "webp",
     "has_text": true,
     "text_len": 5263,
-    "created_at": "2026-06-04T09:16:43.187676+00:00"
+    "created_at": "2026-06-04T17:16:43.187676+08:00"
   },
   "fun-404-page": {
     "image_preview_url": "https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260714_014547_d5d9edba-1894-4305-a283-4835ab060947.png&w=1920&q=85",
@@ -2697,7 +2697,7 @@
     "local_kind": "webp",
     "has_text": true,
     "text_len": 6087,
-    "created_at": "2026-07-14T02:01:33.957887+00:00"
+    "created_at": "2026-07-14T10:01:33.957887+08:00"
   },
   "future-state": {
     "image_preview_url": "https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260715_015708_7e3f9127-d5c6-4cb9-b77f-063afab38240.png&w=1280&q=85",
@@ -2708,7 +2708,7 @@
     "local_kind": "webp",
     "has_text": true,
     "text_len": 8143,
-    "created_at": "2026-07-03T07:11:00+00:00"
+    "created_at": "2026-07-03T15:11:00+08:00"
   },
   "futuristic-cinematic": {
     "image_preview_url": null,
@@ -2719,7 +2719,7 @@
     "local_kind": "webp",
     "has_text": true,
     "text_len": 5679,
-    "created_at": "2026-05-08T12:01:00+00:00"
+    "created_at": "2026-05-08T20:01:00+08:00"
   },
   "futuristic-tech": {
     "image_preview_url": null,
@@ -2730,7 +2730,7 @@
     "local_kind": "webp",
     "has_text": true,
     "text_len": 4805,
-    "created_at": "2026-05-14T06:59:00+00:00"
+    "created_at": "2026-05-14T14:59:00+08:00"
   },
   "gateway-portal": {
     "image_preview_url": null,
@@ -2741,7 +2741,7 @@
     "local_kind": "webp",
     "has_text": true,
     "text_len": 10770,
-    "created_at": "2026-06-10T05:23:55.75229+00:00"
+    "created_at": "2026-06-10T13:23:55.75229+08:00"
   },
   "gear-shop": {
     "image_preview_url": null,
@@ -2752,7 +2752,7 @@
     "local_kind": "png",
     "has_text": true,
     "text_len": 7103,
-    "created_at": "2026-07-09T01:35:34.456589+00:00"
+    "created_at": "2026-07-09T09:35:34.456589+08:00"
   },
   "glassmorphic-feature-tabs": {
     "image_preview_url": null,
@@ -2763,7 +2763,7 @@
     "local_kind": "webp",
     "has_text": true,
     "text_len": 12067,
-    "created_at": "2026-06-04T06:28:22.18445+00:00"
+    "created_at": "2026-06-04T14:28:22.18445+08:00"
   },
   "glitch-pulse": {
     "image_preview_url": null,
@@ -2774,7 +2774,7 @@
     "local_kind": "webp",
     "has_text": true,
     "text_len": 16376,
-    "created_at": "2026-06-22T05:14:00+00:00"
+    "created_at": "2026-06-22T13:14:00+08:00"
   },
   "global-cta-footer": {
     "image_preview_url": null,
@@ -2785,7 +2785,7 @@
     "local_kind": "webp",
     "has_text": true,
     "text_len": 12324,
-    "created_at": "2026-06-04T13:13:56.055806+00:00"
+    "created_at": "2026-06-04T21:13:56.055806+08:00"
   },
   "golden-portal": {
     "image_preview_url": null,
@@ -2796,7 +2796,7 @@
     "local_kind": "webp",
     "has_text": true,
     "text_len": 13628,
-    "created_at": "2026-06-25T09:48:20.665526+00:00"
+    "created_at": "2026-06-25T17:48:20.665526+08:00"
   },
   "growth-marketing-saas": {
     "image_preview_url": null,
@@ -2807,7 +2807,7 @@
     "local_kind": "webp",
     "has_text": true,
     "text_len": 15020,
-    "created_at": "2026-05-23T09:11:43.906875+00:00"
+    "created_at": "2026-05-23T17:11:43.906875+08:00"
   },
   "guardnet-benefits": {
     "image_preview_url": null,
@@ -2818,7 +2818,7 @@
     "local_kind": "webp",
     "has_text": true,
     "text_len": 4108,
-    "created_at": "2026-06-06T10:31:39.378021+00:00"
+    "created_at": "2026-06-06T18:31:39.378021+08:00"
   },
   "guardnet-demo": {
     "image_preview_url": null,
@@ -2829,7 +2829,7 @@
     "local_kind": "webp",
     "has_text": true,
     "text_len": 6473,
-    "created_at": "2026-06-06T10:26:08.622067+00:00"
+    "created_at": "2026-06-06T18:26:08.622067+08:00"
   },
   "halo-benefits": {
     "image_preview_url": null,
@@ -2840,7 +2840,7 @@
     "local_kind": "webp",
     "has_text": true,
     "text_len": 15664,
-    "created_at": "2026-06-06T08:29:32.680888+00:00"
+    "created_at": "2026-06-06T16:29:32.680888+08:00"
   },
   "halo-use-case": {
     "image_preview_url": null,
@@ -2851,7 +2851,7 @@
     "local_kind": "webp",
     "has_text": true,
     "text_len": 7044,
-    "created_at": "2026-06-06T08:42:19.499742+00:00"
+    "created_at": "2026-06-06T16:42:19.499742+08:00"
   },
   "health-portal": {
     "image_preview_url": null,
@@ -2862,7 +2862,7 @@
     "local_kind": "webp",
     "has_text": true,
     "text_len": 16908,
-    "created_at": "2026-06-26T08:53:00+00:00"
+    "created_at": "2026-06-26T16:53:00+08:00"
   },
   "immersive-ocean": {
     "image_preview_url": null,
@@ -2873,7 +2873,7 @@
     "local_kind": "webp",
     "has_text": true,
     "text_len": 4030,
-    "created_at": "2026-06-25T06:25:00+00:00"
+    "created_at": "2026-06-25T14:25:00+08:00"
   },
   "impact-ventures": {
     "image_preview_url": null,
@@ -2884,7 +2884,7 @@
     "local_kind": "webp",
     "has_text": true,
     "text_len": 4400,
-    "created_at": "2026-06-20T10:02:00+00:00"
+    "created_at": "2026-06-20T18:02:00+08:00"
   },
   "intelligentx": {
     "image_preview_url": null,
@@ -2895,7 +2895,7 @@
     "local_kind": "webp",
     "has_text": true,
     "text_len": 4182,
-    "created_at": "2026-05-25T14:14:00+00:00"
+    "created_at": "2026-05-25T22:14:00+08:00"
   },
   "interactive-portfolio": {
     "image_preview_url": null,
@@ -2906,7 +2906,7 @@
     "local_kind": "webp",
     "has_text": true,
     "text_len": 7915,
-    "created_at": "2026-06-27T15:33:00+00:00"
+    "created_at": "2026-06-27T23:33:00+08:00"
   },
   "interior-features": {
     "image_preview_url": null,
@@ -2917,7 +2917,7 @@
     "local_kind": "webp",
     "has_text": true,
     "text_len": 4752,
-    "created_at": "2026-06-09T10:06:03.556932+00:00"
+    "created_at": "2026-06-09T18:06:03.556932+08:00"
   },
   "investment-hero": {
     "image_preview_url": null,
@@ -2928,7 +2928,7 @@
     "local_kind": "webp",
     "has_text": true,
     "text_len": 9903,
-    "created_at": "2026-06-26T02:55:05.962954+00:00"
+    "created_at": "2026-06-26T10:55:05.962954+08:00"
   },
   "jewelry-store": {
     "image_preview_url": null,
@@ -2939,7 +2939,7 @@
     "local_kind": "png",
     "has_text": true,
     "text_len": 21521,
-    "created_at": "2026-07-11T09:05:38.579433+00:00"
+    "created_at": "2026-07-11T17:05:38.579433+08:00"
   },
   "kova-features": {
     "image_preview_url": null,
@@ -2950,7 +2950,7 @@
     "local_kind": "webp",
     "has_text": true,
     "text_len": 12180,
-    "created_at": "2026-06-04T16:08:22.200815+00:00"
+    "created_at": "2026-06-05T00:08:22.200815+08:00"
   },
   "kova-testimonial": {
     "image_preview_url": null,
@@ -2961,7 +2961,7 @@
     "local_kind": "webp",
     "has_text": true,
     "text_len": 6063,
-    "created_at": "2026-06-04T14:57:21.193204+00:00"
+    "created_at": "2026-06-04T22:57:21.193204+08:00"
   },
   "launchex-about": {
     "image_preview_url": null,
@@ -2972,7 +2972,7 @@
     "local_kind": "webp",
     "has_text": true,
     "text_len": 6908,
-    "created_at": "2026-06-05T12:55:01.48903+00:00"
+    "created_at": "2026-06-05T20:55:01.48903+08:00"
   },
   "launchex-submissions": {
     "image_preview_url": null,
@@ -2983,7 +2983,7 @@
     "local_kind": "webp",
     "has_text": true,
     "text_len": 4777,
-    "created_at": "2026-06-05T12:53:39.340901+00:00"
+    "created_at": "2026-06-05T20:53:39.340901+08:00"
   },
   "layered-depth": {
     "image_preview_url": null,
@@ -2994,7 +2994,7 @@
     "local_kind": "webp",
     "has_text": true,
     "text_len": 12174,
-    "created_at": "2026-05-26T07:16:00+00:00"
+    "created_at": "2026-05-26T15:16:00+08:00"
   },
   "learnly": {
     "image_preview_url": null,
@@ -3005,7 +3005,7 @@
     "local_kind": "webp",
     "has_text": true,
     "text_len": 16419,
-    "created_at": "2026-05-08T09:14:47.241107+00:00"
+    "created_at": "2026-05-08T17:14:47.241107+08:00"
   },
   "liquid-glass-cta": {
     "image_preview_url": null,
@@ -3016,7 +3016,7 @@
     "local_kind": "webp",
     "has_text": true,
     "text_len": 10077,
-    "created_at": "2026-06-06T12:49:19.037469+00:00"
+    "created_at": "2026-06-06T20:49:19.037469+08:00"
   },
   "liquid-glass-features": {
     "image_preview_url": null,
@@ -3027,7 +3027,7 @@
     "local_kind": "webp",
     "has_text": true,
     "text_len": 9128,
-    "created_at": "2026-06-06T12:54:35.97424+00:00"
+    "created_at": "2026-06-06T20:54:35.97424+08:00"
   },
   "lodge-booking-app": {
     "image_preview_url": null,
@@ -3038,7 +3038,7 @@
     "local_kind": "webp",
     "has_text": true,
     "text_len": 6343,
-    "created_at": "2026-07-08T01:24:32.791612+00:00"
+    "created_at": "2026-07-08T09:24:32.791612+08:00"
   },
   "luminara": {
     "image_preview_url": null,
@@ -3049,7 +3049,7 @@
     "local_kind": "webp",
     "has_text": true,
     "text_len": 3646,
-    "created_at": "2026-06-12T09:48:00+00:00"
+    "created_at": "2026-06-12T17:48:00+08:00"
   },
   "luxury-botanical": {
     "image_preview_url": null,
@@ -3060,7 +3060,7 @@
     "local_kind": "webp",
     "has_text": true,
     "text_len": 35871,
-    "created_at": "2026-05-23T12:24:00+00:00"
+    "created_at": "2026-05-23T20:24:00+08:00"
   },
   "luxury-focus": {
     "image_preview_url": null,
@@ -3071,7 +3071,7 @@
     "local_kind": "png",
     "has_text": true,
     "text_len": 9692,
-    "created_at": "2026-06-14T05:20:00+00:00"
+    "created_at": "2026-06-14T13:20:00+08:00"
   },
   "luxury-hero": {
     "image_preview_url": null,
@@ -3082,7 +3082,7 @@
     "local_kind": "webp",
     "has_text": true,
     "text_len": 10671,
-    "created_at": "2026-06-26T03:52:52.60097+00:00"
+    "created_at": "2026-06-26T11:52:52.60097+08:00"
   },
   "luxury-real-estate": {
     "image_preview_url": null,
@@ -3093,7 +3093,7 @@
     "local_kind": "webp",
     "has_text": true,
     "text_len": 13462,
-    "created_at": "2026-06-03T07:59:26.326163+00:00"
+    "created_at": "2026-06-03T15:59:26.326163+08:00"
   },
   "media-card-carousel": {
     "image_preview_url": null,
@@ -3104,7 +3104,7 @@
     "local_kind": "webp",
     "has_text": true,
     "text_len": 5840,
-    "created_at": "2026-06-04T05:21:57.392305+00:00"
+    "created_at": "2026-06-04T13:21:57.392305+08:00"
   },
   "minimal-workflow-saas": {
     "image_preview_url": null,
@@ -3115,7 +3115,7 @@
     "local_kind": "webp",
     "has_text": true,
     "text_len": 10896,
-    "created_at": "2026-05-14T07:55:00+00:00"
+    "created_at": "2026-05-14T15:55:00+08:00"
   },
   "mouse-trail-cta": {
     "image_preview_url": null,
@@ -3126,7 +3126,7 @@
     "local_kind": "webp",
     "has_text": true,
     "text_len": 5721,
-    "created_at": "2026-06-04T05:27:41.412941+00:00"
+    "created_at": "2026-06-04T13:27:41.412941+08:00"
   },
   "mythic-naturecore": {
     "image_preview_url": null,
@@ -3137,7 +3137,7 @@
     "local_kind": "webp",
     "has_text": true,
     "text_len": 8039,
-    "created_at": "2026-05-31T13:59:00+00:00"
+    "created_at": "2026-05-31T21:59:00+08:00"
   },
   "naturecore-saas": {
     "image_preview_url": null,
@@ -3148,7 +3148,7 @@
     "local_kind": "webp",
     "has_text": true,
     "text_len": 8070,
-    "created_at": "2026-05-07T08:14:00+00:00"
+    "created_at": "2026-05-07T16:14:00+08:00"
   },
   "neo-museum": {
     "image_preview_url": null,
@@ -3159,7 +3159,7 @@
     "local_kind": "webp",
     "has_text": true,
     "text_len": 15036,
-    "created_at": "2026-05-14T09:06:00+00:00"
+    "created_at": "2026-05-14T17:06:00+08:00"
   },
   "neon-logic": {
     "image_preview_url": null,
@@ -3170,7 +3170,7 @@
     "local_kind": "webp",
     "has_text": true,
     "text_len": 13601,
-    "created_at": "2026-06-22T15:16:00+00:00"
+    "created_at": "2026-06-22T23:16:00+08:00"
   },
   "network-hero": {
     "image_preview_url": null,
@@ -3181,7 +3181,7 @@
     "local_kind": "webp",
     "has_text": true,
     "text_len": 7543,
-    "created_at": "2026-06-26T03:12:00+00:00"
+    "created_at": "2026-06-26T11:12:00+08:00"
   },
   "neural-interface": {
     "image_preview_url": null,
@@ -3192,7 +3192,7 @@
     "local_kind": "webp",
     "has_text": true,
     "text_len": 34002,
-    "created_at": "2026-06-17T07:38:53.626742+00:00"
+    "created_at": "2026-06-17T15:38:53.626742+08:00"
   },
   "nex-max-upgrade": {
     "image_preview_url": null,
@@ -3203,7 +3203,7 @@
     "local_kind": "webp",
     "has_text": true,
     "text_len": 6647,
-    "created_at": "2026-05-08T07:17:45.384033+00:00"
+    "created_at": "2026-05-08T15:17:45.384033+08:00"
   },
   "nexacore-control": {
     "image_preview_url": null,
@@ -3214,7 +3214,7 @@
     "local_kind": "webp",
     "has_text": true,
     "text_len": 8666,
-    "created_at": "2026-06-06T10:54:05.261325+00:00"
+    "created_at": "2026-06-06T18:54:05.261325+08:00"
   },
   "nexacore-process": {
     "image_preview_url": null,
@@ -3225,7 +3225,7 @@
     "local_kind": "webp",
     "has_text": true,
     "text_len": 10615,
-    "created_at": "2026-06-06T11:01:57.04493+00:00"
+    "created_at": "2026-06-06T19:01:57.04493+08:00"
   },
   "nexacore-results": {
     "image_preview_url": null,
@@ -3236,7 +3236,7 @@
     "local_kind": "webp",
     "has_text": true,
     "text_len": 9261,
-    "created_at": "2026-06-06T11:32:52.617503+00:00"
+    "created_at": "2026-06-06T19:32:52.617503+08:00"
   },
   "nike-hover": {
     "image_preview_url": null,
@@ -3247,7 +3247,7 @@
     "local_kind": "webp",
     "has_text": true,
     "text_len": 13726,
-    "created_at": "2026-06-06T10:45:23.479221+00:00"
+    "created_at": "2026-06-06T18:45:23.479221+08:00"
   },
   "nimbus-demo": {
     "image_preview_url": null,
@@ -3258,7 +3258,7 @@
     "local_kind": "webp",
     "has_text": true,
     "text_len": 14389,
-    "created_at": "2026-06-05T15:46:29.728589+00:00"
+    "created_at": "2026-06-05T23:46:29.728589+08:00"
   },
   "nimbus-grid": {
     "image_preview_url": null,
@@ -3269,7 +3269,7 @@
     "local_kind": "webp",
     "has_text": true,
     "text_len": 16697,
-    "created_at": "2026-05-14T15:59:22.025863+00:00"
+    "created_at": "2026-05-14T23:59:22.025863+08:00"
   },
   "nimbus-ops": {
     "image_preview_url": null,
@@ -3280,7 +3280,7 @@
     "local_kind": "webp",
     "has_text": true,
     "text_len": 16893,
-    "created_at": "2026-06-05T15:48:54.297936+00:00"
+    "created_at": "2026-06-05T23:48:54.297936+08:00"
   },
   "nimbus-pricing": {
     "image_preview_url": null,
@@ -3291,7 +3291,7 @@
     "local_kind": "webp",
     "has_text": true,
     "text_len": 13062,
-    "created_at": "2026-06-05T15:35:49.371649+00:00"
+    "created_at": "2026-06-05T23:35:49.371649+08:00"
   },
   "nimbus-security": {
     "image_preview_url": null,
@@ -3302,7 +3302,7 @@
     "local_kind": "webp",
     "has_text": true,
     "text_len": 12818,
-    "created_at": "2026-06-05T15:39:16.529077+00:00"
+    "created_at": "2026-06-05T23:39:16.529077+08:00"
   },
   "nimbus-sticky-cards": {
     "image_preview_url": null,
@@ -3313,7 +3313,7 @@
     "local_kind": "webp",
     "has_text": true,
     "text_len": 12638,
-    "created_at": "2026-06-05T15:34:08.447673+00:00"
+    "created_at": "2026-06-05T23:34:08.447673+08:00"
   },
   "no-code-waitlist": {
     "image_preview_url": null,
@@ -3324,7 +3324,7 @@
     "local_kind": "png",
     "has_text": true,
     "text_len": 6532,
-    "created_at": "2026-05-20T06:10:00+00:00"
+    "created_at": "2026-05-20T14:10:00+08:00"
   },
   "novadesk-signup": {
     "image_preview_url": null,
@@ -3335,7 +3335,7 @@
     "local_kind": "webp",
     "has_text": true,
     "text_len": 4156,
-    "created_at": "2026-05-09T08:12:15.79352+00:00"
+    "created_at": "2026-05-09T16:12:15.79352+08:00"
   },
   "obsidian-hero": {
     "image_preview_url": null,
@@ -3346,7 +3346,7 @@
     "local_kind": "webp",
     "has_text": true,
     "text_len": 5407,
-    "created_at": "2026-06-23T15:41:00+00:00"
+    "created_at": "2026-06-23T23:41:00+08:00"
   },
   "orbis-cards": {
     "image_preview_url": null,
@@ -3357,7 +3357,7 @@
     "local_kind": "webp",
     "has_text": true,
     "text_len": 5533,
-    "created_at": "2026-06-05T12:10:28.860863+00:00"
+    "created_at": "2026-06-05T20:10:28.860863+08:00"
   },
   "orbis-cta": {
     "image_preview_url": null,
@@ -3368,7 +3368,7 @@
     "local_kind": "webp",
     "has_text": true,
     "text_len": 7573,
-    "created_at": "2026-06-05T12:29:56.641451+00:00"
+    "created_at": "2026-06-05T20:29:56.641451+08:00"
   },
   "orbis-hello": {
     "image_preview_url": null,
@@ -3379,7 +3379,7 @@
     "local_kind": "webp",
     "has_text": true,
     "text_len": 5232,
-    "created_at": "2026-06-05T12:21:37.595181+00:00"
+    "created_at": "2026-06-05T20:21:37.595181+08:00"
   },
   "organic-odyssey": {
     "image_preview_url": null,
@@ -3390,7 +3390,7 @@
     "local_kind": "webp",
     "has_text": true,
     "text_len": 4802,
-    "created_at": "2026-06-20T05:32:58.45222+00:00"
+    "created_at": "2026-06-20T13:32:58.45222+08:00"
   },
   "pixel-grid-hover": {
     "image_preview_url": null,
@@ -3401,7 +3401,7 @@
     "local_kind": "webp",
     "has_text": true,
     "text_len": 8672,
-    "created_at": "2026-06-04T07:03:16.032103+00:00"
+    "created_at": "2026-06-04T15:03:16.032103+08:00"
   },
   "portal": {
     "image_preview_url": null,
@@ -3412,7 +3412,7 @@
     "local_kind": "webp",
     "has_text": true,
     "text_len": 5718,
-    "created_at": "2026-07-19T13:27:00+00:00"
+    "created_at": "2026-07-19T21:27:00+08:00"
   },
   "portfolio-about": {
     "image_preview_url": null,
@@ -3423,7 +3423,7 @@
     "local_kind": "webp",
     "has_text": true,
     "text_len": 5431,
-    "created_at": "2026-06-06T07:53:18.974235+00:00"
+    "created_at": "2026-06-06T15:53:18.974235+08:00"
   },
   "projects-catalog": {
     "image_preview_url": null,
@@ -3434,7 +3434,7 @@
     "local_kind": "webp",
     "has_text": true,
     "text_len": 7197,
-    "created_at": "2026-06-06T08:17:43.927387+00:00"
+    "created_at": "2026-06-06T16:17:43.927387+08:00"
   },
   "prosthetics-hero": {
     "image_preview_url": null,
@@ -3445,7 +3445,7 @@
     "local_kind": "webp",
     "has_text": true,
     "text_len": 3421,
-    "created_at": "2026-05-09T08:24:02.074264+00:00"
+    "created_at": "2026-05-09T16:24:02.074264+08:00"
   },
   "pulse-3d": {
     "image_preview_url": "https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260715_015651_3c345a23-6743-4a37-af44-86da27825b50.png&w=1280&q=85",
@@ -3456,7 +3456,7 @@
     "local_kind": "webp",
     "has_text": true,
     "text_len": 20823,
-    "created_at": "2026-07-04T08:21:00+00:00"
+    "created_at": "2026-07-04T16:21:00+08:00"
   },
   "radial-diagram": {
     "image_preview_url": null,
@@ -3467,7 +3467,7 @@
     "local_kind": "webp",
     "has_text": true,
     "text_len": 5364,
-    "created_at": "2026-06-04T06:33:13.677521+00:00"
+    "created_at": "2026-06-04T14:33:13.677521+08:00"
   },
   "retro-futurist": {
     "image_preview_url": null,
@@ -3478,7 +3478,7 @@
     "local_kind": "webp",
     "has_text": true,
     "text_len": 5713,
-    "created_at": "2026-05-25T12:39:00+00:00"
+    "created_at": "2026-05-25T20:39:00+08:00"
   },
   "rocket-cta": {
     "image_preview_url": null,
@@ -3489,7 +3489,7 @@
     "local_kind": "webp",
     "has_text": true,
     "text_len": 11622,
-    "created_at": "2026-06-04T15:37:53.70377+00:00"
+    "created_at": "2026-06-04T23:37:53.70377+08:00"
   },
   "rocket-faq": {
     "image_preview_url": null,
@@ -3500,7 +3500,7 @@
     "local_kind": "webp",
     "has_text": true,
     "text_len": 10808,
-    "created_at": "2026-06-04T15:13:26.148154+00:00"
+    "created_at": "2026-06-04T23:13:26.148154+08:00"
   },
   "rocket-pricing": {
     "image_preview_url": null,
@@ -3511,7 +3511,7 @@
     "local_kind": "webp",
     "has_text": true,
     "text_len": 8841,
-    "created_at": "2026-06-04T09:56:36.26485+00:00"
+    "created_at": "2026-06-04T17:56:36.26485+08:00"
   },
   "saas-pricing-flow": {
     "image_preview_url": null,
@@ -3522,7 +3522,7 @@
     "local_kind": "webp",
     "has_text": true,
     "text_len": 5969,
-    "created_at": "2026-05-08T06:55:52.289931+00:00"
+    "created_at": "2026-05-08T14:55:52.289931+08:00"
   },
   "scroll-landing": {
     "image_preview_url": "https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260715_020859_b82d25e7-1fb4-482b-a9c4-378198539f62.png&w=1280&q=85",
@@ -3533,7 +3533,7 @@
     "local_kind": "webp",
     "has_text": true,
     "text_len": 15732,
-    "created_at": "2026-05-21T13:18:56.652359+00:00"
+    "created_at": "2026-05-21T21:18:56.652359+08:00"
   },
   "scroll-marquee": {
     "image_preview_url": null,
@@ -3544,7 +3544,7 @@
     "local_kind": "webp",
     "has_text": true,
     "text_len": 4119,
-    "created_at": "2026-06-06T07:42:43.010868+00:00"
+    "created_at": "2026-06-06T15:42:43.010868+08:00"
   },
   "shop": {
     "image_preview_url": null,
@@ -3555,7 +3555,7 @@
     "local_kind": "png",
     "has_text": true,
     "text_len": 14382,
-    "created_at": "2026-05-12T10:27:19.214749+00:00"
+    "created_at": "2026-05-12T18:27:19.214749+08:00"
   },
   "solace-sign-in": {
     "image_preview_url": null,
@@ -3566,7 +3566,7 @@
     "local_kind": "webp",
     "has_text": true,
     "text_len": 15138,
-    "created_at": "2026-06-08T09:34:13.465634+00:00"
+    "created_at": "2026-06-08T17:34:13.465634+08:00"
   },
   "speakup-venture-hero": {
     "image_preview_url": null,
@@ -3577,7 +3577,7 @@
     "local_kind": "png",
     "has_text": true,
     "text_len": 3854,
-    "created_at": "2026-05-09T08:02:55.82419+00:00"
+    "created_at": "2026-05-09T16:02:55.82419+08:00"
   },
   "stark-minimal-footer": {
     "image_preview_url": null,
@@ -3588,7 +3588,7 @@
     "local_kind": "webp",
     "has_text": true,
     "text_len": 5437,
-    "created_at": "2026-06-04T05:25:30.664696+00:00"
+    "created_at": "2026-06-04T13:25:30.664696+08:00"
   },
   "stellar-launch": {
     "image_preview_url": null,
@@ -3599,7 +3599,7 @@
     "local_kind": "webp",
     "has_text": true,
     "text_len": 10792,
-    "created_at": "2026-05-13T06:55:00+00:00"
+    "created_at": "2026-05-13T14:55:00+08:00"
   },
   "synthesis": {
     "image_preview_url": null,
@@ -3610,7 +3610,7 @@
     "local_kind": "webp",
     "has_text": true,
     "text_len": 5459,
-    "created_at": "2026-06-13T03:49:00+00:00"
+    "created_at": "2026-06-13T11:49:00+08:00"
   },
   "tech-noir-about": {
     "image_preview_url": null,
@@ -3621,7 +3621,7 @@
     "local_kind": "webp",
     "has_text": true,
     "text_len": 3555,
-    "created_at": "2026-06-05T14:10:32.29889+00:00"
+    "created_at": "2026-06-05T22:10:32.29889+08:00"
   },
   "technical-specifications": {
     "image_preview_url": null,
@@ -3632,7 +3632,7 @@
     "local_kind": "webp",
     "has_text": true,
     "text_len": 13885,
-    "created_at": "2026-06-03T09:39:24.156548+00:00"
+    "created_at": "2026-06-03T17:39:24.156548+08:00"
   },
   "travel-hero": {
     "image_preview_url": null,
@@ -3643,7 +3643,7 @@
     "local_kind": "webp",
     "has_text": true,
     "text_len": 21419,
-    "created_at": "2026-05-09T08:37:17.088725+00:00"
+    "created_at": "2026-05-09T16:37:17.088725+08:00"
   },
   "unwind-hero": {
     "image_preview_url": null,
@@ -3654,7 +3654,7 @@
     "local_kind": "webp",
     "has_text": true,
     "text_len": 7548,
-    "created_at": "2026-06-22T11:47:35.832491+00:00"
+    "created_at": "2026-06-22T19:47:35.832491+08:00"
   },
   "vaultshield": {
     "image_preview_url": null,
@@ -3665,7 +3665,7 @@
     "local_kind": "webp",
     "has_text": true,
     "text_len": 4734,
-    "created_at": "2026-05-18T13:19:45.614848+00:00"
+    "created_at": "2026-05-18T21:19:45.614848+08:00"
   },
   "veloce-cards": {
     "image_preview_url": null,
@@ -3676,7 +3676,7 @@
     "local_kind": "webp",
     "has_text": true,
     "text_len": 4540,
-    "created_at": "2026-06-06T12:19:07.417691+00:00"
+    "created_at": "2026-06-06T20:19:07.417691+08:00"
   },
   "velorix-iic": {
     "image_preview_url": null,
@@ -3687,7 +3687,7 @@
     "local_kind": "webp",
     "has_text": true,
     "text_len": 9255,
-    "created_at": "2026-05-20T06:43:00+00:00"
+    "created_at": "2026-05-20T14:43:00+08:00"
   },
   "vertex-sci": {
     "image_preview_url": null,
@@ -3698,7 +3698,7 @@
     "local_kind": "webp",
     "has_text": true,
     "text_len": 9146,
-    "created_at": "2026-06-17T10:00:00+00:00"
+    "created_at": "2026-06-17T18:00:00+08:00"
   },
   "visual-hero": {
     "image_preview_url": null,
@@ -3709,7 +3709,7 @@
     "local_kind": "png",
     "has_text": true,
     "text_len": 8275,
-    "created_at": "2026-05-12T09:59:53.729118+00:00"
+    "created_at": "2026-05-12T17:59:53.729118+08:00"
   },
   "waitlist-hero": {
     "image_preview_url": null,
@@ -3720,7 +3720,7 @@
     "local_kind": "webp",
     "has_text": true,
     "text_len": 5819,
-    "created_at": "2026-05-08T07:48:52.423639+00:00"
+    "created_at": "2026-05-08T15:48:52.423639+08:00"
   },
   "wanderful-hero": {
     "image_preview_url": null,
@@ -3731,7 +3731,7 @@
     "local_kind": "webp",
     "has_text": true,
     "text_len": 4223,
-    "created_at": "2026-05-10T06:25:03.919772+00:00"
+    "created_at": "2026-05-10T14:25:03.919772+08:00"
   },
   "wellness-balance": {
     "image_preview_url": null,
@@ -3742,7 +3742,7 @@
     "local_kind": "webp",
     "has_text": true,
     "text_len": 7840,
-    "created_at": "2026-06-29T04:39:29.78005+00:00"
+    "created_at": "2026-06-29T12:39:29.78005+08:00"
   },
   "wellness-hero": {
     "image_preview_url": null,
@@ -3753,7 +3753,7 @@
     "local_kind": "webp",
     "has_text": true,
     "text_len": 4719,
-    "created_at": "2026-06-17T04:50:00+00:00"
+    "created_at": "2026-06-17T12:50:00+08:00"
   },
   "yoga-coach": {
     "image_preview_url": null,
@@ -3764,7 +3764,7 @@
     "local_kind": "webp",
     "has_text": true,
     "text_len": 10255,
-    "created_at": "2026-06-03T13:34:00+00:00"
+    "created_at": "2026-06-03T21:34:00+08:00"
   },
   "community-superdesign-tubes-interactive-background": {
     "image_preview_url": null,
@@ -4268,10 +4268,10 @@
       "style"
     ],
     "page_type": "landing",
-    "local_kind": "png",
     "has_text": true,
     "text_len": 5702,
-    "created_at": null
+    "created_at": null,
+    "local_kind": "mp4"
   },
   "community-superdesign-bold-editorial-style": {
     "image_preview_url": null,
@@ -4576,10 +4576,10 @@
       "image gallery"
     ],
     "page_type": "community",
-    "local_kind": "png",
     "has_text": true,
     "text_len": 9997,
-    "created_at": null
+    "created_at": null,
+    "local_kind": "mp4"
   },
   "community-superdesign-brutalist-style-ecommerce-page": {
     "image_preview_url": null,
@@ -4664,10 +4664,10 @@
       "animation"
     ],
     "page_type": "landing",
-    "local_kind": "png",
     "has_text": true,
     "text_len": 1811,
-    "created_at": null
+    "created_at": null,
+    "local_kind": "mp4"
   },
   "community-superdesign-force-field-background": {
     "image_preview_url": null,
@@ -4751,10 +4751,10 @@
       "background"
     ],
     "page_type": "community",
-    "local_kind": "png",
     "has_text": true,
     "text_len": 9282,
-    "created_at": null
+    "created_at": null,
+    "local_kind": "mp4"
   },
   "community-superdesign-disruptor-beta-launch": {
     "image_preview_url": null,
@@ -4958,10 +4958,10 @@
       "landing page"
     ],
     "page_type": "landing",
-    "local_kind": "png",
     "has_text": true,
     "text_len": 364,
-    "created_at": null
+    "created_at": null,
+    "local_kind": "mp4"
   },
   "community-superdesign-coverflow-carousels-that-turn-heads-dark-coverflow-aurora": {
     "image_preview_url": null,
@@ -8234,20 +8234,20 @@
     "video_preview_url": null,
     "description": "暗色电影感创意工作室着陆页，暖奶油色文字搭配动态渐入动画，三区块展示品牌故事与特色功能。",
     "page_type": "landing",
-    "local_kind": null,
     "has_text": true,
     "text_len": 8432,
-    "created_at": "2026-04-08T04:56:43.149592+00:00"
+    "created_at": "2026-04-08T12:56:43.149592+08:00",
+    "local_kind": "webp"
   },
   "aetheris-voyage-hero": {
     "image_preview_url": "https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260715_020834_841011fb-d336-4dcd-bbe6-493a895e4eb4.png&w=1280&q=85",
     "video_preview_url": null,
     "description": "星际旅行主题着陆页，全屏视频背景搭配液态玻璃设计系统，Framer Motion入场动画营造沉浸式太空体验。",
     "page_type": "hero",
-    "local_kind": null,
     "has_text": true,
     "text_len": 10190,
-    "created_at": "2026-04-22T13:47:44.782074+00:00"
+    "created_at": "2026-04-22T21:47:44.782074+08:00",
+    "local_kind": "webp"
   },
   "vex-ventures-hero": {
     "image_preview_url": null,
@@ -8257,7 +8257,7 @@
     "local_kind": null,
     "has_text": true,
     "text_len": 5051,
-    "created_at": "2026-04-05T02:30:57.503178+00:00"
+    "created_at": "2026-04-05T10:30:57.503178+08:00"
   },
   "innovation-landing": {
     "image_preview_url": null,
@@ -8267,7 +8267,7 @@
     "local_kind": null,
     "has_text": true,
     "text_len": 8996,
-    "created_at": "2026-04-04T07:31:29.787783+00:00"
+    "created_at": "2026-04-04T15:31:29.787783+08:00"
   },
   "portfolio-cosmic-hero": {
     "image_preview_url": null,
@@ -8283,7 +8283,7 @@
     "local_kind": null,
     "has_text": true,
     "text_len": 8253,
-    "created_at": "2026-03-30T01:43:09.053414+00:00"
+    "created_at": "2026-03-30T09:43:09.053414+08:00"
   },
   "securify-hero": {
     "image_preview_url": null,
@@ -8293,7 +8293,7 @@
     "local_kind": null,
     "has_text": true,
     "text_len": 3822,
-    "created_at": "2026-04-21T09:05:01.927795+00:00"
+    "created_at": "2026-04-21T17:05:01.927795+08:00"
   },
   "celestia-hero": {
     "image_preview_url": null,
@@ -8308,7 +8308,7 @@
     "local_kind": null,
     "has_text": true,
     "text_len": 408,
-    "created_at": "2026-04-10T06:52:17.957546+00:00"
+    "created_at": "2026-04-10T14:52:17.957546+08:00"
   },
   "rivr-hero": {
     "image_preview_url": null,
@@ -8318,7 +8318,7 @@
     "local_kind": null,
     "has_text": true,
     "text_len": 8089,
-    "created_at": "2026-04-29T08:38:43.595484+00:00"
+    "created_at": "2026-04-29T16:38:43.595484+08:00"
   },
   "wisa-space-hero": {
     "image_preview_url": null,
@@ -8334,7 +8334,7 @@
     "local_kind": null,
     "has_text": true,
     "text_len": 37,
-    "created_at": "2026-04-13T05:48:31.966774+00:00"
+    "created_at": "2026-04-13T13:48:31.966774+08:00"
   },
   "vortex-studio-hero": {
     "image_preview_url": null,
@@ -8350,7 +8350,7 @@
     "local_kind": null,
     "has_text": true,
     "text_len": 11458,
-    "created_at": "2026-03-31T06:03:56.289938+00:00"
+    "created_at": "2026-03-31T14:03:56.289938+08:00"
   },
   "codenest-hero": {
     "image_preview_url": null,
@@ -8366,7 +8366,7 @@
     "local_kind": null,
     "has_text": true,
     "text_len": 2581,
-    "created_at": "2026-03-18T07:34:21.465739+00:00"
+    "created_at": "2026-03-18T15:34:21.465739+08:00"
   },
   "impressive-hero": {
     "image_preview_url": null,
@@ -8376,7 +8376,7 @@
     "local_kind": null,
     "has_text": true,
     "text_len": 4586,
-    "created_at": "2026-04-23T09:09:36.035799+00:00"
+    "created_at": "2026-04-23T17:09:36.035799+08:00"
   },
   "flowmate-landing": {
     "image_preview_url": null,
@@ -8386,7 +8386,7 @@
     "local_kind": null,
     "has_text": true,
     "text_len": 7502,
-    "created_at": "2026-04-06T12:49:14.805795+00:00"
+    "created_at": "2026-04-06T20:49:14.805795+08:00"
   },
   "luminex-hero": {
     "image_preview_url": null,
@@ -8402,7 +8402,7 @@
     "local_kind": null,
     "has_text": true,
     "text_len": 162,
-    "created_at": "2026-04-09T09:11:32.495321+00:00"
+    "created_at": "2026-04-09T17:11:32.495321+08:00"
   },
   "nike-premium-landing": {
     "image_preview_url": null,
@@ -8412,7 +8412,7 @@
     "local_kind": null,
     "has_text": true,
     "text_len": 18433,
-    "created_at": "2026-04-21T06:27:29.894707+00:00"
+    "created_at": "2026-04-21T14:27:29.894707+08:00"
   },
   "sentinel-ai-hero": {
     "image_preview_url": null,
@@ -8422,7 +8422,7 @@
     "local_kind": null,
     "has_text": true,
     "text_len": 5940,
-    "created_at": "2026-04-08T03:42:32.360254+00:00"
+    "created_at": "2026-04-08T11:42:32.360254+08:00"
   },
   "slam-dunk-hero": {
     "image_preview_url": null,
@@ -8438,7 +8438,7 @@
     "local_kind": null,
     "has_text": true,
     "text_len": 86,
-    "created_at": "2026-05-10T05:35:00+00:00"
+    "created_at": "2026-05-10T13:35:00+08:00"
   },
   "crypto-wealth-hero": {
     "image_preview_url": null,
@@ -8448,7 +8448,7 @@
     "local_kind": null,
     "has_text": true,
     "text_len": 11283,
-    "created_at": "2026-04-16T08:07:25.734296+00:00"
+    "created_at": "2026-04-16T16:07:25.734296+08:00"
   },
   "shamoni-hero": {
     "image_preview_url": null,
@@ -8458,7 +8458,7 @@
     "local_kind": null,
     "has_text": true,
     "text_len": 21939,
-    "created_at": "2026-05-21T10:00:00+00:00"
+    "created_at": "2026-05-21T18:00:00+08:00"
   },
   "glow-features": {
     "image_preview_url": null,
@@ -8468,7 +8468,7 @@
     "local_kind": null,
     "has_text": true,
     "text_len": 3072,
-    "created_at": "2026-05-03T10:05:12.129661+00:00"
+    "created_at": "2026-05-03T18:05:12.129661+08:00"
   },
   "lumina-footer": {
     "image_preview_url": null,
@@ -8478,7 +8478,7 @@
     "local_kind": null,
     "has_text": true,
     "text_len": 5113,
-    "created_at": "2026-04-30T12:55:12.080813+00:00"
+    "created_at": "2026-04-30T20:55:12.080813+08:00"
   },
   "nexacore-hero": {
     "image_preview_url": null,
@@ -8488,7 +8488,7 @@
     "local_kind": null,
     "has_text": true,
     "text_len": 13556,
-    "created_at": "2026-04-19T10:18:36.091253+00:00"
+    "created_at": "2026-04-19T18:18:36.091253+08:00"
   },
   "guardnet-landing": {
     "image_preview_url": null,
@@ -8498,7 +8498,7 @@
     "local_kind": null,
     "has_text": true,
     "text_len": 9456,
-    "created_at": "2026-04-22T10:07:12.055372+00:00"
+    "created_at": "2026-04-22T18:07:12.055372+08:00"
   },
   "automation-machines-hero": {
     "image_preview_url": null,
@@ -8514,7 +8514,7 @@
     "local_kind": null,
     "has_text": true,
     "text_len": 7406,
-    "created_at": "2026-03-27T10:22:31.493395+00:00"
+    "created_at": "2026-03-27T18:22:31.493395+08:00"
   },
   "digitwist-hero": {
     "image_preview_url": null,
@@ -8530,7 +8530,7 @@
     "local_kind": null,
     "has_text": true,
     "text_len": 6001,
-    "created_at": "2026-03-18T07:37:54.493241+00:00"
+    "created_at": "2026-03-18T15:37:54.493241+08:00"
   },
   "focus-ai-landing": {
     "image_preview_url": null,
@@ -8540,7 +8540,7 @@
     "local_kind": null,
     "has_text": true,
     "text_len": 10645,
-    "created_at": "2026-04-04T07:36:09.353322+00:00"
+    "created_at": "2026-04-04T15:36:09.353322+08:00"
   },
   "design-rocket-email-hero": {
     "image_preview_url": null,
@@ -8550,7 +8550,7 @@
     "local_kind": null,
     "has_text": true,
     "text_len": 7972,
-    "created_at": "2026-04-19T07:24:20.298056+00:00"
+    "created_at": "2026-04-19T15:24:20.298056+08:00"
   },
   "rivr-defi-landing": {
     "image_preview_url": null,
@@ -8560,7 +8560,7 @@
     "local_kind": null,
     "has_text": true,
     "text_len": 5196,
-    "created_at": "2026-04-29T09:36:52.447008+00:00"
+    "created_at": "2026-04-29T17:36:52.447008+08:00"
   },
   "duolingo-styleguide-hero": {
     "image_preview_url": null,
@@ -8570,7 +8570,7 @@
     "local_kind": null,
     "has_text": true,
     "text_len": 10777,
-    "created_at": "2026-04-11T08:51:19.653563+00:00"
+    "created_at": "2026-04-11T16:51:19.653563+08:00"
   },
   "velorah-focus-hero": {
     "image_preview_url": null,
@@ -8580,7 +8580,7 @@
     "local_kind": null,
     "has_text": true,
     "text_len": 12595,
-    "created_at": "2026-05-05T11:40:20.877056+00:00"
+    "created_at": "2026-05-05T19:40:20.877056+08:00"
   },
   "price-calculator": {
     "image_preview_url": null,
@@ -8596,7 +8596,7 @@
     "local_kind": null,
     "has_text": true,
     "text_len": 3134,
-    "created_at": "2026-03-18T07:40:44.262774+00:00"
+    "created_at": "2026-03-18T15:40:44.262774+08:00"
   },
   "yacht-club-hero": {
     "image_preview_url": null,
@@ -8606,7 +8606,7 @@
     "local_kind": null,
     "has_text": true,
     "text_len": 8356,
-    "created_at": "2026-04-04T02:36:05.18233+00:00"
+    "created_at": "2026-04-04T10:36:05.18233+08:00"
   },
   "social-media-posts-hero": {
     "image_preview_url": null,
@@ -8616,7 +8616,7 @@
     "local_kind": null,
     "has_text": true,
     "text_len": 11738,
-    "created_at": "2026-04-09T06:12:46.7345+00:00"
+    "created_at": "2026-04-09T14:12:46.7345+08:00"
   },
   "ecommerce-website-landing": {
     "image_preview_url": null,
@@ -8632,7 +8632,7 @@
     "local_kind": null,
     "has_text": true,
     "text_len": 5130,
-    "created_at": "2026-03-28T08:09:17.562841+00:00"
+    "created_at": "2026-03-28T16:09:17.562841+08:00"
   },
   "digital-epoch-hero": {
     "image_preview_url": null,
@@ -8642,7 +8642,7 @@
     "local_kind": null,
     "has_text": true,
     "text_len": 4594,
-    "created_at": "2026-05-05T10:39:24.468445+00:00"
+    "created_at": "2026-05-05T18:39:24.468445+08:00"
   },
   "ecovolta-hero": {
     "image_preview_url": null,
@@ -8652,7 +8652,7 @@
     "local_kind": null,
     "has_text": true,
     "text_len": 7207,
-    "created_at": "2026-04-07T03:12:58.005769+00:00"
+    "created_at": "2026-04-07T11:12:58.005769+08:00"
   },
   "kresna-footer": {
     "image_preview_url": null,
@@ -8662,7 +8662,7 @@
     "local_kind": null,
     "has_text": true,
     "text_len": 9163,
-    "created_at": "2026-05-03T11:04:56.451571+00:00"
+    "created_at": "2026-05-03T19:04:56.451571+08:00"
   },
   "vize-footer": {
     "image_preview_url": null,
@@ -8672,7 +8672,7 @@
     "local_kind": null,
     "has_text": true,
     "text_len": 7734,
-    "created_at": "2026-05-03T10:00:23.656666+00:00"
+    "created_at": "2026-05-03T18:00:23.656666+08:00"
   },
   "pro-ai-deck": {
     "image_preview_url": null,
@@ -8682,7 +8682,7 @@
     "local_kind": null,
     "has_text": true,
     "text_len": 20138,
-    "created_at": "2026-04-18T11:54:56.365634+00:00"
+    "created_at": "2026-04-18T19:54:56.365634+08:00"
   },
   "haul-footer": {
     "image_preview_url": null,
@@ -8692,7 +8692,7 @@
     "local_kind": null,
     "has_text": true,
     "text_len": 4329,
-    "created_at": "2026-05-03T09:51:53.742261+00:00"
+    "created_at": "2026-05-03T17:51:53.742261+08:00"
   },
   "veloce-finance-landing": {
     "image_preview_url": null,
@@ -8702,7 +8702,7 @@
     "local_kind": null,
     "has_text": true,
     "text_len": 8465,
-    "created_at": "2026-04-09T07:11:36.035999+00:00"
+    "created_at": "2026-04-09T15:11:36.035999+08:00"
   },
   "slate-hero": {
     "image_preview_url": null,
@@ -8712,7 +8712,7 @@
     "local_kind": null,
     "has_text": true,
     "text_len": 5124,
-    "created_at": "2026-04-25T08:36:58.564419+00:00"
+    "created_at": "2026-04-25T16:36:58.564419+08:00"
   },
   "ecovolta-v2-hero": {
     "image_preview_url": null,
@@ -8722,7 +8722,7 @@
     "local_kind": null,
     "has_text": true,
     "text_len": 3749,
-    "created_at": "2026-04-07T03:27:41.919155+00:00"
+    "created_at": "2026-04-07T11:27:41.919155+08:00"
   },
   "ai-image-generator-ui": {
     "image_preview_url": "https://res.cloudinary.com/dsdhxhhqh/image/upload/v1778221760/CleanShot_2026-05-08_at_13.28.55_2x_swwnfd.png",
@@ -8732,7 +8732,7 @@
     "local_kind": null,
     "has_text": true,
     "text_len": 4480,
-    "created_at": "2026-05-08T06:34:13.264809+00:00"
+    "created_at": "2026-05-08T14:34:13.264809+08:00"
   },
   "modern-hr-dashboard": {
     "image_preview_url": "https://res.cloudinary.com/dsdhxhhqh/image/upload/v1779784289/CleanShot_2026-05-26_at_15.26.21_2x_f2ytq9.png",
@@ -8742,7 +8742,7 @@
     "local_kind": null,
     "has_text": true,
     "text_len": 13276,
-    "created_at": "2026-07-15T08:31:00+00:00"
+    "created_at": "2026-07-15T16:31:00+08:00"
   },
   "nexora-features": {
     "image_preview_url": null,
@@ -8752,7 +8752,7 @@
     "local_kind": null,
     "has_text": true,
     "text_len": 4555,
-    "created_at": "2026-04-27T11:18:49.027314+00:00"
+    "created_at": "2026-04-27T19:18:49.027314+08:00"
   },
   "saas-value": {
     "image_preview_url": "https://res.cloudinary.com/dsdhxhhqh/image/upload/v1781539562/CleanShot_2026-06-15_at_15.31.34_2x_ckhjmj.png",
@@ -8762,7 +8762,7 @@
     "local_kind": null,
     "has_text": true,
     "text_len": 8755,
-    "created_at": "2026-06-14T08:37:00+00:00"
+    "created_at": "2026-06-14T16:37:00+08:00"
   },
   "social-hangouts": {
     "image_preview_url": "https://cdn.dribbble.com/userupload/47696057/file/449c40e8698855310cbea46d77e8a152.jpg?resize=2048x1536&vertical=center",
@@ -8772,7 +8772,7 @@
     "local_kind": null,
     "has_text": false,
     "text_len": 0,
-    "created_at": "2026-07-17T07:15:06.24981+00:00"
+    "created_at": "2026-07-17T15:15:06.24981+08:00"
   },
   "deck-investor": {
     "image_preview_url": null,
@@ -8788,7 +8788,7 @@
     "local_kind": null,
     "has_text": true,
     "text_len": 10864,
-    "created_at": "2026-03-18T07:56:30.131713+00:00"
+    "created_at": "2026-03-18T15:56:30.131713+08:00"
   },
   "vitara-hero": {
     "image_preview_url": null,
@@ -8798,7 +8798,7 @@
     "local_kind": null,
     "has_text": true,
     "text_len": 3623,
-    "created_at": "2026-04-05T02:43:43.941316+00:00"
+    "created_at": "2026-04-05T10:43:43.941316+08:00"
   },
   "bionova-hero": {
     "image_preview_url": null,
@@ -8814,7 +8814,7 @@
     "local_kind": null,
     "has_text": true,
     "text_len": 3902,
-    "created_at": "2026-03-25T07:00:13.889697+00:00"
+    "created_at": "2026-03-25T15:00:13.889697+08:00"
   },
   "zenith-realty-landing": {
     "image_preview_url": null,
@@ -8824,7 +8824,7 @@
     "local_kind": null,
     "has_text": true,
     "text_len": 7094,
-    "created_at": "2026-05-04T07:29:16.668718+00:00"
+    "created_at": "2026-05-04T15:29:16.668718+08:00"
   },
   "nexar-hero": {
     "image_preview_url": null,
@@ -8834,7 +8834,7 @@
     "local_kind": null,
     "has_text": true,
     "text_len": 8357,
-    "created_at": "2026-07-14T02:55:00+00:00"
+    "created_at": "2026-07-14T10:55:00+08:00"
   },
   "prioritize-hero": {
     "image_preview_url": null,
@@ -8844,7 +8844,7 @@
     "local_kind": null,
     "has_text": true,
     "text_len": 6216,
-    "created_at": "2026-04-28T05:28:57.677802+00:00"
+    "created_at": "2026-04-28T13:28:57.677802+08:00"
   },
   "vertex-ai-hero": {
     "image_preview_url": null,
@@ -8854,7 +8854,7 @@
     "local_kind": null,
     "has_text": true,
     "text_len": 12242,
-    "created_at": "2026-05-03T17:00:20.641628+00:00"
+    "created_at": "2026-05-04T01:00:20.641628+08:00"
   },
   "keep-ahead-features": {
     "image_preview_url": null,
@@ -8864,7 +8864,7 @@
     "local_kind": null,
     "has_text": true,
     "text_len": 9132,
-    "created_at": "2026-05-03T11:14:09.402077+00:00"
+    "created_at": "2026-05-03T19:14:09.402077+08:00"
   },
   "benefits-features": {
     "image_preview_url": null,
@@ -8874,7 +8874,7 @@
     "local_kind": null,
     "has_text": true,
     "text_len": 5910,
-    "created_at": "2026-05-03T12:37:17.881858+00:00"
+    "created_at": "2026-05-03T20:37:17.881858+08:00"
   },
   "zenith-footer": {
     "image_preview_url": null,
@@ -8884,7 +8884,7 @@
     "local_kind": null,
     "has_text": true,
     "text_len": 4256,
-    "created_at": "2026-05-03T10:10:44.102029+00:00"
+    "created_at": "2026-05-03T18:10:44.102029+08:00"
   },
   "digital-reality-hero": {
     "image_preview_url": null,
@@ -8894,7 +8894,7 @@
     "local_kind": null,
     "has_text": true,
     "text_len": 4303,
-    "created_at": "2026-05-05T11:26:06.385112+00:00"
+    "created_at": "2026-05-05T19:26:06.385112+08:00"
   },
   "community-cta": {
     "image_preview_url": null,
@@ -8904,7 +8904,7 @@
     "local_kind": null,
     "has_text": true,
     "text_len": 6576,
-    "created_at": "2026-05-03T10:39:29.077028+00:00"
+    "created_at": "2026-05-03T18:39:29.077028+08:00"
   },
   "package-fits-pricing": {
     "image_preview_url": null,
@@ -8914,7 +8914,7 @@
     "local_kind": null,
     "has_text": true,
     "text_len": 9163,
-    "created_at": "2026-05-05T10:09:02.928838+00:00"
+    "created_at": "2026-05-05T18:09:02.928838+08:00"
   },
   "aethera-studio": {
     "image_preview_url": "https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260328_083109_283f3553-e28f-428b-a723-d639c617eb2b.mp4",
