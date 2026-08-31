@@ -61,7 +61,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `prompt_text` recovered for 36 of the 75 via the `get-prompt` edge function; the remaining 39 are credit-gated.
 - 36 new entries under `data/catalog-text/<id>.txt`, plus matching rows in `data/catalog-text.json` and `data/catalog-text-index.json`.
 - `catalog-lite.json` now lists books / design / game-ui / fashion / ecommerce / ai / analytics / medical / sign-in / creative / threejs / ai-technology / security / 3d in `categories` (the new motionsites.ai taxonomy).
-- `catalog-meta.json` now contains 579 cards, sorted alongside the existing 504 (`sort_order` continues above 10140).
+- `catalog-meta.json` now contains 579 cards (sorted alongside the existing 504).
 
 ### Changed
 - Catalog lite counts: 579 total / 196 images / 169 videos / 202 concept (was 504 / 193 / 120 / 191). 512 entries in `catalog-text.json` (was 451).
@@ -71,3 +71,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Notes
 - Source attribution: 75 new entries set `source_repo=zhaosenlin12-creator/MotionSites` and `source_id=motionsites-2026-08-31`, `source_license=byScrapedFromMotionsites`.
 - Both deployments confirmed live: `https://motionsites-prompts.pages.dev/data/catalog-meta.json` and `https://zhaosenlin12-creator.github.io/MotionSites/data/catalog-meta.json` return 579-card / 160873-byte payloads.
+
+## [1.1.3] - 2026-08-31
+
+### Removed
+- 12 cards pruned from `catalog-meta.json` / `catalog-details.json` because they were dead-ends for end users: no `assets/previews/<id>.*` file was on disk **and** no `data/catalog-text/<id>.txt` body was available, so the gallery only showed a fallback concept card and a paywall placeholder - useless in offline use.
+  - New (2026-08-31 batch, 11): `xportfolio-hero`, `evr-ventures-hero`, `railroad-ai-hero`, `grow-ai-hero`, `planet-orbit-hero`, `neovision-landing`, `finlytic-hero`, `orbit-web3-hero`, `apex-saas-hero`, `mindloop-hero`, `stellar-ai-v2-hero`.
+  - Legacy (1, asset already missing): `community-superdesign-the-stacking-cards-effect`.
+- Total cards: **579 -> 567**. Image/video/concept counts unchanged (the 12 cards fell in the implicit "neither" bucket that never surfaced as usable content).

@@ -6,18 +6,18 @@
 👉 **主域（Cloudflare Pages，国内直连友好）：** https://motionsites-prompts.pages.dev/
 👉 **备用（GitHub Pages，仅供海外/无 GFW 拦截网络）：** https://zhaosenlin12-creator.github.io/MotionSites/
 
-主域部署在 Cloudflare Pages（Cloudflare CDN，国内可达），每次 push 后手动通过 wrangler pages deploy 推送；GitHub Pages 已配置自动部署但 Fastly 边缘在国内网络环境偶发 RST，作为海外用户备选。公网可直接访问 579 条提示词、487 条完整正文、196 张静态/动态预览（含 169 个循环视频 mp4 + 196 张 1280px 预览（含动态 webp））+ 191 张概念卡。无需登录、无需付费、无网络调用，打开即用。
+主域部署在 Cloudflare Pages（Cloudflare CDN，国内可达），每次 push 后手动通过 wrangler pages deploy 推送；GitHub Pages 已配置自动部署但 Fastly 边缘在国内网络环境偶发 RST，作为海外用户备选。公网可直接访问 567 条提示词、487 条完整正文、196 张静态/动态预览（含 169 个循环视频 mp4 + 196 张 1280px 预览（含动态 webp））+ 191 张概念卡。无需登录、无需付费、无网络调用，打开即用。
 
 
-> A progressively-loaded, offline-first catalog of **579 motion-driven UI prompts** — landing pages, hero scenes, agency showcases, dashboards, and more. Browse, search, copy, and export every prompt locally. No login, no third-party tracking, no paywall. Cold loads land paint-ready in ~34 ms (DOMContentLoaded) and finish in ~239 ms (loadEvent); only one small JSON per page + one prompt body per modal are fetched.
+> A progressively-loaded, offline-first catalog of **567 motion-driven UI prompts** — landing pages, hero scenes, agency showcases, dashboards, and more. Browse, search, copy, and export every prompt locally. No login, no third-party tracking, no paywall. Cold loads land paint-ready in ~34 ms (DOMContentLoaded) and finish in ~239 ms (loadEvent); only one small JSON per page + one prompt body per modal are fetched.
 
-> The catalog combines **440 MotionSites main-library entries** (with rich previews and video) and **139 community-picked prompts** sourced from public CC0 / MIT / NOASSERTION GitHub repositories. Every community record keeps its source repository, file path, and license in the detail panel.
+> The catalog combines **428 MotionSites main-library entries** (with rich previews and video) and **139 community-picked prompts** sourced from public CC0 / MIT / NOASSERTION GitHub repositories. Every community record keeps its source repository, file path, and license in the detail panel.
 
 ![Catalog preview](docs/catalog_preview.png)
 
 ## What is inside
 
-- **579 curated prompts** (440 MotionSites main library + 139 community picks) across Landing Page, Hero, SaaS, Agency, Portfolio, Web3, AI / Dashboard, Travel, Healthcare, Real Estate, and more
+- **567 curated prompts** (428 MotionSites main library + 139 community picks) across Landing Page, Hero, SaaS, Agency, Portfolio, Web3, AI / Dashboard, Travel, Healthcare, Real Estate, and more
 - **487 full prompt bodies** (302 MotionSites + 46 motionsites.ai edge-fn recoveries + 139 community) — copy to clipboard or export as a Markdown file
 - **196 image / video previews, 1280px / q=85, downloaded from Motionsites / R2 / higgs.ai CDNs) + **169 looping video previews (mp4 / webm) + **202 concept cards with curated per-category palettes and animated art
 - **202 concept cards with curated per-category palettes and animated art (used when the source page has no preview)
@@ -152,7 +152,7 @@ Measured locally with Chromium (Playwright headless) against `node server-stable
 | Cards rendered (viewport) | ~120, progressively painted in 60-card batches |
 | Skeletons remaining after boot | 0 |
 | Console errors | 0 |
-| Records | 579 (487 with full text, 196 images, 169 videos, 202 concepts) |
+| Records | 567 (487 with full text, 196 images, 169 videos, 202 concepts) |
 
 Progressive architecture:
 
@@ -188,11 +188,11 @@ After the 2026-08-16 high-resolution rebuild every `assets/previews/*` file is �
 
 ### Entries without a published prompt body
 
-92 of the 579 records still render as concept-only or with a metadata panel because their prompt body is paywalled at motionsites.ai. Cards with prompt text: 487. The remaining 53 entries are surfaced as concept cards (animated art + provenance) or in-modal **metadata panels** that surface `created_at`, `page_type`, `sort_order`, `local_kind`, `text_len`, which only exposes the title / description / category - the full prompt body is paywalled. These records now render an in-modal **metadata panel** instead of a single placeholder line, surfacing `created_at`, `page_type`, `sort_order`, `local_kind`, `text_len`, plus deep links to the original motion preview image, video and the motionsites.ai source page.
+80 of the 567 records still render as concept-only or with a metadata panel because their prompt body is paywalled at motionsites.ai. Cards with prompt text: 487. The remaining 53 entries are surfaced as concept cards (animated art + provenance) or in-modal **metadata panels** that surface `created_at`, `page_type`, `sort_order`, `local_kind`, `text_len`, which only exposes the title / description / category - the full prompt body is paywalled. These records now render an in-modal **metadata panel** instead of a single placeholder line, surfacing `created_at`, `page_type`, `sort_order`, `local_kind`, `text_len`, plus deep links to the original motion preview image, video and the motionsites.ai source page.
 
 ## 2026-08-16 — High-resolution preview upgrade
 
-Card thumbnails jumped from 480p to 1280px: 453 of the 579 records now point to a 1280-wide webp (first frame of the original motion source, extracted via `ffmpeg` or pulled straight from `r2.dev` / `images.higgs.ai`). 116 cards that previously played a 480p mp4 in the card grid now use the still frame; the modal still plays the motion via `data/catalog-details.json -> video_preview_url`. Total `assets/previews/` now weighs ~202 MB. `.gitignore` excludes `.work/` scratch artifacts.
+Card thumbnails jumped from 480p to 1280px: 453 of the 567 records now point to a 1280-wide webp (first frame of the original motion source, extracted via `ffmpeg` or pulled straight from `r2.dev` / `images.higgs.ai`). 116 cards that previously played a 480p mp4 in the card grid now use the still frame; the modal still plays the motion via `data/catalog-details.json -> video_preview_url`. Total `assets/previews/` now weighs ~202 MB. `.gitignore` excludes `.work/` scratch artifacts.
 
 ## File layout
 
@@ -233,7 +233,7 @@ The shipped `index.html` is pre-generated, but you can regenerate it any time:
 
 ```bash
 node scripts/build.js
-# -> Records=579 complete=487 images=196 videos=169 concepts=202 motionsites=440 community=139
+# -> Records=567 complete=487 images=196 videos=169 concepts=202 motionsites=428 community=139
 # -> Wrote catalog-lite.json  1.5 KB  (gzip 0.7 KB)
 # -> Wrote catalog-meta.json  187 KB  (gzip 37 KB)
 # -> Wrote catalog-text.json  4061.0 KB  (gzip 1317.7 KB)
