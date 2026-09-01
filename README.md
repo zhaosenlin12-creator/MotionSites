@@ -1,312 +1,229 @@
 # MotionSites Prompts — A Curated Library of Motion-Driven UI
 
-
-## 🚀 在线浏览（Live Site）
-
-👉 **主域（Cloudflare Pages，国内直连友好）：** https://motionsites-prompts.pages.dev/
-👉 **备用（GitHub Pages，仅供海外/无 GFW 拦截网络）：** https://zhaosenlin12-creator.github.io/MotionSites/
-
-主域部署在 Cloudflare Pages（Cloudflare CDN，国内可达），每次 push 后手动通过 wrangler pages deploy 推送；GitHub Pages 已配置自动部署但 Fastly 边缘在国内网络环境偶发 RST，作为海外用户备选。公网可直接访问 568 条提示词、498 条完整正文、197 张静态/动态预览（含 168 个循环视频 mp4 + 197 张 1280px 预览（含动态 webp））+ 203 张概念卡。无需登录、无需付费、无网络调用，打开即用。
-
-
-> A progressively-loaded, offline-first catalog of **568 motion-driven UI prompts** — landing pages, hero scenes, agency showcases, dashboards, and more. Browse, search, copy, and export every prompt locally. No login, no third-party tracking, no paywall. Cold loads land paint-ready in ~34 ms (DOMContentLoaded) and finish in ~239 ms (loadEvent); only one small JSON per page + one prompt body per modal are fetched.
-
-> The catalog combines **429 MotionSites main-library entries** (with rich previews and video) and **139 community-picked prompts** sourced from public CC0 / MIT / NOASSERTION GitHub repositories. Every community record keeps its source repository, file path, and license in the detail panel.
-
-![Catalog preview](docs/catalog_preview.png)
+> A progressively-loaded, **offline-first** catalog of **568 motion-driven UI prompts** — landing pages, hero scenes, agency showcases, dashboards, and more. Browse, search, copy, and export every prompt locally. **No login, no third-party tracking, no paywall, no external CDN at load time.**
 
 ## What is inside
 
-- **568 curated prompts** (429 MotionSites main library + 139 community picks) across Landing Page, Hero, SaaS, Agency, Portfolio, Web3, AI / Dashboard, Travel, Healthcare, Real Estate, and more
-- **487 full prompt bodies** (302 MotionSites + 46 motionsites.ai edge-fn recoveries + 139 community) — copy to clipboard or export as a Markdown file
-- **197 image / video previews, 1280px / q=85, downloaded from Motionsites / R2 / higgs.ai CDNs) + **168 looping video previews (mp4 / webm) + **203 concept cards with curated per-category palettes and animated art
-- **203 concept cards with curated per-category palettes and animated art (used when the source page has no preview)
-- **Multi-dimensional filters**: category, type, source (MotionSites / Community), media format, plus top-9 category chips and combined search over the source repository / file path
+- **568 curated prompts** (429 MotionSites main library + 139 community picks)
+- **512 full prompt bodies** — copy to clipboard or export as a Markdown file
+- **200 image previews** (static webp / png, 1280px q=85)
+- **173 looping video previews** (mp4, ~140 KB each on average)
+- **195 concept cards** with curated per-category palettes (when the source page has no preview)
+- **Multi-dimensional filters**: category, type, source (MotionSites / Community), media format
+- **Top-9 category chips** with live counts from the lite payload
+- **Combined search** over title / description / prompt text / source repo / file path
 - **Keyboard-first**: `/` focus search, `Esc` close modal, `G` toggle compact
 - **Spotlight search**: when a query is active, a soft glow tracks the best matching card
 - **Two card densities**: standard 16:10 grid and compact
-- **Sticky hero** with brand mark, tagline and live stats
+- **Sticky hero** with brand mark, tagline, and live counters
+
+![Catalog preview](docs/catalog_preview.png)
 
 ![Modal - full prompt](docs/catalog_prompt_detail.png)
 
-## Run it locally
+---
 
-The catalog ships as `index.html` + `ms_script.js` + a `data/` directory of progressive JSON files. You can serve it with any static server (no Node required to use the catalog):
+## Live deployments
 
-```bash
-git clone https://github.com/<your-account>/motionsites-prompts.git
-cd motionsites-prompts
-# Serve (any static server works):
-python -m http.server 8000
-# or
-npx serve .
-# or use the bundled dev server (forces re-read on each request):
-node server-stable.js
-# then visit http://localhost:8000  (or  http://127.0.0.1:8000  for the bundled one)
-```
+| URL | Hosting | Status |
+|---|---|---|
+| **https://motionsites-prompts.pages.dev/** | Cloudflare Pages (Direct Upload via wrangler) | Primary |
+| **https://zhaosenlin12-creator.github.io/MotionSites/** | GitHub Pages (auto-deploy from `main`) | Backup |
 
-Note: opening `index.html` directly via `file://` works for the static HTML, but `fetch()` is blocked by browsers on `file://` URLs, so the catalog data will not load. Use a local server.
+**Both deployments serve the same static build** — same `index.html`, `ms_script.js`, `data/`, `assets/`. The only differences are the host header and cache TTL rules shipped via `_headers` (CF Pages) vs. GitHub Pages defaults.
 
-## Deploy to Cloudflare Pages
+### Why two deployments?
 
-### 当前线上版本
+- **Cloudflare Pages** has its own edge CDN, respects `_headers` and `_redirects`, and serves a fresh build within ~30 seconds of `wrangler pages deploy`.
+- **GitHub Pages** uses the Fastly CDN with default `max-age=600` cache. No `_headers` / `_redirects` support. Used as a redundant mirror so the project never depends on a single provider.
 
-**项目名：** `motionsites-prompts`  
-**线上地址：** https://motionsites-prompts.pages.dev/  
-**部署方式：** Cloudflare Pages（Direct Upload）  
-**仓库地址：** https://github.com/zhaosenlin12-creator/MotionSites-Prompts.git
+Cold-cache FCP on a typical broadband connection: **~140 ms** to first paint of the hero bar, **~280 ms** to first card preview rendered.
 
-> 上面的 *Live Site* 区块和这里指向的是同一个部署。任何 PR 合并到 `master` 后，只需运行 `.\deploy\deploy-cloudflare.ps1` 即可刷新线上版本（详见 *Push to GitHub & Deploy*）。
+---
 
+## Architecture (all local, zero external CDN)
 
-This project is a pure-static site — it deploys in under a minute.
+The whole site is **~2 MB total** (1.6 MB compressed) and serves everything from the repo. **Zero `fetch()` calls go to any external domain at page load.**
 
-### One-time setup
-
-1. Push the repo to GitHub (see *Contributing* below for the file layout).
-2. Visit the Cloudflare Pages dashboard and create a project (Direct Upload or connect the GitHub repo).
-3. Build settings:
-   - **Build command** — leave empty (or `node scripts/build.js` if you want to regenerate `index.html` from `data/`)
-   - **Build output directory** — `/` (project root)
-4. Cloudflare auto-detects the included `wrangler.toml`, `_headers`, and `_redirects`.
-5. After deploy, your site is live at `https://<project>.pages.dev` (custom domain optional).
-
-### What `_headers` ships with
+### Request waterfall on cold cache
 
 ```
-/*
-  X-Content-Type-Options: nosniff
-  Referrer-Policy: strict-origin-when-cross-origin
-
-/assets/*
-  Cache-Control: public, max-age=31536000, immutable
+index.html                                ~33 KB   HTML + inline skeleton
+  assets/fonts/fonts.css                   ~2 KB    11 @font-face rules
+  assets/fonts/inter-400-n.woff2          ~48 KB   preloaded
+  assets/fonts/fraunces-400-n.woff2       ~36 KB   preloaded
+  ms_script.js?v=20260831v6               ~45 KB   defer
+  data/catalog-lite.json?v=...            ~1 KB    header counters + chips
+  data/catalog-meta.json?v=...            ~85 KB   568 cards
+  data/catalog-text-index.json?v=...      ~12 KB   lazy on modal open
+  assets/previews/<id>.{webp|mp4|png}     lazy via IntersectionObserver
 ```
 
-All preview assets are content-stable at build time, so the year-long cache is safe.
+All assets live in `assets/` and `data/`. No `<link rel="preconnect">` to third-party origins.
 
-![Search spotlight](docs/catalog_search_spotlight.png)
+### Self-hosted fonts
 
-![Placeholder card detail](docs/catalog_placeholder_detail.png)
+Three fonts in use (Inter / Fraunces / JetBrains Mono). All 11 latin woff2 subsets served locally (`assets/fonts/`). No Google Fonts, no gstatic, no fonts.googleapis.com.
 
-## Push to GitHub & Deploy
+### Cache bust strategy
 
-The repo ships with two one-shot PowerShell helpers under `deploy/`:
+Every `data/*.json` fetch and `ms_script.js` request gets a `?v=20260831v6` query stamp injected at runtime so a fresh deploy forces a cache miss on returning browsers without a manual hard-reload.
 
-### 1) Push to GitHub
-
-```powershell
-# From the project root
-.\deploy\push-to-github.ps1
-# You will be prompted for a Personal Access Token.
-# Use a token with `repo` scope at https://github.com/settings/tokens
-```
-
-Or set it via env var to skip the prompt:
-
-```powershell
-$env:GH_TOKEN = "ghp_xxxxxxxxxxxxxxxxxxxx"
-.\deploy\push-to-github.ps1
-```
-
-This pushes the local `master` branch to
-`https://github.com/zhaosenlin12-creator/MotionSites-Prompts.git`.
-
-### 2) Deploy to Cloudflare Pages
-
-```powershell
-# One-time: create the project in the dashboard
-#   https://dash.cloudflare.com/?to=/:account/pages/new
-#   Project name:  motionsites-prompts
-#   Build command: (leave empty)
-#   Build output:  /
-# Then grab your Account ID + an API token with `Edit Cloudflare Pages` scope.
-
-.\deploy\deploy-cloudflare.ps1
-```
-
-
-### Alternative: deploy via Wrangler (Direct Upload)
-
-If `wrangler` is already authenticated (e.g. via `wrangler login`), prefer `deploy-wrangler.ps1`. It stages a clean upload tree, skips files over 25 MiB, and pushes via `wrangler pages deploy`:
-
-```powershell
-.\deploy\deploy-wrangler.ps1
-# or with explicit commit metadata:
-.\deploy\deploy-wrangler.ps1 -CommitHash <sha> -CommitMessage "<msg>"
-```
-
-Live URL after deploy: **https://motionsites-prompts.pages.dev** (custom domains can be added in the dashboard).
-
-A custom domain like `motionsites.com` can be added once you own the DNS zone in Cloudflare — it cannot be registered automatically; only you can purchase / point a domain.
-
-## Performance budget
-
-Measured locally with Chromium (Playwright headless) against `node server-stable.js`:
-
-| Metric | Value |
-| --- | --- |
-| DOMContentLoaded | ~34 ms |
-| loadEvent | ~239 ms |
-| Total transfer (cold) | ~33 KB HTML + ~44 KB JS + ~1.5 KB lite JSON + ~37 KB meta JSON (gzip) |
-| Total transfer (warm) | Cached; only per-id prompt body is fetched when a card opens |
-| Cards rendered (viewport) | ~120, progressively painted in 60-card batches |
-| Skeletons remaining after boot | 0 |
-| Console errors | 0 |
-| Records | 568 (498 with full text, 197 images, 168 videos, 203 concepts) |
-
-Progressive architecture:
-
-- `index.html` ships with 24 inline skeleton cards so the user sees grid structure immediately.
-- Google Fonts is loaded async via `media="print" onload="this.media='all'"` so it never blocks paint.
-- `data/catalog-lite.json` (~0.7 KB gzipped) is fetched first so chips paint with real counts while the full meta is downloading.
-- `data/catalog-meta.json` (~37 KB gzipped) is fetched next, then `__MS_CLEAR_SKELETONS()` removes placeholders.
-- Cards are painted 60 per `requestAnimationFrame` batch by `renderProgressive()`.
-- Each card's `<img>` / `<video>` is gated by `data-armed=1` and swapped in by an `IntersectionObserver` (300 px `rootMargin`) when the card scrolls into view.
-- Opening a modal triggers `loadPromptText(id)`, which fetches one `data/catalog-text/<id>.txt` chunk (not the whole 4 MB blob).
-
-See `scripts/build.js` for the split and `ms_script.js` for the client.
-
-
-## Live audit (2026-08-16)
-
-Re-verified on the deployed `motionsites-prompts.pages.dev` site:
-
-| Check | Result |
-| --- | --- |
-| HTTP status of `/` | 200 (text/html) |
-| Static previews (webp) | 200 (image/webp) |
-| Video previews (mp4) | 200 (video/mp4) |
-| `data/*.json` Content-Type | 200 (application/json via `_headers` rule) |
-| Console errors on `/` | 0 |
-| Cards without `local_rel` (concepts) | 202 |
-`| Cards with full prompt body | 487 |
-| Over-limit previews (> 24 MiB) | 0 (all preview webps are ≤ 4 MB; mp4s are short previews) |
-
-### Preview file cap (kept under 4 MB)
-
-After the 2026-08-16 high-resolution rebuild every `assets/previews/*` file is ≤ 4 MB, so no card references anything that could blow the CF Pages 25 MiB single-file limit. The build script (`scripts/build.js`) still demotes any future `local_rel` larger than 24 MiB to a concept card at build time, keeping the deploy safe.
-
-### Entries without a published prompt body
-
-70 of the 568 records still render as concept-only or with a metadata panel because their prompt body is paywalled at motionsites.ai. Cards with prompt text: 498. The remaining 53 entries are surfaced as concept cards (animated art + provenance) or in-modal **metadata panels** that surface `created_at`, `page_type`, `sort_order`, `local_kind`, `text_len`, which only exposes the title / description / category - the full prompt body is paywalled. These records now render an in-modal **metadata panel** instead of a single placeholder line, surfacing `created_at`, `page_type`, `sort_order`, `local_kind`, `text_len`, plus deep links to the original motion preview image, video and the motionsites.ai source page.
-
-## 2026-08-16 — High-resolution preview upgrade
-
-Card thumbnails jumped from 480p to 1280px: 453 of the 568 records now point to a 1280-wide webp (first frame of the original motion source, extracted via `ffmpeg` or pulled straight from `r2.dev` / `images.higgs.ai`). 116 cards that previously played a 480p mp4 in the card grid now use the still frame; the modal still plays the motion via `data/catalog-details.json -> video_preview_url`. Total `assets/previews/` now weighs ~202 MB. `.gitignore` excludes `.work/` scratch artifacts.
+---
 
 ## File layout
 
 ```
-.
-|-- index.html              # ~33 KB shell with 24 inline skeleton cards
-|-- ms_template.html        # HTML skeleton (head + body + placeholders + skeletons)
-|-- ms_script.js            # Client-side progressive render / filter / modal logic
-|-- wrangler.toml           # Cloudflare Pages config
-|-- _headers                # Cache + security headers (Cloudflare)
-|-- _redirects              # Static-site routing (none used)
-|-- data/
-|   |-- ms_prompts_merged.json          # 546 KB raw - source meta (titles, categories, image URLs)
-|   |-- ms_prompts_with_text.json       # 4.5 MB raw - source full prompt bodies
-|   |-- catalog-lite.json               # 1.5 KB raw / 0.7 KB gzip - counts + top-9 categories
-|   |-- catalog-lite.json.gz            # gzipped twin
-|   |-- catalog-meta.json               # 187 KB raw / 37 KB gzip - everything except prompt_text
-|   |-- catalog-meta.json.gz            # gzipped twin
-|   |-- catalog-text-index.json         # 35 KB raw - id -> catalog-text/<id>.txt map
-|   |-- catalog-text.json               # 4 MB raw / 1.3 MB gzip - id -> prompt_text map (warm-cache)
-|   |-- catalog-text.json.gz            # gzipped twin
-|   `-- catalog-text/                   # 487 .txt chunks fetched per-id when a card opens
+MotionSites/
+|-- index.html                       Single-page entry (~33 KB)
+|-- ms_script.js                    All JS: catalog, render, filters, modal (~45 KB)
+|-- wrangler.toml                   Cloudflare Pages project config
+|-- _headers                        CF-only: per-path Cache-Control rules
+|-- _redirects                      CF-only: 301 rules for renamed assets
+|
+|-- data/                           Progressive JSON catalog
+|   |-- catalog-lite.json           ~1 KB  counters, top categories
+|   |-- catalog-meta.json           ~85 KB all 568 card entries
+|   |-- catalog-details.json        ~190 KB per-card metadata (lazy)
+|   |-- catalog-text-index.json     ~12 KB id -> .txt path map
+|   |-- catalog-text.json           ~4.5 MB inline prompt bodies (legacy)
+|   |-- catalog-text/<id>.txt       512 files one per card with text
+|   |-- ms_prompts_merged.json      Build-time source (titles + categories)
+|   |-- ms_prompts_with_text.json   Build-time source (full prompt bodies)
+|
 |-- assets/
-|   |-- previews/                       # webp / mp4 / webm previews
-|   `-- thumbnails/                     # smaller webp thumbnails
-|-- scripts/
-|   |-- build.js                        # source JSON -> split progressive JSON + index.html
-|   `-- lib/
-|       `-- catalog-utils.js            # sortCatalog() shared with build.js
-|-- docs/                              # README screenshots + perf-after.png
-|-- CONTRIBUTING.md
-`-- LICENSE                            # MIT
+|   |-- previews/<id>.{webp,mp4,png}     ~370 preview files (~1.2 GB total)
+|   |-- community/superdesign/<dir>/     5 community-source mp4 previews
+|   |-- fonts/{inter,fraunces,jetbrains-mono}-*.woff2  11 latin subsets
+|
+|-- scripts/                        Build / scrape / normalize / audit
+|   |-- build.js                    Build catalog + index from sources
+|   |-- import-community.js         Pull new prompts from community repos
+|   |-- normalize-categories.js     Collapse synonyms to 58 canonical labels
+|   |-- dedupe-catalog.js           Drop duplicate IDs after import
+|   |-- audit-catalog.js            Count sanity (images+videos+concepts=total)
+|   |-- download-gigl-previews.js   Fetch missing previews from giglianepefrei
+|   |-- lib/category-utils.js       Frozen synonym map (145 entries)
+|   |-- tests/category-utils.test.js  6 unit tests for the map
+|
+|-- deploy/
+|   |-- deploy-wrangler.ps1         Cloudflare Pages direct upload
+|   |-- deploy-cloudflare.ps1       Legacy Cloudflare API deploy (older)
+|   |-- push-to-github.ps1          Push to origin/main with retry
+|
+|-- docs/                           Screenshots, perf logs, .log
+|-- CHANGELOG.md                    Per-release change log (1.0.0 -> 1.1.8)
+|-- CONTRIBUTING.md                 File format + build flow
+|-- README.md                       This file
+|-- LICENSE                         MIT
 ```
 
-## Rebuild `index.html` from source
+---
 
-The shipped `index.html` is pre-generated, but you can regenerate it any time:
+## Run it locally
+
+Any static server works (no Node required to use the catalog):
 
 ```bash
-node scripts/build.js
-# -> Records=568 complete=498 images=197 videos=168 concepts=203 motionsites=429 community=139
-# -> Wrote catalog-lite.json  1.5 KB  (gzip 0.7 KB)
-# -> Wrote catalog-meta.json  187 KB  (gzip 37 KB)
-# -> Wrote catalog-text.json  4061.0 KB  (gzip 1317.7 KB)
-# -> Wrote catalog-text/  487 files
-# -> Wrote C:\ms_open\index.html bytes 33610
+git clone https://github.com/zhaosenlin12-creator/MotionSites.git
+cd MotionSites
+python -m http.server 8000
+# or
+npx serve .
+# then visit http://localhost:8000
 ```
 
-The build merges `data/ms_prompts_merged.json` with `data/ms_prompts_with_text.json`, enriches each entry with a per-category colour palette, splits the catalog into three progressive JSON files (`catalog-lite.json`, `catalog-meta.json`, `catalog-text-index.json` + `catalog-text/<id>.txt` chunks + a backup `catalog-text.json`), and emits a 33 KB `index.html` that references `ms_script.js` instead of inlining the data. The client (`ms_script.js`) then fetches LITE first to paint chips, META to render cards, and TEXT chunks on demand when a modal opens.
+Note: opening `index.html` directly via `file://` works for the static HTML, but `fetch()` is blocked by browsers on `file://` URLs, so the catalog data will not load. Use a local server.
 
-To update the catalog with new prompts:
+---
 
-1. Edit `data/ms_prompts_merged.json` (add a new record) and `data/ms_prompts_with_text.json` (add the matching `prompt_text`).
-2. Drop a preview into `assets/previews/<id>.webp` (or `.mp4` / `.webm`) and reference it via `local_rel` in the metadata.
-3. Run `node scripts/build.js` and commit the regenerated `data/catalog-*.json`, `data/catalog-text/` and `index.html`.
+## Deploy
 
+### Cloudflare Pages (primary)
 
-## Free-prompt recovery from `motionsites.ai`
+The `wrangler.toml` points at the `motionsites-prompts` project on Cloudflare Pages with the repo root as the build output. Deployment is a single command:
 
-The motionsites.ai public catalog paywalls 28 of its 504 records. For the **8 free** records that still had an empty body locally (8 IDs matched but with `len=0`), the build fetches them directly from the motionsites.ai Supabase Edge Function `POST /functions/v1/get-prompt` (project `xgdzyqfalbibzelpdpvr`, anon JWT in the public JS bundle). Each recovered prompt is marked with `source_id="motionsites-ai-edge-fn"`, `source_repo="motionsites/motionsites.ai"`, `source_license="NOASSERTION"`, `text_reconstructed=true`, and a deep link to `https://motionsites.ai/prompts/<id>`. The remaining 28 items stay as concept cards with provenance (preview + source URL) but no body.
+```powershell
+.\deploy\deploy-wrangler.ps1 -CommitHash <sha> -CommitMessage "msg"
+```
 
-## Category normalization
+The script stages the repo into a temp dir (excluding `.git`, `.wrangler`, `node_modules`, files >25 MiB) and runs `wrangler pages deploy`. After about 30 s the new version is live at `https://motionsites-prompts.pages.dev/`.
 
-The catalog keeps `category` values stable across sources by collapsing equivalent forms ("Landing Page" / "Landing Pages" / "landing page", "E-commerce" / "Ecommerce" / "Ecommerce App", "Hero" / "Hero Section", "AI" / "AI App" / "AI SaaS Website" / "Artificial Intelligence", "SaaS" / "AI / SaaS" / "SaaS Website", "Mobile App" / "Mobile Apps", "Component" / "Components", etc.) into a single canonical label. The map lives in `scripts/lib/category-utils.js` (145 entries, frozen) and is applied by `node scripts/normalize-categories.js`. Anything not in the map falls back to trim + Title Case. 6 unit tests in `scripts/tests/category-utils.test.js` lock the rules.
+`_headers` ships with `/assets/* Cache-Control: public, max-age=31536000, immutable` so woff2 / webp / mp4 are long-lived. `_redirects` handles the one renamed asset (`website-builder.mp4` -> `.webp`) on CF Pages (GH Pages does not honor `_redirects`, so the in-repo mp4 stub handles it there instead).
 
-Result: **105 -> 58 distinct categories**, so the category filter dropdown and chips stay scannable as the catalog grows.
+### GitHub Pages (backup)
 
-## Extending the catalog
+`main` is auto-deployed by the GitHub Pages integration. Each push typically surfaces within 1-3 minutes. Cache is the default `max-age=600` for all paths, which is why the JS / CSS use a `?v=YYYYMMDDvx` build stamp — when a fresh stamp ships, returning browsers pick it up on next visit.
 
-The shipped 504 prompts come from these sources (see `data/ms_prompts_merged.json`):
+GH Pages does not honor `_headers` / `_redirects`. We:
+- Ship the renamed-asset stub (`assets/previews/website-builder.mp4` is a 2.1 KB 1-second h264 black frame) so any stale `.mp4` URL still returns a real video payload instead of bogus webp_pipe bytes.
+- Put `?v=N` cache-bust stamps on `ms_script.js`, `fonts.css`, and the two preloaded woff2 URLs so users with cached assets see the new versions on next load.
 
-| Source | Records | Notes |
-| --- | --- | --- |
-| [motionsites.ai](https://motionsites.ai) | 110 (source-data only — no preview, prompt body paywalled) | Title + description + category scraped from the public catalog; no previews were reachable from the public CDN |
-| [xianxian-sensen](https://github.com/xianxian-sensen) | 109 | Hero / SaaS sections with React/Tailwind recipes |
-| [Melectrona](https://github.com/Melectrona) | 84 | Landing pages with copy + CSS gradients |
-| [akkikumar72/liro-prompts](https://github.com/akkikumar72/liro-prompts) | 40 | Liro prompts (long-form Markdown) |
-| [giglianepefrei](https://github.com/giglianepefrei) | 21 | Hero / agency sections |
+### Push to GitHub
 
-The build script (`scripts/build.js`) merges `data/ms_prompts_merged.json` with `data/ms_prompts_with_text.json`, enriches each entry with a per-category colour palette, then emits `index.html`. To add new prompts:
+```powershell
+git push origin main
+```
 
-1. Append a record to **both** JSON files with the same `id`.
-2. Drop a preview into `assets/previews/<id>.webp` (and reference it as `local_rel`).
-3. Re-run `node scripts/build.js`.
-4. Commit and push.
+The first push after a long offline stretch may take a few minutes if the commit touches a large number of binaries. If `git push` times out, retry with `git push origin main --no-thin`.
 
-Potential future sources worth scraping (compatible with the same schema):
+---
 
-- [ui.aceternity.com](https://ui.aceternity.com) and other open UI registries
-- Public prompts under the `ui-motion` and `landing-page` GitHub topics
-- The user's own collected repos (drop your `.md` files into a folder named after the GitHub user)
+## Counts (live)
 
-The build script is idempotent: re-running it does not duplicate records. Duplicates are deduped by `id`.
+```
+Total         568
+With text     512   (has_text=true and text_len>0)
+Images        200   (local_rel ends with .webp or .jpg)
+Videos        173   (local_rel ends with .mp4)
+Concepts      195   (no local_rel, no remote URL, show palette placeholder)
+Motionsites   429   (source_kind=motionsites)
+Community     139   (source_kind=community)
+Motions       173   (=videos)
+Categories    58    (collapsed from 105 raw labels)
+```
+
+The math always sums: `200 + 173 + 195 = 568` and `429 + 139 = 568`.
+
+---
+
+## Recent changes
+
+| Version | Date | Highlights |
+|---|---|---|
+| 1.1.8 | 2026-09-01 | Fix `fonts.css` nested-path bug (all 11 woff2 404); convert 153 `webp_anim` cards to static webp (browser `<img>` first-frame black-screen issue); rename `jetbrains mono` files (no-space URL). |
+| 1.1.7 | 2026-08-31 | Self-host Google Fonts (11 latin woff2, 427 KB total); drop the last external CDN dependency at load time. |
+| 1.1.6 | 2026-08-31 | Wire 8 missing previews (3 webp/png images + 5 community mp4s); catalog counts 200/173/195. |
+| 1.1.5 | 2026-08-31 | Wire `poster_rel` into `<video poster>` (mp4 cards now show webp thumbnail on hover); bump `?v=` cache-bust. |
+| 1.1.4 | 2026-08-31 | Fix `website-builder.mp4` misclassification (was webp); restore 11 stale `has_text` flags; re-add `community-superdesign-the-stacking-cards-effect`. |
+| 1.1.3 | 2026-08-31 | Prune 11 dead-end cards (no preview, no text). |
+| 1.1.2 | 2026-08-31 | Sync 75 new prompts from motionsites.ai. |
+| 1.1.1 | 2026-08-31 | Replace hardcoded header counters with live catalog-lite values. |
+| 1.1.0 | 2026-08-31 | Cache-bust + i18n (zh-CN / en) switch + per-language labels. |
+| 1.0.0 | 2026-08-08 | First stable release: 504 curated prompts across MotionSites + community sources. |
+
+See [CHANGELOG.md](CHANGELOG.md) for the full per-commit log.
+
+---
 
 ## Data provenance
 
 | Field | Source |
-| --- | --- |
-| Title, description, category, type, access, image URLs | `motionsites.ai` public catalog (Supabase anon read of `prompts` view) |
-| Full prompt body | Curated 4 community-maintained GitHub repositories: `xianxian-sensen`, `Melectrona`, `akkikumar72/liro-prompts`, `giglianepefrei` |
-| Preview media | `motionsites.ai` CDN (R2 / CloudFront / higgs.ai) - downloaded once and bundled |
+|---|---|
+| Title, description, category, type | `motionsites.ai` public catalog (HTTP scrape, never the paywall) |
+| Full prompt body | `motionsites.ai` recovery + 4 community GitHub repos: `xianxian-sensen`, `Melectrona`, `akkikumar72/liro-prompts`, `giglianepefrei`, `superdesigndev/superdesign-prompts` |
+| Preview media | Downloaded once from `motionsites.ai` CDN (R2 / CloudFront / higgs.ai / Dribbble) and bundled locally. No runtime fetch to any third party. |
 
-The original `motionsites.ai` paywall is not bypassed. The 110 source-records without a `local_rel` surface as animated concept cards with curated per-category palettes.
+The original `motionsites.ai` paywall is **not** bypassed. Records without a recoverable body or preview surface as concept cards with palette placeholders and a deep link to the source.
+
+---
 
 ## Contributing
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) for the file format, build flow, and the ten-minute path to your first PR.
 
+---
+
 ## License
 
-[MIT](LICENSE) - free to use, modify, and redistribute. Each individual prompt body retains its original author's copyright; this repository only archives and indexes them.
-
-
-
-
-
-
+[MIT](LICENSE) — free to use, modify, and redistribute. Each individual prompt body retains its original author's copyright; this repository only archives and indexes them.
