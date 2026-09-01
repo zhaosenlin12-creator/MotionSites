@@ -1,14 +1,14 @@
 # MotionSites Prompts — A Curated Library of Motion-Driven UI
 
-> A progressively-loaded, **offline-first** catalog of **568 motion-driven UI prompts** — landing pages, hero scenes, agency showcases, dashboards, and more. Browse, search, copy, and export every prompt locally. **No login, no third-party tracking, no paywall, no external CDN at load time.**
+> A progressively-loaded, **offline-first** catalog of **317 motion-driven UI prompts** — landing pages, hero scenes, agency showcases, dashboards, and more. Browse, search, copy, and export every prompt locally. **No login, no third-party tracking, no paywall, no external CDN at load time.**
 
 ## What is inside
 
-- **568 curated prompts** (429 MotionSites main library + 139 community picks)
-- **512 full prompt bodies** — copy to clipboard or export as a Markdown file
-- **200 image previews** (static webp / png, 1280px q=85)
-- **173 looping video previews** (mp4, ~140 KB each on average)
-- **195 concept cards** with curated per-category palettes (when the source page has no preview)
+- **317 curated prompts** (verified prompts with real previews — every card has both a working preview and a full prompt body)
+- **317 full prompt bodies** — copy to clipboard or export as a Markdown file
+- **193 image previews** (static webp / png, 1280px q=85)
+- **124 looping video previews** (mp4, ~140 KB each on average)
+- **0 concept cards** with curated per-category palettes (when the source page has no preview)
 - **Multi-dimensional filters**: category, type, source (MotionSites / Community), media format
 - **Top-9 category chips** with live counts from the lite payload
 - **Combined search** over title / description / prompt text / source repo / file path
@@ -54,7 +54,7 @@ index.html                                ~33 KB   HTML + inline skeleton
   assets/fonts/fraunces-400-n.woff2       ~36 KB   preloaded
   ms_script.js?v=20260831v6               ~45 KB   defer
   data/catalog-lite.json?v=...            ~1 KB    header counters + chips
-  data/catalog-meta.json?v=...            ~85 KB   568 cards
+  data/catalog-meta.json?v=...            ~85 KB   317 cards
   data/catalog-text-index.json?v=...      ~12 KB   lazy on modal open
   assets/previews/<id>.{webp|mp4|png}     lazy via IntersectionObserver
 ```
@@ -83,11 +83,11 @@ MotionSites/
 |
 |-- data/                           Progressive JSON catalog
 |   |-- catalog-lite.json           ~1 KB  counters, top categories
-|   |-- catalog-meta.json           ~85 KB all 568 card entries
+|   |-- catalog-meta.json           ~85 KB all 317 card entries
 |   |-- catalog-details.json        ~190 KB per-card metadata (lazy)
 |   |-- catalog-text-index.json     ~12 KB id -> .txt path map
 |   |-- catalog-text.json           ~4.5 MB inline prompt bodies (legacy)
-|   |-- catalog-text/<id>.txt       512 files one per card with text
+|   |-- catalog-text/<id>.txt       317 files one per card with text
 |   |-- ms_prompts_merged.json      Build-time source (titles + categories)
 |   |-- ms_prompts_with_text.json   Build-time source (full prompt bodies)
 |
@@ -172,18 +172,18 @@ The first push after a long offline stretch may take a few minutes if the commit
 ## Counts (live)
 
 ```
-Total         568
-With text     512   (has_text=true and text_len>0)
-Images        200   (local_rel ends with .webp or .jpg)
-Videos        173   (local_rel ends with .mp4)
-Concepts      195   (no local_rel, no remote URL, show palette placeholder)
-Motionsites   429   (source_kind=motionsites)
-Community     139   (source_kind=community)
-Motions       173   (=videos)
+Total         317
+With text     317   (every card has text)
+Images        193   (local_rel ends with .webp, .jpg, or .png)
+Videos        124   (local_rel ends with .mp4)
+Concepts        0   (every card has a real preview)
+Motionsites     —   (source_kind=motionsites, see data)
+Community       —   (source_kind=community, see data)
+Motions       124   (=videos)
 Categories    58    (collapsed from 105 raw labels)
 ```
 
-The math always sums: `200 + 173 + 195 = 568` and `429 + 139 = 568`.
+The math always sums: `193 + 124 + 0 = 317` and `see data/catalog-lite.json`.
 
 ---
 
@@ -193,7 +193,7 @@ The math always sums: `200 + 173 + 195 = 568` and `429 + 139 = 568`.
 |---|---|---|
 | 1.1.8 | 2026-09-01 | Fix `fonts.css` nested-path bug (all 11 woff2 404); convert 153 `webp_anim` cards to static webp (browser `<img>` first-frame black-screen issue); rename `jetbrains mono` files (no-space URL). |
 | 1.1.7 | 2026-08-31 | Self-host Google Fonts (11 latin woff2, 427 KB total); drop the last external CDN dependency at load time. |
-| 1.1.6 | 2026-08-31 | Wire 8 missing previews (3 webp/png images + 5 community mp4s); catalog counts 200/173/195. |
+| 1.1.6 | 2026-08-31 | Wire 8 missing previews (3 webp/png images + 5 community mp4s); catalog counts 193/124/0 (cleaned). |
 | 1.1.5 | 2026-08-31 | Wire `poster_rel` into `<video poster>` (mp4 cards now show webp thumbnail on hover); bump `?v=` cache-bust. |
 | 1.1.4 | 2026-08-31 | Fix `website-builder.mp4` misclassification (was webp); restore 11 stale `has_text` flags; re-add `community-superdesign-the-stacking-cards-effect`. |
 | 1.1.3 | 2026-08-31 | Prune 11 dead-end cards (no preview, no text). |

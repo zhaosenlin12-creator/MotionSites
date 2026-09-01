@@ -1,109 +1,85 @@
 {
-  "total": 568,
-  "complete": 512,
-  "images": 200,
-  "videos": 173,
-  "concepts": 195,
-  "motionsites": 429,
-  "community": 139,
+  "total": 317,
+  "complete": 317,
+  "images": 193,
+  "videos": 124,
+  "concepts": 0,
   "topCategories": [
     {
       "name": "Hero Section",
-      "n": 97
+      "n": 73
     },
     {
       "name": "Landing Page",
-      "n": 74
+      "n": 49
     },
     {
       "name": "SaaS",
-      "n": 47
+      "n": 28
     },
     {
       "name": "Components",
-      "n": 22
-    },
-    {
-      "name": "Pricing Page",
       "n": 18
     },
     {
       "name": "Agency",
-      "n": 16
-    },
-    {
-      "name": "E-commerce",
-      "n": 15
-    },
-    {
-      "name": "Portfolio",
-      "n": 14
-    },
-    {
-      "name": "Forms & Contact",
-      "n": 14
-    },
-    {
-      "name": "Waitlist & Coming Soon",
-      "n": 14
-    },
-    {
-      "name": "Design Systems & Styles",
-      "n": 14
+      "n": 11
     },
     {
       "name": "Features Section",
-      "n": 13
+      "n": 9
+    },
+    {
+      "name": "Animations & Backgrounds",
+      "n": 9
+    },
+    {
+      "name": "CTA Section",
+      "n": 8
+    },
+    {
+      "name": "Travel",
+      "n": 7
     }
   ],
   "categories": {
     "404": 1,
-    "Landing Page": 74,
-    "Hero Section": 97,
-    "Portfolio": 14,
-    "SaaS": 47,
-    "Agency": 16,
-    "Features Section": 13,
-    "Components": 22,
-    "Footer Section": 6,
-    "Email & Newsletter": 8,
-    "Social Media": 3,
-    "Presentations": 2,
-    "Pricing Page": 18,
-    "Mobile App": 13,
-    "Healthcare": 9,
-    "AI Apps": 4,
-    "Music": 1,
-    "Driving": 1,
-    "Education": 4,
+    "Landing Page": 49,
+    "Hero Section": 73,
+    "Portfolio": 4,
+    "SaaS": 28,
+    "Agency": 11,
+    "Features Section": 9,
+    "Pricing Page": 5,
+    "Mobile App": 3,
     "Transportation": 2,
-    "Wellness": 6,
-    "Community": 2,
+    "Wellness": 3,
+    "Community": 1,
     "Sustainability": 1,
     "Loyalty": 1,
-    "Sports": 2,
-    "E-commerce": 15,
-    "Cybersecurity": 3,
-    "Technology": 4,
-    "Travel": 9,
-    "Developer": 2,
+    "Technology": 2,
+    "Travel": 7,
+    "Healthcare": 4,
     "Entertainment": 1,
-    "Fintech": 6,
-    "Real Estate": 2,
+    "E-commerce": 7,
+    "Fintech": 5,
+    "Education": 2,
+    "Real Estate": 1,
     "3D Website": 2,
     "404 Pages": 2,
     "Services": 2,
-    "Forms & Contact": 14,
+    "Components": 18,
+    "Forms & Contact": 2,
     "Process & Stats": 2,
     "Testimonials": 3,
-    "Waitlist & Coming Soon": 14,
+    "Waitlist & Coming Soon": 5,
     "About Section": 6,
     "Categories": 1,
     "Products": 3,
-    "Blog & Editorial": 4,
+    "Blog & Editorial": 1,
     "Cards": 5,
-    "Dashboards": 8,
-    "CTA Section": 9,
+    "Dashboards": 2,
+    "CTA Section": 8,
     "Benefits": 2,
     "Info": 1,
     "Why Us": 1,
@@ -113,32 +89,20 @@
     "Projects": 1,
     "FAQ & Help": 1,
     "Interactive": 1,
+    "Footer Section": 1,
+    "AI Apps": 1,
     "HR": 1,
-    "Productivity": 1,
     "Web3": 2,
     "Automotive": 1,
-    "Animations & Backgrounds": 12,
-    "Design Systems & Styles": 14,
-    "Auth & Login": 11,
-    "Onboarding": 7,
-    "Other": 2,
-    "Calendars": 1,
-    "Books": 1,
-    "Design": 1,
-    "Game UI": 1,
+    "Animations & Backgrounds": 9,
+    "Onboarding": 1,
     "Fashion": 1,
-    "Ecommerce": 1,
-    "AI": 7,
+    "AI": 4,
     "Analytics": 1,
-    "Medical": 1,
+    "Cybersecurity": 1,
     "Sign in": 1,
-    "Creative": 2,
-    "Threejs": 1,
-    "AI Technology": 1,
-    "Security": 2,
     "3D": 1
   },
   "version": 2,
-  "motions": 173,
-  "complete_with_text": 512
+  "cleanedAt": "2026-09-01T10:42:54.604Z"
 }

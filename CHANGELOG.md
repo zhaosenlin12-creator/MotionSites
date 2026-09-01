@@ -154,3 +154,29 @@ aw.githubusercontent.com/superdesigndev/superdesign-prompts/main/....
 - 198/198 webp cards in the catalog are now webp_pipe (static) per ffmpeg probe - zero webp_anim remain.
 - All 11 woff2 files reachable via same-folder relative URLs in onts.css.
 - ms_script.js syntax OK.
+## [1.1.9] - 2026-09-01
+
+### Removed
+- **Stripped 251 cards without a usable preview**: dropped all 195 concept-only entries (no `local_rel`, no `poster_rel`) and the 56 entries that had a preview file but no full prompt body. The catalog now contains **only verified entries** — every card has both a working local preview (webp image / mp4 video / community webp poster pair) and a full prompt body in `data/catalog-text/<id>.txt`.
+- **80 preview files deleted**: 56 mp4s and 24 webps that belonged to the dropped cards. Files removed from `assets/previews/`.
+- **195 prompt-text files deleted** from `data/catalog-text/`.
+- **99 orphan webp files deleted** from `assets/previews/` — leftovers from an earlier import where the webp thumbnail was downloaded but the corresponding mp4/webp reference was never wired into the catalog (the cleanup also auto-deletes those).
+
+### Changed
+- Catalog lite counts: 568 total → **317 total / 193 images / 124 videos / 0 concepts / 317 complete**. Math: 193 + 124 + 0 = 317 ✓; all 317 entries have full prompt text.
+- `catalog-meta.json` 568 cards → 317 cards (filtered, then re-indexed; field shape unchanged).
+- `catalog-text-index.json` 512 entries → 317 entries (only the IDs that survived the filter).
+- `catalog-text.json` regenerated from the surviving `.txt` files so the bundle matches the index.
+- `catalog-details.json` 568 detail objects → 317 detail objects.
+- `catalog-lite.json` `version` bumped to 2 and now carries `cleanedAt` timestamp.
+- README counts and tables rewritten to reflect the new state; old 568 / 200 / 173 / 195 numbers removed.
+
+### Added
+- `scripts/cleanup-cards.js` — the deterministic filter used to produce the 568 → 317 catalog. Re-runnable; safe to re-run if the upstream source regains preview URLs.
+- Backups of every catalog data file written to `.work/cleanup-<timestamp>/` before the change so the operation is reversible.
+
+### Verified
+- Every remaining webp on disk is referenced by exactly one card in `catalog-meta.json` (215 webp referenced, 215 webp on disk, 0 orphan).
+- Every remaining mp4 on disk is referenced by exactly one card (106 mp4 referenced, 106 mp4 on disk). The lone `assets/previews/website-builder.mp4` is intentional — `_redirects` maps it to `.webp` (a 2 KB stub used by the 301 fallback).
+- `catalog-lite.json` regenerates correctly and the live header counters (`317 curated / 317 full text / 124 animations / 193 videos / 0 concepts`) load via the lite payload.
+
