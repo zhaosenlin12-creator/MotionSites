@@ -65,3 +65,13 @@ scripts/_*.py
 # Local work artifacts (preview rebuild scratch)
 .work/
 
+
+# Credential / secret leak prevention (NEVER commit GitHub tokens)
+*.git-credentials
+.git-credentials
+UsersAdministrator*
+*UsersAdministrator*
+github-token*
+gh-token*
+git-credentials*
+
