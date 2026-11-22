@@ -1,14 +1,14 @@
 # MotionSites Prompts — A Curated Library of Motion-Driven UI
 
-> A progressively-loaded, **offline-first** catalog of **401 motion-driven UI prompts** — landing pages, hero scenes, agency showcases, dashboards, and now a **44-prompt replication-recipe pack** that turns "make it look like that site" into a measured, reproducible workflow. Browse, search, copy, and export every prompt locally. **No login, no third-party tracking, no paywall, no external CDN at load time.**
+> A progressively-loaded, **offline-first** catalog of **465 motion-driven UI prompts** — landing pages, hero scenes, agency showcases, dashboards, and now a **44-prompt replication-recipe pack** that turns "make it look like that site" into a measured, reproducible workflow. Browse, search, copy, and export every prompt locally. **No login, no third-party tracking, no paywall, no external CDN at load time.**
 
 ## What is inside
 
-- **401 curated prompts** — every card has both a working preview and a full prompt body
-- **401 full prompt bodies** — copy to clipboard or export as a Markdown file
-- **61 community imports** (1.3.0) from MIT-licensed prompt repos — 40 new Superdesign cards with local covers and full design-spec bodies, joining the 21 existing community picks
+- **465 curated prompts** — every card has both a working preview and a full prompt body
+- **465 full prompt bodies** — copy to clipboard or export as a Markdown file
+- **125 community imports** from MIT-licensed prompt repos — 104 Superdesign cards with local 16:10 covers and full design-spec bodies, joining the 21 original community picks
 - **44 replication recipes** (new in 1.2.0) — capture a reference, extract its real motion values, rebuild it, and prove the result. Three tracks: reverse-engineering (`morluto/rea`), craft pipeline (`storytold/craft-anything`), and community effect patterns (MIT-licensed libraries). See [docs/recipe-pack.md](docs/recipe-pack.md)
-- **233 image previews** (static webp / png)
+- **297 image previews** (static webp / png)
 - **168 looping video previews** (mp4, generated locally from CSS demos for the recipe pack)
 - **0 concept cards** — every published card has a real preview
 - **Multi-dimensional filters**: category, type, source (MotionSites / Community / Recipe pack), media format
@@ -45,7 +45,7 @@ Cold-cache FCP on a typical broadband connection: **~140 ms** to first paint of 
 
 ## Architecture (all local, zero external CDN)
 
-The **initial payload is about 0.6 MB** — HTML, the client script, ~30 KB gzipped catalog data, and the two preloaded fonts. All 401 previews (webp / mp4) are lazy-loaded by an IntersectionObserver with a capped video queue. **Zero `fetch()` calls go to any external domain at page load.**
+The **initial payload is about 0.6 MB** — HTML, the client script, ~30 KB gzipped catalog data, and the two preloaded fonts. All 465 previews (webp / mp4) are lazy-loaded by an IntersectionObserver with a capped video queue. **Zero `fetch()` calls go to any external domain at page load.**
 
 ### Request waterfall on cold cache
 
@@ -56,7 +56,7 @@ index.html                                ~32 KB   HTML + inline skeleton
   assets/fonts/fraunces-400-n.woff2       ~36 KB   preloaded
   ms_script.js?v=20261122v1               ~46 KB   defer
   data/catalog-lite.json?v=...            ~2 KB    header counters + chips
-  data/catalog-meta.json?v=...            ~30 KB   401 cards (gzip)
+  data/catalog-meta.json?v=...            ~51 KB   465 cards (gzip)
   data/catalog-text-index.json?v=...      ~22 KB   lazy on modal open
   assets/previews/<id>.{webp|mp4}         lazy via IntersectionObserver
 ```
@@ -102,11 +102,11 @@ MotionSites/
 |
 |-- data/                           Progressive JSON catalog
 |   |-- catalog-lite.json           ~2 KB   counters, top categories
-|   |-- catalog-meta.json           ~166 KB all 401 card entries (gzip ~30 KB)
+|   |-- catalog-meta.json           ~312 KB all 465 card entries (gzip ~51 KB)
 |   |-- catalog-details.json        ~194 KB per-card metadata (lazy)
 |   |-- catalog-text-index.json     ~22 KB id -> .txt path map
 |   |-- catalog-text.json           ~3 MB inline prompt bodies (legacy single-file form)
-|   |-- catalog-text/<id>.txt       401 files, one per card with text
+|   |-- catalog-text/<id>.txt       465 files, one per card with text
 |   |-- recipe_pack.json            Source of truth for the 44 replication recipes
 |   |-- catalog_sources.json        External feeds + licences used for the catalog
 |   |-- ms_prompts_merged.json      Build source: metadata records (catalog + imports)
@@ -206,18 +206,18 @@ The first push after a long offline stretch may take a few minutes if the commit
 ## Counts (live)
 
 ```
-Total         401
-With text     401   (every card has a full body)
-Images        233   (webp / png / jpg previews)
+Total         465
+With text     465   (every card has a full body)
+Images        297   (webp / png / jpg previews)
 Videos        168   (mp4 loops; includes the 44 recipe previews)
 Concepts        0   (every card has a real preview)
 Recipes        44   (source_kind=recipes, the replication pack)
 Motionsites   296   (source_kind=motionsites)
-Community      61   (source_kind=community)
-Categories     66   (canonical labels)
+Community      125   (source_kind=community)
+Categories     67   (canonical labels)
 ```
 
-The math always sums: `233 + 168 + 0 = 401`, `296 + 61 + 44 = 401`, and `node scripts/audit-catalog.js` re-checks both.
+The math always sums: `297 + 168 + 0 = 465`, `296 + 125 + 44 = 465`, and `node scripts/audit-catalog.js` re-checks both.
 
 ---
 
@@ -225,6 +225,7 @@ The math always sums: `233 + 168 + 0 = 401`, `296 + 61 + 44 = 401`, and `node sc
 
 | Version | Date | Highlights |
 |---|---|---|
+| 1.3.1 | 2026-11-22 | **Full Superdesign library**: network recovered, so the MIT `superdesigndev/superdesign-prompts` import went from 40 to **104 cards** (catalog 401 → 465, images 233 → 297, community 61 → 125). All covers are 16:10 1280×800 webp with per-record attribution; 7 duplicate covers for existing mp4 cards were pruned. |
 | 1.3.0 | 2026-11-22 | **Community imports**: 40 new cards from the MIT superdesigndev/superdesign-prompts repo (front-matter → design-spec body, 16:10 webp covers, per-record attribution). Added scripts/import-superdesign-repo.js, a shared preview converter, a source-scouting report ([docs/source-scouting.md](docs/source-scouting.md)) and integrity tests for imported community cards. Licences corrected to MIT for the Superdesign and gigl sources. |
 | 1.2.0 | 2026-11-22 | **Recipe pack**: 44 replication prompts (rea / craft-anything / community) with locally rendered mp4+webp previews, a new category chip, source filter and header stat. Rebuilt the pipeline: source files reconciled to the published 317 (the 2026-09 cleanup only pruned generated data), `build.js` is now deterministic and prunes stale text files, template re-synced to the shipped self-hosted-font page, orphan audit fixed, new recipe-pack tests. |
 | 1.1.8 | 2026-09-01 | Fix `fonts.css` nested-path bug (all 11 woff2 404); convert 153 `webp_anim` cards to static webp (browser `<img>` first-frame black-screen issue); rename `jetbrains mono` files (no-space URL). |

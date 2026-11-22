@@ -230,5 +230,22 @@ aw.githubusercontent.com/superdesigndev/superdesign-prompts/main/....
 - Preview assets were pulled from the public repository through a CDN proxy because `raw.githubusercontent.com` was intermittently unreachable from the build host; content was verified as valid webp after conversion. When GitHub is reachable, clone the repo into `sources/superdesign-prompts` and run the committed importer instead.
 - 78 of the 118 candidate records were skipped: their preview asset exceeded the 700 KB budget on the slow link, or the download was truncated. They can be picked up by a later `scripts/import-superdesign-repo.js --write` run with a normal connection.
 
+## [1.3.1] - 2026-11-22
 
+### Added
+- **64 more community cards** from the MIT `superdesigndev/superdesign-prompts` library once the network recovered: import went from 40 to **104 Superdesign cards** (140 prompt folders inventoried through the GitHub tree API; 126 image previews). Catalog: **401 → 465 cards**, images **233 → 297**, community picks **61 → 125**.
+- Cover pipeline for remote fetches (inventory → parallel raw download → Pillow 16:10 webp → cache import) documented in `docs/source-scouting.md`; the committed `scripts/import-superdesign-repo.js` remains the reproducible path from a local clone.
 
+### Changed
+- Cache-bust stamp → `20261122v4`; README / CHANGELOG / source-scouting counts refreshed (465 total, 297 images, 125 community, 67 categories).
+- Removed 7 duplicate `preview.webp` covers for community cards that already ship an mp4 preview, so the orphan-asset audit stays clean.
+
+### Verified
+- `node scripts/build.js` → 465 records, invariants hold; second run byte-identical.
+- `node scripts/audit-catalog.js` → `AUDIT OK records=465 complete=465 recipes=44 community=125 missingBodies=0 assets=465`.
+- `node --test scripts/tests/*.test.js` → 45 tests, 42 pass, 3 pre-existing environment failures (git-ignored `sources/` caches absent in a fresh clone).
+- Browser check: community filter renders 125 cards, imported covers load, zero console errors.
+
+### Notes
+- 15 largest previews (>1.2 MB each, ~32 MB total) are still pending on this slow link; re-running the importer from a clone will pick them up.
+- The environment briefly needed a CDN proxy when `raw.githubusercontent.com` was unreachable; once the network recovered, the same importer used direct raw downloads.

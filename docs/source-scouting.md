@@ -17,7 +17,7 @@ Ground rules that apply to every source below:
 | Source | Licence | Records here | How | Status |
 |---|---|---|---|---|
 | `motionsites.ai` public catalog (2026 seed) | archived public excerpts | 296 | original scrape + public GitHub markdown exports, previews bundled locally | shipped |
-| `superdesigndev/superdesign-prompts` | MIT (repo `LICENSE`) | 61 | `scripts/import-superdesign-repo.js` from a local clone; README front-matter + `## Prompt` block + `preview.*` asset, converted to 16:10 webp covers | shipped |
+| `superdesigndev/superdesign-prompts` | MIT (repo `LICENSE`) | 104 | `scripts/import-superdesign-repo.js` from a local clone; README front-matter + `## Prompt` block + `preview.*` asset, converted to 16:10 webp covers | shipped |
 | `morluto/rea` + `storytold/craft-anything` | MIT / Apache-2.0 | 44 recipes | original prompt synthesis, locally rendered previews | shipped, see [recipe-pack.md](recipe-pack.md) |
 | `superdesigndev/superdesign-prompts` (earlier snapshot) | MIT | — | legacy `superdesign_fetch/prompts.json` path in `scripts/import-community.js` | superseded by the repo importer |
 
