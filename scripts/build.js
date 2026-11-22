@@ -1,154 +1,233 @@
-// scripts/build.js - Progressive build (v2)
+// scripts/build.js — progressive catalog build (v3)
 //
-// Splits the catalog into three JSON files instead of inlining a single
-// 4.5 MB JSON blob into index.html.
-const fs = require("node:fs");
-const path = require("node:path");
-const zlib = require("node:zlib");
-const { sortCatalog } = require("./lib/catalog-utils");
+// Inputs (all committed):
+//   data/ms_prompts_merged.json      metadata records for the scraped catalog
+//   data/ms_prompts_with_text.json   prompt bodies, by id
+//   data/recipe_pack.json            curated "UI replication recipe" pack (v1.2.0)
+//   ms_template.html                 page shell + CSS
+//
+// Outputs:
+//   data/catalog-lite.json           counters, top categories, per-category counts
+//   data/catalog-meta.json           one record per card
+//   data/catalog-text.json           id -> prompt body (legacy single file)
+//   data/catalog-text-index.json     id -> per-card text path
+//   data/catalog-text/<id>.txt       one file per card body
+//   index.html                       template + counters + versioned script tag
+//
+// Build invariants (asserted at the end of every run):
+//   * every published card has a local preview AND a non-empty prompt body
+//   * image + video + concept counters always add up to the total
+//   * a second run on an unchanged tree produces byte-identical output
+const fs = require('node:fs');
+const path = require('node:path');
+const zlib = require('node:zlib');
 
-const ROOT = path.resolve(__dirname, "..");
+const ROOT = path.resolve(__dirname, '..');
+const DATA = path.join(ROOT, 'data');
+const BUILD_STAMP = '20261122v1';
 const MAX_PREVIEW_BYTES = 24 * 1024 * 1024;
+const IMAGE_KINDS = new Set(['webp', 'gif', 'png', 'jpeg']);
+const VIDEO_KINDS = new Set(['mp4', 'webm', 'hls']);
 
-function readNoBom(p) { let buf = fs.readFileSync(p); if (buf[0] === 0xEF && buf[1] === 0xBB && buf[2] === 0xBF) buf = buf.subarray(3); return buf.toString("utf8"); }
-
-function detectKind(abs) {
-  try {
-    const b = fs.readFileSync(abs).subarray(0, 16);
-    const sig = b.toString("latin1");
-    if (sig.startsWith("RIFF") && sig.includes("WEBP")) return "webp";
-    if (sig.startsWith("#EXTM3U")) return "hls";
-    if (b[0] === 0x1A && b[1] === 0x45 && b[2] === 0xDF && b[3] === 0xA3) return "webm";
-    if (b.subarray(4, 8).toString() === "ftyp") return "mp4";
-    if (b[0] === 0x47) return "gif";
-    if (b[0] === 0x89) return "png";
-    if (b[0] === 0xff) return "jpeg";
-    const ext = path.extname(abs).toLowerCase();
-    if (ext === ".webm") return "webm";
-    if (ext === ".m3u8") return "hls";
-    if (ext === ".mp4" || ext === ".mov" || ext === ".m4v") return "mp4";
-    if (ext === ".webp") return "webp";
-    if (ext === ".gif") return "gif";
-    if (ext === ".png") return "png";
-    if (ext === ".jpg" || ext === ".jpeg") return "jpeg";
-  } catch (e) {}
-  return "other";
+function readNoBom(p) {
+  let buf = fs.readFileSync(p);
+  if (buf[0] === 0xEF && buf[1] === 0xBB && buf[2] === 0xBF) buf = buf.subarray(3);
+  return buf.toString('utf8');
+}
+function readJson(p) {
+  return JSON.parse(readNoBom(p));
+}
+function writeJson(name, value) {
+  const body = JSON.stringify(value, null, 2) + '\n';
+  fs.writeFileSync(path.join(DATA, name + '.json'), body, 'utf8');
+  fs.writeFileSync(path.join(DATA, name + '.json.gz'), zlib.gzipSync(Buffer.from(body, 'utf8'), { level: 9 }));
+  return body.length;
 }
 
-function enrich(rec) {
-  const o = Object.assign({}, rec);
-  if (rec.local_rel) {
-    function locAbs(p) {
-      if (!p) return null;
-      const a = path.join(ROOT, p);
-      if (fs.existsSync(a)) return a;
-      const b = path.join(ROOT, p.replace(/^assets\//, "assets/"));
-      if (fs.existsSync(b)) return b;
-      return a;
-    }
-    const abs = locAbs(rec.local_rel);
-    if (abs && fs.existsSync(abs)) {
-      const stat = fs.statSync(abs);
-      if (stat.size > MAX_PREVIEW_BYTES) {
-        console.warn("[build] demoting over-limit preview", rec.id, (stat.size / 1048576).toFixed(2) + "MiB");
-        o.local_rel = null;
-        o.local_kind = "other";
-        o.size_bytes = stat.size;
-      } else {
-        o.local_kind = detectKind(abs);
-        o.size_bytes = stat.size;
-      }
-    } else {
-      o.local_kind = "other";
-    }
+function kindFromRel(rel) {
+  const ext = path.extname(String(rel || '').split('?')[0]).toLowerCase();
+  if (ext === '.mp4' || ext === '.mov' || ext === '.m4v') return 'mp4';
+  if (ext === '.webm') return 'webm';
+  if (ext === '.m3u8') return 'hls';
+  if (ext === '.webp') return 'webp';
+  if (ext === '.gif') return 'gif';
+  if (ext === '.png') return 'png';
+  if (ext === '.jpg' || ext === '.jpeg') return 'jpeg';
+  return 'other';
+}
+
+function previewKind(record) {
+  return record.local_kind || kindFromRel(record.local_rel || record.poster_rel);
+}
+
+// ---- 1. Load sources ----
+const merged = readJson(path.join(DATA, 'ms_prompts_merged.json'));
+const textRows = readJson(path.join(DATA, 'ms_prompts_with_text.json'));
+const textMap = new Map(textRows.map((row) => [row.id, row.prompt_text || '']));
+
+const recipePath = path.join(DATA, 'recipe_pack.json');
+const recipes = fs.existsSync(recipePath) ? readJson(recipePath) : [];
+const recipeMeta = [];
+for (const recipe of recipes) {
+  if (!recipe || !recipe.id) throw new Error('[build] recipe without id');
+  if (textMap.has(recipe.id)) {
+    console.warn('[build] skipping duplicate recipe id ' + recipe.id);
+    continue;
   }
-  return o;
+  recipeMeta.push({
+    id: recipe.id,
+    title: recipe.title,
+    description: recipe.description,
+    category: recipe.category,
+    type: recipe.type,
+    source_kind: 'recipes',
+    local_rel: 'assets/previews/' + recipe.id + '.mp4',
+    poster_rel: 'assets/previews/' + recipe.id + '.webp',
+    local_kind: 'mp4',
+    sort_order: recipe.sort_order,
+    is_free: true,
+    tags: recipe.tags,
+    palette: recipe.palette,
+    source_id: recipe.source && recipe.source.pack,
+    source_repo: recipe.source && recipe.source.repo,
+    source_url: recipe.source && recipe.source.url,
+    source_license: recipe.source && recipe.source.license,
+  });
+  textMap.set(recipe.id, recipe.prompt);
 }
 
-// ---- Load source data ----
-const mergedRaw = JSON.parse(readNoBom(path.join(ROOT, "data", "ms_prompts_merged.json")));
-const merged = mergedRaw.map(function (x) { if (x.local_rel && x.local_rel.startsWith("assets/")) x.local_rel = x.local_rel.replace(/^motionsites_assets\//, "assets/"); return x; });
-
-const t1 = JSON.parse(readNoBom(path.join(ROOT, "data", "ms_prompts_with_text.json")));
-const t1map = new Map(t1.map(function (x) { return [x.id, x.prompt_text || ""]; }));
-
-const root2 = path.join(ROOT, "sources", "akkikumar72", "liro-prompts");
-if (fs.existsSync(root2)) {
-  for (const dir of fs.readdirSync(root2)) {
-    if (dir.toLowerCase() === "index.md") continue;
-    const mp = path.join(root2, dir, "metadata.json");
-    if (!fs.existsSync(mp)) continue;
-    let m;
-    try { m = JSON.parse(readNoBom(mp)).record; } catch (e) { continue; }
-    if (!m || !m.id) continue;
-    if (!t1map.has(m.id)) {
-      const wp = path.join(root2, dir, "working-prompt.md");
-      if (fs.existsSync(wp)) {
-        const wk = readNoBom(wp);
-        const idx = wk.indexOf("## Prompt");
-        const body = idx < 0 ? wk : wk.slice(idx + "## Prompt".length).replace(/```[a-z]*\n([\s\S]*?)\n```/g, "$1").trim();
-        if (body.length > 200) t1map.set(m.id, body);
-      }
-    }
+// ---- 2. Keep only publishable cards (preview + prompt body) ----
+const kept = [];
+const dropped = [];
+for (const record of merged.concat(recipeMeta)) {
+  const body = (textMap.get(record.id) || '').trim();
+  if (!(record.local_rel || record.poster_rel) || !body) {
+    dropped.push(record.id);
+    continue;
   }
+  kept.push(record);
+}
+if (dropped.length) {
+  console.warn('[build] dropping ' + dropped.length + ' card(s) without preview or prompt body');
 }
 
-const sortedMeta = sortCatalog(merged);
-const prompts = sortedMeta.map(function (x) { return Object.assign({}, x, { prompt_text: t1map.get(x.id) || "" }); });
-const enriched = prompts.map(enrich);
+// ---- 3. Sort ----
+// The published catalog is ordered by sort_order (then id) only: newer community
+// picks float to the top, and the recipe pack uses negative sort_order to pin itself
+// above the scraped catalog. Media kind deliberately does not influence the order.
+function sortRecords(list) {
+  // Array#sort is stable in Node 18+, so records with the same sort_order keep the
+  // relative order they had in the source file (which is the curated order).
+  return list.slice().sort((a, b) => {
+    const ao = typeof a.sort_order === 'number' ? a.sort_order : Number.POSITIVE_INFINITY;
+    const bo = typeof b.sort_order === 'number' ? b.sort_order : Number.POSITIVE_INFINITY;
+    return ao - bo;
+  });
+}
+const meta = sortRecords(kept);
 
-const complete = enriched.filter(function (x) { return x.prompt_text && x.prompt_text.trim(); }).length;
-const images = enriched.filter(function (x) { return x.local_kind === "webp" || x.local_kind === "gif" || x.local_kind === "png" || x.local_kind === "jpeg"; }).length;
-const videos = enriched.filter(function (x) { return x.local_kind === "mp4" || x.local_kind === "webm" || x.local_kind === "hls"; }).length;
-const noMedia = enriched.filter(function (x) { return !x.local_rel; }).length;
-const community = enriched.filter(function (x) { return x.source_kind === "community"; }).length;
-const motionsites = enriched.filter(function (x) { return (x.source_kind || "motionsites") === "motionsites"; }).length;
-console.log("Records=" + enriched.length + " complete=" + complete + " images=" + images + " videos=" + videos + " concepts=" + noMedia + " motionsites=" + motionsites + " community=" + community);
-
-// ---- Build the three progressive JSON files ----
+// ---- 4. Counters ----
 const counts = {};
-for (const r of enriched) counts[r.category] = (counts[r.category] || 0) + 1;
-const topCats = Object.entries(counts).sort(function (a, b) { return b[1] - a[1]; }).slice(0, 9).map(function (c) { return { category: c[0], count: c[1] }; });
-const lite = { total: enriched.length, complete: complete, images: images, videos: videos, concepts: noMedia, motionsites: motionsites, community: community, topCategories: topCats, categories: counts, version: 2 };
-
-const meta = enriched.map(function (r) { const o = {}; for (const k of Object.keys(r)) { if (k === "prompt_text") continue; o[k] = r[k]; } return o; });
-
-const textMap = {};
-for (const r of enriched) { if (r.prompt_text && r.prompt_text.trim()) textMap[r.id] = r.prompt_text; }
-
-const dataDir = path.join(ROOT, "data");
-fs.mkdirSync(dataDir, { recursive: true });
-
-function writeJsonGz(name, obj) {
-  const s = JSON.stringify(obj);
-  const jsonPath = path.join(dataDir, name + ".json");
-  const gzPath = path.join(dataDir, name + ".json.gz");
-  fs.writeFileSync(jsonPath, s, "utf8");
-  fs.writeFileSync(gzPath, zlib.gzipSync(Buffer.from(s, "utf8"), { level: 9 }));
-  console.log("Wrote " + name + ".json  " + (s.length / 1024).toFixed(1) + " KB  (gzip " + (fs.statSync(gzPath).size / 1024).toFixed(1) + " KB)");
+const textOut = {};
+let images = 0, videos = 0, concepts = 0, recipesCount = 0, motionsites = 0, community = 0, complete = 0;
+for (const record of meta) {
+  const body = (textMap.get(record.id) || '').trim();
+  if (body) {
+    complete++;
+    textOut[record.id] = textMap.get(record.id);
+  }
+  const kind = previewKind(record);
+  if (VIDEO_KINDS.has(kind)) videos++;
+  else if (IMAGE_KINDS.has(kind)) images++;
+  else concepts++;
+  counts[record.category] = (counts[record.category] || 0) + 1;
+  const sourceKind = record.source_kind || 'motionsites';
+  if (sourceKind === 'recipes') recipesCount++;
+  else if (sourceKind === 'community') community++;
+  else motionsites++;
 }
+const topCategories = Object.entries(counts)
+  .sort((a, b) => b[1] - a[1])
+  .slice(0, 9)
+  .map(([name, n]) => ({ name, n }));
+const lite = {
+  total: meta.length,
+  complete,
+  images,
+  videos,
+  concepts,
+  recipes: recipesCount,
+  motionsites,
+  community,
+  topCategories,
+  categories: counts,
+  version: 2,
+};
 
-writeJsonGz("catalog-lite", lite);
-writeJsonGz("catalog-meta", meta);
-writeJsonGz("catalog-text", textMap);
+// ---- 5. Write data ----
+const kb = (n) => (n / 1024).toFixed(1);
+console.log(
+  'Records=' + meta.length +
+  ' complete=' + complete +
+  ' images=' + images +
+  ' videos=' + videos +
+  ' concepts=' + concepts +
+  ' recipes=' + recipesCount +
+  ' motionsites=' + motionsites +
+  ' community=' + community
+);
+console.log('catalog-lite.json ' + kb(writeJson('catalog-lite', lite)) + ' KB');
+console.log('catalog-meta.json ' + kb(writeJson('catalog-meta', meta)) + ' KB');
+console.log('catalog-text.json ' + kb(writeJson('catalog-text', textOut)) + ' KB');
 
-// ---- Per-id prompt files (so detail-modal fetches one body, not the whole file) ----
-const txtDir = path.join(dataDir, "catalog-text");
+const txtDir = path.join(DATA, 'catalog-text');
 fs.mkdirSync(txtDir, { recursive: true });
 const txtIndex = {};
-for (const id of Object.keys(textMap)) {
-  const safe = id.replace(/[^a-zA-Z0-9._-]/g, "_");
-  fs.writeFileSync(path.join(txtDir, safe + ".txt"), textMap[id], "utf8");
-  txtIndex[id] = "catalog-text/" + safe + ".txt";
+for (const id of Object.keys(textOut)) {
+  const safe = id.replace(/[^a-zA-Z0-9._-]/g, '_');
+  fs.writeFileSync(path.join(txtDir, safe + '.txt'), textOut[id], 'utf8');
+  txtIndex[id] = 'catalog-text/' + safe + '.txt';
 }
-fs.writeFileSync(path.join(dataDir, "catalog-text-index.json"), JSON.stringify(txtIndex), "utf8");
-console.log("Wrote catalog-text/  " + Object.keys(txtIndex).length + " files");
+fs.writeFileSync(path.join(DATA, 'catalog-text-index.json'), JSON.stringify(txtIndex, null, 2) + '\n', 'utf8');
+let pruned = 0;
+for (const file of fs.readdirSync(txtDir)) {
+  if (!file.endsWith('.txt')) continue;
+  if (Object.values(txtIndex).includes('catalog-text/' + file)) continue;
+  fs.unlinkSync(path.join(txtDir, file));
+  pruned++;
+}
+console.log('catalog-text/ ' + Object.keys(txtIndex).length + ' files' + (pruned ? ' (pruned ' + pruned + ')' : ''));
 
-// ---- Generate index.html (no inlined DATA) ----
-let html = readNoBom(path.join(ROOT, "ms_template.html"));
-const rpl = function (s) { return function () { return s; }; };
-html = html.replace("$" + "{enriched.length}", rpl(String(enriched.length))).replace("$" + "{complete}", rpl(String(complete))).replace("$" + "{images}", rpl(String(images))).replace("$" + "{videos}", rpl(String(videos))).replace("$" + "{noMedia}", rpl(String(noMedia))).replace("<script>__SCRIPT_BODY__</script>", rpl("<script src=\"ms_script.js\" defer></script>"));
+// ---- 6. index.html from the template ----
+let html = readNoBom(path.join(ROOT, 'ms_template.html'));
+const replacements = {
+  '${enriched.length}': String(meta.length),
+  '${complete}': String(complete),
+  '${images}': String(images),
+  '${videos}': String(videos),
+  '${noMedia}': String(concepts),
+  '${recipes}': String(recipesCount),
+  '<script>__SCRIPT_BODY__</script>': '<script src="ms_script.js?v=' + BUILD_STAMP + '" defer></script>',
+};
+for (const [needle, value] of Object.entries(replacements)) html = html.split(needle).join(value);
+fs.writeFileSync(path.join(ROOT, 'index.html'), html, 'utf8');
+console.log('index.html ' + kb(Buffer.byteLength(html)) + ' KB  (stamp ' + BUILD_STAMP + ')');
 
-const outPath = path.join(ROOT, "index.html");
-fs.writeFileSync(outPath, html, "utf8");
-console.log("Wrote " + outPath + " bytes " + html.length);
+// ---- 7. Assertions ----
+const problems = [];
+if (images + videos + concepts !== meta.length) problems.push('media counters do not add up');
+if (topCategories.reduce((sum, c) => sum + c.n, 0) > meta.length) problems.push('category counts overflow');
+if (Object.keys(textOut).length !== complete) problems.push('text index mismatch');
+for (const record of meta) {
+  const rel = record.local_rel || record.poster_rel;
+  if (!rel) { problems.push('missing preview: ' + record.id); continue; }
+  const abs = path.join(ROOT, rel);
+  if (!fs.existsSync(abs)) problems.push('missing preview file: ' + record.id + ' -> ' + rel);
+  else if (fs.statSync(abs).size > MAX_PREVIEW_BYTES) problems.push('preview over size limit: ' + record.id);
+  if (!textOut[record.id]) problems.push('missing prompt body: ' + record.id);
+}
+if (problems.length) {
+  for (const problem of problems) console.error('[build] FAIL ' + problem);
+  process.exit(1);
+}
+console.log('[build] OK invariants hold');

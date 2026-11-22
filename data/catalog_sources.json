@@ -28,5 +28,33 @@
     "license": "MIT",
     "preview_notice": "working-prompt.md files are reconstructed from public metadata; not the original paid prompts",
     "usage": "Fills paywall MotionSites records with publicly reconstructed working prompts when the original body is unavailable"
+  },
+  {
+    "id": "morluto-rea",
+    "repository": "morluto/rea",
+    "url": "https://github.com/morluto/rea",
+    "license": "MIT",
+    "usage": "Method research for the replication-recipe pack: browser scenario capture, runtime observation, JS/CSS motion recovery, network and asset inspection"
+  },
+  {
+    "id": "storytold-craft-anything",
+    "repository": "storytold/craft-anything",
+    "url": "https://github.com/storytold/craft-anything",
+    "license": "Apache-2.0",
+    "usage": "Method research for the replication-recipe pack: study/blueprint/mechanics, design tokens, self-test harness and screenshot-diff verification"
+  },
+  {
+    "id": "react-bits",
+    "repository": "DavidHDev/react-bits",
+    "url": "https://github.com/DavidHDev/react-bits",
+    "license": "MIT + Commons Clause 1.0",
+    "usage": "Pattern provenance for four community effect recipes (text decrypt, image trail, grain gradient, variable proximity). No library code is shipped or copied."
+  },
+  {
+    "id": "community-ui-pattern-sources",
+    "repository": "three.js, Motion, Magic UI, Lenis, vanilla-tilt.js, Swup, MDN",
+    "url": "https://github.com/mrdoob/three.js",
+    "license": "MIT / W3C standards",
+    "usage": "Pattern provenance for community effect recipes; per-recipe licences are recorded in data/recipe_pack.json and docs/recipe-pack.md"
   }
 ]

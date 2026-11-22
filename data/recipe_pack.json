@@ -1,0 +1,1874 @@
+[
+  {
+    "id": "re-01-capture-scenario-freeze",
+    "title": "Freeze a Reference Site with a Deterministic Capture Scenario",
+    "description": "用 CDP 回环端口加声明式场景脚本，逐帧截取首屏动效与计算样式，产出可复跑的取证基线。",
+    "category": "Replication Recipes",
+    "type": "playbook",
+    "tags": [
+      "cdp",
+      "playwright",
+      "screenshot",
+      "scenario",
+      "evidence"
+    ],
+    "palette": [
+      "#0b0f14",
+      "#1c2530",
+      "#4fd1c5",
+      "#f5f7fa"
+    ],
+    "prompt": "Goal: turn a live reference site into a re-runnable evidence baseline before touching any code. Step 1 — launch a dedicated Chromium profile with --remote-debugging-port=9222 --user-data-dir=/tmp/ref-profile and open the reference URL at 1440x900. Step 2 — attach with Playwright over CDP (chromium.connectOverCDP) and drive a declarative JSON scenario, never ad-hoc clicks: goto, wait_for selector or state, wait_for_timeout, scroll_to y, hover, press, screenshot. Declare an explicit timeout on every action and wait for a page-specific ready marker before each capture; a visible container or a fixed 500ms sleep is not readiness. Step 3 — at each step record a viewport screenshot, an eight-frame filmstrip of the intro at 0/120/240/480/720/1000/1500/2000ms, the outerHTML outline of above-the-fold nodes, computed styles for headline, button, media container and page background, and the resource list with transfer sizes. Repeat the run at 390x844 and again with prefers-reduced-motion: reduce. Step 4 — repeat the identical scenario twice and diff the screenshots; only states that match between runs are trustworthy. Rebuild stack: a small Node script plus a checked-in scenario JSON that any teammate can re-run, capturing into evidence/site/date/ with a run log. Acceptance: two runs differ by less than 1 percent of pixels, every captured value is tagged observed, inferred or unknown, and the filmstrip clearly shows the intro start state, peak and settled state.",
+    "notes": [
+      "Attach mode leaves the browser open; close only your own connection, and never expose a debugging port on a non-loopback interface.",
+      "Screenshots taken before fonts and self-hosted media settle are the most common false baseline. Wait for document.fonts.ready plus the page's own ready marker.",
+      "Use a dedicated profile and capture only what you need; CDP reaches the whole browser profile, so unrelated tabs are out of scope."
+    ],
+    "demo": {
+      "style": "filmstrip",
+      "t1": "CAPTURE",
+      "kind": "EVIDENCE",
+      "meta": "Morluto/rea 路 CDP",
+      "variant": ""
+    },
+    "source": {
+      "pack": "rea",
+      "repo": "morluto/rea",
+      "url": "https://github.com/morluto/rea",
+      "license": "MIT",
+      "ref": "morluto/rea — docs/guides/web/browser-scenario-contract.md; docs/guides/web/browser-observation.md",
+      "research": "morluto/rea"
+    },
+    "sort_order": -1000
+  },
+  {
+    "id": "re-02-motion-token-harvest",
+    "title": "Harvest Real Durations and Easings into a Motion Token Sheet",
+    "description": "从 getAnimations 与 CDP Animation 域抽真实时长、延迟与缓动曲线，生成动效 token 表。",
+    "category": "Replication Recipes",
+    "type": "component",
+    "tags": [
+      "getanimations",
+      "waapi",
+      "easing",
+      "cdp",
+      "tokens"
+    ],
+    "palette": [
+      "#12141c",
+      "#2b2f45",
+      "#7c5cff",
+      "#e8e6ff"
+    ],
+    "prompt": "Goal: replace guessed timings with the exact values the reference site runs. Open a DevTools console or a Playwright evaluate context on the live page and call document.getAnimations() once the intro has finished, then again 200ms after each interaction you care about. For every Animation record collect: animationName or transitionProperty, effect.target, effect.getTiming() (duration, delay, endDelay, iterations, direction, fill, easing), effect.getKeyframes() with offsets and properties, currentTime and playState. Filter out the site's infinite decorative loops by keeping only records whose target sits inside the section you are cloning. For animations started by JavaScript, enable the CDP Animation domain and subscribe to Animation.animationStarted instead of polling; use Animation.setPlaybackRate and Animation.seekAnimations to scrub deterministically. Recover cubic-bezier control points from the easing string; where easing is a keyword or a steps() function, record it verbatim and map it to the closest CSS equivalent. For motion driven by scroll or pointer, sample getComputedStyle at every requestAnimationFrame tick and fit a curve to the sampled progress. Rebuild stack: a tokens.css file of custom properties such as --dur-fast, --dur-hero and --ease-out-expo, consumed by CSS transitions or the Web Animations API. Acceptance: every cloned animation's duration and delay match the harvested table within one frame, sampled easing deviates by less than 0.02 progress, and each animation you could not observe is listed as an unknown with its reason.",
+    "notes": [
+      "Transitions vanish from getAnimations() once finished; hook Animation.animationStarted or read computed transition-property, -duration and -timing-function instead.",
+      "Named CDP easings arrive as strings, sometimes near-identical bezier values. Keep full precision; do not round to two decimals.",
+      "A single shared token sheet beats per-component numbers; most premium sites reuse three to five duration and easing pairs."
+    ],
+    "demo": {
+      "style": "bezier",
+      "t1": "EASING",
+      "kind": "MOTION",
+      "meta": "getAnimations()",
+      "variant": ""
+    },
+    "source": {
+      "pack": "rea",
+      "repo": "morluto/rea",
+      "url": "https://github.com/morluto/rea",
+      "license": "MIT",
+      "ref": "morluto/rea — references/runtime-observation.md; docs/guides/web/web-runtime.md",
+      "research": "morluto/rea"
+    },
+    "sort_order": -999
+  },
+  {
+    "id": "re-03-gsap-timeline-recovery",
+    "title": "Recover a GSAP Timeline into Readable Tween Specs",
+    "description": "枚举 gsap.globalTimeline 与 ScrollTrigger，导出目标、时长、缓动与嵌套时间线结构。",
+    "category": "Replication Recipes",
+    "type": "component",
+    "tags": [
+      "gsap",
+      "scrolltrigger",
+      "timeline",
+      "easing",
+      "devtools"
+    ],
+    "palette": [
+      "#0d1117",
+      "#1f2933",
+      "#88ce02",
+      "#f0f6fc"
+    ],
+    "prompt": "Goal: turn a live GSAP site's timeline into a spec you can replay. In the page console confirm window.gsap and log gsap.version, then walk gsap.globalTimeline.getChildren(true, true, true) and for each child record: type (tween or timeline), targets resolved to a stable selector or data attribute, startTime, duration, totalDuration, repeat, yoyo, and the vars object (ease, stagger, delay, position parameters such as '<' or '+=0.2'). Use gsap.getTweensOf(el) per element to confirm which properties actually animate. If ScrollTrigger is loaded, call ScrollTrigger.getAll() and capture trigger, start, end, scrub, pin, pinSpacing, snap, anticipatePin and the linked animation duration; also log ScrollTrigger.isTouch behaviour. Convert each ease to both its source name and its numeric curve by calling gsap.parseEase(name) across eleven sample points, so a non-GSAP rebuild can match the feel. Check for smooth-scroll wrappers (ScrollSmoother, Lenis, Locomotive) because they change the scroll-to-progress mapping. Rebuild stack: GSAP 3 with ScrollTrigger, one timeline per section, position parameters preserved rather than flattened, and a gsap.matchMedia block for reduced motion. Acceptance: a side-by-side scrub at 0, 25, 50, 75 and 100 percent of the timeline lands within one frame, tween order and stagger direction match the exported table, and any tween whose targets are generated at runtime is marked inferred with its selector derivation shown.",
+    "notes": [
+      "Bundled GSAP is often tree-shaken; check gsap.plugins and the window scope for SplitText, DrawSVG and MorphSVG before assuming a hand-written effect.",
+      "ScrollTrigger start and end strings are relative to the trigger element, not the page. Record the resolved pixel values as well.",
+      "The free core is fine to reuse, but Club plugins such as SplitText, MorphSVG and ScrollSmoother need a licence."
+    ],
+    "demo": {
+      "style": "timeline",
+      "t1": "TIMELINE",
+      "kind": "GSAP",
+      "meta": "ScrollTrigger",
+      "variant": ""
+    },
+    "source": {
+      "pack": "rea",
+      "repo": "morluto/rea",
+      "url": "https://github.com/morluto/rea",
+      "license": "MIT",
+      "ref": "morluto/rea — docs/guides/javascript/javascript-runtime-observation.md; docs/guides/web/web-runtime.md",
+      "research": "morluto/rea"
+    },
+    "sort_order": -998
+  },
+  {
+    "id": "re-04-keyframe-transform-mining",
+    "title": "Mine @keyframes, Transforms and Custom Properties from CSS",
+    "description": "枚举样式表与 KeyframeEffect，把 matrix3d 解构为位移缩放旋转，还原关键帧与缓动。",
+    "category": "Replication Recipes",
+    "type": "component",
+    "tags": [
+      "css",
+      "keyframes",
+      "matrix",
+      "cssom",
+      "custom-properties"
+    ],
+    "palette": [
+      "#0e0e11",
+      "#23232b",
+      "#ff6b6b",
+      "#f4f4f5"
+    ],
+    "prompt": "Goal: extract visually exact CSS motion without reading a line of minified script. First use the CSSOM: iterate document.styleSheets and cssRules, recursing into CSSKeyframesRule and CSSKeyframeRule to dump the animation name, every offset (from, 50%, to) and each declared property. Wrap cross-origin sheet reads in try/catch; a SecurityError there is a documented gap, not a failure, so download that href from the network log and parse the text instead. Keep only keyframes whose animation-name is referenced by a rendered element (check getComputedStyle(el).animationName) to skip unused vendor rules. Second, read the resolved motion: for each animated element set animation-play-state: paused, step animation-delay to the 0, 25, 50, 75 and 100 percent checkpoints, and decompose the resulting matrix or matrix3d into translate, scale, rotate and perspective so you can rewrite readable transform values. Third, resolve custom properties with getComputedStyle(el).getPropertyValue('--x') and check CSS.registerProperty plus @property blocks for typed, animatable values. Rebuild stack: plain CSS @keyframes and custom properties, with prefers-reduced-motion disabling every animation. Acceptance: the recomposed matrix at all five checkpoints matches the reference within 1e-3 per component, unused rules are excluded, and every cross-origin sheet you could not read appears in the evidence ledger as unobserved.",
+    "notes": [
+      "Computed transform is a matrix string; linearly interpolating matrices will not reproduce a rotate-plus-scale keyframe. Decompose first.",
+      "Keyframe offsets can live in the element's animation-timing or in the shorthand; read both.",
+      "Removing a site's reset styles can hide the animation entirely; pause playback instead of editing the page."
+    ],
+    "demo": {
+      "style": "matrix",
+      "t1": "TRANSFORM",
+      "kind": "CSSOM",
+      "meta": "matrix3d",
+      "variant": ""
+    },
+    "source": {
+      "pack": "rea",
+      "repo": "morluto/rea",
+      "url": "https://github.com/morluto/rea",
+      "license": "MIT",
+      "ref": "morluto/rea — docs/guides/web/browser-observation.md; references/evidence-workflows.md",
+      "research": "morluto/rea"
+    },
+    "sort_order": -997
+  },
+  {
+    "id": "re-05-scroll-choreography-map",
+    "title": "Map Scroll-Driven Choreography from Pins to Progress",
+    "description": "逐 200px 滚动采样，测定粘性区间、滚动进度映射与 scrub 节拍，重建整段滚动编排。",
+    "category": "Replication Recipes",
+    "type": "section",
+    "tags": [
+      "scroll",
+      "sticky",
+      "scrolltrigger",
+      "progress",
+      "pinning"
+    ],
+    "palette": [
+      "#0a0a0f",
+      "#16161f",
+      "#5eead4",
+      "#f8fafc"
+    ],
+    "prompt": "Goal: convert a scroll-driven section into a numeric scroll map. Step the page from 0 to document height in 200px increments, waiting two animation frames between steps, and record for each probe element its boundingClientRect.top, computed position (sticky or fixed), transform matrix, opacity and any custom property the site updates. Derive the exact scroll offsets where behaviour changes: pin start and end, reveal thresholds, and the point where a sticky element releases. Treat the range as progress = (scrollY - start) / (end - start) and sample animated values at 0, 0.25, 0.5, 0.75 and 1. If the site uses CSS scroll-driven animations, read animation-timeline support and the ViewTimeline or TimelineRange names from computed style; if it uses GSAP ScrollTrigger, capture trigger, start, end, scrub and pin from ScrollTrigger.getAll(); if it uses IntersectionObserver reveals, hook the constructor before navigation with addInitScript and log thresholds and rootMargin. Detect scroll hijacking wrappers (Lenis, Locomotive, ScrollSmoother) because they change the scrollY mapping. Rebuild stack: GSAP ScrollTrigger with scrub for pinned sequences, or native CSS scroll-timeline with an @supports fallback, and content that still reads with JavaScript disabled. Acceptance: clone pin start and end land within 2 percent of page height at 1440x900, progress-driven values match at all five sample points, the section stays keyboard and screen-reader navigable, and reduced motion collapses it to a static layout.",
+    "notes": [
+      "scrollTo jumps collapse smooth-scroll libraries into one step; wait rAF plus a settle timeout or every sample will be transitional.",
+      "A pinned element is often a duplicate fixed sibling, not the original node. Check the DOM before assuming one element.",
+      "Mobile URL bars change viewport height mid-scroll; re-test on a device profile, not only a resized desktop window."
+    ],
+    "demo": {
+      "style": "scrollmap",
+      "t1": "SCROLL MAP",
+      "kind": "PROGRESS",
+      "meta": "0 鈫?1",
+      "variant": ""
+    },
+    "source": {
+      "pack": "rea",
+      "repo": "morluto/rea",
+      "url": "https://github.com/morluto/rea",
+      "license": "MIT",
+      "ref": "morluto/rea — docs/guides/web/web-runtime.md; references/runtime-observation.md",
+      "research": "morluto/rea"
+    },
+    "sort_order": -996
+  },
+  {
+    "id": "re-06-pointer-hover-interaction",
+    "title": "Reverse-Engineer Cursor Trails, Magnetics and Hover States",
+    "description": "用 DOMDebugger 定位指针监听与 rAF 循环，测得阻尼系数、磁吸半径与悬停过渡曲线。",
+    "category": "Replication Recipes",
+    "type": "component",
+    "tags": [
+      "cursor",
+      "pointer",
+      "hover",
+      "raf",
+      "damping"
+    ],
+    "palette": [
+      "#08080c",
+      "#191922",
+      "#b19eef",
+      "#eef0ff"
+    ],
+    "prompt": "Goal: reproduce a site's pointer feel, not just its look. First inventory what listens: use the console helper getEventListeners(node) or CDP DOMDebugger.getEventListeners on the canvas, cards and buttons, and record listener type, useCapture and the source line, which points at the handler even inside a bundle. Look for pointermove, pointerenter, pointerleave, mousemove and a requestAnimationFrame loop; a custom cursor is usually a position: fixed div with pointer-events: none, a transform driven by a lerp, and cursor: none on the body. Second, measure the motion: log the cursor element's offsetLeft or transform every frame while moving the pointer in a straight 400px line at constant speed, then solve for the damping factor in next = current + (target - current) * k and its lag time constant; for magnetic buttons sample the button transform at several pointer offsets to get attraction radius and gain falloff. Third, capture state transitions: trigger hover with Playwright and read transition-property, transition-duration and transition-timing-function plus any scale, border, background-image or text swap at 0, 50 and 100 percent of the transition. Rebuild stack: vanilla pointer events with one rAF loop writing only transform and opacity, or GSAP quickTo for the same damping, and the trail hidden for coarse pointers via matchMedia('(pointer: fine)'). Acceptance: sampled lag matches within 10 percent, hover transitions match duration and curve, interaction holds a 16.7ms frame on a throttled mobile CPU, and touch devices fall back to plain tap feedback.",
+    "notes": [
+      "One rAF loop per effect is fine; ten loops that each touch layout will jank. Batch reads, then writes.",
+      "getEventListeners is a DevTools convenience, not a web API; it is absent inside ordinary page scripts.",
+      "Never hide the real cursor without focus-visible outlines for keyboard users, and check that pointer effects do not block clicks."
+    ],
+    "demo": {
+      "style": "pointer",
+      "t1": "POINTER",
+      "kind": "INTERACTION",
+      "meta": "lerp / magnet",
+      "variant": "cursor"
+    },
+    "source": {
+      "pack": "rea",
+      "repo": "morluto/rea",
+      "url": "https://github.com/morluto/rea",
+      "license": "MIT",
+      "ref": "morluto/rea — docs/guides/web/web-runtime.md; references/runtime-observation.md",
+      "research": "morluto/rea"
+    },
+    "sort_order": -995
+  },
+  {
+    "id": "re-07-webgl-canvas-scene",
+    "title": "Recover a WebGL Hero Scene: Shaders, Uniforms and Camera",
+    "description": "加载前钩住 WebGL 与 rAF，抓取着色器源码、uniform 数值与相机参数，重建 three.js 场景。",
+    "category": "Replication Recipes",
+    "type": "hero",
+    "tags": [
+      "webgl",
+      "threejs",
+      "shaders",
+      "canvas",
+      "uniforms"
+    ],
+    "palette": [
+      "#05070c",
+      "#101826",
+      "#38bdf8",
+      "#dbeafe",
+      "#1e3a8a"
+    ],
+    "prompt": "Goal: rebuild a WebGL hero faithfully using the shaders and uniforms it actually ran. A live context cannot be re-created with a different type, so instrument before load: Playwright addInitScript wraps the WebGLRenderingContext and WebGL2RenderingContext prototypes for shaderSource, createProgram, getProgramParameter, getActiveUniform and the uniform1f/1i/2f/3f/4f/matrix4fv setters, storing source text keyed by program and the last uniform values; wrap requestAnimationFrame to log frame deltas and draw call counts. Then navigate, let the scene run for three seconds, and export the captured table. Identify the engine from window.__THREE__ or a THREE.REVISION string in a bundle chunk, or from three, babylon, pixi or regl signatures in the network log. Record canvas size, devicePixelRatio clamp, camera fov and position from the captured modelViewProjection uniforms or the engine's exposed objects, environment map paths, and the pointer or scroll interactivity by correlating uniform deltas with pointer events. Capture five screenshots at different pointer positions as ground truth. Rebuild stack: three.js with the recovered GLSL in ShaderMaterial, assets (KTX2, DRACO, EXR) re-encoded to a sane size, and a frame budget guard. Acceptance: the recovered shader compiles with no warnings, uniform values reproduce the captured look at all five pointer positions, the scene renders under 8ms per frame on a mid-tier GPU, and a static poster frame serves when WebGL is unavailable.",
+    "notes": [
+      "Shader source cannot be recovered from a context after the fact; instrument before navigation or record an explicit unobserved gap.",
+      "devicePixelRatio above 2 costs four times the fill rate for almost no visible gain on a hero canvas.",
+      "Only reuse textures and models you have rights to; re-encode them and log provenance in the evidence ledger."
+    ],
+    "demo": {
+      "style": "scene",
+      "t1": "WEBGL",
+      "kind": "SHADER",
+      "meta": "uniforms",
+      "variant": ""
+    },
+    "source": {
+      "pack": "rea",
+      "repo": "morluto/rea",
+      "url": "https://github.com/morluto/rea",
+      "license": "MIT",
+      "ref": "morluto/rea — docs/guides/web/browser-observation.md; references/runtime-observation.md",
+      "research": "morluto/rea"
+    },
+    "sort_order": -994
+  },
+  {
+    "id": "re-08-lottie-svg-motion",
+    "title": "Extract Lottie JSON and SVG Path Motion from the Network",
+    "description": "从网络日志抓取 bodymovin/Lottie JSON 与 SVG 路径，还原描边、形变与帧率节奏。",
+    "category": "Replication Recipes",
+    "type": "component",
+    "tags": [
+      "lottie",
+      "svg",
+      "bodymovin",
+      "stroke-dashoffset",
+      "network"
+    ],
+    "palette": [
+      "#0b0d10",
+      "#1a1f26",
+      "#f9a8d4",
+      "#fdf2f8"
+    ],
+    "prompt": "Goal: recover vector motion exactly instead of eyeballing it. First check the network log for animation payloads: filter responses by .json, .lottie and .js with bodymovin markers, then inspect a body for the Lottie schema keys v, fr, ip, op, w, h, layers, assets and shapes. Save the raw JSON and record fr (frame rate), op minus ip (duration in frames) and the player version exposed by window.lottie or the bundle. Second, for hand-authored SVG motion inspect the DOM: read each path's d, viewBox, stroke-dasharray and stroke-dashoffset, and look for SMIL animate and animateTransform elements, CSS keyframes on path elements, or GSAP DrawSVG with a stroke-dasharray equal to getTotalLength(). Third, measure the rhythm: call getAnimations() on the SVG nodes for delays and easings, and capture a ten-frame filmstrip to confirm the visual order of the reveal. Rebuild stack: lottie-web with the SVG renderer and the original fr preserved, or a hand-authored SVG whose path length and stroke-dashoffset keyframes are generated from getTotalLength(), triggered by an IntersectionObserver. Acceptance: total duration matches within one frame, seeking to frame 30 and 60 matches the capture, there is no layout shift when the animation resolves, and the Lottie file is stored locally with its licence and source URL noted.",
+    "notes": [
+      "Lottie JSON is often bloated; strip unused layers and re-export to keep the hero payload small.",
+      "stroke-dashoffset effects need pathLength normalization if the path may be re-drawn for responsive variants.",
+      "Many Lottie files are licensed per project; check the source before redistributing the JSON."
+    ],
+    "demo": {
+      "style": "svgdraw",
+      "t1": "LOTTIE",
+      "kind": "PATH",
+      "meta": "network 鈫?json",
+      "variant": ""
+    },
+    "source": {
+      "pack": "rea",
+      "repo": "morluto/rea",
+      "url": "https://github.com/morluto/rea",
+      "license": "MIT",
+      "ref": "morluto/rea — docs/guides/web/browser-observation.md; docs/guides/web/website-script-export.md",
+      "research": "morluto/rea"
+    },
+    "sort_order": -993
+  },
+  {
+    "id": "re-09-typography-reveal-motion",
+    "title": "Rebuild Split-Text and Masked Headline Reveals",
+    "description": "拆解逐字/逐行 span 结构与遮罩裁切，测得 stagger 间隔、可变字体轴与位移量。",
+    "category": "Replication Recipes",
+    "type": "hero",
+    "tags": [
+      "typography",
+      "split-text",
+      "stagger",
+      "clip-path",
+      "variable-fonts"
+    ],
+    "palette": [
+      "#0a0a0a",
+      "#1c1c1c",
+      "#fafafa",
+      "#c4b5fd",
+      "#7c3aed"
+    ],
+    "prompt": "Goal: reproduce a headline reveal glyph for glyph. Start with structure: inspect the DOM for per-character or per-word spans, looking for classes such as char, word or line and for aria-hidden wrappers, then note whether the readable text survives in an aria-label or a visually hidden node. Record the splitting depth (lines, words, characters), the wrapper with overflow: hidden that clips the reveal, and any clip-path or mask-image on the animated span. Second, measure timing: call getAnimations() on every split span, sort by startTime, derive the stagger interval from consecutive startTime deltas, then read duration, easing and the animated properties, typically transform: translateY plus opacity. Third, measure typography: font-family stack, font-size and line-height at 1440 and 390 widths, letter-spacing, font-variation-settings for axes such as wght and opsz, and the font-face unicode-range when the font is subsetted. Sample one glyph's bounding box at 0, 50 and 100 percent to express the translate distance in em rather than px so it scales. Rebuild stack: manual splitting with Intl.Segmenter plus custom properties for index-based delay, GSAP stagger for the timeline, and clamp() for fluid size. Acceptance: stagger interval matches within 5ms, final glyph positions match within 1px, text stays selectable and screen-reader correct, and reduced motion renders the settled state immediately.",
+    "notes": [
+      "Splitting text breaks copy and paste; keep the readable string in a hidden node and split only a duplicate.",
+      "Stagger delays are frequently inline custom properties, and computed animation-delay may round. Read both.",
+      "Put overflow: hidden on the line wrapper, not the glyph, or descenders and accents get clipped."
+    ],
+    "demo": {
+      "style": "reveal",
+      "t1": "TEXT REVEAL",
+      "kind": "TYPE",
+      "meta": "clip 路 stagger",
+      "variant": "split"
+    },
+    "source": {
+      "pack": "rea",
+      "repo": "morluto/rea",
+      "url": "https://github.com/morluto/rea",
+      "license": "MIT",
+      "ref": "morluto/rea — docs/guides/web/web-runtime.md; references/javascript-applications.md",
+      "research": "morluto/rea"
+    },
+    "sort_order": -992
+  },
+  {
+    "id": "re-10-color-material-token-pass",
+    "title": "Extract a Full Colour and Material Token Pass from a Page",
+    "description": "按渲染面积聚类色值、渐变停点、阴影层级与毛玻璃参数，生成整页设计 token。",
+    "category": "Replication Recipes",
+    "type": "full-page",
+    "tags": [
+      "color",
+      "tokens",
+      "gradients",
+      "glassmorphism",
+      "design-system"
+    ],
+    "palette": [
+      "#0b0c10",
+      "#1f2833",
+      "#66fcf1",
+      "#c5c6c7"
+    ],
+    "prompt": "Goal: derive a page's real visual system instead of sampling a few hex codes. Step 1 — walk every rendered element, roughly two thousand on a typical landing page, and collect from getComputedStyle: color, backgroundColor, every border colour, backgroundImage, boxShadow, filter, backdropFilter, borderRadius and opacity. Skip display: none subtrees. Step 2 — weight colours by painted area rather than count: approximate each element's area as clientWidth times clientHeight, then cluster the resulting colour-and-area list into eight to fourteen swatches, separating text, surface, accent and border roles and keeping the top five per role. Step 3 — parse backgroundImage strings for gradients and record direction, stop positions and colour stops per gradient; group repeated shadow strings into an elevation ramp by blur and spread; identify glass surfaces as backdrop-filter blur plus a low-alpha white or black fill plus a one-pixel light border. Step 4 — verify against pixels: take a viewport screenshot, sample it with a canvas getImageData over each swatch, and discard any swatch that differs beyond a just-noticeable delta. Rebuild stack: a tokens.css theme of semantic custom properties (--surface-1, --text-muted, --accent, --shadow-2, --glass-blur) mapped into the project's variables or Tailwind theme, with a light-mode counterpart derived or explicitly marked absent. Acceptance: every swatch matches its screenshot sample within delta-E 3, gradients keep their original angle and stop offsets, and no unnamed raw hex appears outside the palette block.",
+    "notes": [
+      "Computed colours arrive as rgb(), oklch() or hex; normalize before clustering or identical colours split apart.",
+      "Blend modes and overlay layers mean an element's background colour is not the colour you see. Sample pixels as well.",
+      "Give every token a role name; an undifferentiated list of hex values is not a design system."
+    ],
+    "demo": {
+      "style": "materials",
+      "t1": "MATERIALS",
+      "kind": "SURFACES",
+      "meta": "5 surfaces",
+      "variant": ""
+    },
+    "source": {
+      "pack": "rea",
+      "repo": "morluto/rea",
+      "url": "https://github.com/morluto/rea",
+      "license": "MIT",
+      "ref": "morluto/rea — docs/guides/web/browser-observation.md; references/evidence-workflows.md",
+      "research": "morluto/rea"
+    },
+    "sort_order": -991
+  },
+  {
+    "id": "re-11-breakpoint-fluid-type-mining",
+    "title": "Mine Breakpoints and Fluid Type Ramps by Resizing",
+    "description": "以 20px 步进横跨 320–1920 宽，记录布局跃变点与 clamp 字号斜坡，重建断点体系。",
+    "category": "Replication Recipes",
+    "type": "playbook",
+    "tags": [
+      "responsive",
+      "breakpoints",
+      "clamp",
+      "matchmedia",
+      "container-queries"
+    ],
+    "palette": [
+      "#101215",
+      "#1e242b",
+      "#fbbf24",
+      "#fef3c7"
+    ],
+    "prompt": "Goal: recover the reference's responsive contract numerically. Script the viewport from 320 to 1920 in 20px steps, waiting two frames at each width, and for eight fixed probe elements record display, flexDirection, gridTemplateColumns, fontSize, padding, flex-wrap, order and visibility. Treat any width where one of those values changes as a breakpoint candidate, then narrow each candidate to a single pixel with a binary search. Cross-check against the media queries the page actually declared: hook window.matchMedia before navigation with addInitScript, log every query string and its matches, and read @media and @container blocks from the CSSOM while noting cross-origin sheets you could not parse. Collect the type ramp by sampling fontSize and lineHeight for h1, h2, body and button at ten widths; fit line segments to learn whether the site steps sizes or interpolates with clamp(), and derive the clamp minimum, viewport coefficient and maximum. Note any mobile layout that is a separate DOM tree hidden with display: none, because it breaks focus order. Rebuild stack: mobile-first CSS at the recovered min-width breakpoints, clamp() for fluid type and spacing, and container queries where a component changes independently of the viewport. Acceptance: no breakpoint drifts by more than 1px, the headline size curve stays within 2 percent at six sample widths, and there is no horizontal scroll at 320, 390, 768, 1024, 1440 or 1920.",
+    "notes": [
+      "Resizing does not change pointer capability or hover support; also test with a real mobile emulation profile.",
+      "A resized desktop window keeps its original devicePixelRatio, so resolution and density media queries will not fire as expected.",
+      "Container-driven changes look identical to viewport breakpoints in a sweep; check the CSSOM before hard-coding a media query."
+    ],
+    "demo": {
+      "style": "responsive",
+      "t1": "BREAKPOINTS",
+      "kind": "LAYOUT",
+      "meta": "390 / 768 / 1440",
+      "variant": ""
+    },
+    "source": {
+      "pack": "rea",
+      "repo": "morluto/rea",
+      "url": "https://github.com/morluto/rea",
+      "license": "MIT",
+      "ref": "morluto/rea — docs/guides/web/browser-scenario-contract.md; references/runtime-observation.md",
+      "research": "morluto/rea"
+    },
+    "sort_order": -990
+  },
+  {
+    "id": "re-12-clone-performance-budget",
+    "title": "Audit the Clone Against a Measured Performance Budget",
+    "description": "用同套 Tracing 与 PerformanceObserver 对比参考站与克隆，定帧时、长任务与 CLS 预算。",
+    "category": "Replication Recipes",
+    "type": "playbook",
+    "tags": [
+      "performance",
+      "tracing",
+      "long-tasks",
+      "cls",
+      "budget"
+    ],
+    "palette": [
+      "#0a0e0a",
+      "#152316",
+      "#4ade80",
+      "#ecfdf5"
+    ],
+    "prompt": "Goal: make the clone measurably as smooth as the reference, not merely close in screenshots. Step 1 — measure the reference with one harness: enable CDP Tracing or the Performance domain, record a ten second idle window plus a scripted scroll through the animated section, and collect frame times, long tasks above 50ms, total main-thread scripting time, layer count and paint area per frame. Read LCP, CLS and INP through PerformanceObserver into a JSON report, and total JS transfer and parse cost from the network log with the CPU throttled four times. Step 2 — run the identical harness against the clone at the same viewport and throttle, then diff the two reports field by field. Step 3 — fix only attributed regressions: forced synchronous layout from reading offsetHeight inside a rAF write loop, animation of non-composited properties such as top, width or box-shadow, a permanent will-change, an IntersectionObserver that leaves rAF running offscreen, an unsized media element causing shift, or an unoptimized bundle. Pause every offscreen animation and cap devicePixelRatio for canvases. Rebuild stack: the harness as a checked-in Node script plus a budget file, with CSS and JS changes limited to transform, opacity and filter. Acceptance: 95th percentile frame time under 16.7ms at 4x CPU throttle, CLS under 0.05, no long task above 200ms during the intro, and a regression report naming the element and property behind any remaining miss.",
+    "notes": [
+      "Measure on a throttled CPU and a cold cache; a warm local run flatters every clone.",
+      "Let the Performance panel attribute 'Recalculate Style' to a stack instead of guessing where the forced reflow is.",
+      "Record the reference's own numbers first: chasing parity below the original's jank is wasted effort."
+    ],
+    "demo": {
+      "style": "report",
+      "t1": "PERF BUDGET",
+      "kind": "AUDIT",
+      "meta": "16.7 ms",
+      "variant": ""
+    },
+    "source": {
+      "pack": "rea",
+      "repo": "morluto/rea",
+      "url": "https://github.com/morluto/rea",
+      "license": "MIT",
+      "ref": "morluto/rea — docs/guides/web/web-runtime.md; references/evidence-workflows.md",
+      "research": "morluto/rea"
+    },
+    "sort_order": -989
+  },
+  {
+    "id": "re-13-hero-media-layer-recovery",
+    "title": "Rebuild a Hero's Media Layer from the Network Inventory",
+    "description": "从网络请求还原视频、图像序列、精灵图与字体，重建首屏媒体层并核对授权。",
+    "category": "Replication Recipes",
+    "type": "hero",
+    "tags": [
+      "video",
+      "images",
+      "fonts",
+      "srcset",
+      "assets"
+    ],
+    "palette": [
+      "#07090d",
+      "#141c26",
+      "#f472b6",
+      "#fdf2f8"
+    ],
+    "prompt": "Goal: identify and rebuild every byte of a hero's media layer. Step 1 — capture the network log while the section plays for at least one full loop, filtered to media types and extensions: mp4, webm, mov, m3u8, avif, webp, jpg, png, svg, woff2, glb, ktx2, exr. For each entry record URL, MIME type, transfer and decoded size, dimensions where available, and whether it was requested once or repeatedly. Step 2 — classify the technique: an autoplaying muted looped video with playsinline; a scroll-scrubbed video whose currentTime is set from scroll progress; a canvas image sequence where numbered frames such as frame-0000.webp appear in order (count them and note the encode pattern); a sprite sheet stepped with background-position; a CSS-only gradient mesh; or a WebGL texture. Read preload, poster, picture sources, srcset and sizes, and the font-face unicode-range and font-display values. Step 3 — verify weight and appropriateness: is the hero video 1920 wide inside an 880px container, is there a mobile crop, how large is the first paint. Rebuild stack: self-hosted assets re-encoded to AVIF or WebP with an ffmpeg transcode and a poster LQIP, video with preload=metadata playsinline muted loop, or an ImageBitmap sequence preloaded ahead of the scroll, plus local woff2 with font-display: swap. Acceptance: largest contentful paint under 1.5s on a throttled connection, no 404 or duplicate download, a working poster frame before playback, and one provenance line per asset recording source URL and licence status.",
+    "notes": [
+      "A network log records what loaded, not what the section needs; scrub and hover to reveal lazily requested frames.",
+      "Scroll-scrubbed video is unreliable on iOS Safari; keep a frame sequence or poster fallback path.",
+      "Reusing a competitor's footage is a licensing problem. Record provenance per asset and substitute or reshoot where rights are unclear."
+    ],
+    "demo": {
+      "style": "hero",
+      "t1": "MEDIA LAYER",
+      "kind": "ASSETS",
+      "meta": "network inventory",
+      "variant": ""
+    },
+    "source": {
+      "pack": "rea",
+      "repo": "morluto/rea",
+      "url": "https://github.com/morluto/rea",
+      "license": "MIT",
+      "ref": "morluto/rea — docs/guides/web/browser-observation.md; docs/guides/web/web-network-captures.md",
+      "research": "morluto/rea"
+    },
+    "sort_order": -988
+  },
+  {
+    "id": "re-14-reference-section-rebuild-playbook",
+    "title": "Beautify One Section from a Reference URL, End to End",
+    "description": "给定参考链接，走完取证、取值、重建、像素对比与诚实落差的完整单屏复刻流程。",
+    "category": "Replication Recipes",
+    "type": "playbook",
+    "tags": [
+      "workflow",
+      "evidence",
+      "pixel-diff",
+      "replication",
+      "handoff"
+    ],
+    "palette": [
+      "#0b0b0d",
+      "#1b1b20",
+      "#eab308",
+      "#fefce8",
+      "#71717a"
+    ],
+    "prompt": "Goal: rebuild one section from a reference URL with an auditable chain of evidence. Phase 1, scope: name the section by its DOM anchor and record the reference URL, viewport 1440x900, date and any logged-in state. Phase 2, capture: run the deterministic scenario recipe and store per-step screenshots, the filmstrip, the DOM outline and the resource list under evidence/date/. Phase 3, harvest: pull animation timings from getAnimations(), timeline structure from the site's animation library, resolved transforms and custom properties from computed style, palette by area-weighted clustering, breakpoints by width sweep, and assets from the network log. Write every value into a spec table with a provenance column marked observed, inferred or unknown; anything unobserved gets one line saying why. Phase 4, rebuild: build the section in an empty page first, in the project's real stack, consuming tokens rather than magic numbers, then port it in. Phase 5, verify: screenshot the clone at 1440, 768 and 390, align with the reference, and produce a pixel diff plus a DOM structure comparison; iterate until the diff is under 2 percent of pixels outside text antialiasing. Phase 6, close the loop: run the performance harness, check keyboard focus, reduced motion and horizontal scroll, then write a handoff note listing what matched, what was approximated and what remains unobserved. Acceptance: the diff budget holds at all three viewports, the interaction checklist passes, and no claim in the note lacks an evidence row.",
+    "notes": [
+      "Rebuilding in an empty page first isolates your CSS from the project's cascade; most fidelity bugs are inherited styles.",
+      "Capture the reference at the same devicePixelRatio as the clone or the pixel diff is meaningless.",
+      "Ship the spec table with the section; a clone nobody can re-verify decays on the first redesign."
+    ],
+    "demo": {
+      "style": "teardown",
+      "t1": "SECTION",
+      "kind": "PLAYBOOK",
+      "meta": "end to end",
+      "variant": ""
+    },
+    "source": {
+      "pack": "rea",
+      "repo": "morluto/rea",
+      "url": "https://github.com/morluto/rea",
+      "license": "MIT",
+      "ref": "morluto/rea — docs/guides/web/browser-scenario-contract.md; docs/guides/web/browser-observation.md; references/evidence-workflows.md",
+      "research": "morluto/rea"
+    },
+    "sort_order": -987
+  },
+  {
+    "id": "cr-01-ui-blueprint-decompose",
+    "title": "Screenshot to UI Blueprint Decompose",
+    "description": "先拆区块、控件状态与数值清单，再写代码",
+    "category": "Replication Recipes",
+    "type": "playbook",
+    "tags": [
+      "blueprint",
+      "decomposition",
+      "evidence",
+      "states",
+      "screenshot"
+    ],
+    "palette": [
+      "#0F1115",
+      "#1B2029",
+      "#E9EDF2",
+      "#7C8CF8",
+      "#3DDC97"
+    ],
+    "prompt": "Replicate this interface from evidence, not memory. You have screenshots of the target at 1440, 1024 and 390 px wide. Step 1, blueprint: write ui/blueprint.md before touching code. List the page as ordered blocks (header, hero, feature grid, footer) and give each one its content, measured box (content column width, padding, gaps, items per row) and the elements inside it. Name every interactive control with a kind (link, menu, tab, toggle, field, carousel), and for each list states (rest, hover, focus-visible, pressed, open, loading, error, empty, disabled) with what it looks like in each. Step 2, mechanics sheet: write ui/mechanics.json as version 1 with a values array, each entry a name, group, value, unit and either a source or estimated true. Put in every number and rule that shapes behaviour: durations, delays, easings, scroll thresholds, breakpoints, content widths, radii, tap target sizes. Cite each to a screenshot file plus crop region, or mark it estimated. Step 3, unknowns: list what the evidence cannot settle (off-screen states, hover on touch, real data volume) and what would settle it. Step 4, craft: plain HTML, CSS custom properties and vanilla JS, one block per section, tokens only, no inline sizes. Acceptance self-tests: every control in the blueprint exists in the build with all its listed states; every number in mechanics.json appears as a token, not a literal; a second agent could rebuild the page from blueprint.md alone; no unknown is stated as fact.",
+    "notes": [
+      "One width is not evidence: the same section can be a 3-column grid at 1440 and a stack at 390, and differences at the middle width reveal the breakpoint.",
+      "Mark estimated values explicitly; a plausible-looking invented spacing value is the most common silent clone failure.",
+      "The blueprint is a deliverable, not scratch work: reviewers and later agents rebuild from it, so keep it in the repo."
+    ],
+    "demo": {
+      "style": "teardown",
+      "t1": "BLUEPRINT",
+      "kind": "DECOMPOSE",
+      "meta": "evidence first",
+      "variant": ""
+    },
+    "source": {
+      "pack": "craft",
+      "repo": "storytold/craft-anything",
+      "url": "https://github.com/storytold/craft-anything",
+      "license": "Apache-2.0",
+      "ref": "storytold/craft-anything + crates/setup/src/skill.md; crates/ai/src/rebuild/study.rs; crates/engine/src/mechanics.rs",
+      "research": "storytold/craft-anything"
+    },
+    "sort_order": -986
+  },
+  {
+    "id": "cr-02-design-token-extraction",
+    "title": "Design Token Extraction From Screenshots",
+    "description": "从截图量出配色、字号、间距、圆角与阴影令牌",
+    "category": "Replication Recipes",
+    "type": "component",
+    "tags": [
+      "tokens",
+      "typography",
+      "spacing",
+      "css-variables",
+      "measurement"
+    ],
+    "palette": [
+      "#0B0C0F",
+      "#17191F",
+      "#FAFAF7",
+      "#C8A96A",
+      "#5B6CFF"
+    ],
+    "prompt": "Turn a screenshot set into the design tokens the target uses, before styling a single component. Work in this order. Evidence: for each of the three widths, crop the page into regions (header, hero, cards, footer) and sample the dominant fill, text colour and border colour per region; record hex values, never names. Type: measure pixel height of the top heading, subheads, body and caption, plus line-height from baseline to baseline, weight and letter-spacing; note the font family and its fallback stack. Space: measure gaps between blocks, card padding, grid gutters and the content column max-width; snap to the nearest 4 px step while keeping the measured value in a comment. Shape: radii for cards, buttons, inputs and pills; border widths; shadow offset, blur, spread and alpha. Emit tokens.css with custom properties for colour, type scale, space, radius, shadow and container width, plus tokens.json holding value, role and the crop each came from. Compute contrast for every text-on-surface pair and fail anything below 4.5 to 1 for body text and 3 to 1 for large text or controls; where the original itself fails, keep the measured token but add a compliant alternative. Acceptance self-tests: grepping the build for hex colours or raw px outside tokens.css returns nothing; every token in tokens.json is used at least once; rendered heading sizes and section padding match the measurements within 2 px at each width.",
+    "notes": [
+      "Snapshot colours from a PNG, not from a designer's memory: JPEG screenshots shift hue, so capture lossless or average a flat region.",
+      "Snap to a grid but keep the raw measurement visible; an unsnapped 22 px gap usually means the real token is 20 px plus a border.",
+      "Contrast failures in the original are common in dark themes; ship the faithful token and a compliant sibling rather than silently changing the look."
+    ],
+    "demo": {
+      "style": "tokens",
+      "t1": "DESIGN TOKENS",
+      "kind": "TOKENS",
+      "meta": "measured ramp",
+      "variant": ""
+    },
+    "source": {
+      "pack": "craft",
+      "repo": "storytold/craft-anything",
+      "url": "https://github.com/storytold/craft-anything",
+      "license": "Apache-2.0",
+      "ref": "storytold/craft-anything + docs/design-system.md; crates/ai/src/rebuild/kinds/website.rs (capture.json design tokens and per-width layouts)",
+      "research": "storytold/craft-anything"
+    },
+    "sort_order": -985
+  },
+  {
+    "id": "cr-03-interaction-state-machine",
+    "title": "Interaction State Machine Map",
+    "description": "把每个控件写成状态、事件、守卫与转场表",
+    "category": "Replication Recipes",
+    "type": "playbook",
+    "tags": [
+      "state-machine",
+      "interaction",
+      "aria",
+      "focus",
+      "transitions"
+    ],
+    "palette": [
+      "#101217",
+      "#23262F",
+      "#DDE1E8",
+      "#59D3FF",
+      "#FF6B6B"
+    ],
+    "prompt": "Map every interactive control as an explicit state machine before implementing it. For the dropdown, modal, tabs, accordion, toggle and carousel visible in the target, write a table with columns: state, trigger event, guard, next state, side effect, and visible difference with a screenshot crop. Cover at least rest, hover, focus-visible, pressed, open, opening, closing, loading, success, error, empty and disabled. Name timing explicitly, for example closed to open on click or Enter, 180 ms fade plus 8 px rise, focus moves to the first item; Escape closes, focus returns to the trigger, and the exit animation finishes before the node unmounts. Implement each component as a small finite-state machine: one state enum, one transition function, and CSS driven by a data-state attribute so styling cannot drift from logic. Inputs are pointer, keyboard, focus and media query; guards ignore a second click during closing. Acceptance self-tests: scripted runs fire each transition and assert the state attribute, ARIA expanded, selected and disabled, and focus position; every state in the table is reachable in the build; no input path leaves a stale open state; a transition trace log shows no double fire; a keyboard-only run completes the same flows as the pointer run.",
+    "notes": [
+      "Most clone bugs are stale state, not styling: a menu that stays open after route change or a modal that traps focus after closing.",
+      "Exit animations must not be skipped; unmounting immediately is the single most noticeable difference from a premium original.",
+      "Testing only click paths hides keyboard gaps; drive the same machine with Enter, Space, Escape and Tab."
+    ],
+    "demo": {
+      "style": "states",
+      "t1": "STATE MACHINE",
+      "kind": "INTERACTION",
+      "meta": "9 states",
+      "variant": ""
+    },
+    "source": {
+      "pack": "craft",
+      "repo": "storytold/craft-anything",
+      "url": "https://github.com/storytold/craft-anything",
+      "license": "Apache-2.0",
+      "ref": "storytold/craft-anything + crates/ai/src/rebuild/kinds/website.rs (opened states, paired state checks); docs/pitfalls.md",
+      "research": "storytold/craft-anything"
+    },
+    "sort_order": -984
+  },
+  {
+    "id": "cr-04-motion-timing-tokens",
+    "title": "Motion Timing Token System",
+    "description": "按帧量出时长、缓动与错峰，生成动效令牌",
+    "category": "Replication Recipes",
+    "type": "component",
+    "tags": [
+      "motion",
+      "easing",
+      "durations",
+      "stagger",
+      "reduced-motion"
+    ],
+    "palette": [
+      "#0A0A0C",
+      "#16181D",
+      "#F2F2F0",
+      "#FF7A45",
+      "#6C5CE7"
+    ],
+    "prompt": "Derive a motion system from evidence instead of guessing durations. Screen-record the target, step frames, and measure the enter duration, exit duration, delay between siblings, distance travelled, and whether opacity, transform or layout animates. Sort the measurements into token tiers: instant 80 to 120 ms for press feedback, control 150 to 200 ms for hover and focus, enter 240 to 320 ms for panels and modals, exit about 65 percent of enter, and ambient loops 6 to 12 s. Define easing tokens: standard for in-place change, decelerate for entrances, accelerate for exits, and a spring for draggable elements with explicit stiffness and damping. Express stagger as a per-item delay with a total cap. Implement with CSS transitions and keyframes, animating transform, opacity and colour only, and add a reduced-motion branch that keeps state changes while removing travel and loops. Acceptance self-tests: every token is exercised by a named element in a motion manifest; a timeline dump of the rebuilt interaction matches the measured durations within 20 percent; nothing animates width, height, top or left; there is no layout shift after load; with prefers-reduced-motion enabled all content stays reachable and no loop runs; a frame check shows no long task during the heaviest entrance.",
+    "notes": [
+      "Frame-step a recording rather than eyeballing it; 150 ms and 220 ms feel different and the difference is invisible without frames.",
+      "Exit being faster than enter is what makes an interface feel responsive; symmetric durations read as sluggish.",
+      "Animating transform and opacity keeps work on the compositor; animating layout properties causes jank on mid-range phones."
+    ],
+    "demo": {
+      "style": "timing",
+      "t1": "TIMING",
+      "kind": "MOTION",
+      "meta": "tiered tokens",
+      "variant": ""
+    },
+    "source": {
+      "pack": "craft",
+      "repo": "storytold/craft-anything",
+      "url": "https://github.com/storytold/craft-anything",
+      "license": "Apache-2.0",
+      "ref": "storytold/craft-anything + docs/design-system.md (hover ease, popup fade, wheel step); crates/ai/src/rebuild/brief.rs (noise regions that animate)",
+      "research": "storytold/craft-anything"
+    },
+    "sort_order": -983
+  },
+  {
+    "id": "cr-05-color-and-material-system",
+    "title": "Color and Material Surface System",
+    "description": "重建表面层级、玻璃与光影材质，逐通道比对",
+    "category": "Replication Recipes",
+    "type": "component",
+    "tags": [
+      "color",
+      "material",
+      "glass",
+      "elevation",
+      "contrast"
+    ],
+    "palette": [
+      "#08090B",
+      "#14161B",
+      "#F5F3EF",
+      "#B9A27A",
+      "#8B5CF6"
+    ],
+    "prompt": "Rebuild the surface and material language, not just the colours. From the crops, build a five-step surface ladder from page background to the highest floating card, recording the measured hex and alpha for each. Identify the materials actually in use: flat fill, translucent glass with a background blur, gradient mesh, grain or noise overlay, hairline inner highlight, outer glow, and image scrim. For each material write a recipe with exact values (blur radius, saturation, noise opacity, gradient stops, highlight width, shadow stack) and the layer order that produces it. Implement with CSS custom properties and layered backgrounds or box-shadows, one utility class per material, and a single light model so shadows fall in one direction. Never fake elevation with a border alone. Acceptance self-tests: sample the rebuilt screenshot at the same crop coordinates and require each surface within 3 per channel of the original; the surface ladder must be strictly ordered in luminance in both light and dark modes; text contrast stays at or above 4.5 to 1 on every surface, including glass over media; a 4x zoom crop shows no banding and no blurry text; material classes are reused with zero material values inlined in markup.",
+    "notes": [
+      "Glass without a fallback becomes unreadable over bright images; add a solid or heavy-blur fallback layer.",
+      "Grain overlays must be tiled and tiny or they destroy text sharpness at 1x.",
+      "If the original uses licensed imagery as the material itself, rebuild the gradient and noise, not the asset."
+    ],
+    "demo": {
+      "style": "materials",
+      "t1": "SURFACES",
+      "kind": "MATERIALS",
+      "meta": "glass + grain",
+      "variant": "glass"
+    },
+    "source": {
+      "pack": "craft",
+      "repo": "storytold/craft-anything",
+      "url": "https://github.com/storytold/craft-anything",
+      "license": "Apache-2.0",
+      "ref": "storytold/craft-anything + crates/ai/src/rebuild/kinds/website.rs (backgrounds, text colours, per-channel colour tolerance); docs/design-system.md (surfaces, edges, focus ring)",
+      "research": "storytold/craft-anything"
+    },
+    "sort_order": -982
+  },
+  {
+    "id": "cr-06-hero-section-rebuild",
+    "title": "Hero Section Faithful Rebuild",
+    "description": "按三档宽度重建首屏：网格、字体断行与主按钮状态",
+    "category": "Replication Recipes",
+    "type": "hero",
+    "tags": [
+      "hero",
+      "typography",
+      "first-fold",
+      "cta",
+      "responsive"
+    ],
+    "palette": [
+      "#F4F1EA",
+      "#141414",
+      "#FF5A36",
+      "#1E3A8A",
+      "#C9C2B4"
+    ],
+    "prompt": "Rebuild this hero section faithfully at 1440, 1024 and 390 px. Blueprint first: the hero as a grid with named areas (eyebrow, headline, subhead, primary and secondary action, social proof, media or background layer), the content column max-width, the vertical padding, and the gap scale between elements. Record exact type: heading size, line-height, weight, tracking and the number of lines at each width, plus where the headline breaks; the same for subhead and labels. Capture states: primary action rest, hover, pressed, focus-visible, loading; secondary action the same; any media hover or autoplay loop. Build with semantic HTML, tokens from the extracted sheet, and one element per grid area so blocks can be reordered without breaking. Timing: hero entrance stagger of 60 to 80 ms per line, total under 600 ms, transform and opacity only. Acceptance self-tests: the hero occupies the same first-fold height within 24 px at 1440x900; the headline breaks on the same words; both actions are reachable by Tab with a visible focus ring; the largest image is lazy unless it is the LCP, in which case it is preloaded with correct dimensions; no layout shift from font or media load; screenshot diff at each width with self-changing regions masked.",
+    "notes": [
+      "Headline line breaks are a design decision; letting text reflow freely is the fastest way to look like a different site.",
+      "Set explicit image width and height or the LCP element shifts and the hero jumps on load.",
+      "Rebuild the copy rather than copying the original's marketing text and logos unless you own it."
+    ],
+    "demo": {
+      "style": "hero",
+      "t1": "HERO",
+      "kind": "REBUILD",
+      "meta": "3 widths",
+      "variant": ""
+    },
+    "source": {
+      "pack": "craft",
+      "repo": "storytold/craft-anything",
+      "url": "https://github.com/storytold/craft-anything",
+      "license": "Apache-2.0",
+      "ref": "storytold/craft-anything + crates/ai/src/rebuild/brief.rs (match capture tokens exactly); crates/ai/src/rebuild/study.rs (multi-width capture and opened states)",
+      "research": "storytold/craft-anything"
+    },
+    "sort_order": -981
+  },
+  {
+    "id": "cr-07-scroll-storytelling-build",
+    "title": "Scroll Storytelling Build",
+    "description": "按进度百分比建滚动时间线，逐段对齐参考帧",
+    "category": "Replication Recipes",
+    "type": "section",
+    "tags": [
+      "scroll",
+      "sticky",
+      "timeline",
+      "progress",
+      "performance"
+    ],
+    "palette": [
+      "#07080A",
+      "#101318",
+      "#EDEFF3",
+      "#00E5A0",
+      "#2D6BFF"
+    ],
+    "prompt": "Build the scroll story from a measured timeline, not from feel. Blueprint: list each scroll block with its height in viewports, whether it is pinned, and what changes between progress 0 and 1 (transform, opacity, clip, text swap, camera). For every block write a mapping table: progress 0.0, 0.25, 0.5, 0.75 and 1.0 against the expected visual state, each row cited to a frame captured from the target. Implement with a sticky container plus one requestAnimationFrame loop that reads scroll position once per frame, lerps toward the target progress with a damping factor, and writes transforms and CSS custom properties. Avoid a scroll listener per element, and never animate layout properties. Snap progress into discrete keyframes where the original steps rather than glides. Acceptance self-tests: capture the rebuilt page at the five progress points per block and compare with the reference frames, with section order and pin durations matching; scrolling backwards is symmetric; the page throws no console errors and no content is lost without JavaScript; reduced motion collapses the story to static sections with all copy present; no horizontal scrollbar appears at any width; a performance pass shows no layout thrash and no long task above 50 ms while scrolling.",
+    "notes": [
+      "Lerp one shared progress value instead of animating each element independently, or the sections drift apart on fast wheels.",
+      "Pin durations are usually set in viewport heights; hardcoding pixels breaks on short laptop screens.",
+      "Always keep a no-JS or reduced-motion reading path; scroll effects that hide content are an accessibility failure."
+    ],
+    "demo": {
+      "style": "stack",
+      "t1": "SCROLL STORY",
+      "kind": "PINNING",
+      "meta": "progress keyframes",
+      "variant": ""
+    },
+    "source": {
+      "pack": "craft",
+      "repo": "storytold/craft-anything",
+      "url": "https://github.com/storytold/craft-anything",
+      "license": "Apache-2.0",
+      "ref": "storytold/craft-anything + crates/ai/src/rebuild/kinds/website.rs (per-width layout and block measurements); crates/setup/src/skill.md (predict, then verify)",
+      "research": "storytold/craft-anything"
+    },
+    "sort_order": -980
+  },
+  {
+    "id": "cr-08-gesture-input-mechanics",
+    "title": "Gesture and Input Mechanics",
+    "description": "定义拖拽阈值、速度、惯性、取消与键盘等价操作",
+    "category": "Replication Recipes",
+    "type": "component",
+    "tags": [
+      "pointer",
+      "drag",
+      "gesture",
+      "inertia",
+      "keyboard"
+    ],
+    "palette": [
+      "#0D0F12",
+      "#1A1D23",
+      "#E6E9EF",
+      "#FFB020",
+      "#12B886"
+    ],
+    "prompt": "Recreate the input mechanics of the target precisely: pointer, touch, wheel and keyboard. For each interactive surface write an input spec with recognised gestures, activation threshold in pixels or milliseconds, direction constraints, velocity units in px per ms, inertia decay, rubber-band resistance, snap points, cancel conditions (pointercancel, pointerup outside, Escape), and the keyboard equivalent of every pointer action. Separate what moves what: a cursor-follow highlight uses a fixed transform with a lerp, drag uses pointer capture and translate3d, wheel uses a normalized delta with a small dead zone, and touch must never trap page scroll unless the element is a deliberate horizontal track with a clear affordance. Implement with Pointer Events only, one shared drag controller, and requestAnimationFrame for smoothing. Acceptance self-tests: synthetic pointer sequences confirm the dead zone, snapping and inertia settling within 400 ms; Escape and pointercancel always release state; touch targets are at least 44 px; the same result is reachable by keyboard with visible focus; the element does not hijack vertical scroll; a swipe on a 390 px viewport never triggers an accidental drag; a state dump after each gesture shows the controller returned to idle.",
+    "notes": [
+      "Pointer events cover mouse, pen and touch in one path; separate touch handlers are where double-fire bugs live.",
+      "Never set touch-action none on a large scrollable region; scope it to the draggable track only.",
+      "Inertia with no decay cap overshoots the last slide; clamp velocity and snap on release."
+    ],
+    "demo": {
+      "style": "pointer",
+      "t1": "GESTURE",
+      "kind": "INPUT",
+      "meta": "inertia / snap",
+      "variant": "drag"
+    },
+    "source": {
+      "pack": "craft",
+      "repo": "storytold/craft-anything",
+      "url": "https://github.com/storytold/craft-anything",
+      "license": "Apache-2.0",
+      "ref": "storytold/craft-anything + docs/pitfalls.md (input and state edge cases); crates/ai/src/rebuild/kinds/website.rs (states opened by real interaction)",
+      "research": "storytold/craft-anything"
+    },
+    "sort_order": -979
+  },
+  {
+    "id": "cr-09-webgl-scene-craft",
+    "title": "3D and WebGL Scene Craft",
+    "description": "先写场景蓝图再建 WebGL：相机、材质、状态与降级",
+    "category": "Replication Recipes",
+    "type": "hero",
+    "tags": [
+      "webgl",
+      "threejs",
+      "shader",
+      "performance",
+      "fallback"
+    ],
+    "palette": [
+      "#05060A",
+      "#10131C",
+      "#E8ECF5",
+      "#6E8BFF",
+      "#C77DFF"
+    ],
+    "prompt": "Recreate the 3D or WebGL moment with a scene blueprint before writing any shader. Record from the target: camera field of view, approximate distance, orbit or fixed rig, the geometry inventory and proportions, materials (metalness, roughness, transmission, emissive), light count and direction, environment or lighting probe, any post effect (bloom, grain, vignette, chromatic aberration), and the still frame it holds at idle. Then define states as a small machine: idle loop, pointer parallax, hover accent, scroll progress, loading, error, reduced-motion still. Implement with three.js: one renderer capped at devicePixelRatio 2, a single animation loop, instancing for repeats, compressed textures, and a pause when the canvas leaves the viewport or the tab is hidden. Acceptance self-tests: a still frame captured at the same camera matches the reference crop in composition and colour; frame time stays under 16.7 ms on integrated graphics; no console warnings; the canvas is keyboard-focusable and labelled, with every critical word outside it in real text; when WebGL is unavailable or reduced motion is set, a static poster with identical layout replaces the scene; no layout shift on first paint; no model, HDRI or texture with unclear licensing is used.",
+    "notes": [
+      "Cap pixel ratio at 2; uncapped DPR on phones is the most common cause of a failed 3D hero.",
+      "A poster fallback is not optional: some corporate browsers and accessibility settings have no WebGL.",
+      "Never ship a downloaded environment map or model without a recorded licence; generate or commission instead."
+    ],
+    "demo": {
+      "style": "scene",
+      "t1": "3D SCENE",
+      "kind": "CRAFT",
+      "meta": "poster fallback",
+      "variant": "craft"
+    },
+    "source": {
+      "pack": "craft",
+      "repo": "storytold/craft-anything",
+      "url": "https://github.com/storytold/craft-anything",
+      "license": "Apache-2.0",
+      "ref": "storytold/craft-anything + crates/ai/src/rebuild/brief.rs (poster and picture fallbacks, no unlicensed assets); docs/pitfalls.md (runtime and performance traps)",
+      "research": "storytold/craft-anything"
+    },
+    "sort_order": -978
+  },
+  {
+    "id": "cr-10-microinteraction-polish",
+    "title": "Micro-interaction Polish Pass",
+    "description": "逐个打磨按钮、提示与加载反馈的微动效数值",
+    "category": "Replication Recipes",
+    "type": "component",
+    "tags": [
+      "microinteraction",
+      "feedback",
+      "toast",
+      "skeleton",
+      "polish"
+    ],
+    "palette": [
+      "#FAF9F6",
+      "#14161A",
+      "#FF4D2E",
+      "#0EA5A5",
+      "#C7C2B8"
+    ],
+    "prompt": "Polish the micro-interactions that make an interface feel crafted, each one specified with numbers. Inventory from the target every small feedback: button press, hover lift, icon or label swap, toggle knob, checkbox tick, field focus, inline validation shake, tooltip delay, toast enter and exit, skeleton to content crossfade, row hover reveal, copy confirmation. For each write trigger, property animated, from and to values, duration, easing, delay, and what it must never do (block input, shift layout, fire twice). Implement with CSS transitions on transform, opacity and colour, using a small JavaScript helper only for timing sequences such as label swap or toast queues. Keep one shared set of easing and duration tokens so nothing drifts. Acceptance self-tests: a staged capture at 0, 60, 140 and 300 ms after activation matches the reference crops; rapid double activation leaves no stuck state; every animated control still reports its state to assistive technology; pointer and keyboard activation produce identical feedback; reduced motion swaps travel for a short opacity change; removing all animation leaves the UI fully usable, proving animation decorates rather than gates.",
+    "notes": [
+      "Polish is budgeted by attention: the primary action and destructive action deserve the detail, every hover row does not.",
+      "Toasts must queue and self-dismiss except errors, which should stay until dismissed.",
+      "Skeletons must match the final content shape or the crossfade reads as a jump."
+    ],
+    "demo": {
+      "style": "micro",
+      "t1": "MICRO",
+      "kind": "POLISH",
+      "meta": "feedback",
+      "variant": ""
+    },
+    "source": {
+      "pack": "craft",
+      "repo": "storytold/craft-anything",
+      "url": "https://github.com/storytold/craft-anything",
+      "license": "Apache-2.0",
+      "ref": "storytold/craft-anything + docs/design-system.md (hover ease, toast rules, spinner guidance); crates/ai/src/rebuild/brief.rs (fix the biggest visible difference first)",
+      "research": "storytold/craft-anything"
+    },
+    "sort_order": -977
+  },
+  {
+    "id": "cr-11-responsive-a11y-parity",
+    "title": "Responsive and Accessibility Parity",
+    "description": "按真实断点做响应式，并用可测断言校验无障碍",
+    "category": "Replication Recipes",
+    "type": "full-page",
+    "tags": [
+      "responsive",
+      "accessibility",
+      "breakpoints",
+      "landmarks",
+      "contrast"
+    ],
+    "palette": [
+      "#0C0E12",
+      "#171A21",
+      "#F0F2F5",
+      "#3B82F6",
+      "#F59E0B"
+    ],
+    "prompt": "Make the replica responsive and accessible to the same standard as the original, measured rather than asserted. First extract breakpoints from evidence: capture at 390, 768, 1024 and 1440 px, and note exactly where sections stack, the grid drops a column, and the navigation becomes a menu button. Record per width: page width versus viewport, heading and body sizes, section padding, items per row and content column. Build mobile-first with a small set of breakpoint tokens so each layout switch is one rule rather than a scatter of overrides. Then parity: one header, navigation, main and footer landmark; heading order with no skipped level; alt text or an explicit decorative role for media; every control named; form fields with real labels; page language set; focus order following visual order; a skip link; focus ring at 3 to 1 against every surface; text at 4.5 to 1; touch targets at least 44 px; usable at 200 percent zoom. Acceptance self-tests: assert page width never exceeds viewport at any tested width where the original does not scroll; landmark counts match; zero unnamed controls and zero images without alternative text; a keyboard-only run completes the primary task; contrast pairs pass; the tab order log matches visual order.",
+    "notes": [
+      "Breakpoints copied from a framework default rarely match the original; measure where the layout actually changes.",
+      "Sideways scroll on phones usually comes from one fixed-width child; assert page width against viewport per width.",
+      "Accessibility regressions are measurable counts, so put them in the harness rather than a manual checklist."
+    ],
+    "demo": {
+      "style": "responsive",
+      "t1": "PARITY",
+      "kind": "A11Y",
+      "meta": "claims, not vibes",
+      "variant": "parity"
+    },
+    "source": {
+      "pack": "craft",
+      "repo": "storytold/craft-anything",
+      "url": "https://github.com/storytold/craft-anything",
+      "license": "Apache-2.0",
+      "ref": "storytold/craft-anything + crates/ai/src/rebuild/kinds/website.rs (page claims, landmark and a11y comparisons, sideways-scroll rule); AGENTS.md (accessibility rules)",
+      "research": "storytold/craft-anything"
+    },
+    "sort_order": -976
+  },
+  {
+    "id": "cr-12-acceptance-selftest-harness",
+    "title": "Acceptance Self-Test Harness",
+    "description": "先写断言清单再改：通过、失败、未测量三种结论",
+    "category": "Replication Recipes",
+    "type": "playbook",
+    "tags": [
+      "acceptance",
+      "harness",
+      "claims",
+      "reporting",
+      "self-test"
+    ],
+    "palette": [
+      "#0B0D10",
+      "#161A21",
+      "#E7EBF0",
+      "#22C55E",
+      "#EF4444"
+    ],
+    "prompt": "Write the acceptance self-test harness before the last pass, so fixes are driven by measurement. Structure it as a flat list of claims, each one sentence, each judged by a check that returns passed, failed or unmeasured with a detail string. First build the harness: a script that builds the project, serves the output on loopback, captures each page at the configured widths, and writes a JSON report per round. Then add claims in four groups. Visual: per width likeness score plus page height delta. Structural: landmarks, heading text present, section order, missing parts. Behavioural: menus and modals open on click and on Enter, focus returns to the trigger, no console errors the original does not also log, no failing request the original does not also have. Content: no missing headings, no dropped words. Then add the rule that matters: a check that could not measure something reports unmeasured and blocks a pass, so silence is never rounded up to success. Acceptance self-tests: the harness reports each claim with its evidence, an overall score and an explicit unknowns list; two consecutive runs give the same result; a deliberately broken build fails the right claim and no other; the loop is capped at three rounds and stops when a round changes nothing.",
+    "notes": [
+      "Never report a check that did not run as passed; the unmeasured list is the most useful part of the report.",
+      "Assert relations (inside, wider than, changed) rather than exact values you chose, or every cosmetic tweak breaks the suite.",
+      "Cap refinement rounds and stop on a round that changes nothing; otherwise a failing comparison loops forever."
+    ],
+    "demo": {
+      "style": "report",
+      "t1": "SELF-TEST",
+      "kind": "CLAIMS",
+      "meta": "pass / fail / unknown",
+      "variant": "claims"
+    },
+    "source": {
+      "pack": "craft",
+      "repo": "storytold/craft-anything",
+      "url": "https://github.com/storytold/craft-anything",
+      "license": "Apache-2.0",
+      "ref": "storytold/craft-anything + crates/ai/src/rebuild/check.rs (claims, similarity, unknowns); crates/engine/src/self_test.rs; docs/extending.md (a way to judge a build)",
+      "research": "storytold/craft-anything"
+    },
+    "sort_order": -975
+  },
+  {
+    "id": "cr-13-screenshot-diff-verify",
+    "title": "Screenshot Diff Verification Loop",
+    "description": "遮罩动态区做像素与结构双评分，逐档定位差异",
+    "category": "Replication Recipes",
+    "type": "playbook",
+    "tags": [
+      "screenshot",
+      "diff",
+      "pixel",
+      "ssim",
+      "verification"
+    ],
+    "palette": [
+      "#08090B",
+      "#141820",
+      "#EDF1F7",
+      "#FF2D78",
+      "#38BDF8"
+    ],
+    "prompt": "Verify the replica with a screenshot diff that is honest about what it cannot see. Preparation: serve the build at the same viewport sizes as the reference, set the same device pixel ratio, wait for fonts and images to settle, disable smooth scrolling, and freeze or mask anything that changes by itself (carousels, video, clocks, live counters) by drawing opaque boxes over those regions in both images so they are excluded rather than scored. Compare each pair two ways: a layout score from coarse regional colour, asking whether every block is in the right place and size, and a perceptual score from structural similarity on brightness, asking whether the text and edges match. Report both, because layout alone flatters mostly empty pages. Crop both to the common height and state each page's real height, since a shorter build silently scores well. Tolerances: 24 per channel for pixels, and treat sub-3-channel colour differences as identical. Output per width the score, the height delta, the worst regions ranked, and the top differences as plain sentences: layout and section order first, then spacing, type sizes, colour, missing copy. Acceptance self-tests: the harness reproduces the reference capture with the same recipes; deleting one section drops the score by at least 10 points; the score improves after each fix round; every diff saves its mask image.",
+    "notes": [
+      "Mask dynamic regions instead of averaging them; one carousel otherwise dominates the diff and hides real layout errors.",
+      "Score height delta alongside similarity; a build that stops early looks aligned but is missing a third of the page.",
+      "Compare at identical DPR and after fonts load, or antialiasing differences read as design differences."
+    ],
+    "demo": {
+      "style": "diff",
+      "t1": "PIXEL DIFF",
+      "kind": "VERIFY",
+      "meta": "masked regions",
+      "variant": ""
+    },
+    "source": {
+      "pack": "craft",
+      "repo": "storytold/craft-anything",
+      "url": "https://github.com/storytold/craft-anything",
+      "license": "Apache-2.0",
+      "ref": "storytold/craft-anything + crates/ai/src/rebuild/kinds/website.rs (web_pixels_compare, layout plus perceptual similarity, noise mask, common area); crates/ai/src/rebuild/study.rs (noise pass capture)",
+      "research": "storytold/craft-anything"
+    },
+    "sort_order": -974
+  },
+  {
+    "id": "cr-14-hero-clone-30-min-playbook",
+    "title": "Clone This Hero in Thirty Minutes",
+    "description": "五个计时阶段：取证、令牌、蓝图、实现、自测",
+    "category": "Replication Recipes",
+    "type": "playbook",
+    "tags": [
+      "playbook",
+      "hero",
+      "timebox",
+      "workflow",
+      "definition-of-done"
+    ],
+    "palette": [
+      "#F7F5F0",
+      "#111111",
+      "#FF6A3D",
+      "#1D4ED8",
+      "#A3A29B"
+    ],
+    "prompt": "Clone this hero in thirty minutes, working in five timed passes so scope cannot expand. Minutes 0 to 5, evidence: capture the hero at 1440, 1024 and 390 px plus its hover, focus, open and loading states; open each screenshot and write down only what you can see. Minutes 5 to 9, tokens: sample five colours, four type sizes with line-heights, the spacing ladder, two radii and the shadow; write tokens.css. Minutes 9 to 14, blueprint: one grid with named areas, the exact headline breaks, a control state table, and a mechanics sheet of numbers each with a source or an estimated mark. Minutes 14 to 24, craft: semantic markup, one component per grid area, tokens only, states through data attributes, entrance stagger under 600 ms on transform and opacity, one image with an explicit aspect ratio. Minutes 24 to 28, self-test: Tab through every control, check focus rings, pointer and keyboard parity, no sideways scroll at 390 px, no console errors, no layout shift; capture your build at the same three widths. Minutes 28 to 30, diff: compare pairs side by side, fix the single biggest difference, and write the remaining gap as a known limit. Done means all six: state parity, token purity, matching headline breaks, first-fold height within 24 px, no new console errors, and a written list of what is still unverified.",
+    "notes": [
+      "The timebox is the technique: a hero that is 95 percent right in 30 minutes beats a perfect header with no page.",
+      "Stop at two failed attempts on one difference and record the limit instead of burning the polish pass.",
+      "Rebuild copy and imagery as your own; a visually identical clone with the original's brand assets is not shippable."
+    ],
+    "demo": {
+      "style": "phases",
+      "t1": "30 MIN",
+      "kind": "PLAYBOOK",
+      "meta": "5 timed passes",
+      "variant": ""
+    },
+    "source": {
+      "pack": "craft",
+      "repo": "storytold/craft-anything",
+      "url": "https://github.com/storytold/craft-anything",
+      "license": "Apache-2.0",
+      "ref": "storytold/craft-anything + README.md (Study, Build, Check, Ready); crates/ai/src/rebuild/brief.rs (how to work); crates/setup/src/skill.md (evidence-first method)",
+      "research": "storytold/craft-anything"
+    },
+    "sort_order": -973
+  },
+  {
+    "id": "sc-01-liquid-chrome-raymarch-hero",
+    "title": "Liquid Chrome Raymarch Hero",
+    "description": "光线步进的液态铬金属英雄区，环境反射流动，鼠标推挤变形。",
+    "category": "Replication Recipes",
+    "type": "hero",
+    "tags": [
+      "webgl",
+      "three.js",
+      "shader",
+      "raymarching",
+      "chrome",
+      "dark"
+    ],
+    "palette": [
+      "#05060b",
+      "#e9edf5",
+      "#8f9bb3",
+      "#4d5bff"
+    ],
+    "prompt": "Build a full-viewport hero on a near-black #05060b canvas with an oversized chrome liquid-metal form breathing in the center, overlaid by a left-aligned headline in a tight sans at clamp(2.4rem, 6vw, 5.5rem) and one pill CTA. Render the metal with Three.js: a full-screen quad using a ShaderMaterial that raymarches an SDF built from 3-4 smoothly blended spheres plus sin-based noise displacement, 64-96 march steps, normals from the SDF gradient, and a procedural studio environment (two area-light gradients plus a horizon band) sampled by the reflection vector, with a Fresnel rim tinted #4d5bff. Animate the noise time at 0.25 units per second and ease a pointer-driven bulge with a 0.06 lerp. Cap devicePixelRatio at 1.5, render at half resolution on mobile, and pause the rAF loop when the canvas is offscreen or the tab is hidden. Under prefers-reduced-motion render one static frame and skip pointer influence. Keep the copy above the canvas at 0.92 opacity with a 24px vignette blur at the edges. Acceptance: 60fps on a 2021 laptop GPU at 1440x900, no popping on resize (debounce the resize uniform 150ms), the headline stays legible over the brightest highlight via a subtle text-shadow, and there is zero layout shift before the canvas mounts.",
+    "notes": [
+      "Shader is the main GPU cost: cap DPR, pause rAF offscreen, and never render the full DPR on phones.",
+      "Reduced motion gets a single static frame so the hero still reads as premium without animation.",
+      "Original GLSL; three.js is MIT and the raymarching approach follows Codrops (MIT demo). Do not paste Codrops or Shadertoy shader source verbatim; Shadertoy defaults to CC BY-NC-SA."
+    ],
+    "demo": {
+      "style": "shader",
+      "t1": "LIQUID CHROME",
+      "kind": "WEBGL",
+      "meta": "raymarch",
+      "variant": ""
+    },
+    "source": {
+      "pack": "community",
+      "repo": "community sources",
+      "url": "https://github.com/DavidHDev/react-bits",
+      "license": "see notes",
+      "ref": "Three.js (MIT, https://github.com/mrdoob/three.js) + Codrops liquid raymarching tutorial (MIT demo, https://tympanus.net/codrops/2024/07/15/how-to-create-a-liquid-raymarching-scene-using-three-js-shading-language/)",
+      "research": "Three.js (MIT, https://github.com/mrdoob/three.js) + Codrops liquid raymarching tutorial (MIT demo, https://tympanus.net/codrops/2024/07/15/how-to-create-a-liquid-raymarching-scene-using-three-js-shading-language/)"
+    },
+    "sort_order": -972
+  },
+  {
+    "id": "sc-02-grain-gradient-mesh",
+    "title": "Grainy Gradient Mesh Backdrop",
+    "description": "多层柔和渐变光斑叠加胶片噪点并缓慢漂移的深色背景。",
+    "category": "Replication Recipes",
+    "type": "section",
+    "tags": [
+      "gradient",
+      "noise",
+      "svg",
+      "grain",
+      "background",
+      "ambient"
+    ],
+    "palette": [
+      "#0a0912",
+      "#ff5f7a",
+      "#7b61ff",
+      "#f2ff8a"
+    ],
+    "prompt": "Create a full-bleed background section: four soft radial blobs (#ff5f7a, #7b61ff, #f2ff8a, #2dd4bf) at 1100-1400px diameter, filter blur(70px), opacity 0.55-0.8, distributed partly off-canvas on a #0a0912 base, morphing with 26s, 34s and 41s ease-in-out infinite alternate keyframes that move each blob 6-10% and scale 0.92-1.08. Add film grain as one inline SVG filter: feTurbulence type=fractalNoise, baseFrequency 0.78, numOctaves 3, stitchTiles=stitch, painted on a full-cover rect, composited with mix-blend-mode overlay at opacity 0.11 on an ::after layer; add a second blurred coarse copy at opacity 0.05 for dust. Keep all motion on transform and opacity only. Foreground: a centered two-line display headline at clamp(2.5rem, 5vw, 5rem) plus an 18px subline at 78% width, over a 40% black radial scrim so text keeps at least 7:1 contrast above the brightest blob. Responsive: below 768px use two blobs and drop the second grain layer. Reduced motion: freeze all drift keyframes and keep grain static. Acceptance: grain tiles with no visible seams at 1440x900, under 2ms of extra paint time versus a flat background, grain never intercepts pointer events, and the SVG filter is defined once and reused by reference.",
+    "notes": [
+      "One tiled grain filter keeps paint cost flat regardless of viewport size; do not animate the filter itself.",
+      "Blobs are transform/opacity only, and a scrim protects headline contrast when a bright blob drifts behind it.",
+      "feTurbulence is a W3C/SVG platform primitive (no license); the composition is original. React Bits Grainient is a MIT + Commons Clause reference only."
+    ],
+    "demo": {
+      "style": "shader",
+      "t1": "GRAIN MESH",
+      "kind": "BACKGROUND",
+      "meta": "feTurbulence",
+      "variant": "mesh"
+    },
+    "source": {
+      "pack": "community",
+      "repo": "community sources",
+      "url": "https://github.com/DavidHDev/react-bits",
+      "license": "see notes",
+      "ref": "W3C SVG feTurbulence filter primitive + CSS gradients (platform, https://developer.mozilla.org/en-US/docs/Web/SVG/Element/feTurbulence); comparable MIT + Commons Clause component at https://www.reactbits.dev/backgrounds/grainient",
+      "research": "W3C SVG feTurbulence filter primitive + CSS gradients (platform, https://developer.mozilla.org/en-US/docs/Web/SVG/Element/feTurbulence); comparable MIT + Commons Clause component at https://www.reactbits.dev/backgrounds/grainient"
+    },
+    "sort_order": -971
+  },
+  {
+    "id": "sc-03-kinetic-variable-type-hero",
+    "title": "Variable-Font Kinetic Headline",
+    "description": "大标题字重随光标距离连续变化，配合错峰入场的动态排版英雄区。",
+    "category": "Replication Recipes",
+    "type": "hero",
+    "tags": [
+      "typography",
+      "variable-font",
+      "cursor",
+      "spring",
+      "editorial",
+      "hero"
+    ],
+    "palette": [
+      "#0b0b0c",
+      "#f4f2ec",
+      "#ff4d1c",
+      "#c9c5ba"
+    ],
+    "prompt": "Design a type-only hero: a #0b0b0c stage with a left-aligned three-line headline in a variable sans (Inter Variable or Space Grotesk, SIL OFL) at clamp(3rem, 9vw, 8.5rem), line-height 0.9, letter-spacing -0.03em, color #f4f2ec, with one accent word in #ff4d1c. Split the headline into per-character spans, keep the full string in an aria-label on the parent and set the spans aria-hidden. On pointer move, measure each glyph's distance to the cursor; inside a 180px radius map distance through smoothstep to font-variation-settings wght 420-900 and letter-spacing 0-0.02em. Smooth each glyph with a spring (stiffness 180, damping 22) integrated once per rAF frame, never per event. Entrance: per-glyph opacity 0-1 and translateY 24px-0 over 520ms with cubic-bezier(0.22,1,0.36,1) and 18ms stagger. Add a 1px horizontal rule plus a mono eyebrow at 0.18em tracking, and a small caption bottom-right. Responsive: shrink the radius to 120px under 900px, clamp spring delta time to 34ms, and gate the effect behind (hover: hover) and (pointer: fine). Reduced motion: all glyphs settle at wght 620, no entrance translate, cursor mapping off. Acceptance: no reflow because variation axes change weight without swapping fonts, 60fps with 40 glyphs, text stays selectable, and the layout matches a screenshot at 1280x800 and 390x844.",
+    "notes": [
+      "Only use OFL/Apache variable fonts and verify the actual wght axis range, or the effect collapses to a binary bold.",
+      "One rAF loop drives every glyph spring; adding a listener per character is the usual performance failure here.",
+      "Pattern follows React Bits Variable Proximity (MIT + Commons Clause, attribution required); this prompt text is original."
+    ],
+    "demo": {
+      "style": "textfx",
+      "t1": "KINETIC",
+      "kind": "TYPE",
+      "meta": "variable font",
+      "variant": "kinetic"
+    },
+    "source": {
+      "pack": "community",
+      "repo": "community sources",
+      "url": "https://github.com/DavidHDev/react-bits",
+      "license": "see notes",
+      "ref": "React Bits Variable Proximity (MIT + Commons Clause, https://www.reactbits.dev/text-animations/variable-proximity) + variable font under SIL OFL 1.1 (https://openfontlicense.org/)",
+      "research": "React Bits Variable Proximity (MIT + Commons Clause, https://www.reactbits.dev/text-animations/variable-proximity) + variable font under SIL OFL 1.1 (https://openfontlicense.org/)"
+    },
+    "sort_order": -970
+  },
+  {
+    "id": "sc-04-decrypt-scramble-text",
+    "title": "Decrypt Scramble Microcopy",
+    "description": "字符先随机跳动再逐字锁定为真文，黑客风但克制的滚动与悬停微交互。",
+    "category": "Replication Recipes",
+    "type": "component",
+    "tags": [
+      "text",
+      "scramble",
+      "micro-interaction",
+      "terminal",
+      "hover",
+      "reveal"
+    ],
+    "palette": [
+      "#0a0a0a",
+      "#e6ffe6",
+      "#39ff14",
+      "#6b6b6b"
+    ],
+    "prompt": "Build a reusable scramble-reveal component. Given a target string, render it uppercase in a monospace face at 0.08em tracking, color #e6ffe6 on #0a0a0a, and reserve the final width so nothing reflows. Trigger on first entry into view (IntersectionObserver, threshold 0.4) and on hover. Run a 950ms reveal where every character first shows a random glyph from ABCDEFGHJKLMNPQRSTUVWXYZ0123456789#$%& and locks to the real character when a left-to-right front passes its index. Tick roughly 32ms with requestAnimationFrame, but derive progress from elapsed time so slow frames do not stretch the duration; stagger 12ms between neighbours and keep every fourth space permanent. Hover re-run: scramble only the hovered word for 450ms, never the whole line. Mark the animated span aria-hidden, expose the true string in aria-label, and respect prefers-reduced-motion by painting the final string immediately. Add a 1px #39ff14 underline that draws in over 300ms after the reveal, and a small mono label such as 0x1F above the block. Acceptance: final state is exactly the target string with no width jump because width is measured once, CPU stays under 3% when idle, scroll-back re-triggers at most once per element, and screen readers announce the label once with no glyph noise.",
+    "notes": [
+      "Time-based progress keeps the 950ms duration honest on 60Hz, 120Hz and throttled devices.",
+      "aria-label carries the real text while the animated span is hidden from assistive tech; re-runs are capped.",
+      "Pattern follows React Bits Decrypted Text (MIT + Commons Clause, attribution required); implementation is original."
+    ],
+    "demo": {
+      "style": "textfx",
+      "t1": "DECRYPT",
+      "kind": "TEXT",
+      "meta": "per-glyph",
+      "variant": "scramble"
+    },
+    "source": {
+      "pack": "community",
+      "repo": "community sources",
+      "url": "https://github.com/DavidHDev/react-bits",
+      "license": "see notes",
+      "ref": "React Bits Decrypted Text (MIT + Commons Clause, https://www.reactbits.dev/text-animations/decrypted-text)",
+      "research": "React Bits Decrypted Text (MIT + Commons Clause, https://www.reactbits.dev/text-animations/decrypted-text)"
+    },
+    "sort_order": -969
+  },
+  {
+    "id": "sc-05-magnetic-spring-buttons",
+    "title": "Magnetic Spring Buttons",
+    "description": "按钮随光标磁吸偏移、标签反向滞后，并带弹性回位的微交互。",
+    "category": "Replication Recipes",
+    "type": "component",
+    "tags": [
+      "magnetic",
+      "cursor",
+      "spring",
+      "button",
+      "micro-interaction"
+    ],
+    "palette": [
+      "#111113",
+      "#f7f7f2",
+      "#e6ff4d",
+      "#3a3a3f"
+    ],
+    "prompt": "Implement a magnetic button: a 168x52px pill with a #f7f7f2 fill, #111113 14px semibold label, 32px horizontal padding and a 999px radius, plus a ghost variant with a 1px rgba(255,255,255,0.24) border. Track the pointer on a padded hit area: the button rect expanded 28px on every side. While the pointer is inside, translate the pill up to 10px on X and 8px on Y, proportional to the pointer offset from center with a clamp at 1.0, and translate the inner label 4px further in the opposite direction so it lags visually. Drive both with a spring (stiffness 160, damping 18, mass 0.8) in a single rAF loop; on pointer leave both targets return to 0,0 and settle within roughly 450ms. Add a 2px radial highlight at 0.15 opacity that follows the pointer, and scale to 1.02 while pressed over 140ms with cubic-bezier(0.34,1.56,0.64,1). Use transform only and set will-change: transform only while hovered. Gate on (hover: hover) and (pointer: fine); on touch it behaves as a normal button. Reduced motion: no translation, only the 1.02 press scale and a 160ms brightness shift. Keep the focus-visible ring static at 2px offset 3px so keyboard users are never chased. Acceptance: the button stays clickable at every offset, no jitter when the pointer exits fast, max displacement never exceeds 12px, and DOM/ARIA is a real button element.",
+    "notes": [
+      "Make spring integration frame-rate independent and clamp delta time at 34ms to avoid explosion after tab switches.",
+      "No translation for touch or reduced motion, and the focus ring never moves, so accessibility is unaffected.",
+      "Pattern follows React Bits Magnet (MIT + Commons Clause); the spring integration is standard Motion (MIT)."
+    ],
+    "demo": {
+      "style": "pointer",
+      "t1": "MAGNETIC",
+      "kind": "SPRING",
+      "meta": "useSpring",
+      "variant": "magnet"
+    },
+    "source": {
+      "pack": "community",
+      "repo": "community sources",
+      "url": "https://github.com/DavidHDev/react-bits",
+      "license": "see notes",
+      "ref": "React Bits Magnet (MIT + Commons Clause, https://www.reactbits.dev/animations/magnet) + Motion useSpring (MIT, https://motion.dev/docs/react-use-spring)",
+      "research": "React Bits Magnet (MIT + Commons Clause, https://www.reactbits.dev/animations/magnet) + Motion useSpring (MIT, https://motion.dev/docs/react-use-spring)"
+    },
+    "sort_order": -968
+  },
+  {
+    "id": "sc-06-cursor-tilt-glare-card",
+    "title": "3D Tilt Card with Cursor Glare",
+    "description": "卡片随光标三维倾斜，高光与边框光弧同步跟随的展示卡组件。",
+    "category": "Replication Recipes",
+    "type": "component",
+    "tags": [
+      "3d",
+      "tilt",
+      "cursor",
+      "glare",
+      "card",
+      "spotlight"
+    ],
+    "palette": [
+      "#0e0f13",
+      "#14161c",
+      "#ffffff",
+      "#ffb347"
+    ],
+    "prompt": "Build a product card: 360x460px, 20px radius, #14161c surface on a #0e0f13 page, 1px inner border rgba(255,255,255,0.08), a 16:10 image area, and a bottom-aligned 24px title with a 14px meta row. Wrap it in a perspective: 1100px container and rotate the card from pointer position: map normalized coordinates (-1 to 1) to rotateX max 9deg (inverted) and rotateY max 12deg, plus translateZ 0-14px; ease with a 0.12 per-frame lerp, and snap back in 320ms with cubic-bezier(0.22,1,0.36,1) on leave. Overlay a glare layer: a 220px radial gradient at rgba(255,255,255,0.22) centered on pointer UV, mix-blend-mode soft-light, opacity 0-1 on hover. Add a border highlight on the same UV using a 160px radial mask-image so only a 1px arc lights up in #ffb347 at 0.6 opacity. Use transform and opacity only, set will-change: transform during interaction, detach pointer listeners on unmount. Responsive: reduce max tilt to 6deg below 900px, disable below 640px and for (pointer: coarse). Reduced motion: identity rotation, keep only a 1.02 hover scale with a 200ms glare fade. Acceptance: text stays crisp during tilt (translateZ on the label, never scale), 60fps with six cards on screen, and repeated fast pointer swipes always return to an exact identity matrix.",
+    "notes": [
+      "Use passive pointer listeners and transforms only; rotating with scale causes the text blur this effect usually suffers from.",
+      "Disable tilt on coarse pointers so taps are never stolen from the card link.",
+      "vanilla-tilt.js is MIT (retain its notice if reusing code); Magic UI MagicCard spotlight is MIT; the combined recipe is original."
+    ],
+    "demo": {
+      "style": "tilt",
+      "t1": "TILT CARD",
+      "kind": "GLARE",
+      "meta": "pointer reactive",
+      "variant": ""
+    },
+    "source": {
+      "pack": "community",
+      "repo": "community sources",
+      "url": "https://github.com/DavidHDev/react-bits",
+      "license": "see notes",
+      "ref": "vanilla-tilt.js (MIT, https://github.com/micku7zu/vanilla-tilt.js) + Magic UI MagicCard spotlight (MIT, https://github.com/magicuidesign/magicui)",
+      "research": "vanilla-tilt.js (MIT, https://github.com/micku7zu/vanilla-tilt.js) + Magic UI MagicCard spotlight (MIT, https://github.com/magicuidesign/magicui)"
+    },
+    "sort_order": -967
+  },
+  {
+    "id": "sc-07-seamless-infinite-marquee",
+    "title": "Seamless Infinite Marquee",
+    "description": "无接缝无限循环文字跑马灯，边缘渐隐、悬停暂停、方向可配。",
+    "category": "Replication Recipes",
+    "type": "component",
+    "tags": [
+      "marquee",
+      "ticker",
+      "css",
+      "loop",
+      "typography"
+    ],
+    "palette": [
+      "#0a0a0a",
+      "#f2f0ea",
+      "#ff5c35",
+      "#2a2a2a"
+    ],
+    "prompt": "Create a full-bleed marquee band: a 96-140px tall strip on #0a0a0a with #f2f0ea text at clamp(2rem, 4vw, 3.75rem), uppercase, -0.02em tracking, 1px #2a2a2a rules above and below, and items separated by a 12px dot glyph in #ff5c35. Duplicate the item track exactly twice in a flex row with 56px gap, then animate translateX 0 to -50% with linear timing, 26s duration, infinite, pausing on hover with a 300ms transition on animation-play-state. Expose speed (seconds per loop), direction (normal or reverse) and pauseOnHover props; reverse animates -50% to 0. Mask both edges with mask-image linear-gradient(90deg, transparent, black 12%, black 88%, transparent) so items fade instead of clip. Provide a visually hidden static list as the accessible content and mark the animated duplicate aria-hidden. Respect prefers-reduced-motion by stopping the animation and allowing horizontal scroll. Add a drag-to-nudge enhancement: pointer drag applies a 0.35 multiplier offset to the track, and the marquee resumes 600ms after release. Acceptance: no seam or gap at the loop point on a 1280px viewport, no cumulative subpixel drift after ten minutes, the duplicated track is always wider than two viewports so -50% is mathematically seamless, and the band never causes horizontal page overflow.",
+    "notes": [
+      "A duplicate track must be byte-identical; any difference in width shows as a jump every loop.",
+      "The hidden real list is the source of truth for screen readers; the moving track is decorative.",
+      "Magic UI Marquee is MIT (https://magicui.design/docs/components/marquee); this CSS-only variant adds drag nudge and pause props."
+    ],
+    "demo": {
+      "style": "marquee",
+      "t1": "MARQUEE",
+      "kind": "INFINITE",
+      "meta": "no seam",
+      "variant": ""
+    },
+    "source": {
+      "pack": "community",
+      "repo": "community sources",
+      "url": "https://github.com/DavidHDev/react-bits",
+      "license": "see notes",
+      "ref": "Magic UI Marquee (MIT, https://magicui.design/docs/components/marquee)",
+      "research": "Magic UI Marquee (MIT, https://magicui.design/docs/components/marquee)"
+    },
+    "sort_order": -966
+  },
+  {
+    "id": "sc-08-sticky-card-stack",
+    "title": "Sticky Card Stack",
+    "description": "四张卡片随滚动层层堆叠，上一张缩小变暗，形成叙事节奏。",
+    "category": "Replication Recipes",
+    "type": "section",
+    "tags": [
+      "sticky",
+      "scroll",
+      "stack",
+      "cards",
+      "scroll-linked"
+    ],
+    "palette": [
+      "#08090c",
+      "#1a1e2a",
+      "#f4f4f0",
+      "#7b8cff"
+    ],
+    "prompt": "Build a four-card stacked section: a 400vh scroll container, a sticky inner viewport at top 0 with height 100svh, and four cards of 720x520px (max-width 90vw) centered with 24px radius, surfaces stepping from #1a1e2a to #08090c, 1px rgba(255,255,255,0.08) borders, and alternating headline alignment. Give each card 100vh of scroll distance; as card i approaches, scale card i-1 from 1 to 0.92, translate it -3vh, drop brightness to 0.78 and opacity to 0.55, all derived from scroll progress via Motion useScroll({ target, offset: ['start start','end start'] }) and useTransform, with a 0.12 spring on scale so the stack never feels rigid. Cards enter from y 60px and opacity 0 with a 18% range and cubic-bezier(0.22,1,0.36,1). Use a #7b8cff progress dot per card in the left gutter. Keep everything on transform and opacity, and set will-change: transform only while the section is in view. Responsive: below 768px use 70vh cards, a 0.95 scale delta and no translate offset. Reduced motion: drop the pinning, render a normal vertical list with 24px gaps and 300ms fades. Acceptance: no jitter at card boundaries, the top card stays fully readable, sticky survives mobile URL-bar collapse because of svh, and the scroll listener unmounts when the section leaves the viewport.",
+    "notes": [
+      "Use 100svh, not 100vh, or mobile browser chrome collapse makes the pinned stack jump.",
+      "Only scale is springed; translation stays scroll-linked so cards never lag behind the scrollbar.",
+      "Pattern follows Codrops sticky-section demos (MIT demos) and React Bits Scroll Stack; Motion useScroll/useTransform is MIT."
+    ],
+    "demo": {
+      "style": "stack",
+      "t1": "STICKY STACK",
+      "kind": "CARDS",
+      "meta": "useScroll",
+      "variant": "community"
+    },
+    "source": {
+      "pack": "community",
+      "repo": "community sources",
+      "url": "https://github.com/DavidHDev/react-bits",
+      "license": "see notes",
+      "ref": "Motion useScroll/useTransform (MIT, https://motion.dev/docs/react-use-scroll) + Codrops sticky scroll demos (MIT demos, https://tympanus.net/codrops/hub/tag/sticky/)",
+      "research": "Motion useScroll/useTransform (MIT, https://motion.dev/docs/react-use-scroll) + Codrops sticky scroll demos (MIT demos, https://tympanus.net/codrops/hub/tag/sticky/)"
+    },
+    "sort_order": -965
+  },
+  {
+    "id": "sc-09-horizontal-scroll-gallery",
+    "title": "Vertical-Scroll Horizontal Gallery",
+    "description": "纵向滚动驱动横向画廊，粘性视口、弹簧跟手与逐卡视差。",
+    "category": "Replication Recipes",
+    "type": "full-page",
+    "tags": [
+      "scroll",
+      "horizontal",
+      "gallery",
+      "sticky",
+      "motion",
+      "cinematic"
+    ],
+    "palette": [
+      "#0c0c0e",
+      "#f0eee8",
+      "#d8a24a",
+      "#232327"
+    ],
+    "prompt": "Build a horizontal gallery driven by vertical scroll: a wrapper section with height (slides * 100vh) + 100vh, a sticky inner viewport of 100svh, and a flex track of six slides, each min-width 68vw, 32px gap, 18px radius and overflow hidden. Compute progress with Motion useScroll({ target: wrapperRef, offset: ['start start','end end'] }) and map scrollYProgress to translateX from 0 to -(trackWidth - viewportWidth), passed through useSpring({ stiffness: 120, damping: 26, mass: 0.6 }) so the track trails the scroll by a few frames. Inside each slide, parallax the image by plus or minus 40px based on its own progress while the index label moves 12px the opposite way. Measure trackWidth with ResizeObserver, and add proximity snapping: 180ms after scroll settles, scroll to the nearest slide center with the same easing. Add a 6-dot progress indicator and a gold #d8a24a counter. Responsive: below 768px remove the pin entirely and use an overflow-x auto row with scroll-snap-type x mandatory, hidden scrollbars and keyboard scrolling intact. Reduced motion: no pin, slides become a three-column grid. Acceptance: no blank gap or overrun at either end of the track, resize never desyncs the track math, 60fps while scrolling with six large images, and the last slide's right edge aligns exactly with the viewport edge.",
+    "notes": [
+      "Measure the track with ResizeObserver after images decode, or the end of the gallery will overshoot.",
+      "Touch devices get native scroll-snap instead of a pinned transform, which is cheaper and feels correct.",
+      "Motion's Scroll Horizontal Gallery example is MIT (https://motion.dev/examples/vue-scroll-horizontal); Lenis (MIT) can smooth the wheel."
+    ],
+    "demo": {
+      "style": "gallery",
+      "t1": "GALLERY",
+      "kind": "HORIZONTAL",
+      "meta": "Lenis",
+      "variant": ""
+    },
+    "source": {
+      "pack": "community",
+      "repo": "community sources",
+      "url": "https://github.com/DavidHDev/react-bits",
+      "license": "see notes",
+      "ref": "Motion Scroll Horizontal Gallery example (MIT, https://motion.dev/examples/vue-scroll-horizontal) + Lenis (MIT, https://github.com/darkroomengineering/lenis)",
+      "research": "Motion Scroll Horizontal Gallery example (MIT, https://motion.dev/examples/vue-scroll-horizontal) + Lenis (MIT, https://github.com/darkroomengineering/lenis)"
+    },
+    "sort_order": -964
+  },
+  {
+    "id": "sc-10-scroll-driven-reveal-progress",
+    "title": "CSS Scroll-Driven Reveal and Progress",
+    "description": "纯 CSS 滚动驱动：进入视口时裁切揭示，顶部进度条与滚动严格同步。",
+    "category": "Replication Recipes",
+    "type": "section",
+    "tags": [
+      "css",
+      "scroll-driven",
+      "view-timeline",
+      "reveal",
+      "progress"
+    ],
+    "palette": [
+      "#0a0a0b",
+      "#ffffff",
+      "#6ea8fe",
+      "#1c1c1f"
+    ],
+    "prompt": "Build this entirely with CSS scroll-driven animations and no scroll listener. Add a fixed 3px top rail: transform-origin left, scaleX 0 to 1 in a keyframe bound with animation-timeline: scroll(root block). Then create six reveal blocks: content clips upward from clip-path inset(0 0 100% 0) to inset(0 0 0 0) and translateY 32px to 0, bound with animation-timeline: view() and animation-range: entry 10% cover 38%, easing through a linear() timing function approximating 0.28 at 18% and 0.7 at 46%. Give the tallest block its own animation-range so it does not reveal too early. Type: #ffffff headlines at clamp(2rem, 5vw, 4rem) on #0a0a0b, #6ea8fe eyebrow labels, 120px section padding, 62ch text measure. Provide a progressive fallback inside @supports not (animation-timeline: view()): IntersectionObserver adds .is-inview and a 600ms cubic-bezier(0.22,1,0.36,1) transition. Respect prefers-reduced-motion by showing final states with no clip and no rail animation. Add a 1px #1c1c1f divider and a sticky side index that highlights the current section through the same view timelines. Acceptance: the six reveals need zero JavaScript, the rail is frame-locked to scroll, 4x CPU throttle shows no jank, content is fully visible in print and to crawlers, and Firefox and Safari fall back cleanly.",
+    "notes": [
+      "No JS listeners at all: the rail runs on the compositor and stays in lockstep with scroll.",
+      "Ship the IntersectionObserver fallback; Firefox shipped support later than Chromium, so Safari/Firefox users need it.",
+      "animation-timeline/view() is a W3C CSS standard (MDN); no library code or attribution needed."
+    ],
+    "demo": {
+      "style": "reveal",
+      "t1": "SCROLL REVEAL",
+      "kind": "CSS",
+      "meta": "animation-timeline",
+      "variant": "mask"
+    },
+    "source": {
+      "pack": "community",
+      "repo": "community sources",
+      "url": "https://github.com/DavidHDev/react-bits",
+      "license": "see notes",
+      "ref": "CSS scroll-driven animations, animation-timeline and view() (web standard, https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/animation-timeline)",
+      "research": "CSS scroll-driven animations, animation-timeline and view() (web standard, https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/animation-timeline)"
+    },
+    "sort_order": -963
+  },
+  {
+    "id": "sc-11-webgl-hover-distortion",
+    "title": "WebGL Image Distortion on Hover",
+    "description": "悬停图片时产生 RGB 分离、噪声波纹与轻微形变的 WebGL 画廊。",
+    "category": "Replication Recipes",
+    "type": "component",
+    "tags": [
+      "webgl",
+      "three.js",
+      "hover",
+      "distortion",
+      "image",
+      "shader"
+    ],
+    "palette": [
+      "#0b0b0d",
+      "#ff3b30",
+      "#3b82f6",
+      "#f5f5f0"
+    ],
+    "prompt": "Build an image grid of three columns of 16:10 tiles with 24px gaps, where every tile is a Three.js plane rendered by one shared WebGLRenderer with a ShaderMaterial and a single texture. Pass uniforms uPointer (pointer UV inside the tile), uStrength eased 0-1 with a 0.1 lerp, uTime, and place the plane at z 0. Shader: offset the sample uv by a two-octave simplex noise field scaled 0.35 and multiplied by uStrength and a 160px pointer falloff; split color channels by offsetting red along uv.x by 0.006 times strength and blue by -0.006; add subtle barrel curvature near the pointer. Above 0.2 strength, lift the tile to 1.03 scale and fade in a soft shadow. Render on demand: run rAF only while strength or time changes and stop after 400ms idle, rather than looping forever. Use one renderer with scissor per tile or one canvas per tile at DPR 1.5 max; dispose textures and geometry on unmount. Provide a plain img fallback with correct alt text, replacing the canvas on load or when WebGL is unavailable. Mobile: no WebGL, CSS clip-path hover only. Reduced motion: 200ms opacity lift and no ripple. Acceptance: no WebGL context-lost warnings, 60fps at 1440x900 with six tiles, hover-in and hover-out feel continuous, and the fallback renders first so tiles never flash empty.",
+    "notes": [
+      "Render on demand and dispose resources; always-on WebGL canvases are the main battery and thermal cost on laptops.",
+      "Keep the img fallback first in the DOM for SEO and for devices without WebGL, then swap in the canvas.",
+      "Pattern follows Codrops WebGL distortion hover tutorials (MIT demos); three.js is MIT; write original GLSL rather than copying a demo shader."
+    ],
+    "demo": {
+      "style": "shader",
+      "t1": "DISTORTION",
+      "kind": "HOVER",
+      "meta": "displacement",
+      "variant": "warp"
+    },
+    "source": {
+      "pack": "community",
+      "repo": "community sources",
+      "url": "https://github.com/DavidHDev/react-bits",
+      "license": "see notes",
+      "ref": "Codrops WebGL distortion hover tutorials (MIT demos, https://tympanus.net/codrops/?s=hover+effects) + Three.js (MIT, https://github.com/mrdoob/three.js)",
+      "research": "Codrops WebGL distortion hover tutorials (MIT demos, https://tympanus.net/codrops/?s=hover+effects) + Three.js (MIT, https://github.com/mrdoob/three.js)"
+    },
+    "sort_order": -962
+  },
+  {
+    "id": "sc-12-velocity-image-trail",
+    "title": "Velocity Image Trail Gallery",
+    "description": "指针划过多张随机旋转的图片拖尾，移动越快生成越密，策展氛围强。",
+    "category": "Replication Recipes",
+    "type": "section",
+    "tags": [
+      "cursor",
+      "trail",
+      "gallery",
+      "images",
+      "hover"
+    ],
+    "palette": [
+      "#0a0a0a",
+      "#e8e3d8",
+      "#d94f2b",
+      "#171717"
+    ],
+    "prompt": "Turn a full-viewport stage into a pointer image trail. Use a 16:10 dark stage (#0a0a0a) with one centered serif headline, a small mono hint reading move your cursor, and a fixed-position pool of ten image layers (230x300px, 4px radius, 1px rgba(255,255,255,0.12) border, object-fit cover) hidden at opacity 0. On pointer move, accumulate travel distance; each time 90px accumulates, activate the next pooled image at the pointer (offset -50%/-50%), with a random rotation from -5deg to 5deg, scale 0.92-1.08 and cycling z-index, then animate opacity 0-1 over 120ms and back to 0 over 700ms after a 60ms hold. Cycle through a curated image array so nothing repeats twice in a row. Dampen by velocity: cap at 14 images per second and skip spawns when movement is under 6px per frame. Use transforms only and recycle DOM nodes; never create elements on pointer move. Disable the trail for (pointer: coarse) and below 768px, replacing it with a static 2x2 grid. Reduced motion: no trail, static grid with 200ms hover fades. Keep the headline pointer-events: none, alt-text the images, and add a visually hidden keyboard-navigable list of the same projects. Acceptance: no memory growth after 60 seconds of fast movement, no late-load flashes because images are preloaded, and the trail stays below the headline in z-order.",
+    "notes": [
+      "Recycle a fixed pool of nodes; creating DOM images per pointer move causes GC hitches that read as stutter.",
+      "The trail is decorative, so the accessible gallery is the hidden link list, not the moving images.",
+      "Pattern follows React Bits Image Trail (MIT + Commons Clause) and Codrops Image Trail Effects (MIT demo); code here is synthesized."
+    ],
+    "demo": {
+      "style": "trail",
+      "t1": "IMAGE TRAIL",
+      "kind": "VELOCITY",
+      "meta": "pointer path",
+      "variant": ""
+    },
+    "source": {
+      "pack": "community",
+      "repo": "community sources",
+      "url": "https://github.com/DavidHDev/react-bits",
+      "license": "see notes",
+      "ref": "React Bits Image Trail (MIT + Commons Clause, https://www.reactbits.dev/animations/image-trail) + Codrops Image Trail Effects (MIT demo, https://tympanus.net/codrops/)",
+      "research": "React Bits Image Trail (MIT + Commons Clause, https://www.reactbits.dev/animations/image-trail) + Codrops Image Trail Effects (MIT demo, https://tympanus.net/codrops/)"
+    },
+    "sort_order": -961
+  },
+  {
+    "id": "sc-13-curtain-page-transition",
+    "title": "Curtain Page Transition",
+    "description": "多面板幕布自下而上遮住旧页，再顺势揭出新页的品牌化转场。",
+    "category": "Replication Recipes",
+    "type": "playbook",
+    "tags": [
+      "page-transition",
+      "overlay",
+      "curtain",
+      "routing",
+      "playbook"
+    ],
+    "palette": [
+      "#0b0b0b",
+      "#1a1a1a",
+      "#f5f3ee",
+      "#c8ff4d"
+    ],
+    "prompt": "Deliver a page-transition playbook with a curtain overlay. A fixed, pointer-events none, z-index 50 layer holds five full-height panels of 20vw each, filling with a #0b0b0b to #1a1a1a gradient and a 1px right border rgba(255,255,255,0.06), initially visibility hidden. On navigation intent: set visibility visible, translate panels from 100% to 0 with 40ms stagger over 560ms cubic-bezier(0.76,0,0.24,1); hold 220ms while the new route mounts behind the curtain; then translate panels 0 to -100% with reversed 40ms stagger over 560ms and hide the layer. Put a centered #f5f3ee wordmark and an indeterminate 1px #c8ff4d progress line at 0.9 opacity on the layer, fading out at peak coverage. Guard double clicks with an isAnimating lock, preload the target document before the exit phase, reset scroll to top while covered, and never trap focus in the overlay. Handle back and forward by reversing panel order. Reduced motion: replace panels with a 160ms opacity crossfade and no hold. Where supported, provide a View Transitions variant that swaps the panel choreography for ::view-transition-old/new(root) fades. Acceptance: no white flash between routes, the old page is fully covered before the DOM swap, timing is identical at 1x and 4x CPU throttle, and focus lands on the new h1 after the reveal.",
+    "notes": [
+      "Preload the next document during the hold phase; that 220ms is the budget that hides the network.",
+      "Focus must move to the new heading after the reveal, and the overlay must never trap it.",
+      "Swup is MIT and supplies the navigation lifecycle (https://swup.js.org/); panel animation is original CSS. Codrops overlay demos: check the per-demo license (MIT by default per their licensing page)."
+    ],
+    "demo": {
+      "style": "transition",
+      "t1": "CURTAIN",
+      "kind": "PAGES",
+      "meta": "swup",
+      "variant": ""
+    },
+    "source": {
+      "pack": "community",
+      "repo": "community sources",
+      "url": "https://github.com/DavidHDev/react-bits",
+      "license": "see notes",
+      "ref": "Swup page-transition lifecycle (MIT, https://swup.js.org/) + Codrops rotated-overlay reveal pattern (MIT demos by default, https://tympanus.net/codrops/licensing/)",
+      "research": "Swup page-transition lifecycle (MIT, https://swup.js.org/) + Codrops rotated-overlay reveal pattern (MIT demos by default, https://tympanus.net/codrops/licensing/)"
+    },
+    "sort_order": -960
+  },
+  {
+    "id": "sc-14-view-transition-card-morph",
+    "title": "View Transitions Card Morph",
+    "description": "用 View Transitions API 让网格卡片放大成详情页的共享元素转场。",
+    "category": "Replication Recipes",
+    "type": "playbook",
+    "tags": [
+      "view-transitions",
+      "spa",
+      "routing",
+      "morph",
+      "playbook"
+    ],
+    "palette": [
+      "#0b0c10",
+      "#fbfaf7",
+      "#4f8cff",
+      "#1a1d26"
+    ],
+    "prompt": "Ship a same-document View Transitions playbook on a card grid that opens a detail view. Render six product cards; give each card media wrapper view-transition-name card-{id} and give the detail hero the matching name plus a shared page-title group. Generate names per element and set view-transition-name none on offscreen cards so names never collide. Wrap the route DOM update in document.startViewTransition(() => renderDetail()), then style ::view-transition-group(card-*) with animation-duration 420ms and cubic-bezier(0.22,1,0.36,1), ::view-transition-old/new(card-*) with a 220px blur crossfade, and ::view-transition-old/new(root) with a plain 200ms opacity fade. Keep the detail hero at the same aspect ratio as the card image so the morph does not crop awkwardly; when ratios differ, animate the old image object-position instead of moving the box. Implement a back transition that morphs the hero into its card. Progressive enhancement: when startViewTransition is absent, run a 200ms crossfade and restore scroll correctly. Respect prefers-reduced-motion by skipping the pseudo-element animations with animation: none while still doing the DOM swap. Acceptance: no layout shift at either end of the morph, the URL changes only after the new DOM is ready, back navigation mid-animation does not throw, the transition survives rapid repeat clicks, and screen readers still announce the new view.",
+    "notes": [
+      "Names must be unique per snapshot: clear them on offscreen or recycled cards or the transition throws.",
+      "Reduced motion should keep the DOM swap and drop only the animations, not disable navigation.",
+      "View Transitions is a web-platform API (MDN/Chrome docs); no library dependency is required."
+    ],
+    "demo": {
+      "style": "transition",
+      "t1": "VIEW MORPH",
+      "kind": "API",
+      "meta": "startViewTransition",
+      "variant": "morph"
+    },
+    "source": {
+      "pack": "community",
+      "repo": "community sources",
+      "url": "https://github.com/DavidHDev/react-bits",
+      "license": "see notes",
+      "ref": "View Transitions API (MDN, https://developer.mozilla.org/en-US/docs/Web/API/Document/startViewTransition) + Chrome same-document transitions guide (https://developer.chrome.com/docs/web-platform/view-transitions/same-document)",
+      "research": "View Transitions API (MDN, https://developer.mozilla.org/en-US/docs/Web/API/Document/startViewTransition) + Chrome same-document transitions guide (https://developer.chrome.com/docs/web-platform/view-transitions/same-document)"
+    },
+    "sort_order": -959
+  },
+  {
+    "id": "sc-15-lenis-scroll-choreography",
+    "title": "Lenis Smooth-Scroll Choreography",
+    "description": "Lenis 惯性平滑滚动，用滚动速度驱动倾斜与视差，统一整页节奏。",
+    "category": "Replication Recipes",
+    "type": "playbook",
+    "tags": [
+      "lenis",
+      "smooth-scroll",
+      "velocity",
+      "skew",
+      "playbook"
+    ],
+    "palette": [
+      "#0a0a0a",
+      "#f2efe9",
+      "#ff6a3d",
+      "#222222"
+    ],
+    "prompt": "Wire Lenis into a single-page marketing site and choreograph motion from its scroll state. Instantiate new Lenis({ lerp: 0.09, wheelMultiplier: 1, smoothWheel: true, syncTouch: false }), drive it from one requestAnimationFrame loop with lenis.raf(time), and expose the instance for anchor links (lenis.scrollTo(target, { offset: -96 })) and route changes. Subscribe to lenis.on('scroll') and read velocity; map it to two effects: a section-level skewY of velocity * 0.02 clamped to plus or minus 4deg, and background layers translating at 0.18x the scroll delta, both lerped at 0.14 so they settle in about 300ms. Add a three-word hero headline whose words translate 0, -18px and -36px while fading to 0.35 as the hero exits. Mark modals and inner scroll areas with data-lenis-prevent, and call lenis.stop() while a menu overlay is open, with a 0.35s body-lock fade. Fallback: skip Lenis entirely under prefers-reduced-motion, keeping native scrolling and CSS scroll-driven animations where supported. Performance: never read layout inside the scroll callback, write transforms only, and debounce resize handling with ResizeObserver. Acceptance: scrolling feels like one continuous surface with no fight against sticky sections, no jank when a WebGL canvas is on screen, anchors land at the intended offset, and keyboard Page Down, Home and End still work.",
+    "notes": [
+      "Never measure layout in the scroll callback; Lenis plus WebGL on the same frame is where smooth sites start stuttering.",
+      "Provide a reduced-motion path and native anchor fallback, or the page becomes unusable without JS.",
+      "Lenis is MIT (https://lenis.darkroom.engineering/). GSAP ScrollTrigger is optional here but uses the free GreenSock licence, not an OSI-approved one."
+    ],
+    "demo": {
+      "style": "scrollmap",
+      "t1": "SMOOTH SCROLL",
+      "kind": "LENIS",
+      "meta": "lerp 0.1",
+      "variant": "smooth"
+    },
+    "source": {
+      "pack": "community",
+      "repo": "community sources",
+      "url": "https://github.com/DavidHDev/react-bits",
+      "license": "see notes",
+      "ref": "Lenis (MIT, https://github.com/darkroomengineering/lenis) + Motion useVelocity (MIT, https://motion.dev/docs/react-use-velocity)",
+      "research": "Lenis (MIT, https://github.com/darkroomengineering/lenis) + Motion useVelocity (MIT, https://motion.dev/docs/react-use-velocity)"
+    },
+    "sort_order": -958
+  },
+  {
+    "id": "sc-16-glass-bento-grid",
+    "title": "Glass Bento Grid Showcase",
+    "description": "磨砂玻璃卡片错落拼成的 Bento 网格，边缘高光与网格高亮随光标。",
+    "category": "Replication Recipes",
+    "type": "section",
+    "tags": [
+      "bento",
+      "grid",
+      "glassmorphism",
+      "layout",
+      "cards"
+    ],
+    "palette": [
+      "#0b0c10",
+      "#161922",
+      "#ffffff",
+      "#8b5cf6"
+    ],
+    "prompt": "Design a bento grid feature section: a 12-column, 3-row CSS grid on #0b0c10 with 16px gaps and max-width 1200px, containing seven tiles with deliberately uneven spans (6x2 hero, 3x1, 3x1, 4x1, 4x1, 4x1, 12x1 stat strip) so the composition reads asymmetric but never ragged. Every tile is glassmorphism: background linear-gradient(160deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02)), backdrop-filter blur(18px) saturate(140%), 1px border rgba(255,255,255,0.12), 20px radius, 24px padding, and a top-edge highlight via inset 0 1px 0 rgba(255,255,255,0.18). Place a three-stop #8b5cf6 mesh gradient behind the grid so the blur has something to refract, and add a 300px cursor-following radial highlight per tile at 0.12 opacity. Content mix: one counter, one 16:10 image, one inline SVG sparkline, one pull quote, one CTA, one logo row, one stat. Entrance: tiles rise 24px and fade in with 60ms stagger over 600ms cubic-bezier(0.22,1,0.36,1) on in-view. Responsive: two columns below 1024px and one column below 640px with all spans reset; drop backdrop-filter below 640px while keeping the translucent fill. Reduced motion: static tiles, no stagger. Acceptance: no clipped text at any span, body copy at 4.5:1 contrast over the refracted background, backdrop-filter under 4ms per frame on integrated GPUs, and the grid reflows without holes.",
+    "notes": [
+      "backdrop-filter is the expensive part: cap the blur radius, limit the number of blurred tiles, and drop it on small screens.",
+      "Guarantee 4.5:1 body contrast with a scrim or a darker tile fill because what sits under the glass is unpredictable.",
+      "Magic UI Bento Grid is MIT (https://magicui.design/docs/components/bento-grid); the glass styling and cursor highlight are standard CSS."
+    ],
+    "demo": {
+      "style": "bento",
+      "t1": "BENTO",
+      "kind": "GLASS",
+      "meta": "frosted tiles",
+      "variant": ""
+    },
+    "source": {
+      "pack": "community",
+      "repo": "community sources",
+      "url": "https://github.com/DavidHDev/react-bits",
+      "license": "see notes",
+      "ref": "Magic UI Bento Grid (MIT, https://magicui.design/docs/components/bento-grid) + CSS backdrop-filter (platform)",
+      "research": "Magic UI Bento Grid (MIT, https://magicui.design/docs/components/bento-grid) + CSS backdrop-filter (platform)"
+    },
+    "sort_order": -957
+  }
+]

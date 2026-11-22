@@ -70,7 +70,9 @@ const I18N = {
     allSources: '全部来源',
     sourceMotionsites: 'MotionSites 主库',
     sourceCommunity: '社区精选',
+    sourceRecipes: '复刻配方',
     sourceBadge: '社区',
+    sourceBadgeRecipes: '配方',
     sourceRepoLabel: '来源仓库',
     sourcePathLabel: '原始文件',
     sourceLicenseLabel: '许可证',
@@ -142,7 +144,9 @@ const I18N = {
     allSources: 'All sources',
     sourceMotionsites: 'MotionSites library',
     sourceCommunity: 'Community picks',
+    sourceRecipes: 'Recipe pack',
     sourceBadge: 'Community',
+    sourceBadgeRecipes: 'Recipe',
     sourceRepoLabel: 'Source repository',
     sourcePathLabel: 'Original file',
     sourceLicenseLabel: 'License',
@@ -195,7 +199,7 @@ function debounce(fn, ms) {
 async function fetchJSON(url) {
   // BUST-CACHE: append a build stamp so each deploy invalidates browser caches.
   const sep = url.includes('?') ? '&' : '?';
-  const fullUrl = url + sep + 'v=20260831v6';
+  const fullUrl = url + sep + 'v=20261122v1';
   const res = await fetch(fullUrl, { cache: 'no-store' });
   if (!res.ok) throw new Error('fetchJSON ' + url + ' ' + res.status);
   return res.json();
@@ -217,7 +221,7 @@ async function loadPromptText(id) {
   if (!rel) { __MS_TEXT_CACHE[id] = ''; return ''; }
   const p = (async function () {
     try {
-      const res = await fetch('data/' + rel + '?v=20260831v6', { cache: 'no-store' });
+      const res = await fetch('data/' + rel + '?v=20261122v1', { cache: 'no-store' });
       if (!res.ok) throw new Error('text ' + id + ' ' + res.status);
       const txt = await res.text();
       __MS_TEXT_CACHE[id] = txt;
@@ -286,7 +290,10 @@ const CATEGORY_PALETTE = {
   'Health App': 'Emerald Drift', 'Artificial Intelligence': 'Emerald Drift',
   'Music': 'Rose Pulse', 'Technology': 'Cyan Tide', 'Component': 'Indigo Aurora',
   'Learning': 'Cyan Tide', 'Learning SaaS': 'Cyan Tide', '404': 'Solar Glow',
-  'Developer': 'Indigo Aurora'
+  'Developer': 'Indigo Aurora',
+  'Replication Recipes': 'Indigo Aurora',
+  'Scroll Effects': 'Lavender Beam',
+  'Animations & Backgrounds': 'Rose Pulse'
 };
 
 const paletteFor = (x) => {
@@ -539,6 +546,7 @@ function cardHTML(x) {
     + '<div class="badge-row">'
     + (full ? '<span class="badge full">' + t('fullBadge') + '</span>' : '<span class="badge muted">' + t('metadataBadge') + '</span>')
     + (x.source_kind === 'community' ? '<span class="badge community">' + t('sourceBadge') + '</span>' : '')
+    + (x.source_kind === 'recipes' ? '<span class="badge recipes">' + t('sourceBadgeRecipes') + '</span>' : '')
     + '</div>'
     + '<div class="card-media-wrap">' + lazyMediaOf(x) + '</div>'
     + '<div class="body">'
@@ -565,7 +573,7 @@ function render() {
   if (q) {
     const tokens = q.split(/\s+/).filter(Boolean);
     list = list.filter((x) => {
-      const hay = (x.title + ' ' + (x.description || '') + ' ' + x.id + ' ' + (x.category || '') + ' ' + (x.type || '') + ' ' + (x.prompt_text || '') + ' ' + (x.source_repo || '') + ' ' + (x.source_path || '')).toLowerCase();
+      const hay = (x.title + ' ' + (x.description || '') + ' ' + x.id + ' ' + (x.category || '') + ' ' + (x.type || '') + ' ' + x.prompt_text + ' ' + (x.source_repo || '') + ' ' + (x.source_path || '') + ' ' + (Array.isArray(x.tags) ? x.tags.join(' ') : '')).toLowerCase();
       return tokens.every((tk) => hay.includes(tk));
     });
   }
@@ -598,7 +606,13 @@ function renderBatch(list, start, end) {
   return slice.length;
 }
 
+// Generation token: a filter change during progressive rendering must cancel the
+// in-flight batch loop, otherwise batches from the previous list keep appending and
+// the grid shows a mix of two result sets.
+let __MS_RENDER_GEN = 0;
+
 function renderProgressive(list) {
+  const gen = ++__MS_RENDER_GEN;
   if (typeof requestAnimationFrame === 'undefined') {
     renderBatch(list, 0, list.length);
     return;
@@ -606,6 +620,7 @@ function renderProgressive(list) {
   const BATCH = 60;
   let i = 0;
   function step() {
+    if (gen !== __MS_RENDER_GEN) return; // superseded by a newer render
     const n = renderBatch(list, i, i + BATCH);
     i += n;
     if (i < list.length) requestAnimationFrame(step);
@@ -632,7 +647,7 @@ function chipInitFromLite(lite) {
   });
 }
 
-function updateHeaderStats(lite) { if (!lite) return; const map = { 'stat-curated': lite.total || 0, 'stat-text': lite.complete || 0, 'stat-anim': (lite.images || 0) + (lite.videos || 0), 'stat-videos': lite.videos || 0, 'stat-concepts': lite.concepts || 0 }; for (const id in map) { const el = document.getElementById(id); if (el) el.textContent = map[id]; } }
+function updateHeaderStats(lite) { if (!lite) return; const map = { 'stat-curated': lite.total || 0, 'stat-text': lite.complete || 0, 'stat-anim': (lite.images || 0) + (lite.videos || 0), 'stat-videos': lite.videos || 0, 'stat-recipes': lite.recipes || 0 }; for (const id in map) { const el = document.getElementById(id); if (el) el.textContent = map[id]; } }
 
 function animateSearch(q) {
   const $s = $('spotlight');
@@ -739,11 +754,13 @@ function metaPanelHTML(x) {
   if (x.local_kind) push(t('metaLocal'), x.local_kind);
   if (x.text_len) push('text_len', x.text_len);
   if (x.local_rel) push('local_rel', x.local_rel);
+  if (x.source_repo) push(t('sourceRepoLabel'), x.source_repo);
+  if (x.source_license) push(t('sourceLicenseLabel'), x.source_license);
   const links = [];
   if (x.image_preview_url) links.push('<a class="meta-link" target="_blank" rel="noopener" href="' + esc(x.image_preview_url) + '">' + esc(t('metaOpenImage')) + '</a>');
   if (x.video_preview_url) links.push('<a class="meta-link" target="_blank" rel="noopener" href="' + esc(x.video_preview_url) + '">' + esc(t('metaOpenVideo')) + '</a>');
-  if (x.id && x.source_kind !== 'community') links.push('<a class="meta-link" target="_blank" rel="noopener" href="https://motionsites.ai/p/' + esc(x.id) + '">' + esc(t('metaOriginal')) + '</a>');
-  if (x.source_kind === 'community' && x.source_url) links.push('<a class="meta-link" target="_blank" rel="noopener" href="' + esc(x.source_url) + '">' + esc(t('metaOpenSource')) + '</a>');
+  if (x.id && (x.source_kind || 'motionsites') === 'motionsites') links.push('<a class="meta-link" target="_blank" rel="noopener" href="https://motionsites.ai/p/' + esc(x.id) + '">' + esc(t('metaOriginal')) + '</a>');
+  if ((x.source_kind === 'community' || x.source_kind === 'recipes') && x.source_url) links.push('<a class="meta-link" target="_blank" rel="noopener" href="' + esc(x.source_url) + '">' + esc(t('metaOpenSource')) + '</a>');
   return ''
     + '<div class="meta-note">' + esc(t('noFullPromptHint')) + '</div>'
     + '<div class="meta-section-title">' + esc(t('metaSection')) + '</div>'
@@ -956,6 +973,7 @@ function rebuildSourceOptions() {
   const opts = ['<option value="">' + t('allSources') + '</option>'];
   if (present.has('motionsites')) opts.push('<option value="motionsites">' + t('sourceMotionsites') + '</option>');
   if (present.has('community')) opts.push('<option value="community">' + t('sourceCommunity') + '</option>');
+  if (present.has('recipes')) opts.push('<option value="recipes">' + t('sourceRecipes') + '</option>');
   sel.innerHTML = opts.join('');
   if (cur && (cur === '' || present.has(cur))) sel.value = cur;
 }

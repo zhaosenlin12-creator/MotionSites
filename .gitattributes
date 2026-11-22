@@ -1,0 +1,12 @@
+# Keep the repository text files LF on every platform (the build is byte-stable and
+# the checks compare committed artifacts). Media stays binary.
+* text=auto eol=lf
+*.mp4 binary
+*.webm binary
+*.webp binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.woff2 binary
+*.gz binary

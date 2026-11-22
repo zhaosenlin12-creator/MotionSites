@@ -180,3 +180,31 @@ aw.githubusercontent.com/superdesigndev/superdesign-prompts/main/....
 - Every remaining mp4 on disk is referenced by exactly one card (106 mp4 referenced, 106 mp4 on disk). The lone `assets/previews/website-builder.mp4` is intentional — `_redirects` maps it to `.webp` (a 2 KB stub used by the 301 fallback).
 - `catalog-lite.json` regenerates correctly and the live header counters (`317 curated / 317 full text / 124 animations / 193 videos / 0 concepts`) load via the lite payload.
 
+## [1.2.0] - 2026-11-22
+
+### Added
+- **44-prompt replication-recipe pack** (`data/recipe_pack.json`): "how do I reproduce this premium effect?" prompts in three tracks — reverse-engineering (`morluto/rea`, MIT, 14), craft pipeline (`storytold/craft-anything`, Apache-2.0, 14) and community effect patterns (MIT libraries and W3C/MDN standards, 16). Every record carries `source_id`, `source_repo`, `source_url` and `source_license`.
+- `scripts/recipe_demo.html` + `scripts/recipe_demo.js`: a pure HTML/CSS demo kit with 29 archetypes (teardown, tokens, timeline, easing curves, scroll map, state machine, acceptance report, pixel diff, material ladder, shader field, bento, trail…). Every demo exposes `window.__seek(ms)` so capture frames are deterministic.
+- `scripts/render_recipe_previews.py`: renders 36 frames per recipe at 1280×800 through Playwright, encodes a 2.4 s / 15 fps mp4 and a webp poster. 88 new preview files (~5 MB).
+- `scripts/build_recipe_docs.js` → generated `docs/recipe-pack.md` provenance table.
+- New catalog category **Replication Recipes** (44 cards) with its own chip; pinned above the scraped catalog via negative `sort_order`.
+- New `source_kind: recipes`: source-filter option ("Recipe pack" / 复刻配方), card badge (配方), and the header's fifth stat now shows the recipe count instead of the always-zero concept count.
+- Search now matches tags; the modal metadata panel links a recipe to its source repo and licence.
+- `scripts/tests/recipe-pack.test.js`: id/prompt/preview/provenance invariants, no-external-font guard, cache-bust stamp sync.
+
+### Changed
+- **Build pipeline reconciled with the published site.** `build.js` was stale: re-running it produced a 504-card catalog and rewrote `index.html` with the old Google-Fonts head. `ms_prompts_merged.json` / `ms_prompts_with_text.json` are now rebuilt from the published 317 cards (including the 24 bodies that only existed in `catalog-text.json`), `ms_template.html` is re-synced to the shipped self-hosted-font page, and the build only publishes cards with a preview + non-empty body (the 2026-09 cleanup rule is now enforced in code).
+- `build.js` writes pretty JSON with stable ordering, prunes stale `catalog-text/*.txt`, and asserts the media/category/text invariants on every run; a second run on an unchanged tree is byte-identical.
+- Catalog lite counts: **361 total / 193 images / 168 videos / 0 concepts / 44 recipes / 361 complete**; `motionsites=296`, `community=21`.
+- Header counters: removed a duplicated `.stats` wrapper; the fifth stat is now Recipes (driven by `catalog-lite.recipes`).
+- `audit-catalog.js` audits the recipe pack too; `findOrphanAssets` accounts for `poster_rel` and the documented `website-builder.mp4` redirect stub.
+- `ms_script.js` cache-bust stamp → `20261122v1`; the build writes the same stamp into the script tag (unit-tested).
+- Removed the unused `assets/previews/taskly.webm`.
+
+### Verified
+- `node scripts/build.js` → 361 records, invariants hold; identical output on re-run.
+- `node scripts/audit-catalog.js` → `AUDIT OK records=361 complete=361 recipes=44 community=21 missingBodies=0 assets=361`.
+- `node --test scripts/tests/*.test.js` → 42 tests, 38 pass, 4 pre-existing failures in `import-liro.test.js` because the git-ignored `sources/akkikumar72/liro-prompts` research cache is absent in a fresh clone (same failures on the untouched checkout).
+- Browser check at 1440×900: 361 cards, chip `Replication Recipes 44`, source filter offers the recipe pack, first-card modal shows the full prompt, zero console errors.
+
+

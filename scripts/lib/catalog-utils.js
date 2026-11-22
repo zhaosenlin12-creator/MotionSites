@@ -172,6 +172,20 @@ function findOrphanAssets(root) {
   const referenced = new Set();
   for (const record of merged) {
     if (record.local_rel) referenced.add(String(record.local_rel).replace(/\\/g, '/'));
+    if (record.poster_rel) referenced.add(String(record.poster_rel).replace(/\\/g, '/'));
+  }
+  // Documented redirect stub: a 2.1 KB h264 placeholder kept so a renamed asset's old
+  // .mp4 URL still answers on GitHub Pages (which ignores _redirects). See README.
+  referenced.add('assets/previews/website-builder.mp4');
+  // The curated recipe pack keeps its media outside ms_prompts_merged.json.
+  const recipePath = path.join(root, 'data/recipe_pack.json');
+  if (fs.existsSync(recipePath)) {
+    const pack = JSON.parse(fs.readFileSync(recipePath, 'utf8').replace(/^﻿/, ''));
+    for (const recipe of pack) {
+      if (!recipe || !recipe.id) continue;
+      referenced.add('assets/previews/' + recipe.id + '.mp4');
+      referenced.add('assets/previews/' + recipe.id + '.webp');
+    }
   }
   const orphanDirs = ['assets/previews', 'assets/community'];
   const orphans = [];

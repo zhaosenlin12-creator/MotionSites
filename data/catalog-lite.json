@@ -1,9 +1,12 @@
 {
-  "total": 317,
-  "complete": 317,
+  "total": 361,
+  "complete": 361,
   "images": 193,
-  "videos": 124,
+  "videos": 168,
   "concepts": 0,
+  "recipes": 44,
+  "motionsites": 296,
+  "community": 21,
   "topCategories": [
     {
       "name": "Hero Section",
@@ -12,6 +15,10 @@
     {
       "name": "Landing Page",
       "n": 49
+    },
+    {
+      "name": "Replication Recipes",
+      "n": 44
     },
     {
       "name": "SaaS",
@@ -36,14 +43,11 @@
     {
       "name": "CTA Section",
       "n": 8
-    },
-    {
-      "name": "Travel",
-      "n": 7
     }
   ],
   "categories": {
     "404": 1,
+    "Replication Recipes": 44,
     "Landing Page": 49,
     "Hero Section": 73,
     "Portfolio": 4,
@@ -103,6 +107,5 @@
     "Sign in": 1,
     "3D": 1
   },
-  "version": 2,
-  "cleanedAt": "2026-09-01T10:42:54.604Z"
+  "version": 2
 }
