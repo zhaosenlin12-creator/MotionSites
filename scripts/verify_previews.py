@@ -26,20 +26,20 @@ def serve():
 def sweep(page, expect):
     seen = 0
     stable = 0
-    for _ in range(240):
-        page.mouse.wheel(0, 2600)
-        page.wait_for_timeout(120)
+    for _ in range(400):
+        page.mouse.wheel(0, 900)
+        page.wait_for_timeout(420)
         n = page.evaluate("() => document.querySelectorAll('.card:not(.skeleton)').length")
         if n == seen:
             stable += 1
-            if stable >= 6 and n >= expect:
+            if stable >= 8 and n >= expect:
                 break
         else:
             stable = 0
             seen = n
-    page.wait_for_timeout(1200)
+    page.wait_for_timeout(2000)
     page.evaluate("() => window.scrollTo(0, document.body.scrollHeight)")
-    page.wait_for_timeout(1200)
+    page.wait_for_timeout(2000)
     return page.evaluate("() => document.querySelectorAll('.card:not(.skeleton)').length")
 
 
@@ -63,22 +63,43 @@ def main():
             pg.on("console", lambda m: errors.append("console:" + m.text[:140]) if m.type == "error" else None)
             pg.on("requestfailed", lambda r: failed.append(r.url))
             pg.on("response", lambda r: failed.append(f"{r.status} {r.url}") if r.status >= 400 else None)
-            pg.goto(url, wait_until="networkidle", timeout=60000)
-            pg.wait_for_timeout(800)
+            pg.goto(url, wait_until="domcontentloaded", timeout=60000)
+            pg.wait_for_selector(".card:not(.skeleton)", timeout=45000)
+            pg.wait_for_timeout(1200)
             cards = sweep(pg, args.expect)
+            # Decode check at several scroll checkpoints: a card's media is only armed while it is
+            # near the viewport, so testing at the end of the scroll would flag unloaded thumbnails
+            # as broken. Only images intersecting the viewport count.
+            checkpoints = []
+            for frac in (0.0, 0.2, 0.4, 0.6, 0.8, 1.0):
+                pg.evaluate("(f) => window.scrollTo(0, Math.max(0, (document.documentElement.scrollHeight - window.innerHeight) * f))", frac)
+                pg.wait_for_timeout(2600)
+                checkpoints.append(pg.evaluate("""() => {
+                    const vh = window.innerHeight;
+                    const vis = [...document.querySelectorAll('.card img')].filter((i) => {
+                        const r = i.getBoundingClientRect();
+                        return r.bottom > 0 && r.top < vh && r.width > 0;
+                    });
+                    return {
+                        visible: vis.length,
+                        decoded: vis.filter((i) => i.complete && i.naturalWidth > 0).length,
+                        pending: vis.filter((i) => !i.complete || i.naturalWidth === 0).map((i) => (i.currentSrc || i.src).split('/').pop()).slice(0, 5),
+                    };
+                }"""))
             stats = pg.evaluate("""() => {
                 const imgs = [...document.querySelectorAll('.card img')];
-                const vids = [...document.querySelectorAll('.card video')];
-                const broken = imgs.filter((i) => !i.complete || i.naturalWidth === 0).map((i) => i.currentSrc || i.src).slice(0, 10);
-                const tiny = imgs.filter((i) => i.naturalWidth > 0 && i.naturalWidth < 200).length;
-                return { imgs: imgs.length, vids: vids.length, broken, tiny,
-                         decoded: imgs.filter((i) => i.complete && i.naturalWidth > 0).length };
+                return { imgs: imgs.length, vids: document.querySelectorAll('.card video').length,
+                         tiny: imgs.filter((i) => i.naturalWidth > 0 && i.naturalWidth < 200).length };
             }""")
             print("url:", url)
-            print("cards:", cards, "| images:", stats["imgs"], "decoded:", stats["decoded"],
-                  "| videos:", stats["vids"], "| tiny(<200px):", stats["tiny"])
-            if stats["broken"]:
-                print("BROKEN:", stats["broken"])
+            print("cards:", cards, "| images:", stats["imgs"], "| videos:", stats["vids"], "| tiny(<200px):", stats["tiny"])
+            total_vis = sum(c["visible"] for c in checkpoints)
+            total_ok = sum(c["decoded"] for c in checkpoints)
+            print("visible-image checkpoints:", [(c["visible"], c["decoded"]) for c in checkpoints])
+            print("decoded visible images:", total_ok, "/", total_vis)
+            pending = [p for c in checkpoints for p in c["pending"]]
+            if pending:
+                print("pending at checkpoints:", pending[:8])
 
             # Every card carries its media URL on the .media node (data-src / data-poster), whether or
             # not the loader has armed it yet. HEAD them all so the sweep covers 100% of the grid.
@@ -115,8 +136,9 @@ def main():
             real_failed = [f for f in failed if not any(f.endswith(p) or f.endswith(p.split('/', 3)[-1]) for p in probe_abs)]
             print("page errors:", len(errors), errors[:4])
             print("failed requests (site):", len(real_failed), real_failed[:6])
-            ok = (not stats["broken"] and not real_failed and not errors and not bad
-                  and cards >= args.expect and len(urls) >= args.expect)
+            ok = (not real_failed and not errors and not bad
+                  and cards >= args.expect and len(urls) >= args.expect
+                  and total_vis > 0 and total_ok == total_vis)
             print("SWEEP", "OK" if ok else "FAIL")
             b.close()
             return 0 if ok else 1

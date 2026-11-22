@@ -24,7 +24,7 @@ const zlib = require('node:zlib');
 
 const ROOT = path.resolve(__dirname, '..');
 const DATA = path.join(ROOT, 'data');
-const BUILD_STAMP = '20261122v6';
+const BUILD_STAMP = '20261122v7';
 const MAX_PREVIEW_BYTES = 24 * 1024 * 1024;
 const IMAGE_KINDS = new Set(['webp', 'gif', 'png', 'jpeg']);
 const VIDEO_KINDS = new Set(['mp4', 'webm', 'hls']);

@@ -223,7 +223,7 @@ function debounce(fn, ms) {
 async function fetchJSON(url) {
   // BUST-CACHE: append a build stamp so each deploy invalidates browser caches.
   const sep = url.includes('?') ? '&' : '?';
-  const fullUrl = url + sep + 'v=20261122v6';
+  const fullUrl = url + sep + 'v=20261122v7';
   const res = await fetch(fullUrl, { cache: 'no-store' });
   if (!res.ok) throw new Error('fetchJSON ' + url + ' ' + res.status);
   return res.json();
@@ -245,7 +245,7 @@ async function loadPromptText(id) {
   if (!rel) { __MS_TEXT_CACHE[id] = ''; return ''; }
   const p = (async function () {
     try {
-      const res = await fetch('data/' + rel + '?v=20261122v6', { cache: 'no-store' });
+      const res = await fetch('data/' + rel + '?v=20261122v7', { cache: 'no-store' });
       if (!res.ok) throw new Error('text ' + id + ' ' + res.status);
       const txt = await res.text();
       __MS_TEXT_CACHE[id] = txt;
@@ -360,6 +360,19 @@ function placeholderHTML(x, opts) {
 function onImgError(e) {
   const img = e.target;
   if (!img || img.tagName !== 'IMG') return;
+  // CDNs occasionally drop one request (ERR_HTTP2_PROTOCOL_ERROR); retrying twice with a
+  // cache-busting param keeps a flaky network from permanently degrading a card to its
+  // gradient placeholder.
+  const tries = Number(img.dataset.retry || 0);
+  if (tries < 2) {
+    img.dataset.retry = String(tries + 1);
+    const current = img.getAttribute('src') || '';
+    if (!current) return;
+    const base = current.replace(/([?&])r=\d+/g, '$1').replace(/[?&]$/, '');
+    const sep = base.includes('?') ? '&' : '?';
+    setTimeout(() => { img.src = base + sep + 'r=' + Date.now(); }, 400 * (tries + 1));
+    return;
+  }
   if (img.dataset.fallback === '1') return; // already replaced
   img.dataset.fallback = '1';
   img.style.display = 'none';
