@@ -64,5 +64,13 @@
     "url": "https://github.com/mrdoob/three.js",
     "license": "MIT / W3C standards",
     "usage": "Pattern provenance for community effect recipes; per-recipe licences are recorded in data/recipe_pack.json and docs/recipe-pack.md"
+  },
+  {
+    "id": "awesome-web-prompts",
+    "repository": "DexZane/awesome-web-prompts",
+    "url": "https://github.com/DexZane/awesome-web-prompts",
+    "license": "MIT",
+    "preview_notice": "Five records ship a preview.png; sixteen ship a self-contained index.html demo that is rendered to a 1280x800 webp cover with scripts/render_awp_previews.py. No upstream demo code is shipped.",
+    "usage": "Community web-build prompt collection (front-matter + prompt.md), ingested with scripts/import-awesome-web-prompts.js"
   }
 ]

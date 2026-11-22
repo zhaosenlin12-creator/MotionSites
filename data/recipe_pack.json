@@ -28,7 +28,7 @@
       "style": "filmstrip",
       "t1": "CAPTURE",
       "kind": "EVIDENCE",
-      "meta": "Morluto/rea 路 CDP",
+      "meta": "Morluto/rea · CDP",
       "variant": ""
     },
     "source": {
@@ -196,7 +196,7 @@
       "style": "scrollmap",
       "t1": "SCROLL MAP",
       "kind": "PROGRESS",
-      "meta": "0 鈫?1",
+      "meta": "0 →1",
       "variant": ""
     },
     "source": {
@@ -323,7 +323,7 @@
       "style": "svgdraw",
       "t1": "LOTTIE",
       "kind": "PATH",
-      "meta": "network 鈫?json",
+      "meta": "network → json",
       "variant": ""
     },
     "source": {
@@ -366,7 +366,7 @@
       "style": "reveal",
       "t1": "TEXT REVEAL",
       "kind": "TYPE",
-      "meta": "clip 路 stagger",
+      "meta": "clip · stagger",
       "variant": "split"
     },
     "source": {
@@ -591,6 +591,1124 @@
     "sort_order": -987
   },
   {
+    "id": "re-15-browser-scenario-contract",
+    "title": "Browser Scenario Contract",
+    "description": "声明式场景文件固化站点测量与可复跑断言",
+    "category": "Replication Recipes",
+    "type": "playbook",
+    "tags": [
+      "scenario",
+      "steps",
+      "saved-values",
+      "validation",
+      "evidence"
+    ],
+    "palette": [
+      "#0b0f14",
+      "#141b23",
+      "#4fd1c5",
+      "#f5f7fa",
+      "#1f6f6a"
+    ],
+    "prompt": "Write the scenario file before a browser is opened, and treat it as the run contract rather than a note. Declare the browser mode (launch with an absolute executable path), the start URL, a viewport of 1440x900, and the action list; device scale and reduced-motion emulation are separate explicit fields. Every step carries a unique step_id and its own timeout_ms around 10000, and uses one of the fixed kinds: goto, wait_for, click, hover, press, scroll, wait_for_timeout, evaluate, screenshot. Readiness is a page-owned marker such as #hero[data-state='ready'] in state visible, never a fixed 500ms sleep and never a container that was already on screen before the step. Save the twelve numbers you intend to prove with save-value steps that read json_pointer paths out of a matching 2xx response, and make each one re-observable: the same step, replayed on a second run and then against the rebuild, must produce the same value. Validation runs before capture and refuses duplicate step ids, a saved name no earlier step binds, an undeclared origin on a request step, unknown fields, and a missing terminal step. Reject any scenario whose waits a reader cannot bound. Rebuild stack: a checked-in scenario JSON plus a validator wired into CI. Acceptance: validation exits clean before the first capture, every step has a timeout and a unique id, the readiness marker is page-owned rather than a sleep, a third run reproduces each saved value, and any state the scenario cannot reach is written down as unknown with its reason.",
+    "notes": [
+      "A scenario that waits on a container already visible before the step passes while the real work is still pending; a reduced-motion run is the cheapest way to expose that.",
+      "Keep one scenario per question. A file that captures everything for every step grows past the point where two runs can be compared by step id.",
+      "rea is MIT licensed; the scenario schema is a neutral JSON contract, so the same file can drive a different automation runner later."
+    ],
+    "demo": {
+      "style": "report",
+      "t1": "SCENARIO",
+      "kind": "CONTRACT",
+      "meta": "steps + saved values",
+      "variant": "claims"
+    },
+    "source": {
+      "pack": "rea",
+      "repo": "morluto/rea",
+      "url": "https://github.com/morluto/rea",
+      "license": "MIT",
+      "ref": "morluto/rea + docs/guides/web/browser-scenario-contract.md (steps, saved values, scenario comparison)",
+      "research": "morluto/rea + docs/guides/web/browser-scenario-contract.md (steps, saved values, scenario comparison)"
+    },
+    "sort_order": -986
+  },
+  {
+    "id": "re-16-har-api-surface",
+    "title": "HAR to API Surface Map",
+    "description": "将抓包请求归并为接口面与参数类型清单",
+    "category": "Replication Recipes",
+    "type": "playbook",
+    "tags": [
+      "har",
+      "api-surface",
+      "templates",
+      "network",
+      "inference"
+    ],
+    "palette": [
+      "#0a0e12",
+      "#151c24",
+      "#60a5fa",
+      "#e8eef7",
+      "#1e3a8a"
+    ],
+    "prompt": "Turn one HAR 1.2 capture into an endpoint inventory a rebuild can plan against. Accept only the HAR 1.2 profile and record the producer profile (Chromium DevTools writer, Playwright HAR tracer, mitmproxy 12.3.1) beside the file digest, because each writes some fields differently. Group request lines by method, origin and path template, sorted by origin, template and method, and replace only segments that match the documented rules with {numeric}, {uuid}, {hex} or {iso-date}, applying them to the still-encoded recorded path before dot-segment removal so /a/%2e%2e/admin stays distinct from /admin. Mark every templated group inferred and keep the observed literals per segment index. Collapse query strings into a name list with record ordinals using form-query decoding, and state plainly that names say nothing about required parameters or value types. Split groups by whether they appear before the first contentful paint or only after a click, scroll or hover, and mark an endpoint undocumented when no shipped HTML or JavaScript references it. Keep credential header and cookie names while dropping every value, and leave a status of 0 as unknown instead of inventing 200. Never upgrade a group to not-observed unless the origin was exercised, every record was retained and no request line was excluded. Rebuild stack: a JSON inventory plus a generated table checked into the repo. Acceptance: every group carries method, origin, template and record ordinals, templated groups are marked inferred with their literals kept, first-paint and interaction endpoints are separated, no status or MIME type is invented, and each exclusion is listed as unknown.",
+    "notes": [
+      "Grouping by raw URL strings turns one endpoint into fifty rows; the template rules exist to prevent that, and hand-editing the templates afterwards quietly breaks the provenance.",
+      "A status of 0, an empty mime type or a missing method is an absent observation, not a failure and not a 200; inventing one is the most common way an inventory starts lying.",
+      "Keep the parent capture on disk. The projection is cheap to re-run, but the literals and ordinals only exist in the original records."
+    ],
+    "demo": {
+      "style": "network",
+      "t1": "HAR SURFACE",
+      "kind": "NETWORK",
+      "meta": "request waterfall",
+      "variant": ""
+    },
+    "source": {
+      "pack": "rea",
+      "repo": "morluto/rea",
+      "url": "https://github.com/morluto/rea",
+      "license": "MIT",
+      "ref": "morluto/rea + docs/guides/web/web-network-captures.md (formats, derived API surface, environment manifest)",
+      "research": "morluto/rea + docs/guides/web/web-network-captures.md (formats, derived API surface, environment manifest)"
+    },
+    "sort_order": -985
+  },
+  {
+    "id": "re-17-static-js-endpoint-diff",
+    "title": "Static vs Runtime Endpoint Diff",
+    "description": "静态端点字面量与抓包实测做双向差异报告",
+    "category": "Replication Recipes",
+    "type": "playbook",
+    "tags": [
+      "endpoints",
+      "static-analysis",
+      "har",
+      "diff",
+      "runtime"
+    ],
+    "palette": [
+      "#0c0d10",
+      "#1a1c22",
+      "#f97316",
+      "#fef3c7",
+      "#7c2d12"
+    ],
+    "prompt": "Diff what the shipped code mentions against what the page actually requested, in that order. First export the scripts from a saved capture into a directory that does not exist yet: the export writes a manifest with a SHA-256 and byte count per source plus a files/ tree, it never refetches a URL, and competing versions or query variants arrive as isolated paths rather than one canonical file. Run static analysis over those files to collect endpoint literals with line, UTF-16 column, mechanism and confidence. Second, pair that with the HAR capture whose origin matches and compare both sides: each static endpoint ends matched, not observed in this capture, or unknown, while every observed group without a static counterpart gets its own row. Treat concatenation, template literals, config lookups and feature-flag branches as runtime-only, since a literal search cannot see a string assembled at call time. Do not call a not-observed endpoint dead: it means unexercised, and that claim requires an exercised origin, every retained record and no excluded request line. Where a method is unavailable leave it null, and where several methods would pair mark the row ambiguous instead of choosing one. Report header and cookie names without any value. Rebuild stack: a small reporting script that re-runs both steps and emits one table with a provenance column. Acceptance: exact and template-compatible matches are labelled separately, runtime-only rows name the mechanism that blinded the static pass, ambiguous rows stay ambiguous, no credential value appears in the report, and no unreachable claim is derived from absence.",
+    "notes": [
+      "The diff only means something when both sides describe the same origin and the same session; a capture from a logged-in tab against code from a logged-out bundle produces an impressive, useless report.",
+      "Static-only endpoints usually sit behind an unused flag or a lazy route, so record the enclosing condition instead of writing them off as dead.",
+      "rea is MIT; the exported manifest is plain JSON, so the comparison can be reimplemented in any language."
+    ],
+    "demo": {
+      "style": "network",
+      "t1": "ENDPOINT DIFF",
+      "kind": "STATIC / HAR",
+      "meta": "grep vs capture",
+      "variant": ""
+    },
+    "source": {
+      "pack": "rea",
+      "repo": "morluto/rea",
+      "url": "https://github.com/morluto/rea",
+      "license": "MIT",
+      "ref": "morluto/rea + docs/guides/web/web-network-captures.md (compare static JavaScript endpoints with HAR)",
+      "research": "morluto/rea + docs/guides/web/web-network-captures.md (compare static JavaScript endpoints with HAR)"
+    },
+    "sort_order": -984
+  },
+  {
+    "id": "re-18-sourcemap-recovery",
+    "title": "Source Map Recovery Pass",
+    "description": "用源码映射还原压缩位置对应的原始模块与行号",
+    "category": "Replication Recipes",
+    "type": "playbook",
+    "tags": [
+      "sourcemap",
+      "recovery",
+      "tokens",
+      "budgets",
+      "unknown"
+    ],
+    "palette": [
+      "#0b0b0f",
+      "#16171d",
+      "#a78bfa",
+      "#ede9fe",
+      "#4c1d95"
+    ],
+    "prompt": "Recover original module names only where a map actually proves them. Start by locating declarations: read the last line of each script for its sourceMappingURL comment, then request exactly the URL a normal public page load would request, with no credentials and no extra parameters, and keep the raw map bytes with their digest. Map a minified position using one-based generated line and zero-based UTF-16 column; the lookup returns the greatest generated position less than or equal to the selected point across lines, and every segment at that position including generated-only mappings, so record all returned candidates and select none as canonical. Treat embedded sourcesContent as an encoding of the map's own string, not as an independently captured original file, and keep the map URL context used to resolve sources and sourceRoot, since an empty sourceRoot resolves against the map URL for webpack and tsc output. Keep the budget visible: an 8 MiB map admission, 262144 decoded rows and segments, 64 nested section levels, a 192 MiB codec heap request and a 20 second decode deadline; raise one field at a time and name that field in the retry. When no map exists, write down what remains provable: readable string literals, retained class and id spellings, and banner comments, while original names, component boundaries and token names stay unknown. Rebuild stack: a positions table plus a token file filled only from proven rows. Acceptance: every recovered name cites file, line and column, equal-position alternatives are all retained, an absent map leaves its names unknown rather than guessed, and no map is fetched with credentials.",
+    "notes": [
+      "Many production bundles ship a map URL that 404s or returns a decoy HTML page; an HTML error page parsed as JSON yields a confusing failure, so check the content type before decoding.",
+      "A large map can exhaust the record budget before it exhausts memory; raising only the decoded-records field does not raise the independent row and segment limits.",
+      "The decoder profile is a defined subset, not every current source-map extension, so an unsupported map is a documented gap rather than a bug to patch around."
+    ],
+    "demo": {
+      "style": "code",
+      "t1": "SOURCEMAP",
+      "kind": "RECOVERY",
+      "meta": "original names",
+      "variant": ""
+    },
+    "source": {
+      "pack": "rea",
+      "repo": "morluto/rea",
+      "url": "https://github.com/morluto/rea",
+      "license": "MIT",
+      "ref": "morluto/rea + docs/guides/web/web-source-location.md (meaning of the evidence, compact point delivery, budgets)",
+      "research": "morluto/rea + docs/guides/web/web-source-location.md (meaning of the evidence, compact point delivery, budgets)"
+    },
+    "sort_order": -983
+  },
+  {
+    "id": "re-19-module-trace-entry-graph",
+    "title": "Module Entry Graph Trace",
+    "description": "从入口脚本追到动画所属代码块并标注体积与首用时机",
+    "category": "Replication Recipes",
+    "type": "playbook",
+    "tags": [
+      "modules",
+      "graph",
+      "chunks",
+      "lazy-loading",
+      "imports"
+    ],
+    "palette": [
+      "#090c10",
+      "#131a22",
+      "#22d3ee",
+      "#ecfeff",
+      "#0e7490"
+    ],
+    "prompt": "Trace the app from the HTML entry to the chunk that owns the animation loop. Start with the document: list script tags in order, note type=module, nomodule and inline bodies, and find the booting script by following the first module that imports a router or mounts a root node. Export the captured scripts to disk so each source keeps its verified digest and browser URL identity, then trace outgoing ES relationships per source: static imports, re-exports and literal dynamic imports resolve to real URLs, while computed specifiers keep their expression and stay unknown. Build a graph where each node is a chunk with transfer and decoded size and each edge is an import with a kind, then annotate nodes with first-use timing from the network records: the entry, the chunk holding the requestAnimationFrame loop, and every chunk that arrives only after a click or a scroll. Keep lazy boundaries explicit, because a dynamic import that resolves is not proof that the code ran, and report execution as unknown for every edge. Do not merge two query variants of one path into a single node, and do not treat a source map declaration as a recovered original. Rebuild stack: a graph file plus a table sorted by first-use time, consumed by whoever plans the bundle split. Acceptance: the booting script and the animation chunk are named with digest and size, every edge cites a one-based line and UTF-16 column, computed specifiers are marked unknown rather than dropped, chunk sizes match the capture, and no edge claims execution.",
+    "notes": [
+      "Import maps exist at runtime, so a specifier that resolves in the browser may resolve differently when replayed from exported files; record the map beside the graph when one is present.",
+      "The graph is about ownership, not causality: the chunk that contains the loop is not automatically the chunk that starts it after a lazy boundary.",
+      "Use verified digests as node identity, since two captures of the same URL can carry different bytes."
+    ],
+    "demo": {
+      "style": "graph",
+      "t1": "MODULE GRAPH",
+      "kind": "TRACE",
+      "meta": "entry -> chunks",
+      "variant": ""
+    },
+    "source": {
+      "pack": "rea",
+      "repo": "morluto/rea",
+      "url": "https://github.com/morluto/rea",
+      "license": "MIT",
+      "ref": "morluto/rea + docs/guides/web/website-module-trace.md (module trace)",
+      "research": "morluto/rea + docs/guides/web/website-module-trace.md (module trace)"
+    },
+    "sort_order": -982
+  },
+  {
+    "id": "re-20-route-inventory-map",
+    "title": "Route Inventory Map",
+    "description": "清点全站路由模板、参数与渲染组件可达性",
+    "category": "Replication Recipes",
+    "type": "playbook",
+    "tags": [
+      "routes",
+      "inventory",
+      "framework",
+      "confidence",
+      "static"
+    ],
+    "palette": [
+      "#0d0f12",
+      "#1b1f26",
+      "#84cc16",
+      "#f7fee7",
+      "#365314"
+    ],
+    "prompt": "Inventory routes from evidence, then admit what the evidence cannot settle. Read the shipped code for route definitions: literal router calls, nested route objects, typed route trees, App Router page paths, and Expo require.context key maps compiled into an object of getters. Convert each pattern into a path template, mapping dynamic segments to :id, :slug+ or :slug*, dropping groups and parallel slots, and keeping percent spellings undecoded so %61 and a remain separate candidates. Record for each row the template, its parameters, the mechanism that produced it, the source file with one-based line and zero-based UTF-16 column, and a confidence; keep a bare route or addRoute call carrying only a name as unknown, because the same shape registers server APIs. Add the rendering component where one file plainly owns the page, and mark reachability from the UI as unknown unless a later capture proves a click or a navigation reached it, since static patterns never establish reachability and the count is no denominator for the whole application. Where the UI shows a parameter value, record it beside the template as an inference, not as a type. Rebuild stack: one markdown table plus a JSON file for the router skeleton. Acceptance: every row carries template, parameters, source location and confidence, UI-reached and static-only rows are distinguishable, unresolved parents and mutations stay explicitly unknown, and no row claims that a route returns 200.",
+    "notes": [
+      "Filename conventions alone do not establish framework ownership; a folder called app in a monorepo produces convincing routes that no server ever serves.",
+      "Route counts describe the supplied sources, not the application, so they must never be used as completeness percentages.",
+      "Keep the unknowns collection beside the table; a filtered report that hides its gaps reads as a complete inventory."
+    ],
+    "demo": {
+      "style": "graph",
+      "t1": "ROUTE MAP",
+      "kind": "INVENTORY",
+      "meta": "pages + params",
+      "variant": ""
+    },
+    "source": {
+      "pack": "rea",
+      "repo": "morluto/rea",
+      "url": "https://github.com/morluto/rea",
+      "license": "MIT",
+      "ref": "morluto/rea + docs/javascript-route-inventory.md (page captured endpoint observations and inferences)",
+      "research": "morluto/rea + docs/javascript-route-inventory.md (page captured endpoint observations and inferences)"
+    },
+    "sort_order": -981
+  },
+  {
+    "id": "re-21-playwright-trace-triage",
+    "title": "Playwright Trace Triage",
+    "description": "读追踪包对齐快照与网络行找出首个分叉帧",
+    "category": "Replication Recipes",
+    "type": "playbook",
+    "tags": [
+      "playwright",
+      "trace",
+      "triage",
+      "network",
+      "console"
+    ],
+    "palette": [
+      "#0b0d11",
+      "#171b22",
+      "#fb7185",
+      "#fff1f2",
+      "#881337"
+    ],
+    "prompt": "Triage one visual difference from an offline trace instead of guessing. Import the existing trace v10 archive without contacting a single recorded URL, and keep the archive digest: it identifies members, so two archives with the same file name stay distinct. Page through events by kind, stream, producer ordinal and call id, then read network rows for method, URL, status and timing and console rows for text and location. Headline times are producer monotonic milliseconds per stream, so do not sort trace and network rows onto one axis and do not treat a call id as proof that a before and after pair completed. Align candidate rows to the screencast snapshots by step order, find the first snapshot where the layout diverges from the expected state, then walk back to the request or script that started between the previous snapshot and that one. Name the resource, its origin and its status; if the evidence only narrows the culprit to three candidates, say that and list all three. Keep two limitations in the write-up: a fully read page of facts never proves the recording is complete, and a present-unread member means the archive lists a screenshot or body whose bytes were never validated. Rebuild stack: a short findings note holding the frame index, the responsible URL and the change applied. Acceptance: the diverging frame is named by index with the two screenshots around it, exactly one resource is named or the candidate set is listed with its size, no clock alignment is assumed between streams, completeness stays unknown, and the fix is verified by re-recording the same steps.",
+    "notes": [
+      "Screencast frames are captured on a cadence, not per animation frame, so the diverging snapshot brackets the cause rather than pinpointing it.",
+      "A trace viewer is convenient but not evidence; read the archive, and quote member paths so the citation survives.",
+      "Unsafe numeric values are not rounded on read, so keep exact literals in sidecars when comparing two traces."
+    ],
+    "demo": {
+      "style": "timeline",
+      "t1": "TRACE",
+      "kind": "TRIAGE",
+      "meta": "snapshots + network",
+      "variant": ""
+    },
+    "source": {
+      "pack": "rea",
+      "repo": "morluto/rea",
+      "url": "https://github.com/morluto/rea",
+      "license": "MIT",
+      "ref": "morluto/rea + docs/playwright-traces.md (trace contents and triage)",
+      "research": "morluto/rea + docs/playwright-traces.md (trace contents and triage)"
+    },
+    "sort_order": -980
+  },
+  {
+    "id": "re-22-v8-coverage-attribution",
+    "title": "Execution Coverage Attribution",
+    "description": "用精确覆盖率把可见行为归因到具体函数块",
+    "category": "Replication Recipes",
+    "type": "playbook",
+    "tags": [
+      "coverage",
+      "profiler",
+      "attribution",
+      "cdp",
+      "runtime"
+    ],
+    "palette": [
+      "#080b0e",
+      "#12181f",
+      "#34d399",
+      "#ecfdf5",
+      "#065f46"
+    ],
+    "prompt": "Attribute a visible effect to code with precise coverage, and bound the claim before making it. Arm coverage through the debugger protocol, then wait for the real armed progress event: performing the interaction before arming yields a table that credits nothing. Perform exactly one interaction, take one resetting sample, then stop coverage and disable the domains you enabled so the next question starts clean. Read the admitted producer function and block ranges with their exclusive end offsets in UTF-16 code units and their execution counts, and keep nested and overlapping counts side by side instead of summing them, because a parent range already contains its children. Record whether the sample carried block granularity: when that flag is false the observation is function-only, branch execution stays unknown, and the write-up has to say so rather than inferring a branch. Accept the distortion openly: arming resets counters and blocks optimised execution, so wall-clock timing from the same window is unusable for performance claims, and a document replacement ends the window and leaves final coverage unavailable. Map counted ranges back to exported source through the script id, then describe the effect as observed in these functions, inferred for the neighbouring code, and unknown elsewhere. Rebuild stack: a coverage table joined to file, line and column, with a claim column. Acceptance: the armed event precedes the action in the log, counts are never summed, function-only samples are labelled, timing taken from the armed window is excluded, and every named function resolves to a source location.",
+    "notes": [
+      "An already loaded script can be absent from a sample and a document replacement can wipe the window entirely; missing coverage is unknown, never zero executions.",
+      "Block coverage applies to functions compiled inside the window, so a long-running page may report function-only ranges on the second observation.",
+      "Coverage says which code ran, not which code caused the pixel change; pair it with a screenshot pair before writing the conclusion."
+    ],
+    "demo": {
+      "style": "report",
+      "t1": "COVERAGE",
+      "kind": "V8",
+      "meta": "which code runs",
+      "variant": "claims"
+    },
+    "source": {
+      "pack": "rea",
+      "repo": "morluto/rea",
+      "url": "https://github.com/morluto/rea",
+      "license": "MIT",
+      "ref": "morluto/rea + docs/guides/web/web-runtime.md (observe execution, coverage bounds)",
+      "research": "morluto/rea + docs/guides/web/web-runtime.md (observe execution, coverage bounds)"
+    },
+    "sort_order": -979
+  },
+  {
+    "id": "re-23-event-listener-binding-audit",
+    "title": "Event Listener Binding Audit",
+    "description": "审计指针与键盘监听的注册来源、阶段与被动标记",
+    "category": "Replication Recipes",
+    "type": "component",
+    "tags": [
+      "listeners",
+      "delegation",
+      "pointer",
+      "a11y",
+      "audit"
+    ],
+    "palette": [
+      "#0a0a0c",
+      "#191921",
+      "#f5c542",
+      "#fffbeb",
+      "#78350f"
+    ],
+    "prompt": "Audit how one control is actually wired before reproducing its feel. Select a single node by CSS selector and list the directly registered listener types with their flags: capture or bubble, passive, once, plus the callback coordinates as a zero-based line with a UTF-16 column in the named resource and the source text digest, so the same handler stays identifiable across reloads. Inspect the node and never dispatch an event, and expect three blind spots: listeners on delegated ancestors, listeners inside closed shadow roots, and framework registries that attach nothing per node. When a click works but the node lists nothing, walk the ancestor chain and record the delegation depth as a number rather than a shrug. Re-inspect after each state change, because hover, focus and open states often add listeners later: capture the binding set cold, after hover, after click and after Escape, then diff the four sets and show which listeners exist only after a state change. Keyboard coverage matters as much as pointer, so check keydown and keyup on the control and on document, and note where a passive flag rules out preventDefault for a custom wheel or touch effect. Report unknown where a call site has no script identity instead of guessing the handler. Rebuild stack: one listener table per control, consumed as the wiring spec. Acceptance: each row has type, phase, passive flag and a source location, delegation is either proven with a depth or marked unknown, the four state snapshots are diffed, the audit dispatches no event itself, and post-interaction bindings are listed apart from startup bindings.",
+    "notes": [
+      "Inspection sees direct registrations only; a delegated ancestor listener is the usual reason a working hover effect appears to have no handler at all.",
+      "Never probe bindings by firing synthetic events on a shared browser: a dispatched event can trigger a real write on the reference site.",
+      "Capture and passive flags change behaviour far more than the handler body, so record them even when the source is unreadable."
+    ],
+    "demo": {
+      "style": "states",
+      "t1": "LISTENERS",
+      "kind": "BINDINGS",
+      "meta": "delegated?",
+      "variant": ""
+    },
+    "source": {
+      "pack": "rea",
+      "repo": "morluto/rea",
+      "url": "https://github.com/morluto/rea",
+      "license": "MIT",
+      "ref": "morluto/rea + docs/guides/web/web-runtime.md (inspect a node listeners)",
+      "research": "morluto/rea + docs/guides/web/web-runtime.md (inspect a node listeners)"
+    },
+    "sort_order": -978
+  },
+  {
+    "id": "re-24-saved-values-assertion",
+    "title": "Saved-Value Assertion Loop",
+    "description": "挑十个可复观测值，让重建结果与原站对齐",
+    "category": "Replication Recipes",
+    "type": "playbook",
+    "tags": [
+      "assertions",
+      "saved-values",
+      "tolerances",
+      "verification",
+      "regression"
+    ],
+    "palette": [
+      "#0c1013",
+      "#172026",
+      "#38bdf8",
+      "#f0f9ff",
+      "#075985"
+    ],
+    "prompt": "Keep a rebuild honest with a small, re-runnable assertion set. Choose eight to twelve numbers a viewer would notice: a stagger interval, a hero duration, a pin range in pixels, a headline size at two widths, a card radius, a grid gap, a settled opacity and a colour. Capture each from the reference by reading a json_pointer out of a matching 2xx JSON response or a computed style, saving it under a stable name with its unit written beside it; a pointer that names no string or number must fail the step instead of storing a blank. Treat re-observable as a test: the same step replayed on a second reference run and then against the rebuild has to yield the same number, so a value typed in by hand does not qualify. Run the loop with two tolerance classes: exact for counts and enumerations, plus or minus one frame for durations and plus or minus one pixel for sizes, and record which class each row uses. Diff the rebuild against the reference row by row and keep the failures: a duration that misses by 40ms is a finding, not a rounding choice. Report every row the loop cannot observe, such as a value behind a login or set only under one device profile, as unknown with its reason. Rebuild stack: an assertions JSON plus a runner printing pass, fail or unknown per row. Acceptance: every row has a name, unit, value, tolerance class and provenance, the same step produces the row on both sides, no row is hand-entered, failures are reported rather than smoothed, and unobservable rows are marked unknown.",
+    "notes": [
+      "Eight good numbers beat sixty noisy ones; a long assertion file gets muted in the first week and then protects nothing.",
+      "Screenshots are withheld whenever a step saves a value marked secret, so plan the assertion loop to use numbers rather than pixels if that path is needed.",
+      "Saved values are typed: an id saved as a number is sent back as a number, and a pointer that produces neither a string nor a number fails the step."
+    ],
+    "demo": {
+      "style": "report",
+      "t1": "SAVED VALUES",
+      "kind": "ASSERT",
+      "meta": "re-observable",
+      "variant": ""
+    },
+    "source": {
+      "pack": "rea",
+      "repo": "morluto/rea",
+      "url": "https://github.com/morluto/rea",
+      "license": "MIT",
+      "ref": "morluto/rea + docs/guides/web/browser-scenario-contract.md (saved values) + docs/verification/browser-saved-values-2026-10-26.md",
+      "research": "morluto/rea + docs/guides/web/browser-scenario-contract.md (saved values) + docs/verification/browser-saved-values-2026-10-26.md"
+    },
+    "sort_order": -977
+  },
+  {
+    "id": "re-25-screenshot-memory-budget",
+    "title": "Screenshot Comparison Memory Budget",
+    "description": "按页高切块截图比较，把内存占用压进预算",
+    "category": "Replication Recipes",
+    "type": "playbook",
+    "tags": [
+      "screenshots",
+      "tiling",
+      "memory",
+      "diff",
+      "budget"
+    ],
+    "palette": [
+      "#0b0c0e",
+      "#16181d",
+      "#e879f9",
+      "#fdf4ff",
+      "#701a75"
+    ],
+    "prompt": "Compare long pages without letting the comparison decide your memory ceiling. Measure document height first, then choose a tile height from it instead of taking one full-page shot: a 1440 by 20000 page at four bytes per pixel is about 115 MB per image before two decoded buffers and the RGB to RGBA expansion are counted, while a 1440 by 1600 tile pair stays near 27 MB. Admit each pair against a working-memory budget of 256 MiB and treat a header-valid image that exceeds it as a resource constraint carrying the estimate and the maximum, not as a corrupt file. Tile both captures at identical offsets with a one-pixel overlap guard so a seam is not reported as a difference, hash each tile, compare only tiles whose digests differ, and stream every verdict to disk as it is produced so the run never holds more than one pair in memory. Keep the page at a fixed scroll position while a tile is captured and record the scroll offset beside the tile index, so a re-run cannot compare two different crops. Compare by content digest rather than raw bytes, and count the pixels outside text antialiasing before calling a tile matched: one percent of a tile is an honest threshold, zero is not. Rebuild stack: a tiling script plus a per-tile report file. Acceptance: peak memory stays under the stated budget on a 20000 pixel page, every tile carries index, scroll offset and digest, uncompared or failed tiles are listed instead of silently passing, and the final difference figure is computed from tiles alone.",
+    "notes": [
+      "The budget covers decoder and inflate working memory for one comparison, not process RSS, so the runner still needs headroom for the JSON and base64 strings it holds.",
+      "Fixed-position headers repeat in every tile and will be reported as diff noise; mask a stable band or compare only the scrollable region.",
+      "Capture and compare at the same device pixel ratio, or every tile differs for a reason that has nothing to do with the rebuild."
+    ],
+    "demo": {
+      "style": "diff",
+      "t1": "MEMORY BUDGET",
+      "kind": "CAPTURE",
+      "meta": "tiles + budget",
+      "variant": ""
+    },
+    "source": {
+      "pack": "rea",
+      "repo": "morluto/rea",
+      "url": "https://github.com/morluto/rea",
+      "license": "MIT",
+      "ref": "morluto/rea + docs/guides/web/browser-observation.md (screenshot comparison memory budget)",
+      "research": "morluto/rea + docs/guides/web/browser-observation.md (screenshot comparison memory budget)"
+    },
+    "sort_order": -976
+  },
+  {
+    "id": "re-26-storage-fingerprint-diff",
+    "title": "Storage Fingerprint Diff",
+    "description": "指纹化存储键值与写入时机，区分偏好与缓存",
+    "category": "Replication Recipes",
+    "type": "playbook",
+    "tags": [
+      "storage",
+      "fingerprint",
+      "diff",
+      "state",
+      "cookies"
+    ],
+    "palette": [
+      "#0a0c11",
+      "#151a24",
+      "#818cf8",
+      "#eef2ff",
+      "#3730a3"
+    ],
+    "prompt": "Fingerprint what the site persists, then separate preference writes from cache writes. Snapshot every storage surface after a clean load and again after each of six interactions: local storage, session storage, cookies including HttpOnly names, and the key list of each database. For every key record the surface, the key, the value shape as string length or JSON depth or array length, a SHA-256 over the UTF-8 value, and the step that wrote it. Record fingerprint version 2 beside each digest, because strings with unpaired UTF-16 surrogates hash over a 0xff prefix plus their exact code units, and a digest without that version cannot establish value identity at all. Mark declared secret values as redacted with a null digest and never store their bytes. Diff the two runs key by key: a key that appears only after a click and whose size tracks the interaction is state the rebuild must reproduce, while a key that changes with no interaction and looks like a cache or a nonce is noise to reproduce as structure only, with a generated value. List writes you cannot attribute, such as one set during a redirect or by a worker, as unknown instead of assigning them to the nearest step. Rebuild stack: a fingerprint table plus a small storage module writing only the state that table proves. Acceptance: every key has surface, shape, digest and writing step, version 2 appears on each digest, preferences and cache are separated by a stated rule, unattributed writes stay unknown, and no secret value is retained.",
+    "notes": [
+      "Legacy captures without the version marker have to be compared as unknown, including old against old, so recapture both sides before drawing a conclusion.",
+      "Empty or fully redacted storage has its own comparison semantics; treating it as an unchanged surface hides a real difference.",
+      "Storage order is not stable across runs, so diff a sorted key list rather than raw dumps."
+    ],
+    "demo": {
+      "style": "matrix",
+      "t1": "STORAGE",
+      "kind": "FINGERPRINT",
+      "meta": "keys + values",
+      "variant": ""
+    },
+    "source": {
+      "pack": "rea",
+      "repo": "morluto/rea",
+      "url": "https://github.com/morluto/rea",
+      "license": "MIT",
+      "ref": "morluto/rea + docs/guides/web/browser-scenario-contract.md (storage value fingerprints)",
+      "research": "morluto/rea + docs/guides/web/browser-scenario-contract.md (storage value fingerprints)"
+    },
+    "sort_order": -975
+  },
+  {
+    "id": "re-27-third-party-script-attribution",
+    "title": "Third-Party Script Attribution",
+    "description": "按外部域名拆解脚本体积、阻塞与动效归属",
+    "category": "Replication Recipes",
+    "type": "playbook",
+    "tags": [
+      "third-party",
+      "performance",
+      "licensing",
+      "network",
+      "origins"
+    ],
+    "palette": [
+      "#0b0d10",
+      "#161a20",
+      "#2dd4bf",
+      "#f0fdfa",
+      "#115e59"
+    ],
+    "prompt": "Split first-party from third-party cost before copying a single line of motion code. List every external origin in the capture with its transfer bytes, decoded bytes, request count and cache status, then classify each as render-blocking in the head, deferred, or lazy after interaction, using observed timings rather than assumptions about where the tag sits. Identify which origin actually drives the effect you want: a 40 KB animation library on the primary origin and a 400 KB analytics bundle that never touches the canvas belong in different columns. State the authority behind each number, because a passive devtools attachment that observes without driving, and a driven scenario that clicks and captures step snapshots, record different facts and carry different scopes. Keep the rebuild free of code you cannot licence: for every library record name, version, licence and file size, and prefer MIT or Apache-2.0 equivalents you can vendor and pin. Where a third-party script is entangled with the visual result, say so and describe the minimum behaviour to reimplement rather than shipping the vendor bundle. Record what you could not see, such as an origin blocked before it responded or a fetch that never produced a body, as unknown. Rebuild stack: a per-origin table plus a vendored dependency list with licences. Acceptance: every external origin has bytes, blocking class and purpose, exactly one origin is named as the motion driver, no unlicensed script is copied into the rebuild, and blocked or unattributed origins are marked unknown.",
+    "notes": [
+      "An analytics or tag-manager bundle can inject the animation script later, so the origin that loads a file is often not the origin that authored it.",
+      "Bytes from a warm cache flatter every third party; measure with a disabled cache and note the device pixel ratio alongside it.",
+      "Attribution is a sharing rule, not a legal opinion: if the licence is unclear, replace the library rather than argue about it."
+    ],
+    "demo": {
+      "style": "network",
+      "t1": "3RD PARTY",
+      "kind": "ATTRIBUTION",
+      "meta": "who ships what",
+      "variant": ""
+    },
+    "source": {
+      "pack": "rea",
+      "repo": "morluto/rea",
+      "url": "https://github.com/morluto/rea",
+      "license": "MIT",
+      "ref": "morluto/rea + docs/guides/web/browser-observation.md (provider authorities, request boundary)",
+      "research": "morluto/rea + docs/guides/web/browser-observation.md (provider authorities, request boundary)"
+    },
+    "sort_order": -974
+  },
+  {
+    "id": "re-28-font-load-attestation",
+    "title": "Font Load Attestation",
+    "description": "枚举实际渲染的字面，量出字体回退造成的位移",
+    "category": "Replication Recipes",
+    "type": "component",
+    "tags": [
+      "fonts",
+      "font-display",
+      "fout",
+      "measurement",
+      "evidence"
+    ],
+    "palette": [
+      "#0a0d12",
+      "#151b23",
+      "#38bdf8",
+      "#f2f6fb",
+      "#c084fc"
+    ],
+    "prompt": "Goal: prove which faces actually painted instead of assuming a webfont arrived. Open the reference at 1440x900 in a disposable profile and throttle to 1.6 Mbps so the swap window stays visible, then read document.fonts as a FontFaceSet: log every FontFace's family, style, weight, unicodeRange, display, status and loaded count, plus document.fonts.check() for the split headline, body and caption runs. Record the timeline: navigation start, the first frame with no text, the first frame with fallback glyphs, the first frame with the intended face, and document.fonts.ready. Compare screenshots taken 0 and 1500 ms after DOMContentLoaded: identical boxes with different glyph shapes is a FOUT signature, an empty box that fills is FOIT. For each family capture the @font-face src list, the preload or preconnect that fetched it, transfer bytes, and whether a size-adjust or metric-override declaration sits on the fallback. Derive the layout delta by measuring a 60-character line in both states to the pixel, plus the line-height difference; that number is the reservation the rebuild needs. Never substitute a licensed face you did not clear; record provenance per file. Rebuild stack: local woff2 with font-display: swap, one size-adjust value solved from the measured delta, and a preload for the single face used above the fold. Acceptance: every painted face has an observed status line, the FOUT or FOIT verdict names the two screenshots it rests on, the fallback delta is within 2 px after size-adjust, and each face without a licence is marked unknown rather than shipped.",
+    "notes": [
+      "A face in status loaded only means the bytes decoded; whether it painted is a separate question answered by the screenshot pair.",
+      "Reading document.fonts.check() before the set is ready returns a misleading answer, so gate every probe on the ready promise.",
+      "Subsetting and variable axes change transfer size far more than the display policy does; measure both before choosing a fallback strategy."
+    ],
+    "demo": {
+      "style": "textfx",
+      "t1": "FONT LOAD",
+      "kind": "ATTEST",
+      "meta": "FOUT vs FOIT",
+      "variant": "kinetic"
+    },
+    "source": {
+      "pack": "rea",
+      "repo": "morluto/rea",
+      "url": "https://github.com/morluto/rea",
+      "license": "MIT",
+      "ref": "morluto/rea — docs/guides/web/browser-observation.md (completeness and limits)",
+      "research": "morluto/rea"
+    },
+    "sort_order": -973
+  },
+  {
+    "id": "re-29-media-layer-recovery",
+    "title": "Media Layer Recovery",
+    "description": "还原首屏媒体层的构建方式，给出同观感的最省重建",
+    "category": "Replication Recipes",
+    "type": "hero",
+    "tags": [
+      "video",
+      "canvas",
+      "poster",
+      "decode",
+      "network"
+    ],
+    "palette": [
+      "#08090c",
+      "#141a20",
+      "#f97316",
+      "#fdf6ec",
+      "#22d3ee"
+    ],
+    "prompt": "Recover what a hero media layer actually is before rebuilding one frame of it. Attach to the page over a loopback CDP endpoint and run a single declarative scenario: goto, wait for a page-specific ready marker, screenshot, wait 1200 ms, screenshot, then a third shot after the expected loop point, with network events captured across the whole window. Classify the layer from that evidence alone: an autoplay muted inline video (record currentTime drift between the last two shots and whether the loop restarts it), a scroll-scrubbed video (currentTime bound to scroll offset, sampled at four positions), a numbered image sequence (count sequential frame files and their encode), a sprite sheet (background-position steps against frame count), a CSS gradient mesh, or a WebGL texture. For each candidate record source resolution, poster URL and poster frame, preload value, codec container, transfer and decoded bytes, the container's CSS size, and any mobile crop requested by a 390-wide device profile. Tag every fact observed, inferred or unknown; the decode path is unknown unless the events prove it. Rebuild stack: a re-encoded AVIF or WebP frame sequence preloaded 30 percent ahead of first scroll, preload=metadata with playsinline muted loop for video, an LQIP poster, and a still image fallback for reduced motion. Capture only what an ordinary page load serves; a gated asset is recorded as unavailable and left alone. Acceptance: two runs of the same scenario classify the layer identically, the poster is visible in the first screenshot, largest contentful paint stays under 1.5 s, and every asset carries a provenance line.",
+    "notes": [
+      "A network log shows what loaded, not what the section needs; scrub and hover before trusting a single-shot inventory.",
+      "Scroll-scrubbed video stalls on iOS Safari, so budget a frame sequence or poster path even when the reference gets away without one.",
+      "Reusing reference footage is a licensing question, not a technical one; record provenance per file and substitute where rights are unclear."
+    ],
+    "demo": {
+      "style": "filmstrip",
+      "t1": "MEDIA LAYERS",
+      "kind": "RECOVERY",
+      "meta": "video / canvas / img",
+      "variant": ""
+    },
+    "source": {
+      "pack": "rea",
+      "repo": "morluto/rea",
+      "url": "https://github.com/morluto/rea",
+      "license": "MIT",
+      "ref": "morluto/rea — docs/guides/web/browser-scenario-contract.md (network evidence)",
+      "research": "morluto/rea"
+    },
+    "sort_order": -972
+  },
+  {
+    "id": "re-30-consent-and-overlay-state",
+    "title": "Consent and Overlay State Capture",
+    "description": "抓取首访才出现的浮层，记录层叠、焦点与关闭路径",
+    "category": "Replication Recipes",
+    "type": "section",
+    "tags": [
+      "overlays",
+      "dialog",
+      "focus",
+      "states",
+      "consent"
+    ],
+    "palette": [
+      "#0d0f14",
+      "#1b1f27",
+      "#facc15",
+      "#f7f7f2",
+      "#6366f1"
+    ],
+    "prompt": "Capture the overlays a clean first visit shows, and the ones it hides behind interaction. Start from empty storage in a provider-owned browser so no consent choice is remembered, load the page at 1440x900, and screenshot at 0, 400 and 1200 ms before any click. Then run a declared step sequence: dismiss the consent banner, open the newsletter modal from the footer, close it with its own close control, and reopen it with Escape as the exit. Capture DOM, accessibility tree, screenshot and the active element after every step. For each overlay record role (dialog, complementary, region), aria-modal, labelledby targets, z-index with its stacking-context parent, bounding box, whether focus is trapped, which element takes focus on open, which dismissal targets actually work, and what each panel does to what sits below it: compare the hero's top offset and the scrollbar gutter before and after. A panel that appeared and closed before the observation window armed is unknown, not absent, so every row carries an observed, inferred or unknown tag. Rebuild stack: a native dialog element driven by a small state machine, a focus trap only while modal, a scroll lock that reserves the gutter width, and a consent banner that does not push the header. Acceptance: the inventory names every panel with its stacking number, focus return is asserted after each close, layout below moves less than 1 px across an open-close cycle, and every panel the capture never showed is listed as unknown.",
+    "notes": [
+      "Consent tooling often injects its own shadow root and iframe, so an empty page DOM is a boundary observation, not proof that nothing rendered.",
+      "Focus that returns to the body instead of the trigger is the most common overlay defect; assert the target, not just that focus exists.",
+      "Two overlays can both claim a trap; check the stacking context parent before believing the larger z-index."
+    ],
+    "demo": {
+      "style": "states",
+      "t1": "OVERLAYS",
+      "kind": "STATES",
+      "meta": "banner + modal",
+      "variant": ""
+    },
+    "source": {
+      "pack": "rea",
+      "repo": "morluto/rea",
+      "url": "https://github.com/morluto/rea",
+      "license": "MIT",
+      "ref": "morluto/rea — docs/guides/web/browser-observation.md (CLI workflow, interaction example)",
+      "research": "morluto/rea"
+    },
+    "sort_order": -971
+  },
+  {
+    "id": "re-31-cls-layout-shift-budget",
+    "title": "Layout Shift Budget Capture",
+    "description": "按元素记录布局位移，算出重建需要预留的空间",
+    "category": "Replication Recipes",
+    "type": "playbook",
+    "tags": [
+      "cls",
+      "layout-shift",
+      "perf",
+      "budget",
+      "evidence"
+    ],
+    "palette": [
+      "#0a0b0e",
+      "#171a21",
+      "#ef4444",
+      "#f5f5f4",
+      "#34d399"
+    ],
+    "prompt": "Attribute layout shift to nodes rather than to a page average. Load the reference in a disposable profile at 1440x900 with a 4x CPU throttle and a 1.6 Mbps link, install a PerformanceObserver for layout-shift through an init script so it is armed before the first paint, and read buffered entries to catch what fired earlier. For each entry record value, startTime, hadRecentInput, and for each shifted source node its selector path, previousRect, currentRect, the pixel delta, and the suspected cause class: media without intrinsic size, a late webfont, an injected banner, a placeholder replaced by real content, or an animation on a layout property. Sum contributions per node and rank them; anything above 0.05 of the total earns its own budget line. Match each shift to the request that landed just before it in the network events, then state the reservation the rebuild needs: explicit width and height or aspect-ratio for media, a min-height for banners, size-adjust plus metric overrides for fonts, and transform or opacity instead of top and height. Re-measure the score after the fix under the identical throttle and report both numbers side by side, each tagged observed, inferred or unknown. Acceptance: the clone's per-node shift total is at most 0.02 at 1440x900, no single node exceeds 0.01, no shift is attributed to user input, and every original shift has either a reservation or an explicit unknown reason.",
+    "notes": [
+      "Buffered observer entries report what already happened; without buffered: true the first and largest shift is simply missed.",
+      "A shift caused by a font swap can be fixed only by metric overrides, and a shift caused by a banner needs a reserved slot, not a smaller banner.",
+      "Throttle consistently or the numbers are not comparable between reference and clone."
+    ],
+    "demo": {
+      "style": "diff",
+      "t1": "SHIFT BUDGET",
+      "kind": "CLS",
+      "meta": "per element",
+      "variant": ""
+    },
+    "source": {
+      "pack": "rea",
+      "repo": "morluto/rea",
+      "url": "https://github.com/morluto/rea",
+      "license": "MIT",
+      "ref": "morluto/rea — docs/guides/web/browser-observation.md (completeness and limits)",
+      "research": "morluto/rea"
+    },
+    "sort_order": -970
+  },
+  {
+    "id": "re-32-spa-history-navigation-capture",
+    "title": "Same-Document Navigation Capture",
+    "description": "记录同文档导航的替换、滚动与播报，并验证深链直开",
+    "category": "Replication Recipes",
+    "type": "playbook",
+    "tags": [
+      "spa",
+      "history",
+      "pushstate",
+      "navigation",
+      "a11y"
+    ],
+    "palette": [
+      "#0b0d12",
+      "#181d26",
+      "#a3e635",
+      "#f4f7fa",
+      "#818cf8"
+    ],
+    "prompt": "Capture client-side navigation instead of assuming pages. With the scenario provider attached, arm an observation window of 10 seconds, click the primary nav link, and record the ordered page and history events; do not infer a push from a URL change alone. For each same-document step capture the URL before and after, whether the entry was pushed or replaced, scrollY at both points, which subtrees were removed and inserted by normalized structure rather than text, which nodes kept identity, the focus target, the document title, any live-region announcement, and the covering transition with its duration in milliseconds. Then fetch two deep routes directly with JavaScript disabled: a full render means the routing is server-compatible, a shell means the rebuild needs prerendering or a static document per route. Compare two captures by exact step id to see whether back and forward replay identical state; a step with no counterpart or a changed action kind is an alignment failure, never a match. Treat every route absent from the walk as unknown, and tag each captured fact observed or inferred so no row stays untagged. Rebuild stack: History API plus an explicit route table, one container transition of 180 to 320 ms, focus moved to the new h1, a live region asserted once per swap, and a prerendered document for each deep route. Acceptance: direct load of two deep routes renders the same first screen as the in-app click, back and forward restore scroll within 4 px, the swap is announced exactly once, and the coverage table lists which routes were never visited.",
+    "notes": [
+      "A URL that changes without a history entry is the norm in replace-style routers and breaks back on the first click.",
+      "Scroll restoration is usually app code, not the browser; capture it explicitly or the clone will jump to the top.",
+      "The observation window matters: navigation finished after it closes leaves the end state unknown."
+    ],
+    "demo": {
+      "style": "transition",
+      "t1": "HISTORY",
+      "kind": "SPA",
+      "meta": "pushState swap",
+      "variant": ""
+    },
+    "source": {
+      "pack": "rea",
+      "repo": "morluto/rea",
+      "url": "https://github.com/morluto/rea",
+      "license": "MIT",
+      "ref": "morluto/rea — docs/guides/web/web-runtime.md (same-document navigation)",
+      "research": "morluto/rea"
+    },
+    "sort_order": -969
+  },
+  {
+    "id": "re-33-shadow-dom-inspection-bounds",
+    "title": "Shadow DOM Inspection Bounds",
+    "description": "界定封闭影子根的取证边界，只描述能证明的部分",
+    "category": "Replication Recipes",
+    "type": "playbook",
+    "tags": [
+      "shadow-dom",
+      "bounds",
+      "limits",
+      "evidence",
+      "web-components"
+    ],
+    "palette": [
+      "#0c0b10",
+      "#1a1822",
+      "#e879f9",
+      "#f8f5fb",
+      "#2dd4bf"
+    ],
+    "prompt": "Establish how far inspection reaches before describing any widget's internals. Pick the custom elements on the page, such as a search field, a carousel and a player wrapper, and for each check whether shadowRoot is non-null in the page context. For open roots, walk them once and record the host tag, mode, nested root count, adopted stylesheets and the accessible name the host exposes outward. For closed roots, record the same host-level facts and stop there: no guessed class names, no invented markup, no injected script to force a root open. Use the accessibility tree as the honest external view, because it reports the roles, names and states the host publishes regardless of shadow mode. Then check delegation: whether listeners sit on ancestors rather than the inner control, and whether the events that cross the boundary are composed, read from a passive listener log rather than from source guesses. Write the result as a coverage table with one row per widget and a verdict of observed, partially observed or unknown. Rebuild stack: a custom element with an open root, ::part and custom properties as the styling contract, and slots so downstream code never needs shadow internals. Acceptance: every widget has one row, closed roots are marked unknown with host facts retained, no claim cites markup the capture did not return, and the rebuild exposes the same accessible names at 1440 and 390.",
+    "notes": [
+      "Declarative shadow DOM arrives in the parsed HTML, so a root can exist before any script runs; check the document, not only the element upgrade path.",
+      "Attach-mode inspection does not widen into closed roots, and an unobserved interior stays unknown no matter how familiar the component looks.",
+      "Delegated listeners on the host are the usual reason a click test passes while the inner control appears dead."
+    ],
+    "demo": {
+      "style": "stack",
+      "t1": "SHADOW DOM",
+      "kind": "BOUNDS",
+      "meta": "open vs closed",
+      "variant": ""
+    },
+    "source": {
+      "pack": "rea",
+      "repo": "morluto/rea",
+      "url": "https://github.com/morluto/rea",
+      "license": "MIT",
+      "ref": "morluto/rea — docs/guides/web/web-runtime.md (bounds and verification, delegated listeners)",
+      "research": "morluto/rea"
+    },
+    "sort_order": -968
+  },
+  {
+    "id": "re-34-canvas-drawcall-budget",
+    "title": "Canvas Draw-Call Budget",
+    "description": "量出画布每帧的绘制调用与上传量，折算成重建预算",
+    "category": "Replication Recipes",
+    "type": "section",
+    "tags": [
+      "canvas",
+      "webgl",
+      "draw-calls",
+      "budget",
+      "perf"
+    ],
+    "palette": [
+      "#07080b",
+      "#121620",
+      "#fb7185",
+      "#f8fafc",
+      "#60a5fa"
+    ],
+    "prompt": "Measure what a canvas hero costs per frame before deciding how to rebuild it. Attach passively, hook the WebGL and WebGL2 draw functions through an init script so the counters exist before the scene compiles, and sample for a fixed 3 second window with the pointer resting still. Record per frame: drawArrays, drawElements and instanced call counts, texture and buffer upload bytes, program switches, the renderer string from the debug renderer info extension, canvas width and height in device pixels against CSS size, devicePixelRatio, the requestAnimationFrame interval, and the longest frame in the window. Turn that into a budget: a 16.7 ms frame at 60 Hz leaves roughly 8 ms for the scene after style, layout and composite, so state the target as calls per frame, uploads per second and megapixels per frame. Note whether the page clamps devicePixelRatio at 2, renders at half resolution and upscales, and pauses the loop on visibility or intersection changes. Where a counter cannot be observed, say so instead of estimating silently. Rebuild stack: instanced geometry, one atlas texture, a clamped pixel ratio, and a loop that stops when the canvas leaves the viewport. Acceptance: the counter table covers at least 180 frames, the budget states calls, uploads and megapixels, the clone holds under 8 ms of frame time at 1440x900, and every unobserved metric is listed as unknown.",
+    "notes": [
+      "Hooking after the scene compiles misses program creation and the first texture uploads, which are often the most expensive frame.",
+      "Draw-call counts mean little without the pixel area they cover; report megapixels with the calls or the budget is not comparable.",
+      "The other two vendors are MIT or Apache licensed, but a debug renderer string is a hint, not a capability report."
+    ],
+    "demo": {
+      "style": "shader",
+      "t1": "DRAW CALLS",
+      "kind": "CANVAS",
+      "meta": "frame cost",
+      "variant": ""
+    },
+    "source": {
+      "pack": "rea",
+      "repo": "morluto/rea",
+      "url": "https://github.com/morluto/rea",
+      "license": "MIT",
+      "ref": "morluto/rea — docs/guides/web/browser-observation.md (data minimization, completeness)",
+      "research": "morluto/rea"
+    },
+    "sort_order": -967
+  },
+  {
+    "id": "re-35-preload-priority-hints-audit",
+    "title": "Preload and Priority Hint Audit",
+    "description": "梳理预加载与优先级提示，按原顺序复现关键四资源",
+    "category": "Replication Recipes",
+    "type": "component",
+    "tags": [
+      "preload",
+      "preconnect",
+      "fetchpriority",
+      "network",
+      "hints"
+    ],
+    "palette": [
+      "#0a0c11",
+      "#151922",
+      "#4ade80",
+      "#f3f6f9",
+      "#f59e0b"
+    ],
+    "prompt": "Rebuild a hint graph deliberately instead of hoping the browser guesses well. Load the reference at 1440x900 with cache disabled and a fresh profile, and record every request with its initiator, priority and start time. From the document head extract preload, preconnect, dns-prefetch, modulepreload and prefetch links with their as, type, crossorigin and media values, plus any fetchpriority attribute on images, scripts and frames. Identify, from the observed start times, the four assets that begin first and what pulled each one: a preload link, an early script, the parser, or a stylesheet's font rule. Price each hint: a preconnect to an origin the page never touches, a crossorigin mismatch that forces a second fetch, a preload with the wrong as that downloads twice, a preload competing with the largest paint. Then write the head for the clone so the same first four starts recur, keeping the hint count at or below six inside the first 20 KB of markup, and verify by re-running the capture with identical settings. Only requests the public page makes belong in the graph; anything behind a session stays unknown instead of being inferred from a hint. Rebuild stack: one preload for the hero image with imagesrcset and high fetchpriority, one modulepreload for the entry chunk, a single preconnect to the font or media origin actually used, and prefetch deferred to idle. Acceptance: the clone's first four asset starts match the reference order, no asset downloads twice, no hint targets an origin that is never requested, and the hint list ships beside the capture.",
+    "notes": [
+      "Hints are advisory: the browser may reorder them, so verify the resulting start order rather than the declared one.",
+      "A duplicate download is the classic signature of a preload whose as or crossorigin does not match the real request.",
+      "Priority collapses on a slow connection; judge the graph on a throttled profile, not on a fast local one."
+    ],
+    "demo": {
+      "style": "network",
+      "t1": "PRIORITY",
+      "kind": "HINTS",
+      "meta": "preload / fetchpri",
+      "variant": ""
+    },
+    "source": {
+      "pack": "rea",
+      "repo": "morluto/rea",
+      "url": "https://github.com/morluto/rea",
+      "license": "MIT",
+      "ref": "morluto/rea — docs/guides/web/web-network-captures.md (environment manifest, coverage)",
+      "research": "morluto/rea"
+    },
+    "sort_order": -966
+  },
+  {
+    "id": "re-36-noise-floor-baseline",
+    "title": "Console and Network Noise Floor",
+    "description": "记录参考站自带的报错，作为重建的噪声基线",
+    "category": "Replication Recipes",
+    "type": "playbook",
+    "tags": [
+      "console",
+      "network",
+      "baseline",
+      "errors",
+      "evidence"
+    ],
+    "palette": [
+      "#0b0b0d",
+      "#181819",
+      "#fbbf24",
+      "#f6f5f1",
+      "#38bdf8"
+    ],
+    "prompt": "Record the errors a reference already produces so a rebuild is judged against the same floor. Load the page at 1440x900 with a disposable profile, empty storage and no extensions, then observe for a 10 second window while performing one standard tour: initial load, one scroll to the footer, one click on the primary call to action, one resize to 390 wide. Collect every console entry with level, source URL and line, every page error with its stack, every failed request with status and reason, and every policy violation report. Classify each into expected noise, tolerated noise and real failure: an analytics or consent script throwing on a blocked third party is expected, a broken module import or a 404 on a render-critical asset is a real failure. Keep the classified list with the capture and with the browser build string, because a different build can change the list without the site changing. Then decide what the clone should do with each line: reproduce, silence, or unknown with a reason, and tag every decision observed or inferred. Rebuild stack: a small assertion script that loads the clone, applies the same tour, and fails the build when a new unclassified console error or a render-critical failure appears, while the allowed list is committed next to it. Acceptance: the inventory covers console, page error, failed request and violation families, every entry carries a class and a decision, the clone produces no real failures, and each reproduced entry names the capture it came from.",
+    "notes": [
+      "Chasing zero errors on a site whose consent stack always throws wastes days; the floor is the honest target.",
+      "Third-party failures change with blocked domains and geography, so record the environment with the list.",
+      "An unclassified new error is the useful signal; a growing allowlist with no reasons defeats the point."
+    ],
+    "demo": {
+      "style": "report",
+      "t1": "NOISE FLOOR",
+      "kind": "BASELINE",
+      "meta": "expected errors",
+      "variant": "claims"
+    },
+    "source": {
+      "pack": "rea",
+      "repo": "morluto/rea",
+      "url": "https://github.com/morluto/rea",
+      "license": "MIT",
+      "ref": "morluto/rea — docs/guides/web/browser-observation.md (completeness and limits)",
+      "research": "morluto/rea"
+    },
+    "sort_order": -965
+  },
+  {
+    "id": "re-37-reconstruction-obligation-ledger",
+    "title": "Reconstruction Obligation Ledger",
+    "description": "逐条登记重建依赖的断言，标注已观察、推断与未知",
+    "category": "Replication Recipes",
+    "type": "playbook",
+    "tags": [
+      "ledger",
+      "evidence",
+      "claims",
+      "unknowns",
+      "handoff"
+    ],
+    "palette": [
+      "#0d1014",
+      "#1a2026",
+      "#f59e0b",
+      "#f5f8fa",
+      "#3b82f6"
+    ],
+    "prompt": "Keep every assumption a rebuild rests on in one auditable table. Create a ledger with columns: claim id, claim text, category (structure, token, motion, media, network, behaviour), status of observed, inferred or unknown, evidence pointer (capture id, step id, selector, byte range), a confidence note, and the single capture that would upgrade an unknown to observed. Fill it from existing evidence before writing code: a computed style read on the live page is observed, a duration guessed from a minified variable name is inferred, an interaction nobody triggered is unknown. For each unknown state the cheapest settling probe, such as one more scenario step, a longer observation window, a second viewport, or a request body. Let no claim in status unknown be consumed by the build without a visible fallback, and record the number you chose when you hardcode one. Re-run the capture after each probe so rows change state through a diff rather than from memory. Do not close a gap by asserting access you do not have: a login wall, a paywall or a protected stream stays unknown and its row says why. Rebuild stack: one JSON ledger committed beside the code, a rule that every token and timeline value cites a claim id, and a build check that fails when an unknown claim is used without a fallback. Acceptance: every style token and timeline number maps to a claim id, no unknown appears as fact, observed, inferred and unknown counts print on every build, and each unknown names one concrete capture to upgrade it.",
+    "notes": [
+      "The ledger decays the moment it lives in someone's notes; commit it and let the build read it.",
+      "Inferred claims are where silent drift starts, because they look as solid as observed ones in a code review.",
+      "Counts printed per build make an unexamined gap visible without anyone reading the whole table."
+    ],
+    "demo": {
+      "style": "phases",
+      "t1": "LEDGER",
+      "kind": "OBLIGATIONS",
+      "meta": "known / unknown",
+      "variant": ""
+    },
+    "source": {
+      "pack": "rea",
+      "repo": "morluto/rea",
+      "url": "https://github.com/morluto/rea",
+      "license": "MIT",
+      "ref": "morluto/rea — docs/reference/reconstruction-obligation-ledgers.md; docs/reference/limits-and-recovery.md (claim states and recovery limits)",
+      "research": "morluto/rea"
+    },
+    "sort_order": -964
+  },
+  {
+    "id": "re-38-webgl-context-loss-capture",
+    "title": "WebGL Context Loss Capture",
+    "description": "抓取上下文丢失与恢复路径，含无 WebGL 时的兜底",
+    "category": "Replication Recipes",
+    "type": "hero",
+    "tags": [
+      "webgl",
+      "context-loss",
+      "fallback",
+      "threejs",
+      "restore"
+    ],
+    "palette": [
+      "#06070a",
+      "#101521",
+      "#8b5cf6",
+      "#f7f7ff",
+      "#fb923c"
+    ],
+    "prompt": "Capture the recovery path a WebGL hero uses, not only its first frame. Attach to the page, arm on the canvas, then force the two events the rebuild must survive: call loseContext() through the lose-context extension from the page console, screenshot at 0 and 800 ms, then restoreContext() and screenshot again at 200, 800 and 2000 ms. Record which listeners sit on the canvas for the lost and restored events, whether the lost event is cancelled, which resources are rebuilt (textures, buffers, programs, render targets), and what the canvas shows in between: a frozen last frame, a flat colour, a poster or a spinner. Then load the same URL with WebGL disabled and capture what replaces the canvas: a static image, a CSS composition, an empty box. Note whether the scene pauses when the document is hidden, and whether the restored frame needs a user gesture before it draws. Tag each step observed, and leave any path you could not trigger as unknown together with the command you tried. Rebuild stack: a renderer with explicit lost and restored handlers that stop the loop, mark GPU resources dirty and re-upload on restore, plus a fallback image chosen by feature detection before the module loads. Acceptance: both forced events appear in the evidence with timestamps, the clone restores within 2 s with no blank frame after the first restored paint, the fallback renders without WebGL, and no entry claims a state the observation never reached.",
+    "notes": [
+      "Losing the context by hand is the only reliable test; waiting for a driver reset means shipping untested recovery.",
+      "Restoring without re-uploading resources yields a black canvas that still reports a healthy renderer, the most common version of this bug.",
+      "The renderer library is MIT, but the extension that simulates loss is vendor behaviour and may differ across browsers."
+    ],
+    "demo": {
+      "style": "scene",
+      "t1": "CONTEXT LOSS",
+      "kind": "WEBGL",
+      "meta": "restore path",
+      "variant": "craft"
+    },
+    "source": {
+      "pack": "rea",
+      "repo": "morluto/rea",
+      "url": "https://github.com/morluto/rea",
+      "license": "MIT",
+      "ref": "morluto/rea — docs/guides/web/browser-observation.md (non-goals and threat model); docs/guides/web/web-runtime.md",
+      "research": "morluto/rea"
+    },
+    "sort_order": -963
+  },
+  {
+    "id": "re-39-service-worker-cache-layer",
+    "title": "Service Worker Cache Layer",
+    "description": "判定服务工作线程的缓存层，识别陈旧资源签名",
+    "category": "Replication Recipes",
+    "type": "full-page",
+    "tags": [
+      "service-worker",
+      "cache",
+      "network",
+      "lifecycle",
+      "offline"
+    ],
+    "palette": [
+      "#090b10",
+      "#151a22",
+      "#14b8a6",
+      "#f4f8f7",
+      "#eab308"
+    ],
+    "prompt": "Find out whether a worker sits between the page and the network before trusting any capture. Record the service worker policy the scenario environment reported, then on an attached browser check the registrations list and the controller, and read the worker script URL with its scope. Enumerate what it stores by walking Cache Storage: cache names, entry counts and total bytes per cache, without reading bodies that belong to another origin. Characterise the strategy with two loads, the first with the worker active and storage cleared, the second with the same worker and warm caches, comparing which requests reached the network, which were answered from cache, the response time for both, and whether an older build was served. Look for the stale signature: a hashed asset in the document that disagrees with the current reference list, a navigation answered offline from an old shell, a versioned cache that was never deleted. Reproduce first-load behaviour with registration blocked and storage cleared so the rebuild is measured against the origin rather than somebody's cache. Capture only public responses and label any storage you could not read as unknown, tagging each entry observed or inferred. Rebuild stack: a versioned precache keyed by build id, network-first for documents, stale-while-revalidate only for images, and an activate step that deletes superseded caches. Acceptance: the inventory names script, scope and every cache with entry count, the two loads are compared, the stale signature is found or explicitly absent, and an offline reload serves the current build id.",
+    "notes": [
+      "A worker can answer a request with a year-old body while the network panel shows a 200, so request-based captures need the worker state recorded.",
+      "Clients claim control only after activate and a reload; measuring on the first navigation often reports no controller.",
+      "Blocking registration is what makes a rebuild comparable, because a warm cache hides real network cost."
+    ],
+    "demo": {
+      "style": "stack",
+      "t1": "SW CACHE",
+      "kind": "LAYER",
+      "meta": "cache strategy",
+      "variant": ""
+    },
+    "source": {
+      "pack": "rea",
+      "repo": "morluto/rea",
+      "url": "https://github.com/morluto/rea",
+      "license": "MIT",
+      "ref": "morluto/rea — docs/guides/web/web-network-captures.md (resource and lifecycle boundaries)",
+      "research": "morluto/rea"
+    },
+    "sort_order": -962
+  },
+  {
+    "id": "re-40-reference-drift-scan",
+    "title": "Reference Drift Scan",
+    "description": "按周期重跑取证并分类内容、布局与动效漂移",
+    "category": "Replication Recipes",
+    "type": "playbook",
+    "tags": [
+      "drift",
+      "regression",
+      "diff",
+      "schedule",
+      "evidence"
+    ],
+    "palette": [
+      "#0a0a0c",
+      "#16161a",
+      "#f43f5e",
+      "#fafafa",
+      "#5eead4"
+    ],
+    "prompt": "Re-run the reference capture on a schedule and treat each difference as a finding. Freeze a baseline from one scenario file with stable step ids, two viewports at 1440x900 and 390x844, one device scale factor and one recorded browser build; store screenshots, normalized DOM, computed values and the request list in a dated folder. Re-run the identical scenario after 24 hours, 7 days and 30 days, comparing step by step: a step whose id is missing, duplicated, or whose action kind changed is an alignment failure and proves neither sameness nor change. Classify every difference as content (copy, price, a swapped image), layout (a moved section, changed spacing, a shifted breakpoint) or motion (a duration, easing or scroll threshold), and attach a magnitude in pixels or milliseconds. Record what stayed identical as well, because a completely empty diff on a live site usually means the capture broke, not that the site froze, and tag every row observed, inferred or unknown so a change of class is never confused with a change of confidence. Keep the baseline immutable: write a new dated snapshot every run and diff against the previous one instead of overwriting in place. Rebuild stack: a scheduled job that captures and diffs, a tolerance of 1 percent of pixels for anti-aliasing noise, a report listing class, magnitude and step id, and a hard warning when a run writes fewer artifacts than the baseline. Acceptance: every drift row names a step id and a class, alignment failures are reported apart from differences, the first baseline is never mutated, and a run with missing artifacts fails loudly rather than reporting a clean diff.",
+    "notes": [
+      "Comparing against a rolling latest capture hides slow drift; always diff against the frozen original as well as the previous run.",
+      "Text antialiasing and image decoding differences produce noise that a pixel tolerance handles and a structural diff does not.",
+      "A reference site that serves experiments will drift by design; record the variant so a redesign does not look like a regression."
+    ],
+    "demo": {
+      "style": "diff",
+      "t1": "DRIFT",
+      "kind": "REGRESSION",
+      "meta": "since capture",
+      "variant": ""
+    },
+    "source": {
+      "pack": "rea",
+      "repo": "morluto/rea",
+      "url": "https://github.com/morluto/rea",
+      "license": "MIT",
+      "ref": "morluto/rea — docs/guides/web/browser-scenario-contract.md (scenario comparison)",
+      "research": "morluto/rea"
+    },
+    "sort_order": -961
+  },
+  {
     "id": "cr-01-ui-blueprint-decompose",
     "title": "Screenshot to UI Blueprint Decompose",
     "description": "先拆区块、控件状态与数值清单，再写代码",
@@ -631,7 +1749,7 @@
       "ref": "storytold/craft-anything + crates/setup/src/skill.md; crates/ai/src/rebuild/study.rs; crates/engine/src/mechanics.rs",
       "research": "storytold/craft-anything"
     },
-    "sort_order": -986
+    "sort_order": -960
   },
   {
     "id": "cr-02-design-token-extraction",
@@ -674,7 +1792,7 @@
       "ref": "storytold/craft-anything + docs/design-system.md; crates/ai/src/rebuild/kinds/website.rs (capture.json design tokens and per-width layouts)",
       "research": "storytold/craft-anything"
     },
-    "sort_order": -985
+    "sort_order": -959
   },
   {
     "id": "cr-03-interaction-state-machine",
@@ -717,7 +1835,7 @@
       "ref": "storytold/craft-anything + crates/ai/src/rebuild/kinds/website.rs (opened states, paired state checks); docs/pitfalls.md",
       "research": "storytold/craft-anything"
     },
-    "sort_order": -984
+    "sort_order": -958
   },
   {
     "id": "cr-04-motion-timing-tokens",
@@ -760,7 +1878,7 @@
       "ref": "storytold/craft-anything + docs/design-system.md (hover ease, popup fade, wheel step); crates/ai/src/rebuild/brief.rs (noise regions that animate)",
       "research": "storytold/craft-anything"
     },
-    "sort_order": -983
+    "sort_order": -957
   },
   {
     "id": "cr-05-color-and-material-system",
@@ -803,7 +1921,7 @@
       "ref": "storytold/craft-anything + crates/ai/src/rebuild/kinds/website.rs (backgrounds, text colours, per-channel colour tolerance); docs/design-system.md (surfaces, edges, focus ring)",
       "research": "storytold/craft-anything"
     },
-    "sort_order": -982
+    "sort_order": -956
   },
   {
     "id": "cr-06-hero-section-rebuild",
@@ -846,7 +1964,7 @@
       "ref": "storytold/craft-anything + crates/ai/src/rebuild/brief.rs (match capture tokens exactly); crates/ai/src/rebuild/study.rs (multi-width capture and opened states)",
       "research": "storytold/craft-anything"
     },
-    "sort_order": -981
+    "sort_order": -955
   },
   {
     "id": "cr-07-scroll-storytelling-build",
@@ -889,7 +2007,7 @@
       "ref": "storytold/craft-anything + crates/ai/src/rebuild/kinds/website.rs (per-width layout and block measurements); crates/setup/src/skill.md (predict, then verify)",
       "research": "storytold/craft-anything"
     },
-    "sort_order": -980
+    "sort_order": -954
   },
   {
     "id": "cr-08-gesture-input-mechanics",
@@ -932,7 +2050,7 @@
       "ref": "storytold/craft-anything + docs/pitfalls.md (input and state edge cases); crates/ai/src/rebuild/kinds/website.rs (states opened by real interaction)",
       "research": "storytold/craft-anything"
     },
-    "sort_order": -979
+    "sort_order": -953
   },
   {
     "id": "cr-09-webgl-scene-craft",
@@ -975,7 +2093,7 @@
       "ref": "storytold/craft-anything + crates/ai/src/rebuild/brief.rs (poster and picture fallbacks, no unlicensed assets); docs/pitfalls.md (runtime and performance traps)",
       "research": "storytold/craft-anything"
     },
-    "sort_order": -978
+    "sort_order": -952
   },
   {
     "id": "cr-10-microinteraction-polish",
@@ -1018,7 +2136,7 @@
       "ref": "storytold/craft-anything + docs/design-system.md (hover ease, toast rules, spinner guidance); crates/ai/src/rebuild/brief.rs (fix the biggest visible difference first)",
       "research": "storytold/craft-anything"
     },
-    "sort_order": -977
+    "sort_order": -951
   },
   {
     "id": "cr-11-responsive-a11y-parity",
@@ -1061,7 +2179,7 @@
       "ref": "storytold/craft-anything + crates/ai/src/rebuild/kinds/website.rs (page claims, landmark and a11y comparisons, sideways-scroll rule); AGENTS.md (accessibility rules)",
       "research": "storytold/craft-anything"
     },
-    "sort_order": -976
+    "sort_order": -950
   },
   {
     "id": "cr-12-acceptance-selftest-harness",
@@ -1104,7 +2222,7 @@
       "ref": "storytold/craft-anything + crates/ai/src/rebuild/check.rs (claims, similarity, unknowns); crates/engine/src/self_test.rs; docs/extending.md (a way to judge a build)",
       "research": "storytold/craft-anything"
     },
-    "sort_order": -975
+    "sort_order": -949
   },
   {
     "id": "cr-13-screenshot-diff-verify",
@@ -1147,7 +2265,7 @@
       "ref": "storytold/craft-anything + crates/ai/src/rebuild/kinds/website.rs (web_pixels_compare, layout plus perceptual similarity, noise mask, common area); crates/ai/src/rebuild/study.rs (noise pass capture)",
       "research": "storytold/craft-anything"
     },
-    "sort_order": -974
+    "sort_order": -948
   },
   {
     "id": "cr-14-hero-clone-30-min-playbook",
@@ -1190,7 +2308,1125 @@
       "ref": "storytold/craft-anything + README.md (Study, Build, Check, Ready); crates/ai/src/rebuild/brief.rs (how to work); crates/setup/src/skill.md (evidence-first method)",
       "research": "storytold/craft-anything"
     },
-    "sort_order": -973
+    "sort_order": -947
+  },
+  {
+    "id": "cr-15-control-size-scale",
+    "title": "Control Size Scale",
+    "description": "把控件高度、字号、内边距与图标绑成一套尺寸令牌",
+    "category": "Replication Recipes",
+    "type": "component",
+    "tags": [
+      "tokens",
+      "controls",
+      "scale",
+      "css-variables",
+      "consistency"
+    ],
+    "palette": [
+      "#0e1014",
+      "#1b2029",
+      "#e9edf2",
+      "#8b5cf6",
+      "#22c55e"
+    ],
+    "prompt": "Derive one control size scale and let every control on the page come from it. Pick four heights, 24, 32, 40 and 48 px, and bind each height to a label size, a side padding and an icon box so a row of mixed controls lines up without per-page fixes: 24 px for toolbar and table rows with 12 px padding and a 14 px icon, 32 px as the default with 13 px padding and a 16 px icon, 40 px for full-width fields and a screen's main switch, 48 px kept for the single primary action with 20 px padding and a 20 px icon. Declare them as control-sm, control-md, control-lg and control-xl, each exposing --control-height, --control-pad-x, --control-font and --control-icon, so a component reads one token and inherits all four values. Ban bare numbers in component CSS and enforce it with a test that walks component sources for px literals outside the token file; allow only computed sizes such as calc(var(--control-height) - 2px) for inner content. Render the scale as one page: each control at each size, in rest, hover, focus-visible, pressed and disabled, with its measured box printed beside it. Then verify the rule by swapping a medium button to large and confirming height, padding, label and icon move together and nothing else changes. Acceptance: two controls of the same size measure the same outer height within 1 px; no component file holds a literal height or padding; the label and focus ring stay optically centred at all four sizes; the rendered heights are exactly 24, 32, 40 and 48 px at 100 percent zoom.",
+    "notes": [
+      "The failure mode is a one-off 36 px control that forces every neighbour to compensate; four sizes cover almost every real screen.",
+      "Give each size one job in the token file, or reviewers will pick by look and the scale decays within a sprint.",
+      "The upstream scale is documented by craft-anything under Apache-2.0; these four heights were chosen and measured for the web build."
+    ],
+    "demo": {
+      "style": "tokens",
+      "t1": "CONTROL SIZES",
+      "kind": "SCALE",
+      "meta": "S / M / L / HERO",
+      "variant": ""
+    },
+    "source": {
+      "pack": "craft",
+      "repo": "storytold/craft-anything",
+      "url": "https://github.com/storytold/craft-anything",
+      "license": "Apache-2.0",
+      "ref": "storytold/craft-anything + docs/design-system.md (control sizes, rules); crates/ui-egui/src/theme.rs (size tokens and the no-raw-numbers test)",
+      "research": "storytold/craft-anything + docs/design-system.md (control sizes, rules); crates/ui-egui/src/theme.rs (size tokens and the no-raw-numbers test)"
+    },
+    "sort_order": -946
+  },
+  {
+    "id": "cr-16-type-scale-leading-system",
+    "title": "Type Scale and Leading System",
+    "description": "七级字号阶梯加统一行高比，规定每级用途与最大级数",
+    "category": "Replication Recipes",
+    "type": "component",
+    "tags": [
+      "typography",
+      "type-scale",
+      "leading",
+      "tokens",
+      "rhythm"
+    ],
+    "palette": [
+      "#0b0d11",
+      "#171b22",
+      "#f4f6f9",
+      "#ff7a45",
+      "#6c5ce7"
+    ],
+    "prompt": "Fix a seven-step type ramp and one leading ratio, then reject any text that is not on it. Choose the steps 11, 12, 13, 15, 17, 20 and 26 px and give each a job in the token file: 11 and 12 for dense metadata, timestamps and captions, 13 for labels and list rows, 15 for body copy, 17 for a lead paragraph, 20 for card and section headings, 26 for the page title. State that a single screen may use at most four steps. Derive line height as 1.45 times the size for anything that wraps, and a fixed 1.2 for single-line labels, button text and headings; round both to whole pixels so glyphs keep sharp edges, and expose --text-n-size and --text-n-leading together. Set a measure of 62 to 70 characters by capping the lead at 34em and body at 38em, and write the rule that a line-height literal never appears outside the token file. Build a specimen page showing one paragraph at every step with its wrapped line count printed beside it, plus a long unbroken token, a 14-character compound and a string of digits to prove the wrap and the number spacing hold. Then set the same copy at 1440 and at 390 px. Acceptance: exactly seven sizes exist; no rendered text sits outside the ramp; each wrapped block measures within 1 px of 1.45 times its size; no line exceeds 76 characters; the specimen shows no clipped descender at any step.",
+    "notes": [
+      "Seven steps is already generous; eight or more means nobody can name the difference between two of them.",
+      "Derive leading from the size instead of storing a per-component value, or headings and body drift apart on the next edit.",
+      "The 1.45 ratio follows the craft-anything scale (Apache-2.0); the web build fixes 1.2 for single lines, which desktop text did not need."
+    ],
+    "demo": {
+      "style": "tokens",
+      "t1": "TYPE SCALE",
+      "kind": "RAMP",
+      "meta": "size + leading",
+      "variant": ""
+    },
+    "source": {
+      "pack": "craft",
+      "repo": "storytold/craft-anything",
+      "url": "https://github.com/storytold/craft-anything",
+      "license": "Apache-2.0",
+      "ref": "storytold/craft-anything + docs/design-system.md (the scale, rules on leading)",
+      "research": "storytold/craft-anything + docs/design-system.md (the scale, rules on leading)"
+    },
+    "sort_order": -945
+  },
+  {
+    "id": "cr-17-surface-and-edge-system",
+    "title": "Surface and Edge System",
+    "description": "只留五种表面与三态描边，让可点击区域自证可读",
+    "category": "Replication Recipes",
+    "type": "component",
+    "tags": [
+      "surfaces",
+      "borders",
+      "contrast",
+      "states",
+      "tokens"
+    ],
+    "palette": [
+      "#08090b",
+      "#14161b",
+      "#f5f3ef",
+      "#59d3ff",
+      "#f59e0b"
+    ],
+    "prompt": "Choose the smallest set of surfaces the page actually needs, then give each pressable control one edge colour per pointer state. Keep five surfaces, canvas, card, field, hover and pressed, stepping luminance by about 4 percent per level so the ladder is visible at a glance without looking striped; the field step is a shade lighter than the card so anything to type in reads as something to use. Every control draws the same edge: 1 px card-border at rest, 1 px field-border under the pointer together with the lighter fill, accent at 2 px while pressed, open or typed in. Treat the rest edge as decoration at roughly 1.5 to 1 and make the interactive edge the measured one, at 3 to 1 against its own fill, because that is the state a person has to find. Write the rule that clickability is never signalled by a border alone: fill, edge and cursor move together. Build one page with every surface labelled, the same button repeated on each surface, and a swatch strip printing measured hex and contrast per pair, then repeat the page in the opposite theme. Acceptance: exactly five surface tokens exist; the pointer-state edge reaches 3 to 1 on every surface it appears on; luminance order stays strict in both themes; no component invents a sixth fill; a 4x crop of a control on a card shows a single clean edge.",
+    "notes": [
+      "A 3:1 edge at rest makes every card look like a button; keep the rest edge soft and put the contrast budget into the hover state.",
+      "Test the edge against the fill it sits on, not against the page background, or controls on cards quietly drop below target.",
+      "Surfaces and edges are described in the craft-anything design-system notes (Apache-2.0); the percentages here were measured on the web build."
+    ],
+    "demo": {
+      "style": "materials",
+      "t1": "SURFACES",
+      "kind": "EDGES",
+      "meta": "canvas/card/field",
+      "variant": ""
+    },
+    "source": {
+      "pack": "craft",
+      "repo": "storytold/craft-anything",
+      "url": "https://github.com/storytold/craft-anything",
+      "license": "Apache-2.0",
+      "ref": "storytold/craft-anything + docs/design-system.md (surfaces and edges)",
+      "research": "storytold/craft-anything + docs/design-system.md (surfaces and edges)"
+    },
+    "sort_order": -944
+  },
+  {
+    "id": "cr-18-focus-ring-spec",
+    "title": "Focus Ring Spec",
+    "description": "一套焦点环：发丝描边加柔光晕，逐表面测对比度",
+    "category": "Replication Recipes",
+    "type": "component",
+    "tags": [
+      "focus",
+      "a11y",
+      "keyboard",
+      "contrast",
+      "states"
+    ],
+    "palette": [
+      "#0a0c10",
+      "#161a21",
+      "#f0f2f5",
+      "#38bdf8",
+      "#a78bfa"
+    ],
+    "prompt": "Specify a single focus treatment and hold every control to it. Draw it in two parts: a 2 px hairline in the accent ink following the control's own radius, plus a 3 px halo outside it at about 35 percent alpha, so the ring reads at 1440 px and is never clipped by an overflow container. Fix the geometry: hairline inset 0, halo outside by 3 px, no layout growth, no offset drift on rounded corners, and a ring that stays whole when two controls sit 4 px apart. Set the target at 3 to 1 for the hairline against the surface directly outside the control, and list the surface pairs that fail, replacing the accent per surface rather than shipping a ring nobody can see. Differentiate the two families: buttons, toggles and links take the full ring on :focus-visible only, while text fields and selects show it on :focus and simultaneously switch their edge to the interactive colour, because a field is a place to type rather than something to press. Keep the ring visible through hover and active, and never ease it longer than 120 ms. Then audit by keyboard at both themes and at 200 percent zoom. Acceptance: Tab reaches every interactive element in visual order with a visible ring; no ring is clipped or shifts layout; measured contrast is at least 3 to 1 on all five surfaces in both themes; Enter and Space still activate while the ring shows; a pointer-only run leaves no ring behind.",
+    "notes": [
+      "Outline with a positive offset is the one property that survives overflow hidden; a box-shadow ring disappears inside scroll containers.",
+      "Removing the ring and adding your own on hover is the usual regression: test with the keyboard, not the mouse.",
+      "The two-part hairline plus halo follows the craft-anything design-system notes (Apache-2.0); the pixel values were re-measured for a browser at 100 percent."
+    ],
+    "demo": {
+      "style": "states",
+      "t1": "FOCUS RING",
+      "kind": "A11Y",
+      "meta": "hairline + halo",
+      "variant": ""
+    },
+    "source": {
+      "pack": "craft",
+      "repo": "storytold/craft-anything",
+      "url": "https://github.com/storytold/craft-anything",
+      "license": "Apache-2.0",
+      "ref": "storytold/craft-anything + docs/design-system.md (keyboard focus); docs/pitfalls.md (design)",
+      "research": "storytold/craft-anything + docs/design-system.md (keyboard focus); docs/pitfalls.md (design)"
+    },
+    "sort_order": -943
+  },
+  {
+    "id": "cr-19-component-need-map",
+    "title": "Component Need Map",
+    "description": "把页面需求逐条映射到组件，表格即开发顺序",
+    "category": "Replication Recipes",
+    "type": "playbook",
+    "tags": [
+      "components",
+      "inventory",
+      "build-order",
+      "tokens",
+      "planning"
+    ],
+    "palette": [
+      "#0c0e13",
+      "#191d25",
+      "#e6eaf0",
+      "#22c55e",
+      "#ef4444"
+    ],
+    "prompt": "Translate the page into a table of needs before choosing a single component. Read the reference screen and list every action and readout it carries, then write two columns, need and component, resolving each need to one entry of a fixed vocabulary: the one main action on a screen becomes a primary button at 40 or 48 px, any other action a secondary at 32 or 40, a quiet action that owns no box until hovered a ghost, anything that deletes or cannot be undone a filled danger button, one of a few choices a segmented control at 32 px with a sliding selection, one of many a dropdown whose rows are 32 px, a value to type a 40 px field with a real label, a status word a fully round pill, a name and its value a two-column stat row rather than a sentence, and nothing yet an empty state carrying one next action. Cap the plan at one primary per screen and one danger per destructive flow, and forbid a destructive control within 64 px of a primary one. Order the rows as the build order: shell, navigation, main action, fields, list and rows, status, empty and error. Each row names its states before it is coded, rest, hover, focus-visible, pressed, disabled, plus open or loading where they apply. Acceptance: every interactive element in the build maps to a row; no row goes unused; no screen shows two primary buttons; every row lists its states before implementation; the destructive distance rule holds; the table alone is enough for a second developer to start the build.",
+    "notes": [
+      "The table is the deliverable: a need with no component is a missing design decision, and a component with no need is decoration.",
+      "Two primary buttons on one screen is the most common plan error and it survives every later polish pass.",
+      "Component vocabulary here follows craft-anything's design-system notes (Apache-2.0); the pixel sizes are this build's own measured values."
+    ],
+    "demo": {
+      "style": "report",
+      "t1": "COMPONENTS",
+      "kind": "NEED MAP",
+      "meta": "need -> component",
+      "variant": ""
+    },
+    "source": {
+      "pack": "craft",
+      "repo": "storytold/craft-anything",
+      "url": "https://github.com/storytold/craft-anything",
+      "license": "Apache-2.0",
+      "ref": "storytold/craft-anything + docs/design-system.md (components)",
+      "research": "storytold/craft-anything + docs/design-system.md (components)"
+    },
+    "sort_order": -942
+  },
+  {
+    "id": "cr-20-message-and-toast-system",
+    "title": "Message and Toast System",
+    "description": "提示卡分层：确认自散、错误常驻、单队列单归属",
+    "category": "Replication Recipes",
+    "type": "component",
+    "tags": [
+      "toast",
+      "messages",
+      "queue",
+      "aria",
+      "feedback"
+    ],
+    "palette": [
+      "#0d0f13",
+      "#1a1e26",
+      "#f1f3f7",
+      "#f59e0b",
+      "#ef4444"
+    ],
+    "prompt": "Design the message layer as one queue with one owner. Place it in a single fixed region, 24 px from the top and horizontally centred, stacked downward with 8 px gaps, above content and below any modal, so a message never appears in two corners at once. A message is a compact card with 12 px padding, a 6 px radius, a 4 px accent bar on its leading edge, a 15 px line and a 24 px close target. Bind lifetime to kind: a confirmation fades in over 120 ms, holds 4000 ms and leaves over 160 ms; a new confirmation replaces the one before it instead of stacking; errors and warnings never self-dismiss and stay until closed or resolved; progress and long-running status stay until their task ends. Let clicks pass through the card to the work underneath except on the close button, edit in place where a message carries a value, and never let the layer capture scroll or shift layout. Keep at most three visible, queue the rest and promote them as slots free. Give each message a status role, polite for confirmations and assertive for errors, plus a text label, so colour is never the only signal. Then fire five messages inside two seconds and dismiss one mid-fade. Acceptance: no two confirmations are visible together; errors survive 60 s untouched; the visible cap is three with the rest ordered; the layer adds zero layout shift; each message is announced exactly once.",
+    "notes": [
+      "A message that covers the control the person just pressed reads as a failure of the app, not feedback; anchor it away from the working area.",
+      "Self-dismissing errors are the classic bug: a failure that vanishes in four seconds is a failure nobody can read or copy.",
+      "Queue rules mirror the message behaviour in craft-anything's design-system notes (Apache-2.0); the timings here were set for a browser, not a desktop window."
+    ],
+    "demo": {
+      "style": "micro",
+      "t1": "MESSAGES",
+      "kind": "TOASTS",
+      "meta": "queue + timeout",
+      "variant": ""
+    },
+    "source": {
+      "pack": "craft",
+      "repo": "storytold/craft-anything",
+      "url": "https://github.com/storytold/craft-anything",
+      "license": "Apache-2.0",
+      "ref": "storytold/craft-anything + docs/design-system.md (messages); docs/pitfalls.md (design)",
+      "research": "storytold/craft-anything + docs/design-system.md (messages); docs/pitfalls.md (design)"
+    },
+    "sort_order": -941
+  },
+  {
+    "id": "cr-21-empty-and-loading-states",
+    "title": "Empty and Loading States",
+    "description": "空白、加载、错误三态各配一种指示器与恢复路径",
+    "category": "Replication Recipes",
+    "type": "component",
+    "tags": [
+      "states",
+      "empty-state",
+      "loading",
+      "progress",
+      "a11y"
+    ],
+    "palette": [
+      "#0b0c10",
+      "#181b22",
+      "#edf0f5",
+      "#4d7cff",
+      "#22c55e"
+    ],
+    "prompt": "Give every list and panel three designed states and a rule for picking the indicator. Empty: a 20 px icon at 50 percent opacity, one 15 px line naming what is missing, one action that fixes it, and no illustration above 96 px. Loading: a determinate progress bar with a percentage when the wait is expected to pass one second and the total is known, an indeterminate 2 px bar when it is not, and a 16 px spinner only under one second; never an animated ellipsis, and never a skeleton built from animated gradients and blurs, because that is compositor work every frame for no information. Error: the same block shape as empty, the failure in one 15 px line, a retry action and a collapsible detail, and the retry keeps the person's filter values instead of resetting them. Reserve the block's height at 240 px and keep header and column widths identical across all three, so switching never nudges the page. Give each state one sentence for assistive technology, and pause any indicator animation while the tab is hidden. Then test a cold load, a load throttled to 300 ms latency and a forced network failure. Acceptance: all three states render inside the same 240 px block with no layout shift; no spinner is shown for a wait past one second; retry restores the previous query; each state is announced once; no indicator animates while the tab is hidden.",
+    "notes": [
+      "A skeleton that does not match the final shape reads as a jump when content lands; reserve the real heights instead of drawing placeholder bars.",
+      "Replace framework defaults that repaint a spinner every frame with a CSS-driven indicator, or the idle state costs battery on every screen.",
+      "Nothing here needs a library; the behaviour mirrors the working and empty-state guidance in craft-anything's design-system notes (Apache-2.0)."
+    ],
+    "demo": {
+      "style": "states",
+      "t1": "EMPTY / LOADING",
+      "kind": "STATES",
+      "meta": "spinner vs progress",
+      "variant": ""
+    },
+    "source": {
+      "pack": "craft",
+      "repo": "storytold/craft-anything",
+      "url": "https://github.com/storytold/craft-anything",
+      "license": "Apache-2.0",
+      "ref": "storytold/craft-anything + docs/design-system.md (working, empty_state, spinner)",
+      "research": "storytold/craft-anything + docs/design-system.md (working, empty_state, spinner)"
+    },
+    "sort_order": -940
+  },
+  {
+    "id": "cr-22-popup-menu-behaviour",
+    "title": "Popup and Menu Behaviour",
+    "description": "下拉与菜单的开合、九行上限、宽度与焦点规则",
+    "category": "Replication Recipes",
+    "type": "component",
+    "tags": [
+      "dropdown",
+      "menu",
+      "popup",
+      "focus",
+      "keyboard"
+    ],
+    "palette": [
+      "#090a0d",
+      "#15181f",
+      "#eef1f6",
+      "#8b5cf6",
+      "#f472b6"
+    ],
+    "prompt": "Pin down how a dropdown opens, closes and behaves when the viewport is short. Open it with a 120 ms fade and no scale, rows already in place so the list never appears to grow; close in 90 ms and unmount only after the fade ends. Size the panel to its widest row plus 16 px of padding and never to full width, cap the height at nine 32 px rows, 288 px plus 8 px of padding, and scroll past that with a slim thumb. Place it 4 px below the trigger; when less than the panel height plus 12 px remains below, flip above and keep the same gap; when neither side fits, open at the larger side, scroll from the top and keep the trigger in view. On open, move focus to the selected row without scrolling it into the middle, let arrows traverse rows and wrap at the ends, send Home and End to the extremes, close on Escape and return focus to the trigger, and close on an outside pointer-down without swallowing that click. Mark the trigger with aria-expanded and aria-haspopup, give the active row aria-selected, and use real menu rows rather than restyled buttons. Then drive it with the keyboard in a 320 px tall window. Acceptance: measured fade times land within 10 ms of spec; exactly nine rows show before scrolling; panel width equals widest row plus 16 px; focus returns to the trigger after Escape and after an outside click; the panel opens fully inside the viewport at every tested height.",
+    "notes": [
+      "Fading without a matching fade-out leaves the panel to vanish; finish the exit before unmount or the close reads as a glitch.",
+      "Width tracking the widest row is what stops a menu from being either cramped or absurdly wide when one label changes.",
+      "Popup fade and the nine-row cap come from craft-anything's design-system notes (Apache-2.0); the flip and focus rules are this build's addition for the web."
+    ],
+    "demo": {
+      "style": "micro",
+      "t1": "POPUPS",
+      "kind": "MENUS",
+      "meta": "fade + 9 rows",
+      "variant": ""
+    },
+    "source": {
+      "pack": "craft",
+      "repo": "storytold/craft-anything",
+      "url": "https://github.com/storytold/craft-anything",
+      "license": "Apache-2.0",
+      "ref": "storytold/craft-anything + docs/design-system.md (lists that open, behaviour)",
+      "research": "storytold/craft-anything + docs/design-system.md (lists that open, behaviour)"
+    },
+    "sort_order": -939
+  },
+  {
+    "id": "cr-23-wheel-step-and-scrollbar",
+    "title": "Wheel Step and Scrollbar Craft",
+    "description": "一格滚轮走多远、缓动多久、滑块多粗与对比度",
+    "category": "Replication Recipes",
+    "type": "component",
+    "tags": [
+      "scroll",
+      "wheel",
+      "scrollbar",
+      "easing",
+      "contrast"
+    ],
+    "palette": [
+      "#07080a",
+      "#101318",
+      "#edeff3",
+      "#00e5a0",
+      "#2d6bff"
+    ],
+    "prompt": "Build the scrolling feel from numbers rather than taste. Fix one wheel notch at 100 px of travel on the page and ease to it over 180 ms on a decelerating curve, so a single notch lands exactly and a second notch inside that window adds to the target instead of restarting the curve; normalize raw deltas across mouse and trackpad, clamp any single event to 120 px, and leave Page Down at one viewport height minus 64 px of overlap so a line of context survives. Use the same 100 px step and the same easing inside short scroll containers, so a panel and the page do not feel like two different products. Draw a scrollbar with no visible track: a 6 px thumb whose colour holds 3 to 1 against every surface it crosses, thickening to 10 px under the pointer with a 120 ms transition on width and colour, and appearing only after 500 ms of scroll activity so it is not a permanent stripe. Position it as an overlay so it never changes layout width, and never hide the native bar where a keyboard or assistive path still needs a target. Then drive it with a scripted wheel sequence and a trackpad. Acceptance: one notch settles within 2 px of 100 px of travel; two fast notches accumulate without restarting; the thumb holds 3 to 1 on the darkest and the lightest surface; hover thickening shifts no content; no wheel input ever scrolls the page sideways.",
+    "notes": [
+      "A theme that paints the thumb and the track with the same token makes the bar invisible except on hover; check both in both themes and measure, not by eye.",
+      "Smooth scrolling that re-targets on every wheel event fights the person scrolling; accumulate into one target instead.",
+      "The 100-point wheel step and the slim thickening thumb follow craft-anything's design-system notes (Apache-2.0); the pixel and millisecond values here were tuned in a browser."
+    ],
+    "demo": {
+      "style": "scrollmap",
+      "t1": "SCROLL FEEL",
+      "kind": "WHEEL",
+      "meta": "step + thumb",
+      "variant": "smooth"
+    },
+    "source": {
+      "pack": "craft",
+      "repo": "storytold/craft-anything",
+      "url": "https://github.com/storytold/craft-anything",
+      "license": "Apache-2.0",
+      "ref": "storytold/craft-anything + docs/design-system.md (scrolling)",
+      "research": "storytold/craft-anything + docs/design-system.md (scrolling)"
+    },
+    "sort_order": -938
+  },
+  {
+    "id": "cr-24-theme-parity-snapshot",
+    "title": "Theme Parity Snapshot",
+    "description": "双主题同场景快照与逐对对比度，禁止硬编码颜色",
+    "category": "Replication Recipes",
+    "type": "playbook",
+    "tags": [
+      "theming",
+      "contrast",
+      "snapshot",
+      "tokens",
+      "testing"
+    ],
+    "palette": [
+      "#0a0b0e",
+      "#161920",
+      "#f2f4f8",
+      "#ff2d78",
+      "#38bdf8"
+    ],
+    "prompt": "Build every screen from tokens and prove both themes in one run. Define a semantic layer instead of two palettes: canvas, card, field, hover, pressed, text, muted, accent, danger and edge, each resolving through a light set and a dark set, and make a check fail the build when a component contains a hex value or a raw rgba. Then write a snapshot script that renders each scene at 1440 by 900 in light and dark, waits for document.fonts.ready plus 300 ms of quiet, and writes both captures beside a side-by-side sheet per scene. For every surface pair, compute text contrast and interactive-edge contrast in each theme and print the ratios in the report, targeting 4.5 to 1 for body text and 3 to 1 for large text and control edges; treat a pair that passes in only one theme as a failure rather than a footnote. Diff the two captures structurally to catch a component that kept a light-only shadow, a white overlay or an rgba border, since those survive a token audit and still break dark. Re-run everything from a cold load and then from a live toggle without reload. Acceptance: the token check reports zero raw colours in components; every scene has both captures; no contrast pair passes in one theme and fails in the other; the toggle run matches the cold load within 2 per channel; the report names any pair it could not measure.",
+    "notes": [
+      "A snapshot that only renders the default theme ships half the product; run both in the same pass or the second one never happens.",
+      "Contrast that passes in dark and fails in light is the usual asymmetry, because accent inks are chosen against a dark canvas.",
+      "Token layering and the snapshot idea come from craft-anything's design-system notes (Apache-2.0); the capture steps here are a browser harness, not a desktop example binary."
+    ],
+    "demo": {
+      "style": "matrix",
+      "t1": "THEME PARITY",
+      "kind": "SNAPSHOT",
+      "meta": "light / dark",
+      "variant": ""
+    },
+    "source": {
+      "pack": "craft",
+      "repo": "storytold/craft-anything",
+      "url": "https://github.com/storytold/craft-anything",
+      "license": "Apache-2.0",
+      "ref": "storytold/craft-anything + docs/design-system.md (rules, snapshot example)",
+      "research": "storytold/craft-anything + docs/design-system.md (rules, snapshot example)"
+    },
+    "sort_order": -937
+  },
+  {
+    "id": "cr-25-form-field-architecture",
+    "title": "Form Field Architecture",
+    "description": "字段拆成标签、控件、提示、错误、成功五部分",
+    "category": "Replication Recipes",
+    "type": "component",
+    "tags": [
+      "forms",
+      "validation",
+      "fields",
+      "aria",
+      "states"
+    ],
+    "palette": [
+      "#0b0d11",
+      "#181c24",
+      "#f1f4f8",
+      "#4d7cff",
+      "#ef4444"
+    ],
+    "prompt": "Assemble a field from named parts and fix where each one sits. The parts are label at 13 px, 4 px above the control, always visible and never replaced by a placeholder; control at 40 px with 12 px side padding, a 6 px radius and 15 px text; hint at 12 px muted, 4 px below the control; error at 12 px in the danger ink with a 14 px icon, taking the hint's slot; and success in the same slot, accent ink, one word. Reserve 18 px under every field for whichever of hint, error or success is showing, so validation never moves the form. Combine states on purpose: focus draws the accent edge plus the halo and keeps the error text visible when the value is still invalid, while error without focus holds a 2 px danger edge. Validate on blur for the first attempt and on input only after the first failure, and never disable the submit button as a substitute for explaining what is wrong. Handle autofill by repainting the browser's autofill fill to the field colour so contrast survives, and long values by ellipsis in read mode with the full value in edit mode. Then test an 80-character value, a paste, an autofilled email and a screen reader pass. Acceptance: all five parts exist for every field; error and success swap with zero layout shift; no invalid state relies on colour alone; autofill keeps field contrast above 4.5 to 1; a keyboard-only submit reaches every hint and error through aria-describedby.",
+    "notes": [
+      "Reserved space is the whole trick: fields that grow when an error appears make the submit button move under the cursor.",
+      "A disabled submit button hides the failure and gives nobody a way to ask what is missing; keep it enabled and explain.",
+      "The field vocabulary follows craft-anything's design-system notes (Apache-2.0); the validation timing and autofill handling were chosen for browsers."
+    ],
+    "demo": {
+      "style": "states",
+      "t1": "FIELD ARCHITECTURE",
+      "kind": "FORMS",
+      "meta": "label + error",
+      "variant": ""
+    },
+    "source": {
+      "pack": "craft",
+      "repo": "storytold/craft-anything",
+      "url": "https://github.com/storytold/craft-anything",
+      "license": "Apache-2.0",
+      "ref": "storytold/craft-anything + docs/design-system.md (fields); docs/pitfalls.md (design)",
+      "research": "storytold/craft-anything + docs/design-system.md (fields); docs/pitfalls.md (design)"
+    },
+    "sort_order": -936
+  },
+  {
+    "id": "cr-26-navigation-and-menu-breakpoints",
+    "title": "Navigation Breakpoints",
+    "description": "按内容宽度定位导航折叠点，四档截图证明",
+    "category": "Replication Recipes",
+    "type": "component",
+    "tags": [
+      "navigation",
+      "breakpoints",
+      "responsive",
+      "menu",
+      "a11y"
+    ],
+    "palette": [
+      "#0c0f14",
+      "#1a2028",
+      "#eef2f6",
+      "#59d3ff",
+      "#22c55e"
+    ],
+    "prompt": "Decide from measurement where horizontal navigation stops fitting and becomes a menu button. Capture the reference at 1280, 1024, 768 and 390 px and record, per width, the header height, the number of visible links, which actions stay outside the menu, and whether the wordmark shrinks or drops to a mark. Choose the threshold from content rather than habit: convert when the measured row would exceed its container minus 24 px of breathing room, which for six realistic labels lands near 820 px, and write that number down as a token instead of adopting a framework step. Decide what moves and in what order: secondary utilities collapse first, primary destinations go into the menu, and the one main action stays visible as a 40 px icon button with an accessible name, never as a truncated word. Keep the header at 64 px in both modes so the first band of content never jumps, animate the panel in over 180 ms from the menu button's edge, trap focus inside while it is open, return focus on close, close on Escape and on route change, and mark the button with aria-expanded. Then prove the whole thing with four captures and a keyboard run. Acceptance: captures exist at all four widths; no width shows a wrapped or clipped nav row; header height is identical in both modes; the menu opens and closes by keyboard alone; every destination reachable at 1280 px is present in the mobile menu.",
+    "notes": [
+      "The breakpoint is a property of the labels, not of the design system; six long words break a nav at a width where six short ones still fit.",
+      "A hamburger that opens a panel without trapping focus leaves the keyboard user behind it, which is worse than no menu at all.",
+      "Window and component thinking here follows craft-anything's design-system notes (Apache-2.0); the widths are this build's measured values."
+    ],
+    "demo": {
+      "style": "responsive",
+      "t1": "NAV BREAKPOINTS",
+      "kind": "RESPONSIVE",
+      "meta": "nav -> menu",
+      "variant": "parity"
+    },
+    "source": {
+      "pack": "craft",
+      "repo": "storytold/craft-anything",
+      "url": "https://github.com/storytold/craft-anything",
+      "license": "Apache-2.0",
+      "ref": "storytold/craft-anything + docs/design-system.md (window, components); crates/ui-egui/src/widgets.rs (control composition and header behaviour)",
+      "research": "storytold/craft-anything + docs/design-system.md (window, components); crates/ui-egui/src/widgets.rs (control composition and header behaviour)"
+    },
+    "sort_order": -935
+  },
+  {
+    "id": "cr-27-icon-size-system",
+    "title": "Icon Size System",
+    "description": "图标六档尺寸与描边权重，随控件尺寸成对使用",
+    "category": "Replication Recipes",
+    "type": "component",
+    "tags": [
+      "icons",
+      "scale",
+      "tokens",
+      "stroke",
+      "alignment"
+    ],
+    "palette": [
+      "#0a0c0f",
+      "#171b21",
+      "#f0f3f7",
+      "#a78bfa",
+      "#22c55e"
+    ],
+    "prompt": "Set an icon scale that pairs with the control sizes and refuse to mix weights. Use six sizes, 12, 14, 16, 20, 24 and 32 px, and bind each to its job: 12 for inline text and dense table marks, 14 for small toolbar buttons and list rows, 16 for default buttons, chevrons and field affordances, 20 for large controls and the primary action, 24 for navigation and standalone icon buttons, 32 for empty states and page headers. Draw every glyph on one 24-unit grid with a 1.5-unit stroke at 20 and 24 px and 1.25 units at 12 to 16 px, so optical weight stays constant as the size changes instead of thin icons turning to mush. Align to whole pixels, correct optical centring by 0.5 px where a shape is asymmetric, and cap one view at two sizes. Write which sizes may appear in which context in the token file, name each icon-only button for assistive technology, and give every icon a 44 px hit area even at 16 px of drawing. Then audit one full screen icon by icon against the scale and against the text beside it, at both themes. Acceptance: only the six sizes exist; stroke widths follow the size rule; every icon centres on its label's optical middle within 1 px; no view uses more than two sizes; every icon-only button carries an accessible name; a 4x crop shows nothing drawn on a half pixel.",
+    "notes": [
+      "Mixed weights are the fastest way to make a clean layout read as assembled; one grid and two stroke widths fix more than redrawing.",
+      "Small icons need a hit area of their own, or a 12 px glyph becomes an unclickable target on a phone.",
+      "The icon ladder and control pairing follow craft-anything's design-system notes (Apache-2.0); the stroke units here were chosen for browser rendering."
+    ],
+    "demo": {
+      "style": "tokens",
+      "t1": "ICON SIZES",
+      "kind": "SYSTEM",
+      "meta": "12 -> 32",
+      "variant": ""
+    },
+    "source": {
+      "pack": "craft",
+      "repo": "storytold/craft-anything",
+      "url": "https://github.com/storytold/craft-anything",
+      "license": "Apache-2.0",
+      "ref": "storytold/craft-anything + docs/design-system.md (icons, control sizes)",
+      "research": "storytold/craft-anything + docs/design-system.md (icons, control sizes)"
+    },
+    "sort_order": -934
+  },
+  {
+    "id": "cr-28-pricing-table-rebuild",
+    "title": "Pricing Table Rebuild",
+    "description": "套餐卡、对比表与切换不跳动的重建",
+    "category": "Replication Recipes",
+    "type": "section",
+    "tags": [
+      "pricing",
+      "tables",
+      "toggle",
+      "responsive",
+      "tokens"
+    ],
+    "palette": [
+      "#0b0c10",
+      "#16181f",
+      "#eef1f6",
+      "#22c55e",
+      "#7c8cf8"
+    ],
+    "prompt": "Rebuild a pricing section as three measured parts: plan cards, a comparison grid, and a billing toggle. Start with the cards. Record each plan's slots (name, price, unit, one-line claim, four to six feature rows, action label), the inner padding, the gap between cards, and how the recommended plan differs: an accent border at 1 px, a label at 12 px above the name, an 8 px lift that changes no column width. Use one radius family, 8 px on cards, 6 px on the toggle and buttons, 4 px on feature rows. Then the toggle: two labels, a slider that moves in 180 ms on the standard ease, and a price swap that changes digits only, so nothing above or below the row moves; reserve the widest value with tabular figures and a min-width on the price element. Then the comparison grid: eight rows maximum, feature column at 40 percent, one column per plan, row separators at 12 percent alpha, sticky row labels, and a collapse rule at 640 px that keeps the feature name, the recommended plan, and a disclosure per row. Acceptance: toggling at 1440, 1024 and 390 px moves no element by more than 1 px; the recommended card is unique and labelled in markup, not by colour alone; the grid never scrolls sideways at 390 px; every price cell uses tabular figures; keyboard focus reaches the toggle and every action with a 3 px halo.",
+    "notes": [
+      "The price swap is where this section fails: give the price element a fixed min-width and tabular figures, or every toggle press drags the layout a few pixels sideways.",
+      "Reserve about 12 px of extra width per digit; a reservation sized to this month's numbers breaks when annual pricing needs five digits.",
+      "Mark the recommended plan once in markup rather than painting it, so both the stylesheet and a screen reader agree on which one it is."
+    ],
+    "demo": {
+      "style": "bento",
+      "t1": "PRICING",
+      "kind": "TABLES",
+      "meta": "plan + comparison",
+      "variant": ""
+    },
+    "source": {
+      "pack": "craft",
+      "repo": "storytold/craft-anything",
+      "url": "https://github.com/storytold/craft-anything",
+      "license": "Apache-2.0",
+      "ref": "storytold/craft-anything + docs/pitfalls.md (design); crates/setup/src/skill.md (evidence-first method)",
+      "research": "storytold/craft-anything + docs/pitfalls.md (design); crates/setup/src/skill.md (evidence-first method)"
+    },
+    "sort_order": -933
+  },
+  {
+    "id": "cr-29-mega-footer-craft",
+    "title": "Mega Footer Craft",
+    "description": "大页脚列数、密度与法务信息的排版规则",
+    "category": "Replication Recipes",
+    "type": "section",
+    "tags": [
+      "footer",
+      "grid",
+      "hierarchy",
+      "legal",
+      "links"
+    ],
+    "palette": [
+      "#0a0b0e",
+      "#14161c",
+      "#f1f3f7",
+      "#ff6a3d",
+      "#4f7cff"
+    ],
+    "prompt": "Lay out a large footer as a fixed column grammar rather than a sitemap dump. Cap it at five columns plus a brand block: brand column 280 px with wordmark, one sentence and two social links; then four link columns, each with a heading at 13 px and no more than six links, separated by 32 px of horizontal space. Link text sits at 14 px with a 1.45 line height and 8 px of vertical rhythm; hover changes colour only, in 120 ms, and never underlines, because an underline on a 14 px footer link reflows the line. Give legal and locale their own row: language selector, region, privacy, terms, and a copyright line, all reachable by keyboard, separated from the columns by a hairline at 8 percent alpha. Build with CSS grid, logical properties, and tokens for every gap and colour. The rule that keeps a footer readable: it carries every destination a person needs at the end of a page, not every page the site owns; when a column would need a seventh link, that content belongs in a hub page, not a longer column. Acceptance: at 1440 px the footer is at most 420 px tall; at 390 px the columns stack on a 24 px rhythm and stay under 720 px; link contrast is at least 4.5 to 1 on the footer surface; no label wraps to a third line; tabbing reaches every link in visual order; the total link count stays at or under 30.",
+    "notes": [
+      "Footers grow by accretion: each team adds one link and a year later a column has nineteen. Enforce the six-link cap inside the component, not in review comments.",
+      "Keep the legal row quiet but not tiny; 12 px is the floor and it still has to reach 7 to 1 against the footer surface.",
+      "Measure footer height at 1440 and 390 px after every addition; growth nobody feels is what makes the end of a page look cheap."
+    ],
+    "demo": {
+      "style": "bento",
+      "t1": "FOOTER",
+      "kind": "STRUCTURE",
+      "meta": "columns + legal",
+      "variant": ""
+    },
+    "source": {
+      "pack": "craft",
+      "repo": "storytold/craft-anything",
+      "url": "https://github.com/storytold/craft-anything",
+      "license": "Apache-2.0",
+      "ref": "storytold/craft-anything + docs/pitfalls.md (design); docs/design-system.md (scale)",
+      "research": "storytold/craft-anything + docs/pitfalls.md (design); docs/design-system.md (scale)"
+    },
+    "sort_order": -932
+  },
+  {
+    "id": "cr-30-content-model-before-layout",
+    "title": "Content Model Before Layout",
+    "description": "先定文案槽位与长度上限，再写布局",
+    "category": "Replication Recipes",
+    "type": "playbook",
+    "tags": [
+      "content-model",
+      "copy",
+      "constraints",
+      "clamp",
+      "playbook"
+    ],
+    "palette": [
+      "#0c0d11",
+      "#171a22",
+      "#f4f4f1",
+      "#c8a96a",
+      "#59d3ff"
+    ],
+    "prompt": "Write the content model before any layout exists, so real copy drives the grid instead of placeholder text. Produce one table, one row per string and asset the section needs: key, role, English text, measured character count, maximum allowed characters, minimum, may wrap, is editable, and which element renders it. Cover headline, eyebrow, subhead, action labels, feature titles, feature bodies, captions, table headers, empty copy, error copy, alt text and the logo slot. Take the English length by counting characters, not words, and set the maximum at 130 percent of it rounded up to the nearest 5. Anything under 40 characters must not wrap; body copy wraps between 62 and 68 characters per line. Then write the constraints that follow from the numbers: the headline block holds a fixed two-line height so a longer string pushes nothing below it, card titles clamp at three lines, buttons take a 40 px height with 16 px side padding and truncate only past their own maximum. Add an overflow fixture per key: the longest allowed string, one string with an emoji, and one unbroken 40-character word. Acceptance: every visible string traces to a table row; injecting each overflow fixture changes no pixel outside its own block; a scan finds no key over its maximum; a second developer rebuilds the section from the table without reopening the reference.",
+    "notes": [
+      "Designing against lorem ipsum hides the failure: the real headline arrives, the grid moves, and the rebuild stops matching the reference.",
+      "Set the maximum from the measurement rather than from a round number you like; round numbers are what break the first translation.",
+      "An unbroken 40-character word is the fixture nobody writes and every overflow test needs."
+    ],
+    "demo": {
+      "style": "phases",
+      "t1": "CONTENT MODEL",
+      "kind": "ORDER",
+      "meta": "copy first",
+      "variant": ""
+    },
+    "source": {
+      "pack": "craft",
+      "repo": "storytold/craft-anything",
+      "url": "https://github.com/storytold/craft-anything",
+      "license": "Apache-2.0",
+      "ref": "storytold/craft-anything + crates/setup/src/skill.md (study, evidence); docs/pitfalls.md (design)",
+      "research": "storytold/craft-anything + crates/setup/src/skill.md (study, evidence); docs/pitfalls.md (design)"
+    },
+    "sort_order": -931
+  },
+  {
+    "id": "cr-31-motion-tier-budget",
+    "title": "Motion Tier Budget",
+    "description": "把动效分四档，各给时长、缓动与频次预算",
+    "category": "Replication Recipes",
+    "type": "component",
+    "tags": [
+      "motion",
+      "easing",
+      "budget",
+      "stagger",
+      "reduced-motion"
+    ],
+    "palette": [
+      "#090a0d",
+      "#15171e",
+      "#f2f2f0",
+      "#ff7a45",
+      "#6c5ce7"
+    ],
+    "prompt": "Split every animation into four tiers and give each one a number before writing a single transition. Tier zero, instant feedback: 0 to 90 ms, colour and shadow only, no easing token, unlimited count, because a press must feel immediate. Tier one, transition: 120 to 180 ms on the standard ease for hover, focus and toggle moves. Tier two, entrance: 220 to 320 ms on a decelerate curve, a 16 px rise, 40 to 60 ms of stagger between siblings, and a cap of six items so the last one lands under 620 ms. Tier three, ambient: 6 to 12 s loops, two per viewport at most, transform only. Exits run at 65 to 80 percent of their matching entrance. Then set the frequency budget, which is the part that actually changes how a page reads: a control may animate two properties per state change, a section may run one entrance per load, and nothing in tiers two or three may animate while scrolling unless it is a scroll-linked reveal with a 0.25 progress threshold and a once-only latch. Record every entry in a motion manifest: tier, duration, easing, property, element, trigger and count cap. Acceptance: a timeline dump matches each manifest duration within 20 percent; no entry animates width, height, top or left; with reduced motion every entrance collapses to opacity at 120 ms and every loop stops; the manifest lists fewer than 24 entries for the whole page.",
+    "notes": [
+      "Tier inflation is the usual failure: when hover, toolbar, badge and marquee all animate, nothing on the page reads as important.",
+      "Ambient loops cost battery on phones, so two per viewport at 6 to 12 s is a budget rather than a preference.",
+      "An exit shorter than its entrance is what makes an interface feel quick; reuse the entrance duration for the way out and it reads sluggish."
+    ],
+    "demo": {
+      "style": "timing",
+      "t1": "MOTION TIERS",
+      "kind": "BUDGET",
+      "meta": "instant -> ambient",
+      "variant": ""
+    },
+    "source": {
+      "pack": "craft",
+      "repo": "storytold/craft-anything",
+      "url": "https://github.com/storytold/craft-anything",
+      "license": "Apache-2.0",
+      "ref": "storytold/craft-anything + docs/design-system.md (hover ease); docs/pitfalls.md (design)",
+      "research": "storytold/craft-anything + docs/design-system.md (hover ease); docs/pitfalls.md (design)"
+    },
+    "sort_order": -930
+  },
+  {
+    "id": "cr-32-state-coverage-matrix",
+    "title": "State Coverage Matrix",
+    "description": "部件乘七种状态的覆盖矩阵与缺口清单",
+    "category": "Replication Recipes",
+    "type": "playbook",
+    "tags": [
+      "states",
+      "coverage",
+      "matrix",
+      "components",
+      "audit"
+    ],
+    "palette": [
+      "#0b0d12",
+      "#181b23",
+      "#e9edf4",
+      "#3ddc97",
+      "#ff2d78"
+    ],
+    "prompt": "Build a state coverage matrix before styling anything, so the missing cells become the plan. Put parts down the left and states across the top, one cell per pair, each cell marked built, borrowed or missing. List the parts from the reference section: inline link, icon button, primary action, secondary action, segmented control, dropdown, text field, checkbox, card, tab, accordion row, carousel control, toast and one media hover. Across the top put seven states: rest, hover, focus-visible, active or open, disabled, loading, error. Fill what exists, then mark the remainder missing and count them; that number is the schedule, not an opinion. Write each cell's visible difference in one clause, for example hover on the secondary action raises its surface one step and moves nothing, while focus draws a 1 px hairline in the accent ink plus a 3 px halo. Build in dependency order: surfaces first, then hover and focus, then active and open, then disabled, then loading and error, since loading needs a reserved layout or the page jumps the moment a spinner appears. Acceptance: every part has all seven states either built or deferred with a written reason; a scripted pass sets each state by attribute and screenshots it; only open and error change layout height, each by a recorded amount; the matrix ends with zero unexplained empty cells.",
+    "notes": [
+      "An empty state cell is not cosmetic; loading without a reserved layout produces the one shift a whole page gets judged on.",
+      "Seven states across fourteen parts is 98 cells, so expect the missing count to be honest rather than small.",
+      "Mark a deferred state with its reason; a blank cell cannot be told apart from an oversight at handoff."
+    ],
+    "demo": {
+      "style": "matrix",
+      "t1": "STATE MATRIX",
+      "kind": "COVERAGE",
+      "meta": "7 states x parts",
+      "variant": ""
+    },
+    "source": {
+      "pack": "craft",
+      "repo": "storytold/craft-anything",
+      "url": "https://github.com/storytold/craft-anything",
+      "license": "Apache-2.0",
+      "ref": "storytold/craft-anything + crates/setup/src/skill.md (check, refine); docs/design-system.md (components)",
+      "research": "storytold/craft-anything + crates/setup/src/skill.md (check, refine); docs/design-system.md (components)"
+    },
+    "sort_order": -929
+  },
+  {
+    "id": "cr-33-validation-message-system",
+    "title": "Validation Message System",
+    "description": "校验时机、摆放位置与读屏播报的规则",
+    "category": "Replication Recipes",
+    "type": "component",
+    "tags": [
+      "validation",
+      "forms",
+      "aria",
+      "error",
+      "layout"
+    ],
+    "palette": [
+      "#0a0c10",
+      "#151922",
+      "#f0f2f6",
+      "#ef4444",
+      "#f59e0b"
+    ],
+    "prompt": "Write the validation system before writing the form, because the timing decides whether the form feels calm or abusive. Rules first: validate on blur and on submit, never on keystroke, except a confirmation field, which may check per keystroke after its first submit failure. Clear an error the moment the field becomes valid on blur, not while typing. Give each message a rule id, a field, a trigger, the condition, the text and a severity. Then placement: reserve a 20 px message row under every field at all times so showing an error moves nothing; the message sits 6 px below the field, renders at 12 px, and carries a non-colour cue, an icon plus the word that failed, because colour alone is invisible to part of the audience. Then announcement: mark the field invalid, point it at its message with a described-by relation, move focus to the first invalid field on submit, and send one summary through a polite live region, once per submit rather than once per field. Error text says what to do in under 60 characters, in sentence case, without blame. Acceptance: submitting an empty form moves no element and announces a single summary; each message clears on its stated trigger; the reserved row keeps the submit button at the same y position with zero and with five errors; the announced output names field and message; error text reaches 4.5 to 1 and the invalid border 3 to 1.",
+    "notes": [
+      "Validating on keystroke punishes typing: the error flickers while a correct value is half entered, and people stop trusting the form.",
+      "The reserved message row is what keeps the submit button still; without it a five-error submit shifts the whole form.",
+      "Test with a screen reader, not only the attribute: the invalid flag plus the described-by relation is what announces field and message together."
+    ],
+    "demo": {
+      "style": "states",
+      "t1": "VALIDATION",
+      "kind": "MESSAGES",
+      "meta": "when + where",
+      "variant": ""
+    },
+    "source": {
+      "pack": "craft",
+      "repo": "storytold/craft-anything",
+      "url": "https://github.com/storytold/craft-anything",
+      "license": "Apache-2.0",
+      "ref": "storytold/craft-anything + docs/design-system.md (fields, messages); docs/pitfalls.md (design)",
+      "research": "storytold/craft-anything + docs/design-system.md (fields, messages); docs/pitfalls.md (design)"
+    },
+    "sort_order": -928
+  },
+  {
+    "id": "cr-34-waitlist-onboarding-flow",
+    "title": "Waitlist and Onboarding Flow",
+    "description": "等候名单与引导流程：步骤、出错回复与终态",
+    "category": "Replication Recipes",
+    "type": "full-page",
+    "tags": [
+      "onboarding",
+      "flow",
+      "steps",
+      "recovery",
+      "progress"
+    ],
+    "palette": [
+      "#0b0c0f",
+      "#161920",
+      "#eef1f5",
+      "#4f7cff",
+      "#3ddc97"
+    ],
+    "prompt": "Lay out the waitlist or onboarding flow as numbered steps with exactly one action each. Define the steps first: entry with an email field, confirmation that the address was accepted, a profile step with two fields at most, and a done state that says what happens next and when. Each step carries a title at 18 px, one sentence of context, a single primary action at 40 px height, a back affordance, and a progress signal in text plus three 4 px bars, never an indefinite spinner. Write recovery for every failure before drawing the success path: invalid address, already subscribed, rate limited, network failure, expired token. Each gets its own message, one retry path and a support link, and no failure may leave the person on an unchanged screen. The end state is explicit: a dashboard link or a dated promise, never an empty success page with a checkmark. Cap the flow at four steps and two fields per step, and make each step fit one viewport at 390 px with its action visible without scrolling. Keep the whole flow on one route so a reload resumes at the current step rather than resetting. Acceptance: every step fits 390x844 with its action visible; Tab reaches action, back and retry in order; a forced network failure shows a retry that completes on the second attempt; no state lasts past 800 ms without a visible progress signal; a scripted run reaches the end state for success and for each failure.",
+    "notes": [
+      "The spinner that never ends comes from treating a network failure as a state instead of a branch; every request needs a terminal state.",
+      "Four steps and two fields is the ceiling before completion drops, and that is measured on a phone where the keyboard covers half the viewport.",
+      "A success screen with no next action leaves people unsure it worked; name the next step and its date."
+    ],
+    "demo": {
+      "style": "phases",
+      "t1": "ONBOARDING",
+      "kind": "FLOW",
+      "meta": "steps + recovery",
+      "variant": ""
+    },
+    "source": {
+      "pack": "craft",
+      "repo": "storytold/craft-anything",
+      "url": "https://github.com/storytold/craft-anything",
+      "license": "Apache-2.0",
+      "ref": "storytold/craft-anything + crates/setup/src/skill.md (build, check); docs/pitfalls.md (design)",
+      "research": "storytold/craft-anything + crates/setup/src/skill.md (build, check); docs/pitfalls.md (design)"
+    },
+    "sort_order": -927
+  },
+  {
+    "id": "cr-35-data-table-density",
+    "title": "Data Table Density",
+    "description": "按类型对齐的密集数据表与手机卡片化",
+    "category": "Replication Recipes",
+    "type": "component",
+    "tags": [
+      "table",
+      "density",
+      "alignment",
+      "responsive",
+      "typography"
+    ],
+    "palette": [
+      "#08090c",
+      "#14171d",
+      "#edf0f5",
+      "#38bdf8",
+      "#a3e635"
+    ],
+    "prompt": "Rebuild a dense data table from its type ramp instead of from a comfortable default. Derive the row height: body text at 14 px with a 1.45 line height gives 20 px of text, plus 12 px top and bottom, so the compact row is 44 px; set a roomy row at 56 px and switch between them with one density token rather than a class per table. Align by data type: text left, numbers and currency right with tabular figures, dates right, status pills left, row actions right and never in the first column. Keep the header sticky with a 1 px separator and a surface one step lighter; choose separators or zebra striping, not both, and if zebra, cap the alternating fill at 4 percent alpha so scanning still works. Size numeric columns from the widest value, not from the header text, and let the flexible text column absorb the remaining width. Then the phone rule: below 768 px the table becomes cards, one card per row with a label and value pair per cell, secondary cells behind a disclosure, and the primary identifier as the card title. Acceptance: row height matches the density token at both settings; the header stays visible after scrolling 600 px; numeric columns stay right aligned with tabular figures at every width; no header wraps to two lines at 1440 px; the 390 px card view keeps every primary value; no tested width scrolls horizontally.",
+    "notes": [
+      "Comfortable defaults turn a data table into a scrolling page; derive the row height once and density becomes a token instead of an argument.",
+      "Zebra above roughly 5 percent alpha fights the separators and makes the table read as a spreadsheet export.",
+      "Numbers need tabular figures or the columns visibly jitter whenever values change between renders."
+    ],
+    "demo": {
+      "style": "matrix",
+      "t1": "TABLE DENSITY",
+      "kind": "DATA",
+      "meta": "rows + alignment",
+      "variant": ""
+    },
+    "source": {
+      "pack": "craft",
+      "repo": "storytold/craft-anything",
+      "url": "https://github.com/storytold/craft-anything",
+      "license": "Apache-2.0",
+      "ref": "storytold/craft-anything + docs/design-system.md (rows, scale); docs/pitfalls.md (design)",
+      "research": "storytold/craft-anything + docs/design-system.md (rows, scale); docs/pitfalls.md (design)"
+    },
+    "sort_order": -926
+  },
+  {
+    "id": "cr-36-card-nesting-and-radius",
+    "title": "Card Nesting and Radius Rules",
+    "description": "卡片的圆角家族、嵌套深度与内边距规则",
+    "category": "Replication Recipes",
+    "type": "component",
+    "tags": [
+      "radius",
+      "nesting",
+      "elevation",
+      "shadow",
+      "depth"
+    ],
+    "palette": [
+      "#0b0b0e",
+      "#15161b",
+      "#f5f3ef",
+      "#b9a27a",
+      "#8b5cf6"
+    ],
+    "prompt": "Fix card nesting with three rules a reviewer can verify in one glance. Rule one, one radius family: outer containers 8 px, cards inside them 6 px, controls inside those 4 px, pills fully round, and no two radii at the same depth. Rule two, inset by exactly one spacing step, 8 or 12 px, and shift the inner surface one step in luminance rather than using both a lighter fill and a border. Rule three, at most two visible borders along any line from page edge to text: a bordered card inside a bordered card is exactly the failure this prevents. Depth comes from one light model: at rest a shadow of y 1 px, blur 2 px, alpha 12 percent; for the single floating element per view, y 8 px, blur 24 px, alpha 18 percent. Remove shadows from anything that already has a border, and never fake elevation with a border alone. Then audit by counting: for each card record depth level, radius, fill, border, shadow and inner padding, and read the table top to bottom. Acceptance: nothing sits at depth three or deeper without a written reason; a 4x corner crop shows no double outline; every nested padding value comes from the 2, 4, 8, 12, 16, 24, 32 ladder; text contrast holds at 4.5 to 1 at every nesting level; shadow offsets are identical on every surface.",
+    "notes": [
+      "Nested borders multiply: a card inside a card with two outlines and an inset shadow reads as three boxes around one sentence.",
+      "Depth without direction looks like a bug, so pick one light source and keep every shadow offset identical.",
+      "A shadow inside a bordered card is the cheapest way to make a surface look muddy on a dark canvas."
+    ],
+    "demo": {
+      "style": "stack",
+      "t1": "NESTING",
+      "kind": "RADIUS",
+      "meta": "depth + inset",
+      "variant": ""
+    },
+    "source": {
+      "pack": "craft",
+      "repo": "storytold/craft-anything",
+      "url": "https://github.com/storytold/craft-anything",
+      "license": "Apache-2.0",
+      "ref": "storytold/craft-anything + docs/design-system.md (surfaces, corners); docs/pitfalls.md (design)",
+      "research": "storytold/craft-anything + docs/design-system.md (surfaces, corners); docs/pitfalls.md (design)"
+    },
+    "sort_order": -925
+  },
+  {
+    "id": "cr-37-contrast-ladder-audit",
+    "title": "Contrast Ladder Audit",
+    "description": "三档对比度审计，失败配对直接给替换令牌",
+    "category": "Replication Recipes",
+    "type": "playbook",
+    "tags": [
+      "contrast",
+      "audit",
+      "tokens",
+      "a11y",
+      "themes"
+    ],
+    "palette": [
+      "#0a0b0f",
+      "#141821",
+      "#f2f5f9",
+      "#22c55e",
+      "#ef4444"
+    ],
+    "prompt": "Audit contrast as three ladders and report replacements rather than warnings. Ladder one, non-text at 3 to 1: field borders under the pointer, focus halos, icons that carry meaning, chart strokes, toggle tracks, scrollbar thumbs. Ladder two, body text at 4.5 to 1: paragraph copy, labels, table cells, and button text in every state including hover and disabled. Ladder three, small print at 7 to 1: anything at 12 px or below, captions, legal lines, timestamps, and text over imagery. Collect the pairs the page actually renders from computed styles, not from a palette file, and include pairs that only exist in hover, focus, disabled, error and glass-over-media states, since those are what an audit normally misses. Compute each ratio, then for every failure write one line: element, foreground, background, measured ratio, required ratio, and the nearest passing token already on the scale with its ratio. Change tokens rather than components, so one token fix closes several pairs. Run the whole audit in both themes and report them side by side. Acceptance: every failing pair names a replacement token and its ratio; no replacement creates a pair below its own threshold; a rerun after the fixes reports zero failures in both themes; text over media is measured against its worst-case scrim; disabled controls are listed separately instead of being silently exempted.",
+    "notes": [
+      "Reporting low contrast without a replacement token makes the audit something a team redoes instead of fixes.",
+      "The pairs that only exist in hover, disabled and glass states are the ones audits miss, so read rendered styles rather than the palette.",
+      "Disabled text is exempt from the threshold in the guidelines and still has to be legible, so report it as its own line."
+    ],
+    "demo": {
+      "style": "report",
+      "t1": "CONTRAST",
+      "kind": "AUDIT",
+      "meta": "3:1 / 4.5:1 / 7:1",
+      "variant": "claims"
+    },
+    "source": {
+      "pack": "craft",
+      "repo": "storytold/craft-anything",
+      "url": "https://github.com/storytold/craft-anything",
+      "license": "Apache-2.0",
+      "ref": "storytold/craft-anything + docs/design-system.md (contrast is tested); docs/pitfalls.md (design)",
+      "research": "storytold/craft-anything + docs/design-system.md (contrast is tested); docs/pitfalls.md (design)"
+    },
+    "sort_order": -924
+  },
+  {
+    "id": "cr-38-rtl-bidi-parity",
+    "title": "RTL and Bidi Parity",
+    "description": "从逻辑属性做镜像，数字与图标各守其位",
+    "category": "Replication Recipes",
+    "type": "full-page",
+    "tags": [
+      "rtl",
+      "bidi",
+      "logical-properties",
+      "i18n",
+      "parity"
+    ],
+    "palette": [
+      "#0c0e13",
+      "#171a21",
+      "#f0f2f5",
+      "#3b82f6",
+      "#f59e0b"
+    ],
+    "prompt": "Make one layout render in both directions, driven by logical properties rather than a second stylesheet. Start with the mirror pass: replace margin-left and margin-right with margin-inline, padding with padding-inline, left and right with inset-inline, and border sides with border-inline, then set direction on the document and confirm the page mirrors with no physical property left in a grep of the stylesheet. Next, the elements that must not mirror: brand marks, media play controls, progress direction, chart axes that carry time, code blocks, and direction-encoding icons such as a back arrow, which flips only when it means navigation and never when it means playback. Numbers, prices, phone numbers and identifiers stay left-to-right inside right-to-left text: wrap each in an isolation span with its own direction so trailing punctuation cannot jump to the wrong end. Then spacing and type: mirror asymmetric padding, keep paragraph line height at 1.45 of the size, and re-check the ramp, because ascenders and descenders in Arabic and Hebrew push the line box taller than the Latin sample did. Acceptance: a screenshot pair in both directions overlays within 2 px after mirroring; the grep finds no physical margin, padding or inset property; numbers keep the same digit order in both directions; the five direction-sensitive icons behave as listed; and at 390 px text overflows no container in either direction.",
+    "notes": [
+      "Mirroring by hand with left and right leaves a stylesheet that works in one direction and bends silently in the other.",
+      "Direction-sensitive icons are the usual regression: a back arrow has to flip, a play triangle must not.",
+      "Line boxes grow in Arabic and Hebrew, so re-check the type ramp instead of trusting a mirrored screenshot."
+    ],
+    "demo": {
+      "style": "responsive",
+      "t1": "RTL PARITY",
+      "kind": "DIRECTION",
+      "meta": "mirror + numbers",
+      "variant": "parity"
+    },
+    "source": {
+      "pack": "craft",
+      "repo": "storytold/craft-anything",
+      "url": "https://github.com/storytold/craft-anything",
+      "license": "Apache-2.0",
+      "ref": "storytold/craft-anything + docs/design-system.md (scale); docs/localization.md (via repository docs)",
+      "research": "storytold/craft-anything + docs/design-system.md (scale); docs/localization.md (via repository docs)"
+    },
+    "sort_order": -923
+  },
+  {
+    "id": "cr-39-localisation-string-budget",
+    "title": "Localisation String Budget",
+    "description": "翻译前先给每个字符串定长度上限与伸缩位",
+    "category": "Replication Recipes",
+    "type": "playbook",
+    "tags": [
+      "i18n",
+      "strings",
+      "budget",
+      "pseudo-locale",
+      "layout"
+    ],
+    "palette": [
+      "#0a0b0e",
+      "#15181f",
+      "#f3f1ec",
+      "#ff6a3d",
+      "#22c55e"
+    ],
+    "prompt": "Budget strings before translating, or the layout breaks in the second language and nobody knows which element to change. Build a table with one row per key: namespace, English text, character count, expansion factor, allowed length, may wrap, single line, and the element that renders it. Assume 30 percent expansion for short labels and 35 percent for compounding languages, then set allowed lengths from measurement rather than taste: the primary action stays on one line and may not exceed 24 characters at 14 px inside its 40 px height; navigation items cap at 18; card titles clamp at two lines; body copy wraps freely between 45 and 70 characters. Mark which element flexes for each key: the button grows to 200 px before its label truncates, the segmented control divides its container instead of sizing to text, the headline block keeps a two-line height. Then test with three pseudo-locales generated from the source strings, a 130 percent longer one, an accented one, and a right-to-left one, and render every one at 390, 1024 and 1440 px. Acceptance: every key has a row with a measured English length; the longer pseudo-locale produces zero truncation outside keys marked truncatable; the action button stays 40 px tall in all three; no string overflows its container at 390 px; a scan shows every visible string resolved from the table with no literal text left in components.",
+    "notes": [
+      "Translating before budgeting means the second language finds every layout that sized itself to English.",
+      "Pseudo-locales catch more than a real translation, because you choose the length and can re-run the check in seconds.",
+      "Reserve the expansion on the control rather than the page: a button growing to 200 px is cheaper than a container that reflows."
+    ],
+    "demo": {
+      "style": "textfx",
+      "t1": "LOCALISATION",
+      "kind": "STRINGS",
+      "meta": "expansion 30%",
+      "variant": "kinetic"
+    },
+    "source": {
+      "pack": "craft",
+      "repo": "storytold/craft-anything",
+      "url": "https://github.com/storytold/craft-anything",
+      "license": "Apache-2.0",
+      "ref": "storytold/craft-anything + docs/localization.md (via repository docs); docs/design-system.md (text)",
+      "research": "storytold/craft-anything + docs/localization.md (via repository docs); docs/design-system.md (text)"
+    },
+    "sort_order": -922
+  },
+  {
+    "id": "cr-40-design-handoff-scorecard",
+    "title": "Design Handoff Scorecard",
+    "description": "一分钟可核的交付记分卡与未验证清单",
+    "category": "Replication Recipes",
+    "type": "playbook",
+    "tags": [
+      "handoff",
+      "scorecard",
+      "review",
+      "evidence",
+      "quality"
+    ],
+    "palette": [
+      "#090a0d",
+      "#14171f",
+      "#e7ebf0",
+      "#7c8cf8",
+      "#22c55e"
+    ],
+    "prompt": "Close the rebuild with a scorecard a reviewer can check in one minute. Seven rows, each a number or a yes, each paired with the command that produced it. Token purity: count hex colours and raw pixel values outside the token file, target zero. State coverage: built states over required states per part, target all seven. Themes: both rendered and diffed, with only documented differences allowed. Contrast: measured pairs over pairs below threshold, target zero below. Responsive parity: widths tested and page width against viewport at each, target no sideways scroll. Motion budget: manifest entries and the longest entrance in milliseconds, target under 620. Unverified items: an explicit numbered list that may not be empty unless the first six rows are clean. Add the rule that gives the scorecard its value: a check that could not measure something reports unmeasured and blocks its row, so silence is never rounded up into a green cell. Finish with the date, the widths and browsers used, and the one known gap the team consciously accepts, because a scorecard with no accepted gap is a scorecard nobody read. Acceptance: the scorecard fits one screen and every row cites its evidence; re-running the listed commands reproduces each number within rounding; a deliberately broken token fails exactly the token row; no row reads passed without a measurement behind it.",
+    "notes": [
+      "A scorecard that reports only passes is decoration; the unverified list is what a reviewer should read first.",
+      "Every row needs the command that produced it, or the next person re-derives the numbers by hand and skips half of them.",
+      "Unmeasured is not a soft pass; it blocks its row until something measures it."
+    ],
+    "demo": {
+      "style": "report",
+      "t1": "HANDOFF",
+      "kind": "SCORECARD",
+      "meta": "token purity",
+      "variant": "claims"
+    },
+    "source": {
+      "pack": "craft",
+      "repo": "storytold/craft-anything",
+      "url": "https://github.com/storytold/craft-anything",
+      "license": "Apache-2.0",
+      "ref": "storytold/craft-anything + crates/setup/src/skill.md (ready); docs/design-system.md (rules)",
+      "research": "storytold/craft-anything + crates/setup/src/skill.md (ready); docs/design-system.md (rules)"
+    },
+    "sort_order": -921
   },
   {
     "id": "sc-01-liquid-chrome-raymarch-hero",
@@ -1233,7 +3469,7 @@
       "ref": "Three.js (MIT, https://github.com/mrdoob/three.js) + Codrops liquid raymarching tutorial (MIT demo, https://tympanus.net/codrops/2024/07/15/how-to-create-a-liquid-raymarching-scene-using-three-js-shading-language/)",
       "research": "Three.js (MIT, https://github.com/mrdoob/three.js) + Codrops liquid raymarching tutorial (MIT demo, https://tympanus.net/codrops/2024/07/15/how-to-create-a-liquid-raymarching-scene-using-three-js-shading-language/)"
     },
-    "sort_order": -972
+    "sort_order": -920
   },
   {
     "id": "sc-02-grain-gradient-mesh",
@@ -1276,7 +3512,7 @@
       "ref": "W3C SVG feTurbulence filter primitive + CSS gradients (platform, https://developer.mozilla.org/en-US/docs/Web/SVG/Element/feTurbulence); comparable MIT + Commons Clause component at https://www.reactbits.dev/backgrounds/grainient",
       "research": "W3C SVG feTurbulence filter primitive + CSS gradients (platform, https://developer.mozilla.org/en-US/docs/Web/SVG/Element/feTurbulence); comparable MIT + Commons Clause component at https://www.reactbits.dev/backgrounds/grainient"
     },
-    "sort_order": -971
+    "sort_order": -919
   },
   {
     "id": "sc-03-kinetic-variable-type-hero",
@@ -1319,7 +3555,7 @@
       "ref": "React Bits Variable Proximity (MIT + Commons Clause, https://www.reactbits.dev/text-animations/variable-proximity) + variable font under SIL OFL 1.1 (https://openfontlicense.org/)",
       "research": "React Bits Variable Proximity (MIT + Commons Clause, https://www.reactbits.dev/text-animations/variable-proximity) + variable font under SIL OFL 1.1 (https://openfontlicense.org/)"
     },
-    "sort_order": -970
+    "sort_order": -918
   },
   {
     "id": "sc-04-decrypt-scramble-text",
@@ -1362,7 +3598,7 @@
       "ref": "React Bits Decrypted Text (MIT + Commons Clause, https://www.reactbits.dev/text-animations/decrypted-text)",
       "research": "React Bits Decrypted Text (MIT + Commons Clause, https://www.reactbits.dev/text-animations/decrypted-text)"
     },
-    "sort_order": -969
+    "sort_order": -917
   },
   {
     "id": "sc-05-magnetic-spring-buttons",
@@ -1404,7 +3640,7 @@
       "ref": "React Bits Magnet (MIT + Commons Clause, https://www.reactbits.dev/animations/magnet) + Motion useSpring (MIT, https://motion.dev/docs/react-use-spring)",
       "research": "React Bits Magnet (MIT + Commons Clause, https://www.reactbits.dev/animations/magnet) + Motion useSpring (MIT, https://motion.dev/docs/react-use-spring)"
     },
-    "sort_order": -968
+    "sort_order": -916
   },
   {
     "id": "sc-06-cursor-tilt-glare-card",
@@ -1447,7 +3683,7 @@
       "ref": "vanilla-tilt.js (MIT, https://github.com/micku7zu/vanilla-tilt.js) + Magic UI MagicCard spotlight (MIT, https://github.com/magicuidesign/magicui)",
       "research": "vanilla-tilt.js (MIT, https://github.com/micku7zu/vanilla-tilt.js) + Magic UI MagicCard spotlight (MIT, https://github.com/magicuidesign/magicui)"
     },
-    "sort_order": -967
+    "sort_order": -915
   },
   {
     "id": "sc-07-seamless-infinite-marquee",
@@ -1489,7 +3725,7 @@
       "ref": "Magic UI Marquee (MIT, https://magicui.design/docs/components/marquee)",
       "research": "Magic UI Marquee (MIT, https://magicui.design/docs/components/marquee)"
     },
-    "sort_order": -966
+    "sort_order": -914
   },
   {
     "id": "sc-08-sticky-card-stack",
@@ -1531,7 +3767,7 @@
       "ref": "Motion useScroll/useTransform (MIT, https://motion.dev/docs/react-use-scroll) + Codrops sticky scroll demos (MIT demos, https://tympanus.net/codrops/hub/tag/sticky/)",
       "research": "Motion useScroll/useTransform (MIT, https://motion.dev/docs/react-use-scroll) + Codrops sticky scroll demos (MIT demos, https://tympanus.net/codrops/hub/tag/sticky/)"
     },
-    "sort_order": -965
+    "sort_order": -913
   },
   {
     "id": "sc-09-horizontal-scroll-gallery",
@@ -1574,7 +3810,7 @@
       "ref": "Motion Scroll Horizontal Gallery example (MIT, https://motion.dev/examples/vue-scroll-horizontal) + Lenis (MIT, https://github.com/darkroomengineering/lenis)",
       "research": "Motion Scroll Horizontal Gallery example (MIT, https://motion.dev/examples/vue-scroll-horizontal) + Lenis (MIT, https://github.com/darkroomengineering/lenis)"
     },
-    "sort_order": -964
+    "sort_order": -912
   },
   {
     "id": "sc-10-scroll-driven-reveal-progress",
@@ -1616,7 +3852,7 @@
       "ref": "CSS scroll-driven animations, animation-timeline and view() (web standard, https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/animation-timeline)",
       "research": "CSS scroll-driven animations, animation-timeline and view() (web standard, https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/animation-timeline)"
     },
-    "sort_order": -963
+    "sort_order": -911
   },
   {
     "id": "sc-11-webgl-hover-distortion",
@@ -1659,7 +3895,7 @@
       "ref": "Codrops WebGL distortion hover tutorials (MIT demos, https://tympanus.net/codrops/?s=hover+effects) + Three.js (MIT, https://github.com/mrdoob/three.js)",
       "research": "Codrops WebGL distortion hover tutorials (MIT demos, https://tympanus.net/codrops/?s=hover+effects) + Three.js (MIT, https://github.com/mrdoob/three.js)"
     },
-    "sort_order": -962
+    "sort_order": -910
   },
   {
     "id": "sc-12-velocity-image-trail",
@@ -1701,7 +3937,7 @@
       "ref": "React Bits Image Trail (MIT + Commons Clause, https://www.reactbits.dev/animations/image-trail) + Codrops Image Trail Effects (MIT demo, https://tympanus.net/codrops/)",
       "research": "React Bits Image Trail (MIT + Commons Clause, https://www.reactbits.dev/animations/image-trail) + Codrops Image Trail Effects (MIT demo, https://tympanus.net/codrops/)"
     },
-    "sort_order": -961
+    "sort_order": -909
   },
   {
     "id": "sc-13-curtain-page-transition",
@@ -1743,7 +3979,7 @@
       "ref": "Swup page-transition lifecycle (MIT, https://swup.js.org/) + Codrops rotated-overlay reveal pattern (MIT demos by default, https://tympanus.net/codrops/licensing/)",
       "research": "Swup page-transition lifecycle (MIT, https://swup.js.org/) + Codrops rotated-overlay reveal pattern (MIT demos by default, https://tympanus.net/codrops/licensing/)"
     },
-    "sort_order": -960
+    "sort_order": -908
   },
   {
     "id": "sc-14-view-transition-card-morph",
@@ -1785,7 +4021,7 @@
       "ref": "View Transitions API (MDN, https://developer.mozilla.org/en-US/docs/Web/API/Document/startViewTransition) + Chrome same-document transitions guide (https://developer.chrome.com/docs/web-platform/view-transitions/same-document)",
       "research": "View Transitions API (MDN, https://developer.mozilla.org/en-US/docs/Web/API/Document/startViewTransition) + Chrome same-document transitions guide (https://developer.chrome.com/docs/web-platform/view-transitions/same-document)"
     },
-    "sort_order": -959
+    "sort_order": -907
   },
   {
     "id": "sc-15-lenis-scroll-choreography",
@@ -1827,7 +4063,7 @@
       "ref": "Lenis (MIT, https://github.com/darkroomengineering/lenis) + Motion useVelocity (MIT, https://motion.dev/docs/react-use-velocity)",
       "research": "Lenis (MIT, https://github.com/darkroomengineering/lenis) + Motion useVelocity (MIT, https://motion.dev/docs/react-use-velocity)"
     },
-    "sort_order": -958
+    "sort_order": -906
   },
   {
     "id": "sc-16-glass-bento-grid",
@@ -1869,6 +4105,350 @@
       "ref": "Magic UI Bento Grid (MIT, https://magicui.design/docs/components/bento-grid) + CSS backdrop-filter (platform)",
       "research": "Magic UI Bento Grid (MIT, https://magicui.design/docs/components/bento-grid) + CSS backdrop-filter (platform)"
     },
-    "sort_order": -957
+    "sort_order": -905
+  },
+  {
+    "id": "sc-17-split-flap-board",
+    "title": "Split-Flap Text Board",
+    "description": "分裂翻牌板：每个字符扫过字母条后逐格定格",
+    "category": "Replication Recipes",
+    "type": "component",
+    "tags": [
+      "flip",
+      "text",
+      "transform",
+      "stagger",
+      "a11y"
+    ],
+    "palette": [
+      "#0d0e12",
+      "#eef1f6",
+      "#ffb020",
+      "#3a3f4b",
+      "#15171d"
+    ],
+    "prompt": "Build a split-flap board that lands a short announcement one character at a time. Give the board a #0d0e12 stage, a 1px #3a3f4b frame and rows of 64x88px tiles with 10px gaps, 6px radius, a #15171d tile fill and a 1px #3a3f4b seam across the tile's exact vertical middle. Each tile holds two faces split at that seam: the outgoing glyph on the lower half and the incoming glyph on the upper half, each in its own overflow hidden box. Author the strip as a fixed ordered array of 28 entries (A-Z, space, hyphen) and step every tile forward through it instead of randomising. On a value change each glyph runs a 260ms flap in three parts: rotateX 0 to -90deg on the old face over 130ms, swap textContent at the 90deg midpoint, then rotateX 90deg to 0 on the new face; ease with cubic-bezier(0.4,0,0.2,1). Stagger tiles 55ms left to right, cap the strip walk at 7 steps, and force a full 360deg settle for tiles whose target equals their current glyph so the row still reads as machinery. Keep everything on transforms with perspective 420px on the row and backface-visibility hidden on both faces. Expose the settled string once through a polite live region while every animated tile stays aria-hidden, and update that label only when the last flap ends. Reduced motion: paint the final glyphs immediately with no flap and no stagger. Acceptance: no glyph flicker because the swap happens exactly at the midpoint, 60fps with 14 tiles animating, the accessible name always equals the final string, and retyping a phrase restarts cleanly without stacking timers.",
+    "notes": [
+      "The half-tile seam is the whole illusion: a single unsplit face always reads as a CSS rotate, not a flap.",
+      "Two faces per tile means 2n nodes; keep strips as textContent rather than images so the swap costs no decode.",
+      "Everything here is platform CSS 3D; Motion (MIT) is only used for the per-glyph delay scheduling, and it is MIT in plain words — free to use, keep the notice."
+    ],
+    "demo": {
+      "style": "flap",
+      "t1": "SPLIT FLAP",
+      "kind": "TEXT",
+      "meta": "per-glyph flip",
+      "variant": ""
+    },
+    "source": {
+      "pack": "community",
+      "repo": "community sources",
+      "url": "https://motion.dev",
+      "license": "see notes",
+      "ref": "CSS 3D transforms with backface-visibility (platform, https://developer.mozilla.org/en-US/docs/Web/CSS/backface-visibility) + Motion (MIT, https://motion.dev)",
+      "research": "CSS 3D transforms with backface-visibility (platform, https://developer.mozilla.org/en-US/docs/Web/CSS/backface-visibility) + Motion (MIT, https://motion.dev)"
+    },
+    "sort_order": -904
+  },
+  {
+    "id": "sc-18-odometer-counter",
+    "title": "Odometer Counter Roll",
+    "description": "里程表式数字滚动，逐位进位且宽度不抖",
+    "category": "Replication Recipes",
+    "type": "component",
+    "tags": [
+      "numbers",
+      "roll",
+      "tabular-nums",
+      "transform",
+      "metrics"
+    ],
+    "palette": [
+      "#0b0c10",
+      "#f4f6fa",
+      "#22d3a6",
+      "#2a2f3a",
+      "#14171f"
+    ],
+    "prompt": "Build a counter that rolls like a mechanical odometer rather than tweening a formatted string. Each digit is a 0.62em by 1em window with overflow hidden; inside sits a vertical strip of 0-9 stacked at exactly 1em line-height, translated by minus digitIndex times 1em. Set font-variant-numeric: tabular-nums and verify it by rendering 1111 next to 8888 at the same size — if the columns differ by a pixel the axis is missing and every tick will jitter. Pin the counter to a min-width computed once from the widest value it will ever show, and keep the digit windows on integer pixel positions. On a value change animate only the strips that actually moved: translateY from the old index to the new over 620ms with cubic-bezier(0.16,1,0.3,1), and let carries run leftward so 199 to 200 rolls the ones, tens and hundreds strips with a 70ms offset per column to the right. Drive all strips from one requestAnimationFrame loop and one shared progress value, so a value bump costs a single frame budget no matter how many digits move; snap the final translateY to an exact multiple of 1em to avoid subpixel haze. Separate thousands with a comma in #2a2f3a at 0.9 opacity. Reduced motion: set the strips directly with no transition, same final value and same accessible text. Acceptance: columns never shift a subpixel mid-tween, tabular-nums is proven by the 1111 and 8888 comparison, exactly one rAF loop runs per counter, and the live region announces the settled value once instead of announcing every frame.",
+    "notes": [
+      "Without tabular figures the counter visibly breathes on every tick, and no amount of easing hides it.",
+      "One shared driver is the budget promise: per-digit tweens multiply frame cost by the digit count for no visual gain.",
+      "Platform CSS transforms plus font-variant-numeric need no library; Motion's spring driver (MIT) fits if you want overshoot, and MIT means free to use with its notice kept."
+    ],
+    "demo": {
+      "style": "odo",
+      "t1": "ODOMETER",
+      "kind": "NUMBERS",
+      "meta": "digit roll",
+      "variant": ""
+    },
+    "source": {
+      "pack": "community",
+      "repo": "community sources",
+      "url": "https://motion.dev",
+      "license": "see notes",
+      "ref": "CSS font-variant-numeric tabular-nums and 2D transforms (platform, https://developer.mozilla.org/en-US/docs/Web/CSS/font-variant-numeric) + Motion springs (MIT, https://motion.dev)",
+      "research": "CSS font-variant-numeric tabular-nums and 2D transforms (platform, https://developer.mozilla.org/en-US/docs/Web/CSS/font-variant-numeric) + Motion springs (MIT, https://motion.dev)"
+    },
+    "sort_order": -903
+  },
+  {
+    "id": "sc-19-svg-path-draw",
+    "title": "SVG Path Draw Diagram",
+    "description": "线图随滚动逐条描边，节点标签在边完成后出现",
+    "category": "Replication Recipes",
+    "type": "section",
+    "tags": [
+      "svg",
+      "scroll",
+      "stroke",
+      "diagram",
+      "progressive"
+    ],
+    "palette": [
+      "#0b0d12",
+      "#e8ecf7",
+      "#8ea2ff",
+      "#242a36",
+      "#5b6478"
+    ],
+    "prompt": "Animate a three-node architecture diagram so its edges draw themselves as the reader scrolls. Author one inline SVG with a viewBox of 800x420, six paths on a 1.5px #8ea2ff stroke with round caps on a #0b0d12 panel, node circles at r=7 in #e8ecf7, and real <text> labels at 12px with 0.02em tracking. Measure every path once with getTotalLength after fonts settle, set stroke-dasharray to that length and stroke-dashoffset to the same value, then bind dashoffset to scroll progress across the section's first 40% of visibility, using Motion's useScroll with offset start 0.85 end 0.35, or an IntersectionObserver gated scroll listener if you prefer no library. Stagger the six edges 90ms apart so the figure reads as a sequence rather than a pulse, and give each edge a slight curvature via a quadratic control point offset 18px from the straight line. A label fades from opacity 0 and translateY 6px to its resting position only after its incoming edge reaches dashoffset 0, with a 180ms delay and a 300ms ease-out; a diagonal connector between nodes must not draw before its source node is labelled. Recompute lengths on resize inside a 100ms debounce, and honour vertical writing by redrawing in DOM order. Server-rendered and printed output ships with dashoffset 0 so crawlers, print and no-JS readers receive the complete figure. Reduced motion: full stroke immediately, labels visible with no delay. Acceptance: no path rests partially drawn after the section leaves view, label timing never precedes its edge, resize keeps the dash math correct, and the printed figure shows every stroke at full weight.",
+    "notes": [
+      "Measure lengths after webfonts load, or reflowed text changes the SVG box and every dash value drifts.",
+      "Labels must be gated on the edge's own progress value, not a global timer, or fast scrolls desynchronise them.",
+      "SVG stroke-dasharray is a platform primitive with no licence; Motion useScroll is MIT, meaning free to use with the notice retained."
+    ],
+    "demo": {
+      "style": "svgdraw",
+      "t1": "PATH DRAW",
+      "kind": "SVG",
+      "meta": "stroke-dash",
+      "variant": ""
+    },
+    "source": {
+      "pack": "community",
+      "repo": "community sources",
+      "url": "https://motion.dev",
+      "license": "see notes",
+      "ref": "SVG stroke-dasharray and stroke-dashoffset (platform, https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/stroke-dasharray) + Motion useScroll (MIT, https://motion.dev)",
+      "research": "SVG stroke-dasharray and stroke-dashoffset (platform, https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/stroke-dasharray) + Motion useScroll (MIT, https://motion.dev)"
+    },
+    "sort_order": -902
+  },
+  {
+    "id": "sc-20-scroll-scrubbed-video",
+    "title": "Scroll-Scrubbed Video",
+    "description": "滚动位置驱动视频时间轴，逐帧擦洗且首帧不黑",
+    "category": "Replication Recipes",
+    "type": "full-page",
+    "tags": [
+      "video",
+      "scroll",
+      "seeking",
+      "poster",
+      "fallback"
+    ],
+    "palette": [
+      "#08090b",
+      "#f2f4f8",
+      "#ff5d3b",
+      "#1a1d24",
+      "#6a7383"
+    ],
+    "prompt": "Drive a six-second product film from scroll position instead of a playhead. Build a 300vh wrapper with a sticky 100svh stage on #08090b, and centre a 16:9 video element with muted, playsinline, preload=metadata and no controls. Re-encode the clip with a keyframe every 4 frames (or all-intra at 4Mbps for a clip this short): a one-second keyframe interval is what makes scrubbing crawl, because every seek decodes forward from the previous keyframe. Map scroll progress to currentTime inside a single requestAnimationFrame loop, quantise writes to 1/30s, and skip any assignment whose delta is under 0.02s so a fast flick does not queue dozens of seeks. On iOS, set playsinline and muted, then call play() followed by pause() once on the first user gesture, because bare currentTime assignment is ignored until playback has been unlocked; never ask for sound. Paint a poster first — frame 90 of 144 as a 1600px WebP under 45KB — set it as the video poster and keep it visible until loadedmetadata fires plus one decoded seek, so the first screen is never a black rectangle. Fallback ladder: no JavaScript and prefers-reduced-motion get the poster with a standard play button and normal playback; a decode failure or Save-Data keeps the poster static and disables the scrub rail. Add a 4px #ff5d3b rail with a 12px handle that mirrors progress, cap the video buffer at 1920px wide, and release it with removeAttribute('src') when the section unmounts. Acceptance: no seek backlog after a fast scroll, on-screen frame matches the scroll offset within 40ms, iOS plays inline without taking over the screen, and the poster stays visible until the first decoded frame arrives.",
+    "notes": [
+      "Keyframe density is the entire performance story: long GOPs make every scrub a decode-from-keyframe stall.",
+      "Delta-gating currentTime is what keeps Safari from queueing seeks it cannot finish; write one value per frame at most.",
+      "currentTime and the media element are platform APIs with no licence; the MDN media guides are reference only, so nothing here is copied code."
+    ],
+    "demo": {
+      "style": "filmstrip",
+      "t1": "SCRUB",
+      "kind": "VIDEO",
+      "meta": "time from scroll",
+      "variant": ""
+    },
+    "source": {
+      "pack": "community",
+      "repo": "community sources",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/currentTime",
+      "license": "see notes",
+      "ref": "HTMLMediaElement currentTime and seeking (platform, https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/currentTime) + MDN media guides (https://developer.mozilla.org/en-US/docs/Web/Media)",
+      "research": "HTMLMediaElement currentTime and seeking (platform, https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/currentTime) + MDN media guides (https://developer.mozilla.org/en-US/docs/Web/Media)"
+    },
+    "sort_order": -901
+  },
+  {
+    "id": "sc-21-drag-pan-canvas",
+    "title": "Drag-to-Pan Infinite Canvas",
+    "description": "可拖拽平移的无限画布，带惯性、缩放与边界钳制",
+    "category": "Replication Recipes",
+    "type": "full-page",
+    "tags": [
+      "drag",
+      "pointer",
+      "inertia",
+      "canvas",
+      "keyboard"
+    ],
+    "palette": [
+      "#0f1116",
+      "#e9ecf2",
+      "#7c8cff",
+      "#1b1f27",
+      "#4a5263"
+    ],
+    "prompt": "Give a project gallery a pannable canvas instead of a paginated grid. Use a 100svh viewport with overflow hidden, a #0f1116 surface and a 24px dot grid at 0.06 opacity, plus an inner layer holding 12 cards of 320x240px with 24px gaps spread across a 2400x1600 coordinate space. Implement dragging with pointerdown, setPointerCapture and pointermove, keeping the last 90ms of samples in a ring buffer; on pointerup, take the velocity of the final two samples, apply it with a 0.92 per-frame decay at 16ms steps and stop below 0.05px/ms. Clamp translation so at least 120px of content stays inside the viewport on each axis, and ease overshoot back with a 0.18 attractor rather than a hard spring. Zoom with wheel plus ctrlKey or a two-finger pinch between 0.6 and 2.2 scale, anchored on the pointer so the point under the cursor stays fixed. Keyboard: the canvas is focusable with tabindex 0 and a 2px offset focus ring; arrows pan 80px, Shift plus arrows 320px, plus and minus zoom in 0.1 steps, and Home recentres with the same 320ms easing. Pin a 44x44px reset button bottom-right, always above the canvas in z-order and never inside the transformed layer. Transform only the layer, mark cards with content-visibility: auto, and set touch-action: none on the canvas alone so page scroll still works everywhere else. Reduced motion: no inertia, 1:1 drag, zoom snaps in 0.1 increments. Acceptance: a hard drag past the edge never loses content, a flick stops without looping, pointercancel releases capture cleanly, and every control is reachable and operable by keyboard alone.",
+    "notes": [
+      "Pointer capture plus a ring buffer is the whole trick; listening on window and forgetting per-pointer state is what breaks multi-touch.",
+      "Clamping after inertia, not before, is what stops the content drifting outside the viewport on a fast flick.",
+      "Pointer Events are a W3C platform API; Motion's drag gesture is MIT, so reuse is fine as long as its notice travels with the code."
+    ],
+    "demo": {
+      "style": "gallery",
+      "t1": "PAN CANVAS",
+      "kind": "DRAG",
+      "meta": "inertia + bounds",
+      "variant": ""
+    },
+    "source": {
+      "pack": "community",
+      "repo": "community sources",
+      "url": "https://motion.dev",
+      "license": "see notes",
+      "ref": "Pointer Events with setPointerCapture (W3C platform, https://developer.mozilla.org/en-US/docs/Web/API/Pointer_events) + Motion drag gesture (MIT, https://motion.dev)",
+      "research": "Pointer Events with setPointerCapture (W3C platform, https://developer.mozilla.org/en-US/docs/Web/API/Pointer_events) + Motion drag gesture (MIT, https://motion.dev)"
+    },
+    "sort_order": -900
+  },
+  {
+    "id": "sc-22-flip-card-deck",
+    "title": "Flip Card Deck",
+    "description": "卡组正反面三维翻转，文字不镜像且焦点跟随",
+    "category": "Replication Recipes",
+    "type": "component",
+    "tags": [
+      "3d",
+      "flip",
+      "card",
+      "spring",
+      "a11y"
+    ],
+    "palette": [
+      "#0b0c10",
+      "#f5f6fa",
+      "#a78bfa",
+      "#1c1f28",
+      "#5b6172"
+    ],
+    "prompt": "Build a deck of five cards that each flip between a front and a back face when activated. Card 320x420px, 18px radius, 1px rgba(255,255,255,0.1) border, #1c1f28 fill, stacked with an 18px vertical offset and a 2deg rotation per depth level so the deck's edge is visible. Inside each card place an .inner with transform-style: preserve-3d and a 700ms transform transition on cubic-bezier(0.5,0.05,0.2,1.02); flipping to rotateY(180deg) reveals the back face, which carries backface-visibility: hidden and is pre-rotated 180deg so its text is never seen mirrored. Set perspective 1200px on the card rather than the deck, and give .inner translateZ(0) to force a composited layer. After the transition lands, run a 90ms spring settle from 176deg to 180deg so the flip reads as physical; drive it from the transitionend event rather than a hardcoded timeout. Each card is a real button with aria-pressed, a 2px visible focus ring and keyboard activation on Enter and Space; on activation move focus to the revealed heading and let Escape flip back and return focus to the button. Tap flips on coarse pointers, but a drag over 12px cancels the flip so vertical swipes still scroll the page. Fallback when 3D transforms are unsupported or prefers-reduced-motion is set: stack both faces in one grid cell, crossfade content over 200ms and rotate nothing. Acceptance: no mirrored text at any angle, flip twice returns to the exact front state, the settled transform is an exact matrix not a drifting angle, and hidden faces are never focusable or announced.",
+    "notes": [
+      "Perspective on the wrong ancestor is the classic bug: it flattens the flip into a squash and looks like a scale.",
+      "Keeping the back face in the tab order is the accessibility failure here — toggle inert or visibility with the rotation.",
+      "CSS preserve-3d is a platform feature; vanilla-tilt (MIT) is useful for a subtle pointer tilt on the front face, and MIT means you can ship it while keeping its notice."
+    ],
+    "demo": {
+      "style": "tilt",
+      "t1": "FLIP DECK",
+      "kind": "3D",
+      "meta": "front / back",
+      "variant": ""
+    },
+    "source": {
+      "pack": "community",
+      "repo": "community sources",
+      "url": "https://github.com/micku7zu/vanilla-tilt.js",
+      "license": "see notes",
+      "ref": "CSS transform-style: preserve-3d with backface-visibility (platform, https://developer.mozilla.org/en-US/docs/Web/CSS/transform-style) + vanilla-tilt (MIT, https://github.com/micku7zu/vanilla-tilt.js)",
+      "research": "CSS transform-style: preserve-3d with backface-visibility (platform, https://developer.mozilla.org/en-US/docs/Web/CSS/transform-style) + vanilla-tilt (MIT, https://github.com/micku7zu/vanilla-tilt.js)"
+    },
+    "sort_order": -899
+  },
+  {
+    "id": "sc-23-spotlight-border-card",
+    "title": "Spotlight Border Card",
+    "description": "指针扫过才点亮的卡片描边光弧，内容不重绘",
+    "category": "Replication Recipes",
+    "type": "component",
+    "tags": [
+      "spotlight",
+      "border",
+      "pointer",
+      "mask",
+      "perf"
+    ],
+    "palette": [
+      "#0b0c10",
+      "#ffffff",
+      "#8b5cf6",
+      "#12141a",
+      "#3f4553"
+    ],
+    "prompt": "Light a card's 1px border with a pointer-tracked spotlight while its content never repaints. Card 420x280px, 20px radius, #12141a fill on #0b0c10, with the ring drawn by a ::before at inset -1px and radius 21px: background radial-gradient(220px circle at var(--mx) var(--my), #8b5cf6, transparent 70%), the same element padded 1px, and two stacked mask layers with mask-composite: exclude (plus the -webkit- prefixed pair) so only the ring pixels survive. Update --mx and --my as percentages inside a single requestAnimationFrame callback that runs only while the pointer is inside the card, batch all reads before all writes, and stop the loop 120ms after the last move; never write custom properties directly from pointermove across six cards. Add a dimmer second glow at 0.10 opacity behind the ring for depth, and thicken the ring to 2px by scaling the pseudo-element, never by changing layout. On pointerleave, transition the gradient back to a resting rgba(255,255,255,0.10) ring over 220ms and reset the two properties to 50%. For coarse pointers, touch and prefers-reduced-motion, skip tracking entirely and show a static ring plus a 1.01 hover scale. Ship a data-spotlight off escape hatch, and keep hit area and focus ring identical whether or not the effect runs. Acceptance: content pixels never repaint while the ring moves, six cards hold 60fps, pointerleave restores the exact resting ring, and the lit ring measures at least 3:1 against the card fill.",
+    "notes": [
+      "Do the masking with one pseudo-element: an extra gradient div over real content is what causes the blurred text people complain about.",
+      "Writing CSS variables from pointermove floods style recalc; batch them into one rAF write per frame per card.",
+      "CSS mask-image and custom properties are platform features; Magic UI's MagicCard spotlight is MIT, meaning free to reuse with its notice kept, and the mask ring here is written from scratch."
+    ],
+    "demo": {
+      "style": "bento",
+      "t1": "SPOTLIGHT",
+      "kind": "BORDER",
+      "meta": "pointer light",
+      "variant": ""
+    },
+    "source": {
+      "pack": "community",
+      "repo": "community sources",
+      "url": "https://github.com/magicuidesign/magicui",
+      "license": "see notes",
+      "ref": "CSS mask-image with custom properties (platform, https://developer.mozilla.org/en-US/docs/Web/CSS/mask-image) + Magic UI MagicCard spotlight (MIT, https://github.com/magicuidesign/magicui)",
+      "research": "CSS mask-image with custom properties (platform, https://developer.mozilla.org/en-US/docs/Web/CSS/mask-image) + Magic UI MagicCard spotlight (MIT, https://github.com/magicuidesign/magicui)"
+    },
+    "sort_order": -898
+  },
+  {
+    "id": "sc-24-accordion-flip-morph",
+    "title": "Accordion Height Morph",
+    "description": "手风琴面板高度平滑展开，内容交叉淡入不跳动",
+    "category": "Replication Recipes",
+    "type": "component",
+    "tags": [
+      "accordion",
+      "flip",
+      "height",
+      "disclosure",
+      "a11y"
+    ],
+    "palette": [
+      "#0a0b0f",
+      "#eef1f6",
+      "#34d399",
+      "#202430",
+      "#59606f"
+    ],
+    "prompt": "Open accordion panels without the one-frame snap that toggling display produces. Build a six-row FAQ on #0a0b0f with 1px #202430 separators, 72px collapsed headers at 16px, and 18px text with a 62ch measure inside the panel. Preferred path: wrap the body in a grid whose grid-template-rows animates 0fr to 1fr over 320ms cubic-bezier(0.22,1,0.36,1), with the inner wrapper at min-height 0 and overflow hidden, and crossfade the content from opacity 0 to 1 with a 40ms delay. Where 0fr to 1fr is unsupported or the panel holds an unpredictable media block, fall back to a measured FLIP: read scrollHeight, animate the container's inline height from 0 to that value, keep it exact when the panel content is already open, then commit height auto on transitionend and read the computed height again before closing so the reverse tween has a real start. Animate one panel at a time and close the previously open one in the same frame budget — never run three height tweens at once. The trigger is a button with aria-expanded and aria-controls pointing at a panel with role=region and aria-labelledby; because the panel is never display: none, Tab reaches its links and screen readers can still measure it, while visibility toggles with a 320ms delay on close. Focus stays on the trigger through the whole morph. Reduced motion: no height animation, an instant toggle with a 120ms opacity fade. Acceptance: no cumulative height drift after fifty open and close cycles, closing works mid-animation on another panel, aria-expanded always matches what is on screen, and panel content stays in the DOM and printable.",
+    "notes": [
+      "The jump comes from animating height auto; grid rows or a measured height both work, a CSS transition on auto does not.",
+      "Never remove the panel from the DOM for animation, or the content becomes invisible to assistive tech and to search.",
+      "The FLIP technique and grid-template-rows interpolation are platform CSS and Web APIs with no licence attached; no library is needed for this one."
+    ],
+    "demo": {
+      "style": "reveal",
+      "t1": "ACCORDION",
+      "kind": "FLIP",
+      "meta": "height + fade",
+      "variant": "mask"
+    },
+    "source": {
+      "pack": "community",
+      "repo": "community sources",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-rows",
+      "license": "see notes",
+      "ref": "FLIP transform technique (platform) + CSS grid-template-rows 0fr to 1fr animation (MDN, https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-rows)",
+      "research": "FLIP transform technique (platform) + CSS grid-template-rows 0fr to 1fr animation (MDN, https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-rows)"
+    },
+    "sort_order": -897
   }
 ]

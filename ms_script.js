@@ -71,6 +71,18 @@ const I18N = {
     sourceMotionsites: 'MotionSites 主库',
     sourceCommunity: '社区精选',
     sourceRecipes: '复刻配方',
+    sourceRecipesRea: '　└ 逆向取证 · rea',
+    sourceRecipesCraft: '　└ 工艺管线 · craft',
+    sourceRecipesCommunity: '　└ 社区效果 · community',
+    trackKicker: '配方包 · 轨道',
+    trackReaTitle: '逆向取证',
+    trackReaDesc: '确定性抓取、HAR / source map / 覆盖率证据、义务账本',
+    trackCraftTitle: '工艺管线',
+    trackCraftDesc: '蓝图、令牌、状态覆盖、对等审计、交付评分卡',
+    trackCommTitle: '社区效果',
+    trackCommDesc: 'MIT 库与 Web 标准的原创造型实现',
+    trackCountSuffix: '条配方',
+    trackSectionLabel: '复刻配方轨道',
     sourceBadge: '社区',
     sourceBadgeRecipes: '配方',
     sourceRepoLabel: '来源仓库',
@@ -145,6 +157,18 @@ const I18N = {
     sourceMotionsites: 'MotionSites library',
     sourceCommunity: 'Community picks',
     sourceRecipes: 'Recipe pack',
+    sourceRecipesRea: '  └ reverse-engineering · rea',
+    sourceRecipesCraft: '  └ craft pipeline · craft',
+    sourceRecipesCommunity: '  └ community effects',
+    trackKicker: 'Recipe pack · track',
+    trackReaTitle: 'Reverse-engineering',
+    trackReaDesc: 'deterministic capture, HAR / source map / coverage evidence, obligation ledger',
+    trackCraftTitle: 'Craft pipeline',
+    trackCraftDesc: 'blueprint, tokens, state coverage, parity audits, handoff scorecard',
+    trackCommTitle: 'Community effects',
+    trackCommDesc: 'original builds of MIT-library and web-platform patterns',
+    trackCountSuffix: 'recipes',
+    trackSectionLabel: 'Recipe tracks',
     sourceBadge: 'Community',
     sourceBadgeRecipes: 'Recipe',
     sourceRepoLabel: 'Source repository',
@@ -199,7 +223,7 @@ function debounce(fn, ms) {
 async function fetchJSON(url) {
   // BUST-CACHE: append a build stamp so each deploy invalidates browser caches.
   const sep = url.includes('?') ? '&' : '?';
-  const fullUrl = url + sep + 'v=20261122v4';
+  const fullUrl = url + sep + 'v=20261122v6';
   const res = await fetch(fullUrl, { cache: 'no-store' });
   if (!res.ok) throw new Error('fetchJSON ' + url + ' ' + res.status);
   return res.json();
@@ -221,7 +245,7 @@ async function loadPromptText(id) {
   if (!rel) { __MS_TEXT_CACHE[id] = ''; return ''; }
   const p = (async function () {
     try {
-      const res = await fetch('data/' + rel + '?v=20261122v4', { cache: 'no-store' });
+      const res = await fetch('data/' + rel + '?v=20261122v6', { cache: 'no-store' });
       if (!res.ok) throw new Error('text ' + id + ' ' + res.status);
       const txt = await res.text();
       __MS_TEXT_CACHE[id] = txt;
@@ -563,13 +587,15 @@ function render() {
   const q = $('q').value.trim().toLowerCase();
   const cat = $('cat').value, type = $('type').value, media = $('media').value;
   const source = $('source') ? $('source').value : '';
+  const [sourceKind, sourceTrack] = source.includes(':') ? source.split(':') : [source, ''];
   let list = DATA;
   if (cat) list = list.filter((x) => x.category === cat);
   if (type) list = list.filter((x) => x.type === type);
   if (media === 'img') list = list.filter((x) => x.local_kind && x.local_kind !== 'mp4' && x.local_kind !== 'hls');
   if (media === 'video') list = list.filter((x) => x.local_kind === 'mp4' || x.local_kind === 'hls');
   if (media === 'art') list = list.filter((x) => !x.local_rel);
-  if (source) list = list.filter((x) => (x.source_kind || 'motionsites') === source);
+  if (sourceKind) list = list.filter((x) => (x.source_kind || 'motionsites') === sourceKind);
+  if (sourceTrack) list = list.filter((x) => x.source_id === sourceTrack);
   if (q) {
     const tokens = q.split(/\s+/).filter(Boolean);
     list = list.filter((x) => {
@@ -579,6 +605,7 @@ function render() {
   }
   $('count').innerHTML = '<b style="color:var(--text)">' + list.length.toLocaleString() + '</b> ' + t('resultsSuffix') + ' · ' + t('totalSuffix') + ' ' + DATA.length.toLocaleString() + ' ' + t('prompts');
   renderProgressive(list);
+  syncTracks();
   if (q) animateSearch(q); else $('spotlight').classList.remove('show');
 }
 
@@ -862,6 +889,59 @@ document.addEventListener('keydown', (e) => {
 });
 
 // -------- Chips + i18n --------
+// -------- recipe track band --------
+// The pack has three equal tracks; the band gives each one a face (three previews of its own
+// recipes) instead of hiding 104 cards behind a single select value.
+const TRACKS = [
+  { key: 'rea', title: 'trackReaTitle', desc: 'trackReaDesc' },
+  { key: 'craft', title: 'trackCraftTitle', desc: 'trackCraftDesc' },
+  { key: 'community', title: 'trackCommTitle', desc: 'trackCommDesc' },
+];
+
+function trackRecipes(key) {
+  return DATA.filter((x) => x.source_kind === 'recipes' && x.source_id === key);
+}
+
+function syncTracks() {
+  const sel = $('source');
+  const cur = sel ? sel.value : '';
+  document.querySelectorAll('.track-card').forEach((btn) => {
+    const on = cur === 'recipes:' + btn.dataset.track;
+    btn.classList.toggle('active', on);
+    btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+  });
+}
+
+function buildTracks() {
+  const host = $('tracks');
+  if (!host) return;
+  host.setAttribute('aria-label', t('trackSectionLabel'));
+  host.innerHTML = TRACKS.map((tr) => {
+    const list = trackRecipes(tr.key);
+    if (!list.length) return '';
+    const thumbs = list.slice(0, 3).map((x) =>
+      '<i style="background-image:url(\'' + esc(x.poster_rel || x.local_rel || '') + '\')"></i>').join('');
+    return '<button class="track-card" type="button" data-track="' + tr.key + '">'
+      + '<span class="track-thumbs" aria-hidden="true">' + thumbs + '</span>'
+      + '<span class="track-body">'
+      + '<span class="track-kicker">' + esc(t('trackKicker')) + '</span>'
+      + '<span class="track-title">' + esc(t(tr.title)) + '</span>'
+      + '<span class="track-meta"><b>' + list.length + '</b> ' + esc(t('trackCountSuffix')) + ' · ' + esc(t(tr.desc)) + '</span>'
+      + '</span></button>';
+  }).join('');
+  host.querySelectorAll('.track-card').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const sel = $('source');
+      const value = 'recipes:' + btn.dataset.track;
+      sel.value = sel.value === value ? '' : value;
+      render();
+      const meta = document.querySelector('.section-meta');
+      if (meta) meta.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  });
+  syncTracks();
+}
+
 function chipInit() {
   const counts = {};
   DATA.forEach((x) => { counts[x.category] = (counts[x.category] || 0) + 1; });
@@ -951,6 +1031,7 @@ function applyLang() {
   }
 
   chipInit();
+  buildTracks();
   // preserve current filter selections
   $('cat').value = $('cat').value;
   $('type').value = $('type').value;
@@ -973,9 +1054,17 @@ function rebuildSourceOptions() {
   const opts = ['<option value="">' + t('allSources') + '</option>'];
   if (present.has('motionsites')) opts.push('<option value="motionsites">' + t('sourceMotionsites') + '</option>');
   if (present.has('community')) opts.push('<option value="community">' + t('sourceCommunity') + '</option>');
-  if (present.has('recipes')) opts.push('<option value="recipes">' + t('sourceRecipes') + '</option>');
+  if (present.has('recipes')) {
+    opts.push('<option value="recipes">' + t('sourceRecipes') + '</option>');
+    // Track sub-entries: the recipe pack has three equal tracks and 104 entries.
+    for (const track of ['rea', 'craft', 'community']) {
+      if (!DATA.some((x) => x.source_kind === 'recipes' && x.source_id === track)) continue;
+      const label = track === 'rea' ? t('sourceRecipesRea') : track === 'craft' ? t('sourceRecipesCraft') : t('sourceRecipesCommunity');
+      opts.push('<option value="recipes:' + track + '">' + label + '</option>');
+    }
+  }
   sel.innerHTML = opts.join('');
-  if (cur && (cur === '' || present.has(cur))) sel.value = cur;
+  if (cur && (cur === '' || present.has(cur) || opts.some((o) => o.includes('value="' + cur + '"')))) sel.value = cur;
 }
 // -------- boot --------
 async function bootstrap() {

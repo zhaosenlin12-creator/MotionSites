@@ -31,6 +31,9 @@ Ground rules that apply to every source below:
 | `21st.dev` | per-contributor, not an OSI licence | 12,000+ claimed; SSR title/description/author + `cdn.21st.dev` webp previews | component source/prompt is gated behind an account; metadata-only records cannot become cards here |
 | Codrops demo repos | MIT (per-demo check) | hundreds of effects | each card would need a locally rendered preview + an original prompt; good future "recipe" source |
 
+| `DexZane/awesome-web-prompts` | MIT | 20 | 81 `prompt.md` records with YAML front-matter; 5 ship `preview.png`, 16 ship a self-contained `index.html` demo (rendered to a 16:10 cover), 26 have neither and were dropped | shipped in 1.4.1 via `scripts/import-awesome-web-prompts.js` + `scripts/render_awp_previews.py`, see [competitor-teardown.md](competitor-teardown.md) |
+| `kenje24/rebirth-motionsitesprompt` | MIT label | 661 record dirs (470 motionsites, 95 `dev21-`, 94 `hx-`, 5 `sup-`); 420 slugs new to this catalog | preview media is not co-located per record; needs the repo's 4.7 MB generated manifest to map slug → preview, and the `dev21-`/`hx-` corpora re-publish third-party component libraries | deferred pending a licence/attribution decision |
+
 ## Rejected, with evidence
 
 - **motionsites.ai live catalog** — no public listing endpoint (`/api/prompts`, `/api/catalog`, `/api/prompts/count` → 404), `sitemap.xml` has zero per-record URLs, and bodies are login/paywalled (`/api/mcp` → 401, "free accounts can open 3 free prompts"). Preview media on `pub-86dc5b5484314368ac5436a674b0d919.r2.dev`, `images.higgs.ai` and `d8j0ntlcm91z4.cloudfront.net` is public and hotlinkable, so it is used only for preview rebuilds of already-archived bodies. **The paywall is not bypassed.**
@@ -40,6 +43,11 @@ Ground rules that apply to every source below:
 - **`nomaan5541/motionsites-prompt-collection`** — HTTP 451 (unavailable for legal reasons).
 - **Aceternity UI / 21st.dev component source** — no OSI licence file for the component library; excluded from provenance.
 - **Shadertoy** — default CC BY-NC-SA (non-commercial); no shader source is cited anywhere in the packs.
+- **`Vivvidai/vividsites`** — 31 complete prompts with webp previews and a machine-readable `catalog.json`, but its
+  `LICENSE.md` forbids repackaging the prompts "alone or bundled into another prompt pack, template store or course",
+  which is exactly what this repository is. Excluded on licence text alone, not on quality.
+- **`promptmotion.art`** — 135 cases, 121 with a verbatim prompt and a poster; the corpus is AI *video* prompting with a
+  small `/web-design` slice, so it belongs to a different catalogue.
 
 ## How to add a source
 

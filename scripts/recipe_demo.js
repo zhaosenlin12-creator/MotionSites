@@ -1,4 +1,4 @@
-﻿/* MotionSites recipe demo renderer.
+/* MotionSites recipe demo renderer.
  * Every visual is pure HTML + CSS animation so it can be frozen deterministically:
  * window.__seek(ms) pauses every Animation and sets its currentTime, which lets
  * scripts/render_recipe_previews.py capture exact frames into an mp4/webp loop.
@@ -93,13 +93,13 @@
     '<div class="grid"></div>';
 
   document.getElementById('chrome').innerHTML =
-    '<div class="tl"><span class="idx">R路' + esc(IDX) + '</span><span class="kind">' + esc(KIND) + '</span></div>' +
+    '<div class="tl"><span class="idx">R·' + esc(IDX) + '</span><span class="kind">' + esc(KIND) + '</span></div>' +
     '<div class="tr">' + esc(META) + '</div>' +
     '<div class="br">MOTIONSITES / RECIPE PACK</div>';
 
   var S = {};
 
-  /* ============ 1. TEARDOWN 鈥?annotated section boxes ============ */
+  /* ============ 1. TEARDOWN —annotated section boxes ============ */
   S.teardown = function () {
     return '<style>' +
       '.td{position:absolute;inset:74px 70px 66px;display:grid;grid-template-columns:1fr 330px;gap:26px}' +
@@ -131,11 +131,11 @@
       '</style>' +
       '<div class="td">' +
       '<div class="td-main"><div class="td-scan"></div><div class="td-pad">' +
-      '<div class="td-box" style="margin-top:14px"><i>EYEBROW 路 12/1 路 1440w</i><span class="td-eye">' + esc(T1) + '</span></div>' +
-      '<div class="td-box"><i>HEADLINE 路 2 LINES 路 64/68 路 -3%</i><div class="td-h"></div><div class="td-h2" style="margin-top:8px"></div><s>w 86% / 64%</s></div>' +
-      '<div class="td-box"><i>SUBHEAD 路 16/26 路 52ch</i><div class="td-sub"></div><s>gap 16</s></div>' +
-      '<div class="td-box"><i>ACTIONS 路 pill 44h 路 gap 12</i><div class="td-row"><span class="td-btn">Primary</span><span class="td-btn ghost">Secondary</span></div><s>2 states + focus</s></div>' +
-      '<div class="td-box" style="flex:1"><i>MEDIA 路 3:2 路 lazy 路 poster</i><div class="td-media"></div><s>video 24s loop</s></div>' +
+      '<div class="td-box" style="margin-top:14px"><i>EYEBROW · 12/1 · 1440w</i><span class="td-eye">' + esc(T1) + '</span></div>' +
+      '<div class="td-box"><i>HEADLINE · 2 LINES · 64/68 · -3%</i><div class="td-h"></div><div class="td-h2" style="margin-top:8px"></div><s>w 86% / 64%</s></div>' +
+      '<div class="td-box"><i>SUBHEAD · 16/26 · 52ch</i><div class="td-sub"></div><s>gap 16</s></div>' +
+      '<div class="td-box"><i>ACTIONS · pill 44h · gap 12</i><div class="td-row"><span class="td-btn">Primary</span><span class="td-btn ghost">Secondary</span></div><s>2 states + focus</s></div>' +
+      '<div class="td-box" style="flex:1"><i>MEDIA · 3:2 · lazy · poster</i><div class="td-media"></div><s>video 24s loop</s></div>' +
       '</div></div>' +
       '<div class="td-side">' +
       '<div class="td-card"><div class="micro">Measured, not guessed</div><div class="td-big">' + words().slice(0, 2).join(' ') + '</div>' +
@@ -149,11 +149,11 @@
       '</div></div>' +
       '<div class="td-card" style="flex:1;display:flex;flex-direction:column;justify-content:space-between"><div class="micro">Breakpoints</div>' +
       '<div style="display:flex;gap:8px"><span class="pill">390</span><span class="pill">768</span><span class="pill" style="border-color:color-mix(in srgb,var(--c3) 60%,transparent);color:#fff">1440</span></div>' +
-      '<div class="micro" style="margin-top:12px">unknown 鈫?estimated</div></div>' +
+      '<div class="micro" style="margin-top:12px">unknown →estimated</div></div>' +
       '</div></div>';
   };
 
-  /* ============ 2. HERO 鈥?first-fold mock with guides ============ */
+  /* ============ 2. HERO —first-fold mock with guides ============ */
   S.hero = function () {
     return '<style>' +
       '.hr{position:absolute;inset:80px 74px 70px;border-radius:20px;overflow:hidden;background:linear-gradient(170deg,#0b0e15,#0a0c11 60%,#0d1017);border:1px solid rgba(255,255,255,.09)}' +
@@ -178,17 +178,17 @@
       '</style>' +
       '<div class="hr"><div class="hr-guides"></div><div class="hr-glow"></div>' +
       '<div class="hr-in"><div>' +
-      '<div class="hr-eye"><b></b>' + esc(T1) + ' 路 first fold</div>' +
+      '<div class="hr-eye"><b></b>' + esc(T1) + ' · first fold</div>' +
       '<h1 class="hr-h">Ship the <em>feeling</em><br>not the pixels</h1>' +
       '<p class="hr-sub">Rebuild the measured grid, type ramp and state table at three widths before touching the styling.</p>' +
       '<div class="hr-cta"><span class="hr-b p">Start the clone</span><span class="hr-b g">Read blueprint</span></div>' +
       '</div><div class="hr-media"></div></div>' +
-      '<div class="hr-fold"><span>fold 路 900</span></div>' +
-      '<div class="hr-col"><span>12 COL</span><span>路</span><span>1180 CONTENT</span><span>路</span><span>96 TOP PAD</span></div>' +
+      '<div class="hr-fold"><span>fold · 900</span></div>' +
+      '<div class="hr-col"><span>12 COL</span><span>·</span><span>1180 CONTENT</span><span>·</span><span>96 TOP PAD</span></div>' +
       '</div>';
   };
 
-  /* ============ 3. TOKENS 鈥?swatches, type ladder, spacing ============ */
+  /* ============ 3. TOKENS —swatches, type ladder, spacing ============ */
   S.tokens = function () {
     var sw = [
       ['surface', '#0b0e14'], ['raised', '#141925'], ['accent', C1], ['accent-2', C2], ['signal', C3], ['warn', C4]
@@ -226,17 +226,17 @@
       '.tk-chip2{border:1px solid rgba(255,255,255,.14);border-radius:99px;padding:7px 12px;font:500 10px/1 "JetBrains Mono",monospace;color:rgba(255,255,255,.62)}' +
       '</style>' +
       '<div class="tk">' +
-      '<div class="micro" style="position:static">' + esc(T1) + ' 路 measured ramp</div>' +
+      '<div class="micro" style="position:static">' + esc(T1) + ' · measured ramp</div>' +
       '<div class="tk-sw-row">' + sw + '</div>' +
       '<div class="tk-mid">' +
-      '<div class="tk-card"><div class="micro">Type ladder 路 Inter / Fraunces / Mono</div>' + ladder + '</div>' +
-      '<div class="tk-card"><div class="micro">Spacing ladder 路 4pt base</div><div class="tk-steps">' + steps + '</div>' +
+      '<div class="tk-card"><div class="micro">Type ladder · Inter / Fraunces / Mono</div>' + ladder + '</div>' +
+      '<div class="tk-card"><div class="micro">Spacing ladder · 4pt base</div><div class="tk-steps">' + steps + '</div>' +
       '<div class="micro" style="margin-top:18px">Shape & elevation</div><div class="tk-chips">' +
       '<span class="tk-chip2">radius 6</span><span class="tk-chip2">radius 12</span><span class="tk-chip2">radius 18</span><span class="tk-chip2">pill</span><span class="tk-chip2">shadow 0 24 60</span><span class="tk-chip2">hairline 1</span>' +
       '</div></div></div></div>';
   };
 
-  /* ============ 4. MATERIALS 鈥?surface ladder + glass ============ */
+  /* ============ 4. MATERIALS —surface ladder + glass ============ */
   S.materials = function () {
     var rows = [['L1', 'page', '4%'], ['L2', 'section', '6%'], ['L3', 'card', '9%'], ['L4', 'raised', '13%'], ['L5', 'float', '18%']];
     var ladder = rows.map(function (r, i) {
@@ -272,7 +272,7 @@
       '<div class="mt-note">Contrast 4.5:1 on every surface, including glass over media.</div></div></div>';
   };
 
-  /* ============ 5. TIMELINE 鈥?nested tween lanes ============ */
+  /* ============ 5. TIMELINE —nested tween lanes ============ */
   S.timeline = function () {
     var lanes = [
       ['hero.enter', [0, 62], [8, 40], [52, 44]],
@@ -285,7 +285,7 @@
         var col = ['var(--c1)', 'var(--c2)', 'var(--c3)'][bi % 3];
         return '<i class="tl-bar" style="left:' + b[0] + '%;width:' + b[1] + '%;background:linear-gradient(90deg,' + col + ',color-mix(in srgb,' + col + ' 55%,transparent));animation-delay:' + (li * 0.1 + bi * 0.05).toFixed(2) + 's"></i>';
       }).join('');
-      return '<div class="tl-lane"><span class="tl-name">' + esc(l[0]) + '</span><div class="tl-track">' + bars + '</div><span class="tl-val">' + (li === 0 ? '0.0 鈫?1.6' : li === 1 ? '+=0.2' : li === 2 ? 'stagger .08' : 'ease expo') + '</span></div>';
+      return '<div class="tl-lane"><span class="tl-name">' + esc(l[0]) + '</span><div class="tl-track">' + bars + '</div><span class="tl-val">' + (li === 0 ? '0.0 →1.6' : li === 1 ? '+=0.2' : li === 2 ? 'stagger .08' : 'ease expo') + '</span></div>';
     }).join('');
     var ticks = ['0', '0.6', '1.2', '1.8', '2.4'].map(function (t, i) {
       return '<span style="left:' + (i * 25) + '%">' + t + 's</span>';
@@ -309,13 +309,13 @@
       '@keyframes playX{0%{left:12%}100%{left:86%}}' +
       '.tl-foot{display:flex;gap:10px;margin-top:12px}' +
       '</style>' +
-      '<div class="tl"><div class="tl-head"><div class="tl-title">' + esc(T1) + '<em>GSAP 路 ScrollTrigger</em></div><div class="micro">2.4s loop 路 scrubbed</div></div>' +
+      '<div class="tl"><div class="tl-head"><div class="tl-title">' + esc(T1) + '<em>GSAP · ScrollTrigger</em></div><div class="micro">2.4s loop · scrubbed</div></div>' +
       '<div class="tl-body"><div class="tl-ruler">' + ticks + '</div><div class="tl-play"></div>' + laneHtml +
-      '<div class="tl-foot"><span class="pill">position params preserved</span><span class="pill">ease parsed at 11 points</span><span class="pill">runtime-generated 鈫?inferred</span></div>' +
+      '<div class="tl-foot"><span class="pill">position params preserved</span><span class="pill">ease parsed at 11 points</span><span class="pill">runtime-generated →inferred</span></div>' +
       '</div></div>';
   };
 
-  /* ============ 6. BEZIER 鈥?easing curves + travelling dots ============ */
+  /* ============ 6. BEZIER —easing curves + travelling dots ============ */
   S.bezier = function () {
     var curves = [
       ['ease-out-expo', 'cubic-bezier(.16,1,.3,1)', 'M0,100 C30,4 52,0 100,0'],
@@ -351,12 +351,12 @@
       '<div class="bz-legend"><span class="pill">--dur-fast 120</span><span class="pill">--dur-hero 320</span><span class="pill">--ease-out-expo</span><span class="pill">exit 65% of enter</span></div></div>';
   };
 
-  /* ============ 7. TIMING 鈥?staggered entrance + duration ruler ============ */
+  /* ============ 7. TIMING —staggered entrance + duration ruler ============ */
   S.timing = function () {
     var cards = [0, 1, 2, 3, 4, 5].map(function (i) {
       return '<div class="tm-card" style="animation-delay:' + (i * 0.08).toFixed(2) + 's"><div class="tm-num">' + String(i + 1).padStart(2, '0') + '</div><div class="tm-line"></div><div class="tm-line s"></div></div>';
     }).join('');
-    var stops = [['instant', '80鈥?20', 18], ['control', '150鈥?00', 34], ['enter', '240鈥?20', 62], ['exit', '脳0.65', 44], ['ambient', '6鈥?2s', 100]];
+    var stops = [['instant', '80–120', 18], ['control', '150–200', 34], ['enter', '240–320', 62], ['exit', '×0.65', 44], ['ambient', '6—2s', 100]];
     var ruler = stops.map(function (s, i) {
       return '<div class="tm-stop"><span class="tm-lbl">' + s[0] + '</span><span class="tm-dur">' + s[1] + ' ms</span><i style="width:' + s[2] + '%;animation-delay:' + (i * 0.1).toFixed(2) + 's"></i></div>';
     }).join('');
@@ -378,12 +378,12 @@
       '.tm-dur{width:88px;font:500 10px/1 "JetBrains Mono",monospace;color:#fff}' +
       '.tm-stop i{height:7px;border-radius:99px;background:linear-gradient(90deg,var(--c1),var(--c3));box-shadow:0 0 18px color-mix(in srgb,var(--c3) 45%,transparent);animation:pulse 2.4s ease-in-out infinite}' +
       '</style>' +
-      '<div class="tm"><div class="tm-top"><div class="tm-h">' + esc(T1) + '</div><div class="micro">one token sheet 路 not per-component numbers</div></div>' +
+      '<div class="tm"><div class="tm-top"><div class="tm-h">' + esc(T1) + '</div><div class="micro">one token sheet · not per-component numbers</div></div>' +
       '<div class="tm-cards">' + cards + '</div>' +
       '<div class="tm-ruler">' + ruler + '</div></div>';
   };
 
-  /* ============ 8. MATRIX 鈥?3D tilt card + decomposed matrix ============ */
+  /* ============ 8. MATRIX —3D tilt card + decomposed matrix ============ */
   S.matrix = function () {
     return '<style>' +
       '.mx{position:absolute;inset:76px 70px 66px;display:grid;grid-template-columns:1.1fr .9fr;gap:26px}' +
@@ -412,21 +412,21 @@
       '<div class="mx"><div class="mx-stage"><div class="mx-orbit"></div>' +
       '<div class="mx-deck"><div class="mx-ghost g1"></div><div class="mx-ghost g2"></div>' +
       '<div class="mx-face"><div class="micro">' + esc(T1) + '</div><div class="mx-gl">decompose<br>before you<br>reanimate</div></div></div>' +
-      '<div class="mx-axis"><span>X 12掳</span><span>Y 鈭?6掳</span><span>Z 0掳</span></div>' +
+      '<div class="mx-axis"><span>X 12°</span><span>Y −16°</span><span>Z 0°</span></div>' +
       '</div><div class="mx-side">' +
       '<div class="mx-card"><div class="micro" style="margin-bottom:8px">Resolved transform</div>' +
       '<div class="mx-kv"><span>translate</span><span>0, 24, 0</span></div>' +
       '<div class="mx-kv"><span>scale</span><span>1.04</span></div>' +
-      '<div class="mx-kv"><span>rotate</span><span>X 9 Y 鈭?6</span></div>' +
+      '<div class="mx-kv"><span>rotate</span><span>X 9 Y −16</span></div>' +
       '<div class="mx-kv"><span>perspective</span><span>1100</span></div>' +
       '<div class="mx-mono">matrix3d(.966,-.09,.25,0, ...)</div></div>' +
-      '<div class="mx-card" style="flex:1"><div class="micro">matrix 鈫?readable</div><div class="mx-cells">' +
+      '<div class="mx-card" style="flex:1"><div class="micro">matrix →readable</div><div class="mx-cells">' +
       Array.from({ length: 9 }).map(function () { return '<i></i>'; }).join('') + '</div>' +
       '<div class="mx-note">Checkpoints 0 / 25 / 50 / 75 / 100%</div></div>' +
       '</div></div>';
   };
 
-  /* ============ 9. SCROLLMAP 鈥?pinned progress ============ */
+  /* ============ 9. SCROLLMAP —pinned progress ============ */
   S.scrollmap = function () {
     return '<style>' +
       '.sc{position:absolute;inset:76px 70px 66px;display:grid;grid-template-columns:1fr 210px;gap:24px}' +
@@ -451,17 +451,17 @@
       '@keyframes ghostUp{0%,100%{transform:translateY(0)}50%{transform:translateY(-16%)}}' +
       '</style>' +
       '<div class="sc"><div class="sc-stage">' +
-      '<div class="sc-pin"><div class="sc-eyebrow">scroll 0.00 鈫?1.00</div>' +
+      '<div class="sc-pin"><div class="sc-eyebrow">scroll 0.00 →1.00</div>' +
       '<div class="sc-h">' + esc(T1) + ' <em>pinned</em></div>' +
       '<div class="sc-sub">One shared progress value, lerped each frame, drives transform, opacity and clip across the whole sequence.</div>' +
       '<div class="sc-media"></div></div>' +
-      '<div class="sc-ghost"><div class="micro">next section 路 enter 0.85</div></div>' +
+      '<div class="sc-ghost"><div class="micro">next section · enter 0.85</div></div>' +
       '</div><div class="sc-rail">' +
       '<div>' + ['0.00 start', '0.25 headline', '0.50 media', '0.75 cards', '1.00 release'].map(function (m, i) { return '<div class="sc-mark"><b></b>' + m + '</div>'; }).join('') + '</div>' +
       '<div class="sc-pct">62<span>percent</span></div><div class="sc-pinlbl">pin 200vh<br>scrub true</div></div></div>';
   };
 
-  /* ============ 10. STACK 鈥?sticky card stack ============ */
+  /* ============ 10. STACK —sticky card stack ============ */
   S.stack = function () {
     var cards = [0, 1, 2, 3].map(function (i) {
       return '<div class="st-card" style="--i:' + i + ';animation-delay:' + (i * 0.1).toFixed(2) + 's"><div class="st-top"><span class="st-idx">0' + (i + 1) + '</span><span class="st-tag">PIN ' + (i * 100) + 'vh</span></div><div class="st-gl">' + ['Observe', 'Blueprint', 'Craft', 'Verify'][i] + '</div><div class="st-bar"><i></i></div></div>';
@@ -486,14 +486,14 @@
       '.st-bar i{display:block;height:100%;width:64%;border-radius:99px;background:linear-gradient(90deg,var(--c1),var(--c3))}' +
       '@keyframes stMove{0%,100%{transform:translateY(0) scale(1)}50%{transform:translateY(-16px) scale(1.012)}}' +
       '</style>' +
-      '<div class="st"><div class="st-left"><div class="micro">sticky stack 路 4 scenes</div>' +
+      '<div class="st"><div class="st-left"><div class="micro">sticky stack · 4 scenes</div>' +
       '<div class="st-h">' + esc(T1.split(' ')[0]) + '<br><em>one scroll</em></div>' +
       '<p class="st-p">Each card pins for 100vh, then hands off. Progress maps to a shared timeline, not to per-element listeners.</p>' +
       '<div style="display:flex;gap:8px;margin-top:18px"><span class="pill">sticky</span><span class="pill">scrub</span><span class="pill">lerp .12</span></div></div>' +
       '<div class="st-deck">' + cards + '</div></div>';
   };
 
-  /* ============ 11. POINTER 鈥?cursor spotlight / drag mechanics ============ */
+  /* ============ 11. POINTER —cursor spotlight / drag mechanics ============ */
   S.pointer = function () {
     var drag = VARIANT === 'drag';
     var magnet = VARIANT === 'magnet';
@@ -541,10 +541,10 @@
       '.pt-line.s{width:60%;background:rgba(255,255,255,.14)}' +
       '@keyframes ptX{0%,100%{left:30%;top:58%}50%{left:62%;top:44%}}' +
       '</style>' +
-      '<div class="pt"><div class="pt-title">' + esc(T1) + '</div><div class="pt-sub">' + (drag ? 'pointer capture 路 inertia 路 snap' : magnet ? 'spring follow 路 clamped displacement' : 'cursor lerp 路 magnetic target') + '</div>' + inner + '</div>';
+      '<div class="pt"><div class="pt-title">' + esc(T1) + '</div><div class="pt-sub">' + (drag ? 'pointer capture · inertia · snap' : magnet ? 'spring follow · clamped displacement' : 'cursor lerp · magnetic target') + '</div>' + inner + '</div>';
   };
 
-  /* ============ 12. SCENE 鈥?WebGL-ish 3D object + HUD ============ */
+  /* ============ 12. SCENE —WebGL-ish 3D object + HUD ============ */
   S.scene = function () {
     var faces = ['front', 'back', 'left', 'right', 'top', 'bottom'];
     return '<style>' +
@@ -574,17 +574,17 @@
       '</style>' +
       '<div class="sn"><div class="sn-stage"><div class="sn-gridline"></div><div class="sn-ring"></div><div class="sn-ring r2"></div>' +
       '<div class="sn-core"></div><div class="sn-obj">' + faces.map(function (f) { return '<div class="sn-face ' + f + '"></div>'; }).join('') + '</div>' +
-      '<div class="sn-title"><div class="gl">' + esc(T1) + '</div><div class="micro">camera 45掳 路 fixed rig</div></div>' +
+      '<div class="sn-title"><div class="gl">' + esc(T1) + '</div><div class="micro">camera 45° · fixed rig</div></div>' +
       '<div class="sn-hud">dpr capped 2<br>16.7 ms budget<br>pause off-screen</div>' +
       '</div><div class="sn-side"><div class="micro">Uniforms</div>' +
       '<div class="sn-kv"><span>uTime</span><span>1.428</span></div>' +
-      '<div class="sn-kv"><span>uMouse</span><span>0.34, 鈭?.12</span></div>' +
+      '<div class="sn-kv"><span>uMouse</span><span>0.34, −0.12</span></div>' +
       '<div class="sn-kv"><span>uDpr</span><span>2.0</span></div>' +
       '<div class="sn-code">vec3 col = mix(\n  <b>uColorA</b>, <b>uColorB</b>,\n  smoothstep(0.,1.,uv.y)\n);\ncol *= <b>grain</b>(uv);\ngl_FragColor = vec4(col, 1.);</div>' +
       '<div class="micro" style="margin-top:2px">poster fallback required</div></div></div>';
   };
 
-  /* ============ 13. SVGDRAW 鈥?lottie / path reveal ============ */
+  /* ============ 13. SVGDRAW —lottie / path reveal ============ */
   S.svgdraw = function () {
     return '<style>' +
       '.sv{position:absolute;inset:76px 70px 66px;display:grid;grid-template-columns:1.15fr .85fr;gap:24px}' +
@@ -601,21 +601,21 @@
       '.sv-code{font:500 10px/1.75 "JetBrains Mono",monospace;color:rgba(255,255,255,.48);white-space:pre-wrap}' +
       '@keyframes svDraw{0%{stroke-dashoffset:1400}55%,100%{stroke-dashoffset:0}}' +
       '</style>' +
-      '<div class="sv"><div class="sv-stage"><div class="sv-lbl"><div class="gl">' + esc(T1) + '</div><div class="micro" style="margin-top:8px">network 鈫?json 鈫?path</div></div>' +
+      '<div class="sv"><div class="sv-stage"><div class="sv-lbl"><div class="gl">' + esc(T1) + '</div><div class="micro" style="margin-top:8px">' + esc(META) + '</div></div>' +
       '<svg class="sv-svg" viewBox="0 0 400 300"><defs><linearGradient id="svgGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="' + C3 + '"/><stop offset="1" stop-color="' + C1 + '"/></linearGradient></defs>' +
       '<path class="sv-path" d="M40,220 C80,80 140,60 200,150 C260,240 320,200 360,90"/>' +
       '<circle class="sv-dot" cx="360" cy="90" r="5"/>' +
       '</svg><div class="sn-gridline" style="position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.045) 1px,transparent 1px);background-size:50px 50px"></div></div>' +
-      '<div class="sv-side"><div class="sv-card"><div class="micro" style="margin-bottom:8px">Lottie layers</div>' +
-      '<div class="sv-layer"><span>shape 路 stroke</span><b>dash 0 鈫?100</b></div>' +
-      '<div class="sv-layer"><span>trim path</span><b>0.0 鈫?1.0</b></div>' +
+      '<div class="sv-side"><div class="sv-card"><div class="micro" style="margin-bottom:8px">' + esc(KIND) + '</div>' +
+      '<div class="sv-layer"><span>shape · stroke</span><b>dash 0 →100</b></div>' +
+      '<div class="sv-layer"><span>trim path</span><b>0.0 →1.0</b></div>' +
       '<div class="sv-layer"><span>ease</span><b>in-out 1.2 s</b></div>' +
       '<div class="sv-layer"><span>frame rate</span><b>60</b></div></div>' +
       '<div class="sv-card" style="flex:1"><div class="micro" style="margin-bottom:8px">Captured from network</div>' +
-      '<div class="sv-code">GET /anim/hero.json<br>content-type: application/json<br>layers: 12 路 assets: 3<br>w: 800 h: 600 ip: 0 op: 120</div></div></div></div>';
+      '<div class="sv-code">GET /anim/hero.json<br>content-type: application/json<br>layers: 12 · assets: 3<br>w: 800 h: 600 ip: 0 op: 120</div></div></div></div>';
   };
 
-  /* ============ 14. REVEAL 鈥?split text / mask reveal ============ */
+  /* ============ 14. REVEAL —split text / mask reveal ============ */
   S.reveal = function () {
     var mask = VARIANT === 'mask';
     var lines = ['Layers hold', 'tales of', 'time'];
@@ -641,19 +641,19 @@
       '@keyframes rvMask{0%{transform:translateY(105%)}22%,78%{transform:translateY(0)}92%,100%{transform:translateY(-105%)}}' +
       '@keyframes rvLetter{0%{transform:translateY(105%) rotate(6deg);opacity:0}24%,76%{transform:translateY(0) rotate(0);opacity:1}90%,100%{transform:translateY(-60%);opacity:0}}' +
       '</style>' +
-      '<div class="rv"><div class="rv-eyebrow">' + esc(T1) + ' 路 per-line clip</div>' +
+      '<div class="rv"><div class="rv-eyebrow">' + esc(T1) + ' · per-line clip</div>' +
       (mask ? maskHtml : splitHtml) +
-      '<div class="rv-foot"><span class="pill">stagger 60鈥?0 ms</span><span class="pill">total &lt; 600 ms</span><span class="pill">transform + opacity only</span></div></div>';
+      '<div class="rv-foot"><span class="pill">stagger 60—0 ms</span><span class="pill">total &lt; 600 ms</span><span class="pill">transform + opacity only</span></div></div>';
   };
 
-  /* ============ 15. STATES 鈥?interaction state machine ============ */
+  /* ============ 15. STATES —interaction state machine ============ */
   S.states = function () {
     const nodes = ['REST', 'HOVER', 'PRESS', 'OPEN', 'CLOSING'];
     const graph = nodes.map(function (n, i) {
       return '<div class="ss-node" style="animation-delay:' + (i * 0.42).toFixed(2) + 's"><b>' + n + '</b><span>' + ['idle', 'pointer', 'active', 'expanded', 'exit'][i] + '</span></div>' + (i < nodes.length - 1 ? '<i class="ss-arrow"></i>' : '');
     }).join('');
     const rows = [
-      ['data-state', 'closed 鈫?open'],
+      ['data-state', 'closed →open'],
       ['aria-expanded', 'true'],
       ['enter', '180 ms fade + 8 px rise'],
       ['exit', '120 ms, then unmount'],
@@ -674,7 +674,7 @@
       '.ss-card{position:relative;border-radius:16px;border:1px solid rgba(255,255,255,.10);background:linear-gradient(160deg,rgba(255,255,255,.05),rgba(255,255,255,.012));padding:22px;display:flex;flex-direction:column;justify-content:center;gap:14px}' +
       '.ss-card .micro{margin-bottom:6px}' +
       '.ss-btn{align-self:flex-start;padding:16px 30px;border-radius:12px;background:#f2f4f8;color:#080a0f;font:600 15px/1 "Inter",sans-serif;box-shadow:0 18px 40px rgba(0,0,0,.5);animation:ssBtn 2.4s ease-in-out infinite}' +
-      '.ss-btn:after{content:"鈻?;margin-left:10px;font-size:12px;opacity:.5}' +
+      '.ss-btn:after{content:"▸;margin-left:10px;font-size:12px;opacity:.5}' +
       '@keyframes ssBtn{0%,100%{transform:translateY(0)}14%{transform:translateY(1px) scale(.985)}26%,86%{transform:translateY(0)}}' +
       '.ss-kv{display:flex;justify-content:space-between;padding:8px 0;border-top:1px solid rgba(255,255,255,.06);font:500 11px/1 "JetBrains Mono",monospace}' +
       '.ss-kv span:first-child{color:rgba(255,255,255,.42)}' +
@@ -687,7 +687,7 @@
       '<div class="ss-card"><div class="micro">Transition table</div>' + rows + '</div></div></div>';
   };
 
-  /* ============ 16. RESPONSIVE 鈥?three widths, one section ============ */
+  /* ============ 16. RESPONSIVE —three widths, one section ============ */
   S.responsive = function () {
     const parity = VARIANT === 'parity';
     const frames = [
@@ -722,16 +722,16 @@
       '<div class="rs"><div class="rs-h2"><div class="gl">' + esc(T1) + '</div><div class="micro">breakpoints measured, not framework defaults</div></div>' +
       '<div class="rs-row">' + frames + '</div>' +
       '<div class="rs-foot">' + (parity
-        ? '<span class="pill">landmarks 4</span><span class="pill">unnamed controls 0</span><span class="pill">contrast 鈮?4.5</span><span class="pill">touch 44 px</span><span class="pill">200% zoom</span><span class="pill">no side scroll</span>'
-        : '<span class="pill">390 / 768 / 1024 / 1440</span><span class="pill">container 1180</span><span class="pill">type clamp()</span><span class="pill">items per row 1 鈫?2 鈫?3</span>') +
+        ? '<span class="pill">landmarks 4</span><span class="pill">unnamed controls 0</span><span class="pill">contrast ≥ 4.5</span><span class="pill">touch 44 px</span><span class="pill">200% zoom</span><span class="pill">no side scroll</span>'
+        : '<span class="pill">390 / 768 / 1024 / 1440</span><span class="pill">container 1180</span><span class="pill">type clamp()</span><span class="pill">items per row 1 →2 →3</span>') +
       '</div></div>';
   };
 
-  /* ============ 17. REPORT 鈥?acceptance self-test ============ */
+  /* ============ 17. REPORT —acceptance self-test ============ */
   S.report = function () {
     const claims = VARIANT === 'claims'
       ? [['menus open on click and Enter', 'pass'], ['focus returns to trigger', 'pass'], ['no new console errors', 'pass'], ['carousel masked and compared', 'unmeasured'], ['first-fold height within 24 px', 'fail'], ['token purity: no raw hex', 'pass']]
-      : [['LCP < 2.5 s on cold cache', 'pass'], ['no long task > 50 ms while scrolling', 'pass'], ['frame time < 16.7 ms', 'pass'], ['pixel diff 鈮?24 / channel', 'pass'], ['unknown shader uniforms', 'unmeasured'], ['third-party media licence', 'unmeasured']];
+      : [['LCP < 2.5 s on cold cache', 'pass'], ['no long task > 50 ms while scrolling', 'pass'], ['frame time < 16.7 ms', 'pass'], ['pixel diff ≤24 / channel', 'pass'], ['unknown shader uniforms', 'unmeasured'], ['third-party media licence', 'unmeasured']];
     const rows = claims.map(function (c, i) {
       return '<div class="rp-row" style="animation-delay:' + (i * 0.18).toFixed(2) + 's"><span class="rp-c">' + esc(c[0]) + '</span><b class="rp-t ' + c[1] + '">' + (c[1] === 'pass' ? 'PASS' : c[1] === 'fail' ? 'FAIL' : 'UNMEASURED') + '</b></div>';
     }).join('');
@@ -762,7 +762,7 @@
       '<div class="rp-score" style="text-align:left"><div class="micro">Rule</div><div class="rp-note" style="margin-top:10px">A check that could not measure reports <b style="color:#ffd39b">unmeasured</b> and blocks a pass. Silence never rounds up to success.</div></div></div></div>';
   };
 
-  /* ============ 18. DIFF 鈥?screenshot verification ============ */
+  /* ============ 18. DIFF —screenshot verification ============ */
   S.diff = function () {
     const heat = [3, 4, 2, 5, 8, 4, 3, 9, 14, 6, 4, 3, 7, 12, 5, 3, 2, 6, 4, 3].map(function (v) {
       const a = Math.min(0.9, v / 16);
@@ -790,17 +790,17 @@
       '.df-score{border:1px solid rgba(255,255,255,.12);border-radius:10px;padding:10px 14px;font:500 10px/1.5 "JetBrains Mono",monospace;color:rgba(255,255,255,.55)}' +
       '.df-score b{display:block;font-size:16px;color:#fff;letter-spacing:-.02em}' +
       '</style>' +
-      '<div class="df"><div class="df-head"><div class="gl">' + esc(T1) + '</div><div class="micro">masked 路 common area 路 two scores</div></div>' +
+      '<div class="df"><div class="df-head"><div class="gl">' + esc(T1) + '</div><div class="micro">masked · common area · two scores</div></div>' +
       '<div class="df-pair">' +
       ['REFERENCE', 'REBUILD'].map(function (t, i) {
-        return '<div class="df-shot"><div class="micro">' + t + ' 路 1440脳' + (i ? '2420' : '2400') + '</div><div class="df-mock"><div class="df-mh"></div><div class="df-ms"></div><div class="df-mgrid"><i></i><i></i><i></i></div><div class="df-ms" style="width:72%"></div></div><div class="df-mask df-m1"></div><div class="df-mask df-m2"></div></div>';
+        return '<div class="df-shot"><div class="micro">' + t + ' · 1440×' + (i ? '2420' : '2400') + '</div><div class="df-mock"><div class="df-mh"></div><div class="df-ms"></div><div class="df-mgrid"><i></i><i></i><i></i></div><div class="df-ms" style="width:72%"></div></div><div class="df-mask df-m1"></div><div class="df-mask df-m2"></div></div>';
       }).join('') + '</div>' +
       '<div class="df-heat">' + heat + '</div>' +
-      '<div class="df-scores"><span class="df-score"><b>0.94</b>layout</span><span class="df-score"><b>0.88</b>ssim</span><span class="df-score"><b>鈭?0</b>height 螖 px</span><span class="df-score"><b>3</b>worst regions</span>' +
+      '<div class="df-scores"><span class="df-score"><b>0.94</b>layout</span><span class="df-score"><b>0.88</b>ssim</span><span class="df-score"><b>−10</b>height Δ px</span><span class="df-score"><b>3</b>worst regions</span>' +
       '<span class="micro" style="margin-left:auto">fix biggest difference first</span></div></div>';
   };
 
-  /* ============ 19. MICRO 鈥?press, toast, skeleton ============ */
+  /* ============ 19. MICRO —press, toast, skeleton ============ */
   S.micro = function () {
     return '<style>' +
       '.mc{position:absolute;inset:76px 70px 66px;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:auto 1fr;gap:18px}' +
@@ -827,14 +827,14 @@
       '.mc-time span{font:500 9.5px/1 "JetBrains Mono",monospace;color:rgba(255,255,255,.4);border:1px solid rgba(255,255,255,.12);border-radius:99px;padding:6px 9px}' +
       '</style>' +
       '<div class="mc"><div class="mc-head"><div class="gl">' + esc(T1) + '</div><div class="micro">numbers, not vibes</div></div>' +
-      '<div class="mc-cell"><div class="micro">Press 路 0.97 路 90 ms</div><span class="mc-btn">Copy prompt</span><div class="mc-time"><span>0</span><span>60</span><span>140</span><span>300 ms</span></div></div>' +
-      '<div class="mc-cell"><div class="micro">Skeleton 鈫?content 路 240 ms</div><div class="mc-skel"><div class="mc-sk"></div><div class="mc-sk" style="width:78%"></div></div><div class="mc-real">Prompt body ready 路 2 342 chars</div></div>' +
-      '<div class="mc-cell" style="grid-column:1/-1"><div class="micro">Toast 路 queue 路 self-dismiss 4 s</div><div class="mc-toast"><b>Copied to clipboard</b><span>prompt 路 re-03-gsap-timeline-recovery</span><i class="mc-prog"></i></div></div></div>';
+      '<div class="mc-cell"><div class="micro">Press · 0.97 · 90 ms</div><span class="mc-btn">Copy prompt</span><div class="mc-time"><span>0</span><span>60</span><span>140</span><span>300 ms</span></div></div>' +
+      '<div class="mc-cell"><div class="micro">Skeleton →content · 240 ms</div><div class="mc-skel"><div class="mc-sk"></div><div class="mc-sk" style="width:78%"></div></div><div class="mc-real">Prompt body ready · 2 342 chars</div></div>' +
+      '<div class="mc-cell" style="grid-column:1/-1"><div class="micro">Toast · queue · self-dismiss 4 s</div><div class="mc-toast"><b>Copied to clipboard</b><span>prompt · re-03-gsap-timeline-recovery</span><i class="mc-prog"></i></div></div></div>';
   };
 
-  /* ============ 20. PHASES 鈥?five timed passes ============ */
+  /* ============ 20. PHASES —five timed passes ============ */
   S.phases = function () {
-    const phases = [['EVIDENCE', '0鈥?'], ['TOKENS', '5鈥?'], ['BLUEPRINT', '9鈥?4'], ['CRAFT', '14鈥?4'], ['SELF-TEST', '24鈥?0']];
+    const phases = [['EVIDENCE', '0—'], ['TOKENS', '5—'], ['BLUEPRINT', '9—4'], ['CRAFT', '14—4'], ['SELF-TEST', '24—0']];
     const blocks = phases.map(function (p, i) {
       return '<div class="ph-block" style="animation-delay:' + (i * 0.34).toFixed(2) + 's"><b>' + p[0] + '</b><span>' + p[1] + ' min</span></div>';
     }).join('');
@@ -866,14 +866,14 @@
       '.ph-kv{font:500 10px/1.7 "JetBrains Mono",monospace;color:rgba(255,255,255,.45)}' +
       '.ph-kv b{color:#fff;font-weight:500}' +
       '</style>' +
-      '<div class="ph"><div class="ph-head"><div class="gl">' + esc(T1) + '</div><div class="micro">timeboxed 路 stop at the biggest difference</div></div>' +
+      '<div class="ph"><div class="ph-head"><div class="gl">' + esc(T1) + '</div><div class="micro">timeboxed · stop at the biggest difference</div></div>' +
       '<div class="ph-strip">' + blocks + '</div>' +
-      '<div class="ph-body"><div class="ph-hero"><div class="ph-eye">SAME HERO 路 THREE WIDTHS</div><div class="ph-h">A hero that is 95% right beats a perfect header</div><div class="ph-sub"></div><div class="ph-btns"><i></i><i></i></div></div>' +
+      '<div class="ph-body"><div class="ph-hero"><div class="ph-eye">SAME HERO · THREE WIDTHS</div><div class="ph-h">A hero that is 95% right beats a perfect header</div><div class="ph-sub"></div><div class="ph-btns"><i></i><i></i></div></div>' +
       '<div class="ph-side"><div class="ph-card"><div class="ph-clock"></div><div class="ph-kv"><b>28 min</b> elapsed</div></div>' +
-      '<div class="ph-card"><div class="ph-kv">state parity <b>鉁?/b><br>token purity <b>鉁?/b><br>headline breaks <b>鉁?/b><br>unverified <b>2 listed</b></div></div></div></div></div>';
+      '<div class="ph-card"><div class="ph-kv">state parity <b>✓/b><br>token purity <b>✓/b><br>headline breaks <b>✓/b><br>unverified <b>2 listed</b></div></div></div></div></div>';
   };
 
-  /* ============ 21. FILMSTRIP 鈥?capture evidence strip ============ */
+  /* ============ 21. FILMSTRIP —capture evidence strip ============ */
   S.filmstrip = function () {
     const frames = ['0', '120', '240', '480', '720', '1000', '1500', '2000'].map(function (t, i) {
       return '<div class="fs-frame" style="animation-delay:' + (i * 0.12).toFixed(2) + 's"><i style="opacity:' + (0.25 + i * 0.09).toFixed(2) + '"></i><span>' + t + ' ms</span></div>';
@@ -903,16 +903,16 @@
       '.fs-run{display:flex;gap:8px;align-items:center;flex-wrap:wrap}' +
       '.fs-run .pill{font-size:11px}' +
       '</style>' +
-      '<div class="fs"><div class="fs-head"><div class="gl">' + esc(T1) + '</div><div class="micro">scenario 路 2 runs 路 diff &lt; 1%</div></div>' +
+      '<div class="fs"><div class="fs-head"><div class="gl">' + esc(T1) + '</div><div class="micro">scenario · 2 runs · diff &lt; 1%</div></div>' +
       '<div class="fs-strip">' + frames + '</div><div class="fs-ruler"><span>0</span><span>500</span><span>1000</span><span>1500</span><span>2000 ms</span></div>' +
       '<div class="fs-bottom"><div class="fs-panel"><div class="micro" style="margin-bottom:8px">Evidence ledger</div>' + ev + '</div>' +
-      '<div class="fs-panel"><div class="micro" style="margin-bottom:12px">Capture scenario</div><div class="fs-run"><span class="pill">goto</span><span class="pill">wait_for ready</span><span class="pill">hover</span><span class="pill">scroll_to</span><span class="pill">screenshot 脳8</span></div>' +
-      '<div class="micro" style="margin-top:14px;color:rgba(255,255,255,.3)">1440脳900 路 390脳844 路 reduced-motion</div></div></div></div>';
+      '<div class="fs-panel"><div class="micro" style="margin-bottom:12px">Capture scenario</div><div class="fs-run"><span class="pill">goto</span><span class="pill">wait_for ready</span><span class="pill">hover</span><span class="pill">scroll_to</span><span class="pill">screenshot ×8</span></div>' +
+      '<div class="micro" style="margin-top:14px;color:rgba(255,255,255,.3)">1440×900 · 390×844 · reduced-motion</div></div></div></div>';
   };
 
-  /* ============ 22. MARQUEE 鈥?seamless infinite bands ============ */
+  /* ============ 22. MARQUEE —seamless infinite bands ============ */
   S.marquee = function () {
-    const line = 'INFINITE MARQUEE 路 NO SEAM 路 DUPLICATE THE TRACK 路 ';
+    const line = 'INFINITE MARQUEE · NO SEAM · DUPLICATE THE TRACK · ';
     const band = function (size, dir, delay, color) {
       const txt = (line + line).repeat(2);
       return '<div class="mq-band" style="animation-direction:' + dir + ';animation-delay:' + delay + 's"><span style="font-size:' + size + 'px;color:' + color + '">' + txt + '</span></div>';
@@ -933,18 +933,18 @@
       band(92, 'reverse', 0, C3) +
       band(64, 'normal', 0, 'rgba(255,255,255,.14)') +
       band(110, 'reverse', 0, C1) +
-      '<div class="mq-center"><div class="gl">' + esc(T1) + '</div><div class="micro">two copies 路 translateX 鈭?0% 路 linear</div></div>' +
-      '<div class="mq-tag"><span class="pill">pause on hover</span><span class="pill">duplicate children</span><span class="pill">reduced motion 鈫?static</span></div></div>';
+      '<div class="mq-center"><div class="gl">' + esc(T1) + '</div><div class="micro">two copies · translateX −10% · linear</div></div>' +
+      '<div class="mq-tag"><span class="pill">pause on hover</span><span class="pill">duplicate children</span><span class="pill">reduced motion →static</span></div></div>';
   };
 
-  /* ============ 23. TEXTFX 鈥?kinetic / decrypt ============ */
+  /* ============ 23. TEXTFX —kinetic / decrypt ============ */
   S.textfx = function () {
     const scramble = VARIANT === 'scramble';
     const word = T1.replace(/[^A-Z ]/g, '');
     const chars = (scramble ? 'DECRYPT' : word).split('').map(function (ch, i) {
       if (ch === ' ') return '<span class="tf-sp"></span>';
       if (scramble) {
-        return '<span class="tf-ch tf-scr" style="animation-delay:' + (i * 0.06).toFixed(2) + 's" data-a="' + '!<>-_\\/[]{}鈥?+*^?#'.charAt(i % 19) + '">' + esc(ch) + '</span>';
+        return '<span class="tf-ch tf-scr" style="animation-delay:' + (i * 0.06).toFixed(2) + 's" data-a="' + '!<>-_\\/[]{}—+*^?#'.charAt(i % 19) + '">' + esc(ch) + '</span>';
       }
       return '<span class="tf-ch" style="animation-delay:' + (i * 0.05).toFixed(2) + 's">' + esc(ch) + '</span>';
     }).join('');
@@ -962,14 +962,14 @@
       '.tf-line{margin-top:26px;display:flex;align-items:center;gap:12px;font:500 10.5px/1 "JetBrains Mono",monospace;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.42)}' +
       '.tf-line b{width:52px;height:1px;background:color-mix(in srgb,var(--c3) 70%,transparent)}' +
       '</style>' +
-      '<div class="tf"><div class="tf-line"><b></b>' + (scramble ? 'per-glyph 路 random pool 路 30 fps' : 'variable font 路 weight + scale per char') + '</div>' +
+      '<div class="tf"><div class="tf-line"><b></b>' + (scramble ? 'per-glyph · random pool · 30 fps' : 'variable font · weight + scale per char') + '</div>' +
       '<div class="tf-word">' + chars + '</div>' +
       '<div class="tf-sub">' + (scramble
         ? '<span class="pill">stagger 60 ms</span><span class="pill">opacity steps</span><span class="pill">sr-only real text</span>'
         : '<span class="pill">split by char</span><span class="pill">stagger 50 ms</span><span class="pill">clip + transform</span>') + '</div></div>';
   };
 
-  /* ============ 24. SHADER 鈥?mesh / raymarch / distortion ============ */
+  /* ============ 24. SHADER —mesh / raymarch / distortion ============ */
   S.shader = function () {
     const v = VARIANT || 'liquid';
     const mesh = v === 'mesh';
@@ -997,11 +997,11 @@
       '<div class="sh"><div class="sh-blob sh-b1"></div><div class="sh-blob sh-b2"></div><div class="sh-blob sh-b3"></div><div class="sh-blob sh-b4"></div>' +
       (warp ? '<div class="sh-warp"></div><div class="sh-slice"></div><div class="sh-slice" style="animation-delay:.6s"></div>' : (mesh ? '' : '<div class="sh-warp"></div>')) +
       '<div class="sh-mesh"></div><div class="sh-ring"></div><div class="sh-ring r2"></div><div class="sh-scan"></div>' +
-      '<div class="sh-label"><div class="gl">' + esc(T1) + '</div><div class="micro">' + (mesh ? 'feTurbulence 路 grain 0.05 路 2k tile' : warp ? 'displacement 路 hover 路 lerp 0.08' : 'raymarch 64 steps 路 fresnel rim') + '</div></div>' +
-      '<div class="sh-meta">' + (mesh ? 'svg filter 路 no GPU cost<br>tile 256 px 路 opacity .06' : warp ? 'canvas 2d 路 1 texture<br>pointer 鈫?uv offset' : 'dpr 鈮?1.5 路 half res mobile<br>pause offscreen') + '</div></div>';
+      '<div class="sh-label"><div class="gl">' + esc(T1) + '</div><div class="micro">' + (mesh ? 'feTurbulence · grain 0.05 · 2k tile' : warp ? 'displacement · hover · lerp 0.08' : 'raymarch 64 steps · fresnel rim') + '</div></div>' +
+      '<div class="sh-meta">' + (mesh ? 'svg filter · no GPU cost<br>tile 256 px · opacity .06' : warp ? 'canvas 2d · 1 texture<br>pointer →uv offset' : 'dpr ≤1.5 · half res mobile<br>pause offscreen') + '</div></div>';
   };
 
-  /* ============ 25. TRANSITION 鈥?curtain / view morph ============ */
+  /* ============ 25. TRANSITION —curtain / view morph ============ */
   S.transition = function () {
     const morph = VARIANT === 'morph';
     if (morph) {
@@ -1018,8 +1018,8 @@
         '@keyframes trCard{0%,100%{transform:scale(1) rotate(-1deg);opacity:1}38%,68%{transform:scale(.62) rotate(0);opacity:.35}88%,100%{transform:scale(1) rotate(-1deg);opacity:1}}' +
         '@keyframes trPage{0%,38%{transform:scale(.96);opacity:.2}68%,100%{transform:scale(1);opacity:1}}' +
         '</style>' +
-        '<div class="tr"><div class="tr-card"><div class="micro">thumbnail 路 card</div><div class="tr-gl">' + esc(T1) + '</div></div>' +
-        '<div class="tr-page"><div class="micro">detail 路 page</div><div class="hero"></div><div class="l"></div><div class="l s"></div></div>' +
+        '<div class="tr"><div class="tr-card"><div class="micro">thumbnail · card</div><div class="tr-gl">' + esc(T1) + '</div></div>' +
+        '<div class="tr-page"><div class="micro">detail · page</div><div class="hero"></div><div class="l"></div><div class="l s"></div></div>' +
         '<div class="tr-code">document.startViewTransition(() =&gt; render())</div></div>';
     }
     const panels = [0, 1, 2, 3, 4].map(function (i) {
@@ -1037,11 +1037,11 @@
       '.tr-lines i{width:150px;height:8px;border-radius:4px;background:rgba(255,255,255,.2)}' +
       '.tr-tag{position:absolute;right:70px;top:34px;z-index:5;display:flex;gap:8px}' +
       '</style>' +
-      '<div class="tr"><div class="tr-page"><div class="micro">next page 路 revealed</div><div class="tr-gl">' + esc(T1) + '<br><em>reveal</em></div><div class="tr-lines"><i></i><i></i><i></i></div></div>' +
+      '<div class="tr"><div class="tr-page"><div class="micro">next page · revealed</div><div class="tr-gl">' + esc(T1) + '<br><em>reveal</em></div><div class="tr-lines"><i></i><i></i><i></i></div></div>' +
       panels + '<div class="tr-tag"><span class="pill">stagger 70 ms</span><span class="pill">clip or scaleY</span><span class="pill">scroll reset</span></div></div>';
   };
 
-  /* ============ 26. BENTO 鈥?frosted bento grid ============ */
+  /* ============ 26. BENTO —frosted bento grid ============ */
   S.bento = function () {
     return '<style>' +
       '.bn{position:absolute;inset:76px 70px 66px;display:grid;grid-template-columns:repeat(4,1fr);grid-template-rows:repeat(3,1fr);gap:14px}' +
@@ -1072,7 +1072,7 @@
       '<div class="bn-tile"><div class="bn-micro">Tokens</div><div class="bn-gl" style="font-size:18px;margin-top:10px">0 raw hex</div></div></div>';
   };
 
-  /* ============ 27. GALLERY 鈥?horizontal scroll gallery ============ */
+  /* ============ 27. GALLERY —horizontal scroll gallery ============ */
   S.gallery = function () {
     const cards = [0, 1, 2, 3, 4].map(function (i) {
       return '<div class="gl-card" style="--i:' + i + '"><div class="gl-img" style="background:linear-gradient(150deg,' + (i % 2 ? C2 : C1) + ',' + (i % 3 ? C3 : C4) + ')"></div><div class="gl-line"></div><div class="gl-line s"></div></div>';
@@ -1093,11 +1093,11 @@
       '@keyframes glProg{0%{width:0}58%,88%{width:70%}100%{width:0}}' +
       '.gl-cap{padding:0 74px;display:flex;justify-content:space-between;font:500 10px/1 "JetBrains Mono",monospace;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.4)}' +
       '</style>' +
-      '<div class="gl"><div class="gl-head"><div class="gl-t">' + esc(T1) + '</div><div class="micro">scrollY 鈫?translateX</div></div>' +
-      '<div class="gl-track">' + cards + '</div><div class="gl-prog"><i></i></div><div class="gl-cap"><span>0 / 3200 px</span><span>' + esc(T1) + ' 路 5 frames</span><span>lerp 0.1</span></div></div>';
+      '<div class="gl"><div class="gl-head"><div class="gl-t">' + esc(T1) + '</div><div class="micro">' + esc(META) + '</div></div>' +
+      '<div class="gl-track">' + cards + '</div><div class="gl-prog"><i></i></div><div class="gl-cap"><span>0 / 3200 px</span><span>' + esc(T1) + ' · 5 frames</span><span>lerp 0.1</span></div></div>';
   };
 
-  /* ============ 28. TILT 鈥?cursor reactive tilt card ============ */
+  /* ============ 28. TILT —cursor reactive tilt card ============ */
   S.tilt = function () {
     return '<style>' +
       '.tl2{position:absolute;inset:76px 70px 66px;display:flex;align-items:center;justify-content:center;perspective:1200px}' +
@@ -1117,12 +1117,12 @@
       '@keyframes tl2Cur{0%,100%{transform:translate(0,0)}50%{transform:translate(-120px,80px)}}' +
       '</style>' +
       '<div class="tl2"><div class="tl2-stage"><div class="tl2-card"><div class="micro">' + esc(T1) + '</div><div class="tl2-gl">pointer-driven depth,<br>clamped and damped</div>' +
-      '<div class="tl2-badges"><span class="tl2-badge">max 14掳</span><span class="tl2-badge">lerp 0.08</span><span class="tl2-badge">glare follows</span></div></div>' +
-      '<div class="tl2-hud"><span>rotateX <b>8掳</b></span><span>rotateY <b>鈭?4掳</b></span><span>perspective <b>1200</b></span></div>' +
+      '<div class="tl2-badges"><span class="tl2-badge">max 14°</span><span class="tl2-badge">lerp 0.08</span><span class="tl2-badge">glare follows</span></div></div>' +
+      '<div class="tl2-hud"><span>rotateX <b>8°</b></span><span>rotateY <b>−14°</b></span><span>perspective <b>1200</b></span></div>' +
       '<div class="tl2-cursor"><svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M5 3l14 8-6 1.5L10 19z"/></svg></div></div></div>';
   };
 
-  /* ============ 29. TRAIL 鈥?velocity image trail ============ */
+  /* ============ 29. TRAIL —velocity image trail ============ */
   S.trail = function () {
     const items = [0, 1, 2, 3, 4, 5].map(function (i) {
       return '<div class="tr2-item" style="animation-delay:' + (i * 0.05).toFixed(2) + 's;width:' + (150 - i * 12) + 'px;height:' + (190 - i * 14) + 'px;background:linear-gradient(150deg,' + (i % 3 === 0 ? C1 : i % 3 === 1 ? C2 : C3) + ',' + C4 + ');opacity:' + (1 - i * 0.13).toFixed(2) + '"></div>';
@@ -1139,8 +1139,229 @@
       '.tr2-hud{position:absolute;right:70px;top:34px;text-align:right;font:500 10px/1.7 "JetBrains Mono",monospace;color:rgba(255,255,255,.42)}' +
       '</style>' +
       '<div class="tr2">' + items + '<div class="tr2-cursor"><svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M5 3l14 8-6 1.5L10 19z"/></svg></div>' +
-      '<div class="tr2-title"><div class="gl">' + esc(T1) + '</div><div class="micro">6 trail nodes 路 50 ms apart 路 velocity clamped</div></div>' +
-      '<div class="tr2-hud">pointer 鈫?path<br>node count 6<br>reduced motion 鈫?1</div></div>';
+      '<div class="tr2-title"><div class="gl">' + esc(T1) + '</div><div class="micro">6 trail nodes · 50 ms apart · velocity clamped</div></div>' +
+      '<div class="tr2-hud">pointer →path<br>node count 6<br>reduced motion →1</div></div>';
+  };
+
+  /* ============ 30. NETWORK — request waterfall table ============ */
+  S.network = function () {
+    var rows = [
+      ['GET', '/', '200', 132],
+      ['GET', '/assets/app.css', '200', 88],
+      ['GET', '/assets/app.js', '200', 214],
+      ['POST', '/api/session', '204', 64],
+      ['GET', '/api/catalog?page=1', '200', 176],
+      ['GET', '/media/hero.webm', '206', 302],
+      ['GET', '/api/flags', '200', 42],
+      ['GET', '/assets/inter.woff2', '200', 57],
+      ['POST', '/api/events', '202', 31]
+    ];
+    var max = 302;
+    var body = rows.map(function (r, i) {
+      var w = Math.max(7, Math.round(r[3] / max * 100));
+      var d = (i * 0.075).toFixed(2);
+      return '<div class="nw-row" style="animation-delay:' + d + 's">' +
+        '<span class="nw-m ' + (r[0] === 'GET' ? 'g' : 'p') + '">' + r[0] + '</span>' +
+        '<span class="nw-p">' + esc(r[1]) + '</span>' +
+        '<span class="nw-bar"><i style="width:' + w + '%;animation-delay:' + (i * 0.075 + 0.12).toFixed(2) + 's"></i></span>' +
+        '<span class="nw-ms">' + r[3] + ' ms</span>' +
+        '<span class="nw-s ' + (r[2] === '206' ? 'part' : '') + '">' + r[2] + '</span></div>';
+    }).join('');
+    var ticks = ['0', '75', '150', '225', '300 ms'].map(function (t, i) {
+      return '<span style="left:' + (i * 25) + '%">' + t + '</span>';
+    }).join('');
+    return '<style>' +
+      '.nw{position:absolute;inset:78px 70px 74px;display:flex;flex-direction:column;gap:0}' +
+      '.nw-head{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:16px}' +
+      '.nw-h{font:700 40px/.98 "Inter",sans-serif;letter-spacing:-.035em}' +
+      '.nw-h em{font-style:normal;color:color-mix(in srgb,var(--c3) 85%,#fff)}' +
+      '.nw-legend{display:flex;gap:8px;align-items:center}' +
+      '.nw-axis{position:relative;height:16px;margin:0 0 6px;font:500 9px/1 "JetBrains Mono",monospace;color:rgba(255,255,255,.32)}' +
+      '.nw-axis span{position:absolute;transform:translateX(-50%)}' +
+      '.nw-table{border:1px solid rgba(255,255,255,.1);border-radius:16px;background:linear-gradient(165deg,rgba(255,255,255,.05),rgba(255,255,255,.012));overflow:hidden}' +
+      '.nw-row{display:grid;grid-template-columns:56px minmax(0,1fr) 38% 64px 44px;gap:14px;align-items:center;padding:11px 18px;border-bottom:1px solid rgba(255,255,255,.06);opacity:0;animation:nwIn 2.4s cubic-bezier(.2,.7,.2,1) infinite}' +
+      '.nw-row:last-child{border-bottom:0}' +
+      '.nw-row:before{content:"";position:absolute}' +
+      '@keyframes nwIn{0%{opacity:0;transform:translateX(-10px)}14%,88%{opacity:1;transform:none}100%{opacity:0;transform:none}}' +
+      '.nw-m{font:600 9.5px/1 "JetBrains Mono",monospace;letter-spacing:.1em;padding:5px 6px;border-radius:5px;text-align:center}' +
+      '.nw-m.g{color:color-mix(in srgb,var(--c3) 70%,#fff);background:color-mix(in srgb,var(--c3) 14%,transparent)}' +
+      '.nw-m.p{color:#ffd9a8;background:color-mix(in srgb,var(--c4) 18%,transparent)}' +
+      '.nw-p{font:500 12px/1.2 "JetBrains Mono",monospace;color:rgba(255,255,255,.78);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}' +
+      '.nw-bar{position:relative;height:9px;border-radius:99px;background:rgba(255,255,255,.055);overflow:hidden}' +
+      '.nw-bar i{position:absolute;left:0;top:0;bottom:0;border-radius:99px;transform-origin:left center;background:linear-gradient(90deg,color-mix(in srgb,var(--c1) 80%,#fff 8%),color-mix(in srgb,var(--c2) 70%,transparent));animation:nwGrow 2.4s cubic-bezier(.2,.7,.2,1) infinite}' +
+      '@keyframes nwGrow{0%{transform:scaleX(0)}22%,90%{transform:scaleX(1)}100%{transform:scaleX(1)}}' +
+      '.nw-ms,.nw-s{font:500 11px/1 "JetBrains Mono",monospace;color:rgba(255,255,255,.44);text-align:right}' +
+      '.nw-s{color:color-mix(in srgb,var(--c3) 60%,#fff)}' +
+      '.nw-s.part{color:#ffd9a8}' +
+      '.nw-foot{display:flex;gap:26px;margin-top:16px;font:500 10px/1.6 "JetBrains Mono",monospace;letter-spacing:.08em;color:rgba(255,255,255,.4)}' +
+      '.nw-foot b{color:#fff;font-weight:600}' +
+      '</style>' +
+      '<div class="nw"><div class="nw-head"><div class="nw-h">' + esc(T1) + '<br><em>' + rows.length + ' requests</em></div>' +
+      '<div class="nw-legend"><span class="pill">observed</span><span class="pill">inferred</span></div></div>' +
+      '<div class="nw-axis">' + ticks + '</div>' +
+      '<div class="nw-table">' + body + '</div>' +
+      '<div class="nw-foot"><span>first paint <b>132 ms</b></span><span>blocking <b>2</b></span><span>third party <b>0</b></span><span>size <b>412 KB</b></span></div></div>';
+  };
+
+  /* ============ 31. CODE — recovered source with mapping gutter ============ */
+  S.code = function () {
+    var lines = [
+      ['1', 'import { createTimeline } from "./motion/timeline.js";', 0],
+      ['2', 'import tokens from "./tokens.css";', 0],
+      ['3', '', 0],
+      ['4', 'export function hero(el) {', 1],
+      ['5', '  const tl = createTimeline({ ease: "power2.out" });', 1],
+      ['6', '  tl.from(el.querySelector(".eyebrow"), { y: 18, opacity: 0, duration: 480 });', 1],
+      ['7', '  tl.from(el.querySelector(".title"), { y: 34, opacity: 0, duration: 640 }, 90);', 1],
+      ['8', '  tl.from(el.querySelectorAll(".cta"), { y: 20, opacity: 0, stagger: 80 }, 220);', 0],
+      ['9', '  return tl;', 0],
+      ['10', '}', 0]
+    ];
+    var body = lines.map(function (l, i) {
+      var on = l[2] === 1 ? ' on' : '';
+      return '<div class="cd-l' + on + '" style="animation-delay:' + (i * 0.05).toFixed(2) + 's">' +
+        '<span class="cd-n">' + l[0] + '</span><span class="cd-src">' + (l[1] ? esc(l[1]) : '&nbsp;') + '</span></div>';
+    }).join('');
+    return '<style>' +
+      '.cd{position:absolute;inset:0;display:grid;grid-template-columns:1fr 250px;gap:22px;align-items:center;padding:96px 70px}' +
+      '.cd-pane{position:relative;border:1px solid rgba(255,255,255,.11);border-radius:16px;background:linear-gradient(170deg,#0b0e15,#080a10);overflow:hidden;padding:20px 0 26px}' +
+      '.cd-pane:before{content:"";position:absolute;inset:0;background:radial-gradient(70% 50% at 20% 0%,color-mix(in srgb,var(--c1) 16%,transparent),transparent 70%);pointer-events:none}' +
+      '.cd-bar{position:absolute;left:0;right:0;top:0;height:34px;border-bottom:1px solid rgba(255,255,255,.07);display:flex;align-items:center;gap:8px;padding:0 16px}' +
+      '.cd-dot{width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.18)}' +
+      '.cd-l{display:grid;grid-template-columns:38px minmax(0,1fr);align-items:center;padding:3px 16px 3px 8px;opacity:0;animation:cdIn 2.4s ease-out infinite}' +
+      '.cd-l.on{background:linear-gradient(90deg,color-mix(in srgb,var(--c3) 13%,transparent),transparent 70%);box-shadow:inset 2px 0 0 color-mix(in srgb,var(--c3) 80%,#fff)}' +
+      '@keyframes cdIn{0%{opacity:0;transform:translateX(-8px)}16%,90%{opacity:1;transform:none}100%{opacity:1}}' +
+      '.cd-l:nth-child(3){padding-top:22px}' +
+      '.cd-n{font:500 10px/1 "JetBrains Mono",monospace;color:rgba(255,255,255,.26);text-align:right;padding-right:10px}' +
+      '.cd-src{font:400 12px/1.7 "JetBrains Mono",monospace;color:rgba(255,255,255,.72);white-space:pre;overflow:hidden;text-overflow:ellipsis}' +
+      '.cd-l.on .cd-src{color:#fff}' +
+      '.cd-scan{position:absolute;left:0;right:0;height:1px;background:color-mix(in srgb,var(--c3) 70%,transparent);box-shadow:0 0 14px color-mix(in srgb,var(--c3) 60%,transparent);animation:cdScan 2.4s linear infinite}' +
+      '@keyframes cdScan{0%{top:44px}100%{top:100%}}' +
+      '.cd-side{display:flex;flex-direction:column;gap:12px}' +
+      '.cd-card{border:1px solid rgba(255,255,255,.1);border-radius:14px;background:rgba(12,15,22,.72);padding:14px 15px}' +
+      '.cd-kv{display:flex;justify-content:space-between;padding:6px 0;border-top:1px solid rgba(255,255,255,.07);font:500 10.5px/1 "JetBrains Mono",monospace;color:rgba(255,255,255,.46)}' +
+      '.cd-kv b{color:#fff;font-weight:600}' +
+      '.cd-map{display:flex;align-items:center;gap:8px;font:500 10px/1 "JetBrains Mono",monospace;color:rgba(255,255,255,.4);margin-top:4px}' +
+      '.cd-map i{width:6px;height:6px;border-radius:2px;background:var(--c3)}' +
+      '</style>' +
+      '<div class="cd"><div class="cd-pane"><div class="cd-bar"><span class="cd-dot"></span><span class="cd-dot"></span><span class="cd-dot"></span>' +
+      '<span class="micro" style="margin-left:10px">' + esc(META) + '</span></div>' +
+      '<div style="margin-top:26px">' + body + '</div><div class="cd-scan"></div></div>' +
+      '<div class="cd-side">' +
+      '<div class="cd-card"><div class="micro">Recovered map</div><div style="font:700 30px/1.1 \'Inter\',sans-serif;letter-spacing:-.03em;margin:8px 0 10px">' + esc(T1) + '</div>' +
+      '<div class="cd-kv"><span>source</span><b>app.3f2c.js.map</b></div>' +
+      '<div class="cd-kv"><span>mapped</span><b>96%</b></div>' +
+      '<div class="cd-kv"><span>sources</span><b>184</b></div>' +
+      '<div class="cd-kv"><span>unmapped</span><b>11 lines</b></div></div>' +
+      '<div class="cd-card"><div class="micro">Provenance</div>' +
+      '<div class="cd-map"><i></i>observed &middot; 6 lines</div>' +
+      '<div class="cd-map"><i style="background:var(--c4)"></i>inferred &middot; 3 lines</div>' +
+      '<div class="cd-map"><i style="background:rgba(255,255,255,.24)"></i>unknown &middot; 1 line</div></div></div></div>';
+  };
+
+  /* ============ 32. GRAPH — node and edge map ============ */
+  S.graph = function () {
+    var nodes = [
+      ['entry', 150, 210, 1],
+      ['router', 360, 150, 1],
+      ['hero', 570, 240, 1],
+      ['motion', 780, 168, 1],
+      ['api', 360, 400, 0],
+      ['media', 600, 470, 0],
+      ['theme', 800, 400, 0]
+    ];
+    var edges = [[0, 1], [1, 2], [2, 3], [1, 4], [2, 5], [3, 6], [4, 6]];
+    var links = edges.map(function (e, i) {
+      var a = nodes[e[0]], b = nodes[e[1]];
+      var mx = (a[1] + b[1]) / 2;
+      return '<path d="M' + a[1] + ' ' + a[2] + ' C ' + mx + ' ' + a[2] + ', ' + mx + ' ' + b[2] + ', ' + b[1] + ' ' + b[2] +
+        '" fill="none" stroke="url(#gpStroke)" stroke-width="1.6" stroke-linecap="round" stroke-dasharray="7 9" class="gp-edge" style="animation-delay:' + (i * 0.09).toFixed(2) + 's"/>';
+    }).join('');
+    var dots = nodes.map(function (n, i) {
+      return '<g class="gp-node" style="animation-delay:' + (0.12 + i * 0.07).toFixed(2) + 's">' +
+        '<circle cx="' + n[1] + '" cy="' + n[2] + '" r="' + (n[3] ? 9 : 6) + '" fill="' + (n[3] ? 'var(--c3)' : 'rgba(255,255,255,.55)') + '"/>' +
+        '<circle cx="' + n[1] + '" cy="' + n[2] + '" r="' + (n[3] ? 22 : 16) + '" fill="none" stroke="' + (n[3] ? 'color-mix(in srgb,var(--c3) 50%,transparent)' : 'rgba(255,255,255,.14)') + '" stroke-width="1"/>' +
+        '<text x="' + (n[1] + 16) + '" y="' + (n[2] + 4) + '" fill="rgba(255,255,255,.82)" font-family="JetBrains Mono, monospace" font-size="11">' + esc(n[0]) + '</text></g>';
+    }).join('');
+    return '<style>' +
+      '.gp{position:absolute;inset:74px 70px 74px}' +
+      '.gp-h{position:absolute;left:0;top:0;max-width:420px}' +
+      '.gp-h h4{margin:0;font:800 40px/.98 "Inter",sans-serif;letter-spacing:-.04em}' +
+      '.gp-h p{margin:10px 0 0;font-size:12.5px;line-height:1.6;color:rgba(255,255,255,.5)}' +
+      '.gp-map{position:absolute;left:0;right:0;top:64px;width:100%;height:520px}' +
+      '.gp-edge{opacity:.55;animation:gpDash 2.4s linear infinite}' +
+      '@keyframes gpDash{0%{stroke-dashoffset:0;opacity:.28}50%{opacity:.8}100%{stroke-dashoffset:-32;opacity:.28}}' +
+      '.gp-node{opacity:0;animation:gpIn 2.4s cubic-bezier(.2,.7,.2,1) infinite}' +
+      '@keyframes gpIn{0%{opacity:0;transform:translateY(6px)}18%,88%{opacity:1;transform:none}100%{opacity:1}}' +
+      '.gp-legend{position:absolute;right:0;bottom:4px;display:flex;gap:18px;font:500 10px/1 "JetBrains Mono",monospace;color:rgba(255,255,255,.4)}' +
+      '.gp-legend b{color:#fff;font-weight:600}' +
+      '</style>' +
+      '<div class="gp"><div class="gp-h"><h4>' + esc(T1) + '</h4><p>' + esc(META) + ' &middot; ' + nodes.length + ' nodes, ' + edges.length + ' edges, entry to first animation frame.</p></div>' +
+      '<svg class="gp-map" width="100%" height="520" viewBox="0 0 960 520" preserveAspectRatio="xMidYMid meet">' +
+      '<defs><linearGradient id="gpStroke" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="var(--c1)"/><stop offset="1" stop-color="var(--c2)"/></linearGradient></defs>' +
+      links + dots + '</svg>' +
+      '<div class="gp-legend"><span>chunks <b>6</b></span><span>lazy <b>2</b></span><span>first frame <b>412 ms</b></span></div></div>';
+  };
+
+  /* ============ 33. FLAP — split-flap character board ============ */
+  S.flap = function () {
+    var glyphs = ' ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+    var word = (words().join(' ') || 'FLAP').slice(0, 10);
+    var tiles = word.split('').map(function (ch, i) {
+      var start = ' ' + 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+      var steps = [];
+      for (var k = 0; k < 7; k++) steps.push(start.charAt((i * 5 + k * 3) % start.length));
+      steps.push(ch === ' ' ? ' ' : ch);
+      var strip = steps.map(function (s) {
+        return '<span>' + esc(s === ' ' ? '\u00a0' : s) + '</span>';
+      }).join('');
+      return '<div class="flp-t" style="animation-delay:' + (0.06 + i * 0.09).toFixed(2) + 's">' +
+        '<div class="flp-strip">' + strip + '</div><i class="flp-h"></i></div>';
+    }).join('');
+    return '<style>' +
+      '.flp{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:34px}' +
+      '.flp-board{display:flex;gap:10px;padding:26px 30px;border-radius:18px;border:1px solid rgba(255,255,255,.12);background:linear-gradient(170deg,rgba(255,255,255,.07),rgba(255,255,255,.01));box-shadow:0 30px 70px rgba(0,0,0,.55)}' +
+      '.flp-t{position:relative;width:76px;height:96px;border-radius:9px;overflow:hidden;background:#0a0d13;border:1px solid rgba(255,255,255,.09);box-shadow:inset 0 -14px 24px rgba(0,0,0,.6)}' +
+      '.flp-strip{display:flex;flex-direction:column;animation:flpRun 2.4s cubic-bezier(.5,.05,.2,1) infinite}' +
+      '.flp-strip span{height:96px;display:flex;align-items:center;justify-content:center;font:700 52px/1 "Inter",sans-serif;letter-spacing:-.02em;color:#fff}' +
+      '@keyframes flpRun{0%{transform:translateY(0)}34%,100%{transform:translateY(calc(-7 * 96px))}}' +
+      '.flp-h{position:absolute;left:0;right:0;top:50%;height:1px;background:rgba(0,0,0,.75);box-shadow:0 1px 0 rgba(255,255,255,.08)}' +
+      '.flp-cap{text-align:center}' +
+      '.flp-cap .micro{margin-bottom:8px}' +
+      '.flp-cap b{display:block;font:600 15px/1.4 "Inter",sans-serif;color:rgba(255,255,255,.86)}' +
+      '.flp-cap span{font:500 11px/1.6 "JetBrains Mono",monospace;color:rgba(255,255,255,.42)}' +
+      '</style>' +
+      '<div class="flp"><div class="flp-board">' + tiles + '</div>' +
+      '<div class="flp-cap"><div class="micro">' + esc(META) + '</div><b>' + esc(KIND) + ' &middot; 7 flaps per glyph</b>' +
+      '<span>96 ms flap &middot; 90 ms stagger &middot; final glyph only in the accessibility tree</span></div></div>';
+  };
+
+  /* ============ 34. ODO — odometer digit roll ============ */
+  S.odo = function () {
+    var digits = [4, 8, 2, 6, 1];
+    var cols = digits.map(function (d, i) {
+      var seq = '';
+      for (var k = 0; k < 12; k++) seq += '<span>' + ((d + 10 - (11 - k)) % 10) + '</span>';
+      return '<div class="odo-c" style="animation-delay:' + (i * 0.06).toFixed(2) + 's">' +
+        '<div class="odo-strip">' + seq + '</div></div>';
+    }).join('');
+    return '<style>' +
+      '.odo{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:26px}' +
+      '.odo-num{display:flex;gap:6px;padding:22px 30px;border-radius:20px;border:1px solid rgba(255,255,255,.1);' +
+      'background:radial-gradient(120% 140% at 30% 0%,color-mix(in srgb,var(--c1) 16%,transparent),transparent 60%),linear-gradient(170deg,rgba(255,255,255,.06),rgba(255,255,255,.012))}' +
+      '.odo-c{position:relative;width:78px;height:104px;overflow:hidden;border-radius:10px;background:rgba(8,10,15,.72);border:1px solid rgba(255,255,255,.08)}' +
+      '.odo-strip{display:flex;flex-direction:column;animation:odoRoll 2.4s cubic-bezier(.22,1,.36,1) infinite}' +
+      '.odo-strip span{height:104px;display:flex;align-items:center;justify-content:center;' +
+      'font:700 64px/1 "Inter",sans-serif;font-variant-numeric:tabular-nums;letter-spacing:-.03em;color:#fff;' +
+      'text-shadow:0 6px 24px rgba(0,0,0,.6)}' +
+      '@keyframes odoRoll{0%{transform:translateY(0)}42%,100%{transform:translateY(calc(-11 * 104px))}}' +
+      '.odo-c:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(6,7,11,.85),transparent 22%,transparent 78%,rgba(6,7,11,.9));pointer-events:none}' +
+      '.odo-cap{text-align:center}' +
+      '.odo-cap b{display:block;font:800 22px/1.2 "Inter",sans-serif;letter-spacing:-.02em;margin-bottom:6px}' +
+      '.odo-cap span{font:500 11px/1.6 "JetBrains Mono",monospace;color:rgba(255,255,255,.42)}' +
+      '</style>' +
+      '<div class="odo"><div class="odo-num">' + cols + '</div>' +
+      '<div class="odo-cap"><b>' + esc(T1) + '</b><span>' + esc(META) + ' &middot; tabular figures &middot; one driver for all five columns</span></div></div>';
   };
 
   var stage = document.getElementById('stage');

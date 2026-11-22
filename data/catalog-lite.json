@@ -1,24 +1,24 @@
 {
-  "total": 465,
-  "complete": 465,
-  "images": 297,
-  "videos": 168,
+  "total": 545,
+  "complete": 545,
+  "images": 317,
+  "videos": 228,
   "concepts": 0,
-  "recipes": 44,
+  "recipes": 104,
   "motionsites": 296,
-  "community": 125,
+  "community": 145,
   "topCategories": [
     {
+      "name": "Replication Recipes",
+      "n": 104
+    },
+    {
       "name": "Hero Section",
-      "n": 73
+      "n": 76
     },
     {
       "name": "Landing Page",
-      "n": 57
-    },
-    {
-      "name": "Replication Recipes",
-      "n": 44
+      "n": 59
     },
     {
       "name": "SaaS",
@@ -27,6 +27,10 @@
     {
       "name": "Components",
       "n": 21
+    },
+    {
+      "name": "Portfolio",
+      "n": 13
     },
     {
       "name": "Mobile App",
@@ -39,24 +43,20 @@
     {
       "name": "Waitlist & Coming Soon",
       "n": 13
-    },
-    {
-      "name": "Animations & Backgrounds",
-      "n": 12
     }
   ],
   "categories": {
     "404": 1,
-    "Replication Recipes": 44,
-    "Landing Page": 57,
-    "Hero Section": 73,
-    "Portfolio": 6,
+    "Replication Recipes": 104,
+    "Landing Page": 59,
+    "Hero Section": 76,
+    "Portfolio": 13,
     "SaaS": 28,
     "Agency": 11,
     "Features Section": 9,
     "Pricing Page": 5,
     "Mobile App": 13,
-    "Transportation": 2,
+    "Transportation": 4,
     "Wellness": 3,
     "Community": 1,
     "Sustainability": 1,
@@ -65,11 +65,11 @@
     "Travel": 7,
     "Healthcare": 4,
     "Entertainment": 1,
-    "E-commerce": 9,
+    "E-commerce": 10,
     "Fintech": 5,
     "Education": 2,
-    "Real Estate": 1,
-    "3D Website": 2,
+    "Real Estate": 2,
+    "3D Website": 4,
     "404 Pages": 2,
     "Services": 2,
     "Components": 21,
@@ -92,8 +92,8 @@
     "Case Studies": 1,
     "Projects": 1,
     "FAQ & Help": 1,
-    "Interactive": 1,
-    "Footer Section": 1,
+    "Interactive": 2,
+    "Footer Section": 2,
     "AI Apps": 1,
     "HR": 1,
     "Web3": 2,

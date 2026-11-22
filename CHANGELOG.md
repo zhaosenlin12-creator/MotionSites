@@ -249,3 +249,73 @@ aw.githubusercontent.com/superdesigndev/superdesign-prompts/main/....
 ### Notes
 - 15 largest previews (>1.2 MB each, ~32 MB total) are still pending on this slow link; re-running the importer from a clone will pick them up.
 - The environment briefly needed a CDN proxy when `raw.githubusercontent.com` was unreachable; once the network recovered, the same importer used direct raw downloads.
+
+## [1.4.0] - 2026-11-22
+
+### Added
+- **Recipe pack 44 -> 104 prompts.** Three tracks now run the same length: `rea` 40 (deterministic capture,
+  HAR/source-map/coverage evidence, obligation ledger), `craft` 40 (token scales, state coverage, parity audits,
+  handoff scorecard), `community` 24 (split-flap, odometer, SVG draw, scroll-scrubbed video, pan canvas, flip deck,
+  spotlight border, accordion morph).
+- Five new demo styles in `scripts/recipe_demo.js` — `network` (request waterfall), `code` (recovered source with a
+  mapping gutter), `graph` (module/route map), `flap` (split-flap board), `odo` (odometer roll) — so the new previews
+  show the artefact each recipe produces instead of a generic card.
+- `docs/competitor-teardown.md`: observed/inferred/unknown teardown of ten adjacent prompt libraries, their record
+  schemas, and the five-slot body template they share. Feeds `docs/source-scouting.md`.
+- `scripts/_merge_recipes.js` and `.work/recipes/SPEC.md` — the authoring contract and validating merge used to build
+  the 60 new records (id/title/demo drift, word budget, palette, duplicate-body hash, sort-order assignment).
+
+### Changed
+- `scripts/build_recipe_docs.js` prints the live pack size and the five new style labels; `docs/recipe-pack.md`
+  regenerated at 104 rows.
+- `docs/source-scouting.md` records the 1.4.0 evaluations: `DexZane/awesome-web-prompts` (MIT, 49 new slugs, only 21
+  with a preview or live demo), `kenje24/rebirth-motionsitesprompt` (deferred: 420 new slugs but no per-record preview
+  mapping), `Vivvidai/vividsites` (excluded by its licence), `promptmotion.art` (out of domain).
+
+### Fixed
+- `scripts/recipe_demo.js` had 156 double-encoded glyphs (arrows, middots, degree signs, multiplication signs,
+  checkmarks) left by an earlier GBK console round-trip. Every preview carried mojibake in its chrome line; the kit is
+  repaired by `scripts/_fix_demo_mojibake.js` and all 104 previews re-rendered.
+- The `svgdraw` and `gallery` demos printed hardcoded labels ("Lottie layers", "scrollY -> translateX"); they now read
+  the recipe's own `kind` / `meta`, so an SVG path recipe no longer previews as a Lottie teardown.
+
+### Verified
+- `node scripts/_merge_recipes.js` -> 104 records, validation OK (60 authored bodies, 221-274 words, all with
+  `Acceptance:` criteria, no duplicate body hashes).
+- `python scripts/render_recipe_previews.py --all --force` -> 104 mp4 + 104 webp.
+- `node scripts/build.js` -> 525 records; `node scripts/audit-catalog.js` -> AUDIT OK.
+
+## [1.4.1] - 2026-11-22
+
+### Added
+- **20 community cards from `DexZane/awesome-web-prompts` (MIT)** — catalog 525 -> 545, images 297 -> 317,
+  community 125 -> 145. Imported from the repo's YAML front-matter (name, level, category, tech_stack, tags,
+  recommended_ai, bilingual description) plus each record's full `prompt.md` brief.
+- `scripts/import-awesome-web-prompts.js` — dry-run-by-default importer with a category map, a level -> type
+  rule, a 400-character body floor, and an explicit skip for records with no captionable preview.
+- `scripts/render_awp_previews.py` — serves the downloaded record dirs on loopback and captures each
+  self-contained `index.html` demo at 1280x800 into a 16:10 webp cover. Handles intro overlays (real clicks,
+  then removing `body.locked`), slide-deck demos that open on a bare colour field, and footer bands captured
+  in a 460 px viewport so the band fills the frame.
+- `data/catalog_sources.json` gains the `awesome-web-prompts` entry with its preview notice.
+
+### Changed
+- README counts, provenance table and file layout refreshed for the import; `docs/source-scouting.md` moves
+  `awesome-web-prompts` from "evaluated" to "ingested"; `docs/competitor-teardown.md` records the outcome.
+- One candidate (`protein-bars`) is deliberately not imported: its demo opens on an untextured colour field, so
+  the capture is not a usable preview. 26 further records ship no preview or demo at all and stay out.
+- The source filter now expands the recipe pack into its three tracks (`recipes:rea`, `recipes:craft`,
+  `recipes:community`), so 104 recipes are browsable by method instead of as one 104-card bucket. Labels are
+  localised and the option survives a language switch.
+- New **track band** above the grid: three cards (`rea` 40 / `craft` 40 / community 24), each showing three
+  previews of its own recipes, the track name and a one-line method summary. Click filters to that track and
+  keeps the band's active state in sync with the source filter; a second click clears it. `scroll-margin-top`
+  keeps the band clear of the sticky toolbar after the click scrolls it into view.
+
+### Verified
+- `node scripts/import-awesome-web-prompts.js` -> dirs=47 new=20 skipped=27 (26 no-preview, 1 no-usable-cover).
+- `node scripts/build.js` -> 545 records; `node scripts/audit-catalog.js` -> AUDIT OK records=545 complete=545
+  recipes=104 community=145 missingBodies=0 assets=545.
+- Browser probe -> 545 cards, 104 recipe badges, community filter renders the 20 new covers, zero console errors.
+- Track filter probe -> `recipes` 104, `recipes:rea` 40, `recipes:craft` 40, `recipes:community` 24.
+

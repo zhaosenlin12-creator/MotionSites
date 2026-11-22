@@ -32,6 +32,9 @@ W, H = 1280, 800
 FPS = 15
 LOOP_MS = 2400
 FRAMES = int(FPS * LOOP_MS / 1000)  # 36
+# Posters are captured mid-loop, not at frame 0: almost every demo has an entrance
+# animation, so a frame-0 still is blank for any recipe whose content rises in.
+POSTER_MS = int(LOOP_MS * 0.45)
 
 
 def page_url(recipe: dict, index: int) -> str:
@@ -74,10 +77,28 @@ def render_video(page, recipe, index, frames_dir):
         "-an", str(mp4),
     ]
     subprocess.run(cmd, check=True, capture_output=True)
-    # webp poster from the first frame
-    im = Image.open(frames_dir / "f000.jpg").convert("RGB")
+    # webp poster from a settled frame, never from frame 0 (see POSTER_MS)
+    seek(page, POSTER_MS)
+    page.wait_for_timeout(60)
+    shot = frames_dir / "poster.png"
+    page.screenshot(path=str(shot))
+    im = Image.open(shot).convert("RGB")
     im.save(OUT / (recipe["id"] + ".webp"), "WEBP", quality=82, method=6)
     return mp4
+
+
+def render_poster(page, recipe, index):
+    """Refresh only the webp poster for one recipe (no video re-encode)."""
+    page.goto(page_url(recipe, index), wait_until="load", timeout=20000)
+    ready(page)
+    seek(page, POSTER_MS)
+    page.wait_for_timeout(60)
+    tmp = WORK / "_poster.png"
+    page.screenshot(path=str(tmp))
+    im = Image.open(tmp).convert("RGB")
+    out = OUT / (recipe["id"] + ".webp")
+    im.save(out, "WEBP", quality=82, method=6)
+    return out
 
 
 def contact_sheet(page, pack, only_styles=None):
@@ -123,6 +144,7 @@ def main():
     ap.add_argument("--contact", action="store_true")
     ap.add_argument("--styles", default="")
     ap.add_argument("--force", action="store_true")
+    ap.add_argument("--posters", action="store_true", help="refresh webp posters only")
     args = ap.parse_args()
 
     pack = json.loads(PACK.read_text(encoding="utf-8"))
@@ -146,6 +168,16 @@ def main():
             return
 
         ids = {s for s in args.ids.split(",") if s}
+        if args.posters:
+            count = 0
+            for i, r in enumerate(pack):
+                if ids and r["id"] not in ids:
+                    continue
+                render_poster(page, r, i + 1)
+                count += 1
+            print("refreshed", count, "posters at", POSTER_MS, "ms")
+            browser.close()
+            return
         targets = []
         for i, r in enumerate(pack):
             if args.all or (ids and r["id"] in ids):

@@ -50,6 +50,17 @@ test('recipe pack: metadata is consistent', () => {
   }
 });
 
+test('recipe pack: no double-encoded glyphs survived an editor round-trip', () => {
+  // 1.2.0 authored several `demo` fields through a GBK console, which turned every
+  // arrow, middot and multiplication sign into CJK mojibake. Anything from the
+  // private-use-free CJK block in an English-only pack is a regression.
+  const markers = /[\u9225\u922b\u923d\u922e\u9241\u9fac\u8133]/;
+  const text = fs.readFileSync(packPath, 'utf8');
+  assert.ok(!markers.test(text), 'recipe_pack.json contains a mojibake marker');
+  const demoText = fs.readFileSync(path.join(ROOT, 'scripts', 'recipe_demo.js'), 'utf8');
+  assert.ok(!/[\u4e00-\u9fff]/.test(demoText.replace(/\/\*[\s\S]*?\*\//g, '')), 'recipe_demo.js contains a CJK glyph');
+});
+
 test('page shell stays offline-first (no external font origins)', () => {
   for (const file of ['ms_template.html', 'index.html']) {
     const html = fs.readFileSync(path.join(ROOT, file), 'utf8');
