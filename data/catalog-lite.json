@@ -1,12 +1,12 @@
 {
-  "total": 361,
-  "complete": 361,
-  "images": 193,
+  "total": 401,
+  "complete": 401,
+  "images": 233,
   "videos": 168,
   "concepts": 0,
   "recipes": 44,
   "motionsites": 296,
-  "community": 21,
+  "community": 61,
   "topCategories": [
     {
       "name": "Hero Section",
@@ -14,7 +14,7 @@
     },
     {
       "name": "Landing Page",
-      "n": 49
+      "n": 56
     },
     {
       "name": "Replication Recipes",
@@ -26,7 +26,7 @@
     },
     {
       "name": "Components",
-      "n": 18
+      "n": 20
     },
     {
       "name": "Agency",
@@ -41,21 +41,21 @@
       "n": 9
     },
     {
-      "name": "CTA Section",
+      "name": "E-commerce",
       "n": 8
     }
   ],
   "categories": {
     "404": 1,
     "Replication Recipes": 44,
-    "Landing Page": 49,
+    "Landing Page": 56,
     "Hero Section": 73,
-    "Portfolio": 4,
+    "Portfolio": 6,
     "SaaS": 28,
     "Agency": 11,
     "Features Section": 9,
     "Pricing Page": 5,
-    "Mobile App": 3,
+    "Mobile App": 5,
     "Transportation": 2,
     "Wellness": 3,
     "Community": 1,
@@ -65,24 +65,24 @@
     "Travel": 7,
     "Healthcare": 4,
     "Entertainment": 1,
-    "E-commerce": 7,
+    "E-commerce": 8,
     "Fintech": 5,
     "Education": 2,
     "Real Estate": 1,
     "3D Website": 2,
     "404 Pages": 2,
     "Services": 2,
-    "Components": 18,
-    "Forms & Contact": 2,
+    "Components": 20,
+    "Forms & Contact": 8,
     "Process & Stats": 2,
     "Testimonials": 3,
-    "Waitlist & Coming Soon": 5,
+    "Waitlist & Coming Soon": 8,
     "About Section": 6,
     "Categories": 1,
     "Products": 3,
     "Blog & Editorial": 1,
     "Cards": 5,
-    "Dashboards": 2,
+    "Dashboards": 4,
     "CTA Section": 8,
     "Benefits": 2,
     "Info": 1,
@@ -99,7 +99,13 @@
     "Web3": 2,
     "Automotive": 1,
     "Animations & Backgrounds": 9,
-    "Onboarding": 1,
+    "Design Systems & Styles": 4,
+    "Calendar": 1,
+    "Pricing Pages": 4,
+    "Email & Newsletter": 2,
+    "Other": 1,
+    "Onboarding": 3,
+    "Auth & Login": 1,
     "Fashion": 1,
     "AI": 4,
     "Analytics": 1,

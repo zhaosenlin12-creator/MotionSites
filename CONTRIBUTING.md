@@ -122,8 +122,8 @@ Note: `scripts/tests/import-liro.test.js` requires the git-ignored `sources/akki
 
 The importer recognizes three ingest paths:
 
-- `superdesigndev/superdesign-prompts` (CC0-1.0) — community prompt + preview picks.
+- `superdesigndev/superdesign-prompts` (MIT) — community prompt + preview picks, ingested with `node scripts/import-superdesign-repo.js` from a clone in `sources/superdesign-prompts/`. Previews are converted to 16:10 webp covers by `scripts/convert_preview.py`.
 - `akkikumar72/liro-prompts` (MIT) — fills paywall MotionSites records with the repository's `working-prompt.md` reconstructions when no original body is available. Filled records carry `text_reconstructed: true` for transparency.
-- `giglianepefrei/motionsites.ai-prompt-library` (NOASSERTION) — free prompts from the public `prompts/` directory; preview videos are downloaded via `ensureGiglPreviewAssets`. The importer de-duplicates by normalized title so slug differences do not create duplicates.
+- `giglianepefrei/motionsites.ai-prompt-library` (MIT) — free prompts from the public `prompts/` directory; preview videos are downloaded via `ensureGiglPreviewAssets`. The importer de-duplicates by normalized title so slug differences do not create duplicates.
 
 The recipe pack is not an import feed: its prompts are original syntheses written for this catalog, attributed per record to the repository or library whose method they encode (`morluto/rea` MIT, `storytold/craft-anything` Apache-2.0, MIT component libraries per [docs/recipe-pack.md](docs/recipe-pack.md)).

@@ -207,4 +207,28 @@ aw.githubusercontent.com/superdesigndev/superdesign-prompts/main/....
 - `node --test scripts/tests/*.test.js` → 42 tests, 38 pass, 4 pre-existing failures in `import-liro.test.js` because the git-ignored `sources/akkikumar72/liro-prompts` research cache is absent in a fresh clone (same failures on the untouched checkout).
 - Browser check at 1440×900: 361 cards, chip `Replication Recipes 44`, source filter offers the recipe pack, first-card modal shows the full prompt, zero console errors.
 
+## [1.3.0] - 2026-11-22
+
+### Added
+- **40 new community cards** from the MIT-licensed `superdesigndev/superdesign-prompts` repo: README front-matter (title / category / tags / author / try_url) + a fenced design-spec prompt body + a preview asset per record. Catalog: **361 → 401 cards**, images 193 → 233, community picks 21 → 61.
+- `scripts/import-superdesign-repo.js` — idempotent importer: parses the repo layout, extracts bodies, converts previews to 16:10 1280×800 webp covers, normalises the licence to the repo `LICENSE` (MIT), dedupes by id/slug and appends to the build sources. Dry-run by default, `--write` to apply.
+- `scripts/convert_preview.py` — shared Pillow cover converter (centre-cropped 1280×800 webp), used by the importer instead of relying on an ffmpeg build that may lack libwebp.
+- `docs/source-scouting.md` — evidence-backed evaluation of the next sources: motionsites.ai has no public catalog endpoint and paywalled bodies (previews are public but are only used for preview rebuilds); Figma Community file pages answer 403 to non-browser clients and files are user-licensed; 21st.dev is metadata+preview only; `kenje24/rebirth-motionsitesprompt`, `gradeoin/…`, `xiiiabu/…` are viable next batches; text-only and unlicensed mirrors are listed as rejected.
+- `scripts/tests/superdesign-cards.test.js` — licence / provenance / preview-bytes / body invariants for imported community cards.
+
+### Changed
+- `data/catalog_sources.json`: Superdesign and giglianepefrei licences corrected to **MIT** (both repo `LICENSE` files are MIT); added the motionsites public preview CDN as a media-only source with an explicit "no paywall bypass" notice.
+- Cache-bust stamp → `20261122v3` in both `scripts/build.js` and `ms_script.js`; README counts, file layout, provenance and recent-changes tables updated to 401 / 233 / 168 / 61.
+
+### Verified
+- `node scripts/build.js` → 401 records, invariants hold; second run byte-identical.
+- `node scripts/audit-catalog.js` → `AUDIT OK records=401 complete=401 recipes=44 community=61 missingBodies=0 assets=401`.
+- `node --test scripts/tests/*.test.js` → 45 tests, 42 pass, 3 pre-existing environment failures (they need the git-ignored `sources/` research caches).
+- Browser check at 1440×900 against the deployed build: 401 cards, community filter/import cards render their covers, zero console errors.
+
+### Notes
+- Preview assets were pulled from the public repository through a CDN proxy because `raw.githubusercontent.com` was intermittently unreachable from the build host; content was verified as valid webp after conversion. When GitHub is reachable, clone the repo into `sources/superdesign-prompts` and run the committed importer instead.
+- 78 of the 118 candidate records were skipped: their preview asset exceeded the 700 KB budget on the slow link, or the download was truncated. They can be picked up by a later `scripts/import-superdesign-repo.js --write` run with a normal connection.
+
+
 

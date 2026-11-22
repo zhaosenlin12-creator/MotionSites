@@ -3,23 +3,23 @@
     "id": "giglianepefrei-motionsites-library",
     "repository": "giglianepefrei/motionsites.ai-prompt-library",
     "url": "https://github.com/giglianepefrei/motionsites.ai-prompt-library",
-    "license": "NOASSERTION",
-    "usage": "Recovered MotionSites prompt bodies from public markdown exports"
+    "license": "MIT",
+    "usage": "Recovered MotionSites prompt bodies from a public markdown export (repository LICENSE is MIT)"
   },
   {
     "id": "nomaan5541-motionsites-collection",
     "repository": "nomaan5541/motionsites-prompt-collection",
     "url": "https://github.com/nomaan5541/motionsites-prompt-collection",
     "license": "MIT",
-    "usage": "Cross-checking public MotionSites metadata and one additional complete record"
+    "usage": "Cross-checking public MotionSites metadata and one additional complete record (repo currently answers HTTP 451)"
   },
   {
     "id": "superdesign-prompts",
     "repository": "superdesigndev/superdesign-prompts",
     "url": "https://github.com/superdesigndev/superdesign-prompts",
-    "license": "CC0-1.0",
-    "preview_notice": "Preview screenshots are provided by the source repository for reference",
-    "usage": "Community UI prompt collection with complete prompt bodies and real previews"
+    "license": "MIT",
+    "preview_notice": "Preview screenshots are part of the source repository; re-hosted here as 16:10 webp covers with per-record attribution",
+    "usage": "Community UI prompt collection with complete prompt bodies and local preview assets, ingested with scripts/import-superdesign-repo.js"
   },
   {
     "id": "akkikumar72-liro-prompts",
@@ -42,6 +42,14 @@
     "url": "https://github.com/storytold/craft-anything",
     "license": "Apache-2.0",
     "usage": "Method research for the replication-recipe pack: study/blueprint/mechanics, design tokens, self-test harness and screenshot-diff verification"
+  },
+  {
+    "id": "motionsites-public-previews",
+    "repository": "motionsites.ai public preview CDN",
+    "url": "https://motionsites.ai",
+    "license": "public media, archived for preview rebuilds",
+    "preview_notice": "Only used for previews of records whose public prompt bodies were already archived; no paywall or login is bypassed",
+    "usage": "Preview rebuilds for the seeded MotionSites catalog (r2.dev / images.higgs.ai / cloudfront hosts)"
   },
   {
     "id": "react-bits",
