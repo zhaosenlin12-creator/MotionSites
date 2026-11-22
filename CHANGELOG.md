@@ -319,3 +319,33 @@ aw.githubusercontent.com/superdesigndev/superdesign-prompts/main/....
 - Browser probe -> 545 cards, 104 recipe badges, community filter renders the 20 new covers, zero console errors.
 - Track filter probe -> `recipes` 104, `recipes:rea` 40, `recipes:craft` 40, `recipes:community` 24.
 
+
+## [1.4.2] - 2026-11-23
+
+### Added
+- `scripts/verify-assets.js` — walks every card's `local_rel` and `poster_rel` and checks existence, size and
+  magic bytes (webp / png / jpeg / mp4 / webm). 673 files, 107 MB, 0 problems.
+- `scripts/verify_previews.py` — browser sweep: walks the whole grid at 900 px steps, samples six scroll
+  checkpoints for decoded visible images, then probes every media URL (200/206). Works against a local server
+  or the deployed site.
+- `scripts/verify_live_sample.py` — samples N previews across the catalog and decodes each in a fresh
+  `Image()`, which separates "the asset is broken" from "this link is slow".
+- `scripts/repair_blank_previews.py` — re-cuts blank seeded previews from their source animated webp.
+
+### Fixed
+- **11 seeded previews were blank.** The 1.1.8 "convert animated webp to static" pass kept frame 0, which is an
+  empty canvas for these files. Each was re-fetched from the R2 source listed in `catalog-details.json` and
+  re-cut at ~40% of the loop: agency-services, arceage-contact-us, arceage-stats, arceage-testimonial,
+  bento-grid-stats, cosmic, email-landing-page, health-portal, pixel-grid-hover, portfolio-about, radial-diagram.
+- The client hid an image and swapped in the gradient placeholder after a single failed request. On a flaky link
+  one dropped `ERR_HTTP2_PROTOCOL_ERROR` therefore degraded a card for the whole session; the handler now retries
+  twice with a cache-busting parameter before falling back.
+- Toolbar reflows at 700 px (search on its own row, selects in two columns), so a 420 px viewport no longer
+  scrolls sideways; OG/Twitter meta tags carry the live counts.
+
+### Verified
+- `node scripts/verify-assets.js` -> ASSETS OK (673 files).
+- `python scripts/verify_previews.py` (local) -> 545 cards, 41/41 visible images decoded, 673 media URLs, 0 errors.
+- `python scripts/verify_live_sample.py --base https://zhaosenlin12-creator.github.io/MotionSites/ --n 80`
+  -> 63/63 sampled previews decoded.
+- Live `data/catalog-lite.json` -> 545 total / 104 recipes / 317 images / 228 videos / 145 community.
