@@ -417,3 +417,24 @@ aw.githubusercontent.com/superdesigndev/superdesign-prompts/main/....
   complete one-line briefs from the Superdesign repo, not truncated text).
 - Local browser probe -> 441 cards, no track band, no recipe stat, all 441 cards badged 全文, three sampled
   modals returned 13 442 / 5 927 / 6 911 characters of prompt text, 0 console errors.
+
+## [1.6.1] - 2026-11-24
+
+### Added
+- **149 new resources** from `kenje24/rebirth-motionsitesprompt` (MIT). The repo publishes a generated
+  manifest (`src/data/prompts.generated.ts`, 661 rows) whose records carry a full prompt body **and** a
+  preview URL, which is exactly the shape this catalogue wants: catalogue 441 -> 590, community 145 -> 294,
+  images 317 -> 466.
+- `scripts/import-kenje-catalog.js` — dry-run-by-default importer: dedupes by id, normalised title and body
+  fingerprint, excludes the repo's `HorizonX Library` (94) and `21st.dev Registry` (93) re-publications
+  because their upstream licences are not ours to archive, downloads each preview (image directly, video via
+  an ffmpeg frame), and writes a 1280x800 webp cover.
+- `kenje-rebirth-motionsites` registered in `data/catalog_sources.json` with its preview notice.
+
+### Verified
+- `node scripts/import-kenje-catalog.js --write` -> plan 180, imported 149, failures 31 (media host returns
+  403/404 or drops the connection; those records are simply not listed).
+- `node scripts/build.js` -> 590 records / 590 with text / 466 images / 124 videos / 296 motionsites /
+  294 community; invariants hold.
+- `node scripts/audit-catalog.js` -> AUDIT OK records=590 complete=590 missingBodies=0 assets=590.
+- `node scripts/verify-assets.js` -> 614 files / 106 MB / 0 problems.

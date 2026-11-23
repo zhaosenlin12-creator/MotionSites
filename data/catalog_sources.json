@@ -79,5 +79,13 @@
     "url": "https://motionsites.ai",
     "license": "public preview media, archived for preview use",
     "usage": "Row metadata and preview media from the site's public catalogue projection; prompt bodies are account-gated and are not archived"
+  },
+  {
+    "id": "kenje-rebirth-motionsites",
+    "repository": "kenje24/rebirth-motionsitesprompt",
+    "url": "https://github.com/kenje24/rebirth-motionsitesprompt",
+    "license": "MIT",
+    "preview_notice": "Preview media is downloaded from the URLs recorded in the repository manifest and converted to a 1280x800 webp cover; no upstream media is hotlinked at runtime.",
+    "usage": "Additional MotionSites-family prompt bodies and previews; HorizonX and 21st.dev re-publications are excluded"
   }
 ]

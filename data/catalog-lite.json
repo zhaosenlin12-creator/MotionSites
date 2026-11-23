@@ -1,31 +1,35 @@
 {
-  "total": 441,
-  "complete": 441,
-  "images": 317,
+  "total": 590,
+  "complete": 590,
+  "images": 466,
   "videos": 124,
   "concepts": 0,
   "motionsites": 296,
-  "community": 145,
+  "community": 294,
   "topCategories": [
+    {
+      "name": "Landing Page",
+      "n": 183
+    },
     {
       "name": "Hero Section",
       "n": 76
     },
     {
-      "name": "Landing Page",
-      "n": 59
-    },
-    {
       "name": "SaaS",
-      "n": 28
+      "n": 31
     },
     {
       "name": "Components",
-      "n": 21
+      "n": 24
     },
     {
       "name": "Pricing Page",
-      "n": 17
+      "n": 23
+    },
+    {
+      "name": "Features Section",
+      "n": 14
     },
     {
       "name": "Portfolio",
@@ -38,20 +42,16 @@
     {
       "name": "Forms & Contact",
       "n": 13
-    },
-    {
-      "name": "Waitlist & Coming Soon",
-      "n": 13
     }
   ],
   "categories": {
-    "Landing Page": 59,
+    "Landing Page": 183,
     "Hero Section": 76,
     "Portfolio": 13,
-    "SaaS": 28,
-    "Agency": 11,
-    "Features Section": 9,
-    "Pricing Page": 17,
+    "SaaS": 31,
+    "Agency": 12,
+    "Features Section": 14,
+    "Pricing Page": 23,
     "Mobile App": 13,
     "Transportation": 4,
     "Wellness": 3,
@@ -69,10 +69,10 @@
     "3D Website": 4,
     "404 Pages": 3,
     "Services": 2,
-    "Components": 21,
+    "Components": 24,
     "Forms & Contact": 13,
     "Process & Stats": 2,
-    "Testimonials": 3,
+    "Testimonials": 6,
     "Waitlist & Coming Soon": 13,
     "About Section": 6,
     "Categories": 1,
@@ -90,7 +90,7 @@
     "Projects": 1,
     "FAQ & Help": 1,
     "Interactive": 2,
-    "Footer Section": 2,
+    "Footer Section": 6,
     "AI Apps": 6,
     "HR": 1,
     "Web3": 2,
