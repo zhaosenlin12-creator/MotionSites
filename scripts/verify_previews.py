@@ -56,7 +56,10 @@ def main():
         url = f"http://127.0.0.1:{PORT}/index.html"
     try:
         with sync_playwright() as p:
-            b = p.chromium.launch(args=["--no-sandbox"])
+            # --disable-quic: on networks where UDP/443 is filtered, Chromium starts every media
+            # request over HTTP/3 first and burns its deadline before falling back to TCP, which
+            # makes a full-grid sweep look broken when the site is fine.
+            b = p.chromium.launch(args=["--no-sandbox", "--disable-quic"])
             pg = b.new_context(viewport={"width": 1440, "height": 1000}).new_page()
             errors, failed = [], []
             pg.on("pageerror", lambda e: errors.append(str(e)))
@@ -73,19 +76,26 @@ def main():
             checkpoints = []
             for frac in (0.0, 0.2, 0.4, 0.6, 0.8, 1.0):
                 pg.evaluate("(f) => window.scrollTo(0, Math.max(0, (document.documentElement.scrollHeight - window.innerHeight) * f))", frac)
-                pg.wait_for_timeout(2600)
-                checkpoints.append(pg.evaluate("""() => {
-                    const vh = window.innerHeight;
-                    const vis = [...document.querySelectorAll('.card img')].filter((i) => {
-                        const r = i.getBoundingClientRect();
-                        return r.bottom > 0 && r.top < vh && r.width > 0;
-                    });
-                    return {
-                        visible: vis.length,
-                        decoded: vis.filter((i) => i.complete && i.naturalWidth > 0).length,
-                        pending: vis.filter((i) => !i.complete || i.naturalWidth === 0).map((i) => (i.currentSrc || i.src).split('/').pop()).slice(0, 5),
-                    };
-                }"""))
+                # Wait for the images armed at this stop to settle instead of guessing a fixed
+                # budget: the question is "do previews load", not "do they load in 2.6 s".
+                state = None
+                for _ in range(24):
+                    pg.wait_for_timeout(700)
+                    state = pg.evaluate("""() => {
+                        const vh = window.innerHeight;
+                        const vis = [...document.querySelectorAll('.card img')].filter((i) => {
+                            const r = i.getBoundingClientRect();
+                            return r.bottom > 0 && r.top < vh && r.width > 0;
+                        });
+                        return {
+                            visible: vis.length,
+                            decoded: vis.filter((i) => i.complete && i.naturalWidth > 0).length,
+                            pending: vis.filter((i) => !i.complete || i.naturalWidth === 0).map((i) => (i.currentSrc || i.src).split('/').pop()).slice(0, 5),
+                        };
+                    }""")
+                    if state["pending"] == [] and state["visible"] > 0:
+                        break
+                checkpoints.append(state)
             stats = pg.evaluate("""() => {
                 const imgs = [...document.querySelectorAll('.card img')];
                 return { imgs: imgs.length, vids: document.querySelectorAll('.card video').length,

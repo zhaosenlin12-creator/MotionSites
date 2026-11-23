@@ -349,3 +349,12 @@ aw.githubusercontent.com/superdesigndev/superdesign-prompts/main/....
 - `python scripts/verify_live_sample.py --base https://zhaosenlin12-creator.github.io/MotionSites/ --n 80`
   -> 63/63 sampled previews decoded.
 - Live `data/catalog-lite.json` -> 545 total / 104 recipes / 317 images / 228 videos / 145 community.
+### Deployed
+- Cloudflare Pages production (branch `master`) now serves `ms_script.js?v=20261122v7`: 545 cards, 104 recipes,
+  317 images, 228 videos, 145 community. Verified through the Cloudflare edge: 673/673 media URLs 200/206 with
+  the correct MIME, 63/63 sampled previews decoded (median 864 ms), track band + filters + modal working,
+  0 console errors, and the full-grid sweep decodes 41/41 visible images.
+- A first deploy with `-Branch main` only produced a preview URL; the project's production branch is `master`.
+  README now documents that, because the failure mode is silent: previews go to `main.motionsites-prompts.pages.dev`
+  while `motionsites-prompts.pages.dev` keeps serving the old build.
+- GitHub Pages mirror is on the same stamp.

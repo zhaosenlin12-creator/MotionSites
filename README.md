@@ -30,7 +30,7 @@
 
 | URL | Hosting | Status |
 |---|---|---|
-| **https://motionsites-prompts.pages.dev/** | Cloudflare Pages (Direct Upload via wrangler) | Primary — **last upload 2026-08-31**; needs a `CLOUDFLARE_API_TOKEN` to refresh |
+| **https://motionsites-prompts.pages.dev/** | Cloudflare Pages (Direct Upload via wrangler) | Primary — production branch is `master`; deploy with `-Branch master` or the upload only becomes a preview |
 | **https://zhaosenlin12-creator.github.io/MotionSites/** | GitHub Pages (auto-deploy from `main`) | Backup |
 
 **Both deployments serve the same static build** — same `index.html`, `ms_script.js`, `data/`, `assets/`. The only differences are the host header and cache TTL rules shipped via `_headers` (CF Pages) vs. GitHub Pages defaults.
@@ -184,10 +184,15 @@ Note: opening `index.html` directly via `file://` works for the static HTML, but
 The `wrangler.toml` points at the `motionsites-prompts` project on Cloudflare Pages with the repo root as the build output. Deployment is a single command:
 
 ```powershell
-.\deploy\deploy-wrangler.ps1 -CommitHash <sha> -CommitMessage "msg"
+.\deploy\deploy-wrangler.ps1 -CommitHash <sha> -CommitMessage "msg" -Branch master
 ```
 
-The script stages the repo into a temp dir (excluding `.git`, `.wrangler`, `node_modules`, files >25 MiB) and runs `wrangler pages deploy`. After about 30 s the new version is live at `https://motionsites-prompts.pages.dev/`.
+`-Branch` must be **`master`**: that is the project's production branch. A deploy with any other
+branch name (for example `main`) succeeds but only appears at a preview URL such as
+`main.motionsites-prompts.pages.dev`, while `motionsites-prompts.pages.dev` keeps serving the old
+production build. The script stages the tree into a temp directory first (excluding `.git`,
+`.wrangler`, `node_modules` and any file over 25 MiB) and reuses already-uploaded assets, so a repeat
+deploy of an unchanged tree uploads a handful of files in seconds. After about 30 s the new version is live at `https://motionsites-prompts.pages.dev/`.
 
 `_headers` ships with `/assets/* Cache-Control: public, max-age=31536000, immutable` so woff2 / webp / mp4 are long-lived. `_redirects` handles the one renamed asset (`website-builder.mp4` -> `.webp`) on CF Pages (GH Pages does not honor `_redirects`, so the in-repo mp4 stub handles it there instead).
 
