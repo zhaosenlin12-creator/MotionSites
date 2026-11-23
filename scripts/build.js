@@ -24,7 +24,7 @@ const zlib = require('node:zlib');
 
 const ROOT = path.resolve(__dirname, '..');
 const DATA = path.join(ROOT, 'data');
-const BUILD_STAMP = '20261122v7';
+const BUILD_STAMP = '20261122v8';
 const MAX_PREVIEW_BYTES = 24 * 1024 * 1024;
 const IMAGE_KINDS = new Set(['webp', 'gif', 'png', 'jpeg']);
 const VIDEO_KINDS = new Set(['mp4', 'webm', 'hls']);
@@ -97,11 +97,19 @@ for (const recipe of recipes) {
 }
 
 // ---- 2. Keep only publishable cards (preview + prompt body) ----
+// A card may also be a "preview-only" record: the source catalogue publishes the preview
+// publicly but gates the prompt body behind an account. Those cards are kept, badged in the
+// UI, and excluded from the "full text" count — they never claim to have a body.
 const kept = [];
 const dropped = [];
 for (const record of merged.concat(recipeMeta)) {
   const body = (textMap.get(record.id) || '').trim();
-  if (!(record.local_rel || record.poster_rel) || !body) {
+  const previewOnly = record.preview_only === true;
+  if (!(record.local_rel || record.poster_rel)) {
+    dropped.push(record.id);
+    continue;
+  }
+  if (!body && !previewOnly) {
     dropped.push(record.id);
     continue;
   }
@@ -124,17 +132,21 @@ function sortRecords(list) {
     return ao - bo;
   });
 }
+// has_text lets the client badge a card without loading its body.
+for (const record of kept) record.has_text = !!(textMap.get(record.id) || '').trim();
 const meta = sortRecords(kept);
 
 // ---- 4. Counters ----
 const counts = {};
 const textOut = {};
-let images = 0, videos = 0, concepts = 0, recipesCount = 0, motionsites = 0, community = 0, complete = 0;
+let images = 0, videos = 0, concepts = 0, recipesCount = 0, motionsites = 0, community = 0, complete = 0, previewOnly = 0;
 for (const record of meta) {
   const body = (textMap.get(record.id) || '').trim();
   if (body) {
     complete++;
     textOut[record.id] = textMap.get(record.id);
+  } else if (record.preview_only) {
+    previewOnly++;
   }
   const kind = previewKind(record);
   if (VIDEO_KINDS.has(kind)) videos++;
@@ -157,6 +169,7 @@ const lite = {
   videos,
   concepts,
   recipes: recipesCount,
+  previewOnly,
   motionsites,
   community,
   topCategories,
@@ -173,6 +186,7 @@ console.log(
   ' videos=' + videos +
   ' concepts=' + concepts +
   ' recipes=' + recipesCount +
+  ' previewOnly=' + previewOnly +
   ' motionsites=' + motionsites +
   ' community=' + community
 );
@@ -224,7 +238,7 @@ for (const record of meta) {
   const abs = path.join(ROOT, rel);
   if (!fs.existsSync(abs)) problems.push('missing preview file: ' + record.id + ' -> ' + rel);
   else if (fs.statSync(abs).size > MAX_PREVIEW_BYTES) problems.push('preview over size limit: ' + record.id);
-  if (!textOut[record.id]) problems.push('missing prompt body: ' + record.id);
+  if (!textOut[record.id] && !record.preview_only) problems.push('missing prompt body: ' + record.id);
 }
 if (problems.length) {
   for (const problem of problems) console.error('[build] FAIL ' + problem);

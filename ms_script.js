@@ -26,7 +26,7 @@ const I18N = {
     export: '导出 .md',
     exportDone: '已导出',
     noFullPrompt: '该条目暂无完整提示词。',
-    noFullPromptHint: '原站未发布正文——以下为可用的元数据与来源。',
+    noFullPromptHint: '原站正文需登录查看——这里保留公开的预览与来源链接。',
     metaSection: '可用元数据',
     metaSource: '来源链接',
     metaOriginal: '原站页面',
@@ -53,6 +53,7 @@ const I18N = {
     conceptBadge: '概念',
     fullBadge: '完整',
     metadataBadge: '元数据',
+    previewBadge: '仅预览',
     searchLabel: '搜索',
     catLabel: '分类',
     typeLabel: '类型',
@@ -112,7 +113,7 @@ const I18N = {
     export: 'Export .md',
     exportDone: 'Exported',
     noFullPrompt: 'The full prompt body is not yet in this catalog.',
-    noFullPromptHint: 'The source page has not published the body. See metadata below.',
+    noFullPromptHint: 'The source gates its prompt body behind an account; the public preview and source link are kept here.',
     metaSection: 'Available metadata',
     metaSource: 'Source links',
     metaOriginal: 'Original page',
@@ -139,6 +140,7 @@ const I18N = {
     conceptBadge: 'Concept',
     fullBadge: 'Full',
     metadataBadge: 'Meta',
+    previewBadge: 'Preview',
     searchLabel: 'Search',
     catLabel: 'Category',
     typeLabel: 'Type',
@@ -223,7 +225,7 @@ function debounce(fn, ms) {
 async function fetchJSON(url) {
   // BUST-CACHE: append a build stamp so each deploy invalidates browser caches.
   const sep = url.includes('?') ? '&' : '?';
-  const fullUrl = url + sep + 'v=20261122v7';
+  const fullUrl = url + sep + 'v=20261122v8';
   const res = await fetch(fullUrl, { cache: 'no-store' });
   if (!res.ok) throw new Error('fetchJSON ' + url + ' ' + res.status);
   return res.json();
@@ -245,7 +247,7 @@ async function loadPromptText(id) {
   if (!rel) { __MS_TEXT_CACHE[id] = ''; return ''; }
   const p = (async function () {
     try {
-      const res = await fetch('data/' + rel + '?v=20261122v7', { cache: 'no-store' });
+      const res = await fetch('data/' + rel + '?v=20261122v8', { cache: 'no-store' });
       if (!res.ok) throw new Error('text ' + id + ' ' + res.status);
       const txt = await res.text();
       __MS_TEXT_CACHE[id] = txt;
@@ -578,10 +580,10 @@ function options(id, key) {
 }
 
 function cardHTML(x) {
-  const full = !!(x.prompt_text && x.prompt_text.trim());
+  const full = !!(x.has_text || (x.prompt_text && x.prompt_text.trim()));
   return '<article class="card" data-id="' + esc(x.id) + '">'
     + '<div class="badge-row">'
-    + (full ? '<span class="badge full">' + t('fullBadge') + '</span>' : '<span class="badge muted">' + t('metadataBadge') + '</span>')
+    + (full ? '<span class="badge full">' + t('fullBadge') + '</span>' : '<span class="badge muted">' + t(x.preview_only ? 'previewBadge' : 'metadataBadge') + '</span>')
     + (x.source_kind === 'community' ? '<span class="badge community">' + t('sourceBadge') + '</span>' : '')
     + (x.source_kind === 'recipes' ? '<span class="badge recipes">' + t('sourceBadgeRecipes') + '</span>' : '')
     + '</div>'

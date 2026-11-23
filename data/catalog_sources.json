@@ -72,5 +72,12 @@
     "license": "MIT",
     "preview_notice": "Five records ship a preview.png; sixteen ship a self-contained index.html demo that is rendered to a 1280x800 webp cover with scripts/render_awp_previews.py. No upstream demo code is shipped.",
     "usage": "Community web-build prompt collection (front-matter + prompt.md), ingested with scripts/import-awesome-web-prompts.js"
+  },
+  {
+    "id": "motionsites-public-catalog",
+    "repository": "motionsites.ai public catalog",
+    "url": "https://motionsites.ai",
+    "license": "public preview media, archived for preview use",
+    "usage": "Row metadata and preview media from the site's public catalogue projection; prompt bodies are account-gated and are not archived"
   }
 ]

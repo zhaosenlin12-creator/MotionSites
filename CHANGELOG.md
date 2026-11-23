@@ -358,3 +358,35 @@ aw.githubusercontent.com/superdesigndev/superdesign-prompts/main/....
   README now documents that, because the failure mode is silent: previews go to `main.motionsites-prompts.pages.dev`
   while `motionsites-prompts.pages.dev` keeps serving the old build.
 - GitHub Pages mirror is on the same stamp.
+
+## [1.5.0] - 2026-11-23
+
+### Added
+- **459 preview-only cards mirrored from motionsites.ai** (catalogue 545 -> 1,004). The site's SPA reads its
+  catalogue from a Supabase row projection that is readable with the key it ships to every visitor; that
+  projection returns 825 rows with `id, title, category, type, is_free, image_preview_url, video_preview_url`.
+  255 of them were already here; of the 570 new ones, 460 had a fetchable preview (452 image, 8 video) and were
+  imported, 110 publish no preview at all and were skipped.
+- `scripts/import-motionsites-catalog.js` — dry-run-by-default importer: downloads the preview, cuts a 16:10
+  1280x800 webp cover (`convert_preview.py`, or an ffmpeg frame for video-only rows), appends the record with
+  `preview_only: true`, and registers the `motionsites-public-catalog` source.
+- A `preview_only` tier in `scripts/build.js`: such records are kept without a prompt body, counted as
+  `previewOnly` in `catalog-lite.json`, excluded from `complete`, and still held to the preview-file invariant.
+
+### Changed
+- Cards now carry a `has_text` flag from the build, and the client badges them 全文 / 仅预览 / 元数据 accordingly.
+  Before this, every card rendered as 元数据 because the body is fetched lazily when the modal opens.
+- Preview-only cards open a modal with the public preview, the source link and an explicit note that the body
+  lives behind the source's account gate; copy and export stay disabled.
+- Mirrored records are re-bucketed by section type (Hero Section / Footer Section / Pricing Page / …) with the
+  upstream industry string kept in `tags`, so the category filter stays at 62 labels instead of 172.
+
+### Verified
+- `node scripts/import-motionsites-catalog.js` -> rows 570, planned 460, imported 459 (one video had no usable
+  frame), covers 29.2 MB, merged 900.
+- `node scripts/build.js` -> 1004 records / 545 with text / 459 preview-only / 776 images / 228 videos / 104
+  recipes / 755 motionsites / 145 community; invariants hold.
+- `node scripts/audit-catalog.js` -> AUDIT OK records=1004 complete=545 missingBodies=459 assets=1004 (the 459 are
+  the flagged preview-only tier, not silent gaps).
+- Local browser probe -> 545 全文 badges, 459 仅预览 badges, preview-only modal shows the note + source link,
+  filters and the track band unchanged, 0 console errors.

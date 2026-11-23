@@ -1,60 +1,64 @@
 {
-  "total": 545,
+  "total": 1004,
   "complete": 545,
-  "images": 317,
+  "images": 776,
   "videos": 228,
   "concepts": 0,
   "recipes": 104,
-  "motionsites": 296,
+  "previewOnly": 459,
+  "motionsites": 755,
   "community": 145,
   "topCategories": [
+    {
+      "name": "Hero Section",
+      "n": 484
+    },
     {
       "name": "Replication Recipes",
       "n": 104
     },
     {
-      "name": "Hero Section",
-      "n": 76
-    },
-    {
       "name": "Landing Page",
-      "n": 59
+      "n": 64
     },
     {
       "name": "SaaS",
       "n": 28
     },
     {
+      "name": "Other",
+      "n": 21
+    },
+    {
       "name": "Components",
       "n": 21
     },
     {
-      "name": "Portfolio",
-      "n": 13
+      "name": "Pricing Page",
+      "n": 18
     },
     {
-      "name": "Mobile App",
-      "n": 13
+      "name": "Sections",
+      "n": 15
     },
     {
-      "name": "Forms & Contact",
-      "n": 13
-    },
-    {
-      "name": "Waitlist & Coming Soon",
-      "n": 13
+      "name": "Dashboards",
+      "n": 14
     }
   ],
   "categories": {
-    "404": 1,
     "Replication Recipes": 104,
-    "Landing Page": 59,
-    "Hero Section": 76,
+    "Hero Section": 484,
+    "Other": 21,
+    "Footer Section": 7,
+    "Landing Page": 64,
+    "Sections": 15,
+    "Pricing Page": 18,
+    "Dashboards": 14,
     "Portfolio": 13,
     "SaaS": 28,
     "Agency": 11,
     "Features Section": 9,
-    "Pricing Page": 5,
     "Mobile App": 13,
     "Transportation": 4,
     "Wellness": 3,
@@ -65,12 +69,12 @@
     "Travel": 7,
     "Healthcare": 4,
     "Entertainment": 1,
-    "E-commerce": 10,
+    "E-commerce": 11,
     "Fintech": 5,
     "Education": 2,
     "Real Estate": 2,
     "3D Website": 4,
-    "404 Pages": 2,
+    "404 Pages": 3,
     "Services": 2,
     "Components": 21,
     "Forms & Contact": 13,
@@ -82,7 +86,6 @@
     "Products": 3,
     "Blog & Editorial": 4,
     "Cards": 5,
-    "Dashboards": 8,
     "CTA Section": 8,
     "Benefits": 2,
     "Info": 1,
@@ -93,26 +96,19 @@
     "Projects": 1,
     "FAQ & Help": 1,
     "Interactive": 2,
-    "Footer Section": 2,
-    "AI Apps": 1,
+    "AI Apps": 6,
     "HR": 1,
     "Web3": 2,
     "Automotive": 1,
     "Animations & Backgrounds": 12,
     "Design Systems & Styles": 11,
-    "Calendar": 1,
-    "Pricing Pages": 12,
+    "Calendars": 1,
     "Email & Newsletter": 5,
-    "Other": 2,
     "Onboarding": 7,
-    "Auth & Login": 10,
-    "Fashion": 1,
-    "AI": 4,
+    "Auth & Login": 11,
     "Analytics": 1,
     "Cybersecurity": 1,
-    "Sign in": 1,
-    "3D": 1,
-    "AI Chat": 1
+    "3D": 1
   },
   "version": 2
 }
