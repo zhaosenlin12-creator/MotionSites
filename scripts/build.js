@@ -24,7 +24,7 @@ const zlib = require('node:zlib');
 
 const ROOT = path.resolve(__dirname, '..');
 const DATA = path.join(ROOT, 'data');
-const BUILD_STAMP = '20261122v8';
+const BUILD_STAMP = '20261122v9';
 const MAX_PREVIEW_BYTES = 24 * 1024 * 1024;
 const IMAGE_KINDS = new Set(['webp', 'gif', 'png', 'jpeg']);
 const VIDEO_KINDS = new Set(['mp4', 'webm', 'hls']);
@@ -65,51 +65,15 @@ const merged = readJson(path.join(DATA, 'ms_prompts_merged.json'));
 const textRows = readJson(path.join(DATA, 'ms_prompts_with_text.json'));
 const textMap = new Map(textRows.map((row) => [row.id, row.prompt_text || '']));
 
-const recipePath = path.join(DATA, 'recipe_pack.json');
-const recipes = fs.existsSync(recipePath) ? readJson(recipePath) : [];
-const recipeMeta = [];
-for (const recipe of recipes) {
-  if (!recipe || !recipe.id) throw new Error('[build] recipe without id');
-  if (textMap.has(recipe.id)) {
-    console.warn('[build] skipping duplicate recipe id ' + recipe.id);
-    continue;
-  }
-  recipeMeta.push({
-    id: recipe.id,
-    title: recipe.title,
-    description: recipe.description,
-    category: recipe.category,
-    type: recipe.type,
-    source_kind: 'recipes',
-    local_rel: 'assets/previews/' + recipe.id + '.mp4',
-    poster_rel: 'assets/previews/' + recipe.id + '.webp',
-    local_kind: 'mp4',
-    sort_order: recipe.sort_order,
-    is_free: true,
-    tags: recipe.tags,
-    palette: recipe.palette,
-    source_id: recipe.source && recipe.source.pack,
-    source_repo: recipe.source && recipe.source.repo,
-    source_url: recipe.source && recipe.source.url,
-    source_license: recipe.source && recipe.source.license,
-  });
-  textMap.set(recipe.id, recipe.prompt);
-}
-
 // ---- 2. Keep only publishable cards (preview + prompt body) ----
 // A card may also be a "preview-only" record: the source catalogue publishes the preview
 // publicly but gates the prompt body behind an account. Those cards are kept, badged in the
 // UI, and excluded from the "full text" count — they never claim to have a body.
 const kept = [];
 const dropped = [];
-for (const record of merged.concat(recipeMeta)) {
+for (const record of merged) {
   const body = (textMap.get(record.id) || '').trim();
-  const previewOnly = record.preview_only === true;
-  if (!(record.local_rel || record.poster_rel)) {
-    dropped.push(record.id);
-    continue;
-  }
-  if (!body && !previewOnly) {
+  if (!(record.local_rel || record.poster_rel) || !body) {
     dropped.push(record.id);
     continue;
   }
@@ -139,14 +103,12 @@ const meta = sortRecords(kept);
 // ---- 4. Counters ----
 const counts = {};
 const textOut = {};
-let images = 0, videos = 0, concepts = 0, recipesCount = 0, motionsites = 0, community = 0, complete = 0, previewOnly = 0;
+let images = 0, videos = 0, concepts = 0, motionsites = 0, community = 0, complete = 0;
 for (const record of meta) {
   const body = (textMap.get(record.id) || '').trim();
   if (body) {
     complete++;
     textOut[record.id] = textMap.get(record.id);
-  } else if (record.preview_only) {
-    previewOnly++;
   }
   const kind = previewKind(record);
   if (VIDEO_KINDS.has(kind)) videos++;
@@ -154,8 +116,7 @@ for (const record of meta) {
   else concepts++;
   counts[record.category] = (counts[record.category] || 0) + 1;
   const sourceKind = record.source_kind || 'motionsites';
-  if (sourceKind === 'recipes') recipesCount++;
-  else if (sourceKind === 'community') community++;
+  if (sourceKind === 'community') community++;
   else motionsites++;
 }
 const topCategories = Object.entries(counts)
@@ -168,8 +129,6 @@ const lite = {
   images,
   videos,
   concepts,
-  recipes: recipesCount,
-  previewOnly,
   motionsites,
   community,
   topCategories,
@@ -185,8 +144,6 @@ console.log(
   ' images=' + images +
   ' videos=' + videos +
   ' concepts=' + concepts +
-  ' recipes=' + recipesCount +
-  ' previewOnly=' + previewOnly +
   ' motionsites=' + motionsites +
   ' community=' + community
 );
@@ -220,7 +177,7 @@ const replacements = {
   '${images}': String(images),
   '${videos}': String(videos),
   '${noMedia}': String(concepts),
-  '${recipes}': String(recipesCount),
+  '${recipes}': String(0),
   '<script>__SCRIPT_BODY__</script>': '<script src="ms_script.js?v=' + BUILD_STAMP + '" defer></script>',
 };
 for (const [needle, value] of Object.entries(replacements)) html = html.split(needle).join(value);
@@ -238,7 +195,7 @@ for (const record of meta) {
   const abs = path.join(ROOT, rel);
   if (!fs.existsSync(abs)) problems.push('missing preview file: ' + record.id + ' -> ' + rel);
   else if (fs.statSync(abs).size > MAX_PREVIEW_BYTES) problems.push('preview over size limit: ' + record.id);
-  if (!textOut[record.id] && !record.preview_only) problems.push('missing prompt body: ' + record.id);
+  if (!textOut[record.id]) problems.push('missing prompt body: ' + record.id);
 }
 if (problems.length) {
   for (const problem of problems) console.error('[build] FAIL ' + problem);

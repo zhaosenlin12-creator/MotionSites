@@ -1,33 +1,23 @@
 {
-  "total": 1004,
-  "complete": 545,
-  "images": 776,
-  "videos": 228,
+  "total": 441,
+  "complete": 441,
+  "images": 317,
+  "videos": 124,
   "concepts": 0,
-  "recipes": 104,
-  "previewOnly": 459,
-  "motionsites": 755,
+  "motionsites": 296,
   "community": 145,
   "topCategories": [
     {
       "name": "Hero Section",
-      "n": 484
-    },
-    {
-      "name": "Replication Recipes",
-      "n": 104
+      "n": 76
     },
     {
       "name": "Landing Page",
-      "n": 64
+      "n": 59
     },
     {
       "name": "SaaS",
       "n": 28
-    },
-    {
-      "name": "Other",
-      "n": 21
     },
     {
       "name": "Components",
@@ -35,30 +25,33 @@
     },
     {
       "name": "Pricing Page",
-      "n": 18
+      "n": 17
     },
     {
-      "name": "Sections",
-      "n": 15
+      "name": "Portfolio",
+      "n": 13
     },
     {
-      "name": "Dashboards",
-      "n": 14
+      "name": "Mobile App",
+      "n": 13
+    },
+    {
+      "name": "Forms & Contact",
+      "n": 13
+    },
+    {
+      "name": "Waitlist & Coming Soon",
+      "n": 13
     }
   ],
   "categories": {
-    "Replication Recipes": 104,
-    "Hero Section": 484,
-    "Other": 21,
-    "Footer Section": 7,
-    "Landing Page": 64,
-    "Sections": 15,
-    "Pricing Page": 18,
-    "Dashboards": 14,
+    "Landing Page": 59,
+    "Hero Section": 76,
     "Portfolio": 13,
     "SaaS": 28,
     "Agency": 11,
     "Features Section": 9,
+    "Pricing Page": 17,
     "Mobile App": 13,
     "Transportation": 4,
     "Wellness": 3,
@@ -86,6 +79,7 @@
     "Products": 3,
     "Blog & Editorial": 4,
     "Cards": 5,
+    "Dashboards": 8,
     "CTA Section": 8,
     "Benefits": 2,
     "Info": 1,
@@ -96,6 +90,7 @@
     "Projects": 1,
     "FAQ & Help": 1,
     "Interactive": 2,
+    "Footer Section": 2,
     "AI Apps": 6,
     "HR": 1,
     "Web3": 2,
@@ -104,6 +99,7 @@
     "Design Systems & Styles": 11,
     "Calendars": 1,
     "Email & Newsletter": 5,
+    "Other": 2,
     "Onboarding": 7,
     "Auth & Login": 11,
     "Analytics": 1,

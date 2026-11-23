@@ -390,3 +390,30 @@ aw.githubusercontent.com/superdesigndev/superdesign-prompts/main/....
   the flagged preview-only tier, not silent gaps).
 - Local browser probe -> 545 全文 badges, 459 仅预览 badges, preview-only modal shows the note + source link,
   filters and the track band unchanged, 0 console errors.
+
+## [1.6.0] - 2026-11-23
+
+### Changed
+- **Back to a pure resource gallery.** Every card is one collected resource: a local preview plus its complete
+  prompt body. Removed in this release:
+  - the **104 replication recipes** (`data/recipe_pack.json`, `docs/recipe-pack.md`, `recipes/re/cr/sc` preview
+    media, the recipe demo kit, the recipe tests) — they were method material, not collected resources;
+  - the **track band** above the grid, its CSS, its JS and the `recipes:rea|craft|community` entries in the
+    source filter;
+  - the **459 preview-only mirrors** from the 1.5.0 catalogue sweep — cards whose prompt body lives behind the
+    source's account gate had no readable prompt, which is exactly what this catalogue must not list;
+  - the **Recipes** counter in the header, the recipe chip and the recipe rows in the OG/Twitter descriptions.
+- `scripts/build.js` no longer reads a recipe pack and no longer accepts a body-less record: a record without both
+  a preview and a prompt body is dropped, and the "missing prompt body" assertion is unconditional again.
+- Catalogue: 441 cards (296 MotionSites + 145 community), 317 image previews, 124 video previews, 0 body-less
+  cards.
+
+### Verified
+- `node scripts/build.js` -> Records=441 complete=441 images=317 videos=124 concepts=0 motionsites=296
+  community=145; invariants hold.
+- `node scripts/audit-catalog.js` -> AUDIT OK records=441 complete=441 recipes=0 community=145
+  missingBodies=0 assets=441.
+- Every card's body checked directly: 0 missing, 0 stubs (4 community prompts are short by design — they are
+  complete one-line briefs from the Superdesign repo, not truncated text).
+- Local browser probe -> 441 cards, no track band, no recipe stat, all 441 cards badged 全文, three sampled
+  modals returned 13 442 / 5 927 / 6 911 characters of prompt text, 0 console errors.

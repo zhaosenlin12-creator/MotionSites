@@ -79,7 +79,7 @@ def main():
                 # Wait for the images armed at this stop to settle instead of guessing a fixed
                 # budget: the question is "do previews load", not "do they load in 2.6 s".
                 state = None
-                for _ in range(24):
+                for _ in range(45):
                     pg.wait_for_timeout(700)
                     state = pg.evaluate("""() => {
                         const vh = window.innerHeight;

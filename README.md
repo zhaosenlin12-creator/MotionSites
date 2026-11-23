@@ -1,29 +1,21 @@
 # MotionSites Prompts — A Curated Library of Motion-Driven UI
 
-> A progressively-loaded, **offline-first** catalog of **1,004 motion-driven UI items** — 545 prompts with full bodies plus 459 preview-only records mirrored from the public motionsites.ai catalogue — landing pages, hero scenes, agency showcases, dashboards, and a **104-prompt replication-recipe pack** that turns "make it look like that site" into a measured, reproducible workflow. Browse, search, copy, and export every prompt locally. **No login, no third-party tracking, no paywall, no external CDN at load time.**
+> A progressively-loaded, **offline-first** catalog of **441 motion-driven UI resources** — every card has a local preview **and its complete prompt body**. Browse, search, copy, and export every prompt locally. **No login, no third-party tracking, no paywall, no external CDN at load time.**
 
 ## What is inside
 
-- **1,004 curated cards** — every card has a local preview; 545 carry a full prompt body, 459 are preview-only mirrors of the source catalogue
-- **545 full prompt bodies** — copy to clipboard or export as a Markdown file; the remaining 459 are badged 仅预览 / Preview and link back to the source page
-- **145 community imports** from MIT-licensed prompt repos — 104 Superdesign cards and 20 awesome-web-prompts cards with local 16:10 covers and full build briefs, joining the 21 original community picks
-- **104 replication recipes** (new in 1.4.0) — capture a reference, extract its real motion values, rebuild it, and prove the result. Three equal tracks: reverse-engineering (`morluto/rea`, 40), craft pipeline (`storytold/craft-anything`, 40), and community effect patterns (MIT-licensed libraries, 24). See [docs/recipe-pack.md](docs/recipe-pack.md)
-- **459 preview-only records** (new in 1.5.0) — the public motionsites.ai catalogue exposes every row's metadata and preview media through its own client projection. Those 459 records are mirrored here with a locally stored 16:10 cover, the source link, and the industry kept in tags; their prompt bodies stay behind the source's account gate and are **not** archived. They are badged 仅预览 / Preview and excluded from the full-text count.
-- **776 image previews** (static webp / png)
-- **228 looping video previews** (mp4, generated locally from CSS demos for the recipe pack)
-- **0 concept cards** — every published card has a real preview
-- **Multi-dimensional filters**: category, type, source (MotionSites / Community / Recipe pack), media format — the recipe-pack entry expands into its three tracks (`rea` 40 / `craft` 40 / community 24)
-- **Track band** under the chips: three cards, each with three of its own previews, the track name and a one-line method summary; click to filter, click again to clear
-- **Top-9 category chips** with live counts from the lite payload — the recipe pack has its own chip
+- **441 curated resources** — each one ships a working local preview and its full prompt body; nothing is listed that you cannot read
+- **441 full prompt bodies** — copy to clipboard or export as a Markdown file
+- **296 MotionSites records** — recovered bodies plus locally stored preview media
+- **145 community records** — 104 Superdesign cards and 20 awesome-web-prompts cards with per-record attribution, joining the 21 original community picks
+- **317 image previews** and **124 looping video previews**, all served from this repository
+- **Multi-dimensional filters**: category, type, source, media format
+- **Top-9 category chips** with live counts from the lite payload
 - **Combined search** over title / description / prompt text / tags / source repo / file path
 - **Keyboard-first**: `/` focus search, `Esc` close modal, `G` toggle compact
 - **Spotlight search**: when a query is active, a soft glow tracks the best matching card
 - **Two card densities**: standard 16:10 grid and compact
-- **Sticky hero** with brand mark, tagline, and live counters (cards, full text, animations, videos, recipes)
-
-![Catalog preview](docs/catalog_preview.png)
-
-![Modal - full prompt](docs/catalog_prompt_detail.png)
+- **Sticky hero** with brand mark, tagline, and live counters
 
 ---
 
@@ -75,22 +67,6 @@ Three fonts in use (Inter / Fraunces / JetBrains Mono). All 11 latin woff2 subse
 
 ---
 
-## The recipe pack (v1.4.0)
-
-104 prompts that answer *"how do I reproduce this premium website effect?"* rather than *"what should the page contain?"*. Each one is a self-contained English prompt (150–320 words) with acceptance criteria, plus a locally rendered motion preview:
-
-| Track | Prompts | What it teaches |
-|---|---|---|
-| Reverse-engineering (`morluto/rea`, MIT) | 40 | Deterministic capture scenarios, HAR → API surface, source-map recovery, coverage attribution, listener audits, saved-value assertions, memory-budgeted screenshot compares, drift scans, obligation ledgers |
-| Craft pipeline (`storytold/craft-anything`, Apache-2.0) | 40 | Blueprint, token scales, surface/edge and focus-ring specs, state coverage, toast and popup behaviour, theme parity, form architecture, contrast ladders, RTL/i18n parity, handoff scorecard |
-| Community effects (MIT sources) | 24 | Liquid chrome, grain mesh, kinetic type, decrypt text, magnetic buttons, tilt cards, marquee, sticky stack, horizontal gallery, scroll reveal, WebGL distortion, image trail, curtain/view transitions, Lenis, bento, split-flap, odometer, SVG draw, scroll-scrubbed video, pan canvas, flip deck, spotlight border, accordion morph |
-
-The previews are **not screenshots of other people's sites**. They are original CSS compositions rendered to mp4 + webp by `scripts/render_recipe_previews.py` from `scripts/recipe_demo.html`, then frozen frame-by-frame through `window.__seek(ms)` so every loop is deterministic. Five preview styles exist only to show what a measurement recipe produces — a request waterfall, a recovered-source pane, a module/route graph, a split-flap board and an odometer roll. Posters are captured at 45 % of the loop, because a frame-0 still is blank for any recipe whose content rises in. Rendering needs Python + Playwright + ffmpeg; the site itself needs none of them.
-
-Adding or editing a recipe: edit `data/recipe_pack.json` → render previews → `node scripts/build.js` → `node scripts/build_recipe_docs.js`. Full flow in [docs/recipe-pack.md](docs/recipe-pack.md).
-
----
-
 ## File layout
 
 ```
@@ -109,7 +85,6 @@ MotionSites/
 |   |-- catalog-text-index.json     ~22 KB id -> .txt path map
 |   |-- catalog-text.json           ~3 MB inline prompt bodies (legacy single-file form)
 |   |-- catalog-text/<id>.txt       465 files, one per card with text
-|   |-- recipe_pack.json            Source of truth for the 44 replication recipes
 |   |-- catalog_sources.json        External feeds + licences used for the catalog
 |   |-- ms_prompts_merged.json      Build source: metadata records (catalog + imports)
 |   |-- ms_prompts_with_text.json   Build source: prompt bodies
@@ -122,12 +97,8 @@ MotionSites/
 |-- scripts/                        Build / scrape / normalize / audit
 |   |-- build.js                    Deterministic catalog build + index.html render
 |   |-- audit-catalog.js            Count + provenance + orphan-asset audit
-|   |-- build_recipe_docs.js        Generate docs/recipe-pack.md from the pack
-|   |-- render_recipe_previews.py   Render recipe mp4/webp previews (Playwright + ffmpeg)
 |   |-- import-superdesign-repo.js  Ingest a superdesign-prompts clone (MIT) into community cards
 |   |-- convert_preview.py          Crop/resize a preview to a 1280x800 webp cover
-|   |-- recipe_demo.html / .js      Pure-CSS demo kit behind every recipe preview (34 styles)
-|   |-- _merge_recipes.js           Validates authored recipe batches against the blueprint, then merges + orders
 |   |-- _fix_demo_mojibake.js       One-shot repair for GBK round-trip damage in the demo kit
 |   |-- import-community.js         Pull new prompts from community repos
 |   |-- import-superdesign-repo.js  Ingest a superdesign-prompts clone (MIT)
@@ -144,7 +115,7 @@ MotionSites/
 |   |-- deploy-cloudflare.ps1       Legacy Cloudflare API deploy (older)
 |   |-- push-to-github.ps1          Push to origin/main with retry
 |
-|-- docs/                           Screenshots, perf logs, recipe-pack, source-scouting + competitor-teardown notes
+|-- docs/                           Screenshots, perf logs, source-scouting + competitor-teardown notes
 |-- CHANGELOG.md                    Per-release change log (1.0.0 -> 1.2.0)
 |-- CONTRIBUTING.md                 File format + build flow
 |-- README.md                       This file
@@ -218,19 +189,17 @@ The first push after a long offline stretch may take a few minutes if the commit
 ## Counts (live)
 
 ```
-Total        1004
-With text      545   (full prompt body)
-Preview only   459   (mirrored catalogue cards; the source gates the body)
-Images         776   (webp / png / jpg previews)
-Videos         228   (mp4 loops; includes the 104 recipe previews)
-Concepts         0   (every card has a real preview)
-Recipes        104   (source_kind=recipes, the replication pack)
-Motionsites    755   (source_kind=motionsites)
-Community      145   (source_kind=community)
-Categories      70   (canonical labels)
+Total         441
+With text     441   (every card has a full body)
+Images        317   (webp / png / jpg previews)
+Videos        124   (mp4 loops)
+Concepts        0   (every card has a real preview)
+Motionsites   296   (source_kind=motionsites)
+Community     145   (source_kind=community)
+Categories     62   (canonical labels)
 ```
 
-The math always sums: `776 + 228 + 0 = 1004`, `755 + 145 + 104 = 1004`, and `545 full + 459 preview-only = 1004`. `node scripts/audit-catalog.js` re-checks all three.
+The math always sums: `317 + 124 + 0 = 441` and `296 + 145 = 441`. `node scripts/audit-catalog.js` re-checks both.
 
 ---
 
@@ -238,6 +207,7 @@ The math always sums: `776 + 228 + 0 = 1004`, `755 + 145 + 104 = 1004`, and `545
 
 | Version | Date | Highlights |
 |---|---|---|
+| 1.6.0 | 2026-11-23 | **Back to a pure resource gallery**: removed the 104 replication recipes, the track band, the track sub-filter and the 459 preview-only mirrors, so every card now has a preview **and** a complete prompt body (441 cards). Header counters, OG tags and the category filter were trimmed to match. |
 | 1.5.0 | 2026-11-23 | **Full public-catalogue mirror**: 459 preview-only cards added from motionsites.ai's own public row projection (catalogue 545 → 1,004). Every cover is a local 16:10 webp; the source's account-gated bodies are not touched. New `preview_only` tier in the build, a 仅预览 / Preview badge, `has_text` flags (so full cards finally badge correctly), and category re-bucketing that keeps the filter at 62 labels instead of 172. |
 | 1.4.1 | 2026-11-22 | **awesome-web-prompts import**: 20 new community cards from the MIT `DexZane/awesome-web-prompts` library (catalog 525 → 545, images 297 → 317, community 125 → 145). Each cover is a real capture: 5 come from the repo's `preview.png`, 15 are rendered from the record's own self-contained `index.html` demo by `scripts/render_awp_previews.py`. Records are stored with `tech_stack` and `recommended_ai` from the source front-matter. |
 | 1.4.0 | 2026-11-22 | **Recipe pack 44 → 104**: `rea` 40 / `craft` 40 / community 24, each with a locally rendered mp4 + webp. Five new preview styles (request waterfall, recovered source, module graph, split-flap, odometer). Repaired 156 double-encoded glyphs in the demo kit and re-rendered every preview; posters now come from a settled frame instead of frame 0. Added [docs/competitor-teardown.md](docs/competitor-teardown.md) and refreshed the source-scouting decisions. |
@@ -268,11 +238,8 @@ See [CHANGELOG.md](CHANGELOG.md) for the full per-commit log.
 | Preview media (seed catalog) | Downloaded once from `motionsites.ai` CDN (R2 / CloudFront / higgs.ai / Dribbble) and bundled locally. No runtime fetch to any third party. |
 | Community imports | `superdesigndev/superdesign-prompts` (MIT): README front-matter + fenced prompt block + preview asset per record, converted to 16:10 webp covers in-repo. `source_url` / `source_path` / source_license are stored on every card. |
 | Community imports (1.4.1) | `DexZane/awesome-web-prompts` (MIT): YAML front-matter + full `prompt.md` brief per record. Covers are the repo's own `preview.png` (5) or a 1280×800 capture of the record's self-contained `index.html` demo (15), rendered locally with Playwright — no demo code is shipped and no upstream asset is hotlinked. |
-| Catalogue mirror (1.5.0) | `motionsites.ai` public row projection (the same data its own client reads): id, title, category, type, `is_free`, image/video preview URL. 459 records whose preview could be fetched are stored with a local 16:10 webp cover; prompt bodies are account-gated and no attempt is made to read them. `preview_only: true` marks every such record, and `node scripts/verify-assets.js` covers their files like any other. |
-| Recipe prompts | Original syntheses of methods documented by `morluto/rea` (MIT) and `storytold/craft-anything` (Apache-2.0), plus open effect patterns from MIT-licensed libraries (Three.js, Motion, Magic UI, Lenis, vanilla-tilt, Swup) and W3C/MDN web standards. Licences are recorded per recipe in `data/recipe_pack.json` and [docs/recipe-pack.md](docs/recipe-pack.md). |
-| Recipe previews | Rendered in-repo from original CSS compositions (`scripts/recipe_demo.*`); no upstream site assets are copied. |
 
-The original `motionsites.ai` paywall is **not** bypassed. Records without a recoverable body or preview are dropped by the build (that invariant is asserted on every run), so the catalog never shows a dead-end card.
+The original `motionsites.ai` paywall is **not** bypassed. Records without a recoverable body or preview are dropped by the build (that invariant is asserted on every run), so the catalog never shows a dead-end card and never lists a card whose prompt you cannot read.
 
 ---
 
