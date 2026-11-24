@@ -462,3 +462,28 @@ aw.githubusercontent.com/superdesigndev/superdesign-prompts/main/....
   480 community; invariants hold.
 - `node scripts/audit-catalog.js` -> AUDIT OK records=776 complete=776 missingBodies=0 assets=776.
 - `node scripts/verify-assets.js` -> 776 files / 110 MB / 0 problems.
+
+## [1.7.0] - 2026-11-25
+
+### Added
+- **190 free prompts archived from motionsites.ai** (catalogue 776 -> 966, motionsites 296 -> 486). The site's own
+  body endpoint (`/functions/v1/get-prompt`, called by its `PromptDetailDialog` chunk) returns `prompt_text` for
+  rows it marks `is_free` **without a session**; rows marked paid answer `{"code":"paid_only","prompt_text":null}`.
+  Of the 202 remaining free rows, 190 had a public preview and were imported with their full body; 11 had no
+  preview URL and 1 returned no body.
+- `scripts/import-motionsites-free.js` — walks the free rows that are not in the catalogue, calls the public body
+  endpoint, downloads the public preview (image, or a video frame), and writes a normal card with
+  `source_url = https://motionsites.ai/?prompt=<id>`.
+
+### Notes
+- Paid rows (471 of 825) stay out: the gate is enforced by the edge function, not by the client, so there is no
+  public body to archive. 32 rows have no preview at all and cannot become cards either way.
+- The free prompts are re-bucketed by section type with the upstream industry kept in `tags`, so the category
+  filter stays at 62 labels.
+
+### Verified
+- `node scripts/import-motionsites-free.js --write` -> 202 rows attempted, 190 imported, 11 media failures, 1 body
+  unavailable.
+- `node scripts/build.js` -> 966 records / 966 with text / 842 images / 124 videos / 486 motionsites / 480
+  community; invariants hold.
+- `node scripts/audit-catalog.js` -> AUDIT OK records=966 complete=966 missingBodies=0 assets=966.

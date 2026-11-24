@@ -1,15 +1,19 @@
 {
-  "total": 776,
-  "complete": 776,
-  "images": 652,
+  "total": 966,
+  "complete": 966,
+  "images": 842,
   "videos": 124,
   "concepts": 0,
-  "motionsites": 296,
+  "motionsites": 486,
   "community": 480,
   "topCategories": [
     {
+      "name": "Hero Section",
+      "n": 246
+    },
+    {
       "name": "Landing Page",
-      "n": 183
+      "n": 185
     },
     {
       "name": "Components",
@@ -18,10 +22,6 @@
     {
       "name": "Interactive",
       "n": 94
-    },
-    {
-      "name": "Hero Section",
-      "n": 76
     },
     {
       "name": "SaaS",
@@ -45,8 +45,8 @@
     }
   ],
   "categories": {
-    "Landing Page": 183,
-    "Hero Section": 76,
+    "Landing Page": 185,
+    "Hero Section": 246,
     "Portfolio": 13,
     "SaaS": 31,
     "Agency": 12,
@@ -79,7 +79,7 @@
     "Products": 3,
     "Blog & Editorial": 4,
     "Cards": 5,
-    "Dashboards": 8,
+    "Dashboards": 12,
     "CTA Section": 8,
     "Benefits": 2,
     "Info": 1,
@@ -90,7 +90,7 @@
     "Projects": 1,
     "FAQ & Help": 1,
     "Interactive": 94,
-    "Footer Section": 6,
+    "Footer Section": 10,
     "AI Apps": 6,
     "HR": 1,
     "Web3": 2,
@@ -99,14 +99,14 @@
     "Design Systems & Styles": 11,
     "Calendars": 1,
     "Email & Newsletter": 5,
-    "Other": 2,
+    "Other": 3,
     "Onboarding": 7,
     "Auth & Login": 11,
     "Analytics": 1,
     "Cybersecurity": 1,
     "3D": 1,
-    "Landing Pages": 1,
-    "Footers": 1
+    "Footers": 1,
+    "Sections": 10
   },
   "version": 2
 }
