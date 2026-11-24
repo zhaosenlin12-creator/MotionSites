@@ -14,7 +14,6 @@ python -m http.server 8000  # then open http://localhost:8000
 The build script:
 
 - Loads `data/ms_prompts_merged.json` (metadata records) and `data/ms_prompts_with_text.json` (prompt bodies)
-- Folds in `data/recipe_pack.json` (the curated replication-recipe pack)
 - Publishes only records that have a local preview **and** a non-empty prompt body, then sorts by `sort_order` (stable for ties, so curated order is preserved)
 - Writes `data/catalog-lite.json`, `catalog-meta.json`, `catalog-text.json`, `catalog-text-index.json` and one `catalog-text/<id>.txt` per card
 - Renders `index.html` from `ms_template.html`, injecting the `BUILD_STAMP` cache-bust version
@@ -49,43 +48,11 @@ A second run on an unchanged tree is byte-identical — that is the reproducibil
 4. Run `node scripts/build.js` — the card appears on the next page reload.
 5. Commit `data/*.json`, the preview and the regenerated `index.html`.
 
-## 3. Add a replication recipe (new in 1.2.0)
-
-Recipes live in `data/recipe_pack.json` instead of the scrape sources. Each record looks like:
-
-```jsonc
-{
-  "id": "re-15-my-recipe",
-  "title": "My Recipe",
-  "description": "One-line Chinese description (<= 60 chars).",
-  "category": "Replication Recipes",
-  "type": "playbook",                       // hero | section | full-page | component | playbook
-  "tags": ["cdp", "timeline", "easing"],
-  "palette": ["#0e0e11", "#23232b", "#ff6b6b", "#f4f4f5"],
-  "prompt": "140–320 word paste-ready English prompt …",
-  "notes": ["2–3 implementation callouts"],
-  "demo": { "style": "timeline", "t1": "TIMELINE", "kind": "GSAP", "meta": "ScrollTrigger", "variant": "" },
-  "source": { "pack": "rea", "repo": "morluto/rea", "url": "https://github.com/morluto/rea", "license": "MIT", "ref": "docs/guide" },
-  "sort_order": -999
-}
-```
-
-Then:
-
-```bash
-python scripts/render_recipe_previews.py --ids re-15-my-recipe   # writes assets/previews/<id>.{mp4,webp}
-node scripts/build.js
-node scripts/build_recipe_docs.js                                 # regenerates docs/recipe-pack.md
-node --test scripts/tests/recipe-pack.test.js
-```
-
-`demo.style` picks one of the archetypes in `scripts/recipe_demo.js` (`teardown`, `hero`, `tokens`, `materials`, `timeline`, `bezier`, `timing`, `matrix`, `scrollmap`, `stack`, `pointer`, `scene`, `svgdraw`, `reveal`, `states`, `responsive`, `report`, `diff`, `micro`, `phases`, `filmstrip`, `marquee`, `textfx`, `shader`, `transition`, `bento`, `gallery`, `tilt`, `trail`). Demos must stay pure HTML/CSS so `window.__seek(ms)` can freeze them deterministically. Use a negative `sort_order` to pin a new card above the scraped catalog.
-
-## 4. Fix a missing preview
+## 3. Fix a missing preview
 
 If a card renders as the palette placeholder, the file referenced by `local_rel` is missing or over the 24 MiB limit — `node scripts/build.js` lists the exact card. Add the asset, or delete the record from the source files; the build refuses to publish a card without a preview.
 
-## 5. Style / behaviour changes
+## 4. Style / behaviour changes
 
 - `ms_template.html` — HTML shell + CSS. Search for `/* === ... === */` blocks. `index.html` is generated, never edit it by hand.
 - `ms_script.js` — client-side render / filter / modal logic.
@@ -108,13 +75,12 @@ node --test scripts/tests/*.test.js
 node scripts/import-community.js       # dry-run; never writes
 node scripts/audit-catalog.js          # counts, bodies, provenance, orphan assets
 node scripts/build.js
-node scripts/build_recipe_docs.js      # docs/recipe-pack.md
 python scripts/validate_catalog.py     # optional: v1 markdown library check
 ```
 
 `node scripts/import-community.js --write` is the only command that touches `data/ms_prompts_*.json` and downloads new previews. The local `sources/` cache used for research is **git-ignored** and never enters the public repository. Every community record carries `source_repo`, `source_path`, and `source_license` so its origin is verifiable in the rendered detail panel.
 
-Note: `scripts/tests/import-liro.test.js` requires the git-ignored `sources/akkikumar72/liro-prompts` cache; those four tests fail on a fresh clone by design.
+Note: the import tests (`scripts/tests/import-*.test.js`) run against committed fixtures under `scripts/tests/fixtures/`, so the suite stays green on a fresh clone without the git-ignored research caches.
 
 ### Catalog sources
 
@@ -125,5 +91,3 @@ The importer recognizes three ingest paths:
 - `superdesigndev/superdesign-prompts` (MIT) — community prompt + preview picks, ingested with `node scripts/import-superdesign-repo.js` from a clone in `sources/superdesign-prompts/`. Previews are converted to 16:10 webp covers by `scripts/convert_preview.py`.
 - `akkikumar72/liro-prompts` (MIT) — fills paywall MotionSites records with the repository's `working-prompt.md` reconstructions when no original body is available. Filled records carry `text_reconstructed: true` for transparency.
 - `giglianepefrei/motionsites.ai-prompt-library` (MIT) — free prompts from the public `prompts/` directory; preview videos are downloaded via `ensureGiglPreviewAssets`. The importer de-duplicates by normalized title so slug differences do not create duplicates.
-
-The recipe pack is not an import feed: its prompts are original syntheses written for this catalog, attributed per record to the repository or library whose method they encode (`morluto/rea` MIT, `storytold/craft-anything` Apache-2.0, MIT component libraries per [docs/recipe-pack.md](docs/recipe-pack.md)).

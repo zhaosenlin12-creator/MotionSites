@@ -18,7 +18,6 @@ Ground rules that apply to every source below:
 |---|---|---|---|---|
 | `motionsites.ai` public catalog (2026 seed) | archived public excerpts | 296 | original scrape + public GitHub markdown exports, previews bundled locally | shipped |
 | `superdesigndev/superdesign-prompts` | MIT (repo `LICENSE`) | 104 | `scripts/import-superdesign-repo.js` from a local clone; README front-matter + `## Prompt` block + `preview.*` asset, converted to 16:10 webp covers | shipped |
-| `morluto/rea` + `storytold/craft-anything` | MIT / Apache-2.0 | 44 recipes | original prompt synthesis, locally rendered previews | shipped, see [recipe-pack.md](recipe-pack.md) |
 | `superdesigndev/superdesign-prompts` (earlier snapshot) | MIT | — | legacy `superdesign_fetch/prompts.json` path in `scripts/import-community.js` | superseded by the repo importer |
 
 ## Evaluated — feasible next, not ingested yet
@@ -29,7 +28,7 @@ Ground rules that apply to every source below:
 | `gradeoin/motionsites.ai-prompt-library`, `xiiiabu/motionsites.ai` | MIT | ~65 free prompts each with `assets/videos/*.mp4` previews | mostly duplicates of prompts already archived via the gigl mirror (48 of 66 already present); ~18 incremental free prompts, 67 Pro bodies are text-only |
 | `giglianepefrei/motionsites.ai-prompt-library` | MIT | 66 free + 67 Pro prompt bodies | text-only archive; the local clone in `sources/` is partial because the repo also ships demo media |
 | `21st.dev` | per-contributor, not an OSI licence | 12,000+ claimed; SSR title/description/author + `cdn.21st.dev` webp previews | component source/prompt is gated behind an account; metadata-only records cannot become cards here |
-| Codrops demo repos | MIT (per-demo check) | hundreds of effects | each card would need a locally rendered preview + an original prompt; good future "recipe" source |
+| Codrops demo repos | MIT (per-demo check) | hundreds of effects | each card would need a locally rendered preview + an original prompt; good future card source |
 
 | `DexZane/awesome-web-prompts` | MIT | 20 | 81 `prompt.md` records with YAML front-matter; 5 ship `preview.png`, 16 ship a self-contained `index.html` demo (rendered to a 16:10 cover), 26 have neither and were dropped | shipped in 1.4.1 via `scripts/import-awesome-web-prompts.js` + `scripts/render_awp_previews.py`, see [competitor-teardown.md](competitor-teardown.md) |
 | `kenje24/rebirth-motionsitesprompt` | MIT label | 661 record dirs (470 motionsites, 95 `dev21-`, 94 `hx-`, 5 `sup-`); 420 slugs new to this catalog | preview media is not co-located per record; needs the repo's 4.7 MB generated manifest to map slug → preview, and the `dev21-`/`hx-` corpora re-publish third-party component libraries | deferred pending a licence/attribution decision |

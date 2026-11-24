@@ -1,0 +1,3 @@
+# WISA Space Hero — working prompt
+
+Build a full-viewport hero for a private spaceflight brand: a deep navy field with a slow star parallax, a left-aligned three-line headline in a condensed grotesque, and a single outlined pill that fills on hover. Place a 3D orbital arc on the right that rotates once every 40 seconds, dims when the pointer leaves the hero, and renders as a static poster when WebGL is unavailable. Add a monospace flight-status strip along the bottom, keyboard-reachable controls for the arc, visible focus states, and a reduced-motion mode that freezes the parallax and the rotation. Keep the first paint under 1.2 seconds on a 4G connection and make sure the headline never reflows when the webfont loads.

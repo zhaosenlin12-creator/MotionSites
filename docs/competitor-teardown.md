@@ -6,8 +6,7 @@ distinction matters: a gallery that looks complete in a browser can be empty to 
 repository that advertises 470 prompts can ship 12 real ones.*
 
 This note exists so the next contributor starts from measurements instead of impressions, and so the
-batch-2 expansion work has a written scope. It is the "look at the neighbours" half of the recipe
-pack: the other half is [recipe-pack.md](recipe-pack.md).
+next expansion round has a written scope.
 
 ---
 
@@ -65,7 +64,7 @@ Three conventions are worth stealing outright:
 
 What none of them do, and this catalog does: **ship the acceptance criteria inside the prompt**. A
 prompt that ends with `Acceptance:` can be checked; a prompt that ends with "make it premium" cannot.
-That difference is the whole recipe pack.
+That difference is what this catalogue indexes on.
 
 ---
 
@@ -90,8 +89,7 @@ levels of rigour:
   awesome-web-prompts is more specific than the English one on 8 of 10 sampled records.
 
 **Inferred**: the market gap this catalog fills is not "more prompts", it is "prompts whose result
-can be judged". Hence the 1.4.0 expansion adds measurement recipes (the `rea` track) and build
-recipes with parity checks (the `craft` track), not another 200 landing-page descriptions.
+can be judged".
 
 ---
 

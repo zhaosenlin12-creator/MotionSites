@@ -46,7 +46,7 @@ def sweep(page, expect):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--url", default="")
-    ap.add_argument("--expect", type=int, default=545)
+    ap.add_argument("--expect", type=int, default=776)
     args = ap.parse_args()
     url = args.url
     server = None
