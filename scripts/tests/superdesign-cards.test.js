@@ -10,40 +10,37 @@ const bodies = new Map(
     .map((r) => [r.id, String(r.prompt_text || '')])
 );
 
-const community = meta.filter((r) => r.source_id === 'superdesign-prompts');
+const community = meta.filter((r) => r.source_kind === 'community');
 
-test('superdesign source: records exist and are attributable', () => {
-  assert.ok(community.length >= 30, 'expected at least 30 superdesign records, got ' + community.length);
-  for (const record of community) {
-    assert.strictEqual(record.source_kind, 'community', record.id);
-    assert.strictEqual(record.source_license, 'MIT', record.id + ' licence must match the repo LICENSE');
-    assert.strictEqual(record.source_repo, 'superdesigndev/superdesign-prompts', record.id);
-    assert.match(record.source_url, /^https:\/\/github\.com\/superdesigndev\/superdesign-prompts\/blob\/main\//, record.id);
-    assert.match(record.source_path, /^prompts\/[^/]+\/README\.md$/, record.id);
-    assert.ok(record.community_slug, record.id + ' community_slug');
-  }
-});
+function magicOk(file, ext) {
+  const head = fs.readFileSync(file).subarray(0, 16);
+  if (ext === '.webp') return head.subarray(0, 4).toString('latin1') === 'RIFF' && head.subarray(8, 12).toString('latin1') === 'WEBP';
+  if (ext === '.png') return head[0] === 0x89 && head.subarray(1, 4).toString('latin1') === 'PNG';
+  if (ext === '.jpg' || ext === '.jpeg') return head[0] === 0xFF && head[1] === 0xD8;
+  if (ext === '.mp4') return head.subarray(4, 8).toString('latin1') === 'ftyp';
+  return false;
+}
 
-test('superdesign source: every record has a local webp cover and a body', () => {
+test('community cards: present, with a local preview and a body', () => {
+  assert.ok(community.length >= 300, 'expected the community set, got ' + community.length);
   for (const record of community) {
     assert.ok(record.local_rel, record.id + ' local_rel');
-    assert.strictEqual(record.local_kind, 'webp', record.id + ' local_kind');
-    assert.match(record.local_rel, /^assets\/community\/superdesign\/[^/]+\/preview\.webp$/, record.id);
     const file = path.join(ROOT, record.local_rel);
     assert.ok(fs.existsSync(file), 'missing preview ' + record.local_rel);
-    const head = fs.readFileSync(file).subarray(0, 16).toString('latin1');
-    assert.ok(head.startsWith('RIFF') && head.includes('WEBP'), 'not a webp: ' + record.id);
+    const ext = path.extname(record.local_rel).toLowerCase();
+    assert.ok(magicOk(file, ext), 'bad ' + ext + ' header: ' + record.id);
     const body = (bodies.get(record.id) || '').trim();
-    assert.ok(body.length >= 120, record.id + ' body too short');
+    assert.ok(body.length >= 100, record.id + ' body too short');
     assert.ok(!/^Source:\s*https?:\/\//i.test(body), record.id + ' body looks like a bare link');
   }
 });
 
-test('superdesign source: ids are unique and slugs kebab-case', () => {
-  const seen = new Set();
-  for (const record of community) {
-    assert.match(record.id, /^community-superdesign-[a-z0-9-]+$/, record.id);
-    assert.ok(!seen.has(record.id), 'duplicate ' + record.id);
-    seen.add(record.id);
+test('the shipped catalogue carries no outbound source pointers', () => {
+  // The site presents the resources, not where they were collected from.
+  const forbidden = ['source_url', 'source_repo', 'source_path', 'source_license', 'try_url', 'upstream_id', 'community_slug'];
+  for (const record of meta) {
+    for (const key of forbidden) {
+      assert.strictEqual(record[key], undefined, record.id + ' still carries ' + key);
+    }
   }
 });

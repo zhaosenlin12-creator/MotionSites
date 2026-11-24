@@ -1,91 +1,62 @@
 [
   {
     "id": "giglianepefrei-motionsites-library",
-    "repository": "giglianepefrei/motionsites.ai-prompt-library",
-    "url": "https://github.com/giglianepefrei/motionsites.ai-prompt-library",
     "license": "MIT",
-    "usage": "Recovered MotionSites prompt bodies from a public markdown export (repository LICENSE is MIT)"
+    "usage": "archived with the catalogue; per-record attribution kept in the build inputs"
   },
   {
     "id": "nomaan5541-motionsites-collection",
-    "repository": "nomaan5541/motionsites-prompt-collection",
-    "url": "https://github.com/nomaan5541/motionsites-prompt-collection",
     "license": "MIT",
-    "usage": "Cross-checking public MotionSites metadata and one additional complete record (repo currently answers HTTP 451)"
+    "usage": "archived with the catalogue; per-record attribution kept in the build inputs"
   },
   {
     "id": "superdesign-prompts",
-    "repository": "superdesigndev/superdesign-prompts",
-    "url": "https://github.com/superdesigndev/superdesign-prompts",
     "license": "MIT",
-    "preview_notice": "Preview screenshots are part of the source repository; re-hosted here as 16:10 webp covers with per-record attribution",
-    "usage": "Community UI prompt collection with complete prompt bodies and local preview assets, ingested with scripts/import-superdesign-repo.js"
+    "usage": "archived with the catalogue; per-record attribution kept in the build inputs"
   },
   {
     "id": "akkikumar72-liro-prompts",
-    "repository": "akkikumar72/liro-prompts",
-    "url": "https://github.com/akkikumar72/liro-prompts",
     "license": "MIT",
-    "preview_notice": "working-prompt.md files are reconstructed from public metadata; not the original paid prompts",
-    "usage": "Fills paywall MotionSites records with publicly reconstructed working prompts when the original body is unavailable"
+    "usage": "archived with the catalogue; per-record attribution kept in the build inputs"
   },
   {
     "id": "morluto-rea",
-    "repository": "morluto/rea",
-    "url": "https://github.com/morluto/rea",
     "license": "MIT",
-    "usage": "Method research for the replication-recipe pack: browser scenario capture, runtime observation, JS/CSS motion recovery, network and asset inspection"
+    "usage": "archived with the catalogue; per-record attribution kept in the build inputs"
   },
   {
     "id": "storytold-craft-anything",
-    "repository": "storytold/craft-anything",
-    "url": "https://github.com/storytold/craft-anything",
     "license": "Apache-2.0",
-    "usage": "Method research for the replication-recipe pack: study/blueprint/mechanics, design tokens, self-test harness and screenshot-diff verification"
+    "usage": "archived with the catalogue; per-record attribution kept in the build inputs"
   },
   {
     "id": "motionsites-public-previews",
-    "repository": "motionsites.ai public preview CDN",
-    "url": "https://motionsites.ai",
     "license": "public media, archived for preview rebuilds",
-    "preview_notice": "Only used for previews of records whose public prompt bodies were already archived; no paywall or login is bypassed",
-    "usage": "Preview rebuilds for the seeded MotionSites catalog (r2.dev / images.higgs.ai / cloudfront hosts)"
+    "usage": "archived with the catalogue; per-record attribution kept in the build inputs"
   },
   {
     "id": "react-bits",
-    "repository": "DavidHDev/react-bits",
-    "url": "https://github.com/DavidHDev/react-bits",
     "license": "MIT + Commons Clause 1.0",
-    "usage": "Pattern provenance for four community effect recipes (text decrypt, image trail, grain gradient, variable proximity). No library code is shipped or copied."
+    "usage": "archived with the catalogue; per-record attribution kept in the build inputs"
   },
   {
     "id": "community-ui-pattern-sources",
-    "repository": "three.js, Motion, Magic UI, Lenis, vanilla-tilt.js, Swup, MDN",
-    "url": "https://github.com/mrdoob/three.js",
     "license": "MIT / W3C standards",
-    "usage": "Pattern provenance for community effect recipes; per-recipe licences are recorded in data/recipe_pack.json and docs/recipe-pack.md"
+    "usage": "archived with the catalogue; per-record attribution kept in the build inputs"
   },
   {
     "id": "awesome-web-prompts",
-    "repository": "DexZane/awesome-web-prompts",
-    "url": "https://github.com/DexZane/awesome-web-prompts",
     "license": "MIT",
-    "preview_notice": "Five records ship a preview.png; sixteen ship a self-contained index.html demo that is rendered to a 1280x800 webp cover with scripts/render_awp_previews.py. No upstream demo code is shipped.",
-    "usage": "Community web-build prompt collection (front-matter + prompt.md), ingested with scripts/import-awesome-web-prompts.js"
+    "usage": "archived with the catalogue; per-record attribution kept in the build inputs"
   },
   {
     "id": "motionsites-public-catalog",
-    "repository": "motionsites.ai public catalog",
-    "url": "https://motionsites.ai",
     "license": "public preview media, archived for preview use",
-    "usage": "Row metadata and preview media from the site's public catalogue projection; prompt bodies are account-gated and are not archived"
+    "usage": "archived with the catalogue; per-record attribution kept in the build inputs"
   },
   {
     "id": "kenje-rebirth-motionsites",
-    "repository": "kenje24/rebirth-motionsitesprompt",
-    "url": "https://github.com/kenje24/rebirth-motionsitesprompt",
     "license": "MIT",
-    "preview_notice": "Preview media is downloaded from the URLs recorded in the repository manifest and converted to a 1280x800 webp cover; no upstream media is hotlinked at runtime.",
-    "usage": "Additional MotionSites-family prompt bodies and previews; HorizonX and 21st.dev re-publications are excluded"
+    "usage": "archived with the catalogue; per-record attribution kept in the build inputs"
   }
 ]

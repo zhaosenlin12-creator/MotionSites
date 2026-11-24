@@ -1,6 +1,6 @@
 {
   "404": {
-    "image_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/hero%20sections/CleanShot_2026-05-15_at_15.46.24_2x_i163nd.png",
+    "image_preview_url": null,
     "video_preview_url": null,
     "description": "深色太空背景，中央展示外星飞船插画，搭配大号404文字和简洁导航链接，营造科幻风格的错误页面。",
     "page_type": "hero",
@@ -10,8 +10,8 @@
     "local_kind": "png"
   },
   "dreamcore-landing": {
-    "image_preview_url": "https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260715_233544_ca678d16-640c-4f90-bf47-26559c8bec4a.png&w=1280&q=85",
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/hero%20sections/animated%20(22).webp",
+    "image_preview_url": null,
+    "video_preview_url": null,
     "size_bytes": 2754990,
     "description": "沉浸式视差滚动单页，深色背景 #0a0608，Viaoda Libre 衬线标题与 Imprima 无衬线正文，两个粘性视口场景随滚动切换。",
     "page_type": "hero",
@@ -22,7 +22,7 @@
   },
   "bold-studio": {
     "image_preview_url": null,
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/hero%20sections/animated%20(10).webp",
+    "video_preview_url": null,
     "size_bytes": 1236098,
     "description": "全屏视频背景的创意机构首页，品牌名“VANGUARD”以粗体大字居中显示，视频循环播放营造沉浸式视觉冲击。",
     "page_type": "hero",
@@ -32,8 +32,8 @@
     "created_at": "2026-06-01T15:59:00+08:00"
   },
   "interactive-discovery": {
-    "image_preview_url": "https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260721_114031_72704ebf-b8c6-4568-99e5-240183a9dcce.png&w=1280&q=85",
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/hero%20sections/animated%20(7).webp",
+    "image_preview_url": null,
+    "video_preview_url": null,
     "size_bytes": 1415336,
     "description": "暗色全屏英雄区，鼠标移动时圆形光斑揭示第二张岩石纹理图像，搭配Lithos品牌标志与地质主题排版。",
     "page_type": "hero",
@@ -43,7 +43,7 @@
     "created_at": "2026-06-11T16:16:52.381685+08:00"
   },
   "prisma-landing": {
-    "image_preview_url": "https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260715_020417_f0fb8494-c926-46a7-afd9-51f2d3f567a1.png&w=1280&q=85",
+    "image_preview_url": null,
     "video_preview_url": null,
     "description": "暗色电影感创意工作室着陆页，暖奶油色文字搭配动态渐入动画，三区块展示品牌故事与特色功能。",
     "page_type": "landing",
@@ -53,8 +53,8 @@
     "local_kind": "webp"
   },
   "3d-jack-portfolio-hero": {
-    "image_preview_url": "https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260715_020402_14047c8b-e116-4ac5-bc7d-1ab18d18a358.png&w=1280&q=85",
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/uploaded/jackportofplio.mp4",
+    "image_preview_url": null,
+    "video_preview_url": null,
     "size_bytes": 2034855,
     "description": "深色主题的3D创作者个人主页，渐变标题文字搭配动态粒子背景，展示Jack的3D作品集与创意服务。",
     "page_type": "landing",
@@ -65,7 +65,7 @@
   },
   "art-landing": {
     "image_preview_url": null,
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/a/mezzanine%20(1).mp4",
+    "video_preview_url": null,
     "size_bytes": 12954852,
     "description": "基于React 19和Framer Motion构建的双区滚动着陆页，视频英雄区搭配红色第二区，使用云朵过渡动画和三种手写字体。",
     "page_type": "landing",
@@ -75,7 +75,7 @@
     "created_at": "2026-05-18T18:19:00+08:00"
   },
   "aetheris-voyage-hero": {
-    "image_preview_url": "https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260715_020834_841011fb-d336-4dcd-bbe6-493a895e4eb4.png&w=1280&q=85",
+    "image_preview_url": null,
     "video_preview_url": null,
     "description": "星际旅行主题着陆页，全屏视频背景搭配液态玻璃设计系统，Framer Motion入场动画营造沉浸式太空体验。",
     "page_type": "hero",
@@ -86,7 +86,7 @@
   },
   "codercrest-hero": {
     "image_preview_url": null,
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/hero%20sections/codercrest-hero-CoycO52t.gif",
+    "video_preview_url": null,
     "size_bytes": 751391,
     "description": "深色全屏HLS视频背景的SaaS首页，视频自动循环播放，中央预留标题和行动按钮区域",
     "page_type": "hero",
@@ -96,8 +96,8 @@
     "created_at": "2026-04-25T16:42:06.91891+08:00"
   },
   "urban-jungle-hero": {
-    "image_preview_url": "https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260715_021124_b20d7db2-0adb-43dc-b502-1b7226d75b69.png&w=1280&q=85",
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/uploaded/urbanjungleArea.mp4",
+    "image_preview_url": null,
+    "video_preview_url": null,
     "size_bytes": 3444733,
     "description": "深色背景的滚动驱动英雄区着陆页，使用GSAP动画和HLS视频流，呈现城市丛林主题的沉浸式视觉体验。",
     "page_type": "landing",
@@ -108,7 +108,7 @@
   },
   "reveal-hero": {
     "image_preview_url": null,
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/hero%20sections/animated%20(26).webp",
+    "video_preview_url": null,
     "size_bytes": 711612,
     "description": "深色渐变背景的现代英雄区，中央大标题搭配发光按钮和图标装饰，适用于科技产品落地页。",
     "page_type": "hero",
@@ -119,7 +119,7 @@
   },
   "modern-agency": {
     "image_preview_url": null,
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/hero%20sections/animated%20(27).webp",
+    "video_preview_url": null,
     "size_bytes": 1279768,
     "description": "深灰底色上叠加动态着色器动画，呈现漩涡与彩色流光玻璃效果，适合设计机构品牌首页",
     "page_type": "landing",
@@ -147,7 +147,7 @@
   },
   "luxury-editorial-ecommerce-design": {
     "image_preview_url": null,
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/hero%20sections/animated%20(77).webp",
+    "video_preview_url": null,
     "size_bytes": 1698620,
     "description": "高端美妆品牌“STRETCH”着陆页，采用分屏全屏英雄区与滚动触发淡入动画，搭配移动端汉堡菜单与悬停按钮动效。",
     "page_type": "hero",
@@ -157,7 +157,7 @@
     "created_at": "2026-05-13T20:00:00+08:00"
   },
   "asme-hero": {
-    "image_preview_url": "https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260715_020600_5ede1c43-1f5f-4d94-9292-4f1725bec0fc.png&w=1280&q=85",
+    "image_preview_url": null,
     "video_preview_url": null,
     "source_url": "https://github.com/giglianepefrei/motionsites.ai-prompt-library/blob/main/giglianepefrei_fetch%5Cprompts/Asme.md",
     "source_path": "giglianepefrei_fetch\\prompts/Asme.md",
@@ -175,7 +175,7 @@
   },
   "max-reed-portfolio": {
     "image_preview_url": null,
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/animated%20(6).webp",
+    "video_preview_url": null,
     "size_bytes": 833806,
     "description": "深色全屏个人作品集头部，展示姓名、职业简介与液态玻璃质感按钮，极简高端设计。",
     "page_type": "hero",
@@ -203,7 +203,7 @@
   },
   "ember-dsgn-hero": {
     "image_preview_url": null,
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/hero%20sections/animated%20(85).webp",
+    "video_preview_url": null,
     "size_bytes": 1479644,
     "description": "深色全屏分栏英雄区，左侧展示品牌名称和设计工作室简介，右侧播放HLS视频背景，搭配极简导航和动画交互。",
     "page_type": "hero",
@@ -213,8 +213,8 @@
     "created_at": "2026-05-06T17:30:32.094993+08:00"
   },
   "solar-energy-hero": {
-    "image_preview_url": "https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260715_020508_3c371d6d-ab71-4f84-b842-7ec3a9a47c7e.png&w=1280&q=85",
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/hero%20sections/animated%20(35).webp",
+    "image_preview_url": null,
+    "video_preview_url": null,
     "size_bytes": 1123092,
     "description": "太阳能品牌全屏英雄区，白天与夜间背景图通过下拉动画切换，搭配Outfit字体和Zap图标，视觉简洁现代。",
     "page_type": "hero",
@@ -225,7 +225,7 @@
   },
   "halo-usd-landing": {
     "image_preview_url": null,
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/hero%20sections/halo-usd-hero-CtMXOklk.gif",
+    "video_preview_url": null,
     "size_bytes": 3624439,
     "description": "高端金融科技风格稳定币产品着陆页，采用浅灰背景与TT Norms Pro字体，包含导航栏与全屏英雄区域。",
     "page_type": "landing",
@@ -253,7 +253,7 @@
   },
   "convix-software-hero": {
     "image_preview_url": null,
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/hero%20sections/convix-software-hero-B6-tdnN6.gif",
+    "video_preview_url": null,
     "size_bytes": 3114760,
     "description": "深灰圆角容器内全屏视频背景，覆盖PR软件品牌名\"Convix Software\"，营造高端科技感",
     "page_type": "hero",
@@ -264,7 +264,7 @@
   },
   "dot-hero": {
     "image_preview_url": null,
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/hero%20sections/dot-hero-Csf49OgS.gif",
+    "video_preview_url": null,
     "size_bytes": 5711491,
     "description": "深色背景的极简品牌首页，中央展示\"Dot\"字样搭配复古诺基亚字体，下方有动态粒子或光点动画，营造科技感与怀旧氛围。",
     "page_type": "hero",
@@ -292,7 +292,7 @@
   },
   "3d-studio-pricing": {
     "image_preview_url": null,
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/prompts%20(i've%20added%20them%20to%20the%20motionsites)/priicnggrow.mp4",
+    "video_preview_url": null,
     "size_bytes": 1602615,
     "description": "全屏视频背景搭配定价卡片叠加，移动端视频右对齐，桌面端居中，营造沉浸式3D工作室展示效果。",
     "page_type": "hero",
@@ -302,8 +302,8 @@
     "created_at": "2026-07-03T19:36:41.855065+08:00"
   },
   "adhd-planner": {
-    "image_preview_url": "https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260715_015343_03370d9a-1518-49af-94a7-19897462cb64.png&w=1280&q=85",
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/a/the%20frisArea.mp4",
+    "image_preview_url": null,
+    "video_preview_url": null,
     "size_bytes": 2015049,
     "description": null,
     "page_type": "hero",
@@ -313,8 +313,8 @@
     "created_at": "2026-07-13T08:06:10.86861+08:00"
   },
   "ai-driving-assistant": {
-    "image_preview_url": "https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260715_015408_a9291a49-383c-42c5-a5d5-1f2f564b70c3.png&w=1280&q=85",
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/a/carteslaArea.mp4",
+    "image_preview_url": null,
+    "video_preview_url": null,
     "size_bytes": 1730617,
     "description": "AI驾驶助手品牌官网，深色科技感背景搭配动态数据可视化，展示智能车载系统界面与实时驾驶分析功能。",
     "page_type": "hero",
@@ -325,7 +325,7 @@
   },
   "ai-interface": {
     "image_preview_url": null,
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/hero%20sections/sniamtedblueish%20site.mp4",
+    "video_preview_url": null,
     "size_bytes": 1660410,
     "description": "深色科幻风格AI产品着陆页，带有动态粒子背景和发光渐变文字，展示智能增强概念。",
     "page_type": "hero",
@@ -335,8 +335,8 @@
     "created_at": "2026-06-17T18:42:00+08:00"
   },
   "ai-meeting-notes": {
-    "image_preview_url": "https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260715_015523_a45a38c5-e9e7-451f-8929-e335297dc9a4.png&w=1280&q=85",
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/ailight123Area.mp4",
+    "image_preview_url": null,
+    "video_preview_url": null,
     "size_bytes": 1835608,
     "description": "AI会议记录SaaS页面，深色渐变背景搭配动态波形图，突出实时语音转文字与智能分析功能。",
     "page_type": "hero",
@@ -346,8 +346,8 @@
     "created_at": "2026-07-10T15:58:56.437824+08:00"
   },
   "ai-workflow-agents": {
-    "image_preview_url": "https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260715_014544_2e2e15ee-0037-456c-b0d1-1c174ef0bc27.png&w=1280&q=85",
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/a/naturezoompuirple.mp4",
+    "image_preview_url": null,
+    "video_preview_url": null,
     "size_bytes": 2297459,
     "description": null,
     "page_type": "hero",
@@ -357,8 +357,8 @@
     "created_at": "2026-07-17T09:43:00+08:00"
   },
   "cargo-group": {
-    "image_preview_url": "https://cdn.dribbble.com/userupload/48202002/file/e19487627a2fbcfdad6761e85d6489e1.png?resize=1024x768&vertical=center",
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/prompts%20(i've%20added%20them%20to%20the%20motionsites)/carArea.mp4",
+    "image_preview_url": null,
+    "video_preview_url": null,
     "size_bytes": 1972821,
     "description": "全屏物流企业英雄区，深色背景配粗体Barlow Condensed字体，汉堡菜单带动画交互。",
     "page_type": "hero",
@@ -369,7 +369,7 @@
   },
   "cargox-mobile": {
     "image_preview_url": null,
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/uploaded/carbo.mp4",
+    "video_preview_url": null,
     "size_bytes": 1531818,
     "description": "深色背景上并排展示三台iPhone模型，每台显示CARGOX物流网站的不同界面，搭配黄色点缀与渐变信息区，适合移动端物流品牌展示。",
     "page_type": "hero",
@@ -379,8 +379,8 @@
     "created_at": "2026-07-08T10:14:21.560202+08:00"
   },
   "celestial-renewal": {
-    "image_preview_url": "https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260715_015443_a695a5b2-dfbf-461e-acc6-a3f5e5d87e86.png&w=1280&q=85",
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/uploaded/planetscrollArea.mp4",
+    "image_preview_url": null,
+    "video_preview_url": null,
     "size_bytes": 1795719,
     "description": "奢华美容品牌“Serene”的着陆页，包含两个全屏区域，采用优雅字体与柔和色调，营造宁静高端的视觉体验。",
     "page_type": "hero",
@@ -391,7 +391,7 @@
   },
   "church-community": {
     "image_preview_url": null,
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/a/churchserice.mp4",
+    "video_preview_url": null,
     "size_bytes": 1109242,
     "description": null,
     "page_type": "hero",
@@ -402,7 +402,7 @@
   },
   "cleantech": {
     "image_preview_url": null,
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/uploaded/earhtling.mp4",
+    "video_preview_url": null,
     "size_bytes": 1621024,
     "description": "深色哑光绿黑背景上，垂直滚动展示四区块的循环科技公司着陆页，搭配Inter字体与流畅动效。",
     "page_type": "hero",
@@ -413,7 +413,7 @@
   },
   "coffee-rewards": {
     "image_preview_url": null,
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/uploaded/coffeorangeArea.mp4",
+    "video_preview_url": null,
     "size_bytes": 551201,
     "description": "手机应用内咖啡会员档案页，深暖色调背景，顶部全宽循环视频，玻璃拟态UI元素，iOS风格设计",
     "page_type": "hero",
@@ -424,7 +424,7 @@
   },
   "cosmos-interface": {
     "image_preview_url": null,
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/uploaded/cosmos%20shtuffArea.mp4",
+    "video_preview_url": null,
     "size_bytes": 4175009,
     "description": "深色宇宙风格品牌着陆页，以动态粒子背景和发光渐变文字突出科技感，用于展示AI增强工具。",
     "page_type": "hero",
@@ -435,7 +435,7 @@
   },
   "cozypaws": {
     "image_preview_url": null,
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/prompts%20(i've%20added%20them%20to%20the%20motionsites)/petsArea.mp4",
+    "video_preview_url": null,
     "size_bytes": 1034611,
     "description": "宠物商店品牌首页，浅薄荷绿背景搭配柔和渐变，中央展示宠物用品与品牌标语，营造温馨自然氛围。",
     "page_type": "hero",
@@ -446,7 +446,7 @@
   },
   "cross-border": {
     "image_preview_url": null,
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/mobile%20apps/freeautomobile.mp4",
+    "video_preview_url": null,
     "size_bytes": 1466477,
     "description": "面向物流公司的移动端着陆页，深色主题，iPhone 15 Pro 模拟框内展示，含动态岛和主页指示器，支持滚动内容。",
     "page_type": "hero",
@@ -456,8 +456,8 @@
     "created_at": "2026-07-06T15:28:54.190673+08:00"
   },
   "f1-racing-hub": {
-    "image_preview_url": "https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260720_023932_018ea051-5b45-4c65-bacf-331ff6923794.png&w=1280&q=85",
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/a/F1%20Racing%20HubArea.mp4",
+    "image_preview_url": null,
+    "video_preview_url": null,
     "size_bytes": 1452467,
     "description": null,
     "page_type": "hero",
@@ -468,7 +468,7 @@
   },
   "financial-suite": {
     "image_preview_url": null,
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/prompts%20(i've%20added%20them%20to%20the%20motionsites)/f4444Area.mp4",
+    "video_preview_url": null,
     "size_bytes": 1353721,
     "description": "深色背景高端信用卡品牌页\"Infinite\"，顶部导航带菜单和用户图标，中央展示卡片产品图及\"Play\"播放按钮，突出金融科技感。",
     "page_type": "hero",
@@ -478,8 +478,8 @@
     "created_at": "2026-07-01T09:15:27.541681+08:00"
   },
   "innovation-lab": {
-    "image_preview_url": "https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260718_102913_d13e11c1-91c9-4617-952b-72c446f8838e.png&w=1280&q=85",
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/a/buttterflies%20purpleArea.mp4",
+    "image_preview_url": null,
+    "video_preview_url": null,
     "size_bytes": 2192026,
     "description": null,
     "page_type": "hero",
@@ -490,7 +490,7 @@
   },
   "innovation-studio": {
     "image_preview_url": null,
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/prompts%20(i've%20added%20them%20to%20the%20motionsites)/Innovation%20Studio.mp4",
+    "video_preview_url": null,
     "size_bytes": 1848469,
     "description": "Nexformo品牌全屏英雄区，深色背景搭配旋转动画图标，极简排版突出品牌名称与标语。",
     "page_type": "hero",
@@ -501,7 +501,7 @@
   },
   "innovation-summit": {
     "image_preview_url": null,
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/mobile%20apps/mobileupArea.mp4",
+    "video_preview_url": null,
     "size_bytes": 1472042,
     "description": "深紫色背景上并排展示三台手机模型，每台屏幕393x873像素带圆角，首页播放全屏循环视频并叠加渐变遮罩，页面加载时屏幕有入场动画。",
     "page_type": "Mobile",
@@ -512,7 +512,7 @@
   },
   "integration-saas": {
     "image_preview_url": null,
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/hero%20sections/wisdongate.mp4",
+    "video_preview_url": null,
     "size_bytes": 1253696,
     "description": "深色渐变覆盖全屏背景视频，中央展示DataVio数据平台品牌名称与标语，营造沉浸式科技感首页。",
     "page_type": "hero",
@@ -523,7 +523,7 @@
   },
   "lead-funnel": {
     "image_preview_url": null,
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/prompts%20(i've%20added%20them%20to%20the%20motionsites)/mux3.mp4",
+    "video_preview_url": null,
     "size_bytes": 2552816,
     "description": "深色背景的销售漏斗英雄区，以渐变文字和动态箭头突出转化路径，适合B2B或SaaS产品展示。",
     "page_type": "hero",
@@ -534,7 +534,7 @@
   },
   "luxury-escapes": {
     "image_preview_url": null,
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/uploaded/traveltobalilight.mp4",
+    "video_preview_url": null,
     "size_bytes": 1840118,
     "description": "深色渐变背景上并排展示两部iPhone手机界面，模拟旅行App的奢华逃脱体验，画面充满电影感与高端氛围。",
     "page_type": "hero",
@@ -544,8 +544,8 @@
     "created_at": "2026-07-07T09:01:33.581213+08:00"
   },
   "mind-body-healing": {
-    "image_preview_url": "https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260716_103110_f5ec790a-0696-4637-a556-a0f3917d92f6.png&w=1920&q=85",
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/a/brainhealthArea.mp4",
+    "image_preview_url": null,
+    "video_preview_url": null,
     "size_bytes": 1249709,
     "description": null,
     "page_type": "hero",
@@ -556,7 +556,7 @@
   },
   "mood-tracker": {
     "image_preview_url": null,
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/mobile%20apps/mobilenature33.mp4",
+    "video_preview_url": null,
     "size_bytes": 2039761,
     "description": "三台iPhone并排展示\"心灵画布\"情绪追踪应用，采用柔和渐变背景与圆润卡片设计，呈现每日情绪记录与可视化分析功能。",
     "page_type": "hero",
@@ -567,7 +567,7 @@
   },
   "movie-premiere": {
     "image_preview_url": null,
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/mobile%20apps/filmstudioArea.mp4",
+    "video_preview_url": null,
     "size_bytes": 1542664,
     "description": "电影首映主题的移动端UI设计，包含iPhone设备模拟框和可交互的卡片滑动效果。",
     "page_type": "hero",
@@ -577,8 +577,8 @@
     "created_at": "2026-07-06T15:16:16.335716+08:00"
   },
   "outdoor-apparel": {
-    "image_preview_url": "https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260715_015613_b0f11f97-f70e-42fe-bc19-c07389d13ade.png&w=1280&q=85",
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/uploaded/gearstoreArea.mp4",
+    "image_preview_url": null,
+    "video_preview_url": null,
     "size_bytes": 2122309,
     "description": "户外技术装备品牌ALP1NE™的单页着陆页，采用Inter Tight粗体字，简洁现代风格，展示户外装备的硬朗与专业感。",
     "page_type": "hero",
@@ -588,8 +588,8 @@
     "created_at": "2026-07-08T12:48:38.468464+08:00"
   },
   "oyla": {
-    "image_preview_url": "https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260715_021211_d1c2db4e-d64f-40c9-bc27-e20ca30b98d1.png&w=1280&q=85",
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/prompts%20(i've%20added%20them%20to%20the%20motionsites)/%20bewpostArea.mp4",
+    "image_preview_url": null,
+    "video_preview_url": null,
     "size_bytes": 1831799,
     "description": "OYLA 奢侈手工珠宝品牌落地页，采用滚动驱动视频擦除、横向产品轮播与视频揭示、双列数据统计及固定页脚渐显，GSAP + ScrollTrigger 驱动所有滚动动画。",
     "page_type": "hero",
@@ -600,7 +600,7 @@
   },
   "pet-products": {
     "image_preview_url": null,
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/uploaded/doggy.mp4",
+    "video_preview_url": null,
     "size_bytes": 871970,
     "description": "宠物用品电商页面，采用柔和渐变背景与圆润卡片布局，展示宠物食品、玩具等商品，营造温馨舒适的购物体验。",
     "page_type": "hero",
@@ -611,7 +611,7 @@
   },
   "place-saver": {
     "image_preview_url": null,
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/a/perplxmobile.mp4",
+    "video_preview_url": null,
     "size_bytes": 1852859,
     "description": "双iPhone设备框架并排展示，白色动态岛和状态栏，中性灰背景自适应缩放，用于旅行应用预览。",
     "page_type": "hero",
@@ -621,8 +621,8 @@
     "created_at": "2026-07-11T10:45:05.464349+08:00"
   },
   "product-studio": {
-    "image_preview_url": "https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260715_015536_ff3d2b0a-1c31-4afd-92bf-29b25c8e033c.png&w=1280&q=85",
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/uploaded/Product-Studio.mp4",
+    "image_preview_url": null,
+    "video_preview_url": null,
     "size_bytes": 1770691,
     "description": "深色背景的数字工作室首页，顶部展示品牌标志与导航，下方呈现工作室核心服务与项目案例，营造科技感与专业氛围。",
     "page_type": "hero",
@@ -632,8 +632,8 @@
     "created_at": "2026-07-09T08:57:35.158028+08:00"
   },
   "prompt-hero": {
-    "image_preview_url": "https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260715_020312_6a21f245-35e1-47c1-a730-090d3ebd518e.png&w=1280&q=85",
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/fe42Area.mp4",
+    "image_preview_url": null,
+    "video_preview_url": null,
     "size_bytes": 2309006,
     "description": "全屏滚动式时尚品牌首页，首屏全幅视频背景搭配悬浮UI，下方黑色面板上浮后展示散落产品网格，结尾白色遮罩浮现“查看”按钮。",
     "page_type": "hero",
@@ -644,7 +644,7 @@
   },
   "remit-race": {
     "image_preview_url": null,
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/mobile%20apps/purpleglobapp.mp4",
+    "video_preview_url": null,
     "size_bytes": 1912332,
     "description": "跨境汇款金融科技品牌页面，深色渐变背景搭配动态粒子效果，突出全球支付与未来感。",
     "page_type": "hero",
@@ -655,7 +655,7 @@
   },
   "skills-lea": {
     "image_preview_url": null,
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/uploaded/linesbrightArea.mp4",
+    "video_preview_url": null,
     "size_bytes": 2689364,
     "description": "深色背景上并排展示3部iPhone手机模型，用于教育类移动应用展示，手机模型在移动端垂直堆叠。",
     "page_type": "hero",
@@ -665,8 +665,8 @@
     "created_at": "2026-07-07T08:16:11.110815+08:00"
   },
   "sky-estate": {
-    "image_preview_url": "https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260715_015601_5e651473-dece-49b0-8402-c098804446a1.png&w=1280&q=85",
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/uploaded/galaxyhome.mp4",
+    "image_preview_url": null,
+    "video_preview_url": null,
     "size_bytes": 2562521,
     "description": "深色宇宙风格的高端地产着陆页，采用视差滚动与分层图像，营造奢华沉浸体验。",
     "page_type": "hero",
@@ -677,7 +677,7 @@
   },
   "stillmind": {
     "image_preview_url": null,
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/prompts%20(i've%20added%20them%20to%20the%20motionsites)/endless.mp4",
+    "video_preview_url": null,
     "size_bytes": 2080361,
     "description": "全屏电影级英雄区块，背景为四层循环视频渐变切换，搭配斜体衬线标志与极简导航，适用于冥想或专注类应用。",
     "page_type": "hero",
@@ -688,7 +688,7 @@
   },
   "subscription-agency": {
     "image_preview_url": null,
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/prompts%20(i've%20added%20them%20to%20the%20motionsites)/agencygradientArea.mp4",
+    "video_preview_url": null,
     "size_bytes": 1010602,
     "description": "极简黑白风格创意机构首页，固定导航栏搭配大标题与副文本，负字距营造现代感，适合品牌展示。",
     "page_type": "hero",
@@ -699,7 +699,7 @@
   },
   "supplement-shop": {
     "image_preview_url": null,
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/uploaded/tablets.mp4",
+    "video_preview_url": null,
     "size_bytes": 963648,
     "description": "iPhone手机壳内的保健品电商产品页，顶部有动态岛和状态栏，中央显示\"TerraElix\"品牌名，整体采用中性灰背景与黑色边框。",
     "page_type": "hero",
@@ -710,7 +710,7 @@
   },
   "tech-forward": {
     "image_preview_url": null,
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/prompts%20(i've%20added%20them%20to%20the%20motionsites)/132Area.mp4",
+    "video_preview_url": null,
     "size_bytes": 818677,
     "description": "全屏黑色极简英雄页，背景为全幅视频，顶部固定导航栏，底部内容区带白色渐变上浮效果。",
     "page_type": "hero",
@@ -721,7 +721,7 @@
   },
   "travel-explorer": {
     "image_preview_url": null,
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/mobile%20apps/natureweb3Area.mp4",
+    "video_preview_url": null,
     "size_bytes": 819149,
     "description": "以白色背景为中心展示真实iPhone手机框架，内置“Roam Beyond Borders”旅行应用，包含首页与探索页两个可切换界面。",
     "page_type": "hero",
@@ -732,7 +732,7 @@
   },
   "travel-journal": {
     "image_preview_url": null,
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/mobile%20apps/balitravel.mp4",
+    "video_preview_url": null,
     "size_bytes": 968060,
     "description": "手机旅行日记应用界面，采用真实iPhone手机壳样式居中展示，深色背景搭配圆角边框和动态岛设计，适合旅行记录场景。",
     "page_type": "hero",
@@ -743,7 +743,7 @@
   },
   "vision-reveal": {
     "image_preview_url": null,
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/hero%20sections/newpsotArea.mp4",
+    "video_preview_url": null,
     "size_bytes": 2245538,
     "description": "深色背景上浮现渐变光晕与动态文字，营造沉浸式品牌展示首页。",
     "page_type": "hero",
@@ -754,7 +754,7 @@
   },
   "wellbeing-os": {
     "image_preview_url": null,
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/prompts%20(i've%20added%20them%20to%20the%20motionsites)/Wellbeing%20OS.mp4",
+    "video_preview_url": null,
     "size_bytes": 1862206,
     "description": "深色视频背景的全屏SaaS产品首屏，中央显示\"flowpath\"品牌名，搭配柔和遮罩层营造沉浸式科技感。",
     "page_type": "hero",
@@ -765,7 +765,7 @@
   },
   "wellness-companion": {
     "image_preview_url": null,
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/mobileArea.mp4",
+    "video_preview_url": null,
     "size_bytes": 441690,
     "description": "手机健康问答界面，采用真实手机模型居中展示，背景为自然风景图，顶部有黑色药丸形灵动岛。",
     "page_type": "hero",
@@ -775,8 +775,8 @@
     "created_at": "2026-07-06T10:07:55.450655+08:00"
   },
   "wellness-device": {
-    "image_preview_url": "https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260715_015320_22766799-c95d-4a0a-8762-cec99a1a1571.png&w=1280&q=85",
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/a/Wellness%20Device%20.mp4",
+    "image_preview_url": null,
+    "video_preview_url": null,
     "size_bytes": 1210072,
     "description": null,
     "page_type": "hero",
@@ -787,7 +787,7 @@
   },
   "3d-collectible-hero": {
     "image_preview_url": null,
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/hero%20sections/animated%20(24).webp",
+    "video_preview_url": null,
     "size_bytes": 1404102,
     "description": "以深色渐变背景展示4款3D角色手办轮播，中央大图搭配两侧半透明卡片，底部安东字体显示“TOONHUB”品牌名。",
     "page_type": "hero",
@@ -797,8 +797,8 @@
     "created_at": "2026-06-26T15:42:00+08:00"
   },
   "3d-story": {
-    "image_preview_url": "https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260715_020536_09255c9a-fd74-4236-832b-da6ba574b681.png&w=1280&q=85",
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/hero%20sections/animated%20(21).webp",
+    "image_preview_url": null,
+    "video_preview_url": null,
     "size_bytes": 903106,
     "description": "3D故事滚动页面，深色背景搭配全屏视频，营造沉浸式叙事体验。",
     "page_type": "hero",
@@ -809,7 +809,7 @@
   },
   "404-planet": {
     "image_preview_url": null,
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/animated%20(7).webp",
+    "video_preview_url": null,
     "size_bytes": 1956200,
     "description": "深色全屏背景视频上，居中显示\"404\"大标题和\"PAGE NOT FOUND\"副标题，顶部导航栏和底部多列页脚清晰可见，营造科技公司错误页面的沉浸感。",
     "page_type": "hero",
@@ -820,7 +820,7 @@
   },
   "aerocore": {
     "image_preview_url": null,
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/hero%20sections/animated%20(34).webp",
+    "video_preview_url": null,
     "size_bytes": 1619442,
     "description": "深色背景的航空引擎品牌着陆页，以动态粒子背景和科技感字体突出推进系统定制服务，适合高端工业展示。",
     "page_type": "hero",
@@ -831,7 +831,7 @@
   },
   "agency-services": {
     "image_preview_url": null,
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/animated%20(14).webp",
+    "video_preview_url": null,
     "size_bytes": 313502,
     "description": "白色卡片式服务区块，圆角顶部设计，深色背景衬托。大号黑色粗体标题居中，服务项以列表形式排列，带有淡入动画效果。",
     "page_type": "hero",
@@ -842,7 +842,7 @@
   },
   "ai-automation": {
     "image_preview_url": null,
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/hero%20sections/animated%20(83).webp",
+    "video_preview_url": null,
     "size_bytes": 1572942,
     "description": "基于AI代理公司\"COGNITRA\"的React落地页，采用Helvetica Now Var字体，包含FadeUp动画组件和lucide-react图标。",
     "page_type": "landing",
@@ -852,8 +852,8 @@
     "created_at": "2026-05-16T15:23:58.228086+08:00"
   },
   "ai-workflow": {
-    "image_preview_url": "https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260721_114043_a70b6aa4-73d7-4b38-9595-baa6a5bad2d3.png&w=1280&q=85",
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/hero%20sections/animated%20(55).webp",
+    "image_preview_url": null,
+    "video_preview_url": null,
     "size_bytes": 2437696,
     "description": "AI工作流平台的品牌英雄区，深色渐变背景搭配发光粒子动效，中央展示产品名称与核心功能按钮。",
     "page_type": "hero",
@@ -864,7 +864,7 @@
   },
   "animated-cards": {
     "image_preview_url": null,
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/animated%20(8).webp",
+    "video_preview_url": null,
     "size_bytes": 554760,
     "description": "3D圆柱形卡片轮播，支持鼠标拖拽旋转和视差倾斜，卡片具有立体厚度效果，适合展示高级银行卡或会员卡。",
     "page_type": "hero",
@@ -875,7 +875,7 @@
   },
   "apex-program-accordion": {
     "image_preview_url": null,
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/animated%20(25).webp",
+    "video_preview_url": null,
     "size_bytes": 126922,
     "description": "深色背景的课程大纲手风琴组件，使用Material Symbols图标和framer-motion动画，展示可展开的课程模块列表。",
     "page_type": "hero",
@@ -886,7 +886,7 @@
   },
   "apex-pulse": {
     "image_preview_url": null,
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/hero%20sections/animated%20(44).webp",
+    "video_preview_url": null,
     "size_bytes": 2945348,
     "description": "深色电影感无人机技术着陆页，滚动视频背景配合渐显动画，呈现科技与军事美学。",
     "page_type": "hero",
@@ -897,7 +897,7 @@
   },
   "arceage-contact-us": {
     "image_preview_url": null,
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/animated%20(20).webp",
+    "video_preview_url": null,
     "size_bytes": 58732,
     "description": "基于React和Tailwind CSS v4构建的深色背景联系表单页面，采用Barlow字体作为主字体，Instrument Serif斜体作为装饰字体，包含内联验证功能，完全适配移动端。",
     "page_type": "hero",
@@ -908,7 +908,7 @@
   },
   "arceage-services": {
     "image_preview_url": null,
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/animated%20(50).webp",
+    "video_preview_url": null,
     "size_bytes": 267228,
     "description": "深色背景上展示服务卡片与图片，采用Barlow无衬线字体和Instrument Serif装饰斜体，全屏响应式布局。",
     "page_type": "hero",
@@ -919,7 +919,7 @@
   },
   "arceage-stats": {
     "image_preview_url": null,
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/animated%20(59).webp",
+    "video_preview_url": null,
     "size_bytes": 435842,
     "description": "深色背景的响应式统计数据显示区，使用Barlow和Instrument Serif字体，展示关键数据指标。",
     "page_type": "hero",
@@ -930,7 +930,7 @@
   },
   "arceage-testimonial": {
     "image_preview_url": null,
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/animated%20(24).webp",
+    "video_preview_url": null,
     "size_bytes": 159376,
     "description": "深色背景上的客户评价轮播组件，采用Barlow字体，包含用户头像、评价文字和星级评分，支持移动端响应式滑动切换。",
     "page_type": "hero",
@@ -941,7 +941,7 @@
   },
   "audio-showcase": {
     "image_preview_url": null,
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/hero%20sections/animated%20(70).webp",
+    "video_preview_url": null,
     "size_bytes": 2722792,
     "description": "深色全屏视频背景上，居中展示黑胶唱片厂牌名\"quietpress\"与播放图标，营造沉浸式音乐品牌氛围。",
     "page_type": "hero",
@@ -952,7 +952,7 @@
   },
   "auramail": {
     "image_preview_url": null,
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/hero%20sections/animated%20(56).webp",
+    "video_preview_url": null,
     "size_bytes": 819342,
     "description": "深色高级感AI邮件应用首页，苹果风格设计，渐变光晕与动态粒子背景，突出品牌科技感。",
     "page_type": "hero",
@@ -962,8 +962,8 @@
     "created_at": "2026-05-07T16:17:43.159245+08:00"
   },
   "aurora-onboard": {
-    "image_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/hero%20sections/CleanShot_2026-05-07_at_15.40.21_2x_kfgapx.png",
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/hero%20sections/CleanShot_2026-05-07_at_15.40.21_2x_kfgapx.png",
+    "image_preview_url": null,
+    "video_preview_url": null,
     "size_bytes": 2112753,
     "description": "Aurora 注册界面，双栏布局，深色背景搭配品牌灰色，使用 Inter 字体，带有平滑过渡动画和图标元素。",
     "page_type": "hero",
@@ -974,7 +974,7 @@
   },
   "axion-about": {
     "image_preview_url": null,
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/animated%20(29).webp",
+    "video_preview_url": null,
     "size_bytes": 248724,
     "description": "白色背景的关于页面，顶部有编号圆圈和“Introducing Axion”标签，下方为标题区域，使用系统字体堆栈和Tailwind CSS构建。",
     "page_type": "hero",
@@ -985,7 +985,7 @@
   },
   "beauty-categories": {
     "image_preview_url": null,
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/animated%20(67).webp",
+    "video_preview_url": null,
     "size_bytes": 1497670,
     "description": "白色背景上三列网格展示面部、身体等美容分类卡片，卡片带视频背景和悬停效果，适合美妆品牌分类导航。",
     "page_type": "hero",
@@ -996,7 +996,7 @@
   },
   "beauty-products": {
     "image_preview_url": null,
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/animated%20(54).webp",
+    "video_preview_url": null,
     "size_bytes": 175434,
     "description": "美妆产品畅销榜单轮播区，米色背景配黑色文字，双标签切换按钮带圆形指示器，垂直居中布局展示商品卡片。",
     "page_type": "hero",
@@ -1007,7 +1007,7 @@
   },
   "bento-grid-stats": {
     "image_preview_url": null,
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/animated%20(58).webp",
+    "video_preview_url": null,
     "size_bytes": 249336,
     "description": "深色背景的Bento网格统计卡片区，展示\"为什么选择我们\"的核心数据，卡片从缩放淡入动画依次出现。",
     "page_type": "hero",
@@ -1018,7 +1018,7 @@
   },
   "bio-active": {
     "image_preview_url": null,
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/hero%20sections/animated%20(30).webp",
+    "video_preview_url": null,
     "size_bytes": 2147854,
     "description": "高端护肤品牌全屏着陆页，黑底极简设计，加载进度条动画，无滚动条沉浸式体验。",
     "page_type": "hero",
@@ -1029,7 +1029,7 @@
   },
   "bio-age-dashboard": {
     "image_preview_url": null,
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/hero%20sections/animated%20(17).webp",
+    "video_preview_url": null,
     "size_bytes": 3289100,
     "description": "全屏视频背景的衰老指数仪表盘首页，顶部导航栏含品牌Logo，深色科技感视觉风格，用于健康监测或生物数据展示。",
     "page_type": "hero",
@@ -1040,7 +1040,7 @@
   },
   "bio-digital": {
     "image_preview_url": null,
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/hero%20sections/animated%20(95).webp",
+    "video_preview_url": null,
     "size_bytes": 413260,
     "description": "极简奢华科技品牌全屏沉浸式首页，白色背景配黑色文字，固定导航栏、循环背景视频、居中双行标题和底部信息栏。",
     "page_type": "hero",
@@ -1051,7 +1051,7 @@
   },
   "bl": {
     "image_preview_url": null,
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/hero%20sections/animated%20(96).webp",
+    "video_preview_url": null,
     "size_bytes": 2693402,
     "description": "以花卉为主题的产品展示着陆页，深色背景搭配优雅衬线字体，营造高级简约的视觉氛围。",
     "page_type": "hero",
@@ -1062,7 +1062,7 @@
   },
   "blog-showcase": {
     "image_preview_url": null,
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/animated%20(22).webp",
+    "video_preview_url": null,
     "size_bytes": 1066046,
     "description": "摄影博客\"Behind the Lens\"展示区，白底居中布局，含灰色\"Blog\"徽章、大标题、副标题及圆角按钮，下方为全宽特色文章卡片。",
     "page_type": "hero",
@@ -1072,8 +1072,8 @@
     "created_at": "2026-04-21T16:20:00+08:00"
   },
   "book-hero": {
-    "image_preview_url": "https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260715_021149_e0b7801d-185f-404a-ad1c-b182e4efe892.png&w=1280&q=85",
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/hero%20sections/animated%20(57).webp",
+    "image_preview_url": null,
+    "video_preview_url": null,
     "size_bytes": 1813622,
     "description": "深色背景上展示书籍封面跑马灯，搭配微光点阵纹理，营造沉浸式图书展示氛围。",
     "page_type": "hero",
@@ -1084,7 +1084,7 @@
   },
   "bookedup": {
     "image_preview_url": null,
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/hero%20sections/animated%20(58).webp",
+    "video_preview_url": null,
     "size_bytes": 713236,
     "description": "BookedUp SaaS 首页，深色标题与浅灰背景形成对比，圆角字体突出品牌感，动效展示核心功能模块。",
     "page_type": "hero",
@@ -1095,7 +1095,7 @@
   },
   "botanical-shadow-about": {
     "image_preview_url": null,
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/animated%20(11).webp",
+    "video_preview_url": null,
     "size_bytes": 395434,
     "description": "深色植物主题的关于页面，全屏展示区以粗体标题和自然纹理背景突出品牌故事，适合创意工作室或环保品牌使用。",
     "page_type": "hero",
@@ -1106,7 +1106,7 @@
   },
   "build-with-us": {
     "image_preview_url": null,
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/hero%20sections/animated%20(45).webp",
+    "video_preview_url": null,
     "size_bytes": 3843312,
     "description": "全屏视频背景的卡片式着陆页，包含联系表单，采用圆角大卡片设计，视频自动播放并覆盖整个卡片区域。",
     "page_type": "hero",
@@ -1117,7 +1117,7 @@
   },
   "cinematic-brand": {
     "image_preview_url": null,
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/hero%20sections/animated%20(65).webp",
+    "video_preview_url": null,
     "size_bytes": 2455484,
     "description": "全屏电影级品牌着陆页，深色背景上循环播放动态视频，中央展示品牌名\"VERTX\"与标语，营造沉浸式视觉冲击。",
     "page_type": "hero",
@@ -1128,7 +1128,7 @@
   },
   "cinematic-landing-page": {
     "image_preview_url": null,
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/hero%20sections/animated%20(66).webp",
+    "video_preview_url": null,
     "size_bytes": 3387902,
     "description": "高端B2B烘焙设备品牌单页，GSAP驱动滚动视差与文字拆分动画，Lottie点缀动态元素。",
     "page_type": "hero",
@@ -1139,7 +1139,7 @@
   },
   "cognitra-feature": {
     "image_preview_url": null,
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/animated%20(72).webp",
+    "video_preview_url": null,
     "size_bytes": 1598116,
     "description": "全屏透明视差区块，背景为固定循环视频，内容垂直居中展示，营造沉浸式视觉体验。",
     "page_type": "hero",
@@ -1150,7 +1150,7 @@
   },
   "cognitra-offer": {
     "image_preview_url": null,
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/animated%20(56).webp",
+    "video_preview_url": null,
     "size_bytes": 261566,
     "description": "灰色全屏服务区块，顶部显示计数标签，中间为标题与说明文字行，下方三列卡片网格展示视频缩略图，整体居中布局。",
     "page_type": "hero",
@@ -1161,7 +1161,7 @@
   },
   "contact-cybernetic": {
     "image_preview_url": null,
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/hero%20sections/animated%20(42).webp",
+    "video_preview_url": null,
     "size_bytes": 815610,
     "description": "深色背景的现代英雄区，包含打字机动画标题和动态光标，适用于科技或创意品牌首页展示。",
     "page_type": "hero",
@@ -1172,7 +1172,7 @@
   },
   "conversion": {
     "image_preview_url": null,
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/hero%20sections/animated%20(84).webp",
+    "video_preview_url": null,
     "size_bytes": 2018206,
     "description": "全屏英雄区，循环背景视频搭配导航栏，居中展示品牌标题与行动按钮，视觉冲击力强。",
     "page_type": "hero",
@@ -1183,7 +1183,7 @@
   },
   "cosmic": {
     "image_preview_url": null,
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/hero%20sections/animated%20(25).webp",
+    "video_preview_url": null,
     "size_bytes": 1075988,
     "description": "暗黑电影风格全屏英雄区，品牌名\"COSMIQ.\"以Anton字体醒目展示，主标题使用Black Mustang字体，搭配渐变星空背景与动态粒子效果，营造沉浸式太空科技氛围。",
     "page_type": "hero",
@@ -1194,7 +1194,7 @@
   },
   "creative-agency": {
     "image_preview_url": null,
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/hero%20sections/animated%20(50).webp",
+    "video_preview_url": null,
     "size_bytes": 2050838,
     "description": "深色全屏视频背景上，巨大粗体标题叠加，搭配社交媒体图标与发送按钮，营造创意机构首页的沉浸式视觉冲击。",
     "page_type": "landing",
@@ -1205,7 +1205,7 @@
   },
   "creative-portfolio": {
     "image_preview_url": null,
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/hero%20sections/animated%20(89).webp",
+    "video_preview_url": null,
     "size_bytes": 3960106,
     "description": "全屏黑色背景的创意作品集首页，中央显示大号白色标题文字，搭配动态视频背景和简洁导航栏，营造沉浸式视觉冲击。",
     "page_type": "hero",
@@ -1216,7 +1216,7 @@
   },
   "creative-studio": {
     "image_preview_url": null,
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/hero%20sections/animated%20(71).webp",
+    "video_preview_url": null,
     "size_bytes": 1293320,
     "description": "深紫色调全屏视频背景的创意工作室首页，包含品牌标志、导航菜单、核心标语和统计数据，采用Inter字体并适配移动端。",
     "page_type": "hero",
@@ -1227,7 +1227,7 @@
   },
   "cursor-follow": {
     "image_preview_url": null,
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/hero%20sections/animated%20(48).webp",
+    "video_preview_url": null,
     "size_bytes": 1323594,
     "description": "全屏视频背景英雄区，鼠标左右移动控制视频进度，顶部显示“Orbis.Nft”标题，营造沉浸式交互体验。",
     "page_type": "hero",
@@ -1238,7 +1238,7 @@
   },
   "cyberpunk-reveal": {
     "image_preview_url": null,
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/hero%20sections/animated%20(31).webp",
+    "video_preview_url": null,
     "size_bytes": 1050620,
     "description": "全屏赛博朋克风格英雄区，两张红调肖像背景交替切换，搭配霓虹光效与菜单图标。",
     "page_type": "hero",
@@ -1249,7 +1249,7 @@
   },
   "cybersecurity-hero": {
     "image_preview_url": null,
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/hero%20sections/animated%20(60).webp",
+    "video_preview_url": null,
     "size_bytes": 725198,
     "description": "深色背景上的网络安全产品落地页，包含渐变粉紫弧线装饰的圆角卡片、动态图标流水线和五枚单色品牌标志。",
     "page_type": "hero",
@@ -1260,7 +1260,7 @@
   },
   "cybersecurity-hero-v2": {
     "image_preview_url": null,
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/hero%20sections/animated%20(62).webp",
+    "video_preview_url": null,
     "size_bytes": 1028150,
     "description": "深色背景的SaaS产品Hero区域，展示数据加密服务\"Xero\"，包含导航栏、居中卡片和品牌标志行，采用高端暗色主题与精致排版。",
     "page_type": "hero",
@@ -1271,7 +1271,7 @@
   },
   "daisy-sweet": {
     "image_preview_url": null,
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/animated%20(43).webp",
+    "video_preview_url": null,
     "size_bytes": 1672752,
     "description": "浅蓝背景的产品展示区与循环视频左右分屏，适用于香水等高端商品展示，移动端自动堆叠为上下布局。",
     "page_type": "hero",
@@ -1282,7 +1282,7 @@
   },
   "daisy-wild": {
     "image_preview_url": null,
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/animated%20(32).webp",
+    "video_preview_url": null,
     "size_bytes": 1596968,
     "description": "左右分屏布局，左侧循环播放产品视频，右侧亮绿色背景展示产品信息，移动端上下堆叠且产品面板在上方。",
     "page_type": "hero",
@@ -1293,7 +1293,7 @@
   },
   "dashboard": {
     "image_preview_url": null,
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/animated%20(63).webp",
+    "video_preview_url": null,
     "size_bytes": 2182006,
     "description": "玻璃质感会议仪表盘，背景视频随明暗主题切换，界面采用毛玻璃卡片与柔和光影，适合活动数据监控。",
     "page_type": "landing",
@@ -1304,7 +1304,7 @@
   },
   "digital-experiences": {
     "image_preview_url": null,
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/hero%20sections/animated%20(40).webp",
+    "video_preview_url": null,
     "size_bytes": 1860854,
     "description": "暗黑电影风格网页设计首页，全屏视差滚动展示液态玻璃质感UI元素，搭配模糊渐变动画营造沉浸式数字体验。",
     "page_type": "hero",
@@ -1315,7 +1315,7 @@
   },
   "eco-intelligence": {
     "image_preview_url": null,
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/hero%20sections/animated%20(41).webp",
+    "video_preview_url": null,
     "size_bytes": 1219930,
     "description": "全屏视频背景搭配超大衬线品牌文字，展示“TERRA NOVA”品牌，移动端自适应，营造沉浸式视觉冲击。",
     "page_type": "hero",
@@ -1326,7 +1326,7 @@
   },
   "editorial-collection-cta": {
     "image_preview_url": null,
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/animated%20(70).webp",
+    "video_preview_url": null,
     "size_bytes": 1061846,
     "description": "全屏视差新闻订阅区，背景视频搭配模糊渐入动画，衬线字体标题与无衬线正文形成优雅对比。",
     "page_type": "hero",
@@ -1337,7 +1337,7 @@
   },
   "email-landing-page": {
     "image_preview_url": null,
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/hero%20sections/animated%20(59).webp",
+    "video_preview_url": null,
     "size_bytes": 1282912,
     "description": "深色玻璃质感邮件客户端\"Aura\"着陆页，配有全屏循环背景视频、渐变光泽标题和macOS风格菜单栏，展示逼真的收件箱界面与液态玻璃卡片设计。",
     "page_type": "landing",
@@ -1348,7 +1348,7 @@
   },
   "equilibrium": {
     "image_preview_url": null,
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/hero%20sections/animated%20(93).webp",
+    "video_preview_url": null,
     "size_bytes": 1060990,
     "description": "全屏单页英雄区，液态玻璃质感叠加循环背景视频，搭配Geist字体与极简图标，营造沉浸科技感。",
     "page_type": "hero",
@@ -1359,7 +1359,7 @@
   },
   "evergreen-finance": {
     "image_preview_url": null,
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/hero%20sections/animated%20(79).webp",
+    "video_preview_url": null,
     "size_bytes": 1079954,
     "description": "深色金融科技着陆页，全屏视频背景搭配流畅动画，展示用户评价与功能亮点，营造专业信任感。",
     "page_type": "landing",
@@ -1370,7 +1370,7 @@
   },
   "faq-cta": {
     "image_preview_url": null,
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/animated%20(61).webp",
+    "video_preview_url": null,
     "size_bytes": 544620,
     "description": "深色渐变背景的CTA卡片，搭配可展开的FAQ手风琴和简洁页脚，适合营销落地页。",
     "page_type": "hero",
@@ -1381,7 +1381,7 @@
   },
   "features": {
     "image_preview_url": null,
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/animated%20(39).webp",
+    "video_preview_url": null,
     "size_bytes": 2096446,
     "description": "航空航天公司EngineTech的能力展示区，浅色背景，包含标题、CTA按钮和3列混合卡片网格（视频、引用、指标、工具跑马灯及联系卡片）。",
     "page_type": "hero",
@@ -1392,7 +1392,7 @@
   },
   "feedback-slider": {
     "image_preview_url": null,
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/animated%20(38).webp",
+    "video_preview_url": null,
     "size_bytes": 370944,
     "description": "用户评价反馈滑块组件，展示\"用户怎么说\"板块，包含评价卡片和导航箭头，采用现代简洁风格。",
     "page_type": "hero",
@@ -1403,7 +1403,7 @@
   },
   "financialfocus": {
     "image_preview_url": null,
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/hero%20sections/animated%20(80).webp",
+    "video_preview_url": null,
     "size_bytes": 835868,
     "description": "金融科技品牌首页，深色背景搭配3D圆柱轮播展示核心数据，营造专业现代感。",
     "page_type": "hero",
@@ -1414,7 +1414,7 @@
   },
   "finflow": {
     "image_preview_url": null,
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/hero%20sections/animated%20(81).webp",
+    "video_preview_url": null,
     "size_bytes": 822670,
     "description": "深色背景上播放全屏去色视频，中央放置金融科技品牌名称与简洁导航，营造专业科技感。",
     "page_type": "hero",
@@ -1425,7 +1425,7 @@
   },
   "flowmate-carousal": {
     "image_preview_url": null,
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/animated%20(65).webp",
+    "video_preview_url": null,
     "size_bytes": 1681178,
     "description": "白色背景卡片轮播组件，顶部有“FlowMate”标题和导航按钮，卡片采用毛玻璃效果和圆角设计，适合展示产品特性或团队介绍。",
     "page_type": "hero",
@@ -1435,8 +1435,8 @@
     "created_at": "2026-06-04T17:16:43.187676+08:00"
   },
   "fun-404-page": {
-    "image_preview_url": "https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260714_014547_d5d9edba-1894-4305-a283-4835ab060947.png&w=1920&q=85",
-    "video_preview_url": "https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260714_015111_b6301eeb-0a2c-4b2d-b9d2-238eaa3c099e.mp4",
+    "image_preview_url": null,
+    "video_preview_url": null,
     "size_bytes": 127812,
     "description": null,
     "page_type": "hero",
@@ -1446,8 +1446,8 @@
     "created_at": "2026-07-14T10:01:33.957887+08:00"
   },
   "future-state": {
-    "image_preview_url": "https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260715_015708_7e3f9127-d5c6-4cb9-b77f-063afab38240.png&w=1280&q=85",
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/hero%20sections/animated%20(20).webp",
+    "image_preview_url": null,
+    "video_preview_url": null,
     "size_bytes": 1389104,
     "description": "暗黑电影风格单页着陆站，展示AI产品NOVA_AI，采用Flexo Soft Medium字体，白色文字与极简交互设计。",
     "page_type": "landing",
@@ -1458,7 +1458,7 @@
   },
   "futuristic-cinematic": {
     "image_preview_url": null,
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/hero%20sections/animated%20(52).webp",
+    "video_preview_url": null,
     "size_bytes": 816816,
     "description": "暗黑全屏英雄区，WebGL着色器动态背景，居中展示品牌名“axentra”，科技感沉浸式视觉冲击。",
     "page_type": "hero",
@@ -1469,7 +1469,7 @@
   },
   "futuristic-tech": {
     "image_preview_url": null,
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/hero%20sections/animated%20(73).webp",
+    "video_preview_url": null,
     "size_bytes": 2118900,
     "description": "深色电影感全屏视差英雄区，背景为循环播放的科技视频，搭配Inter无衬线字体，营造沉浸式未来科技氛围。",
     "page_type": "hero",
@@ -1480,7 +1480,7 @@
   },
   "gateway-portal": {
     "image_preview_url": null,
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/hero%20sections/animated%20(76).webp",
+    "video_preview_url": null,
     "size_bytes": 726178,
     "description": "沉浸式滚动着陆页，包含门户缩放特效、视差鼠标动效和弧形卡片轮播，营造奇幻入口体验。",
     "page_type": "hero",
@@ -1491,7 +1491,7 @@
   },
   "gear-shop": {
     "image_preview_url": null,
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/uploaded/CleanShot%202026-07-09%20at%2009.34.47.png",
+    "video_preview_url": null,
     "size_bytes": 564860,
     "description": "暖珊瑚色耳机电商应用，三台iPhone 15 Pro并排展示，背景有同心圆装饰，适合展示音频产品。",
     "page_type": "hero",
@@ -1502,7 +1502,7 @@
   },
   "glassmorphic-feature-tabs": {
     "image_preview_url": null,
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/animated%20(30).webp",
+    "video_preview_url": null,
     "size_bytes": 685026,
     "description": "毛玻璃质感的功能选项卡组件，深色背景上呈现半透明卡片，搭配圆润图标和流畅动画，适用于产品特色展示区。",
     "page_type": "hero",
@@ -1513,7 +1513,7 @@
   },
   "glitch-pulse": {
     "image_preview_url": null,
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/hero%20sections/animated%20(29).webp",
+    "video_preview_url": null,
     "size_bytes": 1724592,
     "description": "基于Glitch Pulse提示词构建的复古数字风格着陆页，采用固定定位视口内容、滚动驱动HLS视频和打字机效果，以像素字体、青柠绿和电光蓝配色呈现粗野主义美学。",
     "page_type": "hero",
@@ -1524,7 +1524,7 @@
   },
   "global-cta-footer": {
     "image_preview_url": null,
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/animated%20(64).webp",
+    "video_preview_url": null,
     "size_bytes": 1276794,
     "description": "Highframe 无代码工作流SaaS产品着陆页，桌面端与移动端双版本响应式设计，展示智能表单与自动化功能。",
     "page_type": "hero",
@@ -1535,7 +1535,7 @@
   },
   "golden-portal": {
     "image_preview_url": null,
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/hero%20sections/animated%20(13).webp",
+    "video_preview_url": null,
     "size_bytes": 1494012,
     "description": "暗黑电影风格的高端画廊展示页，采用Arsenica衬线字体与Inter无衬线字体搭配，营造奢华艺术氛围。",
     "page_type": "hero",
@@ -1546,7 +1546,7 @@
   },
   "growth-marketing-saas": {
     "image_preview_url": null,
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/hero%20sections/animated%20(28).webp",
+    "video_preview_url": null,
     "size_bytes": 2009134,
     "description": "深色渐变背景上，固定导航栏与全屏视差仪表盘和前景草地图像结合，营造沉浸式增长营销SaaS品牌首页。",
     "page_type": "hero",
@@ -1557,7 +1557,7 @@
   },
   "guardnet-benefits": {
     "image_preview_url": null,
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/animated%20(34).webp",
+    "video_preview_url": null,
     "size_bytes": 180246,
     "description": "深色背景的Guardnet Benefits板块，以白色细体大标题居中展示，下方排列多个简洁的权益卡片，适合企业服务或会员权益介绍页面。",
     "page_type": "hero",
@@ -1568,7 +1568,7 @@
   },
   "guardnet-demo": {
     "image_preview_url": null,
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/animated%20(26).webp",
+    "video_preview_url": null,
     "size_bytes": 702320,
     "description": "深色全屏安全主题展示区，黑色背景配白色文字，采用Futura字体，移动端自适应布局。",
     "page_type": "hero",
@@ -1579,7 +1579,7 @@
   },
   "halo-benefits": {
     "image_preview_url": null,
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/animated%20(13).webp",
+    "video_preview_url": null,
     "size_bytes": 210902,
     "description": "金融科技稳定币落地页的“信息”板块，采用卡片式布局展示优势，配有箭头图标引导交互，全屏响应式设计。",
     "page_type": "hero",
@@ -1590,7 +1590,7 @@
   },
   "halo-use-case": {
     "image_preview_url": null,
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/animated%20(18).webp",
+    "video_preview_url": null,
     "size_bytes": 624212,
     "description": "稳定币落地页的“使用案例”区块，采用React+TypeScript+Tailwind CSS构建，以卡片网格展示应用场景，并配有ArrowRight图标引导点击。",
     "page_type": "hero",
@@ -1601,7 +1601,7 @@
   },
   "health-portal": {
     "image_preview_url": null,
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/hero%20sections/animated%20(12).webp",
+    "video_preview_url": null,
     "size_bytes": 1761604,
     "description": "牙科诊所单页着陆页，包含全屏分区、启动画面和固定导航栏，采用React+Tailwind构建的现代医疗健康界面。",
     "page_type": "hero",
@@ -1612,7 +1612,7 @@
   },
   "immersive-ocean": {
     "image_preview_url": null,
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/hero%20sections/animated%20(14).webp",
+    "video_preview_url": null,
     "size_bytes": 788630,
     "description": "全屏视频背景英雄区，深蓝色海洋主题，顶部导航栏与移动菜单，居中渐显动画标题，适合创意工作室首页展示。",
     "page_type": "hero",
@@ -1623,7 +1623,7 @@
   },
   "impact-ventures": {
     "image_preview_url": null,
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/hero%20sections/animated%20(67).webp",
+    "video_preview_url": null,
     "size_bytes": 1575972,
     "description": "全屏英雄区，使用Instrument Serif和Inter字体，包含动画汉堡菜单，适用于设计工作室首页。",
     "page_type": "hero",
@@ -1634,7 +1634,7 @@
   },
   "intelligentx": {
     "image_preview_url": null,
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/hero%20sections/animated%20(61).webp",
+    "video_preview_url": null,
     "size_bytes": 1987630,
     "description": "以#EDEEF5为背景的现代着陆页，配有毛玻璃导航栏和品牌绿色高亮，展示优雅的排版与动画效果。",
     "page_type": "hero",
@@ -1645,7 +1645,7 @@
   },
   "interactive-portfolio": {
     "image_preview_url": null,
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/hero%20sections/animated%20(15).webp",
+    "video_preview_url": null,
     "size_bytes": 568838,
     "description": "全屏摄影作品集首屏，白色背景上叠加大幅背景图片，搭配简洁导航与文字排版，适合摄影师展示个人作品。",
     "page_type": "hero",
@@ -1656,7 +1656,7 @@
   },
   "interior-features": {
     "image_preview_url": null,
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/animated%20(9).webp",
+    "video_preview_url": null,
     "size_bytes": 1573714,
     "description": "深色模式下，产品卡片从静态照片慢速交叉淡入为循环视频，营造沉浸式交互体验。",
     "page_type": "hero",
@@ -1667,7 +1667,7 @@
   },
   "investment-hero": {
     "image_preview_url": null,
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/hero%20sections/animated%20(9).webp",
+    "video_preview_url": null,
     "size_bytes": 1765002,
     "description": "奢华房地产着陆页，包含闪屏动画、变形导航栏与滚动驱动画廊覆盖层，使用衬线字体展示品牌名称。",
     "page_type": "hero",
@@ -1678,7 +1678,7 @@
   },
   "jewelry-store": {
     "image_preview_url": null,
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/a/CleanShot%202026-07-11%20at%2016.38.46.png",
+    "video_preview_url": null,
     "size_bytes": 600144,
     "description": "珠宝品牌官网，深色背景搭配金色点缀，展示钻石戒指等高端产品，营造奢华优雅的购物氛围。",
     "page_type": "hero",
@@ -1689,7 +1689,7 @@
   },
   "kova-features": {
     "image_preview_url": null,
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/animated%20(28).webp",
+    "video_preview_url": null,
     "size_bytes": 263710,
     "description": "深色背景的金融科技功能展示区，采用卡片网格布局，搭配简洁图标与动效，突出产品核心优势。",
     "page_type": "hero",
@@ -1700,7 +1700,7 @@
   },
   "kova-testimonial": {
     "image_preview_url": null,
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/animated%20(51).webp",
+    "video_preview_url": null,
     "size_bytes": 253608,
     "description": "Kova金融应用的用户评价区块，采用浅色背景搭配深色文字，卡片式布局展示客户反馈，配合淡入动画效果。",
     "page_type": "hero",
@@ -1711,7 +1711,7 @@
   },
   "launchex-about": {
     "image_preview_url": null,
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/animated%20(49).webp",
+    "video_preview_url": null,
     "size_bytes": 172626,
     "description": "深蓝背景的全屏“关于创始人”板块，左侧标题与右侧描述左右并排，简洁现代的企业介绍页面。",
     "page_type": "hero",
@@ -1722,7 +1722,7 @@
   },
   "launchex-submissions": {
     "image_preview_url": null,
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/animated%20(52).webp",
+    "video_preview_url": null,
     "size_bytes": 442324,
     "description": "深灰背景全屏提名提交区，三栏布局：左右为提名卡片列，中间为视频与标题，移动端居中优先显示。",
     "page_type": "hero",
@@ -1733,7 +1733,7 @@
   },
   "layered-depth": {
     "image_preview_url": null,
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/hero%20sections/animated%20(43).webp",
+    "video_preview_url": null,
     "size_bytes": 2487600,
     "description": "建筑事务所“Qelora”的着陆页，包含英雄区和第二区，采用自定义字体与内联样式，呈现简洁现代的视觉风格。",
     "page_type": "landing",
@@ -1744,7 +1744,7 @@
   },
   "learnly": {
     "image_preview_url": null,
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/hero%20sections/animated%20(82).webp",
+    "video_preview_url": null,
     "size_bytes": 1117720,
     "description": "基于Vite+React+TypeScript+Tailwind构建的在线学习平台首页，包含品牌标题、导航菜单和注册按钮，采用简洁现代的设计风格。",
     "page_type": "hero",
@@ -1755,7 +1755,7 @@
   },
   "liquid-glass-cta": {
     "image_preview_url": null,
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/animated%20(17).webp",
+    "video_preview_url": null,
     "size_bytes": 1017062,
     "description": "全屏电影级CTA区域，HLS视频背景搭配液态玻璃质感，居中文字与双按钮，底部极简页脚栏。",
     "page_type": "hero",
@@ -1766,7 +1766,7 @@
   },
   "liquid-glass-features": {
     "image_preview_url": null,
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/animated%20(10).webp",
+    "video_preview_url": null,
     "size_bytes": 850794,
     "description": "深色背景上以液态玻璃质感卡片交替展示功能，文字与图片左右交错排列，营造科技感与视觉层次。",
     "page_type": "hero",
@@ -1777,7 +1777,7 @@
   },
   "lodge-booking-app": {
     "image_preview_url": null,
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/uploaded/d32f8934d738fe4e9378f37412e72071.webp",
+    "video_preview_url": null,
     "size_bytes": 66030,
     "description": "深色背景上漂浮着青绿色液态有机波纹，三台毛玻璃质感手机并排展示奢华木屋预订应用，营造沉浸式高端展示体验。",
     "page_type": "hero",
@@ -1788,7 +1788,7 @@
   },
   "luminara": {
     "image_preview_url": null,
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/hero%20sections/animated%20(98).webp",
+    "video_preview_url": null,
     "size_bytes": 3412330,
     "description": "深色全屏英雄区，大字标题中嵌入斜体装饰词，搭配简洁导航和行动按钮，适合品牌首页展示。",
     "page_type": "hero",
@@ -1799,7 +1799,7 @@
   },
   "luxury-botanical": {
     "image_preview_url": null,
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/hero%20sections/animated%20(36).webp",
+    "video_preview_url": null,
     "size_bytes": 1108298,
     "description": "奢华植物主题着陆页，以深绿与金色为主调，搭配手写字体与精致排版，营造高端自然氛围。",
     "page_type": "landing",
@@ -1810,7 +1810,7 @@
   },
   "luxury-focus": {
     "image_preview_url": null,
-    "video_preview_url": "https://stream.mux.com/MSctoqC17nNR00ZSv5l7fTur9QOwcJHC01uL02uOFs1Vvs.m3u8",
+    "video_preview_url": null,
     "size_bytes": 517553,
     "description": "奢华珠宝品牌单页滚动体验，通过双背景视频切换与文字淡出、产品面板滑入营造电影感叙事。",
     "page_type": "landing",
@@ -1821,7 +1821,7 @@
   },
   "luxury-hero": {
     "image_preview_url": null,
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/hero%20sections/animated%20(8).webp",
+    "video_preview_url": null,
     "size_bytes": 2842722,
     "description": "奢华地产首页，深色背景搭配金色渐变标题，展示高端房产与精致生活场景。",
     "page_type": "hero",
@@ -1832,7 +1832,7 @@
   },
   "luxury-real-estate": {
     "image_preview_url": null,
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/hero%20sections/animated%20(38).webp",
+    "video_preview_url": null,
     "size_bytes": 1082186,
     "description": "深色背景的豪华房地产品牌着陆页，使用深茶色和暖白配色，展示建筑图片和品牌名称。",
     "page_type": "landing",
@@ -1843,7 +1843,7 @@
   },
   "media-card-carousel": {
     "image_preview_url": null,
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/animated%20(45).webp",
+    "video_preview_url": null,
     "size_bytes": 810010,
     "description": "航空航天公司EngineTech的视频故事区，浅色背景，居中标题，水平滚动卡片轨道带滚动吸附、边缘渐隐和悬停/聚焦透明度过渡。",
     "page_type": "hero",
@@ -1854,7 +1854,7 @@
   },
   "minimal-workflow-saas": {
     "image_preview_url": null,
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/hero%20sections/animated%20(86).webp",
+    "video_preview_url": null,
     "size_bytes": 636790,
     "description": "简洁的SaaS工作流管理页面，深色顶部导航栏与浅色内容区形成对比，左侧功能卡片列表搭配右侧视频展示区域。",
     "page_type": "hero",
@@ -1865,7 +1865,7 @@
   },
   "mouse-trail-cta": {
     "image_preview_url": null,
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/animated%20(46).webp",
+    "video_preview_url": null,
     "size_bytes": 203596,
     "description": "大型圆角白色卡片，内含巨大衬线标题和带头像的深色药丸按钮，鼠标在卡片内移动时产生渐隐旋转的图片拖尾效果。",
     "page_type": "hero",
@@ -1876,7 +1876,7 @@
   },
   "mythic-naturecore": {
     "image_preview_url": null,
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/hero%20sections/animated%20(72).webp",
+    "video_preview_url": null,
     "size_bytes": 2390408,
     "description": "以深色背景搭配优雅衬线字体，呈现沉浸式自然主题的3D视差滚动着陆页，带有硬件加速动画和鼠标追踪特效。",
     "page_type": "hero",
@@ -1887,7 +1887,7 @@
   },
   "naturecore-saas": {
     "image_preview_url": null,
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/hero%20sections/animated%20(53).webp",
+    "video_preview_url": null,
     "size_bytes": 2752864,
     "description": "全屏可再生能源公司首页，浅灰背景搭配液态玻璃质感元素，动态图标与流畅动画突出环保科技感。",
     "page_type": "hero",
@@ -1898,7 +1898,7 @@
   },
   "neo-museum": {
     "image_preview_url": null,
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/hero%20sections/animated%20(75).webp",
+    "video_preview_url": null,
     "size_bytes": 1640264,
     "description": "现代博物馆品牌官网，深色极简风格，搭配Inter无衬线字体与流畅的Motion动画，展示展览与藏品信息。",
     "page_type": "hero",
@@ -1909,7 +1909,7 @@
   },
   "neon-logic": {
     "image_preview_url": null,
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/hero%20sections/animated%20(33).webp",
+    "video_preview_url": null,
     "size_bytes": 2008786,
     "description": "黑底白字的全屏视频背景单页，用Space Mono等宽字体展示神经AI界面产品SynapseX，科技感强烈。",
     "page_type": "hero",
@@ -1920,7 +1920,7 @@
   },
   "network-hero": {
     "image_preview_url": null,
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/hero%20sections/animated%20(19).webp",
+    "video_preview_url": null,
     "size_bytes": 1093614,
     "description": "深色全屏背景上，左侧展示营销人才平台文案与按钮，右侧浮动动画圆圈，底部品牌标志滚动条，营造专业科技感。",
     "page_type": "hero",
@@ -1931,7 +1931,7 @@
   },
   "neural-interface": {
     "image_preview_url": null,
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/hero%20sections/animated%20(54).webp",
+    "video_preview_url": null,
     "size_bytes": 1472838,
     "description": "深色科幻风格着陆页，以动态神经网络线条和发光节点为背景，展示前沿AI技术产品。",
     "page_type": "hero",
@@ -1942,7 +1942,7 @@
   },
   "nex-max-upgrade": {
     "image_preview_url": null,
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/animated%20(44).webp",
+    "video_preview_url": null,
     "size_bytes": 649762,
     "description": "固定背景视频循环播放，覆盖磨砂玻璃定价卡片，营造沉浸式高级感。",
     "page_type": "hero",
@@ -1953,7 +1953,7 @@
   },
   "nexacore-control": {
     "image_preview_url": null,
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/animated%20(33).webp",
+    "video_preview_url": null,
     "size_bytes": 342822,
     "description": "HLS视频流播放组件，全屏自适应布局，集成自定义字体与内联SVG图标，适用于移动端视频展示。",
     "page_type": "hero",
@@ -1964,7 +1964,7 @@
   },
   "nexacore-process": {
     "image_preview_url": null,
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/animated%20(47).webp",
+    "video_preview_url": null,
     "size_bytes": 526590,
     "description": "服务流程卡片组件，带悬停动画效果和信任区域展示，采用Mazzard H字体，全响应式设计。",
     "page_type": "hero",
@@ -1975,7 +1975,7 @@
   },
   "nexacore-results": {
     "image_preview_url": null,
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/animated%20(40).webp",
+    "video_preview_url": null,
     "size_bytes": 90052,
     "description": "基于Tailwind CSS构建的精密数据展示区，桌面端采用阶梯式立柱布局，移动端切换为交替流动排版，使用Mazzard H字体呈现专业数据可视化效果。",
     "page_type": "hero",
@@ -1986,7 +1986,7 @@
   },
   "nike-hover": {
     "image_preview_url": null,
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/animated%20(41).webp",
+    "video_preview_url": null,
     "size_bytes": 400252,
     "description": "全屏 Nike 品牌展示区，鼠标移动触发聚光灯动画，揭示隐藏图像，适配移动端。",
     "page_type": "hero",
@@ -1997,7 +1997,7 @@
   },
   "nimbus-demo": {
     "image_preview_url": null,
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/animated%20(57).webp",
+    "video_preview_url": null,
     "size_bytes": 291840,
     "description": "深色主题仪表盘，暖金色文字与半透明玻璃质感元素，搭配无衬线字体，营造高端数据监控界面。",
     "page_type": "hero",
@@ -2008,7 +2008,7 @@
   },
   "nimbus-grid": {
     "image_preview_url": null,
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/hero%20sections/animated%20(63).webp",
+    "video_preview_url": null,
     "size_bytes": 1258628,
     "description": "深色暖调背景的云存储平台着陆页，采用IBM Plex字体，玻璃态卡片与金色点缀，展示安全云存储容量方案。",
     "page_type": "landing",
@@ -2019,7 +2019,7 @@
   },
   "nimbus-ops": {
     "image_preview_url": null,
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/animated%20(27).webp",
+    "video_preview_url": null,
     "size_bytes": 253870,
     "description": "深色背景的交互式3D立方体CTA区块，展示“Nimbus Grid”操作控制层，配有动态爆炸立方体动画和金色渐变文字。",
     "page_type": "hero",
@@ -2030,7 +2030,7 @@
   },
   "nimbus-pricing": {
     "image_preview_url": null,
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/animated%20(12).webp",
+    "video_preview_url": null,
     "size_bytes": 491106,
     "description": "深色背景的定价页面，采用暖金色文字与半透明玻璃质感卡片，展示NimBus服务套餐与价格方案。",
     "page_type": "hero",
@@ -2041,7 +2041,7 @@
   },
   "nimbus-security": {
     "image_preview_url": null,
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/animated%20(68).webp",
+    "video_preview_url": null,
     "size_bytes": 199620,
     "description": "深色背景卡片组件，暖金色文字与边框，采用IBM Plex字体，呈现安全品牌风格。",
     "page_type": "hero",
@@ -2052,7 +2052,7 @@
   },
   "nimbus-sticky-cards": {
     "image_preview_url": null,
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/animated%20(42).webp",
+    "video_preview_url": null,
     "size_bytes": 334024,
     "description": "深色背景的卡片式手风琴界面，使用IBM Plex字体，金色文字与玻璃质感边框，适合展示平台功能模块。",
     "page_type": "hero",
@@ -2063,7 +2063,7 @@
   },
   "no-code-waitlist": {
     "image_preview_url": null,
-    "video_preview_url": "https://stream.mux.com/iY611PYuZ02AKpIzYB4Q1BMpl7W2O3UwqjQm9p01xlmVg.m3u8",
+    "video_preview_url": null,
     "size_bytes": 403112,
     "description": "全屏暗色英雄页，黑色背景搭配全屏视频，玻璃态导航栏居中，邮件输入框引导用户加入等待列表。",
     "page_type": "hero",
@@ -2074,7 +2074,7 @@
   },
   "novadesk-signup": {
     "image_preview_url": null,
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/hero%20sections/animated%20(69).webp",
+    "video_preview_url": null,
     "size_bytes": 1337002,
     "description": "全屏视频背景的注册页面，采用深色半透明玻璃卡片居中布局，左侧展示品牌信息，右侧为注册表单，营造沉浸式科技感体验。",
     "page_type": "hero",
@@ -2085,7 +2085,7 @@
   },
   "obsidian-hero": {
     "image_preview_url": null,
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/hero%20sections/animated%20(18).webp",
+    "video_preview_url": null,
     "size_bytes": 758850,
     "description": "全屏建筑/设计工作室落地页，背景循环视频搭配半透明导航栏，中央醒目标题与两张错落排布的项目卡片。",
     "page_type": "hero",
@@ -2096,7 +2096,7 @@
   },
   "orbis-cards": {
     "image_preview_url": null,
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/animated%20(16).webp",
+    "video_preview_url": null,
     "size_bytes": 678850,
     "description": "深蓝太空背景上，一组液态玻璃质感的卡片，霓虹绿点缀，呈现未来科技感的信息展示界面。",
     "page_type": "hero",
@@ -2107,7 +2107,7 @@
   },
   "orbis-cta": {
     "image_preview_url": null,
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/animated%20(19).webp",
+    "video_preview_url": null,
     "size_bytes": 1734954,
     "description": "深色背景上，霓虹绿渐变按钮与液态玻璃质感容器形成强烈对比，适合游戏或科技品牌号召性用语。",
     "page_type": "hero",
@@ -2118,7 +2118,7 @@
   },
   "orbis-hello": {
     "image_preview_url": null,
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/animated%20(53).webp",
+    "video_preview_url": null,
     "size_bytes": 1478944,
     "description": "深色背景上展示粗体无衬线标题与手写体装饰文字，搭配霓虹绿点缀，营造现代简约的关于页面。",
     "page_type": "hero",
@@ -2129,7 +2129,7 @@
   },
   "organic-odyssey": {
     "image_preview_url": null,
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/hero%20sections/animated%20(51).webp",
+    "video_preview_url": null,
     "size_bytes": 1251618,
     "description": "全屏电影级英雄区，深色背景上循环播放自然主题视频，搭配优雅衬线字体标题与简洁导航元素",
     "page_type": "hero",
@@ -2140,7 +2140,7 @@
   },
   "pixel-grid-hover": {
     "image_preview_url": null,
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/animated%20(15).webp",
+    "video_preview_url": null,
     "size_bytes": 1503362,
     "description": "像素网格悬停效果的项目案例展示区，白色背景黑色文字，鼠标悬停时网格动画暂停。",
     "page_type": "hero",
@@ -2151,7 +2151,7 @@
   },
   "portal": {
     "image_preview_url": null,
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/hero%20sections/animated%20(68).webp",
+    "video_preview_url": null,
     "size_bytes": 897772,
     "description": "密码管理器登陆页英雄区，深色渐变背景搭配动态粒子效果，展示安全锁与数据流动画。",
     "page_type": "hero",
@@ -2162,7 +2162,7 @@
   },
   "portfolio-about": {
     "image_preview_url": null,
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/animated%20(23).webp",
+    "video_preview_url": null,
     "size_bytes": 162734,
     "description": "暗色全屏“关于我”页面，四角装饰月亮等浮动图标，居中展示个人简介，使用Kanit字体，风格简洁现代。",
     "page_type": "hero",
@@ -2173,7 +2173,7 @@
   },
   "projects-catalog": {
     "image_preview_url": null,
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/animated%20(36).webp",
+    "video_preview_url": null,
     "size_bytes": 2193970,
     "description": "深色背景项目展示区，顶部圆角与上层重叠，卡片随滚动堆叠动画排列，字体使用Kanit。",
     "page_type": "hero",
@@ -2184,7 +2184,7 @@
   },
   "prosthetics-hero": {
     "image_preview_url": null,
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/hero%20sections/animated%20(49).webp",
+    "video_preview_url": null,
     "size_bytes": 464936,
     "description": "深色背景上全屏自动播放视频，叠加半透明前景内容，左侧展示品牌标志与简洁导航，适合医疗或科技品牌首页。",
     "page_type": "hero",
@@ -2194,8 +2194,8 @@
     "created_at": "2026-05-09T16:24:02.074264+08:00"
   },
   "pulse-3d": {
-    "image_preview_url": "https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260715_015651_3c345a23-6743-4a37-af44-86da27825b50.png&w=1280&q=85",
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/hero%20sections/animated%20(16).webp",
+    "image_preview_url": null,
+    "video_preview_url": null,
     "size_bytes": 2406130,
     "description": "深色背景的3D滚动着陆页，通过自定义手势控制视频播放、文字淡出和圆柱形面板上升动画，营造沉浸式交互体验。",
     "page_type": "hero",
@@ -2206,7 +2206,7 @@
   },
   "radial-diagram": {
     "image_preview_url": null,
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/animated%20(62).webp",
+    "video_preview_url": null,
     "size_bytes": 305742,
     "description": "深色背景上展示品牌策略的放射状图表，结合流畅滚动动画与DM Sans字体，呈现专业服务流程。",
     "page_type": "hero",
@@ -2217,7 +2217,7 @@
   },
   "retro-futurist": {
     "image_preview_url": null,
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/hero%20sections/animated%20(46).webp",
+    "video_preview_url": null,
     "size_bytes": 715612,
     "description": "全屏复古未来主义创意机构主页，深色背景搭配霓虹光效与粗体标题，展现科技感与艺术张力。",
     "page_type": "hero",
@@ -2228,7 +2228,7 @@
   },
   "rocket-cta": {
     "image_preview_url": null,
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/animated%20(69).webp",
+    "video_preview_url": null,
     "size_bytes": 1055538,
     "description": "深色背景上的毛玻璃CTA区块，使用半透明白色面板和模糊效果，搭配Inter字体和图标，营造现代科技感。",
     "page_type": "hero",
@@ -2239,7 +2239,7 @@
   },
   "rocket-faq": {
     "image_preview_url": null,
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/animated%20(31).webp",
+    "video_preview_url": null,
     "size_bytes": 142890,
     "description": "深色主题FAQ手风琴组件，使用Radix UI实现可折叠问答列表，搭配微动效和Material图标，适用于黑色背景的React应用。",
     "page_type": "hero",
@@ -2250,7 +2250,7 @@
   },
   "rocket-pricing": {
     "image_preview_url": null,
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/animated%20(55).webp",
+    "video_preview_url": null,
     "size_bytes": 107782,
     "description": "深色背景的定价页面，使用卡片式布局展示不同套餐，包含价格、功能列表和行动按钮，适合SaaS产品定价展示。",
     "page_type": "hero",
@@ -2261,7 +2261,7 @@
   },
   "saas-pricing-flow": {
     "image_preview_url": null,
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/animated%20(35).webp",
+    "video_preview_url": null,
     "size_bytes": 1847992,
     "description": "深色全屏背景视频衬托三张定价卡片，支持倒放循环播放，适合SaaS产品展示定价方案。",
     "page_type": "hero",
@@ -2271,8 +2271,8 @@
     "created_at": "2026-05-08T14:55:52.289931+08:00"
   },
   "scroll-landing": {
-    "image_preview_url": "https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260715_020859_b82d25e7-1fb4-482b-a9c4-378198539f62.png&w=1280&q=85",
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/hero%20sections/animated%20(47).webp",
+    "image_preview_url": null,
+    "video_preview_url": null,
     "size_bytes": 3102262,
     "description": "暗色调电影感足球俱乐部首页，滚动触发视频背景，三段式内容布局搭配毛玻璃底部，极简动效设计。",
     "page_type": "hero",
@@ -2283,7 +2283,7 @@
   },
   "scroll-marquee": {
     "image_preview_url": null,
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/animated%20(21).webp",
+    "video_preview_url": null,
     "size_bytes": 1501906,
     "description": "滚动驱动的图片跑马灯，两行GIF在深色背景上反向滚动，营造动态视差效果",
     "page_type": "hero",
@@ -2294,7 +2294,7 @@
   },
   "shop": {
     "image_preview_url": null,
-    "video_preview_url": "https://stream.mux.com/imC5vQh9WbYUhhreIFOOONfNBnQI8AZznRfgZw8p2fA.m3u8",
+    "video_preview_url": null,
     "size_bytes": 556385,
     "description": "野雏菊香水品牌落地页，以白色背景搭配蓝色与青柠色块，包含英雄区、香味发现器和野生雏菊三个模块。",
     "page_type": "landing",
@@ -2305,7 +2305,7 @@
   },
   "solace-sign-in": {
     "image_preview_url": null,
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/animated%20(66).webp",
+    "video_preview_url": null,
     "size_bytes": 3466316,
     "description": "全屏登录页，背景为循环视频，叠加实时像素级液态玻璃折射效果，移动端自适应。",
     "page_type": "hero",
@@ -2316,7 +2316,7 @@
   },
   "speakup-venture-hero": {
     "image_preview_url": null,
-    "video_preview_url": "https://stream.mux.com/a6HPc2D4wiAmo1102yX8WVFt01gzGYkOG1vPVysYykdao.m3u8",
+    "video_preview_url": null,
     "size_bytes": 671295,
     "description": "全屏创意机构主页，深色背景搭配渐变光效，大号衬线标题居中，辅以发光按钮和动态图标导航。",
     "page_type": "hero",
@@ -2327,7 +2327,7 @@
   },
   "stark-minimal-footer": {
     "image_preview_url": null,
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/animated%20(37).webp",
+    "video_preview_url": null,
     "size_bytes": 153836,
     "description": "深黑背景的航空科技页脚，顶部有动态飘移的装饰圆点带，四栏导航网格搭配超大品牌文字和版权信息行。",
     "page_type": "hero",
@@ -2338,7 +2338,7 @@
   },
   "stellar-launch": {
     "image_preview_url": null,
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/hero%20sections/animated%20(88).webp",
+    "video_preview_url": null,
     "size_bytes": 1715616,
     "description": "深色渐变背景的获奖作品展示落地页，包含三个可滚动区块和固定导航元素，采用圆角白色卡片容器与双字体排版系统。",
     "page_type": "landing",
@@ -2349,7 +2349,7 @@
   },
   "synthesis": {
     "image_preview_url": null,
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/hero%20sections/animated%20(91).webp",
+    "video_preview_url": null,
     "size_bytes": 1028236,
     "description": "深海军蓝背景配白色文字，滚动驱动动画的医疗资本品牌落地页，融合现代无衬线与衬线字体。",
     "page_type": "landing",
@@ -2360,7 +2360,7 @@
   },
   "tech-noir-about": {
     "image_preview_url": null,
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/animated%20(48).webp",
+    "video_preview_url": null,
     "size_bytes": 1226648,
     "description": "纯红色全屏背景，居中展示品牌名称与简介，极简科技风格关于页面。",
     "page_type": "hero",
@@ -2371,7 +2371,7 @@
   },
   "technical-specifications": {
     "image_preview_url": null,
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/animated%20(71).webp",
+    "video_preview_url": null,
     "size_bytes": 509582,
     "description": "深色背景的航空技术公司统计板块，包含双栏标题、四标签切换器和带范围指示器的动态水平条形图，切换标签时图表数据更新并重播入场动画。",
     "page_type": "hero",
@@ -2382,7 +2382,7 @@
   },
   "travel-hero": {
     "image_preview_url": null,
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/hero%20sections/animated%20(94).webp",
+    "video_preview_url": null,
     "size_bytes": 1560210,
     "description": "奢华旅行概念落地页，深色背景搭配金色点缀，全屏滚动动画展示目的地图片与文案。",
     "page_type": "landing",
@@ -2393,7 +2393,7 @@
   },
   "unwind-hero": {
     "image_preview_url": null,
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/hero%20sections/animated%20(37).webp",
+    "video_preview_url": null,
     "size_bytes": 1673622,
     "description": "深色全屏视频背景搭配极简导航，营造沉浸式品牌首页，视频自动静音播放，文字使用PP Mori字体展现高级感。",
     "page_type": "hero",
@@ -2404,7 +2404,7 @@
   },
   "vaultshield": {
     "image_preview_url": null,
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/hero%20sections/animated%20(64).webp",
+    "video_preview_url": null,
     "size_bytes": 1049806,
     "description": "深紫色渐变背景的全屏密码管理器首页，中央显示品牌名称与动态安全图标，搭配流畅动画营造专业可信赖感。",
     "page_type": "hero",
@@ -2415,7 +2415,7 @@
   },
   "veloce-cards": {
     "image_preview_url": null,
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/animated%20(60).webp",
+    "video_preview_url": null,
     "size_bytes": 400882,
     "description": "金融科技着陆页的“洞察”统计区块，采用模糊渐入动画，移动端自适应卡片布局。",
     "page_type": "hero",
@@ -2426,7 +2426,7 @@
   },
   "velorix-iic": {
     "image_preview_url": null,
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/hero%20sections/animated%20(87).webp",
+    "video_preview_url": null,
     "size_bytes": 781218,
     "description": "深色背景全屏视频英雄区，顶部导航栏带汉堡菜单，中央大标题与行动按钮，展示科技品牌首页。",
     "page_type": "hero",
@@ -2437,7 +2437,7 @@
   },
   "vertex-sci": {
     "image_preview_url": null,
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/hero%20sections/animated%20(23).webp",
+    "video_preview_url": null,
     "size_bytes": 2832418,
     "description": "暗黑极简科研实验室首页，全屏电影级视觉，固定导航栏，纯黑白配色与等宽字体，移动端适配。",
     "page_type": "hero",
@@ -2448,7 +2448,7 @@
   },
   "visual-hero": {
     "image_preview_url": null,
-    "video_preview_url": "https://stream.mux.com/i9kUFJpB6GrWoe2UXRZG4lIP02g00LGulS1GTVrMMwZI00.m3u8",
+    "video_preview_url": null,
     "size_bytes": 1935274,
     "description": "全屏黑色背景英雄区，使用GSAP动画展示大标题与装饰元素，适合品牌首页视觉焦点。",
     "page_type": "hero",
@@ -2459,7 +2459,7 @@
   },
   "waitlist-hero": {
     "image_preview_url": null,
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/hero%20sections/animated%20(74).webp",
+    "video_preview_url": null,
     "size_bytes": 3322682,
     "description": "深色全屏英雄区，顶部导航栏含品牌名和登录按钮，背景为带点状纹理的炭灰色，整体简洁现代。",
     "page_type": "hero",
@@ -2470,7 +2470,7 @@
   },
   "wanderful-hero": {
     "image_preview_url": null,
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/hero%20sections/animated%20(78).webp",
+    "video_preview_url": null,
     "size_bytes": 941878,
     "description": "全屏旅行品牌英雄区，黑色背景上播放视频，搭配醒目大字标题和动态动画效果。",
     "page_type": "hero",
@@ -2481,7 +2481,7 @@
   },
   "wellness-balance": {
     "image_preview_url": null,
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/hero%20sections/animated%20(11).webp",
+    "video_preview_url": null,
     "size_bytes": 1382660,
     "description": "TerraElix品牌全屏健康产品着陆页，背景图铺满视口，导航栏、逐字动画标题、行动号召区及三栏页脚，适配移动端与桌面端。",
     "page_type": "hero",
@@ -2492,7 +2492,7 @@
   },
   "wellness-hero": {
     "image_preview_url": null,
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/hero%20sections/animated%20(32).webp",
+    "video_preview_url": null,
     "size_bytes": 1542696,
     "description": "全屏视频背景搭配AI健康伴侣品牌展示，视频自动循环播放并覆盖整个视口，中央叠加品牌标语与行动按钮。",
     "page_type": "hero",
@@ -2503,7 +2503,7 @@
   },
   "yoga-coach": {
     "image_preview_url": null,
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/hero%20sections/animated%20(39).webp",
+    "video_preview_url": null,
     "size_bytes": 2793310,
     "description": "全屏瑜伽教练着陆页，无滚动设计，先播放HLS视频背景，结束后第二屏上滑展示课程集合，采用Anton字体和深色主题。",
     "page_type": "hero",
@@ -2513,7 +2513,7 @@
     "created_at": "2026-06-03T21:34:00+08:00"
   },
   "ai-image-generator-ui": {
-    "image_preview_url": "https://res.cloudinary.com/dsdhxhhqh/image/upload/v1778221760/CleanShot_2026-05-08_at_13.28.55_2x_swwnfd.png",
+    "image_preview_url": null,
     "video_preview_url": null,
     "description": "渐变三卡片布局的核心功能展示区，白色背景搭配金色至紫色渐变徽标，适合AI产品营销页面。",
     "page_type": "hero",
@@ -2523,7 +2523,7 @@
     "created_at": "2026-05-08T14:34:13.264809+08:00"
   },
   "modern-hr-dashboard": {
-    "image_preview_url": "https://res.cloudinary.com/dsdhxhhqh/image/upload/v1779784289/CleanShot_2026-05-26_at_15.26.21_2x_f2ytq9.png",
+    "image_preview_url": null,
     "video_preview_url": null,
     "description": "基于React和Tailwind CSS构建的现代HR仪表盘，采用黄色强调色和深灰色文字，包含响应式卡片布局、图表和图标组件，适用于企业人力资源管理数据可视化。",
     "page_type": "hero",
@@ -2533,7 +2533,7 @@
     "created_at": "2026-07-15T16:31:00+08:00"
   },
   "saas-value": {
-    "image_preview_url": "https://res.cloudinary.com/dsdhxhhqh/image/upload/v1781539562/CleanShot_2026-06-15_at_15.31.34_2x_ckhjmj.png",
+    "image_preview_url": null,
     "video_preview_url": null,
     "description": "深色渐变背景上展示SaaS产品\"Questly\"的全屏英雄区，中央突出品牌名称与价值主张，搭配简洁图标与清晰排版。",
     "page_type": "hero",
@@ -2560,7 +2560,7 @@
     "created_at": null
   },
   "akor-security": {
-    "image_preview_url": "https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260322_013248_a74099a8-be2b-4164-a823-eddd5e149fa1.mp4",
+    "image_preview_url": null,
     "video_preview_url": null,
     "source_url": "https://github.com/giglianepefrei/motionsites.ai-prompt-library/blob/main/giglianepefrei_fetch%5Cprompts/AKOR_Security.md",
     "source_path": "giglianepefrei_fetch\\prompts/AKOR_Security.md",
@@ -2577,7 +2577,7 @@
     "created_at": null
   },
   "apex-saa-s": {
-    "image_preview_url": "https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260308_114720_3dabeb9e-2c39-4907-b747-bc3544e2d5b7.mp4",
+    "image_preview_url": null,
     "source_url": "https://github.com/giglianepefrei/motionsites.ai-prompt-library/blob/main/prompts/Apex_SaaS.md",
     "source_path": "prompts/Apex_SaaS.md",
     "source_repo": "giglianepefrei/motionsites.ai-prompt-library",
@@ -2592,7 +2592,7 @@
     "text_len": 5225
   },
   "bloom-ai": {
-    "image_preview_url": "https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260315_073750_51473149-4350-4920-ae24-c8214286f323.mp4",
+    "image_preview_url": null,
     "video_preview_url": null,
     "source_url": "https://github.com/giglianepefrei/motionsites.ai-prompt-library/blob/main/giglianepefrei_fetch%5Cprompts/Bloom_AI.md",
     "source_path": "giglianepefrei_fetch\\prompts/Bloom_AI.md",
@@ -2609,7 +2609,7 @@
     "created_at": null
   },
   "club-x-investors": {
-    "image_preview_url": "https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260323_071151_38c3924f-c312-48af-a196-3fbb80e4226f.mp4",
+    "image_preview_url": null,
     "source_url": "https://github.com/giglianepefrei/motionsites.ai-prompt-library/blob/main/prompts/ClubX_Investors.md",
     "source_path": "prompts/ClubX_Investors.md",
     "source_repo": "giglianepefrei/motionsites.ai-prompt-library",
@@ -2624,7 +2624,7 @@
     "text_len": 2857
   },
   "design-pro-academy": {
-    "image_preview_url": "https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260328_105406_16f4600d-7a92-4292-b96e-b19156c7830a.mp4",
+    "image_preview_url": null,
     "source_url": "https://github.com/giglianepefrei/motionsites.ai-prompt-library/blob/main/prompts/DesignPro_Academy.md",
     "source_path": "prompts/DesignPro_Academy.md",
     "source_repo": "giglianepefrei/motionsites.ai-prompt-library",
@@ -2639,7 +2639,7 @@
     "text_len": 3038
   },
   "evr-ventures": {
-    "image_preview_url": "https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260324_024928_1efd0b0d-6c02-45a8-8847-1030900c4f63.mp4",
+    "image_preview_url": null,
     "video_preview_url": null,
     "source_url": "https://github.com/giglianepefrei/motionsites.ai-prompt-library/blob/main/giglianepefrei_fetch%5Cprompts/EVR_Ventures.md",
     "source_path": "giglianepefrei_fetch\\prompts/EVR_Ventures.md",
@@ -2656,7 +2656,7 @@
     "created_at": null
   },
   "finlytic-ai-agent": {
-    "image_preview_url": "https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260215_121759_424f8e9c-d8bd-4974-9567-52709dfb6842.mp4",
+    "image_preview_url": null,
     "video_preview_url": null,
     "source_url": "https://github.com/giglianepefrei/motionsites.ai-prompt-library/blob/main/giglianepefrei_fetch%5Cprompts/Finlytic_AI_Agent.md",
     "source_path": "giglianepefrei_fetch\\prompts/Finlytic_AI_Agent.md",
@@ -2673,7 +2673,7 @@
     "created_at": null
   },
   "grow-ai-talent-platform": {
-    "image_preview_url": "https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260308_114720_3dabeb9e-2c39-4907-b747-bc3544e2d5b7.mp4",
+    "image_preview_url": null,
     "video_preview_url": null,
     "source_url": "https://github.com/giglianepefrei/motionsites.ai-prompt-library/blob/main/giglianepefrei_fetch%5Cprompts/Grow_AI_Talent_Platform.md",
     "source_path": "giglianepefrei_fetch\\prompts/Grow_AI_Talent_Platform.md",
@@ -2690,7 +2690,7 @@
     "created_at": null
   },
   "hr-saa-s-hero": {
-    "image_preview_url": "https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260302_085640_276ea93b-d7da-4418-a09b-2aa5b490e838.mp4",
+    "image_preview_url": null,
     "source_url": "https://github.com/giglianepefrei/motionsites.ai-prompt-library/blob/main/prompts/HR_SaaS_Hero.md",
     "source_path": "prompts/HR_SaaS_Hero.md",
     "source_repo": "giglianepefrei/motionsites.ai-prompt-library",
@@ -2705,7 +2705,7 @@
     "text_len": 2198
   },
   "mindloop": {
-    "image_preview_url": "https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260324_151826_c7218672-6e92-402c-9e45-f1e0f454bdc4.mp4",
+    "image_preview_url": null,
     "video_preview_url": null,
     "source_url": "https://github.com/giglianepefrei/motionsites.ai-prompt-library/blob/main/giglianepefrei_fetch%5Cprompts/Mindloop.md",
     "source_path": "giglianepefrei_fetch\\prompts/Mindloop.md",
@@ -2722,7 +2722,7 @@
     "created_at": null
   },
   "neo-vision": {
-    "image_preview_url": "https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260314_131232_feeda0b7-d00d-4bfa-a9d5-5d38648a4214.mp4",
+    "image_preview_url": null,
     "source_url": "https://github.com/giglianepefrei/motionsites.ai-prompt-library/blob/main/prompts/NeoVision.md",
     "source_path": "prompts/NeoVision.md",
     "source_repo": "giglianepefrei/motionsites.ai-prompt-library",
@@ -2737,7 +2737,7 @@
     "text_len": 8501
   },
   "neuralyn": {
-    "image_preview_url": "https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260307_083826_e938b29f-a43a-41ec-a153-3d4730578ab8.mp4",
+    "image_preview_url": null,
     "video_preview_url": null,
     "source_url": "https://github.com/giglianepefrei/motionsites.ai-prompt-library/blob/main/giglianepefrei_fetch%5Cprompts/Neuralyn.md",
     "source_path": "giglianepefrei_fetch\\prompts/Neuralyn.md",
@@ -2754,7 +2754,7 @@
     "created_at": null
   },
   "nexora-automation": {
-    "image_preview_url": "https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260319_015952_e1deeb12-8fb7-4071-a42a-60779fc64ab6.mp4",
+    "image_preview_url": null,
     "video_preview_url": null,
     "source_url": "https://github.com/giglianepefrei/motionsites.ai-prompt-library/blob/main/giglianepefrei_fetch%5Cprompts/Nexora_Automation.md",
     "source_path": "giglianepefrei_fetch\\prompts/Nexora_Automation.md",
@@ -2771,7 +2771,7 @@
     "created_at": null
   },
   "nexus-it-solutions": {
-    "image_preview_url": "https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260324_065810_0098b193-498c-4d26-9abd-5db8bf4fb479.mp4",
+    "image_preview_url": null,
     "video_preview_url": null,
     "source_url": "https://github.com/giglianepefrei/motionsites.ai-prompt-library/blob/main/giglianepefrei_fetch%5Cprompts/Nexus_IT_Solutions.md",
     "source_path": "giglianepefrei_fetch\\prompts/Nexus_IT_Solutions.md",
@@ -2788,7 +2788,7 @@
     "created_at": null
   },
   "nickel-payments": {
-    "image_preview_url": "https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260319_192508_4eecde4c-f835-4f4b-b255-eafd1156da99.mp4",
+    "image_preview_url": null,
     "video_preview_url": null,
     "source_url": "https://github.com/giglianepefrei/motionsites.ai-prompt-library/blob/main/giglianepefrei_fetch%5Cprompts/Nickel_Payments.md",
     "source_path": "giglianepefrei_fetch\\prompts/Nickel_Payments.md",
@@ -2805,7 +2805,7 @@
     "created_at": null
   },
   "orbis-nft": {
-    "image_preview_url": "https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260331_045634_e1c98c76-1265-4f5c-882a-4276f2080894.mp4",
+    "image_preview_url": null,
     "video_preview_url": null,
     "source_url": "https://github.com/giglianepefrei/motionsites.ai-prompt-library/blob/main/giglianepefrei_fetch%5Cprompts/Orbis_NFT.md",
     "source_path": "giglianepefrei_fetch\\prompts/Orbis_NFT.md",
@@ -2822,7 +2822,7 @@
     "created_at": null
   },
   "orbit-web3": {
-    "image_preview_url": "https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260325_094440_a3592600-bd1e-49e5-9bce-a73662061d83.mp4",
+    "image_preview_url": null,
     "video_preview_url": null,
     "source_url": "https://github.com/giglianepefrei/motionsites.ai-prompt-library/blob/main/giglianepefrei_fetch%5Cprompts/Orbit_Web3.md",
     "source_path": "giglianepefrei_fetch\\prompts/Orbit_Web3.md",
@@ -2839,7 +2839,7 @@
     "created_at": null
   },
   "planet-orbit": {
-    "image_preview_url": "https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260309_042944_4a2205b7-b061-490a-852b-92d9e9955ce9.mp4",
+    "image_preview_url": null,
     "video_preview_url": null,
     "source_url": "https://github.com/giglianepefrei/motionsites.ai-prompt-library/blob/main/giglianepefrei_fetch%5Cprompts/Planet_Orbit.md",
     "source_path": "giglianepefrei_fetch\\prompts/Planet_Orbit.md",
@@ -2856,7 +2856,7 @@
     "created_at": null
   },
   "power-ai": {
-    "image_preview_url": "https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260328_065045_c44942da-53c6-4804-b734-f9e07fc22e08.mp4",
+    "image_preview_url": null,
     "video_preview_url": null,
     "source_url": "https://github.com/giglianepefrei/motionsites.ai-prompt-library/blob/main/giglianepefrei_fetch%5Cprompts/Power_AI.md",
     "source_path": "giglianepefrei_fetch\\prompts/Power_AI.md",
@@ -2873,7 +2873,7 @@
     "created_at": null
   },
   "railroad.ai": {
-    "image_preview_url": "https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260317_100335_dc625816-c3c1-4b00-b93e-4cb301cf5ea5.mp4",
+    "image_preview_url": null,
     "source_url": "https://github.com/giglianepefrei/motionsites.ai-prompt-library/blob/main/prompts/Railroad.ai.md",
     "source_path": "prompts/Railroad.ai.md",
     "source_repo": "giglianepefrei/motionsites.ai-prompt-library",
@@ -2888,7 +2888,7 @@
     "text_len": 3867
   },
   "sky-elite-private-jets": {
-    "image_preview_url": "https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260328_091828_e240eb17-6edc-4129-ad9d-98678e3fd238.mp4",
+    "image_preview_url": null,
     "source_url": "https://github.com/giglianepefrei/motionsites.ai-prompt-library/blob/main/prompts/SkyElite_Private_Jets.md",
     "source_path": "prompts/SkyElite_Private_Jets.md",
     "source_repo": "giglianepefrei/motionsites.ai-prompt-library",
@@ -2903,7 +2903,7 @@
     "text_len": 2285
   },
   "stellar-ai": {
-    "image_preview_url": "https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260319_165750_358b1e72-c921-48b7-aaac-f200994f32fb.mp4",
+    "image_preview_url": null,
     "video_preview_url": null,
     "source_url": "https://github.com/giglianepefrei/motionsites.ai-prompt-library/blob/main/giglianepefrei_fetch%5Cprompts/Stellar_AI.md",
     "source_path": "giglianepefrei_fetch\\prompts/Stellar_AI.md",
@@ -2920,7 +2920,7 @@
     "created_at": null
   },
   "taskly": {
-    "image_preview_url": "https://future.co/images/homepage/glassy-orb/orb-purple.webm",
+    "image_preview_url": null,
     "video_preview_url": null,
     "source_url": "https://github.com/giglianepefrei/motionsites.ai-prompt-library/blob/main/giglianepefrei_fetch%5Cprompts/Taskly.md",
     "source_path": "giglianepefrei_fetch\\prompts/Taskly.md",
@@ -2937,7 +2937,7 @@
     "created_at": null
   },
   "taskora-saa-s-hero": {
-    "image_preview_url": "https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260201_052917_7fc4e418-3123-40bf-b5ba-394c28eb4b3a.mp4",
+    "image_preview_url": null,
     "source_url": "https://github.com/giglianepefrei/motionsites.ai-prompt-library/blob/main/prompts/Taskora_SaaS_Hero.md",
     "source_path": "prompts/Taskora_SaaS_Hero.md",
     "source_repo": "giglianepefrei/motionsites.ai-prompt-library",
@@ -2952,7 +2952,7 @@
     "text_len": 2748
   },
   "terra-geo-map": {
-    "image_preview_url": "https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260325_092310_5c71bab5-63cd-4a95-9390-cc6a1189d553.mp4",
+    "image_preview_url": null,
     "video_preview_url": null,
     "source_url": "https://github.com/giglianepefrei/motionsites.ai-prompt-library/blob/main/giglianepefrei_fetch%5Cprompts/Terra_Geo_Map.md",
     "source_path": "giglianepefrei_fetch\\prompts/Terra_Geo_Map.md",
@@ -2969,7 +2969,7 @@
     "created_at": null
   },
   "transform-data": {
-    "image_preview_url": "https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260329_050842_be71947f-f16e-4a14-810c-06e83d23ddb5.mp4",
+    "image_preview_url": null,
     "video_preview_url": null,
     "source_url": "https://github.com/giglianepefrei/motionsites.ai-prompt-library/blob/main/giglianepefrei_fetch%5Cprompts/Transform_Data.md",
     "source_path": "giglianepefrei_fetch\\prompts/Transform_Data.md",
@@ -2986,7 +2986,7 @@
     "created_at": null
   },
   "velorah": {
-    "image_preview_url": "https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260314_131748_f2ca2a28-fed7-44c8-b9a9-bd9acdd5ec31.mp4",
+    "image_preview_url": null,
     "video_preview_url": null,
     "source_url": "https://github.com/giglianepefrei/motionsites.ai-prompt-library/blob/main/giglianepefrei_fetch%5Cprompts/Velorah.md",
     "source_path": "giglianepefrei_fetch\\prompts/Velorah.md",
@@ -3003,7 +3003,7 @@
     "created_at": null
   },
   "x-portfolio-hero": {
-    "image_preview_url": "https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260328_102305_3a7cab3b-7a86-46e8-a0f9-6937f035b087.mp4",
+    "image_preview_url": null,
     "source_url": "https://github.com/giglianepefrei/motionsites.ai-prompt-library/blob/main/prompts/xPortfolio_Hero.md",
     "source_path": "prompts/xPortfolio_Hero.md",
     "source_repo": "giglianepefrei/motionsites.ai-prompt-library",
@@ -3018,7 +3018,7 @@
     "text_len": 2874
   },
   "aethera-studio": {
-    "image_preview_url": "https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260328_083109_283f3553-e28f-428b-a723-d639c617eb2b.mp4",
+    "image_preview_url": null,
     "video_preview_url": null,
     "source_url": "https://github.com/giglianepefrei/motionsites.ai-prompt-library/blob/main/giglianepefrei_fetch%5Cprompts/Aethera_Studio.md",
     "source_path": "giglianepefrei_fetch\\prompts/Aethera_Studio.md",
@@ -3034,7 +3034,7 @@
     "created_at": null
   },
   "buzzentic-agency": {
-    "image_preview_url": "https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260306_074215_04640ca7-042c-45d6-bb56-58b1e8a42489.mp4",
+    "image_preview_url": null,
     "video_preview_url": null,
     "source_url": "https://github.com/giglianepefrei/motionsites.ai-prompt-library/blob/main/giglianepefrei_fetch%5Cprompts/Buzzentic_Agency.md",
     "source_path": "giglianepefrei_fetch\\prompts/Buzzentic_Agency.md",
@@ -3050,7 +3050,7 @@
     "created_at": null
   },
   "datacore-booking": {
-    "image_preview_url": "https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260210_031346_d87182fb-b0af-4273-84d1-c6fd17d6bf0f.mp4",
+    "image_preview_url": null,
     "video_preview_url": null,
     "source_url": "https://github.com/giglianepefrei/motionsites.ai-prompt-library/blob/main/giglianepefrei_fetch%5Cprompts/Datacore_Booking.md",
     "source_path": "giglianepefrei_fetch\\prompts/Datacore_Booking.md",
@@ -3066,7 +3066,7 @@
     "created_at": null
   },
   "framelix-3d-studios": {
-    "image_preview_url": "https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260223_060517_9feec9ab-18e4-477a-b034-de5903a67e91.mp4",
+    "image_preview_url": null,
     "video_preview_url": null,
     "source_url": "https://github.com/giglianepefrei/motionsites.ai-prompt-library/blob/main/giglianepefrei_fetch%5Cprompts/Framelix_3D_Studios.md",
     "source_path": "giglianepefrei_fetch\\prompts/Framelix_3D_Studios.md",
@@ -3082,7 +3082,7 @@
     "created_at": null
   },
   "logoisum-video-agency": {
-    "image_preview_url": "https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260228_065522_522e2295-ba22-457e-8fdb-fbcd68109c73.mp4",
+    "image_preview_url": null,
     "video_preview_url": null,
     "source_url": "https://github.com/giglianepefrei/motionsites.ai-prompt-library/blob/main/giglianepefrei_fetch%5Cprompts/Logoisum_Video_Agency.md",
     "source_path": "giglianepefrei_fetch\\prompts/Logoisum_Video_Agency.md",
@@ -3098,7 +3098,7 @@
     "created_at": null
   },
   "new-era-automotive-hero": {
-    "image_preview_url": "https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260213_051817_c7d8ccc6-bfaa-417c-8474-e5cefeea26b4.mp4",
+    "image_preview_url": null,
     "video_preview_url": null,
     "source_url": "https://github.com/giglianepefrei/motionsites.ai-prompt-library/blob/main/giglianepefrei_fetch%5Cprompts/New_Era_Automotive_Hero.md",
     "source_path": "giglianepefrei_fetch\\prompts/New_Era_Automotive_Hero.md",
@@ -3114,7 +3114,7 @@
     "created_at": null
   },
   "new-era-bold-hero": {
-    "image_preview_url": "https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260206_044704_dd33cb15-c23f-4cfc-aa09-a0465d4dcb54.mp4",
+    "image_preview_url": null,
     "video_preview_url": null,
     "source_url": "https://github.com/giglianepefrei/motionsites.ai-prompt-library/blob/main/giglianepefrei_fetch%5Cprompts/New_Era_Bold_Hero.md",
     "source_path": "giglianepefrei_fetch\\prompts/New_Era_Bold_Hero.md",
@@ -3130,7 +3130,7 @@
     "created_at": null
   },
   "space-voyage": {
-    "image_preview_url": "https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260306_115329_5e00c9c5-4d69-49b7-94c3-9c31c60bb644.mp4",
+    "image_preview_url": null,
     "video_preview_url": null,
     "source_url": "https://github.com/giglianepefrei/motionsites.ai-prompt-library/blob/main/giglianepefrei_fetch%5Cprompts/Space_Voyage.md",
     "source_path": "giglianepefrei_fetch\\prompts/Space_Voyage.md",
@@ -3146,7 +3146,7 @@
     "created_at": null
   },
   "sync-ai": {
-    "image_preview_url": "https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260330_153826_e9005cf7-a1c7-4c7d-886f-fea22d644a9c.mp4",
+    "image_preview_url": null,
     "video_preview_url": null,
     "source_url": "https://github.com/giglianepefrei/motionsites.ai-prompt-library/blob/main/giglianepefrei_fetch%5Cprompts/Sync_AI.md",
     "source_path": "giglianepefrei_fetch\\prompts/Sync_AI.md",
@@ -3162,7 +3162,7 @@
     "created_at": null
   },
   "targo-logistics-hero": {
-    "image_preview_url": "https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260227_042027_c4b2f2ea-1c7c-4d6e-9e3d-81a78063703f.mp4",
+    "image_preview_url": null,
     "video_preview_url": null,
     "source_url": "https://github.com/giglianepefrei/motionsites.ai-prompt-library/blob/main/giglianepefrei_fetch%5Cprompts/Targo_Logistics_Hero.md",
     "source_path": "giglianepefrei_fetch\\prompts/Targo_Logistics_Hero.md",
@@ -3178,7 +3178,7 @@
     "created_at": null
   },
   "viktor-portfolio": {
-    "image_preview_url": "https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260304_101127_49ce07b7-f19a-4882-b19c-1d2a27d97ac3.mp4",
+    "image_preview_url": null,
     "video_preview_url": null,
     "source_url": "https://github.com/giglianepefrei/motionsites.ai-prompt-library/blob/main/giglianepefrei_fetch%5Cprompts/Viktor_Portfolio.md",
     "source_path": "giglianepefrei_fetch\\prompts/Viktor_Portfolio.md",
@@ -3194,7 +3194,7 @@
     "created_at": null
   },
   "wealth-video-hero": {
-    "image_preview_url": "https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260207_050933_33e2620d-09cd-43a2-80ef-4cdbb42f4194.mp4",
+    "image_preview_url": null,
     "video_preview_url": null,
     "source_url": "https://github.com/giglianepefrei/motionsites.ai-prompt-library/blob/main/giglianepefrei_fetch%5Cprompts/Wealth_Video_Hero.md",
     "source_path": "giglianepefrei_fetch\\prompts/Wealth_Video_Hero.md",
@@ -3210,7 +3210,7 @@
     "created_at": null
   },
   "web3-eos-hero": {
-    "image_preview_url": "https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260217_030345_246c0224-10a4-422c-b324-070b7c0eceda.mp4",
+    "image_preview_url": null,
     "video_preview_url": null,
     "source_url": "https://github.com/giglianepefrei/motionsites.ai-prompt-library/blob/main/giglianepefrei_fetch%5Cprompts/Web3_EOS_Hero.md",
     "source_path": "giglianepefrei_fetch\\prompts/Web3_EOS_Hero.md",
@@ -3226,7 +3226,7 @@
     "created_at": null
   },
   "weblex-dark-hero": {
-    "image_preview_url": "https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260221_085953_8463b46e-ba85-4bb7-912a-1feaf346e970.mp4",
+    "image_preview_url": null,
     "video_preview_url": null,
     "source_url": "https://github.com/giglianepefrei/motionsites.ai-prompt-library/blob/main/giglianepefrei_fetch%5Cprompts/Weblex_Dark_Hero.md",
     "source_path": "giglianepefrei_fetch\\prompts/Weblex_Dark_Hero.md",
@@ -3243,7 +3243,7 @@
   },
   "community-superdesign-synapse": {
     "image_preview_url": null,
-    "video_preview_url": "prompts/synapse/preview.mp4",
+    "video_preview_url": null,
     "source_url": "https://github.com/superdesigndev/superdesign-prompts/blob/main/prompts/synapse/README.md",
     "try_url": "https://superdesign.dev/library/synapse?utm_source=github&utm_medium=prompt-repo&utm_campaign=prompt-library",
     "source_path": "prompts/synapse/README.md",
@@ -3272,7 +3272,7 @@
   },
   "community-superdesign-card-swap": {
     "image_preview_url": null,
-    "video_preview_url": "prompts/card-swap/preview.mp4",
+    "video_preview_url": null,
     "source_url": "https://github.com/superdesigndev/superdesign-prompts/blob/main/prompts/card-swap/README.md",
     "try_url": "https://superdesign.dev/library/card-swap?utm_source=github&utm_medium=prompt-repo&utm_campaign=prompt-library",
     "source_path": "prompts/card-swap/README.md",
@@ -3301,7 +3301,7 @@
   },
   "community-superdesign-hover-reveal-effect": {
     "image_preview_url": null,
-    "video_preview_url": "prompts/hover-reveal-effect/preview.mp4",
+    "video_preview_url": null,
     "source_url": "https://github.com/superdesigndev/superdesign-prompts/blob/main/prompts/hover-reveal-effect/README.md",
     "try_url": "https://superdesign.dev/library/hover-reveal-effect?utm_source=github&utm_medium=prompt-repo&utm_campaign=prompt-library",
     "source_path": "prompts/hover-reveal-effect/README.md",
@@ -3330,7 +3330,7 @@
   },
   "community-superdesign-scroll-journey-line": {
     "image_preview_url": null,
-    "video_preview_url": "prompts/scroll-journey-line/preview.mp4",
+    "video_preview_url": null,
     "source_url": "https://github.com/superdesigndev/superdesign-prompts/blob/main/prompts/scroll-journey-line/README.md",
     "try_url": "https://superdesign.dev/library/scroll-journey-line?utm_source=github&utm_medium=prompt-repo&utm_campaign=prompt-library",
     "source_path": "prompts/scroll-journey-line/README.md",
@@ -3358,7 +3358,7 @@
   },
   "community-superdesign-gooey-gradient-background": {
     "image_preview_url": null,
-    "video_preview_url": "prompts/gooey-gradient-background/preview.mp4",
+    "video_preview_url": null,
     "source_url": "https://github.com/superdesigndev/superdesign-prompts/blob/main/prompts/gooey-gradient-background/README.md",
     "try_url": "https://superdesign.dev/library/gooey-gradient-background?utm_source=github&utm_medium=prompt-repo&utm_campaign=prompt-library",
     "source_path": "prompts/gooey-gradient-background/README.md",
@@ -3386,7 +3386,7 @@
   },
   "community-superdesign-horizontal-gallery": {
     "image_preview_url": null,
-    "video_preview_url": "prompts/horizontal-gallery/preview.mp4",
+    "video_preview_url": null,
     "source_url": "https://github.com/superdesigndev/superdesign-prompts/blob/main/prompts/horizontal-gallery/README.md",
     "try_url": "https://superdesign.dev/library/horizontal-gallery?utm_source=github&utm_medium=prompt-repo&utm_campaign=prompt-library",
     "source_path": "prompts/horizontal-gallery/README.md",
@@ -3445,7 +3445,7 @@
   },
   "community-superdesign-ghost-cursor": {
     "image_preview_url": null,
-    "video_preview_url": "prompts/ghost-cursor/preview.mp4",
+    "video_preview_url": null,
     "source_url": "https://github.com/superdesigndev/superdesign-prompts/blob/main/prompts/ghost-cursor/README.md",
     "try_url": "https://superdesign.dev/library/ghost-cursor?utm_source=github&utm_medium=prompt-repo&utm_campaign=prompt-library",
     "source_path": "prompts/ghost-cursor/README.md",
@@ -3473,7 +3473,7 @@
   },
   "community-superdesign-interactive-folder": {
     "image_preview_url": null,
-    "video_preview_url": "prompts/interactive-folder/preview.mp4",
+    "video_preview_url": null,
     "source_url": "https://github.com/superdesigndev/superdesign-prompts/blob/main/prompts/interactive-folder/README.md",
     "try_url": "https://superdesign.dev/library/interactive-folder?utm_source=github&utm_medium=prompt-repo&utm_campaign=prompt-library",
     "source_path": "prompts/interactive-folder/README.md",
@@ -3501,7 +3501,7 @@
   },
   "community-superdesign-parallax-stars-background": {
     "image_preview_url": null,
-    "video_preview_url": "prompts/parallax-stars-background/preview.mp4",
+    "video_preview_url": null,
     "source_url": "https://github.com/superdesigndev/superdesign-prompts/blob/main/prompts/parallax-stars-background/README.md",
     "try_url": "https://superdesign.dev/library/parallax-stars-background?utm_source=github&utm_medium=prompt-repo&utm_campaign=prompt-library",
     "source_path": "prompts/parallax-stars-background/README.md",
@@ -3529,7 +3529,7 @@
   },
   "community-superdesign-typing-animation": {
     "image_preview_url": null,
-    "video_preview_url": "prompts/typing-animation/preview.mp4",
+    "video_preview_url": null,
     "source_url": "https://github.com/superdesigndev/superdesign-prompts/blob/main/prompts/typing-animation/README.md",
     "try_url": "https://superdesign.dev/library/typing-animation?utm_source=github&utm_medium=prompt-repo&utm_campaign=prompt-library",
     "source_path": "prompts/typing-animation/README.md",
@@ -3557,7 +3557,7 @@
   },
   "community-superdesign-pill-nav": {
     "image_preview_url": null,
-    "video_preview_url": "prompts/pill-nav/preview.mp4",
+    "video_preview_url": null,
     "source_url": "https://github.com/superdesigndev/superdesign-prompts/blob/main/prompts/pill-nav/README.md",
     "try_url": "https://superdesign.dev/library/pill-nav?utm_source=github&utm_medium=prompt-repo&utm_campaign=prompt-library",
     "source_path": "prompts/pill-nav/README.md",
@@ -3585,7 +3585,7 @@
   },
   "community-superdesign-exploded-view-assembly": {
     "image_preview_url": null,
-    "video_preview_url": "prompts/exploded-view-assembly/preview.mp4",
+    "video_preview_url": null,
     "source_url": "https://github.com/superdesigndev/superdesign-prompts/blob/main/prompts/exploded-view-assembly/README.md",
     "try_url": "https://superdesign.dev/library/exploded-view-assembly?utm_source=github&utm_medium=prompt-repo&utm_campaign=prompt-library",
     "source_path": "prompts/exploded-view-assembly/README.md",
@@ -3614,7 +3614,7 @@
   },
   "community-superdesign-rolodex-text": {
     "image_preview_url": null,
-    "video_preview_url": "prompts/rolodex-text/preview.mp4",
+    "video_preview_url": null,
     "source_url": "https://github.com/superdesigndev/superdesign-prompts/blob/main/prompts/rolodex-text/README.md",
     "try_url": "https://superdesign.dev/library/rolodex-text?utm_source=github&utm_medium=prompt-repo&utm_campaign=prompt-library",
     "source_path": "prompts/rolodex-text/README.md",
@@ -3642,7 +3642,7 @@
   },
   "community-superdesign-lightning-background": {
     "image_preview_url": null,
-    "video_preview_url": "prompts/lightning-background/preview.mp4",
+    "video_preview_url": null,
     "source_url": "https://github.com/superdesigndev/superdesign-prompts/blob/main/prompts/lightning-background/README.md",
     "try_url": "https://superdesign.dev/library/lightning-background?utm_source=github&utm_medium=prompt-repo&utm_campaign=prompt-library",
     "source_path": "prompts/lightning-background/README.md",
@@ -3670,7 +3670,7 @@
   },
   "community-superdesign-hyperspeed-background": {
     "image_preview_url": null,
-    "video_preview_url": "prompts/hyperspeed-background/preview.mp4",
+    "video_preview_url": null,
     "source_url": "https://github.com/superdesigndev/superdesign-prompts/blob/main/prompts/hyperspeed-background/README.md",
     "try_url": "https://superdesign.dev/library/hyperspeed-background?utm_source=github&utm_medium=prompt-repo&utm_campaign=prompt-library",
     "source_path": "prompts/hyperspeed-background/README.md",
@@ -3698,7 +3698,7 @@
   },
   "community-superdesign-light-rays-background": {
     "image_preview_url": null,
-    "video_preview_url": "prompts/light-rays-background/preview.mp4",
+    "video_preview_url": null,
     "source_url": "https://github.com/superdesigndev/superdesign-prompts/blob/main/prompts/light-rays-background/README.md",
     "try_url": "https://superdesign.dev/library/light-rays-background?utm_source=github&utm_medium=prompt-repo&utm_campaign=prompt-library",
     "source_path": "prompts/light-rays-background/README.md",
@@ -3726,7 +3726,7 @@
   },
   "community-superdesign-glow-cursor-button": {
     "image_preview_url": null,
-    "video_preview_url": "prompts/glow-cursor-button/preview.mp4",
+    "video_preview_url": null,
     "source_url": "https://github.com/superdesigndev/superdesign-prompts/blob/main/prompts/glow-cursor-button/README.md",
     "try_url": "https://superdesign.dev/library/glow-cursor-button?utm_source=github&utm_medium=prompt-repo&utm_campaign=prompt-library",
     "source_path": "prompts/glow-cursor-button/README.md",
@@ -3754,7 +3754,7 @@
   },
   "community-superdesign-interactive-card-stack": {
     "image_preview_url": null,
-    "video_preview_url": "prompts/interactive-card-stack/preview.mp4",
+    "video_preview_url": null,
     "source_url": "https://github.com/superdesigndev/superdesign-prompts/blob/main/prompts/interactive-card-stack/README.md",
     "try_url": "https://superdesign.dev/library/interactive-card-stack?utm_source=github&utm_medium=prompt-repo&utm_campaign=prompt-library",
     "source_path": "prompts/interactive-card-stack/README.md",
@@ -3781,7 +3781,7 @@
   },
   "community-superdesign-counter": {
     "image_preview_url": null,
-    "video_preview_url": "prompts/counter/preview.mp4",
+    "video_preview_url": null,
     "source_url": "https://github.com/superdesigndev/superdesign-prompts/blob/main/prompts/counter/README.md",
     "try_url": "https://superdesign.dev/library/counter?utm_source=github&utm_medium=prompt-repo&utm_campaign=prompt-library",
     "source_path": "prompts/counter/README.md",
@@ -3851,8 +3851,8 @@
     "created_at": null
   },
   "personal-showcase": {
-    "image_preview_url": "https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260729_022115_7591fd95-f2b6-495b-bb8c-0491fd4be21b.png&w=1280&q=85",
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/a/showcaseareaArea.mp4",
+    "image_preview_url": null,
+    "video_preview_url": null,
     "source_url": "https://motionsites.ai/p/personal-showcase",
     "source_path": null,
     "source_repo": "zhaosenlin12-creator/MotionSites",
@@ -3867,8 +3867,8 @@
     "created_at": "2026/7/29 10:29:51"
   },
   "digital-director": {
-    "image_preview_url": "https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260727_081359_47fef343-aa4e-43bd-8943-842eb80ef92b.png&w=1280&q=85",
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/a/digitaldirector.mp4",
+    "image_preview_url": null,
+    "video_preview_url": null,
     "source_url": "https://motionsites.ai/p/digital-director",
     "source_path": null,
     "source_repo": "zhaosenlin12-creator/MotionSites",
@@ -3883,8 +3883,8 @@
     "created_at": "2026/7/27 16:23:21"
   },
   "intelligent-operations": {
-    "image_preview_url": "https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260730_075859_52d1611f-168a-44ed-8222-ba56da2755fa.png&w=1920&q=85",
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/a/preview.mp4",
+    "image_preview_url": null,
+    "video_preview_url": null,
     "source_url": "https://motionsites.ai/p/intelligent-operations",
     "source_path": null,
     "source_repo": "zhaosenlin12-creator/MotionSites",
@@ -3899,8 +3899,8 @@
     "created_at": "2026/7/30 16:03:30"
   },
   "skybridge-404": {
-    "image_preview_url": "https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260801_003013_808b8d45-32dd-45db-ac26-4fab86d3a304.png&w=1280&q=85",
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/a/Skybridge%20404Area.mp4",
+    "image_preview_url": null,
+    "video_preview_url": null,
     "source_url": "https://motionsites.ai/p/skybridge-404",
     "source_path": null,
     "source_repo": "zhaosenlin12-creator/MotionSites",
@@ -3915,8 +3915,8 @@
     "created_at": "2026/8/1 08:33:06"
   },
   "synth-mode": {
-    "image_preview_url": "https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd2ol7oe51mr4n9.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2F755a0ca1-974c-431d-a45b-eab83067850d.png&w=1280&q=85",
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/a/synthArea.mp4",
+    "image_preview_url": null,
+    "video_preview_url": null,
     "source_url": "https://motionsites.ai/p/synth-mode",
     "source_path": null,
     "source_repo": "zhaosenlin12-creator/MotionSites",
@@ -3931,8 +3931,8 @@
     "created_at": "2026/8/2 20:03:57"
   },
   "agent-grove": {
-    "image_preview_url": "https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260804_141106_c8be3cad-a733-4e6f-825e-c8aba058f74e.png&w=1280&q=85",
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/a/Agent%20Grove.mp4",
+    "image_preview_url": null,
+    "video_preview_url": null,
     "source_url": "https://motionsites.ai/p/agent-grove",
     "source_path": null,
     "source_repo": "zhaosenlin12-creator/MotionSites",
@@ -3947,8 +3947,8 @@
     "created_at": "2026/8/4 22:19:48"
   },
   "mostar-guide": {
-    "image_preview_url": "https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260730_235046_ab8d2f0d-42b9-4091-8371-cdefe46e898f.png&w=1280&q=85",
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/a/CleanShot%202026-07-31%20at%2007.43.14.mp4",
+    "image_preview_url": null,
+    "video_preview_url": null,
     "source_url": "https://motionsites.ai/p/mostar-guide",
     "source_path": null,
     "source_repo": "zhaosenlin12-creator/MotionSites",
@@ -3963,8 +3963,8 @@
     "created_at": "2026/7/31 07:50:07"
   },
   "talent-collective": {
-    "image_preview_url": "https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260807_033531_2c5d9aeb-d97f-4a16-bef0-2bd850206a50.png&w=1280&q=85",
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/a/teamcollectiveasian.mp4",
+    "image_preview_url": null,
+    "video_preview_url": null,
     "source_url": "https://motionsites.ai/p/talent-collective",
     "source_path": null,
     "source_repo": "zhaosenlin12-creator/MotionSites",
@@ -3979,8 +3979,8 @@
     "created_at": "2026/8/7 11:38:56"
   },
   "intelligence-layer": {
-    "image_preview_url": "https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260811_042402_7cde3e27-e8c9-46aa-b2e6-c93ef1bebe70.png&w=1280&q=85",
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/a/intelligencelayer.mp4",
+    "image_preview_url": null,
+    "video_preview_url": null,
     "source_url": "https://motionsites.ai/p/intelligence-layer",
     "source_path": null,
     "source_repo": "zhaosenlin12-creator/MotionSites",
@@ -3995,8 +3995,8 @@
     "created_at": "2026/8/11 12:29:27"
   },
   "task-engine": {
-    "image_preview_url": "https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260809_113640_639e0652-ad9d-4146-8625-db5c8891ab97.png&w=1920&q=85",
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/Task%20Engine.mp4",
+    "image_preview_url": null,
+    "video_preview_url": null,
     "source_url": "https://motionsites.ai/p/task-engine",
     "source_path": null,
     "source_repo": "zhaosenlin12-creator/MotionSites",
@@ -4011,8 +4011,8 @@
     "created_at": "2026/8/9 20:03:03"
   },
   "autonomous-ops": {
-    "image_preview_url": "https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260811_123228_f4b12424-4766-445c-985a-45333a39db9e.png&w=1280&q=85",
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/a/autonomusopsArea.mp4",
+    "image_preview_url": null,
+    "video_preview_url": null,
     "source_url": "https://motionsites.ai/p/autonomous-ops",
     "source_path": null,
     "source_repo": "zhaosenlin12-creator/MotionSites",
@@ -4027,8 +4027,8 @@
     "created_at": "2026/8/11 20:37:51"
   },
   "orbit-flora": {
-    "image_preview_url": "https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260813_012454_d8334c3b-0475-40ff-a5e6-483fe41af52d.png&w=1280&q=85",
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/Orbit%20Flora.mp4",
+    "image_preview_url": null,
+    "video_preview_url": null,
     "source_url": "https://motionsites.ai/p/orbit-flora",
     "source_path": null,
     "source_repo": "zhaosenlin12-creator/MotionSites",
@@ -4043,8 +4043,8 @@
     "created_at": "2026/8/13 09:27:26"
   },
   "data-signal": {
-    "image_preview_url": "https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260812_015959_62ae1d8c-21a0-4691-b0ca-9ec991f2fe34.png&w=1280&q=85",
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/a/dataflower.mp4",
+    "image_preview_url": null,
+    "video_preview_url": null,
     "source_url": "https://motionsites.ai/p/data-signal",
     "source_path": null,
     "source_repo": "zhaosenlin12-creator/MotionSites",
@@ -4059,8 +4059,8 @@
     "created_at": "2026/8/12 10:02:36"
   },
   "cyber-layer": {
-    "image_preview_url": "https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260811_024436_66cd1670-e0cc-42ae-968a-cb451c01ff8c.png&w=1280&q=85",
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/a/hackerredhero.mp4",
+    "image_preview_url": null,
+    "video_preview_url": null,
     "source_url": "https://motionsites.ai/p/cyber-layer",
     "source_path": null,
     "source_repo": "zhaosenlin12-creator/MotionSites",
@@ -4075,8 +4075,8 @@
     "created_at": "2026/8/11 10:49:25"
   },
   "ai-runtime": {
-    "image_preview_url": "https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260812_054351_d1d948b3-b00a-4bf2-b434-55f373010de8.png&w=1280&q=85",
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/a/circlishdotsArea.mp4",
+    "image_preview_url": null,
+    "video_preview_url": null,
     "source_url": "https://motionsites.ai/p/ai-runtime",
     "source_path": null,
     "source_repo": "zhaosenlin12-creator/MotionSites",
@@ -4091,8 +4091,8 @@
     "created_at": "2026/8/12 14:18:04"
   },
   "real-time-alerts": {
-    "image_preview_url": "https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd2ol7oe51mr4n9.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Ff97e887b-a455-42d1-950c-98cdd971645e.png&w=1280&q=85",
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/falcinsignin.mp4",
+    "image_preview_url": null,
+    "video_preview_url": null,
     "source_url": "https://motionsites.ai/p/real-time-alerts",
     "source_path": null,
     "source_repo": "zhaosenlin12-creator/MotionSites",
@@ -4107,8 +4107,8 @@
     "created_at": "2026/8/13 13:33:31"
   },
   "pet-diagnostics": {
-    "image_preview_url": "https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260814_043241_635a6443-7f35-4afc-bb14-9eab7ba9e6a7.png&w=1280&q=85",
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/a/comparehumanvsdog.mp4",
+    "image_preview_url": null,
+    "video_preview_url": null,
     "source_url": "https://motionsites.ai/p/pet-diagnostics",
     "source_path": null,
     "source_repo": "zhaosenlin12-creator/MotionSites",
@@ -4123,8 +4123,8 @@
     "created_at": "2026/8/14 12:26:35"
   },
   "growth-decisions": {
-    "image_preview_url": "https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260816_024306_e944b7e6-5f27-4960-8e7c-be1edf8ee0db.png&w=1280&q=85",
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/a/mountainsfreesaas.mp4",
+    "image_preview_url": null,
+    "video_preview_url": null,
     "source_url": "https://motionsites.ai/p/growth-decisions",
     "source_path": null,
     "source_repo": "zhaosenlin12-creator/MotionSites",
@@ -4139,8 +4139,8 @@
     "created_at": "2026/8/16 10:45:36"
   },
   "aurex-finance": {
-    "image_preview_url": "https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260815_192259_f95cf2db-af6f-4b84-a678-20b074e50872.png&w=1280&q=85",
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/designs/AurexFinance_Financial_Technology.mp4",
+    "image_preview_url": null,
+    "video_preview_url": null,
     "source_url": "https://motionsites.ai/p/aurex-finance",
     "source_path": null,
     "source_repo": "zhaosenlin12-creator/MotionSites",
@@ -4155,8 +4155,8 @@
     "created_at": "2026/8/18 13:41:54"
   },
   "agent-wave": {
-    "image_preview_url": "https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260818_075101_ea68beb6-4f5a-4e14-9dd0-6f07c6a8e27c.png&w=1280&q=85",
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/a/darkgradientwhitelineArea.mp4",
+    "image_preview_url": null,
+    "video_preview_url": null,
     "source_url": "https://motionsites.ai/p/agent-wave",
     "source_path": null,
     "source_repo": "zhaosenlin12-creator/MotionSites",
@@ -4171,8 +4171,8 @@
     "created_at": "2026/8/18 15:53:04"
   },
   "palomar-labs": {
-    "image_preview_url": "https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260820_090400_e50eec87-5836-4826-85bb-ccdf9a7939cd.png&w=1920&q=85",
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/designs/palomar_labs_ai_infrastructure.mp4",
+    "image_preview_url": null,
+    "video_preview_url": null,
     "source_url": "https://motionsites.ai/p/palomar-labs",
     "source_path": null,
     "source_repo": "zhaosenlin12-creator/MotionSites",
@@ -4187,8 +4187,8 @@
     "created_at": "2026/8/21 20:45:21"
   },
   "scaling-platform": {
-    "image_preview_url": "https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260823_072718_54380a25-d4e6-4eec-bc9d-198a0159595d.png&w=1920&q=85",
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/animdevArea.mp4",
+    "image_preview_url": null,
+    "video_preview_url": null,
     "source_url": "https://motionsites.ai/p/scaling-platform",
     "source_path": null,
     "source_repo": "zhaosenlin12-creator/MotionSites",
@@ -4203,8 +4203,8 @@
     "created_at": "2026/8/23 15:30:43"
   },
   "quantum-lucid": {
-    "image_preview_url": "https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260826_212818_9608c37c-b0d5-4693-85e0-988ec5249c33.png&w=1280&q=85",
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/designs/quantum_lucid_ai_saas.mp4",
+    "image_preview_url": null,
+    "video_preview_url": null,
     "source_url": "https://motionsites.ai/p/quantum-lucid",
     "source_path": null,
     "source_repo": "zhaosenlin12-creator/MotionSites",
@@ -4219,8 +4219,8 @@
     "created_at": "2026/8/27 12:41:56"
   },
   "space-planet": {
-    "image_preview_url": "https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260827_214822_d89eea51-6973-4221-bfdb-85e06b20c25e.png&w=1280&q=85",
-    "video_preview_url": "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/designs/space_planet_technology.mp4",
+    "image_preview_url": null,
+    "video_preview_url": null,
     "source_url": "https://motionsites.ai/p/space-planet",
     "source_path": null,
     "source_repo": "zhaosenlin12-creator/MotionSites",
