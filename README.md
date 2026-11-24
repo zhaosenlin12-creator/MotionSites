@@ -1,12 +1,12 @@
 # MotionSites Prompts — A Curated Library of Motion-Driven UI
 
-> A progressively-loaded, **offline-first** catalog of **966 motion-driven UI resources** — every card has a local preview **and its complete prompt body**. Browse, search, copy, and export every prompt locally. **No login, no third-party tracking, no paywall, no external CDN at load time.**
+> A progressively-loaded, **offline-first** catalog of **968 motion-driven UI resources** — every card has a local preview **and its complete prompt body**. Browse, search, copy, and export every prompt locally. **No login, no third-party tracking, no paywall, no external CDN at load time.**
 
 ## What is inside
 
-- **966 curated resources** — each one ships a working local preview and its full prompt body; nothing is listed that you cannot read
-- **966 full prompt bodies** — copy to clipboard or export as a Markdown file
-- **486 MotionSites records** — recovered bodies, plus 190 free prompts archived from the site's own public body endpoint, each with locally stored preview media
+- **968 curated resources** — each one ships a working local preview and its full prompt body; nothing is listed that you cannot read
+- **968 full prompt bodies** — copy to clipboard or export as a Markdown file
+- **488 MotionSites records** — recovered bodies, plus 190 free prompts archived from the site's own public body endpoint, each with locally stored preview media
 - **480 community records** — 104 Superdesign, 20 awesome-web-prompts, 360 from the MIT `kenje24/rebirth-motionsitesprompt` manifest (including its HorizonX and 21st.dev captures) and 21 original picks, each with per-record attribution
 - **842 image previews** and **124 looping video previews**, all served from this repository
 - **Multi-dimensional filters**: category, type, source, media format
@@ -189,9 +189,9 @@ The first push after a long offline stretch may take a few minutes if the commit
 ## Counts (live)
 
 ```
-Total         966
-With text     966   (every card has a full body)
-Images        842   (webp / png / jpg previews)
+Total         968
+With text     968   (every card has a full body)
+Images        844   (webp / png / jpg previews)
 Videos        124   (mp4 loops)
 Concepts        0   (every card has a real preview)
 Motionsites   486   (source_kind=motionsites)
@@ -199,7 +199,7 @@ Community     480   (source_kind=community)
 Categories     60   (canonical labels)
 ```
 
-The math always sums: `842 + 124 + 0 = 966` and `486 + 480 = 966`. `node scripts/audit-catalog.js` re-checks both.
+The math always sums: `844 + 124 + 0 = 968` and `488 + 480 = 968`. `node scripts/audit-catalog.js` re-checks both.
 
 ---
 
