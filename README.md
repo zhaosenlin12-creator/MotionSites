@@ -1,14 +1,14 @@
 # MotionSites Prompts — A Curated Library of Motion-Driven UI
 
-> A progressively-loaded, **offline-first** catalog of **590 motion-driven UI resources** — every card has a local preview **and its complete prompt body**. Browse, search, copy, and export every prompt locally. **No login, no third-party tracking, no paywall, no external CDN at load time.**
+> A progressively-loaded, **offline-first** catalog of **776 motion-driven UI resources** — every card has a local preview **and its complete prompt body**. Browse, search, copy, and export every prompt locally. **No login, no third-party tracking, no paywall, no external CDN at load time.**
 
 ## What is inside
 
-- **590 curated resources** — each one ships a working local preview and its full prompt body; nothing is listed that you cannot read
-- **590 full prompt bodies** — copy to clipboard or export as a Markdown file
+- **776 curated resources** — each one ships a working local preview and its full prompt body; nothing is listed that you cannot read
+- **776 full prompt bodies** — copy to clipboard or export as a Markdown file
 - **296 MotionSites records** — recovered bodies plus locally stored preview media
-- **294 community records** — 104 Superdesign, 20 awesome-web-prompts, 149 from the MIT `kenje24/rebirth-motionsitesprompt` manifest and 21 original picks, each with per-record attribution
-- **466 image previews** and **124 looping video previews**, all served from this repository
+- **480 community records** — 104 Superdesign, 20 awesome-web-prompts, 360 from the MIT `kenje24/rebirth-motionsitesprompt` manifest (including its HorizonX and 21st.dev captures) and 21 original picks, each with per-record attribution
+- **652 image previews** and **124 looping video previews**, all served from this repository
 - **Multi-dimensional filters**: category, type, source, media format
 - **Top-9 category chips** with live counts from the lite payload
 - **Combined search** over title / description / prompt text / tags / source repo / file path
@@ -189,17 +189,17 @@ The first push after a long offline stretch may take a few minutes if the commit
 ## Counts (live)
 
 ```
-Total         590
-With text     590   (every card has a full body)
-Images        466   (webp / png / jpg previews)
+Total         776
+With text     776   (every card has a full body)
+Images        652   (webp / png / jpg previews)
 Videos        124   (mp4 loops)
 Concepts        0   (every card has a real preview)
 Motionsites   296   (source_kind=motionsites)
-Community     294   (source_kind=community)
+Community     480   (source_kind=community)
 Categories     60   (canonical labels)
 ```
 
-The math always sums: `466 + 124 + 0 = 590` and `296 + 294 = 590`. `node scripts/audit-catalog.js` re-checks both.
+The math always sums: `652 + 124 + 0 = 776` and `296 + 480 = 776`. `node scripts/audit-catalog.js` re-checks both.
 
 ---
 
@@ -207,6 +207,7 @@ The math always sums: `466 + 124 + 0 = 590` and `296 + 294 = 590`. `node scripts
 
 | Version | Date | Highlights |
 |---|---|---|
+| 1.6.2 | 2026-11-24 | **+186 resources** (590 → 776): retried the media that failed in 1.6.1 and imported the `kenje24` manifest's HorizonX (92) and 21st.dev (92) captures, each with its full prompt body and a locally rendered 16:10 cover. Media that still cannot be fetched (34 mux thumbnails, 403/404 hosts) stays out rather than shipping a card without a preview. |
 | 1.6.1 | 2026-11-24 | **+149 resources** from the MIT `kenje24/rebirth-motionsitesprompt` manifest (catalogue 441 → 590, community 145 → 294): full prompt bodies plus their preview media converted to local 16:10 webp covers. Records already here (by id, title or body) and the repo's HorizonX / 21st.dev re-publications are excluded; 31 records whose media host blocks or 404s were skipped. |
 | 1.6.0 | 2026-11-23 | **Back to a pure resource gallery**: removed the 104 replication recipes, the track band, the track sub-filter and the 459 preview-only mirrors, so every card now has a preview **and** a complete prompt body (441 cards). Header counters, OG tags and the category filter were trimmed to match. |
 | 1.5.0 | 2026-11-23 | **Full public-catalogue mirror**: 459 preview-only cards added from motionsites.ai's own public row projection (catalogue 545 → 1,004). Every cover is a local 16:10 webp; the source's account-gated bodies are not touched. New `preview_only` tier in the build, a 仅预览 / Preview badge, `has_text` flags (so full cards finally badge correctly), and category re-bucketing that keeps the filter at 62 labels instead of 172. |

@@ -438,3 +438,27 @@ aw.githubusercontent.com/superdesigndev/superdesign-prompts/main/....
   294 community; invariants hold.
 - `node scripts/audit-catalog.js` -> AUDIT OK records=590 complete=590 missingBodies=0 assets=590.
 - `node scripts/verify-assets.js` -> 614 files / 106 MB / 0 problems.
+
+## [1.6.2] - 2026-11-24
+
+### Added
+- **186 more resources** (catalogue 590 -> 776, community 294 -> 480): the media that failed in 1.6.1 was retried,
+  and the `kenje24/rebirth-motionsitesprompt` manifest's **HorizonX** (92) and **21st.dev** (92) captures were
+  imported with their full prompt bodies and locally rendered covers.
+- `scripts/import-kenje-extra.js` — resumes the failed list and imports the two previously excluded corpora.
+  Videos are cut from the CDN with ffmpeg, with a download-then-frame fallback for hosts that refuse ffmpeg's
+  TLS/UA; images are fetched with a browser header set plus the source site as Referer; both are wrapped in
+  timeouts so one dead host cannot stall the batch.
+
+### Fixed
+- Removed the stale `/assets/previews/website-builder.mp4` stub and its `_redirects` rule: the card it served was
+  dropped in 1.6.0, which left an orphan asset.
+- Orphan covers are now cleaned before a build (two were left by the retry pass).
+
+### Verified
+- `node scripts/import-kenje-extra.js --write` -> 87 imported on the first pass, 75 on the dev21 retry; 34 media
+  remain unfetchable (mux thumbnails behind a token, 403/404 hosts) and are not listed.
+- `node scripts/build.js` -> 776 records / 776 with text / 652 images / 124 videos / 296 motionsites /
+  480 community; invariants hold.
+- `node scripts/audit-catalog.js` -> AUDIT OK records=776 complete=776 missingBodies=0 assets=776.
+- `node scripts/verify-assets.js` -> 776 files / 110 MB / 0 problems.

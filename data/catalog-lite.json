@@ -1,15 +1,23 @@
 {
-  "total": 590,
-  "complete": 590,
-  "images": 466,
+  "total": 776,
+  "complete": 776,
+  "images": 652,
   "videos": 124,
   "concepts": 0,
   "motionsites": 296,
-  "community": 294,
+  "community": 480,
   "topCategories": [
     {
       "name": "Landing Page",
       "n": 183
+    },
+    {
+      "name": "Components",
+      "n": 116
+    },
+    {
+      "name": "Interactive",
+      "n": 94
     },
     {
       "name": "Hero Section",
@@ -18,10 +26,6 @@
     {
       "name": "SaaS",
       "n": 31
-    },
-    {
-      "name": "Components",
-      "n": 24
     },
     {
       "name": "Pricing Page",
@@ -37,10 +41,6 @@
     },
     {
       "name": "Mobile App",
-      "n": 13
-    },
-    {
-      "name": "Forms & Contact",
       "n": 13
     }
   ],
@@ -69,7 +69,7 @@
     "3D Website": 4,
     "404 Pages": 3,
     "Services": 2,
-    "Components": 24,
+    "Components": 116,
     "Forms & Contact": 13,
     "Process & Stats": 2,
     "Testimonials": 6,
@@ -89,7 +89,7 @@
     "Case Studies": 1,
     "Projects": 1,
     "FAQ & Help": 1,
-    "Interactive": 2,
+    "Interactive": 94,
     "Footer Section": 6,
     "AI Apps": 6,
     "HR": 1,
@@ -104,7 +104,9 @@
     "Auth & Login": 11,
     "Analytics": 1,
     "Cybersecurity": 1,
-    "3D": 1
+    "3D": 1,
+    "Landing Pages": 1,
+    "Footers": 1
   },
   "version": 2
 }
