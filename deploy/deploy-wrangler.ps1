@@ -1,4 +1,4 @@
-﻿<#
+<#
   deploy-wrangler.ps1 - Build a clean upload tree and run `wrangler pages deploy` on it.
 
   Excludes .git, .wrangler, .rollback, node_modules, and any file over 25 MiB
@@ -15,7 +15,7 @@ param(
 $ErrorActionPreference = 'Stop'
 Set-Location (Split-Path -Parent $PSScriptRoot)
 
-$excludeNames = @('.git', '.rollback', '.wrangler', 'node_modules')
+$excludeNames = @('.git', '.rollback', '.wrangler', 'node_modules', '.work', 'sources', '.claude', '.vscode')
 $maxUploadBytes = 25MB
 $stagingRoot = Join-Path $env:TEMP ("pages-stage-$ProjectName-" + [guid]::NewGuid().ToString('N'))
 New-Item -ItemType Directory -Path $stagingRoot | Out-Null
