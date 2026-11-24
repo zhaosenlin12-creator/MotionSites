@@ -1,15 +1,15 @@
 {
-  "total": 966,
-  "complete": 966,
-  "images": 842,
+  "total": 968,
+  "complete": 968,
+  "images": 844,
   "videos": 124,
   "concepts": 0,
-  "motionsites": 486,
+  "motionsites": 488,
   "community": 480,
   "topCategories": [
     {
       "name": "Hero Section",
-      "n": 246
+      "n": 247
     },
     {
       "name": "Landing Page",
@@ -46,7 +46,7 @@
   ],
   "categories": {
     "Landing Page": 185,
-    "Hero Section": 246,
+    "Hero Section": 247,
     "Portfolio": 13,
     "SaaS": 31,
     "Agency": 12,
@@ -99,7 +99,7 @@
     "Design Systems & Styles": 11,
     "Calendars": 1,
     "Email & Newsletter": 5,
-    "Other": 3,
+    "Other": 4,
     "Onboarding": 7,
     "Auth & Login": 11,
     "Analytics": 1,

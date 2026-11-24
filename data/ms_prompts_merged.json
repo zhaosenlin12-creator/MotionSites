@@ -19902,5 +19902,49 @@
       "free",
       "hero"
     ]
+  },
+  {
+    "id": "atlas-lab",
+    "title": "Atlas Lab Features",
+    "description": "AI Research · Other",
+    "category": "Other",
+    "type": "features",
+    "page_type": "hero",
+    "is_free": true,
+    "source_kind": "motionsites",
+    "source_id": "motionsites-public-catalog",
+    "source_url": "https://motionsites.ai/?prompt=atlas-lab",
+    "source_repo": "motionsites.ai",
+    "source_license": "public free prompt (site serves the body without a session)",
+    "local_rel": "assets/previews/atlas-lab.webp",
+    "local_kind": "webp",
+    "sort_order": 14216,
+    "tags": [
+      "Other",
+      "features",
+      "AI Research"
+    ]
+  },
+  {
+    "id": "vocari-hero",
+    "title": "Vocari Hero",
+    "description": "AI Hero · Hero Section",
+    "category": "Hero Section",
+    "type": "hero",
+    "page_type": "hero",
+    "is_free": true,
+    "source_kind": "motionsites",
+    "source_id": "motionsites-public-catalog",
+    "source_url": "https://motionsites.ai/?prompt=vocari-hero",
+    "source_repo": "motionsites.ai",
+    "source_license": "public free prompt (site serves the body without a session)",
+    "local_rel": "assets/previews/vocari-hero.webp",
+    "local_kind": "webp",
+    "sort_order": 14219,
+    "tags": [
+      "Hero Section",
+      "hero",
+      "AI Hero"
+    ]
   }
 ]

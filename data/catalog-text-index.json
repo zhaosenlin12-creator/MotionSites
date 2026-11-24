@@ -964,5 +964,7 @@
   "honey-jar": "catalog-text/honey-jar.txt",
   "gelato-shop": "catalog-text/gelato-shop.txt",
   "forge-gate": "catalog-text/forge-gate.txt",
-  "camera-shop": "catalog-text/camera-shop.txt"
+  "camera-shop": "catalog-text/camera-shop.txt",
+  "atlas-lab": "catalog-text/atlas-lab.txt",
+  "vocari-hero": "catalog-text/vocari-hero.txt"
 }
